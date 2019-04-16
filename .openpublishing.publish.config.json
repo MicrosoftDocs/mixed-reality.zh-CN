@@ -4,7 +4,7 @@
       "docset_name": "mixed-reality-docs",
       "build_source_folder": "mixed-reality-docs",
       "build_output_subfolder": "mixed-reality-docs",
-      "locale": "zh-CN",
+      "locale": "zh-cn",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
@@ -21,7 +21,7 @@
   "sync_notification_subscribers": [],
   "branches_to_filter": [
     "live-sxs",
-    "master-sxs"
+    "live"
   ],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/mixed-reality",
   "git_repository_branch_open_to_public_contributors": "master",
@@ -32,7 +32,7 @@
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.zh-CN",
+      "url": "https://github.com/Microsoft/templates.docs.msft.zh-cn",
       "branch": "master",
       "branch_mapping": {}
     },
