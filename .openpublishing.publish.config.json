@@ -23,8 +23,6 @@
     "live-sxs",
     "live"
   ],
-  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/mixed-reality",
-  "git_repository_branch_open_to_public_contributors": "master",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
@@ -51,17 +49,5 @@
         "master": "master"
       }
     }
-  ],
-  "branch_target_mapping": {
-    "live": [
-      "Publish",
-      "Pdf"
-    ]
-  },
-  "need_generate_pdf_url_template": true,
-  "targets": {
-    "pdf": {
-      "template_folder": "_themes.pdf"
-    }
-  }
+  ]
 }
