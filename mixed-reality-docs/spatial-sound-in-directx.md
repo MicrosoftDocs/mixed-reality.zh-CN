@@ -1,0 +1,337 @@
+---
+title: 在 DirectX 空间声音
+description: 将空间声音添加到您通过 XAudio2 和 xAPO 音频库基于 DirectX 的 Windows Mixed Reality 应用程序。
+author: MikeRiches
+ms.author: mriches
+ms.date: 03/21/2018
+ms.topic: article
+keywords: 混合现实、 空间声音、 应用、 XAudio2，较低级别的 Windows xAPO、 音频库、 演练中，DirectX
+ms.openlocfilehash: 04d8c43ab400eed4cec5cbd848af5b888cb66e4b
+ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59593076"
+---
+# <a name="spatial-sound-in-directx"></a>在 DirectX 空间声音
+
+你通过基于 DirectX 的 Windows Mixed Reality 应用中添加空间声音[XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049.aspx)并[xAPO](https://msdn.microsoft.com/library/windows/desktop/ee415735.aspx)音频库。
+
+本主题使用示例代码从 HolographicHRTFAudioSample。
+
+>[!NOTE]
+>这篇文章中的代码片段当前演示了如何使用C++/CX 而不是 C + + 17 符合C++中使用 /WinRT [ C++全息版的项目模板](creating-a-holographic-directx-project.md)。  这些概念是等效的C++/WinRT 项目，但您将需要将代码转换。
+
+## <a name="overview-of-head-relative-spatial-sound"></a>头相对空间声音的概述
+
+作为实现空间声音**音频处理对象 (APO)** ，它使用**head 相关传递函数 (HRTF)** 筛选出*spatialize*普通的音频流。
+
+在 pch.h 中访问音频 Api 包括这些标头文件：
+* XAudio2.h
+* xapo.h
+* hrtfapoapi.h
+
+若要设置空间声音：
+1. 调用[CreateHrtfApo](https://msdn.microsoft.com/library/windows/desktop/mt186596.aspx)来初始化新 APO HRTF 音频。
+2. 将分配[HRTF 参数](https://msdn.microsoft.com/library/windows/desktop/mt186608.aspx)并[HRTF 环境](https://msdn.microsoft.com/library/windows/desktop/mt186604.aspx)定义空间的声音 APO 声学特性。
+3. 设置 HRTF 处理 XAudio2 引擎。
+4. 创建[IXAudio2SourceVoice](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.aspx)对象，并调用[启动](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)。
+
+## <a name="implementing-hrtf-and-spatial-sound-in-your-directx-app"></a>在 DirectX 应用程序中实现 HRTF 和空间声音
+
+可以通过使用不同的参数和环境配置 HRTF APO 实现各种效果。 使用以下代码来探索的可能性。 从此处下载通用 Windows 平台的代码示例：[声音空间示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpatialSound)
+
+在这些文件中提供了帮助程序类型：
+* [AudioFileReader.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/AudioFileReader.cpp):通过使用媒体基础加载音频文件和[IMFSourceReader 接口](https://msdn.microsoft.com/library/windows/desktop/dd374655.aspx)。
+* [XAudio2Helpers.h](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/XAudio2Helpers.h):实现**SetupXAudio2**函数来初始化 XAudio2 HRTF 处理。
+
+### <a name="add-spatial-sound-for-an-omnidirectional-source"></a>添加为全向源空间声音
+
+在用户的环境中某些全息发出声音同样在所有方向上。 下面的代码演示如何初始化 APO 发出全向声音。 在此示例中，我们这一概念于旋转多维数据集从应用的 Windows 全息版的应用程序模板。 有关完整代码列表，请参阅[OmnidirectionalSound.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/OmnidirectionalSound.cpp)。
+
+**窗口的空间声音引擎仅支持 48 k samplerate 进行播放。大多数中间件程序，如 Unity 中，会自动将声音文件转换为所需的格式，但如果您启动进行补充，以便在较低级别中音频系统或使自己，这一点非常重要，需要记住来防止发生崩溃或意外的行为等HRTF 系统出现故障。**
+
+首先，我们需要初始化 APO。 在全息版示例应用，我们选择要执行此操作后，我们**HolographicSpace**。
+
+From *HolographicHrtfAudioSampleMain::SetHolographicSpace()*:
+
+```
+// Spatial sound
+auto hr = m_omnidirectionalSound.Initialize(L"assets//MonoSound.wav");
+```
+
+实现的 Initialize，从*OmnidirectionalSound.cpp*:
+
+```
+// Initializes an APO that emits sound equally in all directions.
+HRESULT OmnidirectionalSound::Initialize( LPCWSTR filename )
+{
+    // _audioFile is of type AudioFileReader, which is defined in AudioFileReader.cpp.
+    auto hr = _audioFile.Initialize( filename );
+
+    ComPtr<IXAPO> xapo;
+    if ( SUCCEEDED( hr ) )
+    {
+        // Passing in nullptr as the first arg for HrtfApoInit initializes the APO with defaults of
+        // omnidirectional sound with natural distance decay behavior.
+        // CreateHrtfApo fails with E_NOTIMPL on unsupported platforms.
+        hr = CreateHrtfApo( nullptr, &xapo );
+    }
+
+    if ( SUCCEEDED( hr ) )
+    {
+        // _hrtfParams is of type ComPtr<IXAPOHrtfParameters>.
+        hr = xapo.As( &_hrtfParams );
+    }
+
+    // Set the default environment.
+    if ( SUCCEEDED( hr ) )
+    {
+        hr = _hrtfParams->SetEnvironment( HrtfEnvironment::Outdoors );
+    }
+
+    // Initialize an XAudio2 graph that hosts the HRTF xAPO.
+    // The source voice is used to submit audio data and control playback.
+    if ( SUCCEEDED( hr ) )
+    {
+        hr = SetupXAudio2( _audioFile.GetFormat(), xapo.Get(), &_xaudio2, &_sourceVoice );
+    }
+
+    // Submit audio data to the source voice.
+    if ( SUCCEEDED( hr ) )
+    {
+        XAUDIO2_BUFFER buffer{ };
+        buffer.AudioBytes = static_cast<UINT32>( _audioFile.GetSize() );
+        buffer.pAudioData = _audioFile.GetData();
+        buffer.LoopCount = XAUDIO2_LOOP_INFINITE;
+
+        // _sourceVoice is of type IXAudio2SourceVoice*.
+        hr = _sourceVoice->SubmitSourceBuffer( &buffer );
+    }
+
+    return hr;
+}
+```
+
+为 HRTF 配置 APO 后，调用[启动](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)上源语音以播放音频。 在我们的示例应用，我们选择将其放在一个循环，以便可以继续听到声音来自多维数据集。
+
+From *HolographicHrtfAudioSampleMain::SetHolographicSpace()*:
+
+```
+if (SUCCEEDED(hr))
+{
+    m_omnidirectionalSound.SetEnvironment(HrtfEnvironment::Small);
+    m_omnidirectionalSound.OnUpdate(m_spinningCubeRenderer->GetPosition());
+    m_omnidirectionalSound.Start();
+}
+```
+
+从*OmnidirectionalSound.cpp*:
+
+```
+HRESULT OmnidirectionalSound::Start()
+{
+    _lastTick = GetTickCount64();
+    return _sourceVoice->Start();
+}
+```
+
+现在，我们将更新此框架，只要我们需要更新全息图的位置相对于设备本身。 这是因为 HRTF 位置始终表示相对于用户的头，包括头位置和方向。
+
+若要执行此操作在 HolographicSpace 中，我们需要构建到固定到设备本身的坐标系统从我们 SpatialStationaryFrameOfReference 坐标系统转换矩阵。
+
+从*HolographicHrtfAudioSampleMain::Update()*:
+
+```
+m_spinningCubeRenderer->Update(m_timer);
+
+SpatialPointerPose^ currentPose = SpatialPointerPose::TryGetAtTimestamp(currentCoordinateSystem, prediction->Timestamp);
+if (currentPose != nullptr)
+{
+    // Use a coordinate system built from a pointer pose.
+    SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordinateSystem, prediction->Timestamp);
+    if (pose != nullptr)
+    {
+        float3 headPosition = pose->Head->Position;
+        float3 headUp = pose->Head->UpDirection;
+        float3 headDirection = pose->Head->ForwardDirection;
+
+        // To construct a rotation matrix, we need three vectors that are mutually orthogonal.
+        // The first vector is the gaze vector.
+        float3 negativeZAxis = normalize(headDirection);
+
+        // The second vector should end up pointing away from the horizontal plane of the device.
+        // We first guess by using the head "up" direction.
+        float3 positiveYAxisGuess = normalize(headUp);
+
+        // The third vector completes the set by being orthogonal to the other two.
+        float3 positiveXAxis = normalize(cross(negativeZAxis, positiveYAxisGuess));
+
+        // Now, we can correct our "up" vector guess by redetermining orthogonality.
+        float3 positiveYAxis = normalize(cross(negativeZAxis, positiveXAxis));
+
+        // The rotation matrix is formed as a standard basis rotation.
+        float4x4 rotationTransform =
+            {
+            positiveXAxis.x, positiveYAxis.x, negativeZAxis.x, 0.f,
+            positiveXAxis.y, positiveYAxis.y, negativeZAxis.y, 0.f,
+            positiveXAxis.z, positiveYAxis.z, negativeZAxis.z, 0.f,
+            0.f, 0.f, 0.f, 1.f,
+            };
+
+        // The translate transform can be constructed using the Windows::Foundation::Numerics API.
+        float4x4 translationTransform = make_float4x4_translation(-headPosition);
+
+        // Now, we have a basis transform from our spatial coordinate system to a device-relative
+        // coordinate system.
+        float4x4 coordinateSystemTransform = translationTransform * rotationTransform;
+
+        // Reinterpret the cube position in the device's coordinate system.
+        float3 cubeRelativeToHead = transform(m_spinningCubeRenderer->GetPosition(), coordinateSystemTransform);
+
+        // Note that at (0, 0, 0) exactly, the HRTF audio will simply pass through audio. We can use a minimal offset
+        // to simulate a zero distance when the hologram position vector is exactly at the device origin in order to
+        // allow HRTF to continue functioning in this edge case.
+        float distanceFromHologramToHead = length(cubeRelativeToHead);
+        static const float distanceMin = 0.00001f;
+        if (distanceFromHologramToHead < distanceMin)
+        {
+            cubeRelativeToHead = float3(0.f, distanceMin, 0.f);
+        }
+
+        // Position the spatial sound source on the hologram.
+        m_omnidirectionalSound.OnUpdate(cubeRelativeToHead);
+
+        // For debugging, it can be interesting to observe the distance in the debugger.
+        /*
+        std::wstring distanceString = L"Distance from hologram to head: ";
+        distanceString += std::to_wstring(distanceFromHologramToHead);
+        distanceString += L"\n";
+        OutputDebugStringW(distanceString.c_str());
+        */
+    }
+}
+```
+
+HRTF 位置是直接应用于声音 APO OmnidirectionalSound 帮助器类。
+
+从*OmnidirectionalSound::OnUpdate*:
+
+```
+HRESULT OmnidirectionalSound::OnUpdate(_In_ Numerics::float3 position)
+{
+    auto hrtfPosition = HrtfPosition{ position.x, position.y, position.z };
+    return _hrtfParams->SetSourcePosition(&hrtfPosition);
+}
+```
+
+就这么简单！ 继续阅读以了解有关如何使用 HRTF 音频和 Windows 全息版的详细信息。
+
+### <a name="initialize-spatial-sound-for-a-directional-source"></a>初始化方向源空间声音
+
+在用户的环境中某些全息发出声音主要在一个方向。 此声音的模式名为*cardioid*因为它类似于卡通核心。 下面的代码演示如何初始化 APO 发出定向声音。 有关完整代码列表，请参阅[CardioidSound.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/CardioidSound.cpp) 。
+
+为 HRTF 配置 APO 后，调用[启动](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2sourcevoice.ixaudio2sourcevoice.start.aspx)上源语音以播放音频。
+
+```
+// Initializes an APO that emits directional sound.
+HRESULT CardioidSound::Initialize( LPCWSTR filename )
+{
+    // _audioFile is of type AudioFileReader, which is defined in AudioFileReader.cpp.
+    auto hr = _audioFile.Initialize( filename );
+    if ( SUCCEEDED( hr ) )
+    {
+        // Initialize with "Scaling" fully directional and "Order" with broad radiation pattern.
+        // As the order goes higher, the cardioid directivity region becomes narrower.
+        // Any direct path signal outside of the directivity region will be attenuated based on the scaling factor.
+        // For example, if scaling is set to 1 (fully directional) the direct path signal outside of the directivity
+        // region will be fully attenuated and only the reflections from the environment will be audible.
+        hr = ConfigureApo( 1.0f, 4.0f );
+    }
+    return hr;
+}
+
+HRESULT CardioidSound::ConfigureApo( float scaling, float order )
+{
+    // Cardioid directivity configuration:
+    // Directivity is specified at xAPO instance initialization and can't be changed per frame.
+    // To change directivity, stop audio processing and reinitialize another APO instance with the new directivity.
+    HrtfDirectivityCardioid cardioid;
+    cardioid.directivity.type = HrtfDirectivityType::Cardioid;
+    cardioid.directivity.scaling = scaling;
+    cardioid.order = order;
+
+    // APO intialization
+    HrtfApoInit apoInit;
+    apoInit.directivity = &cardioid.directivity;
+    apoInit.distanceDecay = nullptr; // nullptr specifies natural distance decay behavior (simulates real world)
+
+    // CreateHrtfApo fails with E_NOTIMPL on unsupported platforms.
+    ComPtr<IXAPO> xapo;
+    auto hr = CreateHrtfApo( &apoInit, &xapo );
+
+    if ( SUCCEEDED( hr ) )
+    {
+        hr = xapo.As( &_hrtfParams );
+    }
+
+    // Set the initial environment.
+    // Environment settings configure the "distance cues" used to compute the early and late reverberations.
+    if ( SUCCEEDED( hr ) )
+    {
+        hr = _hrtfParams->SetEnvironment( _HrtfEnvironment::Outdoors );
+    }
+
+    // Initialize an XAudio2 graph that hosts the HRTF xAPO.
+    // The source voice is used to submit audio data and control playback.
+    if ( SUCCEEDED( hr ) )
+    {
+        hr = SetupXAudio2( _audioFile.GetFormat(), xapo.Get(), &_xaudio2, &_sourceVoice );
+    }
+
+    // Submit audio data to the source voice
+    if ( SUCCEEDED( hr ) )
+    {
+        XAUDIO2_BUFFER buffer{ };
+        buffer.AudioBytes = static_cast<UINT32>( _audioFile.GetSize() );
+        buffer.pAudioData = _audioFile.GetData();
+        buffer.LoopCount = XAUDIO2_LOOP_INFINITE;
+        hr = _sourceVoice->SubmitSourceBuffer( &buffer );
+    }
+
+    return hr;
+}
+```
+
+### <a name="implement-custom-decay"></a>实现自定义的衰减
+
+您可以重写的空间声音脱落与距离和/或之间的距离其切掉完全的速率。 若要实现自定义的衰减行为空间的声音，填充[HrtfDistanceDecay 结构](https://msdn.microsoft.com/library/windows/desktop/mt186602.aspx)并将其分配给**distanceDecay**字段中[HrtfApoInit 结构](https://msdn.microsoft.com/library/windows/desktop/mt186597.aspx)之前将其传递给[CreateHrtfApo](https://msdn.microsoft.com/library/windows/desktop/mt186596.aspx)函数。
+
+将以下代码添加到**初始化**前面所示指定自定义的衰减行为的方法。 有关完整代码列表，请参阅[CustomDecay.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpatialSound/cpp/CustomDecay.cpp)。
+
+```
+HRESULT CustomDecaySound::Initialize( LPCWSTR filename )
+{
+    auto hr = _audioFile.Initialize( filename );
+
+    ComPtr<IXAPO> xapo;
+    if ( SUCCEEDED( hr ) )
+    {
+        HrtfDistanceDecay customDecay;
+        customDecay.type = HrtfDistanceDecayType::CustomDecay;               // Custom decay behavior, we'll pass in the gain value on every frame.
+        customDecay.maxGain = 0;                                             // 0dB max gain
+        customDecay.minGain = -96.0f;                                        // -96dB min gain
+        customDecay.unityGainDistance = HRTF_DEFAULT_UNITY_GAIN_DISTANCE;    // Default unity gain distance
+        customDecay.cutoffDistance = HRTF_DEFAULT_CUTOFF_DISTANCE;           // Default cutoff distance
+
+        // Setting the directivity to nullptr specifies omnidirectional sound.
+        HrtfApoInit init;
+        init.directivity = nullptr;
+        init.distanceDecay = &customDecay;
+
+        // CreateHrtfApo will fail with E_NOTIMPL on unsupported platforms.
+        hr = CreateHrtfApo( &init, &xapo );
+    }
+...
+}
+```
