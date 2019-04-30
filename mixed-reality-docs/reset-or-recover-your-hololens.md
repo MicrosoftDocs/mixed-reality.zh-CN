@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 操作说明，重新启动、 重置、 恢复，硬重置、 软重置、 电源周期 HoloLens，关闭
 ms.openlocfilehash: abf71a5f122b1c6f800bf970f51da11a34be956b
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59591765"
@@ -59,7 +59,7 @@ ms.locfileid: "59591765"
 
 ## <a name="reset-the-device-to-a-factory-clean-state"></a>将设备重置为出厂干净状态
 
-如果你 HoloLens 后重新启动后仍然遇到问题，可以尝试重置为出厂干净状态。 如果重置你的设备，将擦除所有个人数据、 应用和设置。 重置将仅安装的 Windows Holographic 安装的版本，并且必须重新初始化的所有步骤 (校准，连接到 WiFi、 创建用户帐户，下载应用程序，等等。...)。
+如果你 HoloLens 后重新启动后仍然遇到问题，可以尝试重置为出厂干净状态。 如果重置你的设备，将擦除所有个人数据、 应用和设置。 重置将仅安装的 Windows Holographic 安装的版本，并且必须重新初始化的所有步骤 (校准，连接到 WiFi、 创建用户帐户，下载应用程序，等等...)。
 1. 启动**设置**应用程序->**更新** -> **重置**
 2. 选择**重置设备**选项和读取确认对话框
 3. 如果您同意遵守重置你的设备，设备将重新启动，显示旋转齿轮与进度栏的一组
