@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit、 mixedrealitytoolkit、 mixedrealitytoolkit unity，学院，教程，提供注视
-ms.openlocfilehash: 63c55e8a7a348f2a3e0cc29a9795d7fabcef5df0
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 076314389ec5ed70347c26d50c6a993f55da0758
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591562"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993548"
 ---
 >[!NOTE]
 >混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
@@ -103,7 +103,7 @@ ms.locfileid: "59591562"
 
 1. 转到**编辑 > 项目设置 > 质量**。
 2. 中的向下箭头上单击**默认**Windows 应用商店图标下面的行。
-3. 选择**最快**有关**Windows 应用商店应用程序**。
+3. 选择**非常低**有关**Windows 应用商店应用程序**。
 
 ### <a name="import-project-assets"></a>导入项目资产
 

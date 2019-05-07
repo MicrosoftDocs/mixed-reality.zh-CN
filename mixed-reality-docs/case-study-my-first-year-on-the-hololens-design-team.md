@@ -6,12 +6,12 @@ ms.author: haejinl
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality HoloLens，设计、 编辑，个人
-ms.openlocfilehash: e16be57d42bdc003fd601b94e054c7c25ebd290e
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 050645e6096559a4f37b033e5ddfdc5444039c08
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593054"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873954"
 ---
 # <a name="case-study---my-first-year-on-the-hololens-design-team"></a>案例研究-在 HoloLens 上的我第一年设计团队
 
@@ -105,7 +105,7 @@ ms.locfileid: "59593054"
 
 **"无论紧密程度我草绘出在 3D 场景，耳机的实际体验是几乎永远不会与该草图相同。这就是为什么务必测试场景中目标耳机。"— Hae Jin Lee**
 
-HoloLens 原型制作、 我尝试在所有教程[混合现实学院](academy.md)启动。 然后我开始研究[HoloToolkit.Unity](https://github.com/Microsoft/HoloToolkit-Unity/) ，Microsoft 提供了面向开发人员加快开发全息版的应用程序。 当我遇到问题的内容时，我发布到我的问题[HoloLens 问题和答案论坛](https://forums.hololens.com/categories/questions-and-answers/)。
+HoloLens 原型制作、 我尝试在所有教程[混合现实教程](tutorials.md)启动。 然后我开始研究[HoloToolkit.Unity](https://github.com/Microsoft/HoloToolkit-Unity/) ，Microsoft 提供了面向开发人员加快开发全息版的应用程序。 当我遇到问题的内容时，我发布到我的问题[HoloLens 问题和答案论坛](https://forums.hololens.com/categories/questions-and-answers/)。
 
 获取基本了解 HoloLens 原型制作之后, 我想要使其他非编码人员，他们自己的原型。 因此，我进行视频的本教程演示如何开发使用 HoloLens 简单 projectile。 我简要甚至如果 HoloLens 开发中有零个经验，您应该能够跟着介绍一起操作说明的基本概念。
 

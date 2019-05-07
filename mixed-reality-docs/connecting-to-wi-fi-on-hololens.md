@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 09/27/2018
 ms.topic: article
 keywords: HoloLens、 wifi、 无线、 internet、 ip、 ip 地址
-ms.openlocfilehash: 0440c3dad48d73db51e7d730e79d6eb1e74a5694
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: b064514124d861c0734ca51b3878d4a68b592fab
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592864"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64670117"
 ---
 # <a name="connecting-to-wi-fi-on-hololens"></a>连接到 HoloLens 的 Wi-fi
 
@@ -40,7 +40,7 @@ HoloLens 包含 802.11ac 的支持，2 x 2 个 Wi-fi 无线电。 连接到 Wi-f
 5. 选择将其移到"Off"位置的 Wi-fi 滑块交换机。 这将关闭 Wi-fi 无线电的 RF 组件并禁用所有 HoloLens 的 Wi-fi 功能。 
 
     >[!WARNING]
-    >HoloLens 将不能自动加载你[空格](environment-considerations-for-hololens.md#spaces)Wi-fi 无线电被禁用时。
+    >HoloLens 将不能自动加载你[空格](environment-considerations-for-hololens.md#WiFi fingerprint considerations)Wi-fi 无线电被禁用时。
     
 6. 将滑块开关移到"开"位置来启用 Wi-fi 无线电和还原 Microsoft HoloLens 上的 Wi-fi 功能。 所选的 Wi-fi 无线电的状态 （"开"的"关"） 将在重新启动后保留。
 

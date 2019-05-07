@@ -6,12 +6,12 @@ ms.author: ericrehm
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality HoloLens，神奇的窗口中，视差
-ms.openlocfilehash: 0c0828a6ebbefdcff7f0a66f48469007c5c532df
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 945a09614fbc77400825b524f4e0b591bf7b1f6b
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592113"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873929"
 ---
 # <a name="case-study---looking-through-holes-in-your-reality"></a>案例研究-通查在现实中的漏洞
 
@@ -93,7 +93,7 @@ ColorMask 0
 
 在 Unity 编辑器中查看此模型将显示 flowerpot 周围的大黑色框。 HoloLens 上, 消失后框中，为提供为神奇窗口效果的方式。
 
-如果你想要生成使用此技术的应用程序，请查看[MR 基础知识 101 教程](holograms-101.md)中[混合现实学院](academy.md)。 第 7 章结尾中显示 （如图上面所示） 隐藏的 underworld 你 floor 爆炸式增长。 谁说教程必须令人厌烦？
+如果你想要生成使用此技术的应用程序，请查看[MR 基础知识 101 教程](holograms-101.md)中[混合现实教程](tutorials.md)。 第 7 章结尾中显示 （如图上面所示） 隐藏的 underworld 你 floor 爆炸式增长。 谁说教程必须令人厌烦？
 
 以下是一些建议的位置执行这一想法下一步：
 * 想一想如何使虚拟小孔里面的内容交互。 让你有超出其留言板一些影响的用户可以真正提高不足为奇了这一技巧可以提供有意义。
@@ -109,7 +109,7 @@ ColorMask 0
 </table>
 
 ## <a name="see-also"></a>请参阅
-* [MR 基础知识 101:与设备的完整项目](holograms-101.md)
+* [MR 基础知识 101：使用设备完成项目](holograms-101.md)
 * [坐标系统](coordinate-systems.md)
-* [空间的定位点](spatial-anchors.md)
+* [空间定位点](spatial-anchors.md)
 * [空间映射](spatial-mapping.md)

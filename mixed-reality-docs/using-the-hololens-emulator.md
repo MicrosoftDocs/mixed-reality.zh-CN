@@ -1,17 +1,17 @@
 ---
 title: 使用 HoloLens 仿真程序
 description: HoloLens 仿真程序，可测试在您的 PC 而无需物理 HoloLens 混合的现实应用程序。
-author: JonMLyons
-ms.author: jlyons
-ms.date: 02/24/2019
+author: pbarnettms
+ms.author: pbarnett
+ms.date: 04/25/2019
 ms.topic: article
 keywords: HoloLens、 仿真程序
-ms.openlocfilehash: 3551bf48037f0cb7e8d243f2d89d43664e7c3475
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 0a8fa6bb7c7c5bb846604b7a1878911f028d8cba
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592862"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64580658"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 仿真程序
 
@@ -19,21 +19,23 @@ HoloLens 仿真程序允许您测试您的 PC 而无需物理 HoloLens 上全息
 
 如果想要为桌面 Pc 开发 Windows Mixed Reality 沉浸式 (VR) 耳机式应用程序或游戏，请查看[Windows Mixed Reality 模拟器](using-the-windows-mixed-reality-simulator.md)，它可让你改为模拟桌面耳机。
 
-> [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
 
 ## <a name="installing-the-hololens-emulator"></a>安装 HoloLens 仿真程序
+下载 HoloLens 仿真程序和全息版的项目模板。
 
-下载[HoloLens （第 1 代） 仿真程序和全息版的项目模板](https://go.microsoft.com/fwlink/?linkid=2065980)。
+版本： 
+* [HoloLens 2 仿真程序和全息版的项目模板](https://go.microsoft.com/fwlink/?linkid=2087187)。
+* [HoloLens 仿真程序 （第 1 代） 和全息版的项目模板](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 可以找到较旧版本的 HoloLens 模拟器[HoloLens 仿真器存档](hololens-emulator-archive.md)页。
 
-### <a name="hololens-emulator-system-requirements"></a>HoloLens 的模拟器系统要求
+### <a name="hololens-emulator-system-requirements"></a>HoloLens 模拟器系统要求
 
-HoloLens 仿真程序依赖于使用 HYPER-V 和使用 RemoteFx 的硬件加速图形。 若要使用模拟器，请确保您的 PC 满足以下硬件要求：
+HoloLens 模拟器与 RemoteFx 一起使用的 HYPER-V （第 1 代仿真器） 或 GPU PV （HoloLens 2 仿真程序） 的硬件加速图形。 若要使用模拟器，请确保您的 PC 满足以下硬件要求：
 * 64 位 Windows 10 Pro、 Enterprise 或教育版 
     >[!NOTE]
-    >Windows 10 家庭版不支持的 HYPER-V 或 HoloLens 仿真程序
+    >Windows 10 家庭版不支持的 HYPER-V 或 HoloLens 仿真程序。  
+    >HoloLens 2 仿真程序需要的 Windows 10 2018 年 10 月更新或更高版本。
 * 64 位 CPU
 * CPU 具有 4 个核心 （或多个 Cpu 总容量为 4 个核心）
 * 8 GB 的 RAM 或更多
@@ -41,29 +43,21 @@ HoloLens 仿真程序依赖于使用 HYPER-V 和使用 RemoteFx 的硬件加速�
    * 硬件辅助虚拟化
    * 二级地址转换 (SLAT)
    * 基于硬件的数据执行保护 (DEP)
-* GPU 要求 （仿真程序可能使用不受支持的 GPU，但会显著变慢）
+* GPU 要求
    * DirectX 11.0 或更高版本
-   * WDDM 1.2 驱动程序或更高版本
+   * WDDM 1.2 图形驱动程序或更高版本 （第 1 代）
+   * WDDM 2.5 图形驱动程序 （HoloLens 2 仿真程序）
+   * 在仿真程序可能使用不受支持的 GPU，但会显著变慢
 
 如果你的系统满足上述要求**请确保你的系统上是否已启用"HYPER-V"功能**通过控制面板-> 程序-> 程序和功能-> 上的启用 Windows 功能或关闭-> 确保"HYPER-V"选择用于仿真程序的安装才能成功。
 
-### <a name="installation-troubleshooting"></a>安装故障排除
-
-在安装所需的仿真程序时，可能会出错 *"Visual Studio 2015 Update 1 和 UWP 工具版本 1.2"*。 有三个可能导致此错误的原因：
-* 没有足够新版本的 Visual Studio （Visual Studio 2017 或 Visual Studio 2015 Update 1 或更高版本）。 若要更正此问题，请安装最新版本的 Visual Studio。
-* 具有足够新版本的 Visual Studio 中，但不是具有安装了通用 Windows 平台 (UWP) 工具。 这是 Visual Studio 的可选功能。
-
-启用还可能会看到安装仿真程序上非-教育版 PRO/企业版 SKU 的 Windows 错误或如果不具有 HYPER-V 功能。
-* 请阅读[系统要求](#hololens-emulator-system-requirements)上面部分的一组完整的要求。
-* 请也确保您的系统上启用了 HYPER-V 功能。
-
 ## <a name="deploying-apps-to-the-hololens-emulator"></a>将应用部署到 HoloLens 仿真程序
 
-1. 加载 Visual Studio 2015 中的应用解决方案。
+1. 加载您在 Visual Studio 中的应用程序解决方案。
     >[!NOTE]
     >在使用 Unity 时，从 Unity 生成项目，然后加载生成的解决方案到 Visual Studio 中像往常一样。
-2. 确保将平台设置为**x86**。
-3. 选择**HoloLens 模拟器**作为目标设备以进行调试。
+2. HoloLens 仿真程序 （第 1 代），请确保在平台设置为**x86**。 对于 HoloLens 2 仿真程序，请确保在平台设置为**x86**或**x64**。
+3. 选择所需**HoloLens 模拟器**与用于调试的目标设备的版本。
 4. 转到**调试 > 启动调试**或按**F5**启动仿真程序和部署应用程序进行调试。
 
 在仿真程序可能需要一分钟或更多用于首次启动时启动。 我们建议你将在仿真程序打开在调试会话期间以便可以快速将应用部署到运行的仿真程序。
@@ -71,13 +65,67 @@ HoloLens 仿真程序依赖于使用 HYPER-V 和使用 RemoteFx 的硬件加速�
 ## <a name="basic-emulator-input"></a>基本仿真程序输入
 
 控制模拟器是与许多常见的 3D 视频游戏非常相似。 可以使用键盘、 鼠标或 Xbox 控制器是输入的选项。 将定向模拟的用户戴上 HoloLens 的操作，从而控制在仿真程序。 你的操作移动周围的模拟的用户并在模拟器中运行的应用程序的响应类似的方式在真实设备上。
+
+将光标放在 HoloLens （第 1 代） 遵循磁头的移动和旋转。  HoloLens 2 仿真程序中，在光标后面手动移动和方向。
+
 * **引导前滚，、 左和右**-使用 W，A、 S 和 D 键键盘，或在 Xbox 控制器上的左记忆棒。
 * **查找、 下、 左、 左右**-单击并拖动鼠标、 键盘或 Xbox 控制器上的右记忆棒上使用箭头键。
 * **空中手势**-右键单击鼠标、 键盘上按 Enter 键或 Xbox 控制器上使用一个按钮。
-* **百花齐放手势**-在键盘上按 Windows 键或 F2 键或 Xbox 控制器上按 B 按钮。
+* **布隆/系统笔势**-在键盘上按 Windows 键或 F2 键或 Xbox 控制器上按 B 按钮。
 * **将移动滚动**-按住 Alt 键，请按住鼠标右键按钮和向上 / 向下拖动鼠标或 Xbox 控制器中按住正确的触发器和一个按钮并向上和向下移动右。
+* **将移动和方向**（只能在 HoloLens 2 模拟器）-按住 Alt 键并拖动鼠标向上 / 向下 / 左 / 右移动手形图标，或使用箭头键和 Q / E 来旋转和倾斜手形图标。  Xbox 控制器，包含左或向右缓冲器并使用左的摇杆左 / 右 / 正 / 后，移动手形图标右侧摇杆旋转它，并启动 / 关闭 Dpad 引发或降低手形图标上。
 
-## <a name="anatomy-of-the-hololens-emulator"></a>HoloLens 仿真程序的剖析
+## <a name="anatomy-of-the-hololens-2-emulator"></a>HoloLens 2 仿真程序的剖析 
+
+### <a name="main-window"></a>主窗口
+
+![HoloLens 2 仿真程序主窗口](images/emulator2-900px.png)
+
+### <a name="toolbar"></a>工具栏
+
+在主窗口的右侧，您会发现仿真程序工具栏。 此工具栏包含以下按钮：
+* ![关闭图标](images/emulator-close.png)**关闭**:关闭模拟器。
+* ![最小化图标](images/emulator-minimize.png)**最小化**:最小化模拟器窗口。
+* ![Simulation_icon](images/emulator-simulation-panel.png) **模拟控制面板**:显示或隐藏[模拟控制面板](#simulation-control-panel)用于配置和控制[输入到仿真程序](#basic-emulator-input)。
+* ![适应屏幕图标](images/emulator-fit.png)**适合屏幕大小**:适用于到屏幕的仿真程序。
+* ![缩放图标](images/emulator-zoom.png)**缩放**:使仿真器大和变小。
+* ![帮助图标](images/emulator-help.png)**帮助**:打开模拟器帮助。
+* ![打开设备门户图标](images/emulator-deviceportal.png)**打开设备门户**:为 HoloLens 操作系统在模拟器中打开 Windows Device Portal。
+* ![工具图标](images/emulator-tools.png)**工具**:打开**其他工具**窗格。
+
+### <a name="simulation-control-panel"></a>模拟控制面板
+
+模拟控件面板中，可以查看当前的位置和方向的模拟人类和模拟输入设备。  它还允许您配置这两个模拟的输入，例如，显示或隐藏一个或两个手和用于控制模拟的输入你的电脑的键盘、 鼠标和游戏板等设备。
+
+![模拟控制面板](images/emulator-simulation-control-panel.png)
+
+* 若要隐藏或显示模拟面板，请单击工具栏按钮或键盘上按 F7。
+* 鼠标悬停在控件或要显示的工具提示，其中包含键盘、 鼠标和游戏板控件字段。
+* 若要显示或隐藏手的形状，请切换左侧或右侧下相应的开关。
+* 若要控制手形图标，使用键盘或游戏板上的左侧或右侧缓冲器上的左侧或右侧的 Alt 键。
+* 若要指示一个或两个手中的所有输入，请切换开关下单击图钉按钮。  这是按住 Alt 键的手形图标的等效项。
+* 若要控制关注的视线移动方向，单击"双眼睛"部分中的图钉。  这相当于按下键盘上的 Y 键。
+* 若要加载记录的房间，单击"记录"部分中的"加载"按钮。  请参阅[模拟聊天室](#simulated-rooms)有关详细信息。
+* 若要调整模拟的人或模拟输入的设备将移动或旋转以响应键盘的速度，鼠标或游戏板输入中，单击"输入设置"旁边的齿轮图标和调整滑块。
+* 默认情况下，通过键盘输入控制模拟人类和模拟输入。  若要让你的电脑的键盘输入通过发送到 HoloLens，取消选中"使用模拟的键盘"。  F4 是此设置的快捷键。
+* 如果已显示模拟面板中，按 F8 将移到它的键盘焦点。
+* 若要取消停靠从模拟器窗口的模拟面板，单击底部面板中的按钮或键盘上按 F9。  关闭窗口或按 F9 就会将窗口还原到仿真程序。
+* 可以作为单独的应用程序，您可以连接到并通过在运行 %programfiles(x86)%PerceptionSimulationInput.exe 控制 HoloLens 2 仿真程序、 HoloLens 2 设备或 Windows Mixed Reality 模拟启动模拟控制面板 \Windows Kits\10\Microsoft XDE\10.0.18362.0\。
+
+### <a name="account-tab"></a>“帐户”选项卡
+
+帐户选项卡，可将模拟器配置为使用 Microsoft 帐户登录。 这是用于测试需要用户能够登录的帐户的 Api。  切换此选项需要完全关闭并重新启动 HoloLens 仿真程序的设置，才会生效。  如果启用此选项，后续启动仿真程序将要求你登录，就像用户会在首次启动 HoloLens。  若要快速输入你的凭据使用你的电脑的键盘，请首先关闭"使用键盘进行模拟"在模拟控件面板中，或切换键盘设置打开或关闭在键盘上按 F4。
+
+### <a name="optional-settings-tab"></a>可选设置选项卡
+
+可选设置选项卡将显示控件来启用或禁用硬件加速的图形。  将默认情况下，如果你的电脑的图形适配器驱动程序支持使用硬件加速的图形。  如果图形适配器的驱动程序不支持 GPU PV，则此选项将不可见。
+
+### <a name="diagnostics-tab"></a>诊断选项卡
+
+诊断选项卡显示仿真程序的 IP 地址中链接的窗体与 Windows Device Portal 以及虚拟 GPU 的状态。
+
+
+## <a name="anatomy-of-the-hololens-1st-gen-emulator"></a>剖析 HoloLens （第 1 代） 仿真程序
 
 ### <a name="main-window"></a>主窗口
 
@@ -112,23 +160,54 @@ HoloLens 仿真程序依赖于使用 HYPER-V 和使用 RemoteFx 的硬件加速�
 
 ![HoloLens 仿真程序聊天室选项卡](images/emulator-room-500px.png)
 
-模拟的聊天室可用于在多个环境中测试您的应用程序。 多个房间都附带了仿真程序和安装后仿真，您将在 %programfiles(x86) %\Program 文件 (x86) \Microsoft XDE\10.0.11082.0\Plugins\Rooms 中找到它们。 在真实环境中使用 HoloLens 捕获了所有这些聊天室：
+请参阅[模拟聊天室](#simulated-rooms)有关详细信息。
+
+### <a name="account-tab"></a>“帐户”选项卡
+
+帐户选项卡，可将模拟器配置为使用 Microsoft 帐户登录。 这是用于测试的需要 API 用户能够登录的帐户。 在检查后此页上的框，后续启动仿真程序将要求你登录，就像用户一样首次启动 HoloLens。
+
+## <a name="simulated-rooms"></a>模拟的聊天室
+
+模拟的聊天室可用于在多个环境中测试您的应用程序。 多个房间都附带了仿真程序和安装后仿真，您会发现，在 %programfiles (x86) %\Windows Kits\10\Microsoft XDE\\\Plugins\Rooms （版本）。 在真实环境中使用 HoloLens 捕获了所有这些聊天室：
 * **DefaultRoom.xef** -与电视、 咖啡表和两个 sofas 小客厅。 启动仿真程序时，默认情况下加载。
 * **Bedroom1.xef** -向支持小卧室。
 * **Bedroom2.xef** -黑桃皇后大小平台、 梳妆台、 nightstands，与 walk-in 密室卧室。
 * **GreatRoom.xef** -起居室、 餐桌，与厨房中使用大型的空白空间很好聊天室。
 * **LivingRoom.xef** -客厅使用壁炉、 沙发、 摇椅，和具有花瓶咖啡表。
 
-此外可以记录使用的模拟页在仿真程序中使用你自己聊天室[Windows Device Portal](using-the-windows-device-portal.md)在 HoloLens 上。
+此外可以记录使用的模拟页在仿真程序中使用你自己聊天室[Windows Device Portal](using-the-windows-device-portal.md)在 HoloLens 上 （第 1 代）。
 
-在仿真程序中，将只能看到全息您呈现，则不会看到模拟背后全息房间。 这是实际 HoloLens 同时看到其中与混合在一起。 如果想要查看模拟的聊天室 HoloLens 仿真程序中，将需要更新你的应用场景中将空间的映射网格渲染。
+在模拟器中，将只看到全息您呈现，则不会看到模拟背后全息房间。 这是实际 HoloLens 同时看到其中与混合在一起。 如果想要查看模拟的聊天室 HoloLens 仿真程序中，将需要更新你的应用场景中将空间的映射网格渲染。
 
-### <a name="account-tab"></a>“帐户”选项卡
+## <a name="troubleshooting"></a>疑难解答
 
-帐户选项卡，可将模拟器配置为使用 Microsoft 帐户登录。 这是用于测试的需要 API 用户能够登录的帐户。 在检查后此页上的框，后续启动仿真程序将要求你登录，就像用户一样首次启动 HoloLens。
+在安装所需的仿真程序时，可能会出错 *"Visual Studio 2015 Update 1 和 UWP 工具版本 1.2"*。 有三个可能导致此错误的原因：
+* 没有足够新版本的 Visual Studio （Visual Studio 2019、 Visual Studio 2017 或 Visual Studio 2015 Update 1 或更高版本）。 若要更正此问题，请安装最新版本的 Visual Studio。
+* 具有足够新版本的 Visual Studio 中，但不是具有安装了通用 Windows 平台 (UWP) 工具。 这是 Visual Studio 的可选功能。
+
+启用还可能会看到安装仿真程序上非-教育版 Pro/企业版 SKU 的 Windows 错误或如果不具有 HYPER-V 功能。
+* 请阅读[系统要求](#hololens-emulator-system-requirements)上面部分的一组完整的要求。
+* 请也确保您的系统上启用了 HYPER-V 功能。
+
+如果您的安装成功完成，但未看到 HoloLens 仿真程序作为一个选项来部署和调试，请检查以下项：
+* Visual Studio 项目配置的设置为 x86 （HoloLens 第一代） 或 x86 或 x64 （HoloLens 2 仿真程序）。
+* 如果使用 Visual Studio 2019，将项目配置中的平台工具集设置为 v142。
+
+如果您的安装已成功完成，但 Visual Studio 会显示尝试启动 HoloLens 仿真程序，请尝试以下错误：
+* 以管理员身份运行 Visual Studio
+* 如果只有已安装的 Visual Studio 2019，验证是否 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Kits\Installed 根处的注册表值"KitsRoot10"指向 32 位 Program Files 文件夹 (例如，"C:\Program Files (x86) \Windows 工具包\10")。  如果未显示，卸载 HoloLens 仿真程序，将注册表值更改为 32 位 Program Files 文件夹，然后重新安装 HoloLens 仿真程序。  在 Visual Studio 2019 16.0.3 中解决此问题。
+
+如果仿真程序启动时，将显示"无效字节编码"错误对话框：
+* 删除 %localappdata%\Microsoft\XDE\HCS 中的所有文件，然后重试。
+
+在 Visual Studio 中的调试目标列表是否为空 （例如，"Start"是唯一的选项） 并已按照上述所有故障排除步骤：
+* 删除 ConfigurationCache 文件夹中 %localappdata%\Microsoft\VisualStudio\\<*安装 id*> \CoreCon，然后重试。
+
+如果您的系统挂起仿真程序启动时，，禁用硬件加速的仿真器图形。
+* 创建一个名为"DisableGPU"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\XDE\10.0 处的注册表 DWORD 值并将其值设置为 1。
 
 ## <a name="see-also"></a>请参阅
-* [高级的 HoloLens 仿真程序和混合现实模拟器输入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
+* [高级 HoloLens 仿真器和混合现实模拟器输入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
 * [HoloLens 模拟器软件历史记录](hololens-emulator-archive.md)
-* [在 Unity 中的空间映射](spatial-mapping-in-unity.md)
-* [在 DirectX 空间映射](spatial-mapping-in-directx.md)
+* [Unity 中的空间映射](spatial-mapping-in-unity.md)
+* [DirectX 中的空间映射](spatial-mapping-in-directx.md)

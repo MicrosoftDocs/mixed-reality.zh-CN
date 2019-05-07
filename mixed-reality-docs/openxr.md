@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 3/18/2019
 ms.topic: article
 keywords: 混合的现实 OpenXR 开发者预览版
-ms.openlocfilehash: 0d8debf5c12cb88aaba402145c6a597f761491ee
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c5ac87145ca23e4a6fbe578a285e27d50f1f22a1
+ms.sourcegitcommit: 36192101052666da01dd6c59cad4cfabd4ecb6f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592752"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048495"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -19,31 +19,42 @@ OpenXR 是开放式的免版税的标准从[Khronos](https://www.khronos.org/)�
 
 使用 OpenXR，您可以构建面向 holographic 设备 （如 HoloLens 2)，将数字内容放置在现实生活中，就好像确实存在，以及隐藏的沉浸式设备 （如桌面 Pc 的 Windows 混合现实耳机） 的应用程序物理世界并替换为数字的体验。  OpenXR 允许你编写代码后，然后可移植对多种硬件平台。
 
-OpenXR 标准当前在临时阶段中，是与发布的反馈意见的初始 OpenXR 0.90 规范。  有关详细信息 OpenXR，包括对访问权限[临时 0.90 规范](https://www.khronos.org/registry/OpenXR/specs/0.90/html/xrspec.html)和[标头](https://github.com/KhronosGroup/OpenXR-Docs/tree/master/include/openxr)，请参阅[Khronos OpenXR 页](https://www.khronos.org/openxr/)。
+OpenXR 标准当前在临时阶段中，是与发布的反馈意见的初始 OpenXR 0.90 规范。  有关详细信息 OpenXR，包括对访问权限[临时 0.90 规范](https://www.khronos.org/registry/OpenXR/specs/0.90/html/xrspec.html)和[标头](https://github.com/KhronosGroup/OpenXR-Docs/tree/master/include/openxr)，请参阅[Khronos OpenXR 页](https://www.khronos.org/openxr/)。 
 
-## <a name="setting-up-the-mixed-reality-openxr-developer-preview"></a>设置混合现实 OpenXR 开发者预览版
+您可以试用 HoloLens 2 或使用混合现实 OpenXR 开发者预览版台式计算机上的临时 OpenXR 0.90 API。  此早期的运行时，面向 OpenXR 0.90 API 的应用程序以面向 HoloLens 2 或 Windows Mixed Reality 沉浸式耳机在桌面上。
 
-您可以尝试立即使用混合现实 OpenXR 开发者预览版临时 OpenXR 0.90 API。  此早期的运行时，定位到桌面上的目标 Windows Mixed Reality 沉浸式耳机 OpenXR 0.90 API 的应用程序。  如果无法访问头戴式耳机，可以改为使用 Windows 混合现实模拟器。
+如果无法访问头戴式耳机，可以改为使用 HoloLens 2 仿真程序或 Windows 混合现实模拟器。
 
-若要开始使用混合现实 OpenXR 开发者预览版：
+## <a name="setting-up-the-mixed-reality-openxr-developer-preview-for-hololens-2"></a>设置 HoloLens 2 混合现实 OpenXR 开发者预览版
 
-1. 确保你至少运行 Windows 10 2018 年 10 月更新。  如果您在早期版本的 Windows 10 上，你可以升级到 2018 年 10 月更新使用[Windows 10 更新助手](https://www.microsoft.com/en-us/software-download/windows10)。  如果您感到大胆，则可以安装[Windows 10 Insider Preview 生成](https://insider.windows.com)。
+若要开始使用混合现实 OpenXR 开发者预览版 HoloLens 2 上：
+
+1. 设置 HoloLens 2 或按照说明[安装 HoloLens 2 模拟器](using-the-hololens-emulator.md)。
+1. 启动应用商店应用程序从设备或仿真程序中的，并确保更新所有应用。  这会使用该设备上的应用程序安装用于混合现实 OpenXR 开发者预览版。  如果使用模拟器，您将需要查阅[仿真程序输入说明](using-the-hololens-emulator.md#basic-emulator-input)可帮助你使用应用商店应用在仿真程序内的。
+
+## <a name="setting-up-the-mixed-reality-openxr-developer-preview-for-immersive-desktop-headsets"></a>设置沉浸式桌面耳机混合现实 OpenXR 开发者预览版
+
+若要开始使用桌面 PC 上混合现实 OpenXR 开发者预览版：
+
+1. 确保你至少运行 Windows 10 2018 年 10 月更新 (1809)。  如果您在早期版本的 Windows 10 上，你可以升级到 2018 年 10 月更新使用[Windows 10 更新助手](https://www.microsoft.com/en-us/software-download/windows10)。  如果您感到大胆，则可以安装[2019 年 5 Windows 10 Insider Preview 版本更新 (1903)](https://insider.windows.com)。
 1. 设置 Windows 混合现实耳机或按照说明[启用 Windows Mixed Reality 模拟器](using-the-windows-mixed-reality-simulator.md)。
-1. 安装[混合的现实 OpenXR 开发人员预览应用](https://www.microsoft.com/store/productId/9n5cvvl23qbt)。  此应用可帮助你在 Windows 上使用预览 OpenXR 运行时设置了 10 2018 年 10 月更新或更高版本。  安装此应用后，Windows 应用商店将保留在运行时保持最新。
+1. 安装[混合的现实 OpenXR 开发人员预览应用](https://www.microsoft.com/store/productId/9n5cvvl23qbt)。  此应用可帮助你使用预览版 OpenXR 运行时上设置 Windows 10 2018 年 10 月更新 (1809) 或更高版本。  安装此应用后，Windows 应用商店将保留在运行时保持最新。
 1. 从开始菜单运行混合现实 OpenXR 开发者预览版应用并按照说明进行操作以使运行时处于活动状态。  很快，此应用会让您浏览以及其他 OpenXR 调试信息。
 
 ![混合的现实 OpenXR 开发人员预览应用](images/mixed-reality-openxr-developer-preview.png)
 
-## <a name="support-for-windows-10-october-2018-update"></a>支持 Windows 10 2018 年 10 月更新
+### <a name="support-for-windows-10-october-2018-update"></a>支持 Windows 10 2018 年 10 月更新
 
-若要开始使用混合现实 OpenXR 开发者预览版在 Windows 10 2018 年 10 月更新 （Windows 的当前版本），将需要遵循几个步骤：
+若要开始使用混合现实 OpenXR 开发者预览版在桌面计算机上使用 Windows 10 2018 年 10 月更新 (1809，当前版本的 Windows)，将需要遵循几个步骤：
 
 1. 按照上述步骤来安装混合现实 OpenXR 开发者预览版。
 1. 若要将您的系统活动 OpenXR 运行时设置混合现实 OpenXR 开发者预览版，请安装[混合现实 OpenXR 开发人员预览版兼容性工具包](https://aka.ms/openxr-compat)。
 
-## <a name="building-a-test-openxr-app"></a>构建测试 OpenXR 应用
+## <a name="building-a-sample-openxr-app"></a>构建示例 OpenXR 应用
 
-[Hello_xr](https://github.com/KhronosGroup/OpenXR-SDK/tree/master/src/tests/hello_xr) OpenXR 测试应用程序说明如何使用 API 的各个部分。  您可以按照以下[构建说明](https://github.com/KhronosGroup/OpenXR-SDK/blob/master/BUILDING.md)，这将生成测试应用程序和 OpenXR 标头本身。
+[BasicXrApp](https://github.com/Microsoft/OpenXR-SDK-VisualStudio/tree/master/samples/BasicXrApp)项目演示简单 OpenXR 示例由两个 Visual Studio 项目文件，一个同时 Win32 桌面应用程序，一个用于 UWP HoloLens 2 应用程序。  因为该解决方案包含 HoloLens UWP 项目，你将需要[通用 Windows 平台开发工作负载](install-the-tools.md#installation-checklist)安装在 Visual Studio 以完全将其打开。
+
+请注意，尽管 Win32 和 UWP 项目文件是单独由于打包和部署，每个项目中的应用程序代码之间的差异是 100%相同 ！
 
 ## <a name="feedback"></a>反馈
 
@@ -59,7 +70,7 @@ OpenXR 标准当前在临时阶段中，是与发布的反馈意见的初始 Ope
 
 ### <a name="mixed-reality-openxr-developer-preview-app-cannot-be-installed"></a>混合的现实 OpenXR 开发者预览版应用无法在安装 
 
-确保你至少运行 Windows 10 2018 年 10 月更新。  如果您在早期版本的 Windows 10 上，你可以升级到 2018 年 10 月更新使用[Windows 10 更新助手](https://www.microsoft.com/en-us/software-download/windows10)。
+确保你至少运行 Windows 10 2018 年 10 月更新 (1809)。  如果您在早期版本的 Windows 10 上，你可以升级到 2018 年 10 月更新使用[Windows 10 更新助手](https://www.microsoft.com/en-us/software-download/windows10)。
 
 如果安装按钮上的混合现实 OpenXR 开发者预览版应用不会在 Windows 10 2018 年 10 月更新，您的系统已缓存应用程序的过时的系统要求。  可以运行命令`wsreset.exe`在命令提示符下，若要清除的缓存。
 
@@ -69,3 +80,4 @@ OpenXR 标准当前在临时阶段中，是与发布的反馈意见的初始 Ope
 * [OpenXR 临时 0.90 规范](https://www.khronos.org/registry/OpenXR/specs/0.90/html/xrspec.html)
 * [OpenXR 临时 0.90 API 参考](https://www.khronos.org/registry/OpenXR/specs/0.90/man/html/)
 * [OpenXR 临时 0.90 标头](https://github.com/KhronosGroup/OpenXR-Docs/tree/master/include/openxr)
+* [OpenXR 临时 0.90 快速参考指南](https://www.khronos.org/registry/OpenXR/specs/0.90/refguide/OpenXR-0.90-web.pdf)

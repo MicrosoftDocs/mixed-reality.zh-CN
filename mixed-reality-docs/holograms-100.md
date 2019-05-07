@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 混合现实，Windows Mixed Reality 开始 HoloLens，令人着迷，vr，先生，，全息图，学院，教程
-ms.openlocfilehash: 1f4a5490383671fba694b386015ff6742d37241b
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: fd3bed955e80ec18b7be500adbdb0fcb7062d129
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590106"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993624"
 ---
 >[!NOTE]
 >混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
@@ -32,7 +32,7 @@ ms.locfileid: "59590106"
 </tr>
 </table>
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 * 使用正确配置 Windows 10 电脑[安装工具](install-the-tools.md)。
 
@@ -97,7 +97,7 @@ Unity Main Camera 处理跟踪的头节点和立体呈现。 有一些更改以�
 
 由于维护在 HoloLens 上的高帧速率是很重要，我们需要的最快的性能优化的质量设置。 有关更多详细性能信息[Unity 的性能建议](performance-recommendations-for-unity.md)。
 1. 选择**编辑 > 项目设置 > 质量**
-2. 选择**下拉列表中**下**Windows 应用商店**徽标，然后选择**非常低**。 你将了解中的 Windows 应用商店列和最快的行的框为绿色时正确地应用设置。
+2. 选择**下拉列表中**下**Windows 应用商店**徽标，然后选择**非常低**。 您将知道当正确应用了设置 Windows 应用商店列中的框并**非常低**行都显示为绿色。
 
 **混合的现实针对的应用程序到封闭的像素显示**，可以将质量设置保留到其默认值。
 
@@ -220,6 +220,6 @@ Unity Main Camera 处理跟踪的头节点和立体呈现。 有一些更改以�
 
 ## <a name="see-also"></a>请参阅
 * [Unity 开发概述](unity-development-overview.md)
-* [使用 Unity 和 Visual Studio 的最佳实践](best-practices-for-working-with-unity-and-visual-studio.md)
+* [使用 Unity 和 Visual Studio 的最佳做法](best-practices-for-working-with-unity-and-visual-studio.md)
 * [MR 基础知识 101](holograms-101.md)
 * [MR 基础知识 101E](holograms-101e.md)

@@ -6,12 +6,12 @@ ms.author: daescu
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 事件、 日历、 学院、 计划、 sf、 san francisco 反应堆
-ms.openlocfilehash: ca58f1a4c8c058ca58def184298881807a32e613
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c896cf398bd10fc12e5afed6313cbd95e5370c31
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592260"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64670121"
 ---
 # <a name="microsoft-mixed-reality-events"></a>Microsoft 混合现实事件
 
@@ -24,45 +24,12 @@ San Francisco, CA 94107
 
 
 ---
-## <a name="mixed-reality-workgroup-san-francisco-reactorhttpsemea01safelinksprotectionoutlookcomurlhttps3a2f2fwwwmeetupcom2fhololens-mr2fdata027c017cdaescu40microsoftcom7ca8ddee063b7949a9992308d6903e62b07c72f988bf86f141af91ab2d7cd011db477c17c07c636854994961124360sdataymnaaiwvxij700mo9gj2boz4w82bgkdjdhijhytfczcfu3dreserved0"></a>**[混合的现实工作组中，San Francisco 反应堆](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961124360&sdata=YmnAAiWVxIJ700mO9gj%2BOz4W8%2BgKDjDhiJhYtfCzCFU%3D&reserved=0)** 
-### <a name="april-8-2019"></a>2019 年 4 月 8日日
-为工作组中，我们想要使内容保持非常随意、 只显示大约 6:00、 常去和工作一段时间 ！ 它是从其他开发人员，寻求帮助和并且已经尝试过，它从其他人的建议或反馈冷却一段时间后工作和代码的好机会 ！ 因此可以直接便携式计算机，使一个项目，以及将一种开放思维 ！ Microsoft 反应堆是一款宽大位置，并且我们将保持繁忙的众包，因此受限制的出席情况。 我们希望你 ！
-
-**注册到 meetup[此处](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961124360&sdata=YmnAAiWVxIJ700mO9gj%2BOz4W8%2BgKDjDhiJhYtfCzCFU%3D&reserved=0)**
-
-
----
-## <a name="hololens-and-mixed-reality-meetup-san-francisco-reactorhttpsemea01safelinksprotectionoutlookcomurlhttps3a2f2fwwwmeetupcom2fhololens-mr2fdata027c017cdaescu40microsoftcom7ca8ddee063b7949a9992308d6903e62b07c72f988bf86f141af91ab2d7cd011db477c17c07c636854994961074327sdata082fhayyghofjc63hqaeb0bju4wv8jph2bscd2fgihkmog3dreserved0"></a>**[HoloLens 和混合的现实会议，San Francisco 反应堆](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961074327&sdata=08%2FHAyYghOFJC63HQAeb0bJU4Wv8JPH%2BSCD%2FgIhkMog%3D&reserved=0)**
-### <a name="april-11-2019"></a>2019 年 4 月 11日日
-让我们一起进行交谈以及了解有关 HoloLens 和混合现实。 没有巨大的机会开发人员能够访问数以千计的企业和数以百万计的客户的构建体验以帮助他们在日常生活中的用户 ！
-
-**注册到 meetup[此处](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961074327&sdata=08%2FHAyYghOFJC63HQAeb0bJU4Wv8JPH%2BSCD%2FgIhkMog%3D&reserved=0)**
-
-
----
-## <a name="the-realities-show-livestream-from-san-francisco-reactorhttpakamstrs"></a>**[现实情况显示 (从 San Francisco 反应堆 Livestream)](http://aka.ms/trs)**
-### <a name="april-23-2019"></a>2019 年 4 月 23日日
-实际问题显示为 30 分钟视频直播有关 HoloLens 2、 混合现实服务和 MR 技术。 在每个节目中我们将深入探讨功能、 功能、 其背后的技术，如何开发适用于不同设备，建议的最佳做法和当然回答问题从我们的目标受众。
-
-此段是有关人了解的全部信息。 附近的交互、 远端交互、 眼睛跟踪和语音。
-
-**[观看直播和过去剧集此处。](http://aka.ms/trs)**
-
-
----
 ## <a name="mixed-reality-dev-days-seattlehttpsdocsmicrosoftcomen-uswindowsmixed-realitymr-dev-days"></a>**[混合的现实开发天西雅图](https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days)**
 ### <a name="may-2-3-2019"></a>2019 2019年 2-3 月 5 日
 混合现实 Dev Days 上将构建技能、 网络和需要执行一层楼混合的现实应用程序的想法。
 
 **[此处的详细信息](https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days)**
 
-
----
-## <a name="the-realities-show-livestream-from-san-francisco-reactorhttpakamstrs"></a>**[现实情况显示 (从 San Francisco 反应堆 Livestream)](http://aka.ms/trs)**
-### <a name="may-6-2019"></a>2019 年 5 月 6 日，
-实际问题显示为 30 分钟视频直播有关 HoloLens 2、 混合现实服务和 MR 技术。 在每个节目中我们将深入探讨功能、 功能、 其背后的技术，如何开发适用于不同设备，建议的最佳做法和当然回答问题从我们的目标受众。
-
-**即将推出的详细信息。[观看之前的片段。](http://aka.ms/trs)**
 
 
 ---
@@ -79,14 +46,6 @@ San Francisco, CA 94107
 让我们一起进行交谈以及了解有关 HoloLens 和混合现实。 没有巨大的机会开发人员能够访问数以千计的企业和数以百万计的客户的构建体验以帮助他们在日常生活中的用户 ！
 
 **注册到 meetup[此处](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961074327&sdata=08%2FHAyYghOFJC63HQAeb0bJU4Wv8JPH%2BSCD%2FgIhkMog%3D&reserved=0)**
-
-
----
-## <a name="the-realities-show-livestream-from-san-francisco-reactorhttpakamstrs"></a>**[现实情况显示 (从 San Francisco 反应堆 Livestream)](http://aka.ms/trs)**
-### <a name="may-28-2019"></a>2019 年 5 月 28 日，
-实际问题显示为 30 分钟视频直播有关 HoloLens 2、 混合现实服务和 MR 技术。 在每个节目中我们将深入探讨功能、 功能、 其背后的技术，如何开发适用于不同设备，建议的最佳做法和当然回答问题从我们的目标受众。
-
-**即将推出的详细信息。[观看之前的片段。](http://aka.ms/trs)**
 
 
 ---
@@ -111,14 +70,6 @@ San Francisco, CA 94107
 让我们一起进行交谈以及了解有关 HoloLens 和混合现实。 没有巨大的机会开发人员能够访问数以千计的企业和数以百万计的客户的构建体验以帮助他们在日常生活中的用户 ！
 
 **注册到 meetup[此处](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.meetup.com%2Fhololens-mr%2F&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961074327&sdata=08%2FHAyYghOFJC63HQAeb0bJU4Wv8JPH%2BSCD%2FgIhkMog%3D&reserved=0)**
-
-
----
-## <a name="the-realities-show-livestream-from-san-francisco-reactorhttpakamstrs"></a>**[现实情况显示 (从 San Francisco 反应堆 Livestream)](http://aka.ms/trs)**
-### <a name="june-14-2019"></a>2019 年 6 月 14日日
-实际问题显示为 30 分钟视频直播有关 HoloLens 2、 混合现实服务和 MR 技术。 在每个节目中我们将深入探讨功能、 功能、 其背后的技术，如何开发适用于不同设备，建议的最佳做法和当然回答问题从我们的目标受众。
-
-**即将推出的详细信息。[观看之前的片段。](http://aka.ms/trs)**
 
 
 ---

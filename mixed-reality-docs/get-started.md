@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 08/06/2018
 ms.topic: article
 keywords: 开始，基础知识，HoloLens，沉浸式头戴式耳机、 ar、 vr、 unity、 visual studio、 快速入门中，如何
-ms.openlocfilehash: 92fbc6eee227da571ff36401f84cf81a093062d7
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4277de37ffe4a7ab03f382626452b96bf9157634
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592254"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873962"
 ---
 # <a name="get-started"></a>立即开始行动
 
@@ -63,7 +63,7 @@ ms.locfileid: "59592254"
 
 既然您已成功创建第一个 MR 项目，您就可能消耗大量的详细信息 ！ 下面是一些资源，可帮助：
 * [混合现实开发人员文档](mixed-reality.md)-您已经在这里，但有更多功能，若要查看，包括技术文档、 设计指南、 示例项目和案例研究。
-* [混合的现实学院](academy.md)-按照教程涵盖了从项目中，为实现核心 MR 构建基块进行设置，将集成 Azure MR 应用到云服务。
+* [混合现实教程](tutorials.md)-按照教程涵盖了从项目中，为实现核心 MR 构建基块进行设置，将集成 Azure MR 应用到云服务。
 * [了解 Unity](https://unity3d.com/learn) -Unity 的网站提供教程、 项目和实时培训课程创建者的每个阶段的学习。
 
 此外可以从这些良好的社区资源获取帮助：

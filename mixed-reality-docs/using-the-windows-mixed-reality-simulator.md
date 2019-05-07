@@ -1,17 +1,17 @@
 ---
 title: 使用 Windows Mixed Reality 模拟器
 description: Windows Mixed Reality 模拟器，您可以测试混合的现实应用而无需 Windows Mixed Reality 沉浸式头戴式在 PC 上。
-author: JonMLyons
-ms.author: jlyons
-ms.date: 03/21/2018
+author: pbarnettms
+ms.author: pbarnett
+ms.date: 04/25/2019
 ms.topic: article
 keywords: Windows 混合现实，模拟器中测试
-ms.openlocfilehash: 782cab85f163edd2afc4251210b7596c73dcc8b8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: a7cbd5b5ca1c0ed0e4f81715d337d5eec68117f0
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592746"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64580705"
 ---
 # <a name="using-the-windows-mixed-reality-simulator"></a>使用 Windows Mixed Reality 模拟器
 
@@ -28,7 +28,7 @@ Windows Mixed Reality 模拟器，您可以测试混合的现实应用而无需 
    4. 单击**设置**来确认你的选择
 4. 单击**面向开发人员**混合现实门户左侧的按钮
 5. 将模拟切换开关置于**上**
-   * 这需要具有管理员权限，并且必须接受显示的用户帐户控制对话框
+   * 启用模拟安装，并默认情况下启用模拟的 6 DOF 左的控制器。  在 Windows 之前 2019 年 5 10 个更新，安装模拟的 6 DOF 控制器需要管理员权限。  如果有，你必须接受用户帐户控制对话框。
 
 你现在应运行与模拟 ！
 
@@ -50,14 +50,16 @@ Windows Mixed Reality 模拟器，您可以测试混合的现实应用而无需 
 ## <a name="tracked-controllers"></a>跟踪的控制器
 
 混合现实模拟器可以模拟最多两个手持跟踪的动作控制器。 启用它们在混合现实门户中使用切换开关。 每个模拟的控制器具有：
-* 在空间中的位置
+* 位置和方向中的空间
 * “主页”按钮
 * “菜单”按钮
 * 手柄按钮
 * 触摸板
+* 摇杆
+* 电池电量水平
 
 ## <a name="see-also"></a>请参阅
 * [使用 HoloLens 仿真器](using-the-hololens-emulator.md)
 * [高级混合的现实模拟器输入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
-* [在 Unity 中的空间映射](spatial-mapping-in-unity.md)
-* [在 DirectX 空间映射](spatial-mapping-in-directx.md)
+* [Unity 中的空间映射](spatial-mapping-in-unity.md)
+* [DirectX 中的空间映射](spatial-mapping-in-directx.md)

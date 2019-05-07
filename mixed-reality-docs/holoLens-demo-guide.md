@@ -6,15 +6,16 @@ ms.author: jemccull
 ms.date: 12/27/2018
 ms.topic: article
 keywords: HoloLens、 用户
-ms.openlocfilehash: 906f7223c06c15352cc600f2d302bf0609f04089
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 794b642bec687b3ef9fa822ddce811105ebddcdb
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592386"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64670148"
 ---
 <H1>调整 HoloLens （第 1 代） 设备的演示 </H1>
 
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/be3cb527-f2f1-4f85-b4f7-a34fbaba980d]
 
 |     |     |
 |:---:|:---:|

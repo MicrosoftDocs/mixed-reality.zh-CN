@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit，mixedrealitytoolkit、 mixedrealitytoolkit unity、 学院、 教程、 空间映射，图面上重新构造，网格
-ms.openlocfilehash: 8d5715337ddd20e9868b18fdf0c63c704f584972
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: ed58676a0fda660cc6b4c197239aeb53166baa4d
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592170"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993562"
 ---
 >[!NOTE]
 >混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
@@ -85,7 +85,7 @@ ms.locfileid: "59592170"
     * 麦克风
     * SpatialPerception
 * 转到**编辑 > 项目设置 > 质量**
-* 在中**Inspector**面板，在 Windows 应用商店图标，然后选择下的默认行的黑色下拉箭头并将默认设置更改为**Fastest**。
+* 在中**Inspector**面板，在 Windows 应用商店图标，然后选择下的默认行的黑色下拉箭头并将默认设置更改为**非常低**。
 * 转到**资产 > 导入包 > 自定义包**。
 * 导航到 **...\HolographicAcademy-Holograms-230-SpatialMapping\Starting**文件夹。
 * 单击**Planetarium.unitypackage**。

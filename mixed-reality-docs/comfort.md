@@ -3,15 +3,15 @@ title: 舒适
 description: 在自然查看人工 visual 系统依赖于多个源的信息，或"提示，"将解释 3D 形状和对象的相对位置。
 author: erickjpaul
 ms.author: erpau
-ms.date: 02/13/2019
+ms.date: 04/5/2019
 ms.topic: article
-keywords: 混合的现实，设计、 舒适
-ms.openlocfilehash: dbf7080f5b9a2ebafdbd06fca79fae717b3207ed
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: 混合现实，设计，改善环境，HoloLens 2 HoloLens （第 1 代）
+ms.openlocfilehash: 3dac997923b3f2319cb97137c1bbd9a12c4126b1
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593034"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993627"
 ---
 # <a name="comfort"></a>舒适
 
@@ -34,7 +34,7 @@ HoloLens 显示固定为光学的距离大约 2.0 m 的用户。 因此，用户
 ![放置全息从用户的最佳距离。](images/distanceguiderendering-950px.png)<br>
 *将用户从全息的最佳距离*
 
-#### <a name="best-practices-for-hololens-1st-gen-and-hololens-2"></a>HoloLens 的最佳实践 （第 1 代） 和 HoloLens 2
+### <a name="best-practices-for-hololens-1st-gen-and-hololens-2"></a>HoloLens 的最佳实践 （第 1 代） 和 HoloLens 2
 
 最大舒适**全息图放置的最佳区域是 1.25 m 和 5 分钟之间**。 设计器结构鼓励用户进行交互的内容场景中每种情况下，应尝试 1m 或内容距离较远 (例如调整[内容大小和默认的位置参数](gaze-targeting.md))。 
 
@@ -42,10 +42,14 @@ HoloLens 显示固定为光学的距离大约 2.0 m 的用户。 因此，用户
 
 将移动的深度的对象是更有可能比静态对象以生成由于 vergence 便利设施存在冲突的不适。 同样，要求用户快速切换焦点近和远焦点 （例如，由于需要直接交互弹出 hologram) 可能导致 visual 不适和疲劳。 因此，**额外格外小心，应以何种频率最大程度减少用户是： 查看深度; 中移动的内容或快速之间切换焦点近和远全息**。 
 
-在设计为直接 (near) HoloLens 2 中的交互内容或**中的内容必须放置的位置更接近于 1 百万的任何应用程序，应采取格外小心以确保用户舒适**。 由于 vergence 便利设施冲突不适的几率降低观看距离会呈指数增加。 **我们建议创建基于用户希望查看的内容的附近 （< 1 米） 是的时间量，在深度移动应用的"深度 budget"**。 例如，避免将用户放在这些情况下多个 25%的时间。 如果超出深度预算，我们建议仔细用户测试，以确保它保持舒适的体验。
+### <a name="additional-considerations-for-hololens-2-and-near-interaction-distances"></a>HoloLens 2 和交互距离附近的其他注意事项
 
-> [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
+在设计为直接 (near) HoloLens 2 中的交互内容或**中的内容必须放置的位置更接近于 1 百万的任何应用程序，应采取格外小心以确保用户舒适**。 由于 vergence 便利设施冲突不适的几率降低观看距离会呈指数增加。 此外，用户可能会遇到增加的 bluriness 附近交互的距离，查看内容，因此，我们建议测试内容呈现同时也为更接近最佳全息图放置 (小于下剪裁平面的 1.0 m) 区域中时为确保它保持清晰而舒适地查看。 
+
+**我们建议创建基于用户希望查看的内容的接近 (小于 1.0 m) 的时间量，在深度移动应用的"深度 budget"**。 例如，避免将用户放在这些情况下多个 25%的时间。 如果超出深度预算，我们建议仔细用户测试，以确保它保持舒适的体验。 
+
+一般情况下，我们还建议仔细测试，以在附近交互距离确保 （例如，速度移动，可访问性等） 的任何交互要求保持熟练的用户。 
+
 
 ### <a name="guidance-for-immersive-devices"></a>适用于沉浸式设备指南
 
@@ -65,8 +69,7 @@ IPD 指瞳孔、 或的个人的眼睛中心之间的距离。 VO 是指相对�
 
 #### <a name="hololens-2"></a>HoloLens 2
 
-> [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
+对于 HoloLens 2，估计和在关注/设备过程中设置 IPD[校准](calibration.md)。 为新用户添加到已设置设备，必须运行校准确保 IPD 设置正确。 VO 自动中考虑 HoloLens 2。 
 
 ### <a name="guidance-for-immersive-devices"></a>适用于沉浸式设备指南
 
@@ -120,7 +123,7 @@ Windows Mixed Reality 沉浸式 HMDs 具有 IPD 或 VO 没有自动校准。 可
 
 ## <a name="text-legibility"></a>文本以增强可读性
 
-减少眼睛疲劳和维护用户舒适，尤其是在应用程序或需要用户在 HMD 中读取的情况下，可以帮助最佳文本以增强可读性。 文本以增强可读性取决于许多因素，包括各种显示属性 （例如，像素密度、 亮度、 对比度）、 可重用功能区属性 （例如，色差） 和文本/字体属性 （例如，特定字体特征，如粗细、 具有衬线、 字体、 背景的颜色的颜色等）。  
+减少眼睛疲劳和维护用户舒适，尤其是在应用程序或需要用户在 HMD 中读取的情况下，可以帮助最佳文本以增强可读性。 文本以增强可读性取决于许多因素，包括各种显示属性 （例如，像素密度、 亮度、 对比度）、 可重用功能区属性 （例如，色差） 和文本/字体属性 （例如，特定字体特征等权重、 间距、 具有衬线等，字体，背景的颜色的颜色)。  
 
 一般情况下，我们建议测试特定的应用程序以提高可读性并进行字体大小大是可行的舒适的体验。 下面我们作为开发的起始点的常规指南。 请注意，所有字体大小以度为单位都报告[visual 角度](https://en.wikipedia.org/wiki/Visual_angle)而不是特定的物理大小，其中提供指南的最佳全息图放置区域内任何距离因为它的大小文本和它出现在查看器的距离。 
 
@@ -130,18 +133,25 @@ Windows Mixed Reality 沉浸式 HMDs 具有 IPD 或 VO 没有自动校准。 可
 
 #### <a name="hololens-1st-gen"></a>HoloLens （第 1 代）
 
-最小的清晰垂直字体大小为大约 0.35 °，熟练垂直字体大小至少大约 0.5 ° 用于读取内容向用户显示在 2 分钟的距离。 
+（从字体基线 ascender 测量） 的最小的清晰字体大小为大约 0.35 °，熟练的字体大小至少大约 0.5 ° 用于读取内容向用户显示在 2 分钟的距离。 
 
 #### <a name="hololens-2"></a>HoloLens 2
 
-> [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
+（从字体基线 ascender 测量） 的最小清晰字号至少大约是： 
+   - 在 45 cm （直接操作距离） 为 0.4 °-0.5 ° 
+   - 在 2.0 m 0.35 °-0.4 °
+   
+轻松清晰的字体大小 （从字体基线 ascender 测量） 至少大约是： 
+   - 在 45 cm （直接操作距离） 0.65 °-0.8 °
+   - 在 2.0 m 0.6 °-0.75 °
+
+请注意，需要由于前面所述 vergence 便利设施冲突而是直接操作距离处的文本略大字体大小 （用户的眼睛会适应到 2.0 m 在 HoloLens，因此内容呈现在例如，45 cm可能出现更模糊到用户）。 
 
 ### <a name="guidance-for-immersive-devices"></a>适用于沉浸式设备指南
 
-沉浸式设备通常具有较高的对比度率，因为外部环境中，是完整封闭，但由于可重用功能区的前面显示的放大倍数部分具有较低的有效像素密度。 
+沉浸式设备通常具有较高的对比度率，因为完整封闭的外部环境中，但可能会由于的可重用功能区的前面显示放大倍数部分具有较低的有效像素密度。 
 
-对于 Windows Mixed Reality 沉浸式 HMDs 最小的清晰垂直字体大小是大约 0.7 0.9 ° 和熟练垂直字体大小为大约 1.0 ° 用于读取内容向用户显示在 2 分钟的距离。
+对于 Windows Mixed Reality 沉浸式 HMDs （从字体基线 ascender 测量） 的最小的清晰垂直字体大小是大约 0.7 0.9 ° 和熟练垂直字体大小为大约 1.0 ° 用于读取内容呈现到到 2 分钟用户。
 
 ## <a name="gaze-direction"></a>视线移动方向
 
@@ -160,8 +170,8 @@ Windows Mixed Reality 沉浸式 HMDs 具有 IPD 或 VO 没有自动校准。 可
 当用户需要保留的一种体验期间引发手的形状时，可能会累积肌肉疲劳。 此外 fatiguing，要求用户在重复进行长时间点击手势以无线方式。 因此，建议的体验，避免需要常量、 重复手势输入。 通过合并短暂的休息或提供混合使用手势和语音输入与应用交互，可以达到此目的。
 
 ## <a name="see-also"></a>请参阅
-* [Gaze](gaze.md)
-* [全息图稳定性](hologram-stability.md)
+* [凝视](gaze.md)
+* [全息影像稳定性](hologram-stability.md)
 * [交互基础知识](interaction-fundamentals.md)
-* [Holographic 帧](holographic-frame.md)
+* [全息帧](holographic-frame.md)
 * [校准](calibration.md)

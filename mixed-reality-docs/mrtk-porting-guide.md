@@ -1,21 +1,21 @@
 ---
 title: 让您的应用程序准备好使用 HoloLens 2
 description: 面向开发人员在 HoloLens 上已有一个应用 （第 1 代） 和/或较旧 MRTK，并查找移植到 MRTK 版本 2 和 HoloLens 2。
-author: author:grbury
+author: grbury
 ms.author: grbury
 ms.date: 04/12/19
 ms.topic: article
 keywords: Windows Mixed Reality 测试，MRTK、 MRTK 版本 2、 HoloLens 2
-ms.openlocfilehash: a5a329f69f5f9cc64666483adc92786ae8910b2f
-ms.sourcegitcommit: 07773e094ace2e828e329bd55da759983be3b8c1
+ms.openlocfilehash: 369470326d815ee711e96264939dd2e0487879b6
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59593105"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873915"
 ---
 # <a name="getting-your-existing-app-ready-for-hololens-2"></a>让您现有的应用程序准备好使用 HoloLens 2
 
-本指南专门用于帮助开发人员有 HoloLens 1，端口为新的 HoloLens 2 设备应用程序的现有 Unity 应用。 有四个关键步骤 HoloLens 1 Unity 将应用移植到 HoloLens 2。 以下各节将详细介绍每个阶段的信息。 
+本指南专门用于帮助开发人员的 HoloLens 具有现有的 Unity 应用程序 （第 1 代） 端口他们新的 HoloLens 2 设备的应用程序。 有四个关键步骤移植 HoloLens （第 1 代） 到 HoloLens 2 Unity 应用程序。 以下各节将详细介绍每个阶段的信息。 
 
 | 步骤 1 | 步骤 2 | 步骤 3 | 步骤 4 |
 |----------|-------------------|-------------------|-------------------|
@@ -31,11 +31,12 @@ ms.locfileid: "59593105"
 
 ## <a name="migrate-project-to-latest-version-of-unity"></a>将项目迁移到最新版本的 Unity
 
-移植您的 Unity 应用程序的第一步将在 Unity 的最新版本中打开它。 目前，有两个选项可供选择：Unity 2018.3.x 或 Unity 2019.1.x beta。 有多个之间的权衡这两个版本，但基数的倍数的主要区别在于能够编译 ARM64 在 Unity 2019 及更高。 
+如果使用 MRTK v2，Unity 2018 LTS 将不进行任何重大更改或 MRTK Unity 中的最佳的长期支持路径。  建议的 Unity 生成，每个上述"安装工具"是 Unity 2018.3，将成为 Unity 2018 的 LTS 版本。  此外，MRTK v2 将始终保证对 Unity 2018 LTS 的支持，但不是一定能保证每次迭代 Unity 支持 2019.x。 
 
-开发人员应评估任何[插件依赖项](https://docs.unity3d.com/Manual/Plugins.html)，当前在其项目和是否可以针对 ARM64 生成这些 Dll 中存在。 如果不能为 ARM64 生成硬依赖项插件，其中一个将需要利用 Unity 2018 LTS。 移植到 ARM64 是通常所需的如果可能，因为有许多性能改进相比 ARM32 的设备上看到。
+若要帮助阐明 Unity 之间其他差异 2018.3.x 或 Unity 2019.1.x，下面的轮廓的权衡这两个版本之间的基数能够编译中 Unity 2019 ARM64 二者的主要区别。 
 
-此外，混合现实 Toolkit V2 将始终保证对 Unity 2018 LTS 的支持，但不是一定能保证对 Unity 2019.x+ 每次迭代的支持。 
+开发人员应评估任何[插件依赖项](https://docs.unity3d.com/Manual/Plugins.html)，当前在其项目和是否可以针对 ARM64 生成这些 Dll 中存在。 如果不能为 ARM64 生成硬依赖项插件，其中一个将需要利用 Unity 2018 LTS。
+
 
 | Unity 2018.3.x | Unity 2019.1 + |
 |----------|-------------------|
@@ -131,6 +132,6 @@ Unity 应用程序使用本机插件时，面临的挑战。  所有本机插件
 * [开始使用 MRTK 版本 2](mrtk-getting-started.md)
 * [MRTK 版本 2 操作方法](https://microsoft.github.io/MixedRealityToolkit-Unity/External/HowTo/README.html)
 * [安装工具](install-the-tools.md)
-* [Unity 的推荐的设置](recommended-settings-for-unity.md)
+* [建议用于 Unity 的设置](recommended-settings-for-unity.md)
 * [混合现实的了解性能](understanding-performance-for-mixed-reality.md)
 

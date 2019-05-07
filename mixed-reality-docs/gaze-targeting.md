@@ -6,13 +6,31 @@ ms.author: jennyk
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合现实、 提供注视、 视线移动目标交互，设计
-ms.openlocfilehash: c3225e27331f8afcda65469eb84fe5470bf6ee8c
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 1ac4f06208a7574fced0a7e27e93469ec93bf6e0
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592085"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873923"
 ---
+# <a name="gaze-and-dwell"></a>视线移动和停留
+有很多不同的方式，以确认_提交_如结合使用的视线移动_语音_或_传递手势_。
+有几种用户方案，在其中的用户的手可能正忙或无法跟踪 （例如，使用过大的重型手套工厂工作进程）。 语音输入可能也不可用，因为用户首选项、 社交上下文或嘈杂的环境。
+另一种作为回退解决方案来执行_提交_是只需保留盯住 UI 元素，我们称之为_会仔细斟酌_。
+一个_会仔细斟酌_头或关注的视线移动就可以执行。 其思路很简单，可以在以下几个阶段中细分： 
+1. 用户启动 holographic 按钮在观望
+
+2. 简要开始延迟 （例如，150 毫秒） 后启动一些可视反馈的动画。 用于开始延迟用于避免庞大用户的方法是立即弹出反馈的时间。
+    - 有关_关注的视线移动_，我们建议以下视觉对象的设计会仔细斟酌反馈：
+      - **其混合**:顺利 blend 中几乎不能看到在第一次完全不透明的反馈。 这使得反馈更少的分散注意力和 overwhleming，并可以很好地符合系统具有用户真正想要与此按钮的置信度。
+      - **拉入**:创建可视反馈，不是减小大小，并将移至目标，提取用户的 visual 注意力的中心。 
+
+3. 预定义的停留时间段 （例如，800 毫秒） 后停留完成并触发关联的事件。
+    - 提供一些正在最后完成听觉或可视反馈，以真正使主页的项有现在选择。
+
+![在此再次详述状态](images/eyes_dwellstate_recommendation.png)
+
+
 # <a name="gaze-targeting"></a>目标的视线移动
 
 用户能够针对他们想要进行交互，而不考虑输入模式的元素为基础构建的所有交互。 在 Windows Mixed Reality，通常这是使用用户的视线移动。
@@ -32,7 +50,7 @@ ms.locfileid: "59592085"
 </table>
 
 > [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
+> 特定于 HoloLens 2 的更多指导[即将推出](index.md)。
 
 ## <a name="target-sizing-and-feedback"></a>目标大小调整和反馈
 
@@ -82,4 +100,4 @@ ms.locfileid: "59592085"
 ## <a name="see-also"></a>请参阅
 * [手势](gestures.md)
 * [语音设计](voice-design.md)
-* [游标](cursors.md)
+* [光标](cursors.md)
