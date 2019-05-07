@@ -80,21 +80,28 @@
 ## 设计入门
 ### [什么是混合现实？](mixed-reality.md)
 ### [什么是全息图？](hologram.md)
+### [舒适](Comfort.md)
+### [全息帧](Holographic-frame.md)
+### [空间映射设计](Spatial-mapping-design.md)
+### [空间音效设计](Spatial-sound-design.md)
 ### [我在设计团队的第一年](case-study-my-first-year-on-the-hololens-design-team.md)
 ### [扩展混合现实的设计过程](case-study-expanding-the-design-process-for-mixed-reality.md)
 ### [追求更多个人计算](case-study-the-pursuit-of-more-personal-computing.md)
 ### [AfterNow 的流程 - 构想、原型制作、构建](case-study-afternows-process-envisioning,-prototyping,-building.md)
-## 交互设计
-### [交互基础知识](Interaction-fundamentals.md)
-### [舒适](Comfort.md)
-### [设定凝视目标](Gaze-targeting.md)
-### [手势](Gestures.md)
-### [语音设计](Voice-design.md)
-### [什么是全息图？](Hologram.md)
-### [全息帧](Holographic-frame.md)
-### [空间映射设计](Spatial-mapping-design.md)
-### [空间音效设计](Spatial-sound-design.md)
-### [运动控制器](Motion-controllers.md)
+## MR 设计系统和工具
+### [本能交互](Interaction-fundamentals.md)
+#### [手和运动控制器](hands-and-tools.md)
+##### [直接操作](direct-manipulation.md)
+##### [指向并提交](point-and-commit.md)
+##### [运动控制器](Motion-controllers.md)
+#### [免动手操作](hands-free.md)
+##### [凝视和停留](Gaze-and-dwell.md)
+##### [凝视和语音](Voice-design.md)
+#### [头部凝视并提交](gaze-and-commit.md)
+### 补充交互
+#### [眼睛凝视](eye-tracking.md)
+#### [设定凝视目标](Gaze-targeting.md)
+#### [手势](Gestures.md)
 ## 样式
 ### [颜色、光线和材料](color,-light-and-materials.md)
 ### [空间音效设计](spatial-sound-design.md)
@@ -130,7 +137,8 @@
 ## Unity
 ### [Unity 开发概述](unity-development-overview.md)
 ### 即刻体验
-#### [混合现实工具包](mrtk-getting-started.md)
+#### [使用混合现实工具包 v2 加速开发](mrtk-getting-started.md)
+#### [配置用于 Windows Mixed Reality 的 Unity 项目](Configure-Unity-Project.md)
 #### [建议用于 Unity 的设置](recommended-settings-for-unity.md)
 #### [Unity 播放模式](unity-play-mode.md)
 #### [导出和构建 Unity Visual Studio 解决方案](exporting-and-building-a-unity-visual-studio-solution.md)
@@ -141,6 +149,7 @@
 #### [Unity 中的持久性](persistence-in-unity.md)
 #### [Unity 中的凝视](gaze-in-unity.md)
 #### [Unity 中的手势和运动控制器](gestures-and-motion-controllers-in-unity.md)
+#### [在 Unity 中进行手和眼的跟踪](hand-eye-in-unit.md)
 #### [Unity 中的语音输入](voice-input-in-unity.md)
 #### [Unity 中的空间映射](spatial-mapping-in-unity.md)
 #### [Unity 中的空间音效](spatial-sound-in-unity.md)
@@ -153,6 +162,7 @@
 ### 高级主题
 #### [将 Windows 命名空间与 Unity 应用配合用于 HoloLens](using-the-windows-namespace-with-unity-apps-for-hololens.md)
 #### [将 Vuforia 与 Unity 配合使用](vuforia-development-overview.md)
+### 旧版文档 (Unity 2017.4/HTK/MRTK v1)
 ## Unreal
 ### 适用于 HoloLens 2 的 Unreal - 即将推出！
 ## DirectX
@@ -176,9 +186,18 @@
 #### [添加全息远程功能](add-holographic-remoting.md)
 ## WebVR
 ### [将 Edge 中的 WebVR 与 Windows Mixed Reality 配合使用](using-webvr-in-edge-with-windows-mixed-reality.md)
-## [教程和示例应用](academy.md)
+## [教程和示例应用](tutorials.md)
 ### Unity
-#### 开源示例应用
+#### MR 学习模块
+##### HoloLens 2
+###### [基础模块 - 概述和目标](mrlearning-base.md)
+####### [项目初始化和第一个应用程序](mrlearning-base-ch1.md)
+####### [用户界面、手跟踪和混合现实工具包配置](mrlearning-base-ch2.md)
+####### [动态内容放置和求解器](mrlearning-base-ch3.md)
+####### [3D 对象交互](mrlearning-base-ch4.md)
+####### [高级输入](mrlearning-base-ch5.md)
+####### [演示应用](mrlearning-base-ch6.md)
+#### HoloLens（第 1 代）开源示例应用
 ##### [元素周期表](periodic-table-of-the-elements.md)
 ##### [月亮模块](lunar-module.md)
 ##### [星系探索者](galaxy-explorer.md)
@@ -266,8 +285,8 @@
 
 # 计划和活动
 ## [混合现实开发人员日](mr-dev-days.md)
+### [混合现实开发人员日会议](mr-dev-days-sessions.md)
 ### [混合现实开发人员日常见问题解答](mr-dev-days-faq.md)
-## [混合现实演示](realities-show.md)
 ## [San Francisco Reactor Academy 活动日历](sf-academy-events.md)
 ## [CVPR 2018 HoloLens 研究模式会议](cvpr-2018.md)
 ## [ECCV 2018 HoloLens：计算机视觉研究工具](eccv-2018.md)
