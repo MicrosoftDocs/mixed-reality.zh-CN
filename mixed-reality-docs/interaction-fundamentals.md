@@ -1,138 +1,187 @@
 ---
-title: 交互基础知识
-description: 如我们构建了跨 HoloLens 体验 （第 1 代） HoloLens 2 和沉浸式耳机，我们已经开始写下我们发现用于共享的一些事项。
-author: rwinj
-ms.author: jennyk
-ms.date: 02/24/2019
+title: 多模式交互概述
+description: 多模式交互的概述
+author: shengkait
+ms.author: shengkait
+ms.date: 04/11/2019
 ms.topic: article
-keywords: 混合现实，交互设计
-ms.openlocfilehash: d594126529b6314a4706f8b6b6af856058c3280a
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: 混合现实的视线移动，注视目标交互，设计
+ms.openlocfilehash: f52a0cd8ec53bfe0f4c5da2c054c538eda1c93ca
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590104"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993602"
 ---
-# <a name="interaction-fundamentals"></a><span data-ttu-id="ad401-104">交互基础知识</span><span class="sxs-lookup"><span data-stu-id="ad401-104">Interaction fundamentals</span></span>
+# <a name="introducing-instinctual-interactions"></a><span data-ttu-id="67cbf-104">引入 instinctual 交互</span><span class="sxs-lookup"><span data-stu-id="67cbf-104">Introducing instinctual interactions</span></span>
+<span data-ttu-id="67cbf-105">简单、 instinctual 交互的基本原理是整个 Microsoft 混合现实平台织物。</span><span class="sxs-lookup"><span data-stu-id="67cbf-105">The philosophy of simple, instinctual interactions is woven throughout the Microsoft Mixed Reality platform.</span></span>  <span data-ttu-id="67cbf-106">我们采取了三个步骤以确保应用程序设计人员和开发人员可以提供为其客户比较容易、 直观的交互。</span><span class="sxs-lookup"><span data-stu-id="67cbf-106">We've taken three steps to ensure that application designers and developers can provide easy and intuitive interactions for their customers.</span></span> 
 
-<span data-ttu-id="ad401-105">在跨 HoloLens 和沉浸式耳机，我们已构建的体验，我们已经开始写下我们发现用于共享的一些事项。</span><span class="sxs-lookup"><span data-stu-id="ad401-105">As we've built experiences across HoloLens and immersive headsets, we've started writing down some things we found useful to share.</span></span> <span data-ttu-id="ad401-106">将它们视为用于混合的现实交互设计的基本构建块。</span><span class="sxs-lookup"><span data-stu-id="ad401-106">Think of these as the fundamental building blocks for mixed reality interaction design.</span></span>
+<span data-ttu-id="67cbf-107">首先，我们已确保我们令人惊叹的传感器和输入的技术，包括手动跟踪、 眼睛追踪和自然语言中，将合并到无缝多模式交互模型。</span><span class="sxs-lookup"><span data-stu-id="67cbf-107">First, we've made sure our amazing sensors and input technology, including hand tracking, eye tracking, and natural language, combine into seamless multimodal interaction models.</span></span>  <span data-ttu-id="67cbf-108">根据我们的研究，设计和开发 multimodally-以及不基于单个输入--是创建 instinctual 体验的关键。</span><span class="sxs-lookup"><span data-stu-id="67cbf-108">Based on our research, designing and developing multimodally -- and not based on single inputs -- is the key to creating instinctual experiences.</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="ad401-107">设备支持</span><span class="sxs-lookup"><span data-stu-id="ad401-107">Device support</span></span>
+<span data-ttu-id="67cbf-109">其次，我们已经认识到很多开发人员面向多个设备，还是 HoloLens 2 和 HoloLens （第 1 代） 或 HoloLens 和 VR。</span><span class="sxs-lookup"><span data-stu-id="67cbf-109">Secondly, we recognize that many developers target multiple devices, whether that means HoloLens 2 and HoloLens (1st gen) or HoloLens and VR.</span></span>  <span data-ttu-id="67cbf-110">所以我们设计了我们的交互模型来跨设备工作 （即使每个设备上，输入的技术各不相同）。</span><span class="sxs-lookup"><span data-stu-id="67cbf-110">So we've designed our interaction models to work across devices (even if the input technology varies on each device).</span></span>  <span data-ttu-id="67cbf-111">例如，Windows 沉浸式头戴式耳机与 6DOF 控制器上的远端交互和 HoloLens 2 这两个最交互使用的相同提示和模式，轻松跨设备应用程序。</span><span class="sxs-lookup"><span data-stu-id="67cbf-111">For example, far interaction on a Windows Immersive headset with a 6DOF controller and far interaction on a HoloLens 2 both use the identical affordances and patterns, making it easy for cross-device applications.</span></span> <span data-ttu-id="67cbf-112">不只是这方便，为开发人员和设计器中，但它感觉自然向最终用户。</span><span class="sxs-lookup"><span data-stu-id="67cbf-112">Not only is this convenient for developers and designers, but it feels natural to end users.</span></span> 
 
-<span data-ttu-id="ad401-108">下面是适用于可用的交互设计文章的设备类型或类型的概述。</span><span class="sxs-lookup"><span data-stu-id="ad401-108">Here's an outline of the available Interaction design articles and which device type or types they apply to.</span></span>
+<span data-ttu-id="67cbf-113">最后，虽然我们已经认识到，有数千个有效、 富有吸引力神奇的交互可能 MR 中，我们已找到该有意采用单个交互模型中端到端应用程序就是确保用户是成功的最佳方法和获得完美的体验。</span><span class="sxs-lookup"><span data-stu-id="67cbf-113">Lastly, while we recognize that there are thousands of effective, engaging, and magical interactions possible in MR, we have found that intentionally employing a single interaction model end to end in an application is the best way to ensure users are successful and have a great experience.</span></span>  <span data-ttu-id="67cbf-114">为此，我们提供了此交互指南中的三个操作：</span><span class="sxs-lookup"><span data-stu-id="67cbf-114">To that end, we've included three things in this interaction guidance:</span></span>
+* <span data-ttu-id="67cbf-115">我们已结构化围绕三个主要交互模型的组件和模式所需的每个本指南</span><span class="sxs-lookup"><span data-stu-id="67cbf-115">We've structured this guidance around the three primary interaction models and the components and patterns required for each</span></span>
+* <span data-ttu-id="67cbf-116">我们提供了我们平台提供了其他权益的补充指南</span><span class="sxs-lookup"><span data-stu-id="67cbf-116">We've included supplemental guidance on other benefits that our platform provides</span></span>
+* <span data-ttu-id="67cbf-117">我们提供了指导，以帮助选择适合您的方案的相应交互模型</span><span class="sxs-lookup"><span data-stu-id="67cbf-117">We've included guidance to help select the appropriate interaction model for your scenario</span></span>
+
+
+## <a name="three-multimodal-interaction-models"></a><span data-ttu-id="67cbf-118">三个多模式交互模型</span><span class="sxs-lookup"><span data-stu-id="67cbf-118">Three multimodal interaction models</span></span>
+<span data-ttu-id="67cbf-119">根据我们的研究和使用日期的客户，我们发现三个主要交互模型满足大多数混合现实体验。</span><span class="sxs-lookup"><span data-stu-id="67cbf-119">Based on our research and work with customers to date, we've discovered that three primary interaction models suit the majority of Mixed Reality experiences.</span></span>
+
+<span data-ttu-id="67cbf-120">在许多方面，交互模型是用于完成他们的流的用户的心理模型。</span><span class="sxs-lookup"><span data-stu-id="67cbf-120">In many ways, the interaction model  is the user's mental model for completing their flows.</span></span>  <span data-ttu-id="67cbf-121">这些交互模型的每个客户需求的一组针对进行了优化，以及方便、 强大且可在自己的权限中使用。</span><span class="sxs-lookup"><span data-stu-id="67cbf-121">Each of these interaction models is optimized for a set of customer needs, and each is convenient, powerful, and usable in its own right.</span></span> 
+
+<span data-ttu-id="67cbf-122">下图是简要的概述。</span><span class="sxs-lookup"><span data-stu-id="67cbf-122">The chart below is a simplified overview.</span></span>  <span data-ttu-id="67cbf-123">在以下页中使用图像和代码示例链接使用每个交互模型的详细的信息。</span><span class="sxs-lookup"><span data-stu-id="67cbf-123">Detailed information for using each interaction model is linked in the pages below with images and code samples.</span></span>  
+
 <br>
 
 <table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><span data-ttu-id="67cbf-124"><strong>Model</strong></span><span class="sxs-lookup"><span data-stu-id="67cbf-124"><strong>Model</strong></span></span></td>
+        <td><span data-ttu-id="67cbf-125"><strong>示例方案</strong></span><span class="sxs-lookup"><span data-stu-id="67cbf-125"><strong>Example scenarios</strong></span></span></td>
+        <td><span data-ttu-id="67cbf-126"><strong>合适大小</strong></span><span class="sxs-lookup"><span data-stu-id="67cbf-126"><strong>Fit</strong></span></span></td>
+        <td><span data-ttu-id="67cbf-127"><strong>硬件</strong></span><span class="sxs-lookup"><span data-stu-id="67cbf-127"><strong>Hardware</strong></span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="67cbf-128"><a href="hands-and-tools.md">双手和工具</a></span><span class="sxs-lookup"><span data-stu-id="67cbf-128"><a href="hands-and-tools.md">Hands and tools</a></span></span></td>
+        <td><span data-ttu-id="67cbf-129">3D 空间体验</span><span class="sxs-lookup"><span data-stu-id="67cbf-129">3D spatial experiences</span></span><br><span data-ttu-id="67cbf-130">例如空间布局和设计、 内容操作或模拟</span><span class="sxs-lookup"><span data-stu-id="67cbf-130">e.g. spatial layout and design, content manipulation, or simulation</span></span></td>
+        <td><span data-ttu-id="67cbf-131">非常适用于新用户</span><span class="sxs-lookup"><span data-stu-id="67cbf-131">Great for new users</span></span><br><span data-ttu-id="67cbf-132">低学习曲线</span><span class="sxs-lookup"><span data-stu-id="67cbf-132">Low learning curve</span></span><br><span data-ttu-id="67cbf-133">接地中轻松可视化提示</span><span class="sxs-lookup"><span data-stu-id="67cbf-133">Grounded in easy visual affordances</span></span><br><span data-ttu-id="67cbf-134">在手动跟踪和 6 DoF 控制器之间的一致用户体验</span><span class="sxs-lookup"><span data-stu-id="67cbf-134">Consistent UX across hand tracking and 6 DoF controllers</span></span><br><span data-ttu-id="67cbf-135">与语音结合使用时，很好的眼跟踪或 head 注视</span><span class="sxs-lookup"><span data-stu-id="67cbf-135">Great when coupled with voice, eye tracking, or head gaze</span></span></td>
+        <td><span data-ttu-id="67cbf-136">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="67cbf-136">HoloLens 2</span></span><br><span data-ttu-id="67cbf-137">带 6DOF 控制器沉浸式 Windows</span><span class="sxs-lookup"><span data-stu-id="67cbf-137">Windows Immersive w/ 6DOF Controllers</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="67cbf-138"><a href="hands-free.md">Hands-free</a></span><span class="sxs-lookup"><span data-stu-id="67cbf-138"><a href="hands-free.md">Hands-free</a></span></span></td>
+        <td><span data-ttu-id="67cbf-139">上下文体验，其中用户的手都被占用例如学习，维护作业</span><span class="sxs-lookup"><span data-stu-id="67cbf-139">Contextual experiences where a user's hands are occupied e.g. on the-job learning, maintenance</span></span></td>
+        <td><span data-ttu-id="67cbf-140">一些学习所需</span><span class="sxs-lookup"><span data-stu-id="67cbf-140">Some learning required</span></span><br><span data-ttu-id="67cbf-141">如果为不可用</span><span class="sxs-lookup"><span data-stu-id="67cbf-141">If hands are unavailable</span></span><br><span data-ttu-id="67cbf-142">对语音和自然语言</span><span class="sxs-lookup"><span data-stu-id="67cbf-142">pairs well with voice and natural language</span></span></td>
+        <td><span data-ttu-id="67cbf-143">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="67cbf-143">HoloLens 2</span></span><br><span data-ttu-id="67cbf-144">HoloLens （第 1 代）</span><span class="sxs-lookup"><span data-stu-id="67cbf-144">HoloLens (1st gen)</span></span><br> <span data-ttu-id="67cbf-145">沉浸式 Windows</span><span class="sxs-lookup"><span data-stu-id="67cbf-145">Windows Immersive</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="67cbf-146"><a href="gaze-and-commit.md">Head 注视和提交</a></span><span class="sxs-lookup"><span data-stu-id="67cbf-146"><a href="gaze-and-commit.md">Head-gaze and commit</a></span></span></td>
+        <td><span data-ttu-id="67cbf-147">点击体验例如 3D 演示文稿、 演示</span><span class="sxs-lookup"><span data-stu-id="67cbf-147">Click-through experiences e.g. 3D presentations, demos</span></span></td>
+        <td><span data-ttu-id="67cbf-148">需要培训 HMDs 上但不是移动设备上</span><span class="sxs-lookup"><span data-stu-id="67cbf-148">Requires training on HMDs but not on mobile</span></span><br><span data-ttu-id="67cbf-149">最适合可访问的控制器</span><span class="sxs-lookup"><span data-stu-id="67cbf-149">Best for accessible controllers</span></span><br><span data-ttu-id="67cbf-150">最适合 HoloLens （第 1 代）</span><span class="sxs-lookup"><span data-stu-id="67cbf-150">Best for HoloLens (1st gen)</span></span></td>
+        <td><span data-ttu-id="67cbf-151">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="67cbf-151">HoloLens 2</span></span><br><span data-ttu-id="67cbf-152">HoloLens （第 1 代）</span><span class="sxs-lookup"><span data-stu-id="67cbf-152">HoloLens (1st gen)</span></span><br> <span data-ttu-id="67cbf-153">沉浸式 Windows</span><span class="sxs-lookup"><span data-stu-id="67cbf-153">Windows Immersive</span></span><br> <span data-ttu-id="67cbf-154">移动 AR</span><span class="sxs-lookup"><span data-stu-id="67cbf-154">Mobile AR</span></span></td>
+    </tr>
+</table>
+<br>
 
-<th>
-<tr>
+<span data-ttu-id="67cbf-155">确保没有任何空白或为你的体验的交互中的漏洞的最佳方法是按照从开始到结束的单个模型的指导。</span><span class="sxs-lookup"><span data-stu-id="67cbf-155">The best way to ensure there are no gaps or holes in the interaction for your experience is to follow the guidance for a single model from beginning to end.</span></span> 
 
-<td style="width:150px;"><span data-ttu-id="ad401-109"><strong>输入</strong></span><span class="sxs-lookup"><span data-stu-id="ad401-109"><strong>Input</strong></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="ad401-110"><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></span><span class="sxs-lookup"><span data-stu-id="ad401-110"><a href="hololens-hardware-details.md"><strong>HoloLens (1st gen)</strong></a></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="ad401-111"><strong>HoloLens 2</strong></span><span class="sxs-lookup"><span data-stu-id="ad401-111"><strong>HoloLens 2</strong></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="ad401-112"><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></span><span class="sxs-lookup"><span data-stu-id="ad401-112"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
-</tr>
-</th>
+<span data-ttu-id="67cbf-156">为了加快设计和开发，我们提供了详细的信息以及指向图像和代码示例中我们的每个模型的覆盖范围。</span><span class="sxs-lookup"><span data-stu-id="67cbf-156">To speed design and development, we've included detailed information and links to images and code samples within our coverage of each model.</span></span>
+
+<span data-ttu-id="67cbf-157">但首先，以下各节介绍的选择和实现这些交互模型之一的步骤。</span><span class="sxs-lookup"><span data-stu-id="67cbf-157">But first, the sections below walk through the steps of selecting and implementing one of these interaction models.</span></span>  
  
-<tr>
-<td> <span data-ttu-id="ad401-113"><a href="gestures.md">明确的手</a></span><span class="sxs-lookup"><span data-stu-id="ad401-113"><a href="gestures.md">Articulated hands</a></span></span></td><td style="text-align: center;"></td><td style="text-align: center;"><span data-ttu-id="ad401-114">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-114">✔️</span></span></td><td></td>
+### <a name="by-the-end-of-this-page-you-will-understand-our-guidance-on"></a><span data-ttu-id="67cbf-158">此页结束时，将上了解我们的指南：</span><span class="sxs-lookup"><span data-stu-id="67cbf-158">By the end of this page, you will understand our guidance on:</span></span>
+ 
+* <span data-ttu-id="67cbf-159">选择为您的客户交互模型</span><span class="sxs-lookup"><span data-stu-id="67cbf-159">Choosing an interaction model for your customer</span></span>
+* <span data-ttu-id="67cbf-160">使用交互模型指南</span><span class="sxs-lookup"><span data-stu-id="67cbf-160">Using the interaction model guidance</span></span>
+* <span data-ttu-id="67cbf-161">交互模型之间转换</span><span class="sxs-lookup"><span data-stu-id="67cbf-161">Transitioning between interaction models</span></span>
+* <span data-ttu-id="67cbf-162">设计后续步骤</span><span class="sxs-lookup"><span data-stu-id="67cbf-162">Design next steps</span></span>
 
-</tr><tr>
-<td> <span data-ttu-id="ad401-115"><a href="gaze-targeting.md">密切关注面向</a></span><span class="sxs-lookup"><span data-stu-id="ad401-115"><a href="gaze-targeting.md">Eye targeting</a></span></span></td><td style="text-align: center;"></td><td style="text-align: center;"><span data-ttu-id="ad401-116">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-116">✔️</span></span></td><td style="text-align: center;"></td>
-</tr><tr>
-<td> <span data-ttu-id="ad401-117"><a href="gaze-targeting.md">目标的视线移动</a></span><span class="sxs-lookup"><span data-stu-id="ad401-117"><a href="gaze-targeting.md">Gaze targeting</a></span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-118">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-118">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-119">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-119">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-120">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-120">✔️</span></span></td>
-</tr><tr>
-<td> <span data-ttu-id="ad401-121"><a href="gestures.md">手势</a></span><span class="sxs-lookup"><span data-stu-id="ad401-121"><a href="gestures.md">Gestures</a></span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-122">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-122">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-123">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-123">✔️</span></span></td><td></td>
-</tr><tr>
-<td> <span data-ttu-id="ad401-124"><a href="voice-design.md">语音设计</a></span><span class="sxs-lookup"><span data-stu-id="ad401-124"><a href="voice-design.md">Voice design</a></span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-125">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-125">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-126">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-126">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-127">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-127">✔️</span></span></td>
-</tr><tr>
-<td> <span data-ttu-id="ad401-128">游戏板</span><span class="sxs-lookup"><span data-stu-id="ad401-128">Gamepad</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-129">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-129">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-130">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-130">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-131">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-131">✔️</span></span></td>
-</tr>
-<tr>
-<td> <span data-ttu-id="ad401-132"><a href="motion-controllers.md">运动控制器</a></span><span class="sxs-lookup"><span data-stu-id="ad401-132"><a href="motion-controllers.md">Motion controllers</a></span></span></td><td></td><td style="text-align: center;"></td><td style="text-align: center;"><span data-ttu-id="ad401-133">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-133">✔️</span></span></td>
+## <a name="choosing-an-interaction-model-for-your-customer"></a><span data-ttu-id="67cbf-163">选择为您的客户交互模型</span><span class="sxs-lookup"><span data-stu-id="67cbf-163">Choosing an interaction model for your customer</span></span>
 
-</tr>
-<th>
-<tr>
-<td style="width:150px;"><span data-ttu-id="ad401-134"><strong>认知和空间功能</strong></span><span class="sxs-lookup"><span data-stu-id="ad401-134"><strong>Perception and spatial features</strong></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="ad401-135"><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></span><span class="sxs-lookup"><span data-stu-id="ad401-135"><a href="hololens-hardware-details.md"><strong>HoloLens (1st gen)</strong></a></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="ad401-136"><strong>HoloLens 2</strong></span><span class="sxs-lookup"><span data-stu-id="ad401-136"><strong>HoloLens 2</strong></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="ad401-137"><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></span><span class="sxs-lookup"><span data-stu-id="ad401-137"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
-</tr>
-</th>
-<tr>
+<span data-ttu-id="67cbf-164">很可能，开发人员和创建者已有的一些观点记住他们希望为其用户的交互体验种类。</span><span class="sxs-lookup"><span data-stu-id="67cbf-164">Most likely, developers and creators already have some ideas in mind of the kinds of interaction experience they want for their users.</span></span>
+<span data-ttu-id="67cbf-165">鼓励客户为中心的方法来设计，我们建议遵循以下指南来选择适合您的客户的交互模型。</span><span class="sxs-lookup"><span data-stu-id="67cbf-165">To encourage a customer-focused approach to design, we recommend following the guidance below to select the interaction model that's optimized for your customer.</span></span>
 
-<td> <span data-ttu-id="ad401-138"><a href="spatial-sound-design.md">空间合理的设计</a></span><span class="sxs-lookup"><span data-stu-id="ad401-138"><a href="spatial-sound-design.md">Spatial sound design</a></span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-139">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-139">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-140">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-140">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-141">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-141">✔️</span></span></td>
-</tr><tr>
-<td> <span data-ttu-id="ad401-142"><a href="spatial-mapping-design.md">空间映射设计</a></span><span class="sxs-lookup"><span data-stu-id="ad401-142"><a href="spatial-mapping-design.md">Spatial mapping design</a></span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-143">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-143">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-144">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-144">✔️</span></span></td><td></td>
-</tr><tr>
-<td> <span data-ttu-id="ad401-145"><a href="hologram.md">全息</a></span><span class="sxs-lookup"><span data-stu-id="ad401-145"><a href="hologram.md">Holograms</a></span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-146">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-146">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="ad401-147">✔️</span><span class="sxs-lookup"><span data-stu-id="ad401-147">✔️</span></span></td><td></td>
-</tr>
+### <a name="why-follow-this-guidance"></a><span data-ttu-id="67cbf-166">为什么要遵循以下指南？</span><span class="sxs-lookup"><span data-stu-id="67cbf-166">Why follow this guidance?</span></span>
 
+* <span data-ttu-id="67cbf-167">测试我们的交互模型为目标和物理和认知工作量、 intuitiveness 和 learnability 等的主观标准。</span><span class="sxs-lookup"><span data-stu-id="67cbf-167">Our interaction models are tested for objective and subjective criteria such as physical and cognitive effort, intuitiveness, and learnability.</span></span> 
+* <span data-ttu-id="67cbf-168">因为交互不同，视频和音频提示和对象行为可能之间的交互模型也不同。</span><span class="sxs-lookup"><span data-stu-id="67cbf-168">Because interaction differs, visual and audio affordances and object behavior may also differ between the interaction models.</span></span>  
+* <span data-ttu-id="67cbf-169">组合在一起的多个交互模型部分会竞争等，如同时进行手动大气和的视线移动游标，这会倾覆并使用户感到困惑的风险。</span><span class="sxs-lookup"><span data-stu-id="67cbf-169">Combining parts of multiple interaction models together creates the risk of competing affordances, such as simultaneous hand rays and a gaze cursor, which overwhelm and confuse users.</span></span>
+
+<span data-ttu-id="67cbf-170">下面是针对每个交互模型提供和行为进行了优化的一些示例。</span><span class="sxs-lookup"><span data-stu-id="67cbf-170">Here are some examples of how affordances and behaviors are optimized for each interaction model.</span></span>  <span data-ttu-id="67cbf-171">我们通常看到新的用户类似的问题，如"如何知道系统工作，如何知道我可以做什么，以及如何知道是否理解刚才的操作？"</span><span class="sxs-lookup"><span data-stu-id="67cbf-171">We often see new users as similar questions, such as "how do I know the system is working, how do I know what I can do, and how do I know if it understood what I just did?"</span></span>
+
+<br>
+
+<table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><span data-ttu-id="67cbf-172"><strong>Model</strong></span><span class="sxs-lookup"><span data-stu-id="67cbf-172"><strong>Model</strong></span></span></td>
+        <td><span data-ttu-id="67cbf-173"><strong>如何知道是否正常工作？</strong></span><span class="sxs-lookup"><span data-stu-id="67cbf-173"><strong>How do I know it's working?</strong></span></span></td>
+        <td><span data-ttu-id="67cbf-174"><strong>如何知道什么该怎么办？</strong></span><span class="sxs-lookup"><span data-stu-id="67cbf-174"><strong>How do I know what can I do?</strong></span></span></td>
+        <td><span data-ttu-id="67cbf-175"><strong>如何知道刚才的操作？</strong></span><span class="sxs-lookup"><span data-stu-id="67cbf-175"><strong>How do I know what I just did?</strong></span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="67cbf-176"><a href="hands-and-tools.md">双手和工具</a></span><span class="sxs-lookup"><span data-stu-id="67cbf-176"><a href="hands-and-tools.md">Hands and tools</a></span></span></td>
+        <td><span data-ttu-id="67cbf-177">我看到 mesh 手的形状，我看到指尖功能可见性： 或手动 / 控制器光线。</span><span class="sxs-lookup"><span data-stu-id="67cbf-177">I see a hand mesh, I see a fingertip affordance or hand/ controller rays.</span></span></td>
+        <td><span data-ttu-id="67cbf-178">我看到 grabbable 句柄或即将达到我的手时，将显示边界框。</span><span class="sxs-lookup"><span data-stu-id="67cbf-178">I see grabbable handles or a bounding box appear when my hand is near.</span></span></td>
+        <td><span data-ttu-id="67cbf-179">我听到声音声音，并在随取即行和发布到动画。</span><span class="sxs-lookup"><span data-stu-id="67cbf-179">I hear audible tones and see animations on grab and release.</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="67cbf-180"><a href="gaze-and-commit.md">Head 注视和提交</a></span><span class="sxs-lookup"><span data-stu-id="67cbf-180"><a href="gaze-and-commit.md">Head-gaze and commit</a></span></span></td>
+        <td><span data-ttu-id="67cbf-181">我看到我的视野中心中的游标。</span><span class="sxs-lookup"><span data-stu-id="67cbf-181">I see a cursor in the center of my field of view.</span></span></td>
+        <td><span data-ttu-id="67cbf-182">视线移动游标时对特定对象的状态更改。</span><span class="sxs-lookup"><span data-stu-id="67cbf-182">The gaze cursor changes state when over certain objects.</span></span></td>
+        <td><span data-ttu-id="67cbf-183">我看到/听到视频和音频确认时我采取措施。</span><span class="sxs-lookup"><span data-stu-id="67cbf-183">I see/ hear visual and audible confirmations when I take action.</span></span></td>
+    </tr>   
+    <tr>
+        <td><span data-ttu-id="67cbf-184"><a href="hands-free.md">无 （的视线移动和停留）</a></span><span class="sxs-lookup"><span data-stu-id="67cbf-184"><a href="hands-free.md">Hands-free (Gaze and dwell)</a></span></span></td>
+        <td><span data-ttu-id="67cbf-185">我看到我的视野中心中的游标。</span><span class="sxs-lookup"><span data-stu-id="67cbf-185">I see a cursor in the center of my field of view.</span></span></td>
+        <td><span data-ttu-id="67cbf-186">当我在此再次详述种交互的对象时，我看到一个进度指示器。</span><span class="sxs-lookup"><span data-stu-id="67cbf-186">I see a progress indicator when I dwell on an interactable object.</span></span></td>
+        <td><span data-ttu-id="67cbf-187">我看到/听到视频和音频确认时我采取措施。</span><span class="sxs-lookup"><span data-stu-id="67cbf-187">I see/ hear visual and audible confirmations when I take action.</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="67cbf-188"><a href="hands-free.md">无 （语音命令）</a></span><span class="sxs-lookup"><span data-stu-id="67cbf-188"><a href="hands-free.md">Hands-free (Voice commanding)</a></span></span></td>
+        <td><span data-ttu-id="67cbf-189">我看到一个侦听的指示符和显示系统听到的隐藏式字幕。</span><span class="sxs-lookup"><span data-stu-id="67cbf-189">I see a listening indicator and captions that show what the system heard.</span></span></td>
+        <td><span data-ttu-id="67cbf-190">获取语音提示和提示。</span><span class="sxs-lookup"><span data-stu-id="67cbf-190">I get voice prompts and hints.</span></span>  <span data-ttu-id="67cbf-191">当我说"我可以说什么？"</span><span class="sxs-lookup"><span data-stu-id="67cbf-191">When I say "what can I say?"</span></span> <span data-ttu-id="67cbf-192">我看到的反馈。</span><span class="sxs-lookup"><span data-stu-id="67cbf-192">I see feedback.</span></span></td>
+        <td><span data-ttu-id="67cbf-193">我看到/听到视频和音频确认为提供一个命令，或获取消除歧义时所需的用户体验时。</span><span class="sxs-lookup"><span data-stu-id="67cbf-193">I see/ hear visual and audible confirmations when I give a command, or get disambiguation UX when needed.</span></span></a></td>
+    </tr>
 </table>
 
-## <a name="the-user-is-the-camera"></a><span data-ttu-id="ad401-148">用户是照相机</span><span class="sxs-lookup"><span data-stu-id="ad401-148">The user is the camera</span></span>
+### <a name="below-are-the-questions-that-weve-found-help-teams-select-an-interaction-model"></a><span data-ttu-id="67cbf-194">以下是，我们发现，帮助团队选择交互模型的问题：</span><span class="sxs-lookup"><span data-stu-id="67cbf-194">Below are the questions that we've found help teams select an interaction model:</span></span>
+ 
+1.  <span data-ttu-id="67cbf-195">问:我的用户是否想要触摸全息并执行精度 holographic 操作？</span><span class="sxs-lookup"><span data-stu-id="67cbf-195">Q:  Do my users want to touch holograms and perform precision holographic manipulations?</span></span>
+<span data-ttu-id="67cbf-196">答：如果是这样，请查看精度目标以及与手或运动控制器操作的双手和工具交互模型。</span><span class="sxs-lookup"><span data-stu-id="67cbf-196">A:  If so, check out the Hands and Tools interaction model for precision targeting and manipulation with hands or motion controllers.</span></span>
+ 
+2.  <span data-ttu-id="67cbf-197">问:我的用户是否需要保留其手中免费的实际的任务？</span><span class="sxs-lookup"><span data-stu-id="67cbf-197">Q:  Do my users need to keep their hands free, for real-world tasks?</span></span>
+<span data-ttu-id="67cbf-198">答：如果是这样，看一看无交互模型，它提供更完美的动手体验通过基于的视线移动和语音的交互。</span><span class="sxs-lookup"><span data-stu-id="67cbf-198">A:  If so, take a look at the Hands-Free interaction model, which provides a great hands-free experience through gaze- and voice-based interactions.</span></span>
+ 
+3.  <span data-ttu-id="67cbf-199">问:我的用户拥有时间来学习我混合的现实的应用程序的交互或他们是否需要与最小的学习曲线之间的交互可能？</span><span class="sxs-lookup"><span data-stu-id="67cbf-199">Q:  Do my users have time to learn interactions for my mixed reality application, or do they need the interactions with the lowest learning curve possible?</span></span>
+<span data-ttu-id="67cbf-200">答：我们建议的最低的学习曲线和最直观交互的双手和工具模型，只要用户就能够使用太多的事情进行交互。</span><span class="sxs-lookup"><span data-stu-id="67cbf-200">A:  We recommend the Hands and Tools model for the lowest learning curve and most intuitive interactions, as long as users are able to use their hands for interaction.</span></span>
+ 
+4.  <span data-ttu-id="67cbf-201">问:我的用户是否为指向和操作使用 motion 控制器？</span><span class="sxs-lookup"><span data-stu-id="67cbf-201">Q:  Do my users use motion controllers for pointing and manipulation?</span></span>
+<span data-ttu-id="67cbf-202">答：双手和工具模型包括所有指南与运动控制器更完美的体验。</span><span class="sxs-lookup"><span data-stu-id="67cbf-202">A:  The Hands and Tools model includes all guidance for a great experience with motion controllers.</span></span>
+ 
+5.  <span data-ttu-id="67cbf-203">问:是否可访问性控制器或常见的蓝牙控制器，例如 clicker 使用我的用户？</span><span class="sxs-lookup"><span data-stu-id="67cbf-203">Q:  Do my users use an accessibility controller or a common Bluetooth controller, such as a clicker?</span></span>
+<span data-ttu-id="67cbf-204">答：我们建议为所有非跟踪控制器的 Head 注视和提交模型。</span><span class="sxs-lookup"><span data-stu-id="67cbf-204">A:  We recommend the Head-gaze and commit model for all non-tracked controllers.</span></span>  <span data-ttu-id="67cbf-205">它旨在使用户能够遍历整个简单的"目标和提交"技工经验。</span><span class="sxs-lookup"><span data-stu-id="67cbf-205">It's designed to allow a user to traverse an entire experience with a simple "target and commit" mechanic.</span></span> 
+ 
+6.  <span data-ttu-id="67cbf-206">问:我的用户仅进行体验"通过单击"（例如在 3d 类似于幻灯片放映的环境中），而不是导航的 UI 控件的密集布局？</span><span class="sxs-lookup"><span data-stu-id="67cbf-206">Q: Do my users only progress through an experience by "clicking through" (for example in a 3d slideshow-like environment), as opposed to navigating dense layouts of UI controls?</span></span>
+<span data-ttu-id="67cbf-207">答：如果用户不需要控制 UI 的很多，Head 注视和提交提供了其中的用户不需要担心如何面向 learnable 选项。</span><span class="sxs-lookup"><span data-stu-id="67cbf-207">A:  If users do not need to control a lot of UI, Head-gaze and commit offers a learnable option where users do not have to worry about targeting.</span></span> 
+ 
+7.  <span data-ttu-id="67cbf-208">问:我的用户使用这两个 HoloLens （第 1 代） 和 HoloLens 2 / Windows 沉浸式 （VR 耳机） 答：由于头注视和提交是 HoloLens 交互模型 （第 1 代），我们建议，创作者支持 HoloLens （第 1 代） 使用 Head 视线移动，并提交的任何功能或用户可能会遇到 HoloLens 的模式 （第 1 代） 耳机。</span><span class="sxs-lookup"><span data-stu-id="67cbf-208">Q:  Do my users use both HoloLens (1st gen) and HoloLens 2/ Windows Immersive (VR headsets) A:  Since Head-gaze and commit is the interaction model for HoloLens (1st gen), we recommend that creators who support HoloLens (1st gen) use Head-gaze and commit for any features or modes that users may experience on a HoloLens (1st gen) headset.</span></span>  <span data-ttu-id="67cbf-209">请参阅下面的下一步部分上*转换交互模型*有关更多 HoloLens 代为很好的体验的详细信息。</span><span class="sxs-lookup"><span data-stu-id="67cbf-209">Please see the next section below on *Transitioning interaction models* for details on making a great experience for multiple HoloLens generations.</span></span>
+ 
+8.  <span data-ttu-id="67cbf-210">问:怎么办对于用户而言通常移动 （涉及大型空间或空间之间移动），而不是往往会在单个的空间内工作的用户？</span><span class="sxs-lookup"><span data-stu-id="67cbf-210">Q: What about for users who are generally mobile (covering a large space or moving between spaces), versus users who tend to work in a single space?</span></span>  
+<span data-ttu-id="67cbf-211">答：交互模型中的任何适用于这些用户。</span><span class="sxs-lookup"><span data-stu-id="67cbf-211">A:  Any of the interaction models will work for these users.</span></span>  
 
-![用户是照相机](images/useriscamera-640px.jpg)
+> [!NOTE]
+> <span data-ttu-id="67cbf-212">特定于应用程序设计的更多指导[即将推出](index.md#news-and-notes)。</span><span class="sxs-lookup"><span data-stu-id="67cbf-212">More guidance specific to app design [coming soon](index.md#news-and-notes).</span></span>
 
-<span data-ttu-id="ad401-150">始终考虑设计的用户的角度来看，随着有关其实际和虚拟世界。</span><span class="sxs-lookup"><span data-stu-id="ad401-150">Always think about design for your user's point of view as they move about their real and virtual worlds.</span></span>
 
-<span data-ttu-id="ad401-151">**要提出的一些问题**</span><span class="sxs-lookup"><span data-stu-id="ad401-151">**Some questions to ask**</span></span>
-* <span data-ttu-id="ad401-152">用户、 倾斜度、 站着，还是使用您的体验时的每个步骤？</span><span class="sxs-lookup"><span data-stu-id="ad401-152">Is the user sitting, reclining, standing, or walking while using your experience?</span></span>
-* <span data-ttu-id="ad401-153">你的内容 does 如何调整到不同的位置？</span><span class="sxs-lookup"><span data-stu-id="ad401-153">How does your content adjust to different positions?</span></span>
-* <span data-ttu-id="ad401-154">用户可以调整它？</span><span class="sxs-lookup"><span data-stu-id="ad401-154">Can the user adjust it?</span></span>
-* <span data-ttu-id="ad401-155">用户是熟练使用您的应用程序？</span><span class="sxs-lookup"><span data-stu-id="ad401-155">Will the user be comfortable using your app?</span></span>
+## <a name="transition-interaction-models"></a><span data-ttu-id="67cbf-213">转换交互模型</span><span class="sxs-lookup"><span data-stu-id="67cbf-213">Transition interaction models</span></span>
+<span data-ttu-id="67cbf-214">此外，还有用例可能需要利用多个交互模型的情况。</span><span class="sxs-lookup"><span data-stu-id="67cbf-214">There are also cases where your use cases may require that utilizing more than one interaction model.</span></span>  <span data-ttu-id="67cbf-215">例如，你的应用的"创建流"利用双手和工具交互模型，但你想要对现场技术人员采用无模式。</span><span class="sxs-lookup"><span data-stu-id="67cbf-215">For example, your app's "creation flow" utilizes the Hands and tools interaction model, but you want to employ a Hands-free mode for field technicians.</span></span>  
 
-<span data-ttu-id="ad401-156">**最佳做法**</span><span class="sxs-lookup"><span data-stu-id="ad401-156">**Best practices**</span></span>
-* <span data-ttu-id="ad401-157">用户是照相机和它们控制移动。</span><span class="sxs-lookup"><span data-stu-id="ad401-157">The user is the camera and they control the movement.</span></span> <span data-ttu-id="ad401-158">让这些驱动器。</span><span class="sxs-lookup"><span data-stu-id="ad401-158">Let them drive.</span></span>
-* <span data-ttu-id="ad401-159">如果你需要几乎传输用户，是对 vestibular 不适围绕这些问题的敏感。</span><span class="sxs-lookup"><span data-stu-id="ad401-159">If you need to virtually transport the user, be sensitive to issues around vestibular discomfort.</span></span>
-* <span data-ttu-id="ad401-160">使用较短的动画</span><span class="sxs-lookup"><span data-stu-id="ad401-160">Use shorter animations</span></span>
-* <span data-ttu-id="ad401-161">向下/左/右从进行动画处理或淡入，而不是 Z</span><span class="sxs-lookup"><span data-stu-id="ad401-161">Animate from down/left/right or fade in instead of Z</span></span>
-* <span data-ttu-id="ad401-162">计时变慢</span><span class="sxs-lookup"><span data-stu-id="ad401-162">Slow down timing</span></span>
-* <span data-ttu-id="ad401-163">允许用户查看在后台世界</span><span class="sxs-lookup"><span data-stu-id="ad401-163">Allow user to see the world in the background</span></span>
+<span data-ttu-id="67cbf-216">如果您的体验确实需要多个交互模型，我们发现许多最终用户可能会遇到转换从一个模型到另一个-尤其是最终用户的新 MR 的难度。</span><span class="sxs-lookup"><span data-stu-id="67cbf-216">If your experience does require multiple interaction models, we've found that many end users may encounter difficulty transitioning from one model to another -- especially end users who are new to MR.</span></span>
 
-<span data-ttu-id="ad401-164">**要避免的问题**</span><span class="sxs-lookup"><span data-stu-id="ad401-164">**What to avoid**</span></span>
-* <span data-ttu-id="ad401-165">不要摇动照相机或有意将其锁定到 3DOF 仅方向 (未转换），它可以让用户感到不安。</span><span class="sxs-lookup"><span data-stu-id="ad401-165">Don't shake the camera or purposely lock it to 3DOF (only orientation, no translation), it can make users feel uncomfortable.</span></span>
-* <span data-ttu-id="ad401-166">无突然移动。</span><span class="sxs-lookup"><span data-stu-id="ad401-166">No abrupt movement.</span></span> <span data-ttu-id="ad401-167">如果你需要将内容与用户，将其移动速度慢、 更流畅地向其最大舒适。</span><span class="sxs-lookup"><span data-stu-id="ad401-167">If you need to bring content to or from the user, move it slowly and smoothly toward them for maximum comfort.</span></span> <span data-ttu-id="ad401-168">用户将对大型菜单在它们即将做出反应。</span><span class="sxs-lookup"><span data-stu-id="ad401-168">Users will react to large menus coming at them.</span></span>
-* <span data-ttu-id="ad401-169">不加速或启用用户的照相机。</span><span class="sxs-lookup"><span data-stu-id="ad401-169">Don't accelerate or turn the user's camera.</span></span> <span data-ttu-id="ad401-170">用户很敏感加速 （angular 和平移）。</span><span class="sxs-lookup"><span data-stu-id="ad401-170">Users are sensitive to acceleration (both angular and translational).</span></span>
+> [!Note]
+> <span data-ttu-id="67cbf-217">为了帮助指南设计人员和开发人员通过在 MR 将非常困难的选择，我们正致力于使用多个交互模型的详细指南。</span><span class="sxs-lookup"><span data-stu-id="67cbf-217">To help guide designers and developers through choices that can be difficult in MR, we're working on more guidance for using multiple interaction models.</span></span>
+ 
 
-## <a name="leverage-the-users-perspective"></a><span data-ttu-id="ad401-171">利用用户的角度来看</span><span class="sxs-lookup"><span data-stu-id="ad401-171">Leverage the user's perspective</span></span>
-
-<span data-ttu-id="ad401-172">用户在沉浸式和全息版的设备上看到显示通过混合现实的世界。</span><span class="sxs-lookup"><span data-stu-id="ad401-172">Users see the world of mixed reality through displays on immersive and holographic devices.</span></span> <span data-ttu-id="ad401-173">在 HoloLens 上此效果称为[holographic 帧](holographic-frame.md)。</span><span class="sxs-lookup"><span data-stu-id="ad401-173">On the HoloLens, this display is called the [holographic frame](holographic-frame.md).</span></span>
-
-<span data-ttu-id="ad401-174">在 2D 开发中，频繁访问的内容和设置可能会位于屏幕以使其可以轻松进行访问的角。</span><span class="sxs-lookup"><span data-stu-id="ad401-174">In 2D development, frequently accessed content and settings may be placed in the corners of a screen to make them easily accessible.</span></span> <span data-ttu-id="ad401-175">但是，在全息版应用中，用户的视图的角落中的内容可能会不喜欢以访问。</span><span class="sxs-lookup"><span data-stu-id="ad401-175">However, in holographic apps, content in the corners of the user's view may be uncomfortable to access.</span></span> <span data-ttu-id="ad401-176">在这种情况下，holographic 帧的中心是有关内容的主要位置。</span><span class="sxs-lookup"><span data-stu-id="ad401-176">In this case, the center of the holographic frame is the prime location for content.</span></span>
-
-<span data-ttu-id="ad401-177">用户可能需要指导来帮助查找重要的事件或对象超出其即时视图。</span><span class="sxs-lookup"><span data-stu-id="ad401-177">The user may need to be guided to help locate important events or objects beyond their immediate view.</span></span> <span data-ttu-id="ad401-178">可以使用箭头、 光线跟踪信息、 字符磁头运动、 思想气泡、 指针、 空间声音和语音提示以帮助并指导用户到应用程序中的重要内容。</span><span class="sxs-lookup"><span data-stu-id="ad401-178">You can use arrows, light trails, character head movement, thought bubbles, pointers, spatial sound, and voice prompts to help guide the user to important content in your app.</span></span>
-
-<span data-ttu-id="ad401-179">建议对未锁定内容到用户的舒适的屏幕。</span><span class="sxs-lookup"><span data-stu-id="ad401-179">It is recommended to not lock content to the screen for the user's comfort.</span></span> <span data-ttu-id="ad401-180">如果你需要保留内容视图中，将其放在世界上并进行"尾随"类似开始菜单的内容。</span><span class="sxs-lookup"><span data-stu-id="ad401-180">If you need to keep content in view, place it in the world and make the content "tag-along" like the Start menu.</span></span> <span data-ttu-id="ad401-181">获取用户的角度来看以及提取的内容会感觉更自然的环境中。</span><span class="sxs-lookup"><span data-stu-id="ad401-181">Content that gets pulled along with the user's perspective will feel more natural in the environment.</span></span>
-
-<span data-ttu-id="ad401-182">![开始菜单在到达帧的边缘时遵循的用户视图](images/tagalong-1000px.jpg)</span><span class="sxs-lookup"><span data-stu-id="ad401-182">![The start menu follows the user's view when it reaches the edge of the frame](images/tagalong-1000px.jpg)</span></span><br>
-<span data-ttu-id="ad401-183">*开始菜单在到达帧的边缘时遵循的用户视图*</span><span class="sxs-lookup"><span data-stu-id="ad401-183">*The Start menu follows the user's view when it reaches the edge of the frame*</span></span>
-
-<span data-ttu-id="ad401-184">上 HoloLens，全息感觉实际时由于它们不被切断适合 holographic 范围内。</span><span class="sxs-lookup"><span data-stu-id="ad401-184">On HoloLens, holograms feel real when they fit within the holographic frame since they don't get cut off.</span></span> <span data-ttu-id="ad401-185">若要查看在框架内一张全息图的边界将移动用户。</span><span class="sxs-lookup"><span data-stu-id="ad401-185">Users will move in order to see the bounds of a hologram within the frame.</span></span> <span data-ttu-id="ad401-186">在 HoloLens，务必简化您的 UI，使其适合用户的视图中专注于主要操作。</span><span class="sxs-lookup"><span data-stu-id="ad401-186">On HoloLens, it's important to simplify your UI to fit within the user's view and keep your focus on the main action.</span></span> <span data-ttu-id="ad401-187">沉浸式耳机，务必维护持久虚拟世界中设备的视野效果。</span><span class="sxs-lookup"><span data-stu-id="ad401-187">For immersive headsets, it's important to maintain the illusion of a persistent virtual world within the device's field of view.</span></span>
-
-## <a name="user-comfort"></a><span data-ttu-id="ad401-188">用户舒适</span><span class="sxs-lookup"><span data-stu-id="ad401-188">User comfort</span></span>
-
-<span data-ttu-id="ad401-189">若要确保最大[舒适](comfort.md)头装载显示器上非常重要的设计人员和开发人员创建和显示内容中一种方法，以模拟人类如何解释 3D 形状和自然的对象的相对位置世界。</span><span class="sxs-lookup"><span data-stu-id="ad401-189">To ensure maximum [comfort](comfort.md) on head-mounted displays, it’s important for designers and developers to create and present content in a way that mimics how humans interpret 3D shapes and the relative position of objects in the natural world.</span></span> <span data-ttu-id="ad401-190">从物理角度看，也很重要设计不需要的颈部或手臂 fatiguing 动作的内容。</span><span class="sxs-lookup"><span data-stu-id="ad401-190">From a physical perspective, it is also important to design content that does not require fatiguing motions of the neck or arms.</span></span>
-
-<span data-ttu-id="ad401-191">无论开发 HoloLens 或沉浸式耳机，务必要呈现两只眼睛的视觉对象。</span><span class="sxs-lookup"><span data-stu-id="ad401-191">Whether developing for HoloLens or immersive headsets, it is important to render visuals for both eyes.</span></span> <span data-ttu-id="ad401-192">呈现危险警告显示一眼中仅可以使界面难以理解，以及导致 uneasiness 到用户的关注和大脑。</span><span class="sxs-lookup"><span data-stu-id="ad401-192">Rendering a heads-up display in one eye only can make an interface hard to understand, as well as causing uneasiness to the user's eye and brain.</span></span>
-
-## <a name="share-your-experience"></a><span data-ttu-id="ad401-193">共享你的体验</span><span class="sxs-lookup"><span data-stu-id="ad401-193">Share your experience</span></span>
-
-<span data-ttu-id="ad401-194">使用[混合现实捕获](mixed-reality-capture.md)，用户可以捕获照片或视频的任何时候用户体验。</span><span class="sxs-lookup"><span data-stu-id="ad401-194">Using [mixed reality capture](mixed-reality-capture.md), users can capture a photo or video of their experience at any time.</span></span> <span data-ttu-id="ad401-195">请考虑你可能想要鼓励快照或视频应用程序中的体验。</span><span class="sxs-lookup"><span data-stu-id="ad401-195">Consider experiences in your app where you may want to encourage snapshots or videos.</span></span>
-
-## <a name="leverage-basic-ui-elements-of-the-windows-mixed-reality-home"></a><span data-ttu-id="ad401-196">利用 Windows Mixed Reality 家庭的基本 UI 元素</span><span class="sxs-lookup"><span data-stu-id="ad401-196">Leverage basic UI elements of the Windows Mixed Reality home</span></span>
-
-<span data-ttu-id="ad401-197">就像 Windows PC 体验始于桌面、 Windows Mixed Reality 开头主页。</span><span class="sxs-lookup"><span data-stu-id="ad401-197">Just like the Windows PC experience starts with the desktop, Windows Mixed Reality starts with the home.</span></span> <span data-ttu-id="ad401-198">[Windows Mixed Reality 家庭](navigating-the-windows-mixed-reality-home.md)利用理解和导航三维位置我们与生俱来的能力。</span><span class="sxs-lookup"><span data-stu-id="ad401-198">The [Windows Mixed Reality home](navigating-the-windows-mixed-reality-home.md) leverages our innate ability to understand and navigate 3D places.</span></span> <span data-ttu-id="ad401-199">HoloLens，与您在家是物理空间。</span><span class="sxs-lookup"><span data-stu-id="ad401-199">With HoloLens, your home is your physical space.</span></span> <span data-ttu-id="ad401-200">沉浸式耳机，与您在家是一个虚拟位置。</span><span class="sxs-lookup"><span data-stu-id="ad401-200">With immersive headsets, your home is a virtual place.</span></span>
-
-<span data-ttu-id="ad401-201">您家也是在其中将使用开始菜单打开和放置应用程序和内容。</span><span class="sxs-lookup"><span data-stu-id="ad401-201">Your home is also where you’ll use the Start menu to open and place apps and content.</span></span> <span data-ttu-id="ad401-202">可以使用混合的现实内容填充您家并同时使用多个应用程序执行多任务。</span><span class="sxs-lookup"><span data-stu-id="ad401-202">You can fill your home with mixed reality content and multitask by using multiple apps at the same time.</span></span> <span data-ttu-id="ad401-203">在家中放置的内容继续保留在那里，即使您重新启动你的设备。</span><span class="sxs-lookup"><span data-stu-id="ad401-203">The things you place in your home stay there, even if you restart your device.</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="ad401-204">请参阅</span><span class="sxs-lookup"><span data-stu-id="ad401-204">See also</span></span>
-* [<span data-ttu-id="ad401-205">目标的视线移动</span><span class="sxs-lookup"><span data-stu-id="ad401-205">Gaze targeting</span></span>](gaze-targeting.md)
-* [<span data-ttu-id="ad401-206">手势</span><span class="sxs-lookup"><span data-stu-id="ad401-206">Gestures</span></span>](gestures.md)
-* [<span data-ttu-id="ad401-207">语音设计</span><span class="sxs-lookup"><span data-stu-id="ad401-207">Voice design</span></span>](voice-design.md)
-* [<span data-ttu-id="ad401-208">运动控制器</span><span class="sxs-lookup"><span data-stu-id="ad401-208">Motion controllers</span></span>](motion-controllers.md)
-* [<span data-ttu-id="ad401-209">空间合理的设计</span><span class="sxs-lookup"><span data-stu-id="ad401-209">Spatial sound design</span></span>](spatial-sound-design.md)
-* [<span data-ttu-id="ad401-210">空间映射设计</span><span class="sxs-lookup"><span data-stu-id="ad401-210">Spatial mapping design</span></span>](spatial-mapping-design.md)
-* [<span data-ttu-id="ad401-211">Comfort</span><span class="sxs-lookup"><span data-stu-id="ad401-211">Comfort</span></span>](comfort.md)
-* [<span data-ttu-id="ad401-212">导航 Windows Mixed Reality 主页</span><span class="sxs-lookup"><span data-stu-id="ad401-212">Navigating the Windows Mixed Reality home</span></span>](navigating-the-windows-mixed-reality-home.md)
+## <a name="see-also"></a><span data-ttu-id="67cbf-218">请参阅</span><span class="sxs-lookup"><span data-stu-id="67cbf-218">See also</span></span>
+* [<span data-ttu-id="67cbf-219">Head 注视和提交</span><span class="sxs-lookup"><span data-stu-id="67cbf-219">Head-gaze and commit</span></span>](gaze-and-commit.md)
+* [<span data-ttu-id="67cbf-220">直接操作</span><span class="sxs-lookup"><span data-stu-id="67cbf-220">Direct manipulation</span></span>](direct-manipulation.md)
+* [<span data-ttu-id="67cbf-221">点和提交</span><span class="sxs-lookup"><span data-stu-id="67cbf-221">Point and commit</span></span>](point-and-commit.md)
+* [<span data-ttu-id="67cbf-222">设定凝视目标</span><span class="sxs-lookup"><span data-stu-id="67cbf-222">Gaze targeting</span></span>](gaze-targeting.md)
+* [<span data-ttu-id="67cbf-223">手势</span><span class="sxs-lookup"><span data-stu-id="67cbf-223">Gestures</span></span>](gestures.md)
+* [<span data-ttu-id="67cbf-224">语音设计</span><span class="sxs-lookup"><span data-stu-id="67cbf-224">Voice design</span></span>](voice-design.md)
+* [<span data-ttu-id="67cbf-225">运动控制器</span><span class="sxs-lookup"><span data-stu-id="67cbf-225">Motion controllers</span></span>](motion-controllers.md)
+* [<span data-ttu-id="67cbf-226">空间音效设计</span><span class="sxs-lookup"><span data-stu-id="67cbf-226">Spatial sound design</span></span>](spatial-sound-design.md)
+* [<span data-ttu-id="67cbf-227">空间映射设计</span><span class="sxs-lookup"><span data-stu-id="67cbf-227">Spatial mapping design</span></span>](spatial-mapping-design.md)
+* [<span data-ttu-id="67cbf-228">舒适</span><span class="sxs-lookup"><span data-stu-id="67cbf-228">Comfort</span></span>](comfort.md)
