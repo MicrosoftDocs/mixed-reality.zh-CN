@@ -1,21 +1,21 @@
 ---
-title: 语音设计
+title: 视线移动和语音
 description: 提供注视、 手势和语音 (GGV) 是在 HoloLens 上交互的主要方式。 本文提供有关语音设计缜密的指南。
-author: rwinj
-ms.author: randyw
-ms.date: 03/21/2018
+author: grbury
+ms.author: grbury
+ms.date: 04/21/2019
 ms.topic: article
 keywords: Windows Mixed Reality，设计、 交互、 语音
-ms.openlocfilehash: 2df0e15c66891b08577fcf203d11f7c7008247f1
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 35e4c72026acaa36e5fd686cf892dd602f6626d6
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592872"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469072"
 ---
-# <a name="voice-design"></a>语音设计
+# <a name="gaze-and-voice"></a>视线移动和语音
 
-提供注视、 手势和语音 (GGV) 是在 HoloLens 上交互的主要方式。 [注视](gaze.md)用于[光标](cursors.md)是用户指定的内容，他们就可以与之交互的机制。 [手势](gestures.md)或[语音](voice-input.md)意图机制。 提供注视可以使用手势或语音，用于完成交互。
+提供注视、 手势和语音 (GGV) 是在 HoloLens 上交互的主要方式 （第 1 代）。 [注视](gaze.md)用于[光标](cursors.md)是用户指定的内容，他们就可以与之交互的机制。 [手势](gestures.md)或[语音](voice-input.md)意图机制。 提供注视可以使用手势或语音，用于完成交互。
 
 在沉浸式耳机交互的主要方式会提供注视提交点提交 (与[运动控制器](motion-controllers.md))。 如果用户具有耳机使用语音功能，结合的视线移动或点使用语音，可以以完成某项操作。
 
@@ -27,7 +27,7 @@ ms.locfileid: "59592872"
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
 </tr><tr>
-<td> 语音</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳机）</td>
+<td>视线移动和语音</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳机）</td>
 </tr>
 </table>
 
@@ -102,4 +102,4 @@ Windows Mixed Reality 已经利用了"来看，说"语音模型其中**按钮上
 
 ## <a name="see-also"></a>请参阅
 * [手势](gestures.md)
-* [目标的视线移动](gaze-targeting.md)
+* [设定凝视目标](gaze-targeting.md)

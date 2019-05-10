@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/11/2019
 ms.topic: article
 keywords: 混合现实的视线移动，注视目标交互，设计
-ms.openlocfilehash: f52a0cd8ec53bfe0f4c5da2c054c538eda1c93ca
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: c762518a224138dab248670eaef23ccb92016fce
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993602"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469106"
 ---
 # <a name="introducing-instinctual-interactions"></a>引入 instinctual 交互
 简单、 instinctual 交互的基本原理是整个 Microsoft 混合现实平台织物。  我们采取了三个步骤以确保应用程序设计人员和开发人员可以提供为其客户比较容易、 直观的交互。 
@@ -55,13 +55,13 @@ ms.locfileid: "64993602"
         <td>HoloLens 2<br>带 6DOF 控制器沉浸式 Windows</td>
     </tr>
     <tr>
-        <td><a href="hands-free.md">Hands-free</a></td>
+        <td><a href="hands-free.md">免动手操作</a></td>
         <td>上下文体验，其中用户的手都被占用例如学习，维护作业</td>
         <td>一些学习所需<br>如果为不可用<br>对语音和自然语言</td>
         <td>HoloLens 2<br>HoloLens （第 1 代）<br> 沉浸式 Windows</td>
     </tr>
     <tr>
-        <td><a href="gaze-and-commit.md">Head 注视和提交</a></td>
+        <td><a href="gaze-and-commit.md">头部凝视并提交</a></td>
         <td>点击体验例如 3D 演示文稿、 演示</td>
         <td>需要培训 HMDs 上但不是移动设备上<br>最适合可访问的控制器<br>最适合 HoloLens （第 1 代）</td>
         <td>HoloLens 2<br>HoloLens （第 1 代）<br> 沉浸式 Windows<br> 移动 AR</td>
@@ -107,7 +107,7 @@ ms.locfileid: "64993602"
     <tr>
         <td><strong>Model</strong></td>
         <td><strong>如何知道是否正常工作？</strong></td>
-        <td><strong>如何知道什么该怎么办？</strong></td>
+        <td><strong>如何知道我可以做什么？</strong></td>
         <td><strong>如何知道刚才的操作？</strong></td>
     </tr>
     <tr>
@@ -117,7 +117,7 @@ ms.locfileid: "64993602"
         <td>我听到声音声音，并在随取即行和发布到动画。</td>
     </tr>
     <tr>
-        <td><a href="gaze-and-commit.md">Head 注视和提交</a></td>
+        <td><a href="gaze-and-commit.md">头部凝视并提交</a></td>
         <td>我看到我的视野中心中的游标。</td>
         <td>视线移动游标时对特定对象的状态更改。</td>
         <td>我看到/听到视频和音频确认时我采取措施。</td>
@@ -175,9 +175,9 @@ ms.locfileid: "64993602"
  
 
 ## <a name="see-also"></a>请参阅
-* [Head 注视和提交](gaze-and-commit.md)
+* [头部凝视并提交](gaze-and-commit.md)
 * [直接操作](direct-manipulation.md)
-* [点和提交](point-and-commit.md)
+* [指向并提交](point-and-commit.md)
 * [设定凝视目标](gaze-targeting.md)
 * [手势](gestures.md)
 * [语音设计](voice-design.md)

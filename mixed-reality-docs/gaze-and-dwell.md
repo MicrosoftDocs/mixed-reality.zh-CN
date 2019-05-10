@@ -6,12 +6,12 @@ ms.author: liamar
 ms.date: 03/31/2019
 ms.topic: article
 keywords: 混合现实，注视、 停留、 交互，设计
-ms.openlocfilehash: a50ae948a351f5152ebb98778da9be8c08090d72
-ms.sourcegitcommit: 222cba2d622b47f75949bf8af80d5c62de4dceab
+ms.openlocfilehash: d99180b6eb278eb6d7bf322c01a1c7cceb7fad1f
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64914612"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469061"
 ---
 # <a name="gaze-and-dwell"></a>视线移动和停留
 
@@ -128,7 +128,7 @@ ms.locfileid: "64914612"
  
  ## <a name="see-also"></a>请参阅
 * [直接操作](direct-manipulation.md)
-* [点和提交](point-and-commit.md)
+* [指向并提交](point-and-commit.md)
 * [交互基础知识](interaction-fundamentals.md)
-* [Head 注视和提交](gaze-and-commit.md)
-* [视线移动和语音](voice-design.md)
+* [头部凝视并提交](gaze-and-commit.md)
+* [凝视和语音](voice-design.md)
