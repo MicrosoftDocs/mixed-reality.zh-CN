@@ -7,12 +7,12 @@ ms.author: randyw
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计、 交互、 样式、 颜色、 应用模式、 控件、 示例应用、 混合现实工具包、 MRTK
-ms.openlocfilehash: 470dff4319abded630e084f46193dcc79531aa54
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 8d5618b6f01f379b70f95e6493bdc670a1338e4c
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592763"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469097"
 ---
 # <a name="design-for-mixed-reality"></a>混合现实的设计
 
@@ -66,19 +66,19 @@ ms.locfileid: "59592763"
                     <div class="cardText">
                         <h3>交互设计</h3>
                         <p>
-                            <a href="interaction-fundamentals.md">交互基础知识</a>
-                        </p>
-                        <p>
                             <a href="comfort.md">Comfort</a>
                         </p>
-                        <p>
-                            <a href="gaze-targeting.md">目标的视线移动</a>
+            <p>
+                            <a href="interaction-fundamentals.md">Instinctual 交互</a>
                         </p>
                         <p>
-                            <a href="gestures.md">手势</a>
+                            <a href="hands-and-tools.md">双手和控制器</a>
+                        </p>
+                        <p>
+                            <a href="hands-free.md">无</a>
                         </p>
                          <p>
-                            <a href="voice-design.md">语音设计</a>
+                            <a href="gaze-and-commit.md">Head 注视和提交</a>
                         </p>
                     </div>
                 </div>
