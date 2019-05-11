@@ -6,12 +6,12 @@ ms.author: daescu
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 事件、 日历、 学院、 计划、 sf、 san francisco 反应堆
-ms.openlocfilehash: c896cf398bd10fc12e5afed6313cbd95e5370c31
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: 15867ebd15406741d96ea5f61a66b5d80fcfde6a
+ms.sourcegitcommit: 37b628d6e24377ffc8fe9a09750fc0033107d151
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64670121"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65536097"
 ---
 # <a name="microsoft-mixed-reality-events"></a>Microsoft 混合现实事件
 
@@ -21,23 +21,6 @@ ms.locfileid: "64670121"
 680 folsom 举办 St。<br>
 San Francisco, CA 94107
 
-
-
----
-## <a name="mixed-reality-dev-days-seattlehttpsdocsmicrosoftcomen-uswindowsmixed-realitymr-dev-days"></a>**[混合的现实开发天西雅图](https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days)**
-### <a name="may-2-3-2019"></a>2019 2019年 2-3 月 5 日
-混合现实 Dev Days 上将构建技能、 网络和需要执行一层楼混合的现实应用程序的想法。
-
-**[此处的详细信息](https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days)**
-
-
-
----
-## <a name="microsoft-build-seattlehttpsemea01safelinksprotectionoutlookcomurlhttps3a2f2fwwwmicrosoftcom2fen-us2fbuilddata027c017cdaescu40microsoftcom7ca8ddee063b7949a9992308d6903e62b07c72f988bf86f141af91ab2d7cd011db477c17c07c636854994961104348sdatahozczluhbppxuyjak5i802k6bej5flmn0gek7c12bihw3dreserved0"></a>**[Microsoft / / 生成，西雅图](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fbuild&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961104348&sdata=hozCZlUHbpPxuYJaK5i802K6beJ5flmN0gEK7C1%2BIHw%3D&reserved=0)**
-### <a name="may-6-10-2019"></a>2019 2019年 6-10 月 5 日
-加入我们在西雅图 Microsoft 的顶级事件为开发人员。 提供了以及遇到的最新开发人员工具和技术。 假设创建的软件通过获取行业见解未来的软件开发的新方法。 与您的社区以了解新的开发趋势和创新的方式来对代码进行连接。
-
-**注册 Microsoft //Build 2019年[此处](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fbuild&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961104348&sdata=hozCZlUHbpPxuYJaK5i802K6beJ5flmN0gEK7C1%2BIHw%3D&reserved=0)**
 
 
 ---
