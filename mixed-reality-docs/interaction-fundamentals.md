@@ -6,19 +6,19 @@ ms.author: shengkait
 ms.date: 04/11/2019
 ms.topic: article
 keywords: 混合现实的视线移动，注视目标交互，设计
-ms.openlocfilehash: c762518a224138dab248670eaef23ccb92016fce
-ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
+ms.openlocfilehash: 8c578d9a67f6809df69fb132f4c46a381726596e
+ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469106"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65524341"
 ---
 # <a name="introducing-instinctual-interactions"></a>引入 instinctual 交互
 简单、 instinctual 交互的基本原理是整个 Microsoft 混合现实平台织物。  我们采取了三个步骤以确保应用程序设计人员和开发人员可以提供为其客户比较容易、 直观的交互。 
 
 首先，我们已确保我们令人惊叹的传感器和输入的技术，包括手动跟踪、 眼睛追踪和自然语言中，将合并到无缝多模式交互模型。  根据我们的研究，设计和开发 multimodally-以及不基于单个输入--是创建 instinctual 体验的关键。
 
-其次，我们已经认识到很多开发人员面向多个设备，还是 HoloLens 2 和 HoloLens （第 1 代） 或 HoloLens 和 VR。  所以我们设计了我们的交互模型来跨设备工作 （即使每个设备上，输入的技术各不相同）。  例如，Windows 沉浸式头戴式耳机与 6DOF 控制器上的远端交互和 HoloLens 2 这两个最交互使用的相同提示和模式，轻松跨设备应用程序。 不只是这方便，为开发人员和设计器中，但它感觉自然向最终用户。 
+其次，我们已经认识到很多开发人员面向多个设备，还是 HoloLens 2 和 HoloLens （第 1 代） 或 HoloLens 和 VR。  所以我们设计了我们的交互模型来跨设备工作 （即使每个设备上，输入的技术各不相同）。  例如，Windows 沉浸式头戴式耳机与 6DoF 控制器上的远端交互和 HoloLens 2 这两个最交互使用的相同提示和模式，轻松跨设备应用程序。 不只是这方便，为开发人员和设计器中，但它感觉自然向最终用户。 
 
 最后，虽然我们已经认识到，有数千个有效、 富有吸引力神奇的交互可能 MR 中，我们已找到该有意采用单个交互模型中端到端应用程序就是确保用户是成功的最佳方法和获得完美的体验。  为此，我们提供了此交互指南中的三个操作：
 * 我们已结构化围绕三个主要交互模型的组件和模式所需的每个本指南
@@ -51,8 +51,8 @@ ms.locfileid: "65469106"
     <tr>
         <td><a href="hands-and-tools.md">双手和工具</a></td>
         <td>3D 空间体验<br>例如空间布局和设计、 内容操作或模拟</td>
-        <td>非常适用于新用户<br>低学习曲线<br>接地中轻松可视化提示<br>在手动跟踪和 6 DoF 控制器之间的一致用户体验<br>与语音结合使用时，很好的眼跟踪或 head 注视</td>
-        <td>HoloLens 2<br>带 6DOF 控制器沉浸式 Windows</td>
+        <td>非常适用于新用户<br>低学习曲线<br>接地中轻松可视化提示<br>在手动跟踪和 6DoF 控制器之间的一致用户体验<br>与语音结合使用时，很好的眼跟踪或 head 注视</td>
+        <td>HoloLens 2<br>带 6DoF 控制器沉浸式 Windows</td>
     </tr>
     <tr>
         <td><a href="hands-free.md">免动手操作</a></td>

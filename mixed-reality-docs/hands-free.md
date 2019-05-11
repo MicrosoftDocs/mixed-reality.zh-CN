@@ -6,12 +6,12 @@ ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 混合现实，无需手动、 注视、 注视目标交互，设计
-ms.openlocfilehash: b64dec802d8ed2886021a54f302ba4a948c4f5b9
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: f39a9524831161997b59be6cf89b124fa5b29c78
+ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2019
-ms.locfileid: "64581027"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65524332"
 ---
 # <a name="optimizing-your-app-for-hands-free"></a>优化应用程序进行无
 
@@ -42,7 +42,7 @@ ms.locfileid: "64581027"
 
 在某些无需干预的情况下，使用您的声音不是理想之选或甚至可能。 大声工厂环境、 隐私或社交标准所有可以进行限制。 头注视 + 会仔细斟酌模型允许用户使用其头矢量点时延迟，导航应用程序或抛开按钮将它后激活一定的时间 （通常大约 1 秒左右）。 
 
-* [视线移动和停留](gaze-and-dwell.md)
+* [凝视和停留](gaze-and-dwell.md)
 
 ## <a name="transitioning-in-and-out-of-hands-free"></a>转换入和移出无
 
@@ -97,6 +97,6 @@ ms.locfileid: "64581027"
 
 
 ## <a name="see-also"></a>请参阅
-* [视线移动和提交](gaze-and-commit.md)
+* [头部凝视并提交](gaze-and-commit.md)
 * [直接操作](direct-manipulation.md)
-* [点和提交](point-and-commit.md)
+* [指向并提交](point-and-commit.md)
