@@ -8,7 +8,7 @@ ms.topic: article
 keywords: HoloLens，发行说明、 操作系统、 功能、 生成、 平台
 ms.openlocfilehash: bc4e09c36a3ab6643be1144873a624fc5ed66e37
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592785"
@@ -43,7 +43,7 @@ HoloLens 团队已致力于为您提供的更新，我们的最新功能开发�
   可以使用二维视图，如 Photos 为应用隐藏应用栏
   
 * **文件选取器**工作方式就像在 HoloLens 上预期的一样。
-* 更新**Edge 浏览器**将映射与台式机和手机的统一的用户体验。 我们启用了浏览器、 自定义 HoloLens 新选项卡页、 选项卡查看和打开新的 windows，除了电力和性能改进中的多个实例。
+* 更新**Microsoft Edge 浏览器**将映射与台式机和手机的统一的用户体验。 我们启用了浏览器、 自定义 HoloLens 新选项卡页、 选项卡查看和打开新的 windows，除了电力和性能改进中的多个实例。
 * **Groove 音乐**应用现已在 HoloLens 上。 访问应用商店进行下载，请尝试在后台播放。
 * 您可以轻松地自定义应用程序在您的世界中的排列方式。 请尝试**旋转你全息**中调整模式，只需单击和拖动的中间垂直线框中的圆圈。 您可能注意到有全息**加强条拟合的边界框**以确保能够以最大化模式的交互。 您还可以垂直调整平面的所有应用 (除照片和全息图应用)。
 

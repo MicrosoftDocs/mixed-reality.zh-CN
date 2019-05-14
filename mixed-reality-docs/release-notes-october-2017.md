@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 发行说明、 版本、 windows 10、 生成、 rs3、 os
 ms.openlocfilehash: 7274dcf1db449fa35981eb72192fea9873fcc90a
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59590160"
@@ -86,7 +86,7 @@ Windows 10 Fall Creators Update 正式引入了对 Windows Mixed Reality 耳机�
 * 如果已在你的主 Windows 混合现实中放置大量全息，一些可能会消失，重新显示当你考虑。 若要避免此问题，删除一些全息 Windows Mixed Reality 家庭的此区域。
 
 ### <a name="motion-controllers"></a>运动控制器
-* 有时，如果单击 Edge 中的网页，内容将缩放而不是单击。
+* 有时，如果单击 Microsoft Edge 中的网页，内容将缩放而不是单击。
 * 有时时单击边缘中的链接，所选内容不会起作用。
 
 ## <a name="prior-release-notes"></a>以前的发行说明
