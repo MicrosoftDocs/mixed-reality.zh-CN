@@ -1,134 +1,131 @@
 ---
-title: 视线移动和停留
-description: 视线移动和停留输入模型概述
+title: Head 注视和停留
+description: Head 注视和停留输入模型概述
 author: liamartinez
 ms.author: liamar
-ms.date: 03/31/2019
+ms.date: 05/13/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 混合现实，注视、 停留、 交互，设计
-ms.openlocfilehash: d99180b6eb278eb6d7bf322c01a1c7cceb7fad1f
-ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
+ms.openlocfilehash: 9f9fa89d7730e21e89bd24ce3b483d129c8a16db
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469061"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730782"
 ---
-# <a name="gaze-and-dwell"></a><span data-ttu-id="aa769-104">视线移动和停留</span><span class="sxs-lookup"><span data-stu-id="aa769-104">Gaze and dwell</span></span>
+# <a name="head-gaze-and-dwell"></a><span data-ttu-id="e0d3d-104">Head 注视和停留</span><span class="sxs-lookup"><span data-stu-id="e0d3d-104">Head-Gaze and Dwell</span></span>
 
-<span data-ttu-id="aa769-105">时手都与工具和部件被占用，笔势可以是枯燥乏味或不可能。</span><span class="sxs-lookup"><span data-stu-id="aa769-105">When hands are occupied with tools and parts, gestures can be tedious or impossible.</span></span>  <span data-ttu-id="aa769-106">语音命令，如手势时，可以是情况不可靠，例如在过大的情况下。</span><span class="sxs-lookup"><span data-stu-id="aa769-106">Voice commands, like gesture, can be situationally unreliable, for example under excessively loud conditions.</span></span>  <span data-ttu-id="aa769-107">此外，使用语音控制计算机并不是主流的交互，但它肯定获得流 ！</span><span class="sxs-lookup"><span data-stu-id="aa769-107">Additionally, using voice to control computers isn't a mainstream interaction yet, but it certainly is gaining steam!</span></span>  <span data-ttu-id="aa769-108">提供注视停留提供工作平视无 HoloLens 上的最常见和最容易 master 机制。</span><span class="sxs-lookup"><span data-stu-id="aa769-108">Gaze dwell offers the most familiar and easy-to-master mechanism for working heads-up hands-free on HoloLens.</span></span>  <span data-ttu-id="aa769-109">此外，提供注视停留是 100%可靠独立的操作环境中的干扰会相互干扰，也不静默约束。</span><span class="sxs-lookup"><span data-stu-id="aa769-109">Additionally, gaze dwell is 100% reliable independent of noise interference nor silence constraints in the operating environment.</span></span>
+<span data-ttu-id="e0d3d-105">时手都与工具和部件被占用，笔势可以是枯燥乏味或不可能。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-105">When hands are occupied with tools and parts, gestures can be tedious or impossible.</span></span> <span data-ttu-id="e0d3d-106">语音命令，如手势，可以在某些上下文中，例如在过大的情况下不可靠。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-106">Voice commands, like gestures, can be unreliable in certain contexts, for example under excessively loud conditions.</span></span> <span data-ttu-id="e0d3d-107">此外，使用语音控制计算机并不是普遍常见，但它肯定获得流 ！</span><span class="sxs-lookup"><span data-stu-id="e0d3d-107">Additionally, using voice to control computers isn't universally common, but it certainly is gaining steam!</span></span> <span data-ttu-id="e0d3d-108">Head 注视和停留提供了工作 heads-up 和无 HoloLens 上的最常见和最容易 master 机制。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-108">Head-Gaze and dwell offers the most familiar and easy-to-master mechanism for working heads-up and hands-free on HoloLens.</span></span> <span data-ttu-id="e0d3d-109">此外，提供注视 head 和停留是 100%可靠独立的操作环境中的干扰会相互干扰，也不静默约束。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-109">Additionally, head-gaze and dwell is 100% reliable independent of noise interference nor silence constraints in the operating environment.</span></span>
 
-## <a name="goals"></a><span data-ttu-id="aa769-110">目标</span><span class="sxs-lookup"><span data-stu-id="aa769-110">Goals</span></span>
+## <a name="scenarios"></a><span data-ttu-id="e0d3d-110">方案</span><span class="sxs-lookup"><span data-stu-id="e0d3d-110">Scenarios</span></span>
 
-<span data-ttu-id="aa769-111">提供一种机制来进行完全无需手动交互，而无需使用语音。</span><span class="sxs-lookup"><span data-stu-id="aa769-111">Provide a mechanism for full hands-free interactions, without using voice.</span></span>
+<span data-ttu-id="e0d3d-111">Head 注视和停留的优越性体现在方案中人的手均忙于处理其他任务，而语音不是 100%可靠或由于环境或社交约束提供。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-111">Head-Gaze and dwell excels in scenarios where a person's hands are busy with other tasks, and voice isn't 100% reliable or availible due to environmental or social constraints.</span></span> <span data-ttu-id="e0d3d-112">一个很好示例是一个人戴上 HoloLens 覆盖修复汽车引擎时的参考信息。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-112">A good example is a person wearing a HoloLens to overlay reference information while repairing a car engine.</span></span> <span data-ttu-id="e0d3d-113">太多的事情都在忙于 with tools 或支持其主体，因为它们了解到引擎隔离舱。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-113">Their hands are busy with tools or supporting their body as they lean into the engine compartment.</span></span> <span data-ttu-id="e0d3d-114">与常量进行深入探讨和工具，使语音命令变得困难的嗡嗡声噪音车库空间很大。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-114">The garage space is loud, with the constant banging and buzzing of tools, making voice commands difficult.</span></span> <span data-ttu-id="e0d3d-115">Head 注视和停留允许 HoloLens 更有信心地导航而无需 interupting 其参考资料中的人员及其工作流。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-115">Head-gaze and dwell allows the person in the HoloLens to confidently navigate their reference material without interupting their workflow.</span></span> 
 
-## <a name="design-principles"></a><span data-ttu-id="aa769-112">设计原则</span><span class="sxs-lookup"><span data-stu-id="aa769-112">Design principles</span></span>
+## <a name="device-support"></a><span data-ttu-id="e0d3d-116">设备支持</span><span class="sxs-lookup"><span data-stu-id="e0d3d-116">Device support</span></span>
 
-1. <span data-ttu-id="aa769-113">视线移动不是一武器</span><span class="sxs-lookup"><span data-stu-id="aa769-113">Gaze is not a weapon</span></span>
+<table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><span data-ttu-id="e0d3d-117"><strong>输入的模型</strong></span><span class="sxs-lookup"><span data-stu-id="e0d3d-117"><strong>Input model</strong></span></span></td>
+        <td><span data-ttu-id="e0d3d-118"><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></span><span class="sxs-lookup"><span data-stu-id="e0d3d-118"><a href="hololens-hardware-details.md"><strong>HoloLens (1st gen)</strong></a></span></span></td>
+        <td><span data-ttu-id="e0d3d-119"><strong>HoloLens 2</strong></span><span class="sxs-lookup"><span data-stu-id="e0d3d-119"><strong>HoloLens 2</strong></span></span></td>
+        <td><span data-ttu-id="e0d3d-120"><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></span><span class="sxs-lookup"><span data-stu-id="e0d3d-120"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
+    </tr>
+     <tr>
+        <td><span data-ttu-id="e0d3d-121">Head 注视和停留</span><span class="sxs-lookup"><span data-stu-id="e0d3d-121">Head-gaze and dwell</span></span></td>
+        <td><span data-ttu-id="e0d3d-122">✔️ 建议</span><span class="sxs-lookup"><span data-stu-id="e0d3d-122">✔️ Recommended</span></span></td>
+        <td><span data-ttu-id="e0d3d-123">✔️ 建议</span><span class="sxs-lookup"><span data-stu-id="e0d3d-123">✔️ Recommended</span></span></td>
+        <td><span data-ttu-id="e0d3d-124">✔️ 建议</span><span class="sxs-lookup"><span data-stu-id="e0d3d-124">✔️ Recommended</span></span></td>
+    </tr>
+</table>
+
+## <a name="goals"></a><span data-ttu-id="e0d3d-125">目标</span><span class="sxs-lookup"><span data-stu-id="e0d3d-125">Goals</span></span>
+
+<span data-ttu-id="e0d3d-126">提供一种机制来进行完全无需手动交互，而无需使用语音。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-126">Provide a mechanism for fully hands-free interactions, without using Voice.</span></span>
+
+## <a name="design-principles"></a><span data-ttu-id="e0d3d-127">设计原则</span><span class="sxs-lookup"><span data-stu-id="e0d3d-127">Design principles</span></span>
+
+1. <span data-ttu-id="e0d3d-128">避免"作为一武器注视"</span><span class="sxs-lookup"><span data-stu-id="e0d3d-128">Avoid "Gaze as a weapon"</span></span>
+
+    <span data-ttu-id="e0d3d-129">Head 注视和停留需要视觉反馈以直观，但太多的反馈可以引入感到不安。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-129">Head-Gaze and dwell requires visual feedback to be intuitive, but too much feedback can induce anxiety.</span></span> <span data-ttu-id="e0d3d-130">反馈应帮助用户了解什么他们面向的，但不是自动选择它针对其意图。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-130">The feedback should help a user know what they're targeting, but not auto-select it against their intent.</span></span> <span data-ttu-id="e0d3d-131">读取文本、 图标和标签需要额外的注意事项，以便提供应对所导致的信息，然后选择 person 空间。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-131">Reading text, icons, and labels requires extra consideration to provide a person room to absorb the information before selecting.</span></span>
     
-    <span data-ttu-id="aa769-114">视线移动需要可视反馈进行直观交互，但太多的反馈可以引入感到不安。</span><span class="sxs-lookup"><span data-stu-id="aa769-114">Gaze requires visual feedback for intuitive interaction, but too much feedback can induce anxiety.</span></span> <span data-ttu-id="aa769-115">反馈应帮助用户了解什么他们面向的，但不是自动选择对其意图。</span><span class="sxs-lookup"><span data-stu-id="aa769-115">The feedback should help a user know what they're targeting, but not auto-select against their intent.</span></span> <span data-ttu-id="aa769-116">读取文本需要额外的注意事项，以便提供用户空间，以选择之前消减信息。</span><span class="sxs-lookup"><span data-stu-id="aa769-116">Reading text requires extra consideration to provide a user room to absorb the info before selecting.</span></span>
+2. <span data-ttu-id="e0d3d-132">查找 Goldilocks 速度</span><span class="sxs-lookup"><span data-stu-id="e0d3d-132">Seek Goldilocks speed</span></span>
     
-2. <span data-ttu-id="aa769-117">查找 Goldilocks 速度</span><span class="sxs-lookup"><span data-stu-id="aa769-117">Seek Goldilocks speed</span></span>
+    <span data-ttu-id="e0d3d-133">停留交互可以具有不同的计时器根据影响导航-更必然函数可能会受益于填充时间较长时，更常用的函数通常将受益于更快的填充时间。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-133">Dwell interactions can have different timers based on impact of navigation - more frequently used functions will generally benefit from faster fill times, while more consequential functions may benefit from longer fill times.</span></span> <span data-ttu-id="e0d3d-134">当使用填充效果来显示这些计时器，填充颜色的动画曲线可以积极地影响填充更快的感觉。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-134">When using a fill-effect to show these timers, animation curves of the fill color can positively influence a feeling of faster fill times.</span></span> <span data-ttu-id="e0d3d-135">不考虑，应采取以启用从快速/medium/速度缓慢的用户决定填充速度重写。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-135">Consideration should be taken to enable user decision from fast/medium/slow fill speed overrides.</span></span>
     
-    <span data-ttu-id="aa769-118">停留填充可以具有不同的计时器根据影响导航-更必然函数可能会受益于填充时间较长时，更常用的函数通常将受益于更快的填充时间。</span><span class="sxs-lookup"><span data-stu-id="aa769-118">The dwell fill can have different timers based on impact of navigation - more frequently used functions will generally benefit from faster fill times, while more consequential functions may benefit from longer fill times.</span></span> <span data-ttu-id="aa769-119">填充颜色的动画曲线可以积极地影响填充更快的感觉。</span><span class="sxs-lookup"><span data-stu-id="aa769-119">Animation curves of the fill color can positively influence a feeling of faster fill times.</span></span> <span data-ttu-id="aa769-120">不考虑，应采取以启用从快速/medium/速度缓慢的用户决定填充速度重写。</span><span class="sxs-lookup"><span data-stu-id="aa769-120">Consideration should be taken to enable user decision from fast/medium/slow fill speed overrides.</span></span>
-    
-3. <span data-ttu-id="aa769-121">说到 yo-yo 效果不允许</span><span class="sxs-lookup"><span data-stu-id="aa769-121">Say no-no to yo-yo effect</span></span>
+3. <span data-ttu-id="e0d3d-136">说到 yo-yo 效果不允许</span><span class="sxs-lookup"><span data-stu-id="e0d3d-136">Say no-no to yo-yo effect</span></span>
 
-    <span data-ttu-id="aa769-122">Yo-yo 效果 (也称为"晚上在 Roxbury") 是不喜欢模式，它可以从内容和的视线移动基于控件的特定位置出现。</span><span class="sxs-lookup"><span data-stu-id="aa769-122">The yo-yo effect (also known as "Night at the Roxbury") is an uncomfortable pattern that can emerge from certain  placement of content and gaze-based controls.</span></span> <span data-ttu-id="aa769-123">例如，列表的导航栏底部的填充按钮与引入循环-看下会仔细斟酌、 查看结果、 向下查看到停留，等等。此生成的模式不舒服，应避免通过将导航控件放入后，包括反复占用更少的集中位置。</span><span class="sxs-lookup"><span data-stu-id="aa769-123">For example, a list nav with the fill button at the bottom induces a loop of - look down to dwell, look up at results, look down to dwell, etc. This resulting pattern is uncomfortable and should be avoided by placing navigation controls in a centralized location that requires less back-and-forth.</span></span> <span data-ttu-id="aa769-124">放置停留按钮相对于其效果变得重要舒适。</span><span class="sxs-lookup"><span data-stu-id="aa769-124">Placement of dwell buttons relative to their effects becomes important for comfort.</span></span>
+    <span data-ttu-id="e0d3d-137">Yo-yo 效果是可以出现时的内容和头注视和停留控件位置强制人去不断地向上和向下重复的磁头运动的令人不舒服模式。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-137">The yo-yo effect is an uncomfortable pattern of head movement that can emerge when the placement of content and head-gaze and dwell controls forces people to constantly look up and down repeatedly.</span></span> <span data-ttu-id="e0d3d-138">例如，列表的导航栏底部的 head 视线移动并停留按钮与引入循环-看下若要在此再次详述，查找在结果中，查找若要在此再次详述，等等。此生成的模式不舒服，应避免通过将导航控件放入后，包括反复占用更少的集中位置。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-138">For example, a list nav with the head-gaze and dwell button at the bottom induces a loop of - look down to dwell, look up at results, look down to dwell, etc. This resulting pattern is uncomfortable and should be avoided by placing navigation controls in a centralized location that requires less back-and-forth.</span></span> <span data-ttu-id="e0d3d-139">放置停留按钮相对于其效果变得重要舒适。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-139">Placement of dwell buttons relative to their effects becomes important for comfort.</span></span>
 
-## <a name="ui-patterns"></a><span data-ttu-id="aa769-125">UI 模式</span><span class="sxs-lookup"><span data-stu-id="aa769-125">UI patterns</span></span>
+## <a name="ux-guidelines-and-best-practices"></a><span data-ttu-id="e0d3d-140">UX 准则和最佳做法</span><span class="sxs-lookup"><span data-stu-id="e0d3d-140">UX Guidelines and best practices</span></span>
 
-### <a name="high-frequency-buttons"></a><span data-ttu-id="aa769-126">高频率按钮</span><span class="sxs-lookup"><span data-stu-id="aa769-126">High frequency buttons</span></span>
-    
-* <span data-ttu-id="aa769-127">下一步/后退按钮</span><span class="sxs-lookup"><span data-stu-id="aa769-127">Next/Back buttons</span></span>
-  * <span data-ttu-id="aa769-128">非常短暂的延迟预填充 （立交桥闪烁缓冲区）</span><span class="sxs-lookup"><span data-stu-id="aa769-128">Very short delay pre-fill (flyover flicker buffer)</span></span>
-  * <span data-ttu-id="aa769-129">更大按钮是容易遭遇的视线移动</span><span class="sxs-lookup"><span data-stu-id="aa769-129">Larger buttons are easier to hit with gaze</span></span>
-  * <span data-ttu-id="aa769-130">最好保持在关注高度交互因此没有压力</span><span class="sxs-lookup"><span data-stu-id="aa769-130">Nice to keep these at eye height so no strain to interact</span></span>
-  * <span data-ttu-id="aa769-131">停留区域可能会大于处于非活动状态的图标，以使其更易于使用 （返回）</span><span class="sxs-lookup"><span data-stu-id="aa769-131">Dwell region can be larger than inactive icon to make it easier to use (Back)</span></span>
+### <a name="target-sizes"></a><span data-ttu-id="e0d3d-141">目标大小</span><span class="sxs-lookup"><span data-stu-id="e0d3d-141">Target sizes</span></span>
+  <span data-ttu-id="e0d3d-142">可以轻松地访问，head 注视和目标需要足够大到 comforatably 目标，在此再次详述按住的 head stabily 在目标上规定的时间。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-142">To be easily accessible, head-gaze and dwell targets need to be large enough to comforatably target, and hold one's head stabily on the target for the prescribed time.</span></span> <span data-ttu-id="e0d3d-143">我们建议的最低目标大小为 2 个度，若要获得最合适的体验。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-143">We reccomend a minimum target size of 2 degrees to achieve the most comfortable experience.</span></span> 
 
-### <a name="low-frequency-buttons"></a><span data-ttu-id="aa769-132">低频率按钮</span><span class="sxs-lookup"><span data-stu-id="aa769-132">Low frequency buttons</span></span>
-    
-* <span data-ttu-id="aa769-133">激活设置菜单</span><span class="sxs-lookup"><span data-stu-id="aa769-133">Activate settings menu</span></span>
-  * <span data-ttu-id="aa769-134">再延迟预填充好 （立交桥闪烁缓冲区）</span><span class="sxs-lookup"><span data-stu-id="aa769-134">Longer delay pre-fill okay (flyover flicker buffer)</span></span>
-  * <span data-ttu-id="aa769-135">尝试使这些按钮不频繁的游标的途径干扰</span><span class="sxs-lookup"><span data-stu-id="aa769-135">Try to keep these buttons out of the way of frequent cursor pathways</span></span>
+### <a name="visual-feedback"></a><span data-ttu-id="e0d3d-144">视觉反馈</span><span class="sxs-lookup"><span data-stu-id="e0d3d-144">Visual feedback</span></span>
 
-* <span data-ttu-id="aa769-136">确认 （即扫描流，对话框）</span><span class="sxs-lookup"><span data-stu-id="aa769-136">Confirmations (i.e. scan flow, dialogs)</span></span>
-  * <span data-ttu-id="aa769-137">在主要按钮上显示选择突出显示</span><span class="sxs-lookup"><span data-stu-id="aa769-137">Show selection highlight on main button</span></span>
-  * <span data-ttu-id="aa769-138">显示在选择突出显示相同的时间会仔细斟酌目标</span><span class="sxs-lookup"><span data-stu-id="aa769-138">Reveal dwell target at same time as selection highlight</span></span>
-  * <span data-ttu-id="aa769-139">使用在此再次详述周围图标使界面保持简单的目标</span><span class="sxs-lookup"><span data-stu-id="aa769-139">Use dwell target surrounding icon to keep interface simple</span></span>
-  * <span data-ttu-id="aa769-140">重要决策，因此不会激活突出显示，请根据情况进行调整的时间显示停留目标</span><span class="sxs-lookup"><span data-stu-id="aa769-140">Important decision, so highlight doesn't activate, reveals dwell target for reconsideration time</span></span>
+<span data-ttu-id="e0d3d-145">在使用径向填充表示停留计时器，启动从按钮的中心。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-145">When using a radial fill to represent the dwell timer, start from the center of button.</span></span> <span data-ttu-id="e0d3d-146">一致的响应是减少混淆比在不同的按钮上的所有不同的方向。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-146">A consistent response is less confusing than all different directions on different buttons.</span></span> 
+
+  * <span data-ttu-id="e0d3d-147">而对于方向交互 （例如，导航栏向上/向下/左/右，等），可以断开此规则。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-147">This rule can be broken though for directional interactions (e.g., nav up/down/left/right, etc.).</span></span> <span data-ttu-id="e0d3d-148">例如，在下一步/后的异常的 Microsoft Dynamics 365 指南使保持正确填充。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-148">For example, Microsoft Dynamics 365 Guides makes an exception on NEXT/BACK being left right fills.</span></span>
+  * <span data-ttu-id="e0d3d-149">请考虑反转径向填充从外部，于以下情形： 关闭切换按钮。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-149">Consider inverting radial fill from outside, for scenarios like toggling a button off.</span></span> <span data-ttu-id="e0d3d-150">按下按钮的反感觉是很好的可视模式来维护。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-150">The inverse feeling of pushing a button is a nice visual pattern to maintain.</span></span> 
+
+### <a name="progressive-disclosure"></a><span data-ttu-id="e0d3d-151">渐进式披露</span><span class="sxs-lookup"><span data-stu-id="e0d3d-151">Progressive Disclosure</span></span>
+
+<span data-ttu-id="e0d3d-152">渐进式披露意味着仅显示在每个交互阶段是相关尽可能详细。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-152">Progressive disclosure means only showing as much detail as is relevant at each stage of an interaction.</span></span> <span data-ttu-id="e0d3d-153">对于停留，这意味着停留目标上突出显示 （例如，在列表控件） 表示在显示。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-153">For dwell, that means the dwell target is revealed on highlight (e.g., in a list control).</span></span>
+
+ ### <a name="oversized-targets"></a><span data-ttu-id="e0d3d-154">过大的目标</span><span class="sxs-lookup"><span data-stu-id="e0d3d-154">Oversized Targets</span></span>
+<span data-ttu-id="e0d3d-155">停留区域可能会大于非活动状态的图标，以使其更易于使用，如 Microsoft Dynamics 365 指南中的后退按钮。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-155">Dwell region can be larger than inactive icon to make it easier to use, like the Back button in Microsoft Dynamics 365 Guides.</span></span>
+
+### <a name="prevent-flickering-with-delayed-feedback"></a><span data-ttu-id="e0d3d-156">防止闪烁延迟反馈的问题</span><span class="sxs-lookup"><span data-stu-id="e0d3d-156">Prevent flickering with delayed feedback</span></span>
+<span data-ttu-id="e0d3d-157">使用开始可视反馈之前短暂的延迟以避免当有人通过停留目标上方时闪烁。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-157">Use a short delay before starting visual feedback to avoid flickering when someone passes over a dwell target.</span></span>
+* <span data-ttu-id="e0d3d-158">为按钮 inteacted 使用频繁，保持非常短的延迟，因此应用程序感觉反应。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-158">For buttons inteacted with frequently, keep the delay very short so the application feels reactive.</span></span>
+* <span data-ttu-id="e0d3d-159">对于与 infrequenctly 交互的按钮更长时间可以是适当以免感觉 twitchy 的接口。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-159">For buttons that are interacted with infrequenctly a longer delay can be approprate to avoid the interface feeling twitchy.</span></span>
+
+## <a name="ui-patterns"></a><span data-ttu-id="e0d3d-160">UI 模式</span><span class="sxs-lookup"><span data-stu-id="e0d3d-160">UI patterns</span></span>
+
+### <a name="high-frequency-buttons"></a><span data-ttu-id="e0d3d-161">高频率按钮</span><span class="sxs-lookup"><span data-stu-id="e0d3d-161">High frequency buttons</span></span>
+<span data-ttu-id="e0d3d-162">![Microsoft Dynamics 365 指南下一步按钮](images/GuideNextButton.png "Microsoft Dynamics 365 指南下一步按钮")高频率按钮是整个应用程序通常使用的按钮。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-162">![Microsoft Dynamics 365 Guides Next Button](images/GuideNextButton.png "Microsoft Dynamics 365 Guides Next Button") High frequency buttons are buttons that are used commonly throughout an application.</span></span> <span data-ttu-id="e0d3d-163">其中一个很好示例是 Microsoft Dynamics 365 指南中的前进和后退按钮。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-163">A good example of these are the next and back buttons in Microsoft Dynamics 365 Guides.</span></span>
+
+* <span data-ttu-id="e0d3d-164">高频率按钮应...</span><span class="sxs-lookup"><span data-stu-id="e0d3d-164">High frequency buttons should...</span></span>
+  * <span data-ttu-id="e0d3d-165">为更大按钮，更轻松地与 head 注视命中</span><span class="sxs-lookup"><span data-stu-id="e0d3d-165">be larger buttons, easier to hit with head-gaze</span></span>
+  * <span data-ttu-id="e0d3d-166">请继续关注高度，以避免人机工程学使出附近。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-166">stay near eye height to avoid ergonomic straining.</span></span>
+
+### <a name="low-frequency-buttons"></a><span data-ttu-id="e0d3d-167">低频率按钮</span><span class="sxs-lookup"><span data-stu-id="e0d3d-167">Low frequency buttons</span></span>
+<span data-ttu-id="e0d3d-168">低频率按钮是不与之交互，定期整个应用程序的按钮。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-168">Low frequency buttons are buttons that are not interacted with as regularly throughout the application.</span></span> <span data-ttu-id="e0d3d-169">很好的示例可能是按钮，访问设置菜单或按钮以清除所有工作。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-169">A good example might be a button to access the settings menu, or a button to clear all work.</span></span>
+
+* <span data-ttu-id="e0d3d-170">尝试保留不频繁的视线移动头的路径，以避免意外激活干扰这些按钮。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-170">Try to keep these buttons out of the way of frequent head-gaze paths to avoid accidental activation.</span></span> 
+
+### <a name="confirmations"></a><span data-ttu-id="e0d3d-171">确认</span><span class="sxs-lookup"><span data-stu-id="e0d3d-171">Confirmations</span></span>
+<span data-ttu-id="e0d3d-172">![Microsoft Dynamics 365 指南确认对话框](images/GuidesConfirmation.png "Microsoft Dynamics 365 指南确认对话框")</span><span class="sxs-lookup"><span data-stu-id="e0d3d-172">![Microsoft Dynamics 365 Guides Confirmation Dialog](images/GuidesConfirmation.png "Microsoft Dynamics 365 Guides Confirmation Dialog")</span></span>
+
+<span data-ttu-id="e0d3d-173">时操作中有重大影响，如充电资金、 删除的工作，或启动一个长的过程，它可用于确认一个人要选择一个按钮。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-173">When an action has significant impact, like charging money, deleting work, or starting a long process, it is useful to confirm that a person meant to select a button.</span></span> <span data-ttu-id="e0d3d-174">Head 注视和停留存在 Ui 是一些模式和确认对话框时的注意事项：</span><span class="sxs-lookup"><span data-stu-id="e0d3d-174">For head-gaze and dwell UIs there are some patterns and considerations for confirmation dialogs:</span></span>
+
+  * <span data-ttu-id="e0d3d-175">在主要按钮上显示选择突出显示。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-175">Show selection highlight on main button.</span></span>
+  * <span data-ttu-id="e0d3d-176">在选择突出显示相同的时间显示停留目标。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-176">Reveal dwell target at same time as selection highlight.</span></span>
+  * <span data-ttu-id="e0d3d-177">对于辅助按钮，显示 head 注视上的停留目标。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-177">For the secondary button, reveal the dwell target on head-gaze.</span></span>
         
-### <a name="toggle-buttons"></a><span data-ttu-id="aa769-141">切换按钮</span><span class="sxs-lookup"><span data-stu-id="aa769-141">Toggle buttons</span></span>
+### <a name="toggle-buttons"></a><span data-ttu-id="e0d3d-178">切换按钮</span><span class="sxs-lookup"><span data-stu-id="e0d3d-178">Toggle buttons</span></span>
+<span data-ttu-id="e0d3d-179">切换按钮需要一些细微的逻辑才能正常工作。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-179">Toggle buttons require some nuanced logic to work properly.</span></span> <span data-ttu-id="e0d3d-180">当一个人 dwells 上切换按钮和在职员工它时，他们需要退出按钮，然后返回以重启停留逻辑。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-180">When a person dwells on a toggle button and actives it, they need to exit the button and then return to restart the dwell logic.</span></span> <span data-ttu-id="e0d3d-181">可滚动按钮处于非活动状态的状态与具有清除活动至关重要。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-181">It is important that togglable buttons have a clear active versus inactive state.</span></span> 
 
-* <span data-ttu-id="aa769-142">Pin</span><span class="sxs-lookup"><span data-stu-id="aa769-142">Pin</span></span>
-  * <span data-ttu-id="aa769-143">清除活动/非活动的可视状态</span><span class="sxs-lookup"><span data-stu-id="aa769-143">Clear active/inactive visual state</span></span>
-  * <span data-ttu-id="aa769-144">径向填充有助于焦点用户，并提供自然进度</span><span class="sxs-lookup"><span data-stu-id="aa769-144">Radial fill helps focus user and provides natural progress</span></span> 
+### <a name="list-views"></a><span data-ttu-id="e0d3d-182">列表视图</span><span class="sxs-lookup"><span data-stu-id="e0d3d-182">List views</span></span>
+<span data-ttu-id="e0d3d-183">![Microsoft Dynamics 365 指南确认对话框](images/GuidesListView.png "Microsoft Dynamics 365 指南确认对话框")列表视图显示 head 视线移动一个特定挑战，输入在此再次详述。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-183">![Microsoft Dynamics 365 Guides Confirmation Dialog](images/GuidesListView.png "Microsoft Dynamics 365 Guides Confirmation Dialog") List views present a particular challenge for head-gaze and dwell input.</span></span> <span data-ttu-id="e0d3d-184">人们需要能够扫描而不 tiptoe 围绕停留目标，这有感觉的内容。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-184">People need to be able to scan the content without feeling like that have to tiptoe around the dwell targets.</span></span> 
 
-* <span data-ttu-id="aa769-145">各项设置</span><span class="sxs-lookup"><span data-stu-id="aa769-145">Individual settings</span></span>
-  * <span data-ttu-id="aa769-146">清除活动/非活动状态</span><span class="sxs-lookup"><span data-stu-id="aa769-146">Clear active/inactive states</span></span>
-  * <span data-ttu-id="aa769-147">在此再次详述左侧周围的图标上所有的目标</span><span class="sxs-lookup"><span data-stu-id="aa769-147">Dwell targets all on left surrounding icon</span></span>
-  * <span data-ttu-id="aa769-148">停留以仅显示所选内容时突出显示活动为目标</span><span class="sxs-lookup"><span data-stu-id="aa769-148">Dwell targets only show up when selection highlight active</span></span>
-  * <span data-ttu-id="aa769-149">"在此再次详述滑块"右侧的开/关设置</span><span class="sxs-lookup"><span data-stu-id="aa769-149">"Dwell on slider" on right side for on/off settings</span></span>
-
-### <a name="list-views"></a><span data-ttu-id="aa769-150">列表视图</span><span class="sxs-lookup"><span data-stu-id="aa769-150">List views</span></span>
-
-* <span data-ttu-id="aa769-151">浏览列表视图-要打开的指南文件</span><span class="sxs-lookup"><span data-stu-id="aa769-151">Browsing list view - guide files to open</span></span>
-  * <span data-ttu-id="aa769-152">游标突出显示行从任意位置在行上，但不开始停留</span><span class="sxs-lookup"><span data-stu-id="aa769-152">Cursor highlights row from anywhere on row but doesn’t begin dwell</span></span>
-  * <span data-ttu-id="aa769-153">当行由游标突出显示时，在左侧显示停留目标</span><span class="sxs-lookup"><span data-stu-id="aa769-153">When row is highlighted by cursor, dwell target appears on left</span></span>
-  * <span data-ttu-id="aa769-154">在此再次详述目标始终左侧和右侧的所有列表视图中的文本的上一个圆圈</span><span class="sxs-lookup"><span data-stu-id="aa769-154">Dwell target always a circle on left side of text in all list views</span></span>
-  * <span data-ttu-id="aa769-155">不显示所有在此再次详述目标立即以避免重复 UI</span><span class="sxs-lookup"><span data-stu-id="aa769-155">Don't show all dwell targets at once to avoid repetitive UI</span></span>
-  * <span data-ttu-id="aa769-156">重复使用相同的模式来建立用户体验的了解</span><span class="sxs-lookup"><span data-stu-id="aa769-156">Re-use the same pattern to establish UX familiarity</span></span>
-        
-* <span data-ttu-id="aa769-157">浏览列表视图-层次结构的任务/在指南中的步骤</span><span class="sxs-lookup"><span data-stu-id="aa769-157">Browsing list view - hierarchy of tasks/steps in a guide</span></span>
-  * <span data-ttu-id="aa769-158">在此再次详述目标始终在文本左侧圆圈</span><span class="sxs-lookup"><span data-stu-id="aa769-158">Dwell target always a circle on left side of text</span></span>
-  * <span data-ttu-id="aa769-159">展开/折叠功能可见性： 在此再次详述</span><span class="sxs-lookup"><span data-stu-id="aa769-159">Collapse/expand dwell affordance</span></span>
-        
-* <span data-ttu-id="aa769-160">浏览列表视图-模式，请选择</span><span class="sxs-lookup"><span data-stu-id="aa769-160">Browsing list view - mode select</span></span>
-  * <span data-ttu-id="aa769-161">遵循上面建立的模式</span><span class="sxs-lookup"><span data-stu-id="aa769-161">Follow patterns established above</span></span>
-
-### <a name="contextual-buttons"></a><span data-ttu-id="aa769-162">上下文的按钮</span><span class="sxs-lookup"><span data-stu-id="aa769-162">Contextual buttons</span></span>
-
-* <span data-ttu-id="aa769-163">显示/隐藏 3D-显示了在 3D 沿附近全息二者</span><span class="sxs-lookup"><span data-stu-id="aa769-163">Show/Hide 3D - shows up in 3D along tether near holograms</span></span> 
-  * <span data-ttu-id="aa769-164">清除活动/非活动的可视状态</span><span class="sxs-lookup"><span data-stu-id="aa769-164">Clear active/inactive visual state</span></span>
-
-### <a name="pivots"></a><span data-ttu-id="aa769-165">透视</span><span class="sxs-lookup"><span data-stu-id="aa769-165">Pivots</span></span>
-
-* <span data-ttu-id="aa769-166">最近/All 指南列表</span><span class="sxs-lookup"><span data-stu-id="aa769-166">Recent/All guides list</span></span>
-  * <span data-ttu-id="aa769-167">填充 UI 功能可见保持指示哪个选项卡处于活动状态性：</span><span class="sxs-lookup"><span data-stu-id="aa769-167">Fill the UI affordance that remains to indicate which tab is active</span></span>
-  * <span data-ttu-id="aa769-168">对于短单字数据透视表，我们选择放弃停留目标模式</span><span class="sxs-lookup"><span data-stu-id="aa769-168">For short single word pivots, we elected to forego the dwell target pattern</span></span>
-  * <span data-ttu-id="aa769-169">我们更简化的界面倾向于另一个 2 个圆圈目标和更广泛的用户界面</span><span class="sxs-lookup"><span data-stu-id="aa769-169">We favored the simplified interface over another 2 circle targets and a wider UI</span></span>
-  * <span data-ttu-id="aa769-170">在我们的示例中的单词是短延迟提供足够舒适之前填充</span><span class="sxs-lookup"><span data-stu-id="aa769-170">In our case, the words are short enough that a delay provides enough comfort before filling</span></span>
-
-
-## <a name="ux-guidelines-and-best-practices"></a><span data-ttu-id="aa769-171">UX 准则和最佳做法</span><span class="sxs-lookup"><span data-stu-id="aa769-171">UX guidelines and best practices</span></span>
-
-### <a name="target-sizes"></a><span data-ttu-id="aa769-172">目标大小</span><span class="sxs-lookup"><span data-stu-id="aa769-172">Target sizes</span></span>
-
-  * <span data-ttu-id="aa769-173">固定图标的最小大小：在 Unity 中，30 Mru （@ 2 分 30 厘米） 的世界空间中的 6 cm</span><span class="sxs-lookup"><span data-stu-id="aa769-173">Pin icon minimum size: 6cm in world space in Unity, 30 MRUs ( 30cm @ 2m)</span></span>
-  * <span data-ttu-id="aa769-174">一点都目标"磁化"粘滞"？</span><span class="sxs-lookup"><span data-stu-id="aa769-174">Are the targets "magnetized" or "sticky" at all?</span></span> <span data-ttu-id="aa769-175">（即注视游标平滑）</span><span class="sxs-lookup"><span data-stu-id="aa769-175">(i.e. gaze cursor smoothing)</span></span>
-
-### <a name="animation"></a><span data-ttu-id="aa769-176">动画</span><span class="sxs-lookup"><span data-stu-id="aa769-176">Animation</span></span>
-
-  * <span data-ttu-id="aa769-177">前停留视觉触发器.5sec 延迟</span><span class="sxs-lookup"><span data-stu-id="aa769-177">Delay before dwell visual triggers .5sec</span></span>
-  * <span data-ttu-id="aa769-178">停留 visual 1.2 秒的持续时间</span><span class="sxs-lookup"><span data-stu-id="aa769-178">Duration of dwell visual 1.2sec</span></span>
-  * <span data-ttu-id="aa769-179">曲线动画？</span><span class="sxs-lookup"><span data-stu-id="aa769-179">Curve on animation?</span></span>
-
-### <a name="visual-feedback"></a><span data-ttu-id="aa769-180">视觉反馈</span><span class="sxs-lookup"><span data-stu-id="aa769-180">Visual feedback</span></span>
-
-  * <span data-ttu-id="aa769-181">从的视线移动光标所在的开始位置的径向填充</span><span class="sxs-lookup"><span data-stu-id="aa769-181">Radial fill from gaze cursor start location</span></span>
-  * <span data-ttu-id="aa769-182">从中心的按钮始终径向填充。</span><span class="sxs-lookup"><span data-stu-id="aa769-182">Always radial fill from center of button.</span></span> <span data-ttu-id="aa769-183">一致的响应是减少混淆比在不同的按钮上的所有不同的方向。</span><span class="sxs-lookup"><span data-stu-id="aa769-183">A consistent response is less confusing than all different directions on different buttons.</span></span> 
-    * <span data-ttu-id="aa769-184">而对于方向交互 （例如，导航栏向上/向下/左/右，等），可以断开此规则。</span><span class="sxs-lookup"><span data-stu-id="aa769-184">This rule can be broken though for directional interactions (e.g., nav up/down/left/right, etc.).</span></span> <span data-ttu-id="aa769-185">例如，在下一步/后保留的异常的指南使向右填充。</span><span class="sxs-lookup"><span data-stu-id="aa769-185">For example, Guides makes an exception on Next/Back being left right fills.</span></span>
-    * <span data-ttu-id="aa769-186">请考虑反转从外部的径向填充 （如果关闭切换）。</span><span class="sxs-lookup"><span data-stu-id="aa769-186">Consider inverting radial fill from outside (if toggling off).</span></span> <span data-ttu-id="aa769-187">按下按钮的反感觉是很好的可视模式来维护。</span><span class="sxs-lookup"><span data-stu-id="aa769-187">THe inverse feeling of pushing a button is a nice visual pattern to maintain.</span></span> 
-
-### <a name="progressive-disclosure"></a><span data-ttu-id="aa769-188">渐进式披露</span><span class="sxs-lookup"><span data-stu-id="aa769-188">Progressive disclosure</span></span>
-
- * <span data-ttu-id="aa769-189">渐进式披露意味着停留目标显示上突出显示 （例如，在列表控件）</span><span class="sxs-lookup"><span data-stu-id="aa769-189">Progressive disclosure means that the dwell target is revealed on highlight (e.g., in a list control)</span></span>
- * <span data-ttu-id="aa769-190">文本栏突出显示与聚焦显示上任意位置上文本的视线移动</span><span class="sxs-lookup"><span data-stu-id="aa769-190">Text bar highlights with spotlight reveal on gaze anywhere on text</span></span>
- * <span data-ttu-id="aa769-191">提供注视填充目标将始终显示列表项突出显示的左侧，但仅限</span><span class="sxs-lookup"><span data-stu-id="aa769-191">Gaze fill target appears always on left, but only for the list item which is highlighted</span></span>
- * <span data-ttu-id="aa769-192">尽量避免由于重复外观堆积圆始终对所有停留目标</span><span class="sxs-lookup"><span data-stu-id="aa769-192">Try to avoid having all dwell targets on at all times due to repetitive look of stacked circles</span></span>
+<span data-ttu-id="e0d3d-185">设计列表视图的一些提示：</span><span class="sxs-lookup"><span data-stu-id="e0d3d-185">Some tips for designing list views:</span></span>
+* <span data-ttu-id="e0d3d-186">具有头 gazed 但不开始停留，除非头注视位于特定停留目标时突出显示的整行。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-186">have the entire row highlight when head-gazed but doesn’t begin dwell unless head-gaze is on the specific dwell target.</span></span>
+* <span data-ttu-id="e0d3d-187">仅显示停留目标时突出显示该行以降低视觉干扰。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-187">only show the dwell target when the row is highlighted to cut down on visual noise.</span></span>
+* <span data-ttu-id="e0d3d-188">保持清晰一致的停留目标位置。</span><span class="sxs-lookup"><span data-stu-id="e0d3d-188">be clear and consistent with the position of dwell targets.</span></span>
+* <span data-ttu-id="e0d3d-189">不显示所有在此再次详述目标立即以避免重复 UI</span><span class="sxs-lookup"><span data-stu-id="e0d3d-189">don't show all dwell targets at once to avoid repetitive UI</span></span>
+* <span data-ttu-id="e0d3d-190">建立用户体验您所熟悉的尽可能多地重复使用相同的模式</span><span class="sxs-lookup"><span data-stu-id="e0d3d-190">re-use the same pattern as often as possible to establish UX familiarity</span></span>
  
- ## <a name="see-also"></a><span data-ttu-id="aa769-193">请参阅</span><span class="sxs-lookup"><span data-stu-id="aa769-193">See also</span></span>
-* [<span data-ttu-id="aa769-194">直接操作</span><span class="sxs-lookup"><span data-stu-id="aa769-194">Direct manipulation</span></span>](direct-manipulation.md)
-* [<span data-ttu-id="aa769-195">指向并提交</span><span class="sxs-lookup"><span data-stu-id="aa769-195">Point and commit</span></span>](point-and-commit.md)
-* [<span data-ttu-id="aa769-196">交互基础知识</span><span class="sxs-lookup"><span data-stu-id="aa769-196">Interaction fundamentals</span></span>](interaction-fundamentals.md)
-* [<span data-ttu-id="aa769-197">头部凝视并提交</span><span class="sxs-lookup"><span data-stu-id="aa769-197">Head-gaze and commit</span></span>](gaze-and-commit.md)
-* [<span data-ttu-id="aa769-198">凝视和语音</span><span class="sxs-lookup"><span data-stu-id="aa769-198">Gaze and voice</span></span>](voice-design.md)
+ ## <a name="see-also"></a><span data-ttu-id="e0d3d-191">请参阅</span><span class="sxs-lookup"><span data-stu-id="e0d3d-191">See also</span></span>
+* [<span data-ttu-id="e0d3d-192">直接操作</span><span class="sxs-lookup"><span data-stu-id="e0d3d-192">Direct manipulation</span></span>](direct-manipulation.md)
+* [<span data-ttu-id="e0d3d-193">指向并提交</span><span class="sxs-lookup"><span data-stu-id="e0d3d-193">Point and commit</span></span>](point-and-commit.md)
+* [<span data-ttu-id="e0d3d-194">交互基础知识</span><span class="sxs-lookup"><span data-stu-id="e0d3d-194">Interaction fundamentals</span></span>](interaction-fundamentals.md)
+* [<span data-ttu-id="e0d3d-195">头部凝视并提交</span><span class="sxs-lookup"><span data-stu-id="e0d3d-195">Head-gaze and commit</span></span>](gaze-and-commit.md)
+* [<span data-ttu-id="e0d3d-196">凝视和语音</span><span class="sxs-lookup"><span data-stu-id="e0d3d-196">Gaze and voice</span></span>](voice-design.md)
