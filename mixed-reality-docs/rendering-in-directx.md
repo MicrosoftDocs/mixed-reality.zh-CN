@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全息、 呈现、 3D 图形，HolographicFrame，呈现循环、 更新循环、 演练、 示例代码
-ms.openlocfilehash: fd35f971af4c3c9dfd7f21ee396c92216b3246e9
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 6edcaf808f2d7d48f480169e5579adb8984678a0
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59593080"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629033"
 ---
 # <a name="rendering-in-directx"></a>在 DirectX 中呈现
 
@@ -89,7 +89,7 @@ auto viewTransformContainer = cameraPose.TryGetViewTransform(coordinateSystem);
 
 ### <a name="process-gaze-and-gesture-input"></a>进程的视线移动和手势输入
 
-[注视](gaze.md)并[手势](gestures.md)输入不是基于时间的因此不需要更新中的**StepTimer**函数。 但是[此输入](gaze,-gestures,-and-motion-controllers-in-directx.md)是指应用程序需要查看每个帧。
+[注视](gaze-in-directx.md)并[手](hands-and-motion-controllers-in-directx.md)输入不是基于时间的因此不需要更新中的**StepTimer**函数。 但是此输入是应用程序需要查看每个帧的内容。
 
 ### <a name="process-time-based-updates"></a>处理基于时间的更新
 
@@ -742,5 +742,5 @@ if (FAILED(hr))
 ```
 
 ## <a name="see-also"></a>请参阅
-* [在 DirectX 的坐标系统](coordinate-systems-in-directx.md)
+* [DirectX 中的坐标系统](coordinate-systems-in-directx.md)
 * [使用 HoloLens 仿真器](using-the-hololens-emulator.md)

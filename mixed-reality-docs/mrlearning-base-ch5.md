@@ -5,13 +5,14 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: unity 中，教程，hololens 混合的现实
-ms.openlocfilehash: c28b607e3532a7c964ab74fdb7a7d514c9293579
-ms.sourcegitcommit: a32f673814a6cd6ff00f936f448885788b3b882c
+ms.openlocfilehash: 32141aafd43c5d729919673509c93bb2014edd37
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64929580"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730923"
 ---
 # <a name="mr-learning-base-module---advanced-input"></a>MR 学习基本模块-高级输入
 

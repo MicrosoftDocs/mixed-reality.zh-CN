@@ -6,13 +6,14 @@ author: grbury
 ms.author: grbury
 ms.date: 02/12/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 混合现实，开发，开发、 HoloLens、 unity、 directx
-ms.openlocfilehash: b4fa41171fff1f1fdc10359c93f4d1e7e4a84867
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: 59b41c6b71e546bac6e3b76c038229d6de45b535
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993585"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730788"
 ---
 # <a name="development-launchpad"></a>开发快速启动板
 
@@ -192,7 +193,7 @@ Unreal-即将推出 ！
 </tr><tr>
 <td> <a href="gaze.md">Head 的视线移动</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="gaze.md">关注的视线移动</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
+<td> <a href="gaze.md">眼睛凝视</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
 </tr><tr>
  <td> <a href="gestures.md">明确的手</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
 </tr><tr>

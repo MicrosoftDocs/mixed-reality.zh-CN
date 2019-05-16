@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合的现实，手势，交互，设计
-ms.openlocfilehash: afebefddfd620b4697b86616e8ecc930b271dca2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: fabd47fef424186b826c410de725f805ff7005f5
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590107"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629054"
 ---
 # <a name="gestures"></a>笔势
 
@@ -110,9 +110,9 @@ HoloLens 识别手势通过跟踪的一个或两个手中可看到设备的位�
 * 应尽量减少中断手势帧边界的后果。 一般情况下，这意味着应停止在边界，但不是会反转手势的结果。 例如，如果用户在一个房间跨移动某些 holographic 对象，移动应停止时手势帧被破坏，但**不**返回到起始点。 用户可能会遇到一些挫折然后，但可能更快地了解边界，而无需每次重新启动其完整的预期的操作。
 
 ## <a name="see-also"></a>请参阅
-* [目标的视线移动](gaze-targeting.md)
+* [设定凝视目标](gaze-targeting.md)
 * [语音设计](voice-design.md)
-* [MR 输入 211:手势](holograms-211.md)
-* [手势和 Unity 中的动作控制器](gestures-and-motion-controllers-in-unity.md)
-* [提供注视、 手势和 DirectX 中的动作控制器](gaze,-gestures,-and-motion-controllers-in-directx.md)
+* [MR 输入 211：手势](holograms-211.md)
+* [Unity 中的手势和运动控制器](gestures-and-motion-controllers-in-unity.md)
+* [双手和动作中 DirectX 的控制器](hands-and-motion-controllers-in-directx.md)
 * [运动控制器](motion-controllers.md)

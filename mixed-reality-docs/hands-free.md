@@ -1,19 +1,19 @@
 ---
-title: 优化应用程序进行无
+title: 免提
 description: 优化应用程序进行无
 author: liamar
 ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 混合现实，无需手动、 注视、 注视目标交互，设计
-ms.openlocfilehash: f39a9524831161997b59be6cf89b124fa5b29c78
-ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
+ms.openlocfilehash: 59a460a0c46ace7e633381019d29af54b1061695
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65524332"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629011"
 ---
-# <a name="optimizing-your-app-for-hands-free"></a>优化应用程序进行无
+# <a name="hands-free"></a>免提
 
 
 
@@ -31,18 +31,16 @@ ms.locfileid: "65524332"
 
 ## <a name="hands-free-modalities"></a>无模式
 
-### <a name="voice-commanding"></a>语音命令
+### <a name="voice-commandingvoice-designmd"></a>[语音命令](voice-design.md)
 
 使用语音命令和控制接口可以不只是允许用户运行 handsfree，但还跳过多个步骤。 此模式的使用情况的范围可以从允许用户只需读取任何按钮名称大声读出来激活它，如下所示，请参阅 it-say-it，到使用可以为您完成任务代理进行会话。
 
-* [语音设计](voice-design.md)
 
 
-### <a name="head-gaze-and-dwell"></a>Head 的视线移动和停留
+### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[Head 注视和停留](gaze-and-dwell.md)
 
 在某些无需干预的情况下，使用您的声音不是理想之选或甚至可能。 大声工厂环境、 隐私或社交标准所有可以进行限制。 头注视 + 会仔细斟酌模型允许用户使用其头矢量点时延迟，导航应用程序或抛开按钮将它后激活一定的时间 （通常大约 1 秒左右）。 
 
-* [凝视和停留](gaze-and-dwell.md)
 
 ## <a name="transitioning-in-and-out-of-hands-free"></a>转换入和移出无
 

@@ -5,13 +5,14 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: unity 中，教程，hololens 混合的现实
-ms.openlocfilehash: b212812beeff54bb1f92ccbcc923ab9c301945b7
-ms.sourcegitcommit: a32f673814a6cd6ff00f936f448885788b3b882c
+ms.openlocfilehash: 04ed2217c473c5649c1850fcc757d866e23b9b56
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64929558"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730893"
 ---
 # <a name="mr-learning-base-module---dynamic-content-placement-and-solvers"></a>MR 学习基本模块的动态内容的位置和求解器
 

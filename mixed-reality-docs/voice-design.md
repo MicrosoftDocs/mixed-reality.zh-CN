@@ -1,25 +1,23 @@
 ---
-title: 视线移动和语音
+title: 语音命令
 description: 提供注视、 手势和语音 (GGV) 是在 HoloLens 上交互的主要方式。 本文提供有关语音设计缜密的指南。
-author: grbury
-ms.author: grbury
+author: shentan
+ms.author: shentan
 ms.date: 04/21/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: Windows Mixed Reality，设计、 交互、 语音
-ms.openlocfilehash: 35e4c72026acaa36e5fd686cf892dd602f6626d6
-ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
+ms.openlocfilehash: 49fa199b2656db95b15583ccfbee39f33942f180
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469072"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730800"
 ---
-# <a name="gaze-and-voice"></a>视线移动和语音
+# <a name="voice-commanding"></a>语音命令
 
-提供注视、 手势和语音 (GGV) 是在 HoloLens 上交互的主要方式 （第 1 代）。 [注视](gaze.md)用于[光标](cursors.md)是用户指定的内容，他们就可以与之交互的机制。 [手势](gestures.md)或[语音](voice-input.md)意图机制。 提供注视可以使用手势或语音，用于完成交互。
+使用语音命令时，注视通常用作目标 mechaninism，是否为指针 （"选择"） 或指示您的应用程序的命令 （"来看，说"）。 当然，一些语音命令不需要的目标，如"转到以启动"或"您好，Cortana。"
 
-在沉浸式耳机交互的主要方式会提供注视提交点提交 (与[运动控制器](motion-controllers.md))。 如果用户具有耳机使用语音功能，结合的视线移动或点使用语音，可以以完成某项操作。
-
-在设计应用时，应考虑如何使这些交互也协同工作。
 
 ## <a name="device-support"></a>设备支持
 
@@ -27,7 +25,7 @@ ms.locfileid: "65469072"
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
 </tr><tr>
-<td>视线移动和语音</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳机）</td>
+<td></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳机）</td>
 </tr>
 </table>
 
@@ -51,13 +49,16 @@ ms.locfileid: "65469072"
    * "您好 Cortana"
    * "选择"
 
-### <a name="what-users-can-say"></a>用户可以说
+### <a name="select"></a>"选择"
 
-用户针对通过的视线移动或指向任何按钮，因为它们可以说这个词语 **"选择"** 来激活该按钮。 "选择"是一个始终侦听低能耗关键字。 更进一步，用户还可以使用"按钮的语法"在系统或应用中。 例如，同时查看应用程序时，用户可以说出命令 （这是在应用栏中） 的"删除"以便从世界中删除应用。
+在任何时候说"选择"将激活的视线移动光标指向任何内容。 
+
+>注意：在 HoloLens 2 中，需要第一次调用通过说一词的视线移动光标"选择"。 例如，"选择"重新激活。 若要隐藏的视线移动游标，只需用手-airtap 或触摸对象。 
 
 ### <a name="see-it-say-it"></a>来看，比如它
 
 Windows Mixed Reality 已经利用了"来看，说"语音模型其中**按钮上的标签是相同的关联的语音命令的**。 因为没有任何标签和语音命令之间的矛盾，用户可以更好地了解什么是控制系统。 为了强调此操作，而上一个按钮，抛开 **"语音在此再次详述提示"** 显示哪个按钮是已启用语音通信。
+
 
 ![请参阅它说示例 1](images/voice-seeitsayit1-640px.jpg)
 

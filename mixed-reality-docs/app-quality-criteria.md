@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 应用程序质量标准，混合现实，混合现实应用
-ms.openlocfilehash: 8070a434be462a636b314527c59f299ca77fb6d4
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e9f6cd5a6017e11cd167c8141d29b82f89af08e4
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592461"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65628996"
 ---
 # <a name="app-quality-criteria"></a>应用程序质量准则
 
@@ -61,7 +61,7 @@ ms.locfileid: "59592461"
 * [混合现实的了解性能](understanding-performance-for-mixed-reality.md)
 * [全息图稳定性和帧速率](hologram-stability.md#frame-rate)
 * [资产的性能预算](asset-creation-process.md)
-* [Unity 的性能建议](performance-recommendations-for-unity.md)
+* [针对 Unity 的性能建议](performance-recommendations-for-unity.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
 
@@ -119,8 +119,8 @@ ms.locfileid: "59592461"
 * [全息图稳定性和帧速率](hologram-stability.md#frame-rate)
 * [案例研究中，使用稳定平面](case-study-using-the-stabilization-plane-to-reduce-holographic-turbulence.md)
 * [混合现实的了解性能](understanding-performance-for-mixed-reality.md)
-* [Unity 的性能建议](performance-recommendations-for-unity.md)
-* [空间的定位点](spatial-anchors.md)
+* [针对 Unity 的性能建议](performance-recommendations-for-unity.md)
+* [空间定位点](spatial-anchors.md)
 * [处理跟踪错误](coordinate-systems.md#handling-tracking-errors)
 * [固定参考框架](coordinate-systems.md#stationary-frame-of-reference)
 
@@ -168,12 +168,12 @@ ms.locfileid: "59592461"
 * [扫描进程的房间](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
 * [空间的定位点的最佳做法](spatial-anchors.md#best-practices)
 * [处理跟踪错误](coordinate-systems.md#handling-tracking-errors)
-* [在 Unity 中的空间映射](spatial-mapping-in-unity.md)
+* [Unity 中的空间映射](spatial-mapping-in-unity.md)
 * [Vuforia 开发概述](vuforia-development-overview.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
 
-* [MR 空间 230:空间映射](holograms-230.md)
+* [MR 空间 230：空间映射](holograms-230.md)
 * [MR 工具包，空间映射库](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/SpatialMapping/README.md)
 * [MR 配套工具包，海报校准示例](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/PosterCalibrationSample)
 * [MR 配套工具包，Kinect IPD](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/KinectIPD)
@@ -225,7 +225,7 @@ ms.locfileid: "59592461"
 ### <a name="resources"></a>资源
 
 * [呈现距离](hologram-stability.md#hologram-render-distances)
-* [在 Unity 中的焦点位置](focus-point-in-unity.md)
+* [Unity 中的焦点](focus-point-in-unity.md)
 * [用规模进行试验](scale.md#experimenting-with-scale)
 * [文本，建议字体大小](typography.md#recommended-font-size)
 
@@ -260,7 +260,7 @@ ms.locfileid: "59592461"
 ### <a name="resources"></a>资源
 
 * [呈现距离](hologram-stability.md#hologram-render-distances)
-* [在 Unity 中的焦点位置](focus-point-in-unity.md)
+* [Unity 中的焦点](focus-point-in-unity.md)
 
 ## <a name="use-of-spatial-sound"></a>使用的空间声音
 
@@ -300,15 +300,15 @@ ms.locfileid: "59592461"
 
 #### <a name="documentation"></a>文档
 
-* [空间声音](spatial-sound.md)
-* [空间合理的设计](spatial-sound-design.md)
-* [在 Unity 中的空间声音](spatial-sound-in-unity.md)
+* [空间音效](spatial-sound.md)
+* [空间音效设计](spatial-sound-design.md)
+* [Unity 中的空间音效](spatial-sound-in-unity.md)
 * [案例研究，空间 HoloTour 的声音](case-study-spatial-sound-design-for-holotour.md)
 * [案例研究，在 RoboRaid 中使用空间的声音](case-study-using-spatial-sound-in-roboraid.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
 
-* [MR 空间 220:空间声音](holograms-220.md)
+* [MR 空间 220：空间音效](holograms-220.md)
 * [MRToolkit，空间音频](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/SpatialSound/README.md)
 
 ## <a name="focus-on-holographic-frame-fov-boundaries"></a>专注于 holographic 帧 (FOV) 边界
@@ -348,7 +348,7 @@ ms.locfileid: "59592461"
 
 #### <a name="documentation"></a>文档
 
-* [Holographic 帧](holographic-frame.md)
+* [全息帧](holographic-frame.md)
 * [案例研究、 HoloStudio UI 和交互设计经验](case-study-3-holostudio-ui-and-interaction-design-learnings.md?#problem-2-modal-dialogs-are-sometimes-out-of-the-holographic-frame)
 * [对象和环境的规模](scale.md)
 * [光标、 可视提示](cursors.md#visual-cues)
@@ -402,13 +402,13 @@ ms.locfileid: "59592461"
 
 * [交互设计](hologram.md)
 * [颜色、 灯光和材料](color,-light-and-materials.md)
-* [公告板和尾随](billboarding-and-tag-along.md)
+* [公告和尾随](billboarding-and-tag-along.md)
 * [交互基础知识](interaction-fundamentals.md)
 * [自动作和用户 locomotion](comfort.md#self-motion-and-user-locomotion)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
 
-* [MR 输入 210:Gaze](holograms-210.md)
+* [MR 输入 210：凝视](holograms-210.md)
 
 ## <a name="input-interaction-clarity"></a>输入的交互清晰度
 
@@ -453,21 +453,22 @@ ms.locfileid: "59592461"
 
 * [Windows MR 交互基础知识](interaction-fundamentals.md)
 * [种交互的对象](interactable-object.md)
-* [目标的视线移动](gaze-targeting.md)
-* [游标](cursors.md)
+* [设定凝视目标](gaze-targeting.md)
+* [光标](cursors.md)
 * [舒适度和的视线移动](comfort.md#gaze-direction)
 * [手势](gestures.md)
 * [语音输入](voice-input.md)
 * [语音设计](voice-design.md)
 * [运动控制器](motion-controllers.md)
-* [移植指南 Unity 的输入](input-porting-guide-for-unity.md)
-* [在 Unity 中的键盘输入](keyboard-input-in-unity.md)
-* [在 Unity 中展示](gaze-in-unity.md)
-* [手势和 Unity 中的动作控制器](gestures-and-motion-controllers-in-unity.md)
-* [在 Unity 中的语音输入](voice-input-in-unity.md)
-* [键盘、 鼠标和 DirectX 中的控制器输入](keyboard,-mouse,-and-controller-input-in-directx.md)
-* [提供注视、 手势和 DirectX 中的动作控制器](gaze,-gestures,-and-motion-controllers-in-directx.md)
-* [在 DirectX 语音输入](voice-input-in-directx.md)
+* [Unity 的输入移植指南](input-porting-guide-for-unity.md)
+* [Unity 中的键盘输入](keyboard-input-in-unity.md)
+* [Unity 中的凝视](gaze-in-unity.md)
+* [Unity 中的手势和运动控制器](gestures-and-motion-controllers-in-unity.md)
+* [Unity 中的语音输入](voice-input-in-unity.md)
+* [DirectX 中的键盘、鼠标和控制器输入](keyboard,-mouse,-and-controller-input-in-directx.md)
+* [在 DirectX 中的头节点和关注视线移动](gaze-in-directx.md)
+* [双手和动作中 DirectX 的控制器](hands-and-motion-controllers-in-directx.md)
+* [DirectX 中的语音输入](voice-input-in-directx.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
 
@@ -475,9 +476,9 @@ ms.locfileid: "59592461"
 * [强制转换研究：HoloStudio UI 和交互设计经验](case-study-3-holostudio-ui-and-interaction-design-learnings.md)
 * [应用程序示例：定期表的元素](periodic-table-of-the-elements.md)
 * [应用程序示例：农历模块](lunar-module.md)
-* [MR 输入 210:Gaze](holograms-210.md)
-* [MR 输入 211:手势](holograms-211.md)
-* [MR 输入 212:语音](holograms-212.md)
+* [MR 输入 210：凝视](holograms-210.md)
+* [MR 输入 211：手势](holograms-211.md)
+* [MR 输入 212：语音](holograms-212.md)
 
 ## <a name="interactable-objects"></a>种交互的对象
 
@@ -515,9 +516,9 @@ ms.locfileid: "59592461"
 
 #### <a name="documentation"></a>文档
 
-* [种交互的对象](interactable-object.md)
-* [在 Unity 中的文本](text-in-unity.md)
-* [应用程序栏和边框](app-bar-and-bounding-box.md)
+* [可交互对象](interactable-object.md)
+* [Unity 中的文本](text-in-unity.md)
+* [应用栏和边界框](app-bar-and-bounding-box.md)
 * [语音设计](voice-design.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
@@ -560,7 +561,7 @@ ms.locfileid: "59592461"
 
 #### <a name="documentation"></a>文档
 
-* [聊天室扫描可视化效果](room-scan-visualization.md)
+* [房间扫描可视化](room-scan-visualization.md)
 * [案例研究：扩展 HoloLens 的空间映射功能](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
 * [案例研究：有关 HoloTour 空间合理的设计](case-study-spatial-sound-design-for-holotour.md)
 * [案例研究：在片段中创建的沉浸式体验](case-study-creating-an-immersive-experience-in-fragments.md)
@@ -600,7 +601,7 @@ ms.locfileid: "59592461"
 
 ### <a name="resources"></a>资源
 
-* [Holographic 帧](holographic-frame.md)
+* [全息帧](holographic-frame.md)
 
 ## <a name="data-loading"></a>数据加载
 

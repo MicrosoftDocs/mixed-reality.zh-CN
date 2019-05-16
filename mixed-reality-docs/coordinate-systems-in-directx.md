@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合现实空间的定位符、 空间的参考框架、 空间坐标系统、 空间阶段中，示例代码、 映像稳定、 空间定位点、 空间定位点应用商店、 跟踪丢失、 演练
-ms.openlocfilehash: c8cdb39cbf4634edb4ed0a595381fc70f1388ce4
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 5a48e0a829ba8647718e28ec20760d8a764b13fe
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59593078"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65628976"
 ---
 # <a name="coordinate-systems-in-directx"></a>在 DirectX 的坐标系统
 
@@ -622,7 +622,7 @@ SpatialLocatorAttachedFrameOfReference 类定义是相对于该设备，而不�
 SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordinateSystem, prediction->Timestamp);
 ```
 
-此 SpatialPointerPose 具有所需位置根据全息图的信息[用户的当前标题](gaze,-gestures,-and-motion-controllers-in-directx.md)。
+此 SpatialPointerPose 具有所需位置根据全息图的信息[用户的当前标题](gaze-in-directx.md)。
 
 由于用户舒适的原因，我们使用线性内插 ("lerp")，以便它的时间段内发生的平滑的位置更改。 这是用户比锁定到其提供注视全息图更舒服。 Lerping 尾随 hologram 位置还使我们能够通过抑制移动; 稳定全息图如果我们不进行此抑制，用户会看到由于什么通常被认为是感觉不移动用户的头的抖动全息图。
 
@@ -796,7 +796,8 @@ Windows 全息版的应用程序模板提供了已为你创建一个 Locatabilit
 
 ## <a name="see-also"></a>请参阅
 * [坐标系统](coordinate-systems.md)
-* [空间的定位点](spatial-anchors.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间的定位点</a>
-* [提供注视、 手势和 DirectX 中的动作控制器](gaze,-gestures,-and-motion-controllers-in-directx.md)
-* [在 DirectX 空间映射](spatial-mapping-in-directx.md)
+* [空间定位点](spatial-anchors.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间定位点</a>
+* [在 DirectX 中的头节点和关注视线移动](gaze-in-directx.md)
+* [双手和动作中 DirectX 的控制器](hands-and-motion-controllers-in-directx.md)
+* [DirectX 中的空间映射](spatial-mapping-in-directx.md)

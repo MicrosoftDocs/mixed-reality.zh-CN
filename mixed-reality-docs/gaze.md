@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合的现实、 提供注视、 交互，设计
-ms.openlocfilehash: 9a12a5a3b3a583477fd98caeaa2f6890c67e2655
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 738ba9063a5d00f3bbedce989d93076d56ad1a44
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593042"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629109"
 ---
 # <a name="gaze"></a>凝视
 
@@ -61,6 +61,6 @@ HoloLens 2 上的交互可通过用户的头的视线移动定位或通过附近
 用户具有目标全息图或使用其的视线移动的实际对象，其下一步是对该对象执行操作。 用户可以执行操作的主要方法是： 通过[手势](gestures.md)，[动作控制器](motion-controllers.md)并[语音](voice-input.md)。
 
 ## <a name="see-also"></a>请参阅
-* [MR 输入 210:Gaze](holograms-210.md)
-* [提供注视、 手势和 DirectX 中的动作控制器](gaze,-gestures,-and-motion-controllers-in-directx.md)
-* [在 Unity 中展示](gaze-in-unity.md)
+* [MR 输入 210：凝视](holograms-210.md)
+* [在 DirectX 中的头节点和关注视线移动](gaze-in-directx.md)
+* [Unity 中的凝视](gaze-in-unity.md)

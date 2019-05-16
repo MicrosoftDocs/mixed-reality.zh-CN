@@ -5,13 +5,14 @@ author: pbarnettms
 ms.author: pbarnett
 ms.date: 04/25/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: HoloLens、 仿真程序
-ms.openlocfilehash: 0a8fa6bb7c7c5bb846604b7a1878911f028d8cba
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: 0dfca73e6c8e1809e1bea3df6ca344b3de0698d5
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64580658"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730922"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 仿真程序
 

@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6dof 控制器，motion 控制器
-ms.openlocfilehash: b44964ab872bd080349ecf1b04b3f7082b521a24
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 7db1c16f8243081dc8f53e8722391f102c38e0d3
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593040"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629113"
 ---
 # <a name="motion-controllers"></a>运动控制器
 
@@ -230,10 +230,10 @@ Windows Mixed Reality 支持不同的外形规格运动控制器，使用每个�
 [向我们提供反馈](give-us-feedback.md)在反馈中心，使用"混合的现实-> 输入"类别。
 
 ## <a name="see-also"></a>请参阅
-* [手势和 Unity 中的动作控制器](gestures-and-motion-controllers-in-unity.md)
-* [提供注视、 手势和 DirectX 中的动作控制器](gaze,-gestures,-and-motion-controllers-in-directx.md)
+* [Unity 中的手势和运动控制器](gestures-and-motion-controllers-in-unity.md)
+* [双手和动作中 DirectX 的控制器](hands-and-motion-controllers-in-directx.md)
 * [手势](gestures.md)
-* [MR 输入 213:运动控制器](mixed-reality-213.md)
+* [MR 输入 213：运动控制器](mixed-reality-213.md)
 * [他酷爱钻研技术的指南：你的主 Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)
 * [他酷爱钻研技术的指南：在 Windows 混合现实中使用游戏和应用](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-games-and-apps-in-windows-mixed-reality)
 * [内部扩展跟踪的工作原理](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/tracking-system)

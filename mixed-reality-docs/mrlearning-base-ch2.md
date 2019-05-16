@@ -5,13 +5,14 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: unity 中，教程，hololens 混合的现实
-ms.openlocfilehash: 1530fd1a1ee06d01e8ab0cc009dfba03873c3427
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: 1800d36b7292b9cb53b09fdd4b9c4fb763d49e79
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993636"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730944"
 ---
 # <a name="mr-learning-base-module---user-interface-hand-tracking-and-mixed-reality-toolkit-configuration"></a>MR 学习基本模块的用户界面手动跟踪和混合现实工具包配置
 

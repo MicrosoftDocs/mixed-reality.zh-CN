@@ -1,17 +1,18 @@
 ---
-title: 视线移动和提交
-description: 视线移动和提交输入模型概述
+title: Head 注视和提交
+description: Head 注视和提交输入模型概述
 author: caseymeekhof
 ms.author: cmeekhof
 ms.date: 03/31/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 混合现实的视线移动，注视目标交互，设计
-ms.openlocfilehash: 7bce18853e46d71d963574b35c393e5a5dbf2cd0
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
+ms.openlocfilehash: 95f2cef8c10ce3d0d2a218953613fef6f0a00362
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873968"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730821"
 ---
 # <a name="head-gaze-and-commit"></a>Head 注视和提交
 Head 注视和提交是包括针对具有转发指点您头 （head 的方向） 的方向的对象输入的模型，然后对其进行操作的辅助数据库输入此类为以无线方式点击手手势或语音命令"Select"。 它被视为具有间接操作，这意味着它最适用于与超出手臂达到了的内容进行交互的"得"输入的模型。
@@ -53,14 +54,14 @@ Head 注视和提交是包括针对具有转发指点您头 （head 的方向）
 - 按 Xbox 游戏板上的 A 按钮
 - 按 Xbox 自适应控制器上的 A 按钮
 
-### <a name="gaze-and-air-tap-gesture"></a>视线移动和 air 的点击手势
+### <a name="head-gaze-and-air-tap-gesture"></a>Head 注视和 air 的点击手势
 空敲击是与手持设备竖直的情况下的点击手势。 若要执行敲击，引发食指到准备就绪的位置，然后用拇指捏合引发食指备份以释放。 HoloLens 1 上敲击是最常见的辅助输入。
 
 ![在准备好的位置，然后单击或点击动作手指](images/readyandpress.jpg)<br>
 
 敲击，还可以在 HoloLens 2，并与原始版本放宽了。 现在支持几乎所有类型的 pinches，只要手形图标仍是靠背和小存货。 这使得更便于用户了解并执行手势。  此新敲击替换旧证书通过相同的 API，因此现有的应用程序会收到新行为会自动重新编译 HoloLens 2 后。
 
-### <a name="gaze-and-select-voice-command"></a>视线移动和"选择"语音命令
+### <a name="head-gaze-and-select-voice-command"></a>Head 注视和"选择"语音命令
 语音命令是在混合现实的主要交互方法之一。 它提供了非常强大的"免费手"机制来控制系统。 有不同类型的语音交互模型：
 
 - "选择"的泛型命令允许执行"单击"传动或作为辅助输入的提交。
@@ -72,7 +73,7 @@ Head 注视和提交是包括针对具有转发指点您头 （head 的方向）
 若要查找更多详细信息和可用的命令以及如何使用 comprenhesive 列表，请查看我们[语音设计](voice-design.md)指南。
 
 
-### <a name="gaze-and-hololens-clicker"></a>视线移动和 HoloLens Clicker
+### <a name="head-gaze-and-hololens-clicker"></a>Head 视线移动和 HoloLens Clicker
 HoloLens Clicker 是专为 HoloLens 生成的第一个外围设备，包含与 HoloLens 1 Development Edition。 HoloLens Clicker 允许用户单击与最小手运动和提交作为辅助输入。 HoloLens clicker 连接到 HoloLens 1 或 2： 使用蓝牙低能耗 (BTLE)。
 
 ![](images/hololens-clicker-500px.jpg)<br>
@@ -83,7 +84,7 @@ HoloLens Clicker
 
 
 
-### <a name="gaze-and-xbox-wireless-controller"></a>视线移动和 Xbox 无线控制器
+### <a name="head-gaze-and-xbox-wireless-controller"></a>Head 注视和 Xbox 无线控制器
 Xbox 无线控制器允许执行"单击"传动作为辅助输入通过使用一个按钮。 设备映射到一组默认的操作，可帮助导航和控制系统。 如果你想要自定义控制器，使用 Xbox 附件应用来配置你的 Xbox 无线控制器。
 
 ![](images/xboxcontroller.jpg)<br>
@@ -92,7 +93,7 @@ Xbox 无线控制器
 [配对使用 PC 的 Xbox 控制器](hardware-accessories.md#pairing-bluetooth-accessories)
 
 
-### <a name="gaze-and-xbox-adaptive-controller"></a>自适应的视线移动和 Xbox 控制器
+### <a name="head-gaze-and-xbox-adaptive-controller"></a>自适应的 Head 注视和 Xbox 控制器
 主要旨在满足使用有限的移动游戏玩家的需求，Xbox 自适应控制器是统一的中心的设备，可帮助使混合现实更易于访问。
 
 Xbox 自适应控制器允许执行"单击"传动作为辅助输入通过使用一个按钮。 设备映射到一组默认的操作，可帮助导航和控制系统。 如果你想要自定义控制器，使用 Xbox 附件应用来配置你的 Xbox 自适应控制器。
@@ -110,16 +111,11 @@ Xbox 自适应控制器端口
 <a href=https://www.xbox.com/en-US/xbox-one/accessories/controllers/xbox-adaptive-controller>Xbox 站点上可用的详细信息。</a>
 
 
-# <a name="device-support"></a>设备支持
-Head 注视，可在所有混合的现实耳机上提交。 是 HoloLens v1 上的主输入的模型。 其他耳机通常包含基于现有的指针机制，例如运动控制器或说明哪些情况下手动跟踪。 在这些设备上的应用程序应首选[点提交](point-and-commit.md)远端的交互，在可能的情况。
-
-关注的视线移动和提交 HoloLens 2 上可用，但不是主输入的模型。 跳转到讨论时，这可能会使您的应用程序的"关注的视线移动设计指南"部分。
-
 # <a name="head-gaze-design-guidelines"></a>Head 注视设计指南
 > [!NOTE]
 > 特定看设计的更多指导[即将推出](index.md)。
 
-## <a name="gaze-targeting"></a>目标的视线移动
+## <a name="head-gaze-targeting"></a>Head 视线移动目标
 用户能够针对他们想要进行交互，而不考虑输入模式的元素为基础构建的所有交互。 在 Windows Mixed Reality，通常这是使用用户的视线移动。
 若要使用户能够成功使用体验，系统的计算的了解用户的意图和用户的实际目的，必须尽可能接近地对齐。 某种程度上，系统将解释用户的预期的操作正确，满意度增加和性能提高。
 
@@ -142,7 +138,7 @@ Head 注视，可在所有混合的现实耳机上提交。 是 HoloLens v1 上�
 ## <a name="improving-targeting-behaviors"></a>提高目标行为
 如果用户的意图以面向内容可以是确定 （或近似密切），它可以接受"near miss"会尝试在交互，就好像它们已正确目标很有帮助。 有了一些可纳入混合的现实体验的成功方法：
 
-### <a name="gaze-stabilization-gravity-wells"></a>提供注视稳定 ("重力 wells")
+### <a name="head-gaze-stabilization-gravity-wells"></a>Head 注视稳定 ("重力 wells")
 这应打开大多数/all 的时间。 此方法中删除用户可能有自然的 head 颈部 jit 编译器。 由于查找/谈到的行为也移动。
 
 ### <a name="closest-link-algorithms"></a>最接近链接算法
@@ -209,10 +205,10 @@ HoloLens 识别手势通过跟踪的一个或两个手中可看到设备的位�
 
 ## <a name="see-also"></a>请参阅
 * [直接操作](direct-manipulation.md)
-* [点和提交](point-and-commit.md)
+* [指向并提交](point-and-commit.md)
 * [交互基础知识](interaction-fundamentals.md)
-* [视线移动和停留](gaze-targeting.md)
-* [视线移动和语音](voice-design.md)
+* [凝视和停留](gaze-targeting.md)
+* [凝视和语音](voice-design.md)
 
 
 

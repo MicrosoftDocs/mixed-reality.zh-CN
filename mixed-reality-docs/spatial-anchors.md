@@ -5,13 +5,14 @@ author: thetuvix
 ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 坐标系统、 空间坐标系统、 全球规模，世界、 规模、 位置、 方向、 定位点、 空间定位点、 世界锁定，世界上锁定，持久性共享
-ms.openlocfilehash: eb0fae7881f1b6517da57305ef2fa3cb1ed78648
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 16165194d040ad22f7885897eddcc65cf9dcaec3
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59593069"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730853"
 ---
 # <a name="spatial-anchors"></a>空间的定位点
 
@@ -75,7 +76,7 @@ ms.locfileid: "59593069"
 ## <a name="see-also"></a>请参阅
 * [坐标系统](coordinate-systems.md)
 * [混合现实中的共享体验](shared-experiences-in-mixed-reality.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间的定位点</a>
-* [在 Unity 中的暂留](persistence-in-unity.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间定位点</a>
+* [Unity 中的持久性](persistence-in-unity.md)
 * [DirectX 中的空间定位点](coordinate-systems-in-directx.md#place-holograms-in-the-world-using-spatial-anchors)
 * [案例研究-通查在现实中的漏洞](case-study-looking-through-holes-in-your-reality.md)

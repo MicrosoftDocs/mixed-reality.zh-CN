@@ -5,13 +5,14 @@ author: sostel
 ms.author: sostel
 ms.date: 04/05/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 混合现实、 输入、 关注的视线移动的眼跟踪
-ms.openlocfilehash: 75cbba9048b620e4b00492ad3f71315fabf86677
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: f61f813c702cbeaa03ddc50c6a1958af3566bc1c
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2019
-ms.locfileid: "64581047"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730767"
 ---
 # <a name="eye-tracking-on-hololens-2"></a>眼睛追踪 HoloLens 2 上
 HoloLens 2，以允许的上下文和全息版中的人理解了一个新水平的开发人员提供了令人难以置信的使用有关用户正在查看的信息的体验。 此页概述了如何开发人员可以受益于不同用例的眼跟踪以及将来需要注意的设计的视线移动基于关注的用户界面时。 

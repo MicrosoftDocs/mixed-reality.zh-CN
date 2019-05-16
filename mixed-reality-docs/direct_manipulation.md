@@ -1,21 +1,19 @@
 ---
-title: 使用手直接操作
+title: 直接操作
 description: 直接操作输入模型概述
 author: caseymeekhof
 ms.author: cmeekhof
 ms.date: 04/02/2019
 ms.topic: article
-ms.localizationpriority: high
 keywords: 混合现实、 提供注视、 面向交互的视线移动设计，附近，手 HoloLens
-ms.openlocfilehash: e241e13a778de0889942a3643246e087a107db86
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 803157bb248a5541ed524ac4f828ccbba9d59ce1
+ms.sourcegitcommit: 82d4e5cf4ad46bfdc44d0606844e28c75b6e67ce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730750"
+ms.locfileid: "65730503"
 ---
-# <a name="direct-manipulation-with-hands"></a>使用手直接操作
-直接操作是一个输入的模型，包括触摸全息直接与您的手。 直接操作的目标是，对象的行为就像在现实生活中。 可以只需通过按其激活按钮、 对象可以捕获它们，选取和 2D 内容的行为类似于虚拟触摸屏。  因此，直接操作是方便用户了解，，并在它太的乐趣。  它被视为"附近的"输入的模型，这意味着它最适用于与 arm 内达到了的内容进行交互。
+# <a name="direct-manipulation"></a>直接操作
 
 HoloLens 2 提供了直接操作输入的模式，可让您接触全息 dircly 用手。 直接操作的目标是的行为就像在现实生活中的对象。 可以只需按下，激活按钮和甚至和选取、 获取，并移动对象。 在这些情况下，2D 内容表现得像虚拟触摸屏。
 
@@ -25,13 +23,11 @@ HoloLens 2 提供了直接操作输入的模式，可让您接触全息 dircly �
 
 ## <a name="device-support"></a>设备支持
 
-
 | 输入的模型 | [HoloLens （第 1 代）](https://review.docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details?branch=master) | HoloLens 2 |[沉浸式耳机](https://review.docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details?branch=master)|
 |:-------- | :-------| :--------| :------------|
 | 直接操作 | 不支持的 ❌ | ✔️ 建议 | 一种替代方法 ➕[点，并提交](https://review.docs.microsoft.com/en-us/windows/mixed-reality/point-and-commit?branch=master)建议。
 
-直接操作是 HoloLens 2 上的主输入的模型，并利用新的明确的手动跟踪系统。 输入的模型，还可以在通过动作控制器使用的沉浸式耳机，但不是建议为外部对象操作的交互的主要方式。  直接 manipluation 上不可用 HoloLens （第 1 代）。
-
+直接操作是 HoloLens 2 上的主输入的模型，并利用新的明确的手动跟踪系统。 输入的模型，还可以在通过动作控制器使用的沉浸式耳机，但不是建议为外部对象操作的交互的主要方式。  直接 manipluation 上不可用 HoloLens v1。
 
 ## <a name="collidable-fingertip"></a>Collidable 指尖
 
@@ -115,7 +111,7 @@ HoloLens 2，的允许用户启用其只手来直接操作通过应用于每个�
 
 ## <a name="instinctual-gestures"></a>Instinctual 手势
 
-与 HoloLens （第 1 代），我们教用户布隆和空气点击等几个预定义的笔势。 对于 HoloLens 2，我们不要求用户记住任何符号的手势。 Instinctual 所有所需的用户笔势，用户需要与全息和内容，进行交互。 要实现 instinctual 手势，方式是指导用户执行 UI 等的设计通过笔势。
+与 HoloLens 不同 （第 1 代），我们教用户布隆和空气点击等几个预定义的笔势。 对于 HoloLens 2，我们不要求用户记住任何符号的手势。 Instinctual 所有所需的用户笔势，用户需要与全息和内容，进行交互。 要实现 instinctual 手势，方式是指导用户执行 UI 等的设计通过笔势。
 
 例如，如果我们建议您对对象随取即行或使用双指挤压控点，该对象或控点应很小。 如果我们希望您能执行五个手指随取即行，该对象或控点应为相对较大。 类似于按钮，小按钮会限制用户使用一根手指，按它，而大按钮鼓励用户使用其搁按。
 
@@ -133,7 +129,7 @@ HoloLens 2，的允许用户启用其只手来直接操作通过应用于每个�
 * **当**:减少错误地触发操作响应。 眼睛追踪允许更好地了解哪些用户当前参与。
 例如，假设你正在阅读通过全息版的 （说明） 文本时达到超过获取实际工作的工具。
 
-这样，您甚至没有之前 （甚至是外部用户的字段视野 (FOV) 可能） 将您注意到一些交互式 holographic 按钮跨意外移动您的手。
+  这样，您甚至没有之前 （甚至是外部用户的字段视野 (FOV) 可能） 将您注意到一些交互式 holographic 按钮跨意外移动您的手。
 
   长话短说：如果用户尚未探讨一张全息图一段时间，但它检测触摸或掌握现有的事件，则很可能用户实际上并不想要与该全息图进行交互。
 
@@ -147,7 +143,6 @@ HoloLens 2，的允许用户启用其只手来直接操作通过应用于每个�
 
 ## <a name="see-also"></a>请参阅
 
-* [头部凝视并提交](gaze-and-commit.md)
+* [视线移动和提交](gaze-and-commit.md)
 * [指向并提交](point-and-commit.md)
-* [本能交互](interaction-fundamentals.md)
-
+* [交互基础知识](interaction-fundamentals.md)
