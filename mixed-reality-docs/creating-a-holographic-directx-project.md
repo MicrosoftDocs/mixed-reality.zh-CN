@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全息版的应用程序、 新的应用、 UWP 应用、 模板应用、 全息、 新的项目、 演练、 下载示例代码
-ms.openlocfilehash: 7d1ea0246cf823f74e68b4e67fbcfc275d081688
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: a7eac9d8056fe5f7bcc442d6441f71331fa96cf6
+ms.sourcegitcommit: 19c9bff21061d485821b61c9f3498daef8fa8235
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59593067"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65828134"
 ---
 # <a name="creating-a-holographic-directx-project"></a>创建全息版的 DirectX 项目
 
@@ -33,18 +33,23 @@ Mixed 的 reality 应用中，但是，有一些典型的 Direct3D 11 UWP 应用
 
 ## <a name="creating-a-uwp-project"></a>创建 UWP 项目
 
-后安装这些工具，您可以创建全息版的 DirectX UWP 项目。 若要创建新项目：
+一次[安装工具](install-the-tools.md)然后可以创建全息版的 DirectX UWP 项目。
+
+若要创建新项目：
 1. 启动**Visual Studio**。
 2. 从**文件**菜单，依次指向**新建**，然后选择**项目**从上下文菜单。 **新的项目**对话框随即打开。
 3. 展开**已安装**左侧展开**Visual C++** 语言节点。
 4. 导航到**Windows 通用 > 全息**节点，然后选择**全息版的 DirectX 11 应用 (通用 Windows) (C++/WinRT)**。
+   ![全息版的 DirectX 11 的屏幕截图C++Visual Studio 中的 WinRT UWP 应用项目模板](images/holographic-directx-app-cpp-new-project.png)<br>
+   *全息版的 DirectX 11 C++Visual Studio 中的 WinRT UWP 应用项目模板*
    >[!IMPORTANT]
    >确保项目模板的名称，包括"(C++/WinRT)"。  如果没有，你已安装的全息版的项目模板的旧版本。  若要获取最新的项目模板中，[安装最新的 HoloLens 模拟器](using-the-hololens-emulator.md)。
 5. 填写**名称**并**位置**文本框中，然后单击或点击**确定**。 创建全息版的应用程序项目。
-6. 对于开发面向仅 HoloLens 2，请确保**目标版本**并**最低版本**设置为**Windows 10，版本 1903年**。  如果你面向 HoloLens （第 1 代） 或桌面 Windows Mixed Reality 耳机，您可以设置**最低版本**到**Windows 10，版本 1809年**相反，尽管这将需要一些<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">版本适应模式检查</a>时使用 HoloLens 2 的新功能，在代码中。
-
-![全息版的应用程序项目模板在 Visual Studio 中的屏幕截图](images/holographic-directx-app-cpp-new-project.png)<br>
-*在 Visual Studio 中的全息版的应用程序项目模板*
+6. 对于开发面向仅 HoloLens 2，请确保**目标版本**并**最低版本**设置为**Windows 10，版本 1903年**。  如果你面向 HoloLens （第 1 代） 或桌面 Windows Mixed Reality 耳机，您可以设置**最低版本**到**Windows 10，版本 1809年**相反，尽管这将需要一些<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">版本自适应检查</a>时使用 HoloLens 2 的新功能，在代码中。
+   ![设置 Windows 10，版本 1903年作为目标和最低版本的屏幕截图](images/new-uwp-project.png)<br>
+   *设置**Windows 10，版本 1903年**作为目标和最低版本*
+   >[!IMPORTANT]
+   >如果没有看到**Windows 10，版本 1903年**作为一个选项，您没有安装最新的 Windows 10 SDK。  若要获取此选项可显示，请<a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">安装版本 10.0.18362.0 或更高版本的 Windows 10 SDK</a>。
 
 该模板会生成项目使用<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>，C + + 17 语言投影支持任何符合标准的 C + + 17 编译器的 Windows 运行时 api。  该项目演示如何创建世界锁定多维数据集，已将用户从两个指标。 用户可以[-敲击](gestures.md#air-tap)或按控制器将多维数据集放置在指定的用户的不同位置上的按钮[注视](gaze.md)。 可以修改此项目以创建任何混合的现实应用。
 
@@ -153,7 +158,7 @@ int APIENTRY wWinMain(
 ## <a name="see-also"></a>请参阅
 * [获取 HolographicSpace](getting-a-holographicspace.md)
 * <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspaceh" target="_blank">HolographicSpace</a>
-* [在 DirectX 中呈现](rendering-in-directx.md)
-* [使用 Visual Studio 部署和调试](using-visual-studio.md)
+* [在 DirectX 中渲染](rendering-in-directx.md)
+* [使用 Visual Studio 进行部署和调试](using-visual-studio.md)
 * [使用 HoloLens 仿真器](using-the-hololens-emulator.md)
-* [全息版的 DirectX 应用中使用 XAML](using-xaml-with-holographic-directx-apps.md)
+* [将 XAML 与全息 DirectX 应用配合使用](using-xaml-with-holographic-directx-apps.md)
