@@ -7,12 +7,12 @@ ms.date: 05/13/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实，注视、 停留、 交互，设计
-ms.openlocfilehash: 9f9fa89d7730e21e89bd24ce3b483d129c8a16db
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 05457b35c13422c8aa6663bdf52a489a4f5afdaa
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730782"
+ms.locfileid: "65813991"
 ---
 # <a name="head-gaze-and-dwell"></a>Head 注视和停留
 
@@ -92,9 +92,9 @@ Head 注视和停留的优越性体现在方案中人的手均忙于处理其他
 ### <a name="high-frequency-buttons"></a>高频率按钮
 ![Microsoft Dynamics 365 指南下一步按钮](images/GuideNextButton.png "Microsoft Dynamics 365 指南下一步按钮")高频率按钮是整个应用程序通常使用的按钮。 其中一个很好示例是 Microsoft Dynamics 365 指南中的前进和后退按钮。
 
-* 高频率按钮应...
-  * 为更大按钮，更轻松地与 head 注视命中
-  * 请继续关注高度，以避免人机工程学使出附近。
+高频率按钮应...
+* 为更大按钮，更轻松地与 head 注视命中
+* 请继续关注高度，以避免人机工程学使出附近。
 
 ### <a name="low-frequency-buttons"></a>低频率按钮
 低频率按钮是不与之交互，定期整个应用程序的按钮。 很好的示例可能是按钮，访问设置菜单或按钮以清除所有工作。

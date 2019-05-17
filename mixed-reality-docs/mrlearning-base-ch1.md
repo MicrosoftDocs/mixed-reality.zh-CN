@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: unity 中，教程，hololens 混合的现实
-ms.openlocfilehash: 4546e4c8d973cbd4ce4190a974a4de9c01197e56
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: c5490e6a3b542a5ca677b309e5ed1171f8666fe7
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730941"
+ms.locfileid: "65814014"
 ---
 # <a name="mr-learning-base-module---project-initialization-and-first-application"></a>MR 学习基本模块的项目初始化并将其第一个应用程序
 
@@ -83,7 +83,7 @@ ms.locfileid: "65730941"
 4. 创建并命名为应用程序的新文件夹。 下面的文件夹名称的图中"应用"已创建以包含应用程序。 单击"选择文件夹"以开始新创建的文件夹中生成。 完成生成后，可能会关闭在 Unity 中的"生成设置"窗口。 
     ![Lesson1 第 5 章步骤 4](images/Lesson1Chapter5Step4.JPG)
 
-  > 注意：如果生成失败，尝试再次生成或重新启动 Unity 并再次生成。 如果你看到错误，如"错误：CS0246 = 找不到"XX"键入或命名空间名称 (是否缺少 using 指令或程序集引用？)"，则需要安装[Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
+  > 注意：如果生成失败，尝试再次生成或重新启动 Unity 并再次生成。 如果你看到错误，如"错误：CS0246 = 找不到"XX"类型或命名空间名称 (是否缺少 using 指令或程序集引用？)"，则需要安装[Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
   >
 
 5. 在生成完成后，打开新创建的文件夹包含新生成的应用程序文件。 双击"MixedRealityBase.sln"解决方案 （或相应的名称，如果使用你的项目的替代名称） 在 Visual Studio 中打开解决方案文件。

@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 混合现实，手、 运动控制器、 交互，设计
-ms.openlocfilehash: 4f4231dd816dc71e42d16aca1b518ad03440116e
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: b13efadd111ca970abe625221fb8045644822c37
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629029"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65813982"
 ---
 # <a name="hands-and-motion-controllers"></a>双手和动作控制器
 ## <a name="scenarios"></a>方案
@@ -26,9 +26,9 @@ ms.locfileid: "65629029"
 
 ## <a name="hands-and-motion-controllers-modalities"></a>双手和动作控制器模式
 ### <a name="direct-manipulation-with-handsdirect-manipulationmd"></a>[使用手直接操作](direct-manipulation.md)
-这是利用的手，用户了支持的触摸和直接操作全息模态。 通过 leaveraging 日常生活体验和提供适当的可视化提示，用户就能够使用相同的方法来操作实际对象与虚拟的交互。   
+这是利用的手，用户了支持的触摸和直接操作全息模态。 通过 leaveraging 日常生活体验和提供适当的可视化提示，用户就能够使用相同的方法来操作现实世界对象与虚拟的交互。   
 
-### <a name="point-and-commit-with-handspoint-and-commitmd"></a>[点和提交模式以及实践](point-and-commit.md)
+### <a name="point-and-commit-with-handspoint-and-commitmd"></a>[使用手指向和提交](point-and-commit.md)
 此模式使用户能够在距离全息与之交互。 它使用户能够充分利用的周围的环境。 用户可以在任意位置全息和仍可以从任何距离访问它们。 心理模型和用于控制和操作 2D 和 3D 全息手势是高度与同步的直接操作。
 
 ### <a name="motion-controllersmotion-controllersmd"></a>[运动控制器](motion-controllers.md)
