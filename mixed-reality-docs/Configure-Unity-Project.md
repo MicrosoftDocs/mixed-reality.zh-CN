@@ -6,12 +6,12 @@ ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity 中，混合现实、 开发、 开始、 新建项目
-ms.openlocfilehash: 4ee81eca25109da428d7b3addf59e102ddc5c5cf
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: aad38474781fd78425d48034877122d36d9e3e93
+ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993542"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940746"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>针对 Windows Mixed Reality 配置新的 Unity 项目 
 
@@ -36,6 +36,9 @@ ms.locfileid: "64993542"
 4. 在中**XR 设置**部分中，选择**受支持的虚拟现实**复选框以添加**虚拟现实设备**列表。
 5. 在中**XR 设置**组中，确认 **"Windows Mixed Reality"** 被列为受支持的设备。 （这可能显示为"Windows Holographic"在较旧版本的 Unity）
 
+![Unity 质量设置](images/getting-started-unity-quality-settings.jpg)<br>
+*Unity xr 设置*
+
 您的应用程序现在可以执行基本全息呈现和空间的输入。 若要更进一步，充分利用特定功能，你的应用必须声明其清单中的相应功能。 可以在 Unity 中进行的清单的声明，以便将它们包括在每个后续项目导出。 该设置位于**播放器设置 > 通用 Windows 平台的设置 > 发布设置 > 功能**。 启用的常用的 Unity Api 的混合现实适用的功能包括：
 
 |  功能  |  Api，需要功能 | 
@@ -48,7 +51,7 @@ ms.locfileid: "64993542"
 
 **Unity 质量设置**
 
-![Unity 质量设置](images/unityqualitysettings-350px.png)<br>
+![Unity 质量设置](images/getting-started-unity-quality-settings.jpg)<br>
 *Unity 质量设置*
 
 HoloLens 有移动类 GPU。 如果您的应用程序面向 HoloLens，则需要针对最快的性能优化的质量设置以确保我们保持完整的帧速率：

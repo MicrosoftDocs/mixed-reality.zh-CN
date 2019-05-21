@@ -1,6 +1,6 @@
 # <a name="the-making-of-galaxy-explorer-for-hololens-2"></a>在制作的 HoloLens 2 Galaxy 资源管理器
 
-欢迎使用 HoloLens 2，我们就会更新 Galaxy 资源管理器的旅程。 [Galaxy 资源管理器](https://docs.microsoft.com/en-us/windows/mixed-reality/galaxy-explorer "Galaxy 资源管理器")最初作为开放源代码应用程序开发的 HoloLens （第 1 代） 通过共享你的想法计划，而是有很多人的第一个混合的现实体验之一。 现在我们要更新其用于[令人兴奋的新功能的 HoloLens 2](https://www.microsoft.com/en-gb/hololens/hardware)。
+欢迎使用 HoloLens 2，我们就会更新 Galaxy 资源管理器的旅程。 [Galaxy 资源管理器](https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer "Galaxy 资源管理器")最初作为开放源代码应用程序开发的 HoloLens （第 1 代） 通过共享你的想法计划，而是有很多人的第一个混合的现实体验之一。 现在我们要更新其用于[令人兴奋的新功能的 HoloLens 2](https://www.microsoft.com/hololens/hardware)。
 
 作为 Microsoft 的混合现实 Studios(1) 之一，我们通常开发商业级解决方案和是开发和测试在整个创意和开发过程的目标平台上。 我们现在有唯一的情况下，还具有 HoloLens 2 设备的访问权限，但很高兴为启动到 Galaxy 资源管理器的更新。 我们正在着手此项目使用的框架和工具 (如[MRTK v2](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)) 变得可供我们和社区-以及我们想要将沿于持续一段时间。
 
