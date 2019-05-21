@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Windows Mixed Reality，设计、 示例应用程序、 控件
 ms.openlocfilehash: ad95d2bcfd1b70d805adcceb36be0c6c29b838f0
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592865"
@@ -18,7 +18,7 @@ ms.locfileid: "59592865"
 >[!NOTE]
 >本文讨论了我们已在中创建一个探索示例[混合现实设计实验室](https://github.com/Microsoft/MRDesignLabs_Unity)，其中我们共享有关我们的知识和建议的混合现实应用程序开发。 当我们进行新的发现，我们与设计相关文章和代码将发展。
 
-[元素的定期表](https://github.com/Microsoft/MRDesignLabs_Unity_PeriodicTable)是来自 Microsoft 的混合现实设计实验室一个开放源代码示例应用。 与此项目中，可以了解如何使用各种图面上的类型使用设置布局在 3D 空间中的对象的数组**[对象集合](object-collection.md)**。 此外了解如何创建种交互响应来自 HoloLens 的标准输入的对象。 可以使用此项目的组件来创建你自己的混合现实应用体验。
+[元素的定期表](https://github.com/Microsoft/MRDesignLabs_Unity_PeriodicTable)是来自 Microsoft 的混合现实设计实验室一个开放源代码示例应用。 与此项目中，可以了解如何使用各种图面上的类型使用设置布局在 3D 空间中的对象的数组 **[对象集合](object-collection.md)** 。 此外了解如何创建种交互响应来自 HoloLens 的标准输入的对象。 可以使用此项目的组件来创建你自己的混合现实应用体验。
 
 ![时间段表的元素应用](images/640px-periodictable-hero.jpg)
 

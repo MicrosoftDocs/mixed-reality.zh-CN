@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Unity、 空间映射，呈现器、 碰撞体、 网格、 扫描、 组件
 ms.openlocfilehash: f938f5921cb2c06342a9ebcd376d690c10584df9
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59593079"
@@ -75,7 +75,7 @@ Unity 提供两个组件： 用于轻松地添加到应用中，空间映射**�
 
 如果需要更多的控制不是获得的空间映射的呈现器和空间映射碰撞体组件，可以使用低级别的空间映射脚本 Api。
 
-**命名空间：***UnityEngine.XR.WSA*<br>
+**命名空间：** *UnityEngine.XR.WSA*<br>
 **类型**:*SurfaceObserver*， *SurfaceChange*， *SurfaceData*， *SurfaceId*
 
 以下是使用空间的映射 Api 的应用程序的建议流程的概述。

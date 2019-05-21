@@ -8,15 +8,15 @@ ms.topic: article
 keywords: HoloLens，暂留，Unity
 ms.openlocfilehash: b6a67e52b3a5ce724a90eb1a479c5eda74b0c4cb
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59593063"
 ---
 # <a name="persistence-in-unity"></a>在 Unity 中的暂留
 
-**命名空间：***UnityEngine.XR.WSA.Persistence*<br>
-**类：***WorldAnchorStore*
+**命名空间：** *UnityEngine.XR.WSA.Persistence*<br>
+**类：**  *WorldAnchorStore*
 
 WorldAnchorStore 是创建全息版体验的关键位置全息处于特定实际位置跨应用程序的实例。 这样，你的用户固定单个全息或工作区，无论他们所需，，然后找到它更高版本，他们希望通过您的应用程序的许多用途。
 

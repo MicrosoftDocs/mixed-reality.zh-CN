@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 端口、 迁移、 unity、 中间件，引擎，UWP
 ms.openlocfilehash: a4a8c78f1c45fd8e3b85a767d139bae9f67540e0
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592421"
@@ -144,7 +144,7 @@ else
 ### <a name="unity-step-9-work-through-your-input-model"></a>Unity 步骤 9:通过输入模型起作用
 
 每个游戏或定位现有 HMD 应用程序将有一组它处理的输入，输入所需的体验，和特定 Api，它调用以获取这些输入的类型。 我们已致力于尝试将其作为简单明了，若要充分利用 Windows Mixed Reality 中提供的输入。
-1. 通读**[输入移植指南 Unity](input-porting-guide-for-unity.md)**  Windows Mixed Reality 的方式的详细信息公开输入，和如何映射到你的应用程序可能会立即执行。
+1. 通读 **[输入移植指南 Unity](input-porting-guide-for-unity.md)** Windows Mixed Reality 的方式的详细信息公开输入，和如何映射到你的应用程序可能会立即执行。
 2. 选择是否想要利用 Unity 的跨-VR 的 SDK 输入 API，或特定于 MR 的输入 API。 常规 Input.GetButton/Input.GetAxis Api 由 Unity VR 应用如今用来[Oculus 输入](https://docs.unity3d.com/Manual/OculusControllers.html)并[OpenVR 输入](https://docs.unity3d.com/Manual/OpenVRControllers.html)。 如果您的应用程序已对 motion 控制器使用这些 Api，这是最简单路径-只需重新映射按钮和轴中输入管理器。
     * 您可以访问在 Unity 中使用常规跨 VR SDK Input.GetButton/Input.GetAxis Api 或特定于 MR 的 UnityEngine.XR.WSA.Input Api 的运动控制器数据。 （以前在 Unity 5.6 中的 UnityEngine.XR.WSA.Input 命名空间）
     * 请参阅[工具包中的示例](https://github.com/Microsoft/HoloToolkit-Unity/pull/572)组合游戏手柄和动作的控制器。

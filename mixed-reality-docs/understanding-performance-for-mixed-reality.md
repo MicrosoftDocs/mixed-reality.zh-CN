@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Windows 混合现实、 混合的现实中，虚拟现实、 VR、 MR、 性能、 优化、 CPU、 GPU
 ms.openlocfilehash: ce59f9023c21dc7c981a2bb97d9fbd0c57622dbf
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592659"
@@ -59,7 +59,7 @@ ms.locfileid: "59592659"
 1) 应用程序帧速率**保持不变**，那么您就有可能**CPU 绑定**
 
 >[!NOTE]
->Unity 提供了可以轻松地修改在运行时通过应用程序的呈现器目标分辨率*[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 属性。 最终图像显示在设备上具有固定的分辨率。 该平台将示例输出以生成在显示器上呈现的更高分辨率图像的较低分辨率。 
+>Unity 提供了可以轻松地修改在运行时通过应用程序的呈现器目标分辨率 *[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 属性。 最终图像显示在设备上具有固定的分辨率。 该平台将示例输出以生成在显示器上呈现的更高分辨率图像的较低分辨率。 
 >
 >```CS
 >UnityEngine.XR.XRSettings.renderScale = 0.7f;
@@ -86,7 +86,7 @@ ms.locfileid: "59592659"
     - 在 Unity 中，这可以通过更改**纹理质量**中**编辑** > **项目设置** >   **[质量设置](https://docs.unity3d.com/Manual/class-QualitySettings.html)**。
 - **填充率**指的是呈现可由 GPU 每秒绘制的像素为单位的吞吐量。
     - 若要标识填充速率限制，降低显示分辨率和检查帧速率是否有所改善。 
-    - 在 Unity 中，这可以通过完成*[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 属性
+    - 在 Unity 中，这可以通过完成 *[XRSettings.renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 属性
 
 内存带宽通常涉及到为优化
 1) 减少纹理的解决方法

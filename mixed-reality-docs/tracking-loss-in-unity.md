@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Unity 中，跟踪丢失、 跟踪丢失映像
 ms.openlocfilehash: eb675860d67e9cad0d1129b3a6f61343990a4179
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592539"
@@ -27,8 +27,8 @@ ms.locfileid: "59592539"
 
 若要手动处理跟踪丢失，你需要转到**编辑** > **项目设置** > **播放机** >  **通用 Windows 平台设置选项卡** > **初始图像** > **Windows Holographic**并取消选中"在跟踪丢失暂停和显示图像". 然后，您需要使用下面指定的 Api 处理的更改跟踪。
 
-**命名空间：***UnityEngine.XR.WSA*<br>
-**类型：***WorldManager*
+**命名空间：** *UnityEngine.XR.WSA*<br>
+**类型：** *WorldManager*
 
 * 世界管理器公开的事件来检测跟踪丢失/获得 (*WorldManager.OnPositionalLocatorStateChanged*) 和要查询的当前状态的属性 (*WorldManager.state*)
 * 不活动的跟踪状态时，照相机不会出现在虚拟世界中转换，即使在用户将转换。 这意味着对象将不再对应于任何物理位置和所有都将出现锁定的正文。

@@ -15,7 +15,7 @@ ms.locfileid: "59590160"
 ---
 # <a name="release-notes---october-2017"></a>发行说明-2017 年 10 月
 
-欢迎使用 Windows 混合现实 ！ 发行**[Windows 10 Fall Creators Update](https://blogs.windows.com/windowsexperience/2017/10/17/whats-new-windows-10-fall-creators-update/)** 引入了对新支持[Windows Mixed Reality 沉浸式耳机](immersive-headset-hardware-details.md)和[动作控制器](motion-controllers.md)，使您能够浏览新领域，玩游戏、 VR 和体验时连接到的沉浸式娱乐[Windows Mixed Reality capable PC](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)。
+欢迎使用 Windows 混合现实 ！ 发行 **[Windows 10 Fall Creators Update](https://blogs.windows.com/windowsexperience/2017/10/17/whats-new-windows-10-fall-creators-update/)** 引入了对新支持 [Windows Mixed Reality 沉浸式耳机](immersive-headset-hardware-details.md)和[动作控制器](motion-controllers.md)，使您能够浏览新领域，玩游戏、 VR 和体验时连接到的沉浸式娱乐[Windows Mixed Reality capable PC](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)。
 
 版本的 Windows Mixed Reality 耳机和动作控制器是一项巨大的团队工作和重大的进步的巅峰之作[Windows Mixed Reality 平台](mixed-reality.md)，其中包括[Microsoft HoloLens](hololens-hardware-details.md). 虽然 HoloLens 不接收的更新版本的 Windows 10 Fall Creators Update，知道尚未停止在 HoloLens 上的工作;我们将有大量的知识和见解，以便跨整个 Windows Mixed Reality 应用最近在工作中。 事实上，Windows Mixed Reality 沉浸式耳机和动作控制器表示一个很好的条目指向有关 HoloLens 开发过，相同的 Api，工具，和概念应用于两个。
 

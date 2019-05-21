@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 应用程序中，uwp，提交，提交、 筛选器、 元数据、 系统要求、 关键字、 wack、 证书、 包、 appx、 促销活动
 ms.openlocfilehash: 4eb69fbaa22f4864305f09d5e1bf1c1860a0d31f
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592158"
@@ -144,14 +144,14 @@ Windows 通用平台，可创建跨所有 Windows 10 设备系列都运行的单
 将完成的首要任务之一是[选择一个类别和子类别](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table)混合的现实体验。 非常重要，您**选择您的应用程序的最准确类别**，以便我们可以销售正确存储类别中的应用程序并确保它使用相关搜索查询会显示。 **游戏不会导致更好地展示您的应用程序，如列出 VR 标题**和可能会阻止其显示类别中具有多个调整和更低的拥挤。
 
 但是，你将想要进行混合的现实特定选择提交过程中有四个主要领域：
-1. 在中**[产品声明](submitting-an-app-to-the-microsoft-store.md#mixed-reality-product-declarations)** 部分下[属性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)。
-2. 在中**[系统要求](submitting-an-app-to-the-microsoft-store.md#mixed-reality-system-requirements)** 部分下[属性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)。
-3. 在中**[设备系列可用性](submitting-an-app-to-the-microsoft-store.md#device-family-availability)** 部分下[包](https://docs.microsoft.com/windows/uwp/publish/upload-app-packages)。
-4. 在多个**[应用商店一览页面](submitting-an-app-to-the-microsoft-store.md#store-listing-page)** 字段。
+1. 在中 **[产品声明](submitting-an-app-to-the-microsoft-store.md#mixed-reality-product-declarations)** 部分下 [属性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)。
+2. 在中 **[系统要求](submitting-an-app-to-the-microsoft-store.md#mixed-reality-system-requirements)** 部分下 [属性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)。
+3. 在中 **[设备系列可用性](submitting-an-app-to-the-microsoft-store.md#device-family-availability)** 部分下 [包](https://docs.microsoft.com/windows/uwp/publish/upload-app-packages)。
+4. 在多个 **[应用商店一览页面](submitting-an-app-to-the-microsoft-store.md#store-listing-page)** 字段。
 
 ### <a name="mixed-reality-product-declarations"></a>混合的现实产品声明
 
-上**[属性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 页上的应用程序提交过程，您会发现多个选项与混合现实中相关**[产品声明](https://docs.microsoft.com/windows/uwp/publish/app-declarations)** 部分。
+上 **[属性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 页上的应用程序提交过程，您会发现多个选项与混合现实中相关 **[产品声明](https://docs.microsoft.com/windows/uwp/publish/app-declarations)** 部分。
 
 ![混合的现实产品声明](images/product-declarations-900px.png)<br>
 混合的现实产品声明
@@ -169,7 +169,7 @@ Windows 通用平台，可创建跨所有 Windows 10 设备系列都运行的单
 
 ### <a name="mixed-reality-system-requirements"></a>混合的现实系统要求
 
-上**[属性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 页上的应用程序提交过程，您会发现多个选项与混合现实中相关**[系统要求](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties#system-requirements)** 部分。
+上 **[属性](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** 页上的应用程序提交过程，您会发现多个选项与混合现实中相关 **[系统要求](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties#system-requirements)** 部分。
 
 ![系统要求](images/system-reqs-800px.png)<br>
 系统要求
