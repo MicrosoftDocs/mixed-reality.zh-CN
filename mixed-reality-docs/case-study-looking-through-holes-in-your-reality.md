@@ -19,7 +19,7 @@ ms.locfileid: "64873929"
 
 ## <a name="the-tech"></a>技术人员
 
-如果您已遵循外星人，因为他们可以突破中挂历 **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)**，解锁安全的墙**[片段](case-study-creating-an-immersive-experience-in-fragments.md)**，或已足够幸运若要查看在 UNSC 无穷大 hangar  **[Halo 5 体验在 E3 中 2015年](https://www.youtube.com/watch?v=QDw5QjDtFy8)**，则您已了解我所讲述的内容。 根据您的想象力，来临时漏洞置于你砌干墙或隐藏在松散 floorboard 体系，可以使用此 visual 技巧。
+如果您已遵循外星人，因为他们可以突破中挂历 **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)**，解锁安全的墙 **[片段](case-study-creating-an-immersive-experience-in-fragments.md)**，或已足够幸运若要查看在 UNSC 无穷大 hangar **[Halo 5 体验在 E3 中 2015年](https://www.youtube.com/watch?v=QDw5QjDtFy8)**，则您已了解我所讲述的内容。 根据您的想象力，来临时漏洞置于你砌干墙或隐藏在松散 floorboard 体系，可以使用此 visual 技巧。
 
 ![RoboRaid 添加三维管道和其他结构背后挂历，仅通过创建入侵者破坏漏洞可见。](images/roboraid-640px.png)
 

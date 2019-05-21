@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 校准、 舒适、 视觉对象、 质量、 ipd
 ms.openlocfilehash: 91af069bc4ae5e49d9eb9c529f0d0db7b1567fc8
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59593006"
@@ -37,7 +37,7 @@ Cortana 引入了自己的第一个设置步骤后，校准。 建议校准步�
 
 **启动该应用程序从开始**
 1. 使用[布隆](gestures.md#bloom)到达[开始菜单](navigating-the-windows-mixed-reality-home.md#start-menu)。
-2. 选择**+** 若要查看所有应用。
+2. 选择 **+** 若要查看所有应用。
 3. 启动**校准**。
 
 ![从 shell 访问校准应用](images/calibration-shell.png)
@@ -46,7 +46,7 @@ Cortana 引入了自己的第一个设置步骤后，校准。 建议校准步�
 
 **启动该应用设置**
 1. 使用[布隆](gestures.md#bloom)到达[开始菜单](navigating-the-windows-mixed-reality-home.md#start-menu)。
-2. 选择**+** 若要查看所有应用，如果**设置**不固定到开始。
+2. 选择 **+** 若要查看所有应用，如果**设置**不固定到开始。
 3. 启动**设置**。
 4. 导航到**系统** > **实用程序**，然后选择**打开校准**。
 

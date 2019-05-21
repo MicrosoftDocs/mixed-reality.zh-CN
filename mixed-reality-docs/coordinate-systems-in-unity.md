@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 坐标系统、 空间坐标系统、 只方向、 固定缩放、 现有规模房间的小数位数，全球规模，360 度就位，现有、 聊天室、 世界、 规模、 位置、 方向、 Unity、 定位、 空间定位点、 全球定位点，世界上锁定，世界上锁定，锁定正文，正文锁定，跟踪丢失、 locatability、 边界，自动
 ms.openlocfilehash: 36d74488b23587e5c89b40faf97921a10be7473b
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59593058"
@@ -21,8 +21,8 @@ Windows Mixed Reality 支持跨范围广泛的应用[体验刻度](coordinate-sy
 
 ## <a name="building-an-orientation-only-or-seated-scale-experience"></a>构建仅限方向的或固定刻度体验
 
-**命名空间：***UnityEngine.XR*<br>
-**类型：***XRDevice*
+**命名空间：**  *UnityEngine.XR*<br>
+**类型：**  *XRDevice*
 
 若要生成**仅方向**或**就位规模体验**，必须设置 Unity 为固定且跟踪空间类型。 这将设置 Unity 的世界坐标系统来跟踪[固定参考框架](coordinate-systems.md#spatial-coordinate-systems)。 在保持静止跟踪模式下，内容放置正前方照相机的默认位置在编辑器中 （正向是-Z） 在应用启动时将显示用户。
 
@@ -30,8 +30,8 @@ Windows Mixed Reality 支持跨范围广泛的应用[体验刻度](coordinate-sy
 XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 ```
 
-**命名空间：***UnityEngine.XR*<br>
-**类型：***InputTracking*
+**命名空间：**  *UnityEngine.XR*<br>
+**类型：**  *InputTracking*
 
 有关纯**仅限方向的体验**如 360 度视频查看器 （其中位置头更新将未免效果），然后，可以设置[XR。InputTracking.disablePositionalTracking](https://docs.unity3d.com/ScriptReference/XR.InputTracking-disablePositionalTracking.html)为 true:
 
@@ -47,8 +47,8 @@ InputTracking.Recenter();
 
 ## <a name="building-a-standing-scale-or-room-scale-experience"></a>构建现有规模或聊天室缩放体验
 
-**命名空间：***UnityEngine.XR*<br>
-**类型：***XRDevice*
+**命名空间：**  *UnityEngine.XR*<br>
+**类型：**  *XRDevice*
 
 有关**现有规模**或**聊天室规模体验**，都需要将内容放相对于基底。 有关用户的原因使用 floor **[空间阶段](coordinate-systems.md#spatial-coordinate-systems)**、 floor 级别来源和可选空间边界表示用户的定义、 设置期间首次运行。
 
@@ -69,8 +69,8 @@ else
 
 一旦您的应用程序已成功设置跟踪空间类型，内容在 y 轴上放置 RoomScale = 的 0 平面将显示在地板。 （0，0，0） 处的原点将在其中用户花了安装过程中的空间，-z 表示的向前他们在安装过程中面临着的车间的具体位置。
 
-**命名空间：***UnityEngine.Experimental.XR*<br>
-**类型：***边界*
+**命名空间：** *UnityEngine.Experimental.XR*<br>
+**类型：** *边界*
 
 在脚本代码中，随后可以调用你的 TryGetGeometry 方法是 UnityEngine.Experimental.XR.Boundary 类型获取边界多边形指定 TrackedArea 边界类型。 如果用户定义的边界 （重新获取顶点的列表），您知道安全地交付**聊天室规模体验**给用户，他们可以在其中引导在场景周围创建。
 
@@ -86,8 +86,8 @@ if (UnityEngine.Experimental.XR.Boundary.TryGetGeometry(vertices, Boundary.Type.
 
 ## <a name="building-a-world-scale-experience"></a>构建全球规模体验
 
-**命名空间：***UnityEngine.XR.WSA*<br>
-**类型：***WorldAnchor*
+**命名空间：**  *UnityEngine.XR.WSA*<br>
+**类型：** *WorldAnchor*
 
 若为 true**世界级体验**上允许用户浏览超出 5 米的 HoloLens，你将需要超出所使用的空间缩放体验的新技术。 将使用的一个关键技术是创建[空间的定位点](coordinate-systems.md#spatial-anchors)锁定的精确就地真实的场景中，而不考虑用户具有漫游延伸的范围，全息群集，然后[更高版本中再次查找这些全息会话](coordinate-systems.md#spatial-anchor-persistence)。
 
