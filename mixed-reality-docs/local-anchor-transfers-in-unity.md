@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 共享、 定位、 WorldAnchor、 MR 共享 250、 WorldAnchorTransferBatch、 SpatialPerception、 传输、 本地定位点传输、 定位点导出、 定位点导入
 ms.openlocfilehash: 82bcd07417fd5aa1b265ebc3c8edc939101dd783
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59593059"
@@ -34,7 +34,7 @@ ms.locfileid: "59593059"
 
 ### <a name="anchor-transfer"></a>定位点传输
 
-**命名空间：***UnityEngine.XR.WSA.Sharing*<br>
+**命名空间：**  *UnityEngine.XR.WSA.Sharing*<br>
 类型：*WorldAnchorTransferBatch*
 
 要传输[WorldAnchor](coordinate-systems-in-unity.md)，其中一个必须建立要传输的定位点。 一个 HoloLens 用户扫描其环境，并手动或以编程方式为共享体验的定位点的空间中选择一个点。 然后，将表示此点的数据序列化并将其传输到体验中共享的其他设备。 每个设备然后反序列化的定位点数据，并尝试在空间中找到该点。 为了使定位点传输工作，必须具有每个设备扫描中足够多的环境，以便可以标识定位标记所表示的点。

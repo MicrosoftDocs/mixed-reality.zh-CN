@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Visual Studio、 HoloLens、 混合现实，调试部署
 ms.openlocfilehash: 6bd47d7212d321791a11ff4db91c3e172c91f463
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592259"
@@ -76,7 +76,7 @@ ms.locfileid: "59592259"
 取消对它已与，成对出现的所有计算机从你 HoloLens 启动**设置**应用程序中，转到**更新 > 适用于开发人员**上点击**清除**。
 
 ## <a name="deploying-an-app-to-the-hololens-1st-gen-emulator"></a>将应用部署到 HoloLens （第 1 代） 仿真程序
-1. 请确保你拥有**[安装了 HoloLens Emulator](install-the-tools.md)**。
+1. 请确保你拥有 **[安装了 HoloLens Emulator](install-the-tools.md)** 。
 2. 选择**x86**生成应用的配置。
 ![x86 生成 Visual Studio 中的配置](images/x86setting.png)
 3. 选择**HoloLens 模拟器**中的部署目标下拉列表菜单![模拟器在 Visual Studio 中的目标](images/deployemulator.png)

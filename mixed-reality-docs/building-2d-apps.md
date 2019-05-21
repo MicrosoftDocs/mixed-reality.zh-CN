@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 2D 应用程序中，UWP，平面应用，HoloLens，沉浸式耳机，应用程序模型返回按钮，应用程序栏、 dpi，分辨率，规模
 ms.openlocfilehash: 35a2e7774a79e35893821467f7e9ef8c004efa20
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592422"
@@ -147,7 +147,7 @@ Windows 10 移动所有视觉对象设计从到的实际屏幕像素**有效像�
 
 **标题：** 将显示*displayname*与应用程序实例相关联的磁贴
 
-**后退按钮：** 将引发*[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 时按下事件。 通过控制后退按钮可见性 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)*。
+**后退按钮：** 将引发 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 时按下事件。 通过控制后退按钮可见性 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)*。
 
 ![应用栏 2D 应用视图中的用户界面](images/12697297-10104100857470613-1470416918759008487-o-500px.jpg)<br>
 *应用栏 2D 应用视图中的用户界面*

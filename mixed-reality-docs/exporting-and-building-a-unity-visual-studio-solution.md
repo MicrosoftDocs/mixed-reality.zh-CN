@@ -8,7 +8,7 @@ ms.topic: article
 keywords: unity 中，visual studio 中，导出、 构建、 部署
 ms.openlocfilehash: 68c86fdfe0e589536dafe2bf53c7d4e5dffcc514
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592761"
@@ -26,8 +26,8 @@ ms.locfileid: "59592761"
 2. 单击**添加打开场景**将场景添加到生成。
 3. 在中**生成设置**对话框中，选择以下选项可将 HoloLens 的导出：
    * **平台：***通用 Windows 平台*并确保选择**交换机平台**为所选内容才会生效。
-   * **SDK:***通用 10*。
-   * **UWP 生成类型：***D3D*。
+   * **SDK:**  *通用 10*。
+   * **UWP 生成类型：**  *D3D*。
 4. **可选**：**UnityC#项目：** 检查。
 
 >[!NOTE]

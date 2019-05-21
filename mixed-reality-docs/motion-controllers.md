@@ -185,7 +185,7 @@ Windows Mixed Reality 支持不同的外形规格运动控制器，使用每个�
 
 ## <a name="composite-gestures-high-level-spatial-input"></a>复合手势：高级空间输入
 
-这两[另一方面手势](gestures.md)和运动控制器可以跟踪随时间来检测常见套高级别的**[复合手势](gestures.md#composite-gestures)**。 这让你的应用来检测高级**点击**，**保存**，**操作**并**导航**笔势，是否使用用户最终手或控制器。
+这两 [另一方面手势](gestures.md) 和运动控制器可以跟踪随时间来检测常见套高级别的 **[复合手势](gestures.md#composite-gestures)** 。 这让你的应用来检测高级**点击**，**保存**，**操作**并**导航**笔势，是否使用用户最终手或控制器。
 
 ## <a name="rendering-the-motion-controller-model"></a>呈现运动控制器模型
 

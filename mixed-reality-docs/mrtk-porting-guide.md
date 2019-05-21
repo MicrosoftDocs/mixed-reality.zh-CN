@@ -48,7 +48,7 @@ ms.locfileid: "65730870"
 
 ## <a name="update-sceneproject-settings-in-unity"></a>更新 Unity 中的场景/项目设置
 
-更新了对 Unity 之后 2018.3.x 或 Unity 2019 + 中，建议更新在 Unity 中的设备上获得最佳结果的特定设置。 这些设置下的详细信息中所述**[推荐设置为 Unity](Recommended-settings-for-Unity.md)**。
+更新了对 Unity 之后 2018.3.x 或 Unity 2019 + 中，建议更新在 Unity 中的设备上获得最佳结果的特定设置。 这些设置下的详细信息中所述 **[推荐设置为 Unity](Recommended-settings-for-Unity.md)** 。
 
 应重新进行循环访问的[.NET 脚本的后端](https://docs.unity3d.com/Manual/windowsstore-dotnet.html)在 Unity 2018 中弃用并*删除*中 Unity 2019，因此，开发人员应考虑其项目切换到[IL2CPP](https://docs.unity3d.com/Manual/IL2CPP.html)。 
 

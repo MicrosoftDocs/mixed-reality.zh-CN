@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure 的混合现实、 学院、 unity、 教程、 api、 函数、 存储、 hololens，令人着迷，vr
 ms.openlocfilehash: a828c7f0ac3016462f5c7e874545bf50a2db6771
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59590254"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
 
 <br> 
 
@@ -250,7 +250,7 @@ ms.locfileid: "59590254"
 
     ![为新的 unity 项目提供一个名称](images/AzureLabs-Lab5-18.png)
 
-3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑* > *首选项** ，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
+3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到 **编辑* > *首选项** ，然后在新窗口中，导航到 **外部工具** 。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
 
     ![设置 visual studio 为脚本编辑器](images/AzureLabs-Lab5-19.png)
 
@@ -469,7 +469,7 @@ ms.locfileid: "59590254"
 
 1.  添加 **.unitypackage**通过使用到 Unity 文件**资产 > 导入包 > 自定义包**菜单选项。
 
-2.  在中**导入 Unity 程序包**框，弹出，你可以选择下的所有内容 **插件*> * 存储 * *。 取消选中其他任何内容，因为它不需要此课程。
+2.  在中 **导入 Unity 程序包** 框，弹出，你可以选择下的所有内容 **插件* > *存储**。 取消选中其他任何内容，因为它不需要此课程。
 
     ![导入包](images/AzureLabs-Lab5-45.png)
 

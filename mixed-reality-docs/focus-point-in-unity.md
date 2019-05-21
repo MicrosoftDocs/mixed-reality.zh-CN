@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Unity、 焦点、 焦点平面、 稳定平面、 稳定点、 reprojection，LSR、 深度缓冲区
 ms.openlocfilehash: 0f43c37df66ecada86dcb309fcd58d822f0f3481
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59593024"
 ---
 # <a name="focus-point-in-unity"></a>在 Unity 中的焦点位置
 
-**命名空间：***UnityEngine.XR.WSA*<br>
+**命名空间：**  *UnityEngine.XR.WSA*<br>
 类型：*HolographicSettings*
 
 [关注点](hologram-stability.md#stabilization-plane)可以设置为提供有关如何更好地执行上全息稳定，当前提示的 HoloLens 正在显示。

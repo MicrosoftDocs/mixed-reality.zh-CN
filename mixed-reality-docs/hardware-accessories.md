@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 操作说明、 附件、 蓝牙、 bt、 控制器、 游戏板、 clicker、 xbox
 ms.openlocfilehash: c25f849cbf05a78ba2fe7118dbe160d05e0f5e3f
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592995"
@@ -19,7 +19,7 @@ Windows Mixed Reality 设备支持附件。 将配对到 HoloLens 使用蓝牙�
 
 使用附件和 HoloLens 的两种常见方案是因为以无线方式的点击手势和虚拟键盘。 为此，两个最常见的附件都**HoloLens Clicker**并**蓝牙键盘**。 Microsoft HoloLens 包括蓝牙 4.1 广播并支持[HID 蓝牙](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Human_Interface_Device_Profile_.28HID.29)并[蓝牙 GATT](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Generic_Attribute_Profile_.28GATT.29)配置文件。
 
-Windows Mixed Reality 沉浸式耳机附件需要对超出的输入[注视](gaze.md)并[语音](voice-input.md)。 支持附件包括**键盘和鼠标**，**游戏手柄**，并**[动作控制器](motion-controllers.md)**。
+Windows Mixed Reality 沉浸式耳机附件需要对超出的输入[注视](gaze.md)并[语音](voice-input.md)。 支持附件包括 **键盘和鼠标** ， **游戏手柄** ，并 **[动作控制器](motion-controllers.md)** 。
 
 ## <a name="pairing-bluetooth-accessories"></a>配对的蓝牙附件
 

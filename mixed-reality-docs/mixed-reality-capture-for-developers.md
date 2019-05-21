@@ -8,7 +8,7 @@ ms.topic: article
 keywords: mrc、 照片、 视频、 捕获、 照相机
 ms.openlocfilehash: c2d98baf16b2ea724247224aabadc1e2ca533ec1
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59591594"
@@ -105,7 +105,7 @@ MRC 预期工作，而其他工作从开发人员，但有几个事项需要注�
 
 ### <a name="mrc-with-built-in-camera-ui"></a>使用内置相机 UI MRC
 
-开发人员可以使用*[摄像头捕获 UI API](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)* 若要获取用户捕获混合的现实照片或视频只需几行代码。
+开发人员可以使用 *[摄像头捕获 UI API](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)* 若要获取用户捕获混合的现实照片或视频只需几行代码。
 
 此 API 启动内置 MRC 摄像头 UI，从该用户可以拍摄照片或视频，并返回结果捕获到您的应用程序。  如果你想要创建您自己摄像头 UI，或需要较低级别捕获对流的访问权限，则可以创建自定义的混合现实捕获记录器。
 

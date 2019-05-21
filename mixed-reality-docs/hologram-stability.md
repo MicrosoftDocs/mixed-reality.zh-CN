@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 全息，稳定性 hololens
 ms.openlocfilehash: 9b0227102934650d5640a4ac1c4d6f59ecd8e6dd
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592121"
@@ -28,7 +28,7 @@ ms.locfileid: "59592121"
 * **偏移。** 用户看到此和全息图显示将从最初下达移开的。 发生这种情况时从远放置全息[空间的定位点](spatial-anchors.md)，尤其是在尚未完全映射的环境部分。 创建空间的定位点接近全息降低偏差的可能性。
 * **Jumpiness。** 当一张全息图"弹出"或者"跳转"离开其位置偶尔。 这可能因为跟踪调整全息以匹配已更新您的环境的了解。
 * **Swim.** 当一张全息图看起来 sway 对应于用户的 head 的动作。 发生这种情况是当不在全息[稳定平面](hologram-stability.md#stabilization-plane)，和如果 HoloLens 不[校准](calibration.md)为当前用户。 用户可以重新运行[校准](calibration.md)应用程序若要解决此问题。 开发人员可以更新要进一步增强稳定性的稳定平面。
-* **分色。** HoloLens 中的显示信息是颜色的顺序显示，该闪存的红绿蓝绿色颜色通道，60 赫兹 （单个颜色字段的显示位置将 240 Hz）。 每当用户跟踪具有其自己的眼睛移动全息图，该 hologram 前导和尾随边缘分隔以其构成的颜色，从而产生出喷薄彩虹效果效果。 一定程度的分离所依赖的 hologram 速度。 在某些罕见的情况下，移动的头部快速时查看静态全息图也可能导致出喷薄彩虹效果。 这称为*[颜色分离](hologram-stability.md#color-separation)*。
+* **分色。** HoloLens 中的显示信息是颜色的顺序显示，该闪存的红绿蓝绿色颜色通道，60 赫兹 （单个颜色字段的显示位置将 240 Hz）。 每当用户跟踪具有其自己的眼睛移动全息图，该 hologram 前导和尾随边缘分隔以其构成的颜色，从而产生出喷薄彩虹效果效果。 一定程度的分离所依赖的 hologram 速度。 在某些罕见的情况下，移动的头部快速时查看静态全息图也可能导致出喷薄彩虹效果。 这称为 *[颜色分离](hologram-stability.md#color-separation)* 。
 
 ## <a name="frame-rate"></a>帧速率
 

@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 3D、 徽标、 图标、 建模、 启动器、 3D 启动器、 磁贴、 实时的多维数据集、 win32
 ms.openlocfilehash: ac3d5e17614bcd1072f6843a46bf0525f441f130
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592184"
@@ -36,7 +36,7 @@ ms.locfileid: "59592184"
 如果为其创建的 3D 应用程序启动器，Win32 应用程序将显示 Windows 混合现实开始菜单上的"所有应用"列表中。 若要执行此操作，创建[可视元素清单](https://msdn.microsoft.com/library/windows/apps/dn393983.aspx)XML 文件引用三维应用程序启动程序，通过执行以下步骤：
 
 1. 创建**三维应用启动器资产 GLB 文件**(请参阅[建模和导出](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md))。
-2. 创建**[可视元素清单](https://msdn.microsoft.com/library/windows/apps/dn393983.aspx)** 为应用程序。
+2. 创建 **[可视元素清单](https://msdn.microsoft.com/library/windows/apps/dn393983.aspx)** 为应用程序。
     1. 可以使用启动[下面的示例](#sample-visual-elements-manifest)。  查看完整[可视元素清单](https://msdn.microsoft.com/library/windows/apps/dn393983.aspx)文档了解详细信息。
     2. 更新**Square150x150Logo**并**Square70x70Logo**使用 PNG/JPG/GIF 为你的应用。
         * 将使用这些 Windows 混合现实所有应用程序列表中的应用程序的 2D 徽标以及在桌面上的开始菜单。

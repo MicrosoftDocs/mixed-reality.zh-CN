@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 混合的现实、 控件、 交互、 ui 和 ux
 ms.openlocfilehash: f349d21707375690e00b0f7e465634c62be1537e
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592221"
@@ -20,7 +20,7 @@ ms.locfileid: "59592221"
 ![Interactible 对象英雄形象](images/640px-interactibleobject-hero-640px.jpg)
 
 
-在中**[混合现实工具包](https://github.com/Microsoft/MixedRealityToolkit-Unity)**，我们创建了一系列的 Unity 脚本并将帮助你的预设创建种交互的对象。 可以使用这些来创建任何类型的对象，用户可与之交互，使用这些标准交互状态： 观察，针对，按下。 使用你自己的资产，可以轻松自定义的可视设计。 通过创建和分配相应的动画剪辑中 Unity 的动画控制器的交互状态，或者使用偏移量和规模，可以自定义详细的动画。 
+在中 **[混合现实工具包](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，我们创建了一系列的 Unity 脚本并将帮助你的预设创建种交互的对象。 可以使用这些来创建任何类型的对象，用户可与之交互，使用这些标准交互状态： 观察，针对，按下。 使用你自己的资产，可以轻松自定义的可视设计。 通过创建和分配相应的动画剪辑中 Unity 的动画控制器的交互状态，或者使用偏移量和规模，可以自定义详细的动画。 
 
 
 ## <a name="visual-feedback-for-the-different-input-interaction-states"></a>有关不同输入的交互状态的可视反馈

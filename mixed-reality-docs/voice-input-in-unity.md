@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 语音输入、 KeywordRecognizer、 GrammarRecognizer、 麦克风、 听写、 语音
 ms.openlocfilehash: ef8114a1c877fe9b858122e0c64628d4b71a69cd
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59593011"
@@ -37,8 +37,8 @@ Unity 公开三种方法可以添加[语音输入](voice-input.md)到 Unity 应�
 
 ### <a name="keywordrecognizer"></a>KeywordRecognizer
 
-**命名空间：***UnityEngine.Windows.Speech*<br>
-**类型：***KeywordRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
+**命名空间：** *UnityEngine.Windows.Speech*<br>
+**类型**： *KeywordRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
 
 我们将需要几个 using 语句以保存一些击键：
 
@@ -99,8 +99,8 @@ keywordRecognizer.Start();
 
 ### <a name="grammarrecognizer"></a>GrammarRecognizer
 
-**命名空间：***UnityEngine.Windows.Speech*<br>
-**类型**:*GrammarRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
+**命名空间：** *UnityEngine.Windows.Speech*<br>
+**类型**: *GrammarRecognizer*， *PhraseRecognizedEventArgs*， *SpeechError*， *SpeechSystemStatus*
 
 如果要指定使用 SRGS 你识别语法，使用 GrammarRecognizer。 如果您的应用程序具有多个只需几个关键字，如果你想要识别更复杂的短语，或者如果你想要轻松地打开和关闭命令集，这可以很有用。 请参阅：[创建语法使用 SRGS XML](https://msdn.microsoft.com/library/hh378349(v=office.14).aspx)有关文件格式的信息。
 
@@ -141,8 +141,8 @@ grammarRecognizer.Start();
 
 ## <a name="dictation"></a>听写
 
-**命名空间：***UnityEngine.Windows.Speech*<br>
-**类型**:*DictationRecognizer*， *SpeechError*， *SpeechSystemStatus*
+**命名空间：** *UnityEngine.Windows.Speech*<br>
+**类型**: *DictationRecognizer*， *SpeechError*， *SpeechSystemStatus*
 
 使用 DictationRecognizer 将用户的语音转换为文本。 公开 DictationRecognizer[听写](voice-input.md#dictation)功能和支持注册和侦听的假设和短语完成事件，因此它们讲话时，可以向这两个用户提供反馈和之后。 Start （） 和 stop （） 方法分别启用和禁用时听写识别。 完成后识别器，它应使用 dispose （） 方法来释放它所使用的资源被释放。 它将释放这些资源会自动在其他性能成本的垃圾回收期间如果它们不在此之前，释放。
 

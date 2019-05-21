@@ -8,19 +8,19 @@ ms.topic: article
 keywords: 键盘输入，unity touchscreenkeyboard
 ms.openlocfilehash: 35f6f0df993931eea35db7b167110b341ea0c0f2
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59593025"
 ---
 # <a name="keyboard-input-in-unity"></a>在 Unity 中的键盘输入
 
-**命名空间：***UnityEngine*<br>
+**命名空间：**  *UnityEngine*<br>
  类型：*[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)*
 
 尽管 HoloLens 支持许多形式的输入包括蓝牙键盘，大多数应用程序不能假定所有用户都都可用的物理键盘。 如果你的应用程序需要文本输入，则应提供某种形式的屏幕键盘上。
 
-Unity 提供了*[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)* 类用于接受键盘输入时没有可用的物理键盘。
+Unity 提供了 *[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)* 类用于接受键盘输入时没有可用的物理键盘。
 
 ## <a name="hololens-system-keyboard-behavior-in-unity"></a>在 Unity 中的 HoloLens 系统键盘行为
 

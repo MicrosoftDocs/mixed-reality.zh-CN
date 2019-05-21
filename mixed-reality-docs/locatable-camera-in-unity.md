@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 照片、 视频、 hololens、 照相机、 unity、 可定位
 ms.openlocfilehash: f0183400f55b1c6663a9a20ab4992befe5ad0718
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592339"
@@ -26,8 +26,8 @@ ms.locfileid: "59592339"
 
 ## <a name="photo-capture"></a>照片拍摄
 
-**命名空间：***UnityEngine.XR.WSA.WebCam*<br>
-**类型：***PhotoCapture*
+**命名空间：** *UnityEngine.XR.WSA.WebCam*<br>
+**类型：** *PhotoCapture*
 
 *PhotoCapture*类型使您可以充分仍照片的照片视频摄像机。 常规模式，用于使用*PhotoCapture*来拍摄一张照片如下所示：
 1. 创建*PhotoCapture*对象
@@ -202,8 +202,8 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
 
 ## <a name="video-capture"></a>视频捕获
 
-**命名空间：***UnityEngine.XR.WSA.WebCam*<br>
-**类型：***VideoCapture*
+**命名空间：** *UnityEngine.XR.WSA.WebCam*<br>
+**类型：** *VideoCapture*
 
 *VideoCapture*功能非常类似于*PhotoCapture*。 只有两个差异是你必须指定帧每个第二个 (FPS) 值，并且你可以仅将直接保存到磁盘为.mp4 文件。 若要使用的步骤*VideoCapture*如下所示：
 1. 创建*VideoCapture*对象
