@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 应用程序质量标准，混合现实，混合现实应用
-ms.openlocfilehash: e9f6cd5a6017e11cd167c8141d29b82f89af08e4
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: 756bc148f290aa3406c9ac8bb7003d463c62772c
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65628996"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974741"
 ---
 # <a name="app-quality-criteria"></a>应用程序质量准则
 
@@ -403,7 +403,7 @@ ms.locfileid: "65628996"
 * [交互设计](hologram.md)
 * [颜色、 灯光和材料](color,-light-and-materials.md)
 * [公告和尾随](billboarding-and-tag-along.md)
-* [交互基础知识](interaction-fundamentals.md)
+* [本能交互](interaction-fundamentals.md)
 * [自动作和用户 locomotion](comfort.md#self-motion-and-user-locomotion)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
@@ -451,14 +451,14 @@ ms.locfileid: "65628996"
 
 #### <a name="documentation"></a>文档
 
-* [Windows MR 交互基础知识](interaction-fundamentals.md)
+* [本能交互](interaction-fundamentals.md)
 * [种交互的对象](interactable-object.md)
-* [设定凝视目标](gaze-targeting.md)
+* [头部凝视和停留](gaze-and-dwell.md)
 * [光标](cursors.md)
 * [舒适度和的视线移动](comfort.md#gaze-direction)
 * [手势](gestures.md)
 * [语音输入](voice-input.md)
-* [语音设计](voice-design.md)
+* [语音命令](voice-design.md)
 * [运动控制器](motion-controllers.md)
 * [Unity 的输入移植指南](input-porting-guide-for-unity.md)
 * [Unity 中的键盘输入](keyboard-input-in-unity.md)
@@ -466,8 +466,8 @@ ms.locfileid: "65628996"
 * [Unity 中的手势和运动控制器](gestures-and-motion-controllers-in-unity.md)
 * [Unity 中的语音输入](voice-input-in-unity.md)
 * [DirectX 中的键盘、鼠标和控制器输入](keyboard,-mouse,-and-controller-input-in-directx.md)
-* [在 DirectX 中的头节点和关注视线移动](gaze-in-directx.md)
-* [双手和动作中 DirectX 的控制器](hands-and-motion-controllers-in-directx.md)
+* [DirectX 中的头部和眼部凝视](gaze-in-directx.md)
+* [DirectX 中的手和运动控制器](hands-and-motion-controllers-in-directx.md)
 * [DirectX 中的语音输入](voice-input-in-directx.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
@@ -519,7 +519,7 @@ ms.locfileid: "65628996"
 * [可交互对象](interactable-object.md)
 * [Unity 中的文本](text-in-unity.md)
 * [应用栏和边界框](app-bar-and-bounding-box.md)
-* [语音设计](voice-design.md)
+* [语音命令](voice-design.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
 

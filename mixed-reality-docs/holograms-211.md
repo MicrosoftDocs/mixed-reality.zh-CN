@@ -8,13 +8,13 @@ ms.topic: article
 keywords: holotoolkit、 mixedrealitytoolkit、 mixedrealitytoolkit unity、 学院、 教程中，手势
 ms.openlocfilehash: 76d2b4c0ac3d0a3783b091f7dc8c39548a18b548
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59592683"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
 
 # <a name="mr-input-211-gesture"></a>MR 输入 211:手势
 
@@ -354,9 +354,9 @@ GestureManager.cs 和 AstronautManager.cs 将使我们可以执行以下操作�
 我们现在将添加的语音命令，来控制顶级的交互状态。
 
 1. 展开**关键字**主题中**Inspector**。
-2. 单击**+** 右侧添加一个新的关键字。
+2. 单击 **+** 右侧添加一个新的关键字。
 3. 类型为关键字**移动顶级**。 随时根据需要添加一个键的快捷方式。
-4. 单击**+** 右侧添加一个新的关键字。
+4. 单击 **+** 右侧添加一个新的关键字。
 5. 类型为关键字**旋转顶级**。 随时根据需要添加一个键的快捷方式。
 6. 可在相应的处理程序代码**GestureAction.cs**，在**ISpeechHandler.OnSpeechKeywordRecognized**处理程序。
 
@@ -513,18 +513,18 @@ public class GestureAction : MonoBehaviour, INavigationHandler, IManipulationHan
 我们将通过将两个多个关键字添加到语音输入源，从上一章来执行此操作。 我们还将演示另一种方法来处理识别事件。
 
 1. 单击重新**AstronautManager**中**Inspector**展开**关键字**主题中**检查器**。
-2. 单击**+** 右侧添加一个新的关键字。
+2. 单击 **+** 右侧添加一个新的关键字。
 3. 类型为关键字**展开模型**。 随时根据需要添加一个键的快捷方式。
-4. 单击**+** 右侧添加一个新的关键字。
+4. 单击 **+** 右侧添加一个新的关键字。
 5. 类型为关键字**重置模型**。 随时根据需要添加一个键的快捷方式。
 6. 在中**Inspector**面板中，单击**添加组件**按钮。
 7. 在菜单中，在搜索框中键入**语音输入处理程序**。 选择搜索结果。
 8. 检查**是全局侦听器**，因为我们希望这些命令来处理而不考虑 GameObject 中我们主要。
-9. 单击**+** 按钮，然后选择**展开模型**从关键字下拉列表。
-10. 单击**+** 下的响应，并将**AstronautManager**从**层次结构**到**None （对象）** 字段。
+9. 单击 **+** 按钮，然后选择**展开模型**从关键字下拉列表。
+10. 单击 **+** 下的响应，并将**AstronautManager**从**层次结构**到**None （对象）** 字段。
 11. 现在，单击**否函数**下拉列表中，选择**AstronautManager**，然后**ExpandModelCommand**。
-12. 单击语音输入处理程序的**+** 按钮，然后选择**重置模型**从关键字下拉列表。
-13. 单击**+** 下的响应，并将**AstronautManager**从**层次结构**到**None （对象）** 字段。
+12. 单击语音输入处理程序的 **+** 按钮，然后选择**重置模型**从关键字下拉列表。
+13. 单击 **+** 下的响应，并将**AstronautManager**从**层次结构**到**None （对象）** 字段。
 14. 现在，单击**否函数**下拉列表中，选择**AstronautManager**，然后**ResetModelCommand**。
 
 ![如何设置语音输入源和处理程序第 5 章](images/holograms211-speechhandler.png)

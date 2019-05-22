@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure 的混合现实、 学院、 unity、 教程、 api、 计算机视觉、 hololens，令人着迷，vr microsoft bot framework v4、 web app 机器人、 bot framework、 microsoft 智能机器人应用程序
 ms.openlocfilehash: b828aa4415103d280459bd2c666004c994b3e59d
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59593044"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
 
 # <a name="mr-and-azure-312-bot-integration"></a>MR 和 Azure 312:智能机器人应用程序集成
 
@@ -88,7 +88,7 @@ ms.locfileid: "59593044"
 
     ![创建智能机器人应用程序](images/AzureLabs-Lab312-03.png)
 
-5.  右键单击你*项目*， **MyBot**，在**解决方案资源管理器**，然后单击**添加** **|****类**。
+5.  右键单击你*项目*， **MyBot**，在 **解决方案资源管理器**，然后单击 **添加** **|** **类**。
 
     ![创建智能机器人应用程序](images/AzureLabs-Lab312-04.png)
 
@@ -471,7 +471,7 @@ ms.locfileid: "59593044"
 
     ![照相机设置](images/AzureLabs-Lab312-32.png)
  
-2.  单击**+** 符号。 指定新**标记**作为**BotTag**，*保存*。
+2.  单击 **+** 符号。 指定新**标记**作为**BotTag**，*保存*。
 
     ![照相机设置](images/AzureLabs-Lab312-33.png)
 
@@ -836,7 +836,7 @@ ms.locfileid: "59593044"
     ```
 
     > [!NOTE] 
-    > 请确保插入你**智能机器人应用程序机密密钥**成**botSecret**变量。 你将已记下你**智能机器人应用程序机密密钥**在本课程中，开头中**[第 2 章](#chapter-2---create-the-azure-bot-service)，第 10 步**。
+    > 请确保插入你**智能机器人应用程序机密密钥**成**botSecret**变量。 你将已记下你 **智能机器人应用程序机密密钥** 在本课程中，开头中 **[第 2 章](#chapter-2---create-the-azure-bot-service)，第 10 步** 。
 
 7. 为代码**Awake()** 并**start （)** 现在需要添加。 
 

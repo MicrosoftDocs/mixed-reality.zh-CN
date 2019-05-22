@@ -7,12 +7,12 @@ ms.date: 03/31/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实的视线移动，注视目标交互，设计
-ms.openlocfilehash: 95f2cef8c10ce3d0d2a218953613fef6f0a00362
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: a84465de3479bf3da2131b94dd522539cd7de6e9
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730821"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974877"
 ---
 # <a name="head-gaze-and-commit"></a>Head 注视和提交
 Head 注视和提交是包括针对具有转发指点您头 （head 的方向） 的方向的对象输入的模型，然后对其进行操作的辅助数据库输入此类为以无线方式点击手手势或语音命令"Select"。 它被视为具有间接操作，这意味着它最适用于与超出手臂达到了的内容进行交互的"得"输入的模型。
@@ -70,7 +70,7 @@ Head 注视和提交是包括针对具有转发指点您头 （head 的方向）
 - 会话的用户界面或实体等 Cortana 具有 AI 自然语言功能。
 - 自定义 commnads
 
-若要查找更多详细信息和可用的命令以及如何使用 comprenhesive 列表，请查看我们[语音设计](voice-design.md)指南。
+若要查找更多详细信息和可用的命令以及如何使用 comprenhesive 列表，请查看我们[语音命令](voice-design.md)指南。
 
 
 ### <a name="head-gaze-and-hololens-clicker"></a>Head 视线移动和 HoloLens Clicker
@@ -204,11 +204,11 @@ HoloLens 识别手势通过跟踪的一个或两个手中可看到设备的位�
 
 
 ## <a name="see-also"></a>请参阅
-* [直接操作](direct-manipulation.md)
-* [指向并提交](point-and-commit.md)
-* [交互基础知识](interaction-fundamentals.md)
-* [凝视和停留](gaze-targeting.md)
-* [凝视和语音](voice-design.md)
+* [使用手直接操作](direct-manipulation.md)
+* [使用手指向和提交](point-and-commit.md)
+* [本能交互](interaction-fundamentals.md)
+* [头部凝视和停留](gaze-and-dwell.md)
+* [语音命令](voice-design.md)
 
 
 

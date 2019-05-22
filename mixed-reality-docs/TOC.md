@@ -24,6 +24,7 @@
 #### [查看照片](see-your-photos.md)
 #### [传感器优化](sensor-tuning.md)
 #### [更新 HoloLens](updating-hololens.md)
+#### [设备共享](device-sharing.md)
 #### [HoloLens 演示调整和清理指南](hololens-demo-guide.md)
 ### 沉浸式头戴显示设备
 #### [沉浸式头戴显示设备硬件详细信息](immersive-headset-hardware-details.md)

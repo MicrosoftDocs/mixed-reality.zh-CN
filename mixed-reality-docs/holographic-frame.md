@@ -6,12 +6,12 @@ ms.author: mavitazk
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，Windows Mixed Reality holographic 帧视野
-ms.openlocfilehash: 6773bc03dea471c97d0c6006d2ab7853a5ef3669
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c505eadbc16bb59143313aa62dd7c9d95384e0c8
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590352"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974917"
 ---
 # <a name="holographic-frame"></a>Holographic 帧
 
@@ -127,8 +127,8 @@ HoloLens 游戏片段中，在您的客厅将转换成虚拟犯罪场景显示�
 讨论的实际表示形式提供功能强大的焦点点完成，但细微的技术讨论将向用户觉得他，是对您的演讲。 当用户移动的体验相关信息时，讨论将转为朝向自己阈值之前返回到中立状态，如果用户太远移出他外围。 如果用户看起来完全 （例如，若要查看在场景中其他位置的内容） 从讨论方法然后返回到讨论，一次讲述人的方向的位置将再次侧重于用户。 此类技术提供一种功能强大的浸入式安全感并创建 holographic 内减少过多磁头运动和提升的焦点[用户舒适](comfort.md)。
 
 ## <a name="see-also"></a>请参阅
-* [交互基础知识](interaction-fundamentals.md)
-* [Comfort](comfort.md)
+* [本能交互](interaction-fundamentals.md)
+* [舒适](comfort.md)
 * [缩放](scale.md)
-* [目标的视线移动](gaze-targeting.md)
-* [全息图稳定性](hologram-stability.md)
+* [头部凝视和停留](gaze-and-dwell.md)
+* [全息影像稳定性](hologram-stability.md)

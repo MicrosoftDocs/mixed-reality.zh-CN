@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 04/02/2019
 ms.topic: article
 keywords: 混合现实、 提供注视、 面向交互的视线移动设计，附近，手 HoloLens
-ms.openlocfilehash: 803157bb248a5541ed524ac4f828ccbba9d59ce1
-ms.sourcegitcommit: 82d4e5cf4ad46bfdc44d0606844e28c75b6e67ce
+ms.openlocfilehash: a9e67f21587381dbc1090f89935eaa2b88630dae
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730503"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974757"
 ---
 # <a name="direct-manipulation"></a>直接操作
 
@@ -143,6 +143,6 @@ HoloLens 2，的允许用户启用其只手来直接操作通过应用于每个�
 
 ## <a name="see-also"></a>请参阅
 
-* [视线移动和提交](gaze-and-commit.md)
-* [指向并提交](point-and-commit.md)
-* [交互基础知识](interaction-fundamentals.md)
+* [头部凝视并提交](gaze-and-commit.md)
+* [使用手指向和提交](point-and-commit.md)
+* [本能交互](interaction-fundamentals.md)

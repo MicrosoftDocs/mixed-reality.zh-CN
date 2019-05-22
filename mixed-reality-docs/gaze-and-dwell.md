@@ -7,12 +7,12 @@ ms.date: 05/13/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实，注视、 停留、 交互，设计
-ms.openlocfilehash: 05457b35c13422c8aa6663bdf52a489a4f5afdaa
-ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
+ms.openlocfilehash: aa4713407f14e94c88e654ae6648c4949f98e580
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813991"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974864"
 ---
 # <a name="head-gaze-and-dwell"></a>Head 注视和停留
 
@@ -124,8 +124,8 @@ Head 注视和停留的优越性体现在方案中人的手均忙于处理其他
 * 建立用户体验您所熟悉的尽可能多地重复使用相同的模式
  
  ## <a name="see-also"></a>请参阅
-* [直接操作](direct-manipulation.md)
-* [指向并提交](point-and-commit.md)
-* [交互基础知识](interaction-fundamentals.md)
+* [使用手直接操作](direct-manipulation.md)
+* [使用手指向和提交](point-and-commit.md)
+* [本能交互](interaction-fundamentals.md)
 * [头部凝视并提交](gaze-and-commit.md)
-* [凝视和语音](voice-design.md)
+* [语音命令](voice-design.md)

@@ -6,18 +6,19 @@ ms.author: xerxesb
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 校准、 舒适、 视觉对象、 质量、 ipd
-ms.openlocfilehash: 91af069bc4ae5e49d9eb9c529f0d0db7b1567fc8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 5f8e6aef1df0efe4c64c807e627f69c7949363f2
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593006"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974805"
 ---
-# <a name="calibration"></a>校准
-
-校准在 IPD （interpupillary 距离） 可以提高你的视觉对象的质量。 HoloLens 和 Windows Mixed Reality 沉浸式耳机提供自定义 IPD 的方法。
+# <a name="improve-visual-quality-and-comfort"></a>提高视觉质量、 感觉更舒适
+HoloLens、 HoloLens 2 和 Windows Mixed Reality 沉浸式耳机提供不同的方式来提高质量的视觉体验。 
 
 ## <a name="hololens"></a>HoloLens
+
+校准在 IPD （interpupillary 距离） 可以提高你的视觉对象的质量。
 
 ### <a name="during-setup"></a>在安装过程
 
@@ -54,10 +55,21 @@ Cortana 引入了自己的第一个设置步骤后，校准。 建议校准步�
 
 ## <a name="hololens-2"></a>HoloLens 2
 
-> [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
+### <a name="calibration"></a>校准 
 
-## <a name="immersive-headsets"></a>沉浸式耳机
+在 HoloLens 2 上，将提示您若要在设备安装过程中调整视觉对象。 用户需要查看的固定目标集。 这允许设备调整全息图呈现用户以确保准确地定位的全息起来更舒适的 3D 观看体验，提高显示质量。 也无需手动优化动态发生的所有调整。 
+
+### <a name="calibration-when-sharing-a-device"></a>校准时共享设备 
+
+可以人，也无需每个人员可通过设备安装程序之间共享 Hololens 2 设备。 Hololens 2 将提示用户以调整视觉对象时设备将标头，如果用户是新设备。 如果用户已具有校准设备上的视觉对象，显示会无缝地调整质量和舒适地观看体验时用户将设备放头。  
+
+### <a name="launching-the-calibration-app-from-settings"></a>启动设置校准应用程序
+1. 使用启动手势转到开始菜单。
+2. 选择 **+** 若要查看所有应用，如果**设置**不固定到开始。
+3. 启动**设置**。
+4. 导航到**系统** > **实用程序**，然后选择**打开校准**。
+
+## <a name="immersive-headsets"></a>沉浸式头戴显示设备
 
 若要更改在您的头戴式 IPD，打开设置应用并导航到**混合现实** > **耳机显示**并移动滑块控件。 在您的头戴式看到实时更改。 如果您知道在 IPD，也许从访问 optometrist，可以输入它直接。
 

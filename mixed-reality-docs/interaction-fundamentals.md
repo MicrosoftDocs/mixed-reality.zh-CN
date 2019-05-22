@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实、 提供注视、 视线移动目标交互，设计、 hololens，MMR，multimodal
-ms.openlocfilehash: 771ebe44dc984c9d4550638bef405810d86b8d69
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 9d0e639d7474c7e8728282acfa8d288cfeec7043
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730823"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974908"
 ---
 # <a name="introducing-instinctual-interactions"></a>引入 instinctual 交互
 
@@ -141,12 +141,13 @@ ms.locfileid: "65730823"
 
 ## <a name="see-also"></a>请参阅
 * [头部凝视并提交](gaze-and-commit.md)
-* [直接操作](direct-manipulation.md)
-* [指向并提交](point-and-commit.md)
-* [设定凝视目标](gaze-targeting.md)
+* [头部凝视和停留](gaze-and-dwell.md)
+* [使用手直接操作](direct-manipulation.md)
+* [使用手指向和提交](point-and-commit.md)
 * [手势](gestures.md)
-* [语音设计](voice-design.md)
+* [语音命令](voice-design.md)
 * [运动控制器](motion-controllers.md)
 * [空间音效设计](spatial-sound-design.md)
 * [空间映射设计](spatial-mapping-design.md)
 * [舒适](comfort.md)
+

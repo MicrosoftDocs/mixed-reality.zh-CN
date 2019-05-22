@@ -6,12 +6,12 @@ ms.author: jonwie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计、 简介、 指南
-ms.openlocfilehash: b4f128c001a2fa6ed72e1548ef82693ad1488099
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: ca69118dfeb766c1386420cd81053b9acb485ba7
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590381"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974859"
 ---
 # <a name="about-this-design-guidance"></a>有关此设计指南
 
@@ -31,7 +31,7 @@ ms.locfileid: "59590381"
 
 下面是此设计指南的组织方式的快速概述。 你将找到的每个区域，其中包含指向多篇文章的部分。
 * **[开始进行设计](mixed-reality.md)** -阅读我们的高级心和理解，我们将遵循的原则。
-* **[交互设计](interaction-fundamentals.md)** -了解输入、 命令、 导航和设计您的应用程序的其他交互基础知识。
+* **[Instinctual 交互](interaction-fundamentals.md)** -了解输入、 命令、 导航和设计您的应用程序的其他交互基础知识。
 * **[样式](typography.md)** -通过使用颜色、 版式和动作使您的应用程序很不一般吧。
 * **[应用程序模式](types-of-mixed-reality-apps.md)** -了解如何应用可以在沉浸式和现实世界环境跨方案。
 * **[控件](interactable-object.md)** -使用控件和模式，如生成块以创建你自己的应用体验。

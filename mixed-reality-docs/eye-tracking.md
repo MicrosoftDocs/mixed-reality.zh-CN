@@ -7,12 +7,12 @@ ms.date: 04/05/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实、 输入、 关注的视线移动的眼跟踪
-ms.openlocfilehash: f61f813c702cbeaa03ddc50c6a1958af3566bc1c
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 948d6ad36bfa3f7b179268a8e6241c9a2ce8e732
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730767"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974768"
 ---
 # <a name="eye-tracking-on-hololens-2"></a>眼睛追踪 HoloLens 2 上
 HoloLens 2，以允许的上下文和全息版中的人理解了一个新水平的开发人员提供了令人难以置信的使用有关用户正在查看的信息的体验。 此页概述了如何开发人员可以受益于不同用例的眼跟踪以及将来需要注意的设计的视线移动基于关注的用户界面时。 
@@ -127,7 +127,7 @@ HoloLens 2，以允许的上下文和全息版中的人理解了一个新水平�
 5. **不精确性进行的帐户：** 我们来区分两种类型的不精确性是向用户明显：偏移量和抖动。 为地址偏移量的最简单方法是提供要与之交互的足够大，目标 (visual 角度 – 引用作为 2 个 ° >： 您的缩略图时，可以在视觉角度约 2 ° 延伸 arm (1))。 这会导致以下指南：
     - 不强制用户选择目标较小：研究表明，是否目标是足够大 （和系统设计得当），用户描述为轻松而神奇的交互。 如果目标变得过小，用户将描述作为 fatiguing 和令人沮丧的体验。
     
-# <a name="eye-gaze-design-guidelines-placeholder"></a>关注的视线移动设计准则 （占位符）
+# <a name="eye-gaze-design-guidelines"></a>关注的视线移动设计指南
 
 HoloLens 2 中，我们有很好的机会，以便通过使用关注的视线移动而不头的视线移动的视线移动和更快、 更舒适的提交。 但是，密切关注的视线移动的行为有很大不同于以某些方式的头视线移动，因此存在很多独特的挑战。 在关注注视设计准则，我们汇总常规优点和使用眼跟踪作为全息版应用程序中的输入媒体时需要考虑的挑战。 在本部分中，我们重点关注的视线移动和提交的特定设计注意事项。 首先，竞争对手的动态非常迅速，因此很适合在快速目标选项将很有用。 这使得关注注视适用于快速的视线移动和提交操作，尤其是与快速提交，如按钮或以无线方式点击按结合使用时。
 
@@ -138,9 +138,8 @@ HoloLens 2 中，我们有很好的机会，以便通过使用关注的视线移
 同步的视线移动和提交信号查找：输入信号的同步可能小于所面临的难题简单的视线移动和提交，因此，请不要担心 ！ 这是一个需要密切注意如果你想要使用更复杂的提交操作，但这可能涉及长语音命令或复杂的手势。 假设您看一看目标并说话长语音命令。 考虑在内，您说出所需的时间和系统检测到您所说内容所需的时间，你关注的视线移动通常长时间移动到场景中的一些新目标。 因此，可以让您知道它们可能会需要继续在之前识别此命令在目标查找或处理的方式确定的命令和用户必须已查找内容在那时开始输入的用户。
 
 ## <a name="see-also"></a>请参阅
-* [视线移动和提交](gaze-and-commit.md)
-* [Head 视线移动目标](gaze-targeting.md)
+* [头部凝视并提交](gaze-and-commit.md)
 * [手势](gestures.md)
-* [语音设计](voice-design.md)
+* [语音命令](voice-design.md)
 * [运动控制器](motion-controllers.md)
 * [舒适](comfort.md)

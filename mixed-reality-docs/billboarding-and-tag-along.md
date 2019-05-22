@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，公告板，尾随
-ms.openlocfilehash: 8215b96aff1f3c2d43e959f04ad83d41ffd32b2a
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e33ab0121398742b2e48553c9cbf2c1debdc6abf
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592629"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974790"
 ---
 # <a name="billboarding-and-tag-along"></a>公告板和尾随
 
@@ -36,6 +36,6 @@ ms.locfileid: "59592629"
 就像真正头锁定内容尾随对象具有非常庞大的或 nauseating 如果他们大幅变化移动或 spring 太多的用户视图中。 为用户查找，然后快速停止，其方式告诉他们已停止。 其平衡告知他们，其头已停止启用以及其视觉看到打开世界上停止。 但是，如果用户已停止时，尾随上继续移动，它可能将其理解混淆。
 
 ## <a name="see-also"></a>请参阅
-* [游标](cursors.md)
-* [交互基础知识](interaction-fundamentals.md)
-* [Comfort](comfort.md)
+* [光标](cursors.md)
+* [本能交互](interaction-fundamentals.md)
+* [舒适](comfort.md)

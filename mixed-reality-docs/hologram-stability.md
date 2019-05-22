@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 全息，稳定性 hololens
-ms.openlocfilehash: 9b0227102934650d5640a4ac1c4d6f59ecd8e6dd
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: b35b904e3c662c5ebd0670a98044706fe208e348
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592121"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974940"
 ---
 # <a name="hologram-stability"></a>全息图稳定性
 
@@ -147,5 +147,5 @@ renderingParameters.SetFocusPoint(
 
 ## <a name="see-also"></a>请参阅
 * [混合现实的了解性能](understanding-performance-for-mixed-reality.md)
-* [颜色、 光线和材料](color,-light-and-materials.md)
-* [交互基础知识](interaction-fundamentals.md)
+* [颜色、光线和材料](color,-light-and-materials.md)
+* [本能交互](interaction-fundamentals.md)

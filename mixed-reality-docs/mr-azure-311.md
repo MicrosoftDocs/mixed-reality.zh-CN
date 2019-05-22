@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure 的混合现实、 学院、 unity、 教程、 api、 microsoft graph，沉浸式、 hololens、 vr
 ms.openlocfilehash: 98fe2c872f332a21fff3af6751ae555968073a24
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59590126"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
 
 # <a name="mr-and-azure-311---microsoft-graph"></a>MR 和 Azure 311-Microsoft Graph
 
@@ -165,7 +165,7 @@ ms.locfileid: "59590126"
 
     1. 在中**其他设置**选项卡：
 
-        1.  **脚本编写****运行时版本**应**实验**（.NET 4.6 等效），这将触发需要重新启动编辑器。
+        1.  **脚本编写** **运行时版本**应**实验**（.NET 4.6 等效），这将触发需要重新启动编辑器。
 
         2. **脚本编写后端**应为 **.NET**
 
@@ -266,12 +266,12 @@ ms.locfileid: "59590126"
 
 若要创建此类：
 
-1.  右键单击**资产**中的文件夹*项目面板*，然后选择 **创建*> * 文件夹 * *。 将文件夹命名为**脚本**。
+1.  右键单击**资产**中的文件夹*项目面板*，然后选择 **创建*> *文件夹**。 将文件夹命名为**脚本**。
 
     ![](images/AzureLabs-Lab311-26.png)
     ![](images/AzureLabs-Lab311-27.png)
 
-2.  打开**脚本**文件夹然后，在该文件夹中，右键单击，**创建*> * C\#脚本 * *。 脚本命名为**MeetingsUI。**
+2.  打开**脚本**文件夹然后，在该文件夹中，右键单击，**创建* > *C\# 脚本**。 脚本命名为**MeetingsUI。**
 
     ![](images/AzureLabs-Lab311-28.png)
 
@@ -475,7 +475,7 @@ ms.locfileid: "59590126"
     ```
 
     > [!NOTE]
-    > 更改**appId**值为**应用程序 Id**中记下**[第 1 章](#chapter-1---create-your-app-in-the-application-registration-portal)，步骤 4**。 此值应与中显示的相同**应用程序注册门户**在您的应用程序注册页中。
+    > 更改 **appId** 值为 **应用程序 Id** 中记下 **[第 1 章](#chapter-1---create-your-app-in-the-application-registration-portal)，步骤 4** 。 此值应与中显示的相同**应用程序注册门户**在您的应用程序注册页中。
 
 8.  内**Graph**类中，将方法添加**SignInAsync()** 并**AquireTokenAsync()**，用于将提示用户插入登录凭据。
 
@@ -927,7 +927,7 @@ ms.locfileid: "59590126"
 
     ![](images/AzureLabs-Lab311-30.png)
 
-3.  单击**+** 按钮。
+3.  单击 **+** 按钮。
 
     ![](images/AzureLabs-Lab311-31.png)
 
@@ -939,7 +939,7 @@ ms.locfileid: "59590126"
 
 此项目的 Unity 部分所需的所有内容现已完成，因此它是从 Unity 生成的时间。
 
-1.  导航到*生成设置*(**文件*> * 生成设置 * *)。
+1.  导航到 *生成设置* (**文件* > *生成设置**)。
 
     ![](images/AzureLabs-Lab311-33.png)
 

@@ -6,12 +6,12 @@ ms.author: erpau
 ms.date: 04/5/2019
 ms.topic: article
 keywords: 混合现实，设计，改善环境，HoloLens 2 HoloLens （第 1 代）
-ms.openlocfilehash: 3dac997923b3f2319cb97137c1bbd9a12c4126b1
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: 8dea3765f01a6a82fccc002d1cd5c7c9c77d0980
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993627"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974780"
 ---
 # <a name="comfort"></a>舒适
 
@@ -172,6 +172,6 @@ Windows Mixed Reality 沉浸式 HMDs 具有 IPD 或 VO 没有自动校准。 可
 ## <a name="see-also"></a>请参阅
 * [凝视](gaze.md)
 * [全息影像稳定性](hologram-stability.md)
-* [交互基础知识](interaction-fundamentals.md)
+* [本能交互](interaction-fundamentals.md)
 * [全息帧](holographic-frame.md)
 * [校准](calibration.md)

@@ -6,12 +6,12 @@ ms.author: yoyoz
 ms.date: 11/06/2018
 ms.topic: article
 keywords: vr lbe，基于位置娱乐、 vr 拱廊沉浸式拱廊，qr，qr 代码
-ms.openlocfilehash: b0f4480496c15f811979f76143acbd456d89e249
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: e6588552c0cfa8bffa19ac2be5c247c5f73dc19c
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59593071"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974897"
 ---
 # <a name="qr-code-tracking"></a>跟踪的 QR 代码
 
@@ -176,7 +176,7 @@ QRTracking 插件公开 Api，可用于跟踪的 QR 代码。 若要使用该插
 您可以找到有关如何使用混合现实工具包中的 QR 跟踪 API 示例[GitHub 站点](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker)。
 
 MRTK 已实现所需的脚本，以 simpilify QR 跟踪使用情况。 所有必要资产可开发 QR 跟踪应用程序位于"QRTracker"文件夹中。 有两个场景： 第一种是一个示例，用于检测到它们，以及第二个演示如何使用坐标系统附加到的 QR 代码以显示全息只需显示的 QR 代码的详细信息。
-没有预设"QRScanner"添加到在后台使用 QRCodes 的所有必要 scrips。 脚本 QRCodeManager 是实现 QRCode API 可以将其添加到您的场景的 singileton 类。 脚本"AttachToQRCode"用于将全息附加到的 QR 码 coodridnate 系统，此脚本可以添加到任何你全息。 "SpatialGraphCoordinateSystem"显示了如何使用 QRCode 坐标系统。 因为是您项目的场景中，可以使用这些脚本也可以编写您自己直接使用的插件上文所述。
+没有预设"QRScanner"添加到在后台使用 QRCodes 的所需的所有脚本。 脚本 QRCodeManager 是实现 QRCode API 的单一实例类。 这需要添加到您的场景。 脚本"AttachToQRCode"用于将全息附加到 QR 码坐标系统，此脚本可以添加到任何你全息。 "SpatialGraphCoordinateSystem"显示了如何使用 QRCode 坐标系统。 这些脚本可用作-是在项目中的场景也可以编写自己直接使用的插件上文所述。
 
 ### <a name="implementing-qr-code-tracking-in-unity-without-mrtk"></a>实现跟踪而无需 MRTK Unity 中的 QR 代码
 

@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure 的混合现实、 学院、 edge、 iot edge、 教程、 api、 通知、 函数中，表、 沉浸式 hololens、 vr、 iot、 虚拟机、 ubuntu、 python
 ms.openlocfilehash: 1ab7c48ac3cff1cb2283cadb171098af9e148628
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59590108"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
 
 # <a name="mr-and-azure-313-iot-hub-service"></a>MR 和 Azure 313:IoT 中心服务
 
@@ -935,7 +935,7 @@ ms.locfileid: "59590108"
 
 5. 展开后，新创建**存储帐户**应可用。 单击你的存储，左侧的箭头，然后后，已展开，找到**表**，然后单击箭头旁边的以显示**表**在最后一章中创建。 双击您**表**。
 
-6. 将在 Visual Studio 窗口的中心中打开您的表。 单击与表图标**+** （加上） 在其上。
+6. 将在 Visual Studio 窗口的中心中打开您的表。 单击与表图标 **+** （加上） 在其上。
 
     ![添加新表](images/AzureLabs-Lab313-48.png)
 
@@ -1039,7 +1039,7 @@ ms.locfileid: "59590108"
 
     ![转到资源](images/AzureLabs-Lab313-57.png)
 
-11. 在左侧和右侧的新面板，单击**+** （加号） 旁边的图标*函数*，以创建新的函数。
+11. 在左侧和右侧的新面板，单击 **+** （加号） 旁边的图标*函数*，以创建新的函数。
 
     ![添加新函数](images/AzureLabs-Lab313-58.png)
 
@@ -1143,7 +1143,7 @@ ms.locfileid: "59590108"
 
 20. 使用的代码中的位置，单击**保存**。
 
-21. 接下来，单击**\<** （箭头） 图标，在页面的右侧。
+21. 接下来，单击 **\<** （箭头） 图标，在页面的右侧。
 
     ![自定义函数](images/AzureLabs-Lab313-66.png)
 
