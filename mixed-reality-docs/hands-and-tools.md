@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 混合现实，手、 运动控制器、 交互，设计
-ms.openlocfilehash: b13efadd111ca970abe625221fb8045644822c37
-ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
+ms.openlocfilehash: d0e54c71ab42a09f2f9c6063a85441b98e729af1
+ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813982"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66039168"
 ---
 # <a name="hands-and-motion-controllers"></a>双手和动作控制器
 ## <a name="scenarios"></a>方案
@@ -38,7 +38,7 @@ ms.locfileid: "65813982"
 
 ## <a name="see-also"></a>请参阅
 * [头部凝视并提交](gaze-and-commit.md)
-* [直接操作 （附近手动交互）](direct-manipulation.md)
-* [点和提交 （Far 手动交互）](point-and-commit.md)
+* [头部凝视和停留](gaze-and-dwell.md)
+* [使用手直接操作](direct-manipulation.md)
+* [使用手指向和提交](point-and-commit.md)
 * [免动手操作](hands-free.md)
-* [凝视和停留](gaze-targeting.md)

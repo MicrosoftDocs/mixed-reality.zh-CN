@@ -8,12 +8,12 @@ ms.date: 03/21/2018
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality，设计、 交互、 样式、 颜色、 应用模式、 控件、 示例应用、 混合现实工具包、 MRTK
-ms.openlocfilehash: 1a0c8c2f5fa6aac7c4f5b8f574cd617193e9d943
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 88de9008dbea6cce3b980bbbe3d0f45b7818e7c9
+ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730838"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66039211"
 ---
 # <a name="design-for-mixed-reality"></a>混合现实的设计
 
@@ -73,7 +73,7 @@ ms.locfileid: "65730838"
                             <a href="interaction-fundamentals.md">Instinctual 交互</a>
                         </p>
                         <p>
-                            <a href="hands-and-tools.md">双手和控制器</a>
+                            <a href="hands-and-tools.md">双手和动作控制器</a>
                         </p>
                         <p>
                             <a href="hands-free.md">无</a>

@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 3/18/2019
 ms.topic: article
 keywords: 混合的现实 OpenXR 开发者预览版
-ms.openlocfilehash: c5ac87145ca23e4a6fbe578a285e27d50f1f22a1
-ms.sourcegitcommit: 36192101052666da01dd6c59cad4cfabd4ecb6f9
+ms.openlocfilehash: 723b0b85785d4b6dd735430aa76a24b9ce05b5c7
+ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048495"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66039174"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -36,7 +36,7 @@ OpenXR 标准当前在临时阶段中，是与发布的反馈意见的初始 Ope
 
 若要开始使用桌面 PC 上混合现实 OpenXR 开发者预览版：
 
-1. 确保你至少运行 Windows 10 2018 年 10 月更新 (1809)。  如果您在早期版本的 Windows 10 上，你可以升级到 2018 年 10 月更新使用[Windows 10 更新助手](https://www.microsoft.com/en-us/software-download/windows10)。  如果您感到大胆，则可以安装[2019 年 5 Windows 10 Insider Preview 版本更新 (1903)](https://insider.windows.com)。
+1. 确保运行的 Windows 10 2018 年 10 月更新 (1809) 或 Windows 10 可能 2019年更新 (1903)。  如果您在早期版本的 Windows 10 上，你可以升级到 2019 年 5 使用更新[Windows 10 更新助手](https://www.microsoft.com/en-us/software-download/windows10)。
 1. 设置 Windows 混合现实耳机或按照说明[启用 Windows Mixed Reality 模拟器](using-the-windows-mixed-reality-simulator.md)。
 1. 安装[混合的现实 OpenXR 开发人员预览应用](https://www.microsoft.com/store/productId/9n5cvvl23qbt)。  此应用可帮助你使用预览版 OpenXR 运行时上设置 Windows 10 2018 年 10 月更新 (1809) 或更高版本。  安装此应用后，Windows 应用商店将保留在运行时保持最新。
 1. 从开始菜单运行混合现实 OpenXR 开发者预览版应用并按照说明进行操作以使运行时处于活动状态。  很快，此应用会让您浏览以及其他 OpenXR 调试信息。
@@ -45,7 +45,9 @@ OpenXR 标准当前在临时阶段中，是与发布的反馈意见的初始 Ope
 
 ### <a name="support-for-windows-10-october-2018-update"></a>支持 Windows 10 2018 年 10 月更新
 
-若要开始使用混合现实 OpenXR 开发者预览版在桌面计算机上使用 Windows 10 2018 年 10 月更新 (1809，当前版本的 Windows)，将需要遵循几个步骤：
+如果您在运行 Windows 10 2019 年 5 更新 (1903) 并按照上述步骤，你应该已准备好使用混合现实 OpenXR 开发者预览版 ！
+
+如果您不准备[桌面 PC 升级到 2019 年 5 更新](https://www.microsoft.com/en-us/software-download/windows10)，您可以继续在 Windows 10 2018 年 10 月通过一个步骤来更新 (1809):
 
 1. 按照上述步骤来安装混合现实 OpenXR 开发者预览版。
 1. 若要将您的系统活动 OpenXR 运行时设置混合现实 OpenXR 开发者预览版，请安装[混合现实 OpenXR 开发人员预览版兼容性工具包](https://aka.ms/openxr-compat)。
@@ -70,7 +72,7 @@ OpenXR 标准当前在临时阶段中，是与发布的反馈意见的初始 Ope
 
 ### <a name="mixed-reality-openxr-developer-preview-app-cannot-be-installed"></a>混合的现实 OpenXR 开发者预览版应用无法在安装 
 
-确保你至少运行 Windows 10 2018 年 10 月更新 (1809)。  如果您在早期版本的 Windows 10 上，你可以升级到 2018 年 10 月更新使用[Windows 10 更新助手](https://www.microsoft.com/en-us/software-download/windows10)。
+确保你至少运行 Windows 10 2018 年 10 月更新 (1809)。  如果您在早期版本的 Windows 10 上，你可以升级到 2019 年 5 更新 (1903) 使用[Windows 10 更新助手](https://www.microsoft.com/en-us/software-download/windows10)。
 
 如果安装按钮上的混合现实 OpenXR 开发者预览版应用不会在 Windows 10 2018 年 10 月更新，您的系统已缓存应用程序的过时的系统要求。  可以运行命令`wsreset.exe`在命令提示符下，若要清除的缓存。
 
