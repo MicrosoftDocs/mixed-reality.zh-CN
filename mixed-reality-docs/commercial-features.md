@@ -1,23 +1,25 @@
 ---
 title: 商业特性
-description: Microsoft HoloLens 商业套件包括简化企业管理 HoloLens 设备的功能。
-author: xerxesb85
-ms.author: xerxesb
-ms.date: 03/21/2018
+description: Microsoft HoloLens 商业套件包括简化企业管理 HoloLens 设备的功能。  HoloLens 2 个是 equipt 商业功能默认情况下使用。
+author: scooley
+ms.author: scooley
+ms.date: 05/23/2019
 ms.topic: article
 keywords: HoloLens，商业和功能、 mdm、 移动设备管理、 展台模式
-ms.openlocfilehash: 5fd5c56983fb3e94376fac08c6e96510bccc0002
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4da540072fd32ac99692f0a13eb5852337c493bb
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593046"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270362"
 ---
 # <a name="commercial-features"></a>商业特性
 
-Microsoft HoloLens 商业套件包括简化企业管理 HoloLens 设备的功能。 商业功能包含在 Windows 操作系统，但许可证启用它们。 在几乎所有情况下，许可证已启用由 Microsoft 设备管理时在组织中注册 HoloLens。 请联系您当地的 Microsoft 客户经理以购买 Microsoft HoloLens 商业套件。
+Microsoft HoloLens 商业套件包括简化企业管理 HoloLens 设备的功能。
 
-&nbsp;
+HoloLens 总结了两个许可选项、 开发人员许可证和商业许可证。  从开发人员 liense 升级到解锁 HoloLens 的商业 capabilitis 的商业许可证。  请联系您当地的 Microsoft 客户经理以购买 Microsoft HoloLens 商业套件。
+
+**HoloLens 2 中的新增功能**-所有 HoloLens 2 每台设备上都附带提供的商业功能。
 
 >[!VIDEO https://www.youtube.com/embed/tNd0e2CiAkE]
 
@@ -30,7 +32,7 @@ Microsoft HoloLens 商业套件包括简化企业管理 HoloLens 设备的功能
 * **HoloLens 的移动设备管理 (MDM)。** 你的 IT 部门可以管理多个同时使用解决方案，如 Microsoft Intune 的 HoloLens 设备。 你将能够管理设置，选择要安装的应用，并设置根据你的组织需要定制的安全配置。
 
   ![HoloLens 上的移动设备管理提供了跨多个设备的企业级设备管理。](images/201608-enterprisemanagement-400px.png)
-  
+   
 * **适用于企业的 Windows 更新。** 控制设备和对长期服务分支的支持的操作系统更新。
 * **数据安全性。** HoloLens 上启用 BitLocker 数据加密来提供相同级别的任何其他 Windows 设备的安全保护。
 * **工作单位访问。** 你的组织中的任何人可以远程连接到通过虚拟专用网络上 HoloLens 企业网络。 HoloLens 还可以访问需要凭据的 Wi-fi 网络。
@@ -84,7 +86,7 @@ Microsoft HoloLens 商业套件包括简化企业管理 HoloLens 设备的功能
 
 ## <a name="enabling-commercial-features"></a>启用商业功能
 
-商业功能，例如业务、 展台模式的 Microsoft Store 和企业 Wi-fi 访问是由组织的 IT 管理员联系。[HoloLens Windows IT 中心](https://technet.microsoft.com/itpro/hololens/index)为设备注册和从于企业的 Microsoft Store 安装应用程序提供分步说明。
+商业功能，例如业务、 展台模式的 Microsoft Store 和企业 Wi-fi 访问是由组织的 IT 管理员联系。[HoloLens Windows IT 中心](https://docs.microsoft.com/hololens)为设备注册和从于企业的 Microsoft Store 安装应用程序提供分步说明。
 
 ## <a name="see-also"></a>请参阅
 * [IT 专业人员的 HoloLens 指南](https://technet.microsoft.com/itpro/hololens/index)

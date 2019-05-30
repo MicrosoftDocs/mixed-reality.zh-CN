@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: unity 中，教程，hololens 混合的现实
-ms.openlocfilehash: 04ed2217c473c5649c1850fcc757d866e23b9b56
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 6f05b2cecd388b1b2f13e7e5228bc90091eee3bd
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730893"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270402"
 ---
 # <a name="mr-learning-base-module---dynamic-content-placement-and-solvers"></a>MR 学习基本模块的动态内容的位置和求解器
 
@@ -48,7 +48,7 @@ ms.locfileid: "65730893"
 
 3. 若要配置的按钮集合的用户操作，我们需要实现以下调整 （另请参阅下图所示）：
 - 在绕脚本中，将设置为"仅偏航。""方向类型"下拉列表 这样就使该对象，只有一个轴旋转，它如下所示的用户。
-- 设置为 0 的所有轴上的本地偏移量。 设置世界偏移量为 x = 0，y =-0.1 和 z = 0.6。 这将锁定对象的移动，以便当用户更改高度，该对象将始终保持固定高度在物理环境中，同时仍允许其用户在将移动有关环境的用户操作。 这些值进行调整，以实现 wade 行为范围之内。
+- 设置为 0 的所有轴上的本地偏移量。 设置世界偏移量为 x = 0，y =-0.1 和 z = 0.6。 这将锁定对象的移动，以便当用户更改高度，该对象将始终保持固定高度在物理环境中，同时仍允许其用户在将移动有关环境的用户操作。 这些值进行调整，以实现范围广泛的行为。
 - 对于以下行为，凭此按钮仅按照用户的视图后在用户打开他或她头保持足够距离，可以选择"使用角度单步执行的全局偏移量"复选框 (请注意：此标题可能会被截断某些在屏幕上，因为它是在下图中。）例如，如果希望仅每隔 90 度的用户操作的对象，请将步骤数设置为 4 （由左侧的示例中的绿色箭头标记）。 
 
 ![Lesson3 Chapter2 Step3im](images/Lesson3_chapter2_step3im.PNG)

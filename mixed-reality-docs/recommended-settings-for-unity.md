@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity、 设置、 混合的现实
-ms.openlocfilehash: c7029f2dfaf246db9f972c7d89b46e4fb9b5f1a1
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: a26dbdb63c8bad9bb9659a6a3303c0b0ab418580
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993611"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270377"
 ---
 # <a name="recommended-settings-for-unity"></a>Unity 的推荐的设置
 
@@ -83,6 +83,9 @@ Unity 已弃用支持脚本编写后端，因此建议开发人员可利用.NET 
 3) 利用生成的 SSD
 
 请阅读[优化生成时间 IL2CPP](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)的详细信息。
+
+> [!NOTE]
+> 此外，它可能会有所帮助安装程序[缓存服务器](https://docs.unity3d.com/Manual/CacheServer.html)，尤其是对于具有大量的 （不包括脚本文件） 的资产或不断的 Unity 项目更改场景/资产。 打开项目时，Unity 将符合要求的资产存储到开发人员计算机上的内部缓存格式。 必须重新导入并因此重新处理时修改项。 此过程可以执行一次和保存在缓存服务器，因此与其他开发人员节省时间，而不是处理重新导入新的本地更改的每个开发人员共享。
 
 ## <a name="publishing-properties"></a>发布属性
 

@@ -7,12 +7,12 @@ ms.date: 04/12/19
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality 测试，MRTK、 MRTK 版本 2、 HoloLens 2
-ms.openlocfilehash: 98fde1a597bcc20b14037176748258d35ef99ab9
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 02dabd21b7a6add2ce53fe291a447e49057184d0
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730870"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270395"
 ---
 # <a name="getting-your-existing-app-ready-for-hololens-2"></a>让您现有的应用程序准备好使用 HoloLens 2
 
@@ -54,6 +54,7 @@ ms.locfileid: "65730870"
 
 > [!NOTE]
 > IL2CPP 脚本编写后端可以到 Visual Studio 从 Unity 导致生成时间较长，因此开发人员应设置为其开发人员计算机[优化 IL2CPP 生成时间](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)。
+> 此外，它可能会有所帮助安装程序[缓存服务器](https://docs.unity3d.com/Manual/CacheServer.html)，尤其是对于具有大量的 （不包括脚本文件） 的资产或不断的 Unity 项目更改场景/资产。 打开项目时，Unity 将符合要求的资产存储到开发人员计算机上的内部缓存格式。 必须重新导入并因此重新处理时修改项。 此过程可以执行一次和保存在缓存服务器，因此与其他开发人员节省时间，而不是处理重新导入新的本地更改的每个开发人员共享。
 
 之后在迁移到更新的 Unity 版本后寻址任何重大更改，开发人员应生成和测试在 HoloLens 上的其当前应用程序 （第 1 代）。 此外，这是很好的点来创建和保存源代码管理的提交。 
 

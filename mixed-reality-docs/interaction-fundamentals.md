@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实、 提供注视、 视线移动目标交互，设计、 hololens，MMR，multimodal
-ms.openlocfilehash: 9d0e639d7474c7e8728282acfa8d288cfeec7043
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: d018179e20d26ee8b7b24bc74d7c1711bc788282
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974908"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270386"
 ---
 # <a name="introducing-instinctual-interactions"></a>引入 instinctual 交互
 
@@ -36,11 +36,11 @@ ms.locfileid: "65974908"
 
 每个这些交互模型是方便、 强大且可在自己的权限中使用，所有客户需求的一组针对进行了优化。 查看图表下方、 方案、 示例和每个交互模型的好处的。  
 
-**Model** | **[双手和工具](https://docs.microsoft.com/en-us/windows/mixed-reality/hands-and-tools)** | **[免提](https://docs.microsoft.com/en-us/windows/mixed-reality/hands-free)** | **[视线移动和提交](https://docs.microsoft.com/en-us/windows/mixed-reality/gaze-and-commit?)**
+**Model** | **[双手和动作控制器](hands-and-tools.md)** | **[免提](hands-free.md)** | **[Head 注视和提交](gaze-and-commit.md)**
 |--------- | --------------| ------------| ---------|
 **示例方案** | 3D 空间的体验，例如空间布局和设计，内容操作或模拟 | 上下文体验，其中用户的手都被占用，例如学习，维护作业| 点击体验，例如 3D 演示文稿、 演示材料
-**合适大小** | 非常适用于新用户，耦合的 wit 语音眼睛跟踪或头的视线移动。 低学习曲线。 在手动跟踪和 6 DoF 控制器之间的一致用户体验。 | 一些学习所需。 如果为对也不可用语音和自然语言 | 需要培训 HMDs 上但不是移动设备上。 最佳的可访问控制器最适合 HoloLens （第 1 代） |
-**硬件** | HoloLens 2 沉浸式耳机 | HoloLens 2 HoloLens （第 1 代） 沉浸式耳机 | HoloLens 2 沉浸式耳机 | HoloLens 2 HoloLens （第 1 代） 沉浸式耳机移动 AR |
+**合适大小** | 非常适用于新用户，耦合的 wit 语音眼睛跟踪或头的视线移动。 低学习曲线。 在手动跟踪和 6 DoF 控制器之间的一致用户体验。 | 一些学习所需。 如果为对也不可用语音和自然语言 | 需要培训 HMDs 上但不是移动设备上。 最适合可访问的控制器。 最适合 HoloLens （第 1 代）。 |
+**硬件** | HoloLens 2 <br>沉浸式头戴显示设备 | HoloLens 2 <br>HoloLens （第 1 代） <br>沉浸式头戴显示设备 | HoloLens 2 <br>沉浸式头戴显示设备 | HoloLens 2 <br>HoloLens （第 1 代） <br>沉浸式头戴显示设备 <br>移动 AR |
 
 在每个交互模型中无缝地配合使用所有可用输入的详细的信息是按照图例和从我们 Unity MRTK 示例内容的链接以及页面上。
 
@@ -75,7 +75,7 @@ ms.locfileid: "65974908"
         <td><strong>如何知道刚才的操作？</strong></td>
     </tr>
     <tr>
-        <td><a href="hands-and-tools.md">双手和工具</a></td>
+        <td><a href="hands-and-tools.md">手和运动控制器</a></td>
         <td>我看到 mesh 手的形状，我看到指尖功能可见性： 或手动 / 控制器光线。</td>
         <td>我看到 grabbable 句柄或即将达到我的手时，将显示边界框。</td>
         <td>我听到声音声音，并在随取即行和发布到动画。</td>

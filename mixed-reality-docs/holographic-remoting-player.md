@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，远程处理，Holographic 远程处理
-ms.openlocfilehash: 16add6c72b594822cacbef6c92ce196ab9b13429
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 24213444686dd2e5dbda4016dd551a8ead8f305a
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593048"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270314"
 ---
 # <a name="holographic-remoting-player"></a>全息版的远程处理的播放机
 
@@ -19,8 +19,7 @@ ms.locfileid: "59593048"
 
 Holographic 远程处理的播放机仅可用于专门为支持 Holographic 远程处理的电脑应用。
 
-> [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
+可用于 HoloLens 和 HoloLens 2 全息版的远程处理播放器。  支持与 HoloLens Holographic 远程处理的电脑应用需要更新以支持 Holographic Remtoing HoloLens 2。  请如果你有支持哪些版本的问题，联系您的应用程序提供程序。
 
 ## <a name="connecting-to-the-holographic-remoting-player"></a>连接到全息版的远程处理播放器
 
@@ -48,10 +47,10 @@ Holographic 远程处理的播放机仅可用于专门为支持 Holographic 远�
 在主屏幕上，可以说 **"禁用诊断"** 关闭诊断。
 
 ## <a name="pc-system-requirements"></a>PC 系统要求
-* 您的 PC**必须**运行 Windows 10 周年更新。
+* 您的 PC**必须**运行 Windows 10 周年更新或更高版本。
 * 我们建议 GeForce GTX 970 或 AMD Radeon R9 290 或更好的图形卡。
 * 我们建议将电脑连接到网络通过以太网以减少无线跃点数目。
 
 ## <a name="see-also"></a>请参阅
-* [全息版的远程处理软件许可条款](microsoft-holographic-remoting-software-license-terms.md)
+* [全息远程软件许可条款](microsoft-holographic-remoting-software-license-terms.md)
 * [Microsoft 隐私声明](https://go.microsoft.com/fwlink/?LinkId=521839)
