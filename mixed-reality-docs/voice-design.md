@@ -7,12 +7,12 @@ ms.date: 04/21/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality，设计、 交互、 语音
-ms.openlocfilehash: 084c1228d17c3e23b38d9b8918c13080598aea98
-ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
+ms.openlocfilehash: f2362400cba2946c3e97a7128c410ddcd17b4362
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66039193"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402370"
 ---
 # <a name="voice-commanding"></a>语音命令
 
@@ -25,7 +25,7 @@ ms.locfileid: "66039193"
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
 </tr><tr>
-<td></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳机）</td>
+<td>语音命令</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （具有附加的耳机）</td>
 </tr>
 </table>
 
@@ -87,7 +87,7 @@ Windows Mixed Reality 已经利用了"来看，说"语音模型其中**按钮上
 ![游标的语音反馈状态](images/voicefeedbackstates.png)<br>
 *游标的语音反馈状态*
 
-## <a name="top-things-users-should-know-about-speech-on-windows-mixed-reality"></a>首要工作用户应该了解 Windows Mixed reality"speech"
+## <a name="top-things-users-should-know-about-speech-in-mixed-reality"></a>首要工作用户应了解"speech"混合现实中
 * 说 **"选择"** 时目标 （您可以使用此任意位置单击一个按钮） 的按钮。
 * 可以说**的应用程序栏按钮的标签名称**中某些应用程序执行操作。 例如，同时查看应用程序时，用户可以说出的命令"删除"从世界上删除该应用程序 （这可节省时间无需单击用一只手）。
 * 你可以启动侦听语 Cortana **"你好，小娜"。** 可以询问她问题 （"你好，小娜，如何高是 Eiffel tower"），告诉她打开应用 （"你好，小娜，打开 Netflix"），或告诉她以打开开始菜单 （"你好，小娜，我家的 take"） 和的详细信息。

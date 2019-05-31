@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 04/02/2019
 ms.topic: article
 keywords: 混合现实、 提供注视、 面向交互的视线移动设计，附近，手 HoloLens
-ms.openlocfilehash: a9e67f21587381dbc1090f89935eaa2b88630dae
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: bb44244a3cb932a56703f84ba129def5ee5f9b67
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974757"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402356"
 ---
 # <a name="direct-manipulation"></a>直接操作
 
@@ -25,7 +25,7 @@ HoloLens 2 提供了直接操作输入的模式，可让您接触全息 dircly �
 
 | 输入的模型 | [HoloLens （第 1 代）](https://review.docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details?branch=master) | HoloLens 2 |[沉浸式耳机](https://review.docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details?branch=master)|
 |:-------- | :-------| :--------| :------------|
-| 直接操作 | 不支持的 ❌ | ✔️ 建议 | 一种替代方法 ➕[点，并提交](https://review.docs.microsoft.com/en-us/windows/mixed-reality/point-and-commit?branch=master)建议。
+| 直接操作 | 不支持的 ❌ | ✔️ 建议 | 一个替代方法，➕[点，并提交，并手](point-and-commit.md)建议。
 
 直接操作是 HoloLens 2 上的主输入的模型，并利用新的明确的手动跟踪系统。 输入的模型，还可以在通过动作控制器使用的沉浸式耳机，但不是建议为外部对象操作的交互的主要方式。  直接 manipluation 上不可用 HoloLens v1。
 

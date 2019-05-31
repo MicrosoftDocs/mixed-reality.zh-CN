@@ -7,12 +7,12 @@ ms.date: 04/05/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实，交互、 设计、 hololens、 手，到目前为止，点和提交
-ms.openlocfilehash: e69c8ff2091beff7d8fbbde4e6f24d909302290a
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 30f85d2bb455abab3a533e0a829b4fba8cea0a7a
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730805"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402380"
 ---
 # <a name="point-and-commit-with-hands"></a>点和提交模式以及实践
 点和提交模式以及实践是输入的模型，使用户能够为目标、 选择和操作在距离 2D 内容和三维对象。 此"得"交互方法仅适用于混合现实并不是方法人类自然地与现实世界的 intereact。 例如，在超级英雄电影*X 男士*，该字符[磁](https://en.wikipedia.org/wiki/Magneto_(comics))能够联系和操作中使用他的距离的延伸的范围对象。 这不是人类可以在现实中做的事情。 在 HoloLens (AR) 和混合现实 (VR) 中，我们做这神奇功能强大、 用户重大不仅可以具有很不一般吧体验 holographic 内容而且也更有效且高效进行交互的实际的物理约束。
@@ -21,7 +21,7 @@ ms.locfileid: "65730805"
 
 输入的模型 | [HoloLens （第 1 代）](https://docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details) | HoloLens 2 | [沉浸式耳机](https://docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details) |
 | ---------| -----| ----- | ---------|
-点和提交 （最手动交互） | 不支持的 ❌ | ✔️ 建议 | ✔️ 建议
+点和提交模式以及实践 | 不支持的 ❌ | ✔️ 建议 | ✔️ 建议
 
 点和提交，也称为手到目前为止，是利用新的明确的手动跟踪系统的新功能之一。 此输入的模型也是在通过动作控制器使用的沉浸式耳机主输入的模型。
 
