@@ -165,7 +165,7 @@
 #### [将 Vuforia 与 Unity 配合使用](vuforia-development-overview.md)
 ### 旧版文档 (Unity 2017.4/HTK/MRTK v1)
 ## Unreal
-### 适用于 HoloLens 2 的 Unreal - 即将推出！
+### [抢先体验适用于 HoloLens 2 的 Unreal](https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access)
 ## DirectX
 ### [DirectX 开发概述](directx-development-overview.md)
 ### 即刻体验
