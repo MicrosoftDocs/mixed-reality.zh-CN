@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 3D，建模，建模指南，资产要求，创作指南、 启动器、 3D 启动器、 纹理、 材料、 复杂性、 三角形、 网格、 多边形、 polycount，限制
-ms.openlocfilehash: 209a92a8e7070ca23bcb9402d8716f3f91747a96
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 73af40cf2915742cab612625c8243a36ee74d748
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590369"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692282"
 ---
 # <a name="create-3d-models-for-use-in-the-home"></a>在主页中创建用于 3D 模型
 
@@ -29,11 +29,11 @@ ms.locfileid: "59590369"
 
 ## <a name="detailed-guidance"></a>详细的指南
 
-## <a name="exporting-models"></a>导出模型
+### <a name="exporting-models"></a>导出模型
 
 Windows Mixed Reality 家庭需要三维资产，以使用嵌入的图像和二进制数据使用.glb 文件格式来提供。 Glb 是缴纳版税的 glTF 格式的二进制版本由 Khronos 组维护的三维资产传送的免费开放标准。 在 Windows 应用和体验的行业标准的可互操作三维内容 glTF 随着因此将对格式的 Microsoft 的支持。 如果之前您可以找到尚未创建 glTF 资产[列表中的受支持的导出程序和转换器](https://github.com/KhronosGroup/glTF/blob/master/README.md#converters-and-exporters)glTF 工作组 github 页上。  
 
-## <a name="modeling-guidelines"></a>建模指南
+### <a name="modeling-guidelines"></a>建模指南
 
 Windows 需要的资产，以生成使用以下的建模准则以确保与混合现实家庭体验的兼容性。 在所选的应用程序建模时请记住以下建议和限制：
 1. 最多轴应设置为"Y"。
@@ -279,6 +279,6 @@ Windows MR 不支持基元模式线条和点。
 
 ## <a name="see-also"></a>请参阅
 
-* [实现的 3D 应用程序启动器 （UWP 应用）](implementing-3d-app-launchers.md)
-* [实现的 3D 应用程序启动器 （Win32 应用）](implementing-3d-app-launchers-win32.md)
+* [实现 3D 应用启动器（UWP 应用）](implementing-3d-app-launchers.md)
+* [实现 3D 应用启动器（Win32 应用）](implementing-3d-app-launchers-win32.md)
 * [导航 Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)

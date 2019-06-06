@@ -6,12 +6,12 @@ ms.author: paseb
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 资产、 创建、 进程、 预算、 多边形、 纹理、 着色器性能
-ms.openlocfilehash: cec689ab4d44591d2d3e84679c3fe51dba161bc5
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 513a9856ac35e4229cfb7bc8bcb92d9d6a152980
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592990"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692298"
 ---
 # <a name="asset-creation-process"></a>资产创建过程
 
