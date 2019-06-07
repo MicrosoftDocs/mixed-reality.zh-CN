@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计、 样式、 字体、 版式、 ui、 用户体验
-ms.openlocfilehash: debf125a7f82ac79fe3ad776ba9c8c0b69396848
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: 6371aa9b12b61d12acdaaae5f7730ff2ae9757f0
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692364"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750336"
 ---
 # <a name="typography"></a>版式
 
@@ -67,9 +67,9 @@ ms.locfileid: "66692364"
 
 ## <a name="recommended-font-size"></a>建议的字号
 
-正如您期望的我们使用一台 PC 或平板电脑设备 （通常为 12 – 32pt) 的类型大小相当小看 2 米的距离。 这取决于每个字体的特征但一般情况下查看角度和可读性较高的字体高度推荐的最小围绕 0.35°-0.4°/12.21-13.97mm 基于我们用户调查研究。 而是关于 35 40pt 与上面介绍的缩放因子。 
+正如您期望的我们使用一台 PC 或平板电脑设备 （通常为 12 – 32pt) 的类型大小相当小看 2 米的距离。 这取决于每个字体的特征但一般情况下查看角度和可读性较高的字体高度推荐的最小围绕 0.35°-0.4°/12.21-13.97mm 基于我们用户调查研究。 它是有关 35 40pt 中引入的缩放系数[Unity 中的文本](text-in-unity.md)页。 
 
-对于在 0.45m(45cm) 的近交互，最小清晰字体的视角和高度为 0.4 °-0.5 ° / 3.14 – 3.9 mm。 而是关于 9 12 磅与上面介绍的缩放因子。
+对于在 0.45m(45cm) 的近交互，最小清晰字体的视角和高度为 0.4 °-0.5 ° / 3.14 – 3.9 mm。 这一点与在中引入的缩放因子有关 9 12 磅[Unity 中的文本](text-in-unity.md)。
 
 ![近和远的交互范围](images/typography-distance-1000px.jpg)
 *内容在近和远的交互范围*

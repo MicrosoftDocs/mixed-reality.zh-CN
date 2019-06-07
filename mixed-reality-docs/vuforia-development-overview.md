@@ -1,17 +1,17 @@
 ---
 title: 使用 Unity 使用 Vuforia
 description: 利用 Vuforia 构建在 Unity 中的 Windows Mixed Reality 应用程序。
-author: ChimeraScorn
-ms.author: cwhite
-ms.date: 03/21/2018
+author: ailyadis
+ms.author: ''
+ms.date: 01/28/2019
 ms.topic: article
 keywords: Vuforia，标记、 坐标、 参考框架跟踪
-ms.openlocfilehash: 43a74989b931fee898af0aeae9e240303b2eef01
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c0d2f6d0707e1ddd3ee00d3eb80af9fb459f252b
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592630"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750353"
 ---
 # <a name="using-vuforia-engine-with-unity"></a>使用 Unity 使用 Vuforia 引擎
 
@@ -93,8 +93,8 @@ Vuforia 引擎会将目标使用扩展的跟踪到 HoloLens 空间坐标系统�
 * [安装工具](install-the-tools.md)
 * [坐标系统](coordinate-systems.md)
 * [空间映射](spatial-mapping.md)
-* [在 Unity 中的照相机](camera-in-unity.md)
-* [导出和构建 Unity 的 Visual Studio 解决方案](exporting-and-building-a-unity-visual-studio-solution.md)
+* [Unity 中的相机](camera-in-unity.md)
+* [导出和构建 Unity Visual Studio 解决方案](exporting-and-building-a-unity-visual-studio-solution.md)
 * [Vuforia 文档：在 Unity 中的 Windows 10 开发](https://library.vuforia.com/articles/Solution/Developing-for-Windows-10-in-Unity)
 * [Vuforia 文档：如何安装 Vuforia Unity 扩展](https://library.vuforia.com/articles/Solution/Installing-the-Unity-Extension)
 * [Vuforia 文档：使用 Unity 中的 HoloLens 示例](https://library.vuforia.com/articles/Solution/Working-with-the-HoloLens-sample-in-Unity)

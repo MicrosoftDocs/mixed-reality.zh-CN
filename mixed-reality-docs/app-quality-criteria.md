@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 应用程序质量标准，混合现实，混合现实应用
-ms.openlocfilehash: 756bc148f290aa3406c9ac8bb7003d463c62772c
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: dfa1390190fad8d84982171dfbcfa101b20501dc
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974741"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750316"
 ---
 # <a name="app-quality-criteria"></a>应用程序质量准则
 
@@ -30,11 +30,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -83,11 +93,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>❌</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -135,11 +155,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>❌</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -189,11 +219,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>❌</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -236,11 +276,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -269,11 +319,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -318,11 +378,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>❌</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -364,11 +434,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -417,11 +497,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -487,11 +577,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -532,11 +632,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>❌</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -577,11 +687,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
@@ -610,11 +730,21 @@ ms.locfileid: "65974741"
 ### <a name="device-impact"></a>设备的影响
 
 <table>
-<tr>
-<th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+    </tr>
 </table>
 
 ### <a name="quality-criteria"></a>质量准则
