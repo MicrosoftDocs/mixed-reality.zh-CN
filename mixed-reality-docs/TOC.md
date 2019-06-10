@@ -133,7 +133,7 @@
 ## 混合现实云服务
 ### [Azure 空间定位点](https://docs.microsoft.com/azure/spatial-anchors)
 ### [全息远程播放器](holographic-remoting-player.md)
-### [全息远程软件许可条款](microsoft-holographic-remoting-software-license-terms.md)
+### [全息远程软件许可条款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 ## Unity
 ### [Unity 开发概述](unity-development-overview.md)
 ### 即刻体验

@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，远程处理，Holographic 远程处理
-ms.openlocfilehash: 24213444686dd2e5dbda4016dd551a8ead8f305a
-ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
+ms.openlocfilehash: b8354295f9752e73cc9b34c1769254e49808b63f
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66270314"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813717"
 ---
 # <a name="holographic-remoting-player"></a>全息版的远程处理的播放机
 
@@ -52,5 +52,5 @@ Holographic 远程处理的播放机仅可用于专门为支持 Holographic 远�
 * 我们建议将电脑连接到网络通过以太网以减少无线跃点数目。
 
 ## <a name="see-also"></a>请参阅
-* [全息远程软件许可条款](microsoft-holographic-remoting-software-license-terms.md)
+* [全息远程软件许可条款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft 隐私声明](https://go.microsoft.com/fwlink/?LinkId=521839)

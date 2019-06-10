@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计、 控件、 ui 和 ux
-ms.openlocfilehash: 9edddc7800f0d7334d1ceba97b9a06fd6d4580ac
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: d62d86c690233f351b6c156c66eba33cb2687ea6
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592640"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813724"
 ---
 # <a name="displaying-progress"></a>显示进度
 
 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。 这意味着，在进度指示器可见，并且还可以根据所使用的指示器指示等待时长时，用户无法与该应用交互。
 
-![在 HoloLens 进度环示例](images/640px-progress-hero.jpg)<br>
+![在 HoloLens 进度环示例](images/HoloLens2_Loader.gif)<br>
 *在 HoloLens 进度环示例*
 
 ## <a name="types-of-progress"></a>进度类型
@@ -47,7 +47,8 @@ ms.locfileid: "59592640"
 * 最好始终提供有关用户所发生的状态信息。 进度预设可提供各种视觉样式，包括提供状态的 Windows 标准的环式类型进度。 如果您希望的样式的进度以与你的应用的品牌保持一致，还可以通过将动画使用自定义的网格。
 
 ## <a name="see-also"></a>请参阅
-* [脚本和混合现实工具包进度的预设](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_ProgressExample.md)
-* [种交互的对象](interactable-object.md)
+* [进度脚本和混合现实工具包的预设](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Loader)
+* [边界框](app-bar-and-bounding-box.md)
+* [可交互对象](interactable-object.md)
 * [对象集合](object-collection.md)
-* [公告板和尾随](billboarding-and-tag-along.md)
+* [公告和尾随](billboarding-and-tag-along.md)
