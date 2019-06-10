@@ -8,12 +8,12 @@ ms.date: 02/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目
-ms.openlocfilehash: ed319e2abf61caed5f36b425a4cc609ca9501dec
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 810d9846fd217cd1acb3ae0060c11f5c9173191e
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730892"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813743"
 ---
 # <a name="mixed-reality-documentation"></a>混合现实文档
 
@@ -171,10 +171,10 @@ ms.locfileid: "65730892"
 <td>适用于 HoloLens 2 的 MRTK 中的新功能预览</td><td>2019 年 4 月</td><td> <ul><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html>MRTK 文档</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-getting-started>Getting started with MRTK v2</a>（MRTK v2 入门）</td>
 </tr>
 <tr>
-<td>HoloLens 2 设计和开发指南</td><td>2019 年 4 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools>安装工具</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator>HoloLens 2 仿真器</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/interaction-fundamentals>本能交互设计指南</a>
+<td>HoloLens 2 设计和开发指南</td><td>2019 年 4 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools>安装工具</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator>HoloLens 2 仿真器</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/interaction-fundamentals>本能交互设计指南</a></td>
 </tr>
 <tr>
-  <td>有关 Unreal 的详细信息</td><td>2019 年 5 月</td><td></td>
+  <td>有关 Unreal 的详细信息</td><td>2019 年 5 月</td><td> <ul><li><a href=https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access>Unreal Engine 4 提前访问</a></td>
 </tr>
 </table>
 
