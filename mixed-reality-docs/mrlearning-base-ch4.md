@@ -1,206 +1,206 @@
 ---
-title: MR 学习基本模块的三维对象交互
-description: 完成此课程以了解如何在混合的现实应用程序中实现 Azure 人脸识别。
+title: MR 学习基础模块 - 3D 对象交互
+description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 ms.localizationpriority: high
-keywords: unity 中，教程，hololens 混合的现实
+keywords: 混合现实, unity, 教程, hololens
 ms.openlocfilehash: 45e772de0825fe2161f880a165d6c75c755b849e
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
-ms.translationtype: MT
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/05/2019
 ms.locfileid: "65730910"
 ---
-# <a name="mr-learning-base-module---3d-object-interaction"></a>MR 学习基本模块的三维对象交互
+# <a name="mr-learning-base-module---3d-object-interaction"></a>MR 学习基础模块 - 3D 对象交互
 
-在本课中，我们将介绍基本的三维内容和用户体验。 我们将了解如何将三维对象组织成集合的一部分、 了解边界框的基本操作、 了解近和远交互，并了解触摸和用跟踪一只手获取手势。 
+本课介绍基本的 3D 内容和用户体验。 我们将了解如何将 3D 对象组织成集合的一部分、基本操作的边界框、近距和远距交互，以及结合手动跟踪的触摸和抓取手势。 
 
 ## <a name="objectives"></a>目标
 
-* 了解如何组织使用 MRTK 的网格对象集合的 3D 内容
-* 边界框的实现
-* 配置三维对象的基本操作 （移动、 旋转、 和规模）
-* 探索近和远交互
-* 了解更多手动跟踪笔势，例如随取即行和触摸
+* 了解如何使用 MRTK 的网格对象集合组织 3D 内容
+* 实现边界框
+* 配置基本操作（移动、旋转和缩放）的 3D 对象
+* 探索近距和远距交互
+* 了解其他手动跟踪手势，例如抓取和触摸
 
 ## <a name="instructions"></a>说明
 
-### <a name="organizing-3d-objects-in-a-collection"></a>组织集合中的三维对象
+### <a name="organizing-3d-objects-in-a-collection"></a>在集合中组织 3D 对象
 
-1. 右键单击你的层次结构和选择，"创建为空。" 这将创建一个空的游戏对象。 它重命名为"3DObjectCollection。" 这是我们将放置所有我们三维对象。 请确保集合的位置设置为 x = 0，y = 0，并且 z = 0。
+1. 右键单击层次结构并选择“创建空对象”。 这会创建一个空游戏对象。 将它重命名为“3DObjectCollection”。 我们的所有 3D 对象将放入其中。 确保集合的位置设置为 x = 0，y = 0，z = 0。
 
 ![Lesson4 Chapter1 Step1im](images/Lesson4_Chapter1_step1im.PNG)
 
-2. BaseModule 资产使用相同的说明导入自定义包中所述导入[Lesson1](mrlearning-base-ch1.md)。 BaseModule 资产包括 3D 模块和其他有用的脚本将在本教程中使用。 BaseModule unity 包可在此处找到： <https://github.com/Microsoft/MixedRealityLearning/releases/tag/V1.1>
+2. 遵照相同的说明导入基础模块资产，以导入[第 1 课](mrlearning-base-ch1.md)中所述的自定义包。 基础模块资产包含 3D 模块，以及要在整篇教程中使用的其他有用脚本。 可在此处找到基础模块 unity 包：<https://github.com/Microsoft/MixedRealityLearning/releases/tag/V1.1>
 
-3. 它旁边的蓝色多维数据集可以识别咖啡杯预设。 不要选择具有蓝色多维数据集和小白皮书 （即表示原始的三维模型和不预设。） coffee 创新杯 
+3. 可根据旁边的蓝色立方体识别咖啡杯预制件。 请不要选择带有蓝色立方体和小白纸（表示原始 3D 模型，而不是预制件）的咖啡杯。 
 
-![Lesson4 第 1 章 Noteaim](images/Lesson4_chapter1_noteaim.PNG)
+![Lesson4 Chapter1 Noteaim](images/Lesson4_chapter1_noteaim.PNG)
 
-4. 将所选的咖啡杯预设可从第 1 步拖到"3DObjectCollection"游戏对象。 咖啡杯现在是集合的子级。
+4. 将所选的咖啡杯预制件拖入步骤 1 中所述的“3DObjectCollection”游戏对象。 现在，该咖啡杯是集合的子级。
 
 ![Lesson4 Chapter1 Step4ima](images/Lesson4_chapter1_step4ima.PNG)
 
-5. 接下来，我们将添加到场景的多个三维对象。 下面是我们要在此示例中添加的对象的列表。 添加对象时可能会发现它们会出现在您的场景中不同的大小。 调整每个 3D 模型检查器面板中的转换设置的小数位数。 建议的调整此示例列出了下面的对象。 项目面板中的搜索框中搜索这些单词，并将 3D 物体预设可拖放到"3DObjectCollection"对象类似于上一步。 您将在资产中找到预设这些集合 > BaseModuleAssets > 基本模块预设
-- 搜索"TheModule_BaseModuleIncomplete。" 拖动到场景中。 设置的小数位数为 x = 0.03，y = 0.03，z = 0.03。 
-- 搜索"Octa_BaseModuleIncomplete。" 拖动到场景中。 设置的小数位数为 x = 0.13。 y = 0.13, z =0.13.
-- 搜索"EarthCore_BaseModuleIncomplete。" 拖动到场景中。 设置的小数位数为 x = 50.0 y = 50.0，z = 50.0。
-- 搜索"Cheese_BaseModuleIncomplete。" 拖动到场景中。 设置的小数位数为 x = 0.05，y = 0.05，z = 0.05。
-- 搜索"Model_Platonic_BaseModuleIncomplete。" 拖动到场景中。 设置的小数位数为 x = 0.13，y = 0.13，z = 0.13。
-- 搜索"CoffeeCup_BaseModuleIncomplete。" 拖动到场景中。
+5. 接下来，将更多的 3D 对象添加到场景中。 下面是要在本示例中添加的对象列表。 添加对象时，你可能会发现，它们以不同的大小显示在场景中。 通过检查器面板中的转换设置来调整每个 3D 模型的坐标。 下面列出了本示例中各个对象的建议调整大小。 请在项目面板上的搜索框中搜索这些字词，并像上一步骤中一样，将 3D 对象预制件拖入“3DObjectCollection”对象。 可在“资产”>“基础模块资产”>“基础模块预制件”中找到这些预制件集合
+- 搜索“TheModule_BaseModuleIncomplete”。 将其拖到场景中。 将坐标设置为 x = 0.03，y = 0.03，z = 0.03。 
+- 搜索“Octa_BaseModuleIncomplete”。 将其拖到场景中。 将坐标设置为 x = 0.13， y = 0.13，z =0.13。
+- 搜索“EarthCore_BaseModuleIncomplete”。 将其拖到场景中。 将坐标设置为 x = 50.0，y = 50.0，z = 50.0。
+- 搜索“Cheese_BaseModuleIncomplete”。 将其拖到场景中。 将坐标设置为 x = 0.05，y = 0.05，z = 0.05。
+- 搜索“Model_Platonic_BaseModuleIncomplete”。 将其拖到场景中。 将坐标设置为 x = 0.13，y = 0.13，z = 0.13。
+- 搜索“CoffeeCup_BaseModuleIncomplete”。 将其拖到场景中。
 
-![Lesson4 第 1 章 Step5im](images/Lesson4_Chapter1_step5im.PNG)
+![Lesson4 Chapter1 Step5im](images/Lesson4_Chapter1_step5im.PNG)
 
-6. 将 3 个多维数据集添加到您的场景。 右键单击"3DObjectCollection"对象，选择"3D 对象"，然后选择"多维数据集。" 设置的小数位数为 x = 0.14，y = 0.14 和 z = 0.14。 重复此步骤 2 次来创建 3 个多维数据集的总数。 或者，可能会重复两次的总数为 3 个多维数据集的多维数据集。 您还可以选择使用资产中的三个预定义的多维数据集预设 > BaseModuleAssets > 基本模块预设和选择 GreenCube_BaseModuleIncomplete、 BlueCube_BaseModuleIncomplete 和 OrangeCube_BaseModuleIncomplete。
+6. 将 3 个立方体添加到场景中。 右键单击“3DObjectCollection”对象，选择“3D 对象”，然后选择“立方体”。 将坐标设置为 x = 0.14，y = 0.14，z = 0.14。 再重复此步骤 2 次，总共创建 3 个立方体。 或者，可以复制该立方体两次，总共获得 3 个立方体。 也可以选择使用“资产”>“基础模块资产”>“基础模块预制件”中三个已准备好的立方体预制件，并选择“GreenCube_BaseModuleIncomplete”、“BlueCube_BaseModuleIncomplete”和“OrangeCube_BaseModuleIncomplete”。
 
 ![Lesson4 Chapter1 Step6im](images/Lesson4_Chapter1_step6im.PNG)
 
-7. 组织以形成一个网格，使用过程中所述的对象的集合[第 2 课](mrlearning-base-ch2.md)使用 MRTK 的网格对象集合。 请参阅下图所示，若要查看的 3 x 3 个网格中配置的对象示例。
+7. 参考[第 2 课](mrlearning-base-ch2.md)中所述的过程，使用 MRTK 的网格对象集合组织对象集合，以构成一个网格。 请参考下图，其中通过一个示例演示了如何在 3x3 网格中配置对象。
 
-![Lesson4 第 1 章 Notebim](images/Lesson4_chapter1_notebim.PNG)
+![Lesson4 Chapter1 Notebim](images/Lesson4_chapter1_notebim.PNG)
 
->注意：您可能会注意到某些对象是偏离中心，如在上图中的对象。 这是因为预设或对象可能具有未对齐的子对象。 随意对对象位置或子对象的位置，若要实现良好对齐的网格进行任何必要的调整。
+>注意：你可能会注意到，某些对象偏离了中心，例如上图中的对象。 这是因为，预制件或对象可能包含未对齐的子对象。 请对对象位置或子对象位置进行任何必要的调整，以获得适当对齐的网格。
 
 
-### <a name="manipulating-3d-objects"></a>操作三维对象
-1. 添加操作多维数据集的能力。 若要添加操作三维对象的功能必须执行以下操作：
--   选择要进行处理 （在此示例中，一个多维数据集） 在层次结构中的三维对象。
--   单击"添加组件"。 
--   搜索"操作"。
--   选择"操作处理程序。"
--   重复的"3DObjectCollection"对象，但不是"3DObjectCollection"下的所有三维对象本身。
--   确保所有三维对象都有碰撞体或盒状碰撞体 (添加组件 > 框碰撞体)。
+### <a name="manipulating-3d-objects"></a>操作 3D 对象
+1. 添加操作立方体的功能。 若要添加操作 3D 对象的功能，必须执行以下操作：
+-   在层次结构中选择要操作的 3D 对象（在本示例中为某个立方体）。
+-   单击“添加组件”。 
+-   搜索“操作”。
+-   选择“操作处理程序”。
+-   针对“3DObjectCollection”下的所有 3D 对象（但不要对“3DObjectCollection”对象本身）重复此过程。
+-   确保所有 3D 对象包含碰撞体或盒碰撞体（“添加组件”>“盒碰撞体”）。
 
-![Lesson4 第 2 章 Step1im](images/Lesson4_chapter2_step1im.PNG)
+![Lesson4 Chapter2 Step1im](images/Lesson4_chapter2_step1im.PNG)
 
->操作处理程序是一个组件，您可以调整对象时被操作的行为的设置。 这包括旋转、 缩放、 移动和某些轴上的约束移动。 
+>操作处理程序组件可让你调整在操作对象时其行为方式的相关设置。 这包括旋转、缩放、移动以及在某些轴上约束运动。 
 
-2. 限制一个多维数据集，以便它仅可以调整。 在"3DObjectCollection"对象中选择一个多维数据集。 在检查器窗格中的"两个提交的操作类型"旁边，单击下拉列表菜单，然后选择"缩放"。 这使得它，以便用户只能更改多维数据集的大小。
+2. 请限制一个立方体，以便只能对它进行缩放。 在“3DObjectCollection”对象中选择一个立方体。 在检查器面板中的“双手操作类型”旁边，单击下拉菜单并选择“缩放”。 这样，用户只能更改该立方体的大小。
 
-![Lesson4 第 2 章 Step2im](images/Lesson4_Chapter2_step2im.PNG)
+![Lesson4 Chapter2 Step2im](images/Lesson4_Chapter2_step2im.PNG)
 
-3. 更改每个多维数据集的颜色，以便我们可以区分它们。 
--   转到项目面板，并向下滚动，直到看到"MixedRealityToolkit.SDK"，然后选择它。
--   选择"Standard Assets"文件夹。
--   单击"资料"文件夹。
--   将不同材料拖到每个多维数据集上。 
+3. 更改每个立方体的颜色，以便可以区分它们。 
+-   转到项目面板，向下滚动到“MixedRealityToolkit.SDK”并将其选中。
+-   选择“Standard Assets”文件夹。
+-   单击“材料”文件夹。
+-   将不同的材料拖放到每个立方体上。 
 
->注意：您可以选择多维数据集的任何颜色。 对于本示例中，我们将使用"glowingcyan，""glowingorange"和"绿色"。 随意尝试不同的颜色。 若要将颜色添加到多维数据集，单击你想要更改的颜色的多维数据集，然后将材料拖动到网格呈现器的多维数据集的检查器面板中的材料字段。 
+>注意：可为立方体选择任意颜色。 本示例使用“glowingcyan”、“glowingorange”和“green”。 请随意尝试不同的颜色。 若要将颜色添加到立方体，请单击要更改颜色的立方体，然后将材料拖放到立方体检查器面板中网格渲染器的材料字段中。 
 
-![Lesson4 第 2 章 Step3im](images/Lesson4_Chapter2_step3im.PNG)
+![Lesson4 Chapter2 Step3im](images/Lesson4_Chapter2_step3im.PNG)
 
-4. 在"3DObjectCollection"对象选择另一个多维数据集并使其，以便从开头到修复距离约束及其移动。 为此，请在"约束的移动"的右侧，单击下拉列表菜单，然后选择"修复开头的距离"。 这使得它，以便用户只能移动其视野中的多维数据集。 
+4. 在“3DObjectCollection”对象中选择另一个立方体，并使其运动受限于与头部之间的固定距离。 为此，请在“约束运动”的右侧，单击下拉菜单并选择“与头部之间的固定距离”。 这样，用户只能在其视野范围中移动该立方体。 
 
-![Lesson4 第 2 章 Step4im](images/Lesson4_chapter2_step4im.PNG)
+![Lesson4 Chapter2 Step4im](images/Lesson4_chapter2_step4im.PNG)
 
-下面的几个步骤的目标：我们将允许随取即行以及与我们的三维对象的交互。 我们将应用不同的操作设置 
+以下几个步骤的目标：实现 3D 对象的抓取和交互。 应用不同的操作设置 
 
-5. 选择奶酪对象，并在检查器窗格中，单击"添加组件"。 
+5. 选择奶酪对象，并在检查器面板中单击“添加组件”。 
 
-6. 在搜索框中的"附近交互 Grabbable"搜索和选择的脚本。 此组件允许用户联系，获取与跟踪手对象。 对象还允许操作从远处，除非"允许最操作"复选框处于未选中状态 （由下图中的绿色圆圈）。
+6. 在搜索框中搜索“近距交互可抓取对象”并选择脚本。 此组件可让用户使用跟踪手伸手抓取对象。 除非已取消选中“允许远距操作”复选框（如下图中绿色圆圈所示），否则还可以在某种距离内操作对象。
 
-![Lesson4 第 2 章 Step6im](images/Lesson4_Chapter2_step6im.PNG)
+![Lesson4 Chapter2 Step6im](images/Lesson4_Chapter2_step6im.PNG)
 
-7. 通过重复步骤 5 和 6 对这些对象，将添加"附近交互 Grabbable"到八对象、 柏拉图对象、 地球核心、 农历模块和创新杯咖啡。
+7. 针对这些对象重复步骤 5 至 6，将“近距交互可抓取对象”添加到八面体、柏拉图对象、地核、登月舱模块和咖啡杯。
 
-8. 从八对象删除的远端操作的功能。 若要执行此操作，在层次结构中，选择八并取消选中"允许最操作"复选框 （用绿色圆圈标记）。 这使得它，以便用户可以仅与直接使用跟踪的手八进行交互。
+8. 从八面体对象中删除远距操作功能。 为此，请在层次结构中选择八面体，并取消选中“允许远距操作”复选框（如绿色圆圈所示）。 这样，用户只能使用跟踪手来直接与八面体交互。
 
->注意：有关完整的操作处理程序组件和它的文档具有关联的设置，请参阅[MRTK 文档](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)。
+>注意：有关操作处理程序组件及其相关设置的完整文档，请参阅 [MRTK 文档](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)。
 
-9. 确保已将"附近交互 Grabbable"组件添加到地球核心、 农历模块和 coffee cup （请参阅第 7 步）。
+9. 确保已将“近距交互可抓取对象”组件添加到地核、登月舱模块和咖啡杯（请参阅步骤 7）。
 
-10. 对于农历模块中，更改操作处理程序设置，以便它将围绕对象的中心附近的两个和最交互，如下图中所示。
+10. 对于登月舱模块，请更改操作处理程序设置，以便在近距和远距交互时，该模块会围绕对象的中心旋转，如下图所示。
 
-![Lesson4 第 2 章 Step10im](images/Lesson4_chapter2_step10im.PNG)
+![Lesson4 Chapter2 Step10im](images/Lesson4_chapter2_step10im.PNG)
 
-11:对于地球 core 中，更改到的发布行为"nothing"。 这使得它，以便后从用户的掌握中释放地球核心，它不会继续移动。 
+11：对于地核，请将释放行为更改为“无”。 这样，在用户释放地核时，它不会继续移动。 
 
-![Lesson4 第 2 章 Step11im](images/Lesson4_Chapter2_step11im.PNG)
+![Lesson4 Chapter2 Step11im](images/Lesson4_Chapter2_step11im.PNG)
 
-> 注意：此设置可用于方案，例如创建可能会引发一个球。 通过将方向的速度和角速度可以，以便发布球后它将继续移动的方向的速度是在已发布，类似于物理球会行为方式。
+> 注意：在创建可投射的球等场景中，可以使用此设置。 如果保持速度和角速度，在松开该球时，它会按松开时的速度继续运动，就像实物球的行为一样。
 
 ### <a name="adding-bounding-boxes"></a>添加边界框
-边界框使它更简单且更直观地操作对象用一只手进行直接操作 （附近交互） 和基于 ray 的操作 （远端交互）。边界框提供了可以获取有关缩放和旋转轴特定对象的"handles"。
->注意：可以将边界框添加到对象之前首先需要具有一个碰撞体的对象 （例如，盒状碰撞体。）与我们以前在本课程中。 选择对象，并选择添加组件的对象的检查器面板中，可以添加碰撞体 > 盒状碰撞体。
+使用边界框可以更方便、更直观地单手操作对象，它支持定向操作（近距交互）和基于光线的操作（远距交互）。边界框提供可抓取的“控点”，用于沿特定的轴缩放和旋转对象。
+>注意：在将边界框添加到对象之前，首先需要在该对象上添加一个碰撞体（例如盒碰撞体）。前面在本课中我们已完成此任务。 可通过以下方式添加碰撞体：选择该对象，然后在该对象的检查器面板中选择“添加组件”>“盒碰撞体”。
 >
 
-1. 将盒状碰撞体添加到地球核心对象，如果尚不存在 （盒状碰撞体，并使用预设可提供在基本模块资产文件夹中的每个提供的说明，如果不是必需的安装程序。）在地球核心的情况下，我们将需要将盒状碰撞体添加到地球核心，下面的"node_id30"对象，如下图中所示。 选择 node_id30 和中对象的检查器选项卡上，单击"添加组件"，然后搜索"框的碰撞体"。 
+1. 如果某个地核对象不包含盒碰撞体，请向其添加一个盒碰撞体（根据提供的说明，如果使用基础模块资产文件夹中的预制件，则无需添加盒碰撞体和进行设置）。处理地核时，需要将盒碰撞体添加到地核下的“node_id30”对象，如下图所示。 在对象的检查器选项卡中选择“node_id30”，单击“添加组件”，然后搜索“盒碰撞体”。 
 
-![Lesson4 第 3 章 Step1im](images/Lesson4_Chapter3_step1im.PNG)
+![Lesson4 Chapter3 Step1im](images/Lesson4_Chapter3_step1im.PNG)
 
-![Lesson4 第 3 章 Step2im](images/Lesson4_chapter3_step2im.PNG)
+![Lesson4 Chapter3 Step2im](images/Lesson4_chapter3_step2im.PNG)
 
-> 注意：请确保你可视化盒状碰撞体，以便它不是太大或太小。 它应为大致与它围绕 （在此示例中，地球核心） 的对象的大小相同。 通过在盒状碰撞体中选择编辑碰撞体选项可以根据需要调整盒状碰撞体。 你可以更改 x、 y 和 z 值或拖动边界框处理程序编辑器场景窗口中。 
+> 注意：确保将盒碰撞体可视化，使其不会过大或过小。 其大小应与围绕它的对象（在本示例中为地核）大致相同。 可根据需要，在盒碰撞体中选择“编辑碰撞体”选项来调整盒碰撞体。 可以更改 x、y 和 z 值，或者在编辑器场景窗口中拖动边界框控点。 
 
-![Lesson4 第 3 章 Noteim](images/Lesson4_Chapter3_noteim.PNG)
+![Lesson4 Chapter3 Noteim](images/Lesson4_Chapter3_noteim.PNG)
 
-2. 将添加到地球 core"node_id30"对象的边界框。 若要执行此操作，请选择"3DObjectCollection。"中的"node_id30"对象 在检查器选项卡中，单击"添加组件"，搜索"边界框"。 请确保边界框、 盒状碰撞体和操作脚本 （附近 grabbable 交互操作处理程序） 都在同一游戏对象。
+2. 将边界框添加到地核的“node_id30”对象。 为此，请从“3DObjectCollection”中选择“node_id30”对象。 在检查器选项卡中，单击“添加组件”并搜索“边界框”。 确保边界框、盒碰撞体和操作脚本（操作处理程序、近距交互可抓取对象）都在同一个游戏对象中。
 
-3.  在边界框的"行为"部分中，选择"启动"从激活激活下拉列表中。 若要查看有关各种激活选项和其他边界框中选项的更多详细信息，请参阅[MRTK 的边界框文档](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html>)
+3.  在边界框的“行为”部分，从“激活”下拉列表中选择“启动时激活”。 若要查看有关各个激活选项和其他边界框选项的更多详细信息，请参阅 [MRTK 的边界框文档](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html>)
 
    
 
-   *接下来的几个步骤，我们也将更改通过调整默认框材料、 而正在获取的材料，以及可视化效果的句柄 （角和侧面的句柄） 的边界框的外观。MRTK 包含几个选项用于自定义的边界框。*
+   在接下来的几个步骤中，我们还会通过调整默认的边界框材料、抓取时的材料以及控点的可视化效果（角和边的控点）来更改边界框的外观。  MRTK 包含多个用于自定义边界框的选项。
 
-4. 中的项目面板中，搜索"boundingbox"和你将看到一系列表示搜索结果中的蓝色球的材料中如下图所示。 
+4. 在项目面板中搜索“boundingbox”，随后会在搜索结果中看到以蓝色球体指示的材料列表，如下图所示。 
 
-5. 边界框组件上，将"boundingbox"材料拖入框材料槽。 此外获取"boundingboxgrabbed"材料和上边界框组件放入框 grabbed 材料槽。
+5. 将“boundingbox”材料拖放到边界框组件上的边界框材料槽中。 另外，抓取“boundingboxgrabbed”材料，并将其放入边界框组件上的已抓取边界框材料槽中。
 
-6. 边界框组件上，将"MRTK_BoundingBox_ScaleWidget"材料拖到缩放句柄 prefab 槽。 
+6. 将“MRTK_BoundingBox_ScaleWidget”材料拖放到边界框组件上的缩放控点预制件槽中。 
 
-7. 将"MRTK_BoundingBox_RotateWidget"材料拖到旋转句柄槽捆绑框组件上。
+7. 将“MRTK_BoundingBox_RotateWidget”材料拖放到边界框组件上的旋转控点槽中。
 
-![Lesson4 第 3 章第 4 步 7Im](images/Lesson4_chapter3_step4-7im.PNG)
+![Lesson4 Chapter3 Step4 7Im](images/Lesson4_chapter3_step4-7im.PNG)
 
-8. 请确保边界框所面向的右边的对象。 边界框组件，在没有"目标对象"和"绑定重写"的脚本。 请确保将具有这两种这些槽在其周围的边界框的对象。 在此示例中，"node_id30"将对象拖到这两个这些槽，如下图中所示。
+8. 确保边界框针对适当的对象。 边界框组件中包含“目标对象”和“边界重写”脚本。 请确保将边界框环绕的对象拖放到这两个槽中。 在本示例中，请将“node_id30”对象拖放到这两个槽，如下图所示。
 
-> 在启动或运行该应用程序时，您的对象将现在圈定的蓝色框上。 请别客气拖动以调整对象大小的帧的角。 如果我们想要缩放的句柄和旋转句柄，以进行更大、 更直观，我们建议使用默认值边界框设置 （避免步骤 4-7）。 
+> 启动应用程序或在其中游戏时，该对象现在会由蓝框环绕。 可以放心拖动该框的四角，以调整对象的大小。 若要增大缩放控点和旋转控点的大小并使其更清晰，我们建议使用默认的边界框设置（不要执行步骤 4-7）。 
 
-![Lesson4 第 3 章 Step8im](images/Lesson4_Chapter3_step8im.PNG)
+![Lesson4 Chapter3 Step8im](images/Lesson4_Chapter3_step8im.PNG)
 
-9. 若要返回到默认的边界框的可视化效果，边界框的对象的检查器面板中选择旋转句柄预设并按 delete 键，现在将看到类似于下面的图像的边界框可视化效果。 注意： 仅出现在播放模式下的边界框可视化效果。
+9. 若要恢复默认的边界框可视化效果，请在边界框对象的检查器面板中，选择旋转控点预制件并按 Delete 键，随后会看到下图所示的边界框可视化效果。 注意：边界框可视化效果仅在游戏模式下显示。
 
-![Lesson4 第 3 章 Step9im](images/Lesson4_chapter3_step9im.PNG)
+![Lesson4 Chapter3 Step9im](images/Lesson4_chapter3_step9im.PNG)
 
 ### <a name="adding-touch-effects"></a>添加触摸效果
-在此示例中，我们将在与您的手接触对象时播放声音效果。
+本示例将在用手触摸某个对象时播放一段音效。
 
-1. 将音频源组件添加到您的游戏对象。 应用场景的层次结构中选择"八"对象。 在检查器窗格中，单击"添加组件"按钮，搜索并选择"音频源。" 我们将使用此音频源以在稍后的步骤中播放声音效果。 
+1. 将音频源组件添加到游戏对象。 在场景层次结构中选择“八面体”对象。 在检查器面板中单击“添加组件”按钮，搜索并选择“音频源”。 在稍后的步骤中，我们将使用此音频源播放音效。 
 
->注意：请确保"八"对象对其具有盒状碰撞体。
+>注意：确保“八面体”对象包含一个盒碰撞体。
 
-2. "靠近可触摸交互"组件添加。 单击检查器面板和"附近的可触摸交互。"的搜索中的"添加组件"按钮 选择它以添加该组件。 注意： 修复屏幕快照以突出显示，我们将添加该组件，并不只突出显示盒状碰撞体。
+2. 添加“近距交互可触摸对象”组件。 在检查器面板中单击“添加组件”按钮，然后搜索“近距交互可触摸对象”。 选择该对象以将它添加到组件。 注意：需要修正屏幕截图，以突出显示我们要添加组件，并不仅仅是突出显示盒碰撞体。
 
->注意：以前，我们添加了"近交互 grabbable。" 区别这之间和"附近可触摸交互"是"grabbable"交互用于获取并与之交互的对象。 "可触摸"组件适用于涉及的对象。 这两个组件可以一起用于交互的组合。
+>注意：前面我们已经添加了“近距交互可抓取对象”。 此对象与“近距交互可触摸对象”之间的差别在于，“可抓取”交互适用于要抓取和交互的对象。 “可触摸”组件适用于要触摸的对象。 可以结合使用这两个组件以实现组合式交互。
 
-![Lesson4 第 4 章 Step1 2Im](images/Lesson4_chapter4_step1-2im.PNG)
+![Lesson4 Chapter4 Step1 2Im](images/Lesson4_chapter4_step1-2im.PNG)
 
-3. 在"分发交互触摸"脚本中添加。 请注意，使用此演示包的一部分导入 unity 场景包括此脚本，它不包含在原始 MRTK。 只需像上一步骤中，单击"添加组件"并搜索"手动交互接触"以将其添加。 
-   请注意，必须使用脚本的 3 个选项： 
+3. 加入“手动交互触摸”脚本。 请注意，此脚本已包含在连同此演示包一起导入的 unity 场景中，但未包含在原始 MRTK 中。 与在上一步骤中一样，单击“添加组件”并搜索“手动交互触摸”，以添加该脚本。 
+   请注意，该脚本包含 3 个选项： 
 
-   - "上接触已完成的。" 这会触发触摸和释放对象时。 
-   - "上触摸已启动。" 这会触发触摸对象时。 
-   - "上接触更新的。" 这会定期触发的而您的手接触对象。 
+   - “触摸完成时”。 触摸并释放对象时会触发此操作。 
+   - “开始触摸时”。 触摸对象时会触发此操作。 
+   - “更新触摸时”。 用手触摸对象时，会定期触发此操作。 
 
-   对于此示例中，我们将使用"上启动的接触"设置。
+   对于本示例，我们将使用“开始触摸时”设置。
 
-4. 单击"上启动触摸"选项中的"+"按钮，如下图中所示。 将八对象拖到空的字段。 
+4. 在“开始触摸时”选项中单击“+”按钮，如下图所示。 将八面体对象拖放到空字段。 
 
-5. 在下拉列表显示 （如上图所示的绿色矩形） 所示的"函数"，选择 AudioSource > PlayOneShot。 我们会将音频剪辑添加到此字段使用以下概念：
+5. 在带有“无函数”字样的下拉列表中（如上图中的绿色矩形所示），选择“AudioSource”>“PlayOneShot”。 使用以下概念将一个音频剪辑添加到此字段：
 
-   - MRTK 确实提供音频剪辑的简短列表。 随意浏览这些项目面板中。 将"MixedRealityToolkit.SDK"文件夹，然后"standard assets"文件夹下找到它们。 您将看到所有音频剪辑所在的"audio"文件夹。
-   - 对于此示例中，我们将使用"MRTK_Gem"音频剪辑。 
-   - 要添加音频剪辑，只需将您想要的剪辑从项目面板到 AudioSource.PlayOneShot 检查器面板中 （上面的示例中的绿色框标记）。
+   - MRTK 提供了一个简短的音频剪辑列表。 请在项目面板中随意浏览这些剪辑。 在“MixedRealityToolkit.SDK”文件夹下的“standard assets”文件夹中可以找到它们。 其中有一个“audio”文件夹包含了所有音频剪辑。
+   - 对于本示例，我们将使用“MRTK_Gem”音频剪辑。 
+   - 若要添加音频剪辑，只需将项目面板中所需的剪辑拖入检查器面板中的 AudioSource.PlayOneShot（在以上示例中带有绿框标记）。
 
-   现在，当用户访问，并涉及八对象，将播放音频曲目"MRTK_Gem"。 "手动交互触摸"脚本还将调整时涉及的对象的颜色。 
+   现在，当用户伸手触摸八面体对象时，会播放音频曲目“MRTK_Gem”。 触摸对象时，“手动交互触摸”脚本还会调整该对象的颜色。 
 
-![Lesson4 第 4 章 Step3 5 Noteim](images/Lesson4_chapter4_step3-5-noteim.PNG)
+![Lesson4 Chapter4 Step3 5 Noteim](images/Lesson4_chapter4_step3-5-noteim.PNG)
 
-### <a name="congratulations"></a>恭喜 ！ 
-在本课程中，学习了如何组织网格集合中的三维对象以及如何操作三维对象 （缩放、 旋转和移动） 使用附近 （直接获取与跟踪手） 的交互和远端交互 （使用的视线移动大气或手动大气）。您还学习了如何将三维对象周围的边界框，并介绍了如何使用和自定义的边界框上 gizmos，请。 最后，您学习了如何在触发事件时触摸对象。
+### <a name="congratulations"></a>祝贺 
+在本课中，你已了解如何在网格集合中组织 3D 对象，以及如何使用近距交互（使用跟踪手直接抓取）和远距交互（使用视线或手部跟踪光线）操作 3D 对象（缩放、旋转和移动）。此外，你还了解了如何在 3D 对象的周围放置边界框，以及如何使用和自定义边界框上的变形器 (Gizmo)。 最后，你已了解如何在触摸对象时触发事件。
 
-[下一课：高级的输入](mrlearning-base-ch5.md)
+[下一课：高级输入](mrlearning-base-ch5.md)
 
