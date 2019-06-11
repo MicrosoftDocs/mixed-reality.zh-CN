@@ -108,7 +108,7 @@ ms.locfileid: "59592739"
 
     5. 确定**位置**为资源组 （如果要创建新的资源组）。 理想情况下，则位置应为该应用程序将运行的区域中。 某些 Azure 资产在特定区域才可用。
     6. 您还需要确认你已了解的条款和条件应用于此服务。
-    7. 选择“创建”。
+    7. 选择“创建”  。
 
         ![选择创建按钮。](images/AzureLabs-Lab1-04.png)
 
@@ -673,7 +673,7 @@ ms.locfileid: "59592739"
     ```
 
     > [!WARNING]
-    > 如果编辑 IEnumerator 方法的名称**GetTokenCoroutine()**，则需要更新*StartCoroutine*并*StopCoroutine*调用上述代码中的字符串值。 [Unity 文档根据](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StartCoroutine.html)，以停止特定*协同程序*，您需要使用的字符串值方法。
+    > 如果编辑 IEnumerator 方法的名称**GetTokenCoroutine()** ，则需要更新*StartCoroutine*并*StopCoroutine*调用上述代码中的字符串值。 [Unity 文档根据](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StartCoroutine.html)，以停止特定*协同程序*，您需要使用的字符串值方法。
 
 9.  接下来，添加 （与它正下方的"支持"流方法） 协同例程来获取接收的文本的翻译*MicrophoneManager*类。 此代码将创建一个查询字符串来将发送到*Azure 文本翻译 API*，然后使用内部的 Unity UnityWebRequest 类将调用 Get 具有查询字符串的终结点。 然后使用结果将转换结果对象中。 下面的代码演示实现过程：
 
@@ -710,7 +710,7 @@ ms.locfileid: "59592739"
 
 ## <a name="chapter-8--configure-the-unity-scene"></a>章 8 – 配置 Unity 场景
 
-1.  返回在 Unity 编辑器中，单击并拖动*结果*类*从***脚本**文件夹**Main Camera**中对象*层次结构面板*。
+1.  返回在 Unity 编辑器中，单击并拖动 *结果* 类 *从* **脚本** 文件夹 **Main Camera** 中对象 *层次结构面板* 。
 2.  单击**Main Camera**并查看*检查器面板*。 您将在新添加发现*脚本*组件，有四个字段的值为空。 这些是对在代码中的属性的输出引用。 
 3.  拖动相应**文本**中的对象*层次结构面板*到四个槽，如下图中所示。
 
@@ -750,7 +750,7 @@ ms.locfileid: "59592739"
     ![生成 Unity 场景。](images/AzureLabs-Lab1-36.png)
   
 3.  如果尚不存在，则勾选**UnityC#项目**。
-4.  单击“生成” 。 将启动 unity*文件资源管理器*窗口中，需要创建，然后选择要生成该应用程序的文件夹。 现在，创建该文件夹并将其命名*应用*。 然后使用*应用程序*文件夹选择，按**选择文件夹**。 
+4.  单击“生成”  。 将启动 unity*文件资源管理器*窗口中，需要创建，然后选择要生成该应用程序的文件夹。 现在，创建该文件夹并将其命名*应用*。 然后使用*应用程序*文件夹选择，按**选择文件夹**。 
 5.  Unity 将开始构建您的项目*应用*文件夹。 
 6.  一次 Unity 已完成的生成 （它可能需要一些时间），它将打开*文件资源管理器*窗口在生成的位置 （检查任务栏中，因为它可能不总是会显示您的窗口上方，但会通知你添加了一个新窗口）。
 
