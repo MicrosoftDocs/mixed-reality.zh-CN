@@ -1,35 +1,48 @@
 ---
 title: MR 学习基本模块简介
-description: 完成此课程以了解如何在混合的现实应用程序中实现 Azure 人脸识别。
+description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: unity 中，教程，hololens 混合的现实
-ms.openlocfilehash: 80b9b8d7cd3659c9cc20824114cdedc05eae8a85
-ms.sourcegitcommit: 45a0a7d5ce45440b251293a0380ad5b722dbbad3
+keywords: 混合现实, unity, 教程, hololens
+ms.openlocfilehash: 2fe07efe87086e9a8c06e1953fcef8544b03c80a
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64933646"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829884"
 ---
-# <a name="mr-learning-base-module-overview--objectives"></a><span data-ttu-id="5098d-104">MR 学习基本模块概述和目标</span><span class="sxs-lookup"><span data-stu-id="5098d-104">MR Learning Base Module Overview & Objectives</span></span>
+# <a name="mr-learning-base-module-overview--objectives"></a><span data-ttu-id="558a6-104">MR 学习基本模块概述和目标</span><span class="sxs-lookup"><span data-stu-id="558a6-104">MR Learning Base Module Overview & Objectives</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="5098d-105">设备支持</span><span class="sxs-lookup"><span data-stu-id="5098d-105">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="558a6-105">设备支持</span><span class="sxs-lookup"><span data-stu-id="558a6-105">Device support</span></span>
 
 <table>
-<tr>
-<th><span data-ttu-id="5098d-106">课程</span><span class="sxs-lookup"><span data-stu-id="5098d-106">Course</span></span></th><th style="width:150px"> <span data-ttu-id="5098d-107"><a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></span><span class="sxs-lookup"><span data-stu-id="5098d-107"><a href="hololens-hardware-details.md">HoloLens (1st Gen)</a></span></span></th><th style="width:150px"> <span data-ttu-id="5098d-108"><a href="immersive-headset-hardware-details.md">沉浸式耳机</a></span><span class="sxs-lookup"><span data-stu-id="5098d-108"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th><th style="width:150px"> <span data-ttu-id="5098d-109"><a href="https://www.microsoft.com/en-us/hololens/hardware">HoloLens 2</a></span><span class="sxs-lookup"><span data-stu-id="5098d-109"><a href="https://www.microsoft.com/en-us/hololens/hardware">HoloLens 2</a></span></span></th>
-</tr><tr>
-<td></td><td style="text-align: center;"> </td><td style="text-align: center;"> </td><td style="text-align: center;"> <span data-ttu-id="5098d-110">✔️</span><span class="sxs-lookup"><span data-stu-id="5098d-110">✔️</span></span></td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><span data-ttu-id="558a6-106"><strong>课程</strong></span><span class="sxs-lookup"><span data-stu-id="558a6-106"><strong>Course</strong></span></span></td>
+        <td><span data-ttu-id="558a6-107"><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></span><span class="sxs-lookup"><span data-stu-id="558a6-107"><a href="hololens-hardware-details.md"><strong>HoloLens (1st gen)</strong></a></span></span></td>
+        <td><span data-ttu-id="558a6-108"><a href="https://www.microsoft.com/en-us/hololens/hardware"><strong>HoloLens 2</strong></a></span><span class="sxs-lookup"><span data-stu-id="558a6-108"><a href="https://www.microsoft.com/en-us/hololens/hardware"><strong>HoloLens 2</strong></a></span></span></td>
+        <td><span data-ttu-id="558a6-109"><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></span><span class="sxs-lookup"><span data-stu-id="558a6-109"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
+    </tr>
+     <tr>
+        <td></td>
+        <td><span data-ttu-id="558a6-110">❌</span><span class="sxs-lookup"><span data-stu-id="558a6-110">❌</span></span></td>
+        <td><span data-ttu-id="558a6-111">✔️</span><span class="sxs-lookup"><span data-stu-id="558a6-111">✔️</span></span></td>
+        <td><span data-ttu-id="558a6-112">❌</span><span class="sxs-lookup"><span data-stu-id="558a6-112">❌</span></span></td>
+    </tr>
 </table>
 
-## <a name="before-you-start"></a><span data-ttu-id="5098d-111">开始之前</span><span class="sxs-lookup"><span data-stu-id="5098d-111">Before you start</span></span>
+## <a name="before-you-start"></a><span data-ttu-id="558a6-113">开始之前</span><span class="sxs-lookup"><span data-stu-id="558a6-113">Before you start</span></span>
 
-### <a name="prerequisites"></a><span data-ttu-id="5098d-112">先决条件</span><span class="sxs-lookup"><span data-stu-id="5098d-112">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="558a6-114">先决条件</span><span class="sxs-lookup"><span data-stu-id="558a6-114">Prerequisites</span></span>
 
-* <span data-ttu-id="5098d-113">使用正确配置 Windows 10 电脑[安装工具](install-the-tools.md)</span><span class="sxs-lookup"><span data-stu-id="5098d-113">A Windows 10 PC configured with the correct [tools installed](install-the-tools.md)</span></span>
-* <span data-ttu-id="5098d-114">Windows 10 SDK 10.0.18362.0 或更高版本</span><span class="sxs-lookup"><span data-stu-id="5098d-114">Windows 10 SDK 10.0.18362.0 or later</span></span>
-* <span data-ttu-id="5098d-115">一些基本C#编程功能。</span><span class="sxs-lookup"><span data-stu-id="5098d-115">Some basic C# programming ability.</span></span>
-* <span data-ttu-id="5098d-116">HoloLens 2 设备[为开发配置](using-visual-studio.md#enabling-developer-mode)。</span><span class="sxs-lookup"><span data-stu-id="5098d-116">A HoloLens 2 device [configured for development](using-visual-studio.md#enabling-developer-mode).</span></span>
+* <span data-ttu-id="558a6-115">使用正确配置 Windows 10 电脑[安装工具](install-the-tools.md)</span><span class="sxs-lookup"><span data-stu-id="558a6-115">A Windows 10 PC configured with the correct [tools installed](install-the-tools.md)</span></span>
+* <span data-ttu-id="558a6-116">Windows 10 SDK 10.0.18362.0 或更高版本</span><span class="sxs-lookup"><span data-stu-id="558a6-116">Windows 10 SDK 10.0.18362.0 or later</span></span>
+* <span data-ttu-id="558a6-117">一些基本C#编程功能。</span><span class="sxs-lookup"><span data-stu-id="558a6-117">Some basic C# programming ability.</span></span>
+* <span data-ttu-id="558a6-118">HoloLens 2 设备[为开发配置](using-visual-studio.md#enabling-developer-mode)。</span><span class="sxs-lookup"><span data-stu-id="558a6-118">A HoloLens 2 device [configured for development](using-visual-studio.md#enabling-developer-mode).</span></span>
