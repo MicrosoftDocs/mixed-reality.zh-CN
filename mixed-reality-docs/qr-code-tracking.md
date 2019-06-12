@@ -6,12 +6,12 @@ ms.author: yoyoz
 ms.date: 11/06/2018
 ms.topic: article
 keywords: vr lbe，基于位置娱乐、 vr 拱廊沉浸式拱廊，qr，qr 代码
-ms.openlocfilehash: e6588552c0cfa8bffa19ac2be5c247c5f73dc19c
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: 465056cf645a8b9dc9e0e2d3f9dacf887df67c52
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974897"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829984"
 ---
 # <a name="qr-code-tracking"></a>跟踪的 QR 代码
 
@@ -23,11 +23,21 @@ ms.locfileid: "65974897"
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> 跟踪的 QR 代码</td><td style="text-align: center;"></td><td style="text-align: center;">✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>跟踪的 QR 代码</td>
+        <td>❌</td>
+        <td>✔️</td>
+    </tr>
 </table>
 
 ## <a name="enabling-and-disabling-qr-code-tracking-for-your-headset"></a>启用和禁用 QR 代码跟踪您的头戴式

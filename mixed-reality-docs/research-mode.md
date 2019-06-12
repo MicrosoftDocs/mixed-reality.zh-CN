@@ -6,12 +6,12 @@ ms.author: dgedye
 ms.date: 05/03/2018
 ms.topic: article
 keywords: 研究模式、 cv、 rs4、 计算机视觉、 研究、 HoloLens
-ms.openlocfilehash: 5feda021bd6a1a90fd98c751b1cea768eed980af
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e9a7683f8d582b459185066e74655e8f2b236db4
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590096"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829933"
 ---
 # <a name="hololens-research-mode"></a>HoloLens 研究模式
 
@@ -29,11 +29,21 @@ ms.locfileid: "59590096"
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> 信息检索模式</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>信息检索模式</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="before-using-research-mode"></a>使用研究模式之前
@@ -72,4 +82,4 @@ ms.locfileid: "59590096"
 
 * [Microsoft 媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 * [HoloLensForCV GitHub 存储库](https://github.com/Microsoft/HoloLensForCV)
-* [使用 Windows Device Portal](using-the-windows-device-portal.md)
+* [使用 Windows 设备门户](using-the-windows-device-portal.md)

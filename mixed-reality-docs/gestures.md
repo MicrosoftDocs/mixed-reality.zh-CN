@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合的现实，手势，交互，设计
-ms.openlocfilehash: 52ba7070e2c9b5632d5978c70571fcf9cda3f499
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: 8094caaf8a5d805606e9dac11ece56bc50122e5d
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974889"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829772"
 ---
 # <a name="gestures"></a>笔势
 
@@ -24,14 +24,30 @@ ms.locfileid: "65974889"
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> 笔势</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
-</tr>
-<tr>
-<td> 明确的手</td><td></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>笔势</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
+     <tr>
+        <td>明确的手</td>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 > [!NOTE]

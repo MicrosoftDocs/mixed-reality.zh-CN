@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 坐标系统、 空间坐标系统、 只方向、 固定缩放、 现有的规模，房间的小数位数，全球规模，360 度就位，现有、 房间、 世界、 规模、 位置、 方向、 固定、 附加阶段，定位点、 空间定位点，世界锁定、 世界锁定、 正文锁定、 正文锁定、 边界、 持久性、 共享、 跟踪丢失，云空间定位点
-ms.openlocfilehash: fc76a30895a85ab5ca8396540a82965cc35c494e
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: f4b945a3ffb83b9ac0a94e0d793a19939aece3bb
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59593077"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829859"
 ---
 # <a name="coordinate-systems"></a>坐标系统
 
@@ -24,19 +24,48 @@ ms.locfileid: "59593077"
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> <a href="coordinate-systems.md#stationary-frame-of-reference">固定参考框架</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#attached-frame-of-reference">附加的参考框架</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#stage-frame-of-reference">阶段参考框架</a></td><td style="text-align: center;"> 尚不支持</td><td style="text-align: center;"> 尚不支持</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#spatial-anchors">空间的定位点</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="spatial-mapping.md">空间映射</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="40%" />
+    <col width="20%" />
+    <col width="20%" />
+    <col width="20%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td><a href="coordinate-systems.md#stationary-frame-of-reference">固定参考框架</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#attached-frame-of-reference">附加的参考框架</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#stage-frame-of-reference">阶段参考框架</a></td>
+        <td>尚不支持</td>
+        <td>尚不支持</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#spatial-anchors">空间定位点</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="spatial-mapping.md">空间映射</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="mixed-reality-experience-scales"></a>混合的现实体验刻度
@@ -194,9 +223,9 @@ Head 锁定内容通常应替换全息附加到用户或放置在世界本身。
 
 ## <a name="see-also"></a>请参阅
 * [空间坐标系统和全息呈现的 GDC 2017 演示](https://channel9.msdn.com/events/GDC/GDC-2017/GDC2017-008)
-* [在 Unity 中的坐标系统](coordinate-systems-in-unity.md)
-* [在 DirectX 的坐标系统](coordinate-systems-in-directx.md)
-* [空间的定位点](spatial-anchors.md)
+* [Unity 中的坐标系统](coordinate-systems-in-unity.md)
+* [DirectX 中的坐标系统](coordinate-systems-in-directx.md)
+* [空间定位点](spatial-anchors.md)
 * [混合现实中的共享体验](shared-experiences-in-mixed-reality.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间的定位点</a>
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间定位点</a>
 * [案例研究-通查在现实中的漏洞](case-study-looking-through-holes-in-your-reality.md)

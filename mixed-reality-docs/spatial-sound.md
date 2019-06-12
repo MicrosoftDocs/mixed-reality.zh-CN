@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空间声音、 环绕声、 3d 音频、 3d 声音、 空间音频
-ms.openlocfilehash: ccb236a8b53e757ba632a1c7c6cb2d4f07735910
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: a30a484c4e47593556fbd1786158262551e11d22
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592146"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829924"
 ---
 # <a name="spatial-sound"></a>空间音效
 
@@ -26,13 +26,24 @@ ms.locfileid: "59592146"
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-
-<td> 空间音效</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （使用耳机）</td>
-
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>空间音效</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️ （使用耳机）</td>
+    </tr>
 </table>
 
 ## <a name="simulating-the-perceived-location-and-distance-of-sounds"></a>模拟的感知到的位置和距离的声音
@@ -60,6 +71,6 @@ Windows 的空间声音引擎仅支持一个 48 k 采样率进行播放。 大�
 
 ## <a name="see-also"></a>请参阅
 * [MR Spatial 220](holograms-220.md)
-* [在 Unity 中的空间声音](spatial-sound-in-unity.md)
-* [在 DirectX 空间声音](spatial-sound-in-directx.md)
-* [空间合理的设计](spatial-sound-design.md)
+* [Unity 中的空间音效](spatial-sound-in-unity.md)
+* [DirectX 中的空间音效](spatial-sound-in-directx.md)
+* [空间音效设计](spatial-sound-design.md)

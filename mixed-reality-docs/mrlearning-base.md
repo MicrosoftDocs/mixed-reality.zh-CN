@@ -1,28 +1,41 @@
 ---
 title: MR 学习基本模块简介
-description: 完成此课程以了解如何在混合的现实应用程序中实现 Azure 人脸识别。
+description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: unity 中，教程，hololens 混合的现实
-ms.openlocfilehash: 80b9b8d7cd3659c9cc20824114cdedc05eae8a85
-ms.sourcegitcommit: 45a0a7d5ce45440b251293a0380ad5b722dbbad3
+keywords: 混合现实, unity, 教程, hololens
+ms.openlocfilehash: 2fe07efe87086e9a8c06e1953fcef8544b03c80a
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64933646"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829884"
 ---
 # <a name="mr-learning-base-module-overview--objectives"></a>MR 学习基本模块概述和目标
 
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th><th style="width:150px"> <a href="https://www.microsoft.com/en-us/hololens/hardware">HoloLens 2</a></th>
-</tr><tr>
-<td></td><td style="text-align: center;"> </td><td style="text-align: center;"> </td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>课程</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><a href="https://www.microsoft.com/en-us/hololens/hardware"><strong>HoloLens 2</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td></td>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="before-you-start"></a>开始之前

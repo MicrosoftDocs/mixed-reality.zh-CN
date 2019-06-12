@@ -3,15 +3,15 @@ title: 添加 holographic 远程处理
 description: 介绍如何使用 Holographic 远程处理以通过网络将全息呈现到 HoloLens。
 author: MikeRiches
 ms.author: mriches
-ms.date: 03/21/2018
+ms.date: 05/24/2019
 ms.topic: article
 keywords: Windows Mixed Reality，全息、 全息版的远程处理、 远程呈现、 呈现、 HoloLens，远程全息网络
-ms.openlocfilehash: 1e9567976bad1e2b72e95feca292bf3475893230
-ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
+ms.openlocfilehash: 8d645f634ff0fc820893f5554fd602aa3a2f38e3
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66270348"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829618"
 ---
 # <a name="add-holographic-remoting"></a>添加 holographic 远程处理
 

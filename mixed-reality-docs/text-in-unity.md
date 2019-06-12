@@ -3,15 +3,15 @@ title: 在 Unity 中的文本
 description: 若要显示的文本在 Unity 中，有两种类型的文本组件可以使用-UI 文本和三维文本网格。
 author: cre8ivepark
 ms.author: dongpark
-ms.date: 03/21/2018
+ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality，设计，用于控制字体、 版式、 ui、 用户体验
-ms.openlocfilehash: a601ab5ab5168f286a0935ca06eeec13022e1eee
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: 7d40db2e0571e835e28e444c7921e1a086800936
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692329"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829976"
 ---
 # <a name="text-in-unity"></a>在 Unity 中的文本
 

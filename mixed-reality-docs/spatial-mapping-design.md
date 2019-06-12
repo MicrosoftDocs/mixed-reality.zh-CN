@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计中，空间映射，HoloLens，图面上重新构造、 网格
-ms.openlocfilehash: d2ddcbf9458769a60cd3ed2871c5f3405c75f10c
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 451213a79e1d482d64725ce750065611830beec3
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590171"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829962"
 ---
 # <a name="spatial-mapping-design"></a>空间映射设计
 
@@ -20,11 +20,21 @@ ms.locfileid: "59590171"
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> 空间映射</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>空间映射设计</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="why-is-spatial-mapping-important"></a>空间映射为什么很重要？
@@ -196,6 +206,6 @@ HoloLens 了解在其环境中的图面，因为用户将查看它们。 随着�
 * 它是执行测试与实部 （和理想情况下取消警告） 的用户，一个好办法，因为它们不得 HoloLens 或你的应用程序以使用完全相同的方式执行的操作。 事实上，它会让您大吃一惊如何同名的不同人的行为，可以是知识和假设 ！
 
 ## <a name="see-also"></a>请参阅
-* [聊天室扫描可视化效果](room-scan-visualization.md)
-* [空间合理的设计](spatial-sound-design.md)
-* [在 Unity 中的暂留](persistence-in-unity.md)
+* [房间扫描可视化](room-scan-visualization.md)
+* [空间音效设计](spatial-sound-design.md)
+* [Unity 中的持久性](persistence-in-unity.md)

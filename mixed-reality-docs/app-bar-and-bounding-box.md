@@ -1,17 +1,17 @@
 ---
-title: 应用程序栏和边框
+title: 边界框和应用程序栏
 description: 应用程序栏是对象级菜单包含一系列显示一张全息图边界的下边缘的按钮。
 author: radicalad
 ms.author: adlinv
-ms.date: 03/21/2018
+ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality 应用栏，边界框
-ms.openlocfilehash: ab472e1c988e6bdfb0a69d90e90280082b3db759
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: d289be31129324c6ff419b69dbce52bd8f62eb64
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813840"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829686"
 ---
 # <a name="bounding-box-and-app-bar"></a>边界框和应用程序栏
 ![边界是混合现实中的对象操作的标准接口。](images/640px-boundingbox-hero.jpg)<br>

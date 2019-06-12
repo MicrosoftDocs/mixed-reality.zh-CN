@@ -3,15 +3,15 @@ title: 版式
 description: 文本是用于在您的应用体验中提供信息的重要元素。
 author: cre8ivepark
 ms.author: dongpark
-ms.date: 03/21/2018
+ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality，设计、 样式、 字体、 版式、 ui、 用户体验
-ms.openlocfilehash: 6371aa9b12b61d12acdaaae5f7730ff2ae9757f0
-ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
+ms.openlocfilehash: cc8e25e9cd7ba41bed179328fe7198e935e65d76
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66750336"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830016"
 ---
 # <a name="typography"></a>版式
 

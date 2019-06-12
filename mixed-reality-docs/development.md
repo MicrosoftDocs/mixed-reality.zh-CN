@@ -1,23 +1,23 @@
 ---
 layout: LandingPage
 title: 开发
-description: 混合的现实 HoloLens 和沉浸式耳机的开发人员文档。
+description: 适用于 HoloLens 和沉浸式头戴显示设备的混合现实开发人员文档。
 author: grbury
 ms.author: grbury
 ms.date: 02/12/2019
 ms.topic: article
 ms.localizationpriority: high
-keywords: 混合现实，开发，开发、 HoloLens、 unity、 directx
+keywords: 混合现实、开发、HoloLens、unity、directx
 ms.openlocfilehash: 8833d2d692f2082c939bcfc3bb55e5d159e8c9ac
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
-ms.translationtype: MT
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/05/2019
 ms.locfileid: "65974813"
 ---
-# <a name="development-launchpad"></a>开发快速启动板
+# <a name="development-launchpad"></a>开发启动板
 
-## <a name="article-categories"></a>项目类别
+## <a name="article-categories"></a>文章类别
 
 
 <ul class="panelContent cardsF">
@@ -33,7 +33,7 @@ ms.locfileid: "65974813"
                     <div class="cardText">
                         <h3>立即开始行动</h3>
                         <p>
-                            <a href="mixed-reality.md">什么被混合现实？</a>
+                            <a href="mixed-reality.md">什么是混合现实？</a>
                         </p>
                         <p>
                             <a href="install-the-tools.md">安装工具</a>
@@ -61,10 +61,10 @@ ms.locfileid: "65974813"
                             <a href="https://www.microsoft.com/hololens/hardware" target="_blank">HoloLens 2</a>
                         </p>
                         <p>
-                            <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a>
+                            <a href="hololens-hardware-details.md">HoloLens（第一代）</a>
                         </p>
                         <p>
-                            <a href="immersive-headset-hardware-details.md">沉浸式耳机</a>
+                            <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a>
                         </p>
                     </div>
                 </div>
@@ -81,9 +81,9 @@ ms.locfileid: "65974813"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Services</h3>
+                        <h3>服务</h3>
                         <p>
-                            <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间的定位点</a>
+                            <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间定位点</a>
                         </p>
                         <p>
                             <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/" target="_blank">语音服务</a>
@@ -114,7 +114,7 @@ ms.locfileid: "65974813"
                             <a href="directx-development-overview.md">自定义引擎 (DirectX)</a>
                         </p>
                         <p>
-Unreal-即将推出 ！
+Unreal - 即将推出！
                         </p>                
                     </div>
                 </div>
@@ -133,13 +133,13 @@ Unreal-即将推出 ！
                     <div class="cardText">
                         <h3>移植指南</h3>
                         <p>
-                            <a href="mrtk-porting-guide.md">更新应用到 HoloLens 2<br>从 HoloLens （第 1 代）</a>
+                            <a href="mrtk-porting-guide.md">将应用从 HoloLens（第一代）<br>更新到 HoloLens 2</a>
                         </p>
                         <p>
-                            <a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html">混合的现实工具包 (MRTK)<br>API 迁移指南</a>
+                            <a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html">混合现实工具包 (MRTK)<br>API 移植指南</a>
                         </p>
                         <p>
-                            <a href="porting-guides.md">沉浸式头戴式应用</a>
+                            <a href="porting-guides.md">沉浸式头戴显示设备应用</a>
                         </p>
                     </div>
                 </div>
@@ -158,7 +158,7 @@ Unreal-即将推出 ！
                     <div class="cardText">
                         <h3>开发基础知识</h3>
                         <p>
-                            <a href="Interaction-fundamentals.md">Instinctual 交互</a>
+                            <a href="Interaction-fundamentals.md">本能交互</a>
                         </p>
                         <p>
                             <a href="rendering.md">全息呈现</a>
@@ -175,37 +175,37 @@ Unreal-即将推出 ！
 
 ## <a name="overview"></a>概述
 
-混合的现实应用使用构建[通用 Windows 平台](https://dev.windows.com/getstarted)。 所有混合的现实应用是通用 Windows 应用，并可为所有通用 Windows 应用 Windows Mixed Reality 设备上运行。 使用 Windows 10 和熟悉 Unity 之类的中间件工具，可以开始的构建混合的现实体验今天。
+混合现实应用是使用[通用 Windows 平台](https://dev.windows.com/getstarted)生成的。 所有的混合现实应用都是通用 Windows 应用，所有通用 Windows 应用都可以在 Windows Mixed Reality 设备上运行。 借助 Windows 10 和熟悉的 Unity 等中间件工具，可以立即开始构建混合现实体验。
 
 <br>
 
 >[!VIDEO https://www.youtube.com/embed/A784OdX8xzI]
 
-## <a name="basics-of-mixed-reality-development"></a>混合的现实开发的基础知识
+## <a name="basics-of-mixed-reality-development"></a>混合现实开发基础知识
 
-[混合现实](mixed-reality.md)体验之外的环境了解新的 Windows 功能。 这使开发人员能够将放[全息图](hologram.md)在现实生活中，并允许用户按原义的每个步骤有关数字世界的推进。 
+用于环境理解的 Windows 新功能支持[混合现实](mixed-reality.md)体验。 这使得开发者能够在现实世界中放置[全息影像](hologram.md)，并使用户可以通过实际在四处走动实现在数字世界中的移动。 
 
-以下是混合的现实开发核心构建基块：
+以下是混合现实开发的核心构建基块：
 
 <table>
 <tr>
-<th style="width:175px">Input</th><th style="width:125px; text-align: center;"><a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:125px; text-align: center;">HoloLens 2</a></th><th style="width:125px; text-align: center;"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th style="width:175px">Input</th><th style="width:125px; text-align: center;"><a href="hololens-hardware-details.md">HoloLens（第一代）</a></th><th style="width:125px; text-align: center;">HoloLens 2</a></th><th style="width:125px; text-align: center;"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
-<td> <a href="gaze.md">Head 的视线移动</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
+<td> <a href="gaze.md">头部凝视</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <td> <a href="gaze.md">眼睛凝视</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
 </tr><tr>
- <td> <a href="gestures.md">明确的手</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
+ <td> <a href="gestures.md">铰接式手</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
 </tr><tr>
 <td> <a href="gestures.md">手势</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
 </tr><tr>
-<td> <a href="voice-input.md">Voice</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
+<td> <a href="voice-input.md">语音</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="hardware-accessories.md">Gamepad</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
+<td> <a href="hardware-accessories.md">手柄</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <td> <a href="motion-controllers.md">运动控制器</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<th style="width:175px">认知和空间功能</th><th style="width:125px; text-align: center;"><a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:125px; text-align: center;">HoloLens 2</a></th><th style="width:125px; text-align: center;"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th style="width:175px">感知和空间功能</th><th style="width:125px; text-align: center;"><a href="hololens-hardware-details.md">HoloLens（第一代）</a></th><th style="width:125px; text-align: center;">HoloLens 2</a></th><th style="width:125px; text-align: center;"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td> <a href="coordinate-systems.md">世界坐标</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
@@ -217,24 +217,24 @@ Unreal-即将推出 ！
 
 
 
-基本交互模型[HoloLens](hololens-hardware-details.md)是[注视](gaze.md)，[手势](gestures.md)，以及[语音](voice-input.md)，有时称为*GGV*. [Windows Mixed Reality 沉浸式耳机](immersive-headset-hardware-details.md)还使用视线移动和语音，但交换[动作控制器](motion-controllers.md)笔势。
+[HoloLens](hololens-hardware-details.md) 的基本交互模式是[凝视](gaze.md)、[手势](gestures.md)和[语音](voice-input.md)，有时也称为 GGV  。 [Windows Mixed Reality 沉浸式头戴显示设备](immersive-headset-hardware-details.md)还使用凝视和语音，但是将[运动控制器](motion-controllers.md)换成手势。
 
-所有混合现实设备受益于输入的生态系统提供到 Windows，包括鼠标、 键盘、 游戏板，和的详细信息。 HoloLens，与[硬件附件](hardware-accessories.md)通过蓝牙连接。 沉浸式耳机，使用附件连接到宿主 PC 通过蓝牙、 USB 和其他支持的协议。
+所有混合现实设备都受益于 Windows 可用的输入生态系统，包括鼠标、键盘、手柄等。 对于 HoloLens，[硬件配件](hardware-accessories.md)通过蓝牙连接。 对于沉浸式头戴显示设备，配件通过蓝牙、USB 和其他受支持的协议连接到主机。
 
-环境了解功能，例如[坐标](coordinate-systems.md)，[空间声音](spatial-sound.md)，并[空间映射](spatial-mapping.md)混合现实提供必要的功能。 空间映射是唯一的 HoloLens，并启用全息与用户和其周围的物理世界进行交互。 坐标系统允许用户的移动，以影响数字世界中的移动。
+[坐标](coordinate-systems.md)、[空间音效](spatial-sound.md)和[空间映射](spatial-mapping.md)等环境理解特性为混合现实提供了必要的功能。 空间映射是 HoloLens 独有的，通过该映射，全息影像可与用户和周围的现实世界进行交互。 坐标系统支持用户的移动，以影响数字世界中的移动。
 
-浅色和声音，后者又依赖于由全息[呈现](rendering.md)。 了解放置和持久性的体验，如中所示[Windows Mixed Reality 家庭](navigating-the-windows-mixed-reality-home.md)（有时称为"shell"） 一个不错方法使您自己接地中的用户体验。
+全息影像由光和声音组成，它们依赖于[呈现](rendering.md)。 理解放置和持久性的体验（如 [Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)（有时称为“shell”）中所示）是一种很好的体验用户体验的方式。
 
-## <a name="tools-for-developing-for-mixed-reality"></a>用于混合现实的开发工具
+## <a name="tools-for-developing-for-mixed-reality"></a>开发混合现实的工具
 
-将取决于您使用的工具[样式的应用](app-views.md)你想要生成。
-* [使用二维视图应用](building-2d-apps.md)利用工具，用于构建通用 Windows 平台应用程序适用于 Windows Phone、 PC 和平板电脑等环境。 这些应用为 2D 投影置于 Windows Mixed Reality 主页、 方面具有丰富经验，并可以跨多个设备类型 （包括手机和 PC） 工作。
-* 沉浸式和全息版的应用需要旨在充分利用 Windows 混合现实 Api 的工具。 我们[建议使用 Unity](unity-development-overview.md)构建混合的现实应用程序。 开发人员热衷于构建他们自己引擎可以[使用 DirectX 和其他 Windows Api](directx-development-overview.md)。
+你使用的工具取决于要生成的[应用样式](app-views.md)。
+* [具有 2D 视图的应用](building-2d-apps.md)利用工具构建适用于 Windows Phone、电脑和平板电脑等环境的通用 Windows 平台应用。 这些应用在 Windows Mixed Reality 主页中以 2D 投影的形式呈现，可以在多种设备类型（包括手机和电脑）上运行。
+* 沉浸式和全息式应用需要使用可以利用 Windows Mixed Reality API 的工具。 我们[推荐使用 Unity](unity-development-overview.md) 生成混合现实应用。 希望生成自己的引擎的开发人员可以[使用 DirectX 和其他 Windows API](directx-development-overview.md)。
 
-无论您正在构建的应用程序的类型，这些工具有助于您应用的开发体验：
+无论要生成的应用为何种类型，这些工具都将有助于应用开发体验：
 * [Visual Studio 和 Windows SDK](using-visual-studio.md)
 * [Windows 设备门户](using-the-windows-device-portal.md)
-* [HoloLens 仿真程序](using-the-hololens-emulator.md)
-* [Windows Mixed Reality 模拟器](using-the-windows-mixed-reality-simulator.md)
+* [HoloLens 仿真器](using-the-hololens-emulator.md)
+* [Windows Mixed Reality 仿真器](using-the-windows-mixed-reality-simulator.md)
 * [应用质量标准](app-quality-criteria.md)
 

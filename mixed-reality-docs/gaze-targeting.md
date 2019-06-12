@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合现实、 提供注视、 视线移动目标交互，设计
-ms.openlocfilehash: bbacf9bc0039280b9944f2ad6616108d9ceae1cd
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: eddc832456b2ba0c6bc8955157d2c8e1a268e893
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974915"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829841"
 ---
 # <a name="gaze-and-dwell"></a>视线移动和停留
 有很多不同的方式，以确认_提交_如结合使用的视线移动_语音_或_传递手势_。
@@ -40,13 +40,30 @@ ms.locfileid: "65974915"
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> 目标的视线移动</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;">✔️ </td>
-</tr><tr>
-<td> 密切关注面向</td><td style="text-align: center;"></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>目标的视线移动</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+     <tr>
+        <td>密切关注面向</td>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 > [!NOTE]
@@ -56,8 +73,8 @@ ms.locfileid: "65974915"
 
 视线移动矢量具有已重复显示可用于面向正常，但通常最适合总目标 （获取稍大些目标）。 1 到 1.5 度为单位的最小目标大小应在 3 个度的目标通常的速度更快，但在大多数情况下，允许用户成功操作。 请注意，用户目标实际上是三维元素-甚至的 2D 区域的大小无论投影面向它们应该是定目标区域。 提供一个元素是"活动"（该用户面向） 一些突出提示会非常有用-这可以包括处理，例如可见"悬停"效果、 音频突出显示或单击，或清除的元素的光标对齐方式。
 
-![2 个计量距离处的最佳目标大小](images/gazetargeting-size-1000px.jpg)<br>
-*2 个计量距离处的最佳目标大小*
+![2 米远处的最佳目标大小](images/gazetargeting-size-1000px.jpg)<br>
+*2 米远处的最佳目标大小*
 
 ![突出显示的视线移动目标的对象的一个示例](images/gazetargeting-highlighting-640px.jpg)<br>
 *突出显示的视线移动目标的对象的一个示例*

@@ -119,7 +119,7 @@
 ### [可交互对象](interactable-object.md)
 ### [对象集合](object-collection.md)
 ### [显示进度](progress.md)
-### [应用栏和边界框](app-bar-and-bounding-box.md)
+### [边界框和应用栏](app-bar-and-bounding-box.md)
 ## 针对混合现实主页进行设计
 ### [3D 应用启动器设计指南](3d-app-launcher-design-guidance.md)
 ### [创建在主页中使用的 3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)

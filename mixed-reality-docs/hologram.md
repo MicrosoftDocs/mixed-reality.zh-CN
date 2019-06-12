@@ -6,12 +6,12 @@ ms.author: befolsom
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、 HoloLens、 全息、 设计、 交互
-ms.openlocfilehash: 5a6cc4df764b1f92f6bea2d7d6e6effe2164e4d6
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 714b08db23aa641252291aebe89fa3059c209a6f
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590161"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829779"
 ---
 # <a name="what-is-a-hologram"></a>什么是全息图？
 
@@ -24,11 +24,24 @@ HoloLens 允许您创建**全息**、 对象所做的光线和声音中显示的
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> 全息</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>全息</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="a-hologram-is-made-of-light-and-sound"></a>一张全息图组成浅色和声音
@@ -50,7 +63,7 @@ HoloLens 允许您创建**全息**、 对象所做的光线和声音中显示的
 某些全息改为的用户进行操作。 这些尾随全息定位本身相对于用户，无论他们向介绍。 您甚至可以选择将与你一张全息图一段时间，然后将它放在墙上后转到另一个房间。
 
 **最佳做法**
-* 某些情况下可能要求全息保持轻松容易被发现或整个体验可见。 有两种高级方法，这种类型的定位。 让我们称他们 **"显示锁定"** 并 **"正文禁止"**。
+* 某些情况下可能要求全息保持轻松容易被发现或整个体验可见。 有两种高级方法，这种类型的定位。 让我们称他们 **"显示锁定"** 并 **"正文禁止"** 。
    * 显示锁定内容已按位置"锁定"到设备显示。 这是比较棘手的原因有多种，包括"clingyness"，使多个用户感到沮丧非自然感觉和想要"摇晃它。" 一般情况下，许多设计人员已找到更好的做法避免显示锁定内容。
    * 正文锁定的方法是 forgivable 得多。 正文锁定是一张全息图限于用户的主体或的视线移动矢量，但在 3d 空间中围绕用户定位。 许多体验已采用其中 hologram"紧跟"用户视线移动，这样用户就可以旋转其主体和浏览空间，而不会丢失全息图正文锁定的行为。 将合并延迟有助于感觉更自然的 hologram 移动。 例如，某些核心的 Windows 全息版操作系统的 UI 使用一种变体正文锁定时在用户打开其头后面，并简要、 类似于弹性的延迟的用户的视线移动。
 * 将放全息图舒适地观看距离通常大约 1-2 米离开头。
@@ -85,5 +98,5 @@ HoloLens 允许您创建**全息**、 对象所做的光线和声音中显示的
 ![在起居室 holographic 虚部世界](images/designoverview.jpg)
 
 ## <a name="see-also"></a>请参阅
-* [空间声音](spatial-sound.md)
-* [颜色、 光线和材料](color,-light-and-materials.md)
+* [空间音效](spatial-sound.md)
+* [颜色、光线和材料](color,-light-and-materials.md)

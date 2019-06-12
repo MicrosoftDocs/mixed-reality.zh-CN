@@ -6,18 +6,18 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows Device Portal HoloLens
-ms.openlocfilehash: 8b9935d6b64abfd22e2e856e0142c953a6366008
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: f4319e1efa94d90bfb8cc4e5815ffa87fc865a7f
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592178"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830005"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows Device Portal
 
 <table>
 <tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens（第一代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td> Windows Device Portal</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
 </tr>
@@ -32,11 +32,11 @@ HoloLens Windows Device Portal 允许您配置和通过 Wi-fi 或 USB 远程管�
 1. 打开 HoloLens 的电源，然后戴上设备。
 2. 执行[绽放](gestures.md#bloom)手势来启动主菜单。
 3. 注视**设置**磁贴，并执行[air 点击](gestures.md#air-tap)手势。 执行第二个的 air-点击以在你的环境中将此应用程序。 在放置“设置”应用后，将启动该应用。
-4. 选择“更新”菜单项。
-5. 选择“面向开发人员”菜单项。
-6. 启用“开发人员模式”。
+4. 选择“更新”  菜单项。
+5. 选择“面向开发人员”  菜单项。
+6. 启用“开发人员模式”  。
 7. [向下滚动](gestures.md#composite-gestures)并启用**设备门户**。
-8. 如果您设置了 Windows Device Portal 以便可以将应用部署到此 HoloLens 通过 USB 或 Wi-fi，请单击**对**到[生成一个配对的 PIN](using-visual-studio.md#pairing-your-device-hololens)。 到 Visual Studio PIN 输入在第一个部署过程之前，请将设置应用保留 PIN 弹出窗口。
+8. 如果您设置了 Windows Device Portal 以便可以将应用部署到此 HoloLens 通过 USB 或 Wi-fi，请单击**对**到[生成一个配对的 PIN](using-visual-studio.md)。 到 Visual Studio PIN 输入在第一个部署过程之前，请将设置应用保留 PIN 弹出窗口。
 
    ![设置应用于 Windows Holographic 中启用开发人员模式](images/deviceportalsettings.png)
 
@@ -56,7 +56,7 @@ HoloLens Windows Device Portal 允许您配置和通过 Wi-fi 或 USB 远程管�
 
 ## <a name="connecting-to-an-emulator"></a>连接到模拟器
 
-也可以将 Device Portal 与仿真器结合使用。 若要连接到设备门户，请使用[工具栏](using-the-hololens-emulator.md#anatomy-of-the-hololens-emulator)。 单击此图标：![打开设备门户图标](images/emulator-deviceportal.png)**打开设备门户**:为 HoloLens 操作系统在模拟器中打开 Windows Device Portal。
+也可以将 Device Portal 与仿真器结合使用。 若要连接到设备门户，请使用[工具栏](using-the-hololens-emulator.md)。 单击此图标：![打开设备门户图标](images/emulator-deviceportal.png)**打开设备门户**:在仿真器中打开 HoloLens OS 的 Windows 设备门户。
 
 ## <a name="creating-a-username-and-password"></a>创建用户名和密码
 
@@ -71,7 +71,7 @@ HoloLens Windows Device Portal 允许您配置和通过 Wi-fi 或 USB 远程管�
 5. 输入密码并进行确认。 密码长度必须至少为七个字符。 无需使用 MSA 密码或域密码作为密码。
 6. 单击**对**连接到 Windows Device Portal HoloLens 上。
 
-如果你想要在任何时候更改此用户名或密码，您可以通过访问设备的安全页，通过单击重复此过程**安全**靠右或导航到顶部的链接： https://<YOUR_HOLOLENS_IP_地址 > / devicesecurity.htm。
+如果你想要在任何时候更改此用户名或密码，您可以通过访问通过导航到设备安全页中重复此过程： https://<YOUR_HOLOLENS_IP_ADDRESS>/devicepair.htm。
 
 ## <a name="security-certificate"></a>安全证书
 
@@ -80,7 +80,7 @@ HoloLens Windows Device Portal 允许您配置和通过 Wi-fi 或 USB 远程管�
 每个 HoloLens 会生成唯一的自签名证书以供其 SSL 连接使用。 默认情况下，此证书不受电脑的 Web 浏览器信任，因此你可能会看到“证书错误”。 通过从你的 HoloLens 下载此证书（借助 USB 或信任的 WLAN 网络）并在你的电脑上信任该证书，可以安全地连接到设备。
 1. **请确保你位于安全网络 （USB 或您信任的 Wi-fi 网络）。**
 2. 从设备门户上的"安全"页面下载此设备的证书。
-   * 单击**安全**链接从顶部右侧列表中的图标或导航到： https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm
+   * 导航到： https://<YOUR_HOLOLENS_IP_ADDRESS>/devicepair.htm
 3. 安装在"受信任的根证书颁发机构"存储在 PC 的证书。
    * 从 Windows 菜单中，键入：管理计算机证书和启动小程序。
    * 展开**受信任的根证书颁发机构**文件夹。

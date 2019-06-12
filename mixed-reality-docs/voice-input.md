@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: ggv、 语音、 cortana、 语音、 输入
-ms.openlocfilehash: 7fb5618c13ff1ed446241f744b598cfe2484ea45
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e21310b940e4a4c3019f61edea695b452e74ab62
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592996"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829948"
 ---
 # <a name="voice-input"></a>语音输入
 
@@ -26,11 +26,24 @@ ms.locfileid: "59592996"
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> 语音输入</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ （使用麦克风）</td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>语音输入</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️ （使用麦克风）</td>
+    </tr>
 </table>
 
 ## <a name="the-select-command"></a>"Select"命令
@@ -112,6 +125,6 @@ HoloLens 具有"来看，说"语音输入模型上按钮的标签位置告知用
 对于 Windows 混合现实 Developer Edition 版本 2017年中，音频终结点管理逻辑将正常显示 （永久） 后到 PC 桌面出并再次在记录之后的初始 HMD 连接。 之前该的第一个登录的扩大/缩小事件 WMR OOBE 完成之后，用户可能会遇到各种范围不包括音频，具体取决于系统已设置在首次连接 HMD 之前切换到无音频的音频功能问题。
 
 ## <a name="see-also"></a>请参阅
-* [在 DirectX 语音输入](voice-input-in-directx.md)
-* [在 Unity 中的语音输入](voice-input-in-unity.md)
-* [MR 输入 212:语音](holograms-212.md)
+* [DirectX 中的语音输入](voice-input-in-directx.md)
+* [Unity 中的语音输入](voice-input-in-unity.md)
+* [MR 输入 212：语音](holograms-212.md)

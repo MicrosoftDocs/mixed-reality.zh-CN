@@ -1,30 +1,43 @@
 ---
-title: 呈现
+title: 渲染
 description: 全息呈现后，应用可在用户，周围的世界中的精确位置绘制一张全息图是否精确地放置在现实世界中或已创建一个虚拟领域内。
 author: thetuvix
 ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 呈现、 全息图
-ms.openlocfilehash: 9d87af1b445bc6f730dd02bd7bd7f3aefe7f53db
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 5271e94521b99e76998c2cbb43475a5f3f847917
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593012"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829898"
 ---
-# <a name="rendering"></a>呈现
+# <a name="rendering"></a>渲染
 
 全息呈现后，应用可在用户，周围的世界中的精确位置绘制一张全息图是否精确地放置在现实世界中或已创建一个虚拟领域内。 [全息](hologram.md)对象进行的声音和轻型这类，并呈现后，应用可添加光线。
 
 ## <a name="device-support"></a>设备支持
 
 <table>
-<tr>
-<th>功能</th><th style="width:150px"><a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td>项目名称</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+    </tr>
+     <tr>
+        <td>渲染</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
 </table>
 
 ## <a name="holographic-rendering"></a>全息呈现
@@ -84,5 +97,5 @@ Windows Mixed Reality 介绍的概念**holographic 照相机**。 Holographic �
 
 
 ## <a name="see-also"></a>请参阅
-* [全息图稳定性](hologram-stability.md)
-* [在 DirectX 中呈现](rendering-in-directx.md)
+* [全息影像稳定性](hologram-stability.md)
+* [在 DirectX 中渲染](rendering-in-directx.md)

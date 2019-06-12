@@ -1,82 +1,82 @@
 ---
-title: MR 学习基本模块的动态内容的位置和求解器
-description: 完成此课程以了解如何在混合的现实应用程序中实现 Azure 人脸识别。
+title: MR 学习基础模块 - 动态内容放置和求解器
+description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 ms.localizationpriority: high
-keywords: unity 中，教程，hololens 混合的现实
+keywords: 混合现实, unity, 教程, hololens
 ms.openlocfilehash: 6f05b2cecd388b1b2f13e7e5228bc90091eee3bd
-ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
-ms.translationtype: MT
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/05/2019
 ms.locfileid: "66270402"
 ---
-# <a name="mr-learning-base-module---dynamic-content-placement-and-solvers"></a>MR 学习基本模块的动态内容的位置和求解器
+# <a name="mr-learning-base-module---dynamic-content-placement-and-solvers"></a>MR 学习基础模块 - 动态内容放置和求解器
 
-全息来自生活 HoloLens 2 中，在直观的用户操作和放置在使交互，无缝且简洁的方式中的物理环境时。 在第 3 课，我们将探讨方法可以动态地将全息使用 MRTK 的可用布局工具，称为"求解器。" 它们被称为"求解器"，它们解决复杂的空间放置算法的方式。 在 MRTK，求解器是系统的脚本和我们使用能够允许 UI 元素跟随你，用户或其他场景中的游戏对象的行为。 它们还可用来对齐到特定位置快速，从而使您的应用程序更直观。 
+当全息影像直观地跟随用户并且在物理环境中无缝巧妙地参与互动时，它们在 HoloLens 2 中变得真实生动。 在第 3 课中，我们将探索使用 MRTK 的可用放置工具（称为“求解器”）动态放置全息影像的方法。 它们被称为“求解器”，用于解决复杂空间放置算法的方式。 在 MRTK 中，求解器是一个脚本和行为系统，我们使用它来允许 UI 元素跟随你、用户或场景中的其他游戏对象。 它们还可用于快速贴靠到某个位置，使应用程序更加直观。 
 
 ## <a name="objectives"></a>目标
 
-* 引入 MRTK 求解器
-* 使用求解器具有一组按钮的用户操作
-* 使用求解器将使游戏对象按照用户的手中跟踪
+* 介绍 MRTK 的求解器
+* 使用求解器让一组按钮跟随用户
+* 使用求解器使游戏对象跟随用户被追踪的双手
 
 ## <a name="instructions"></a>说明
 
-### <a name="location-of-solvers-in-the-mrtk"></a>在 MRTK 求解器的位置
- 要在项目中查找可用求解器，请检查 MRTK SDK 文件夹 （MixedRealityToolkit.SDK 文件夹中），然后在 utilities 文件夹中会求解器文件夹中，如下图中所示。
+### <a name="location-of-solvers-in-the-mrtk"></a>求解器在 MRTK 中的位置
+ 要查找项目中的可用求解器，请查看 MRTK SDK 文件夹（MixedRealityToolkit.SDK 文件夹），然后在 utilities 文件夹下，将看到求解器文件夹，如下图所示。
 
 ![求解器](images/lesson3_chapter1_step1im.PNG)
 
->注意：在本课程中我们只会通过"绕"解算器和"RadialView"解算器的实现。 若要了解有关推出 MRTK 求解器的完整范围的详细信息，请访问： https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html
+>注意：在本课中，我们将仅讨论“Orbital”求解器和“RadialView”求解器的实现。 要详细了解 MRTK 中的所有求解器，请访问： https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html
 
-### <a name="use-a-solver-to-follow-the-user"></a>使用解算器的用户操作
-本章旨在增强我们之前创建，以便它遵循用户的视线移动方向的按钮集合。 在以前版本的 MRTK 和 HoloToolkit，这被称为"taglong"功能。
+### <a name="use-a-solver-to-follow-the-user"></a>使用求解器跟随用户
+本章的目标是增强我们之前创建的按钮集合，使其跟随用户的凝视方向。 在以前版本的 MRTK 和 HoloToolkit 中，这被称为“taglong”功能。
 
-1. 从上一课中选择按钮集合的父对象。
+1. 从上一节课中选择按钮集合父对象。
 
 ![Lesson3 Chapter2 Step1im](images/Lesson3_chapter2_step1im.PNG)
 
-2. 在检查器窗格中，单击"添加组件"按钮并搜索"绕。" 绕组件应显示。 选择它以将绕组件添加到按钮集合游戏对象。
+2. 在检查器面板中单击“添加组件”按钮并搜索“orbital”。 这时应显示环绕组件。 选中它，将环绕组件添加到按钮集合游戏对象。
 
-![Lesson3 第 2 章 Step2im](images/Lesson3_Chapter2_step2im.PNG)
+![Lesson3 Chapter2 Step2im](images/Lesson3_Chapter2_step2im.PNG)
 
->注意：添加组件时你会注意到系统中检查器选项卡上，这是必需的组件添加绕脚本和解算器处理程序脚本。 
+>注意：添加该组件时，将注意到系统在检查器选项卡中添加了环绕脚本和求解器处理程序脚本，这是必需的组件。 
 
-3. 若要配置的按钮集合的用户操作，我们需要实现以下调整 （另请参阅下图所示）：
-- 在绕脚本中，将设置为"仅偏航。""方向类型"下拉列表 这样就使该对象，只有一个轴旋转，它如下所示的用户。
-- 设置为 0 的所有轴上的本地偏移量。 设置世界偏移量为 x = 0，y =-0.1 和 z = 0.6。 这将锁定对象的移动，以便当用户更改高度，该对象将始终保持固定高度在物理环境中，同时仍允许其用户在将移动有关环境的用户操作。 这些值进行调整，以实现范围广泛的行为。
-- 对于以下行为，凭此按钮仅按照用户的视图后在用户打开他或她头保持足够距离，可以选择"使用角度单步执行的全局偏移量"复选框 (请注意：此标题可能会被截断某些在屏幕上，因为它是在下图中。）例如，如果希望仅每隔 90 度的用户操作的对象，请将步骤数设置为 4 （由左侧的示例中的绿色箭头标记）。 
+3. 为了配置按钮集合以跟随用户，我们需要实现以下调整（请参考下图）：
+- 在环绕脚本中，将“方向类型”下拉列表设置为“仅限偏航”。 这样，在对象跟随用户时，它只有一个轴在旋转。
+- 将所有轴上的局部偏移量设置为 0。 将世界偏移量设置为 x = 0，y = -0.1，z = 0.6。 这样可以锁定对象的移动，当用户改变高度时，对象在物理环境中保持固定高度，同时仍然可以在用户在环境中移动时跟随用户。 可以调整这些值以实现广泛的行为。
+- 如需获得某种跟随行为，通过该行为，按钮仅在用户头部转动幅度足够大时才跟随用户的视野，则可以选择“对世界偏移量使用角度步进”复选框（注意：此标题可能会在某些屏幕上被截断，如下图所示。）例如，要使对象仅在每隔 90 度时跟随用户一次，请将步进数设置为 4（左侧示例中的绿色箭头标记）。 
 
 ![Lesson3 Chapter2 Step3im](images/Lesson3_chapter2_step3im.PNG)
 
-### <a name="enabling-objects-to-follow-tracked-hands"></a>使对象能够按照跟踪的手
+### <a name="enabling-objects-to-follow-tracked-hands"></a>使对象能够跟随被追踪的双手
 
-在本部分中，我们将配置以前创建遵循使用 RadialView 解算器的用户的被跟踪的手的多维数据集游戏对象。
+在本节中，我们将使用 RadialView 求解器配置先前创建的立方体游戏对象，以跟随用户被追踪的双手。
 
-1. BaseScene 层次结构中选择多维数据集对象。 单击检查器面板中的"添加组件"。 
+1. 在 BaseScene 层次结构中选择立方体对象。 在检查器面板中，单击“添加组件”。 
 
-![Lesson3 第 3 章 Step1im](images/Lesson3_Chapter3_step1im.PNG)
+![Lesson3 Chapter3 Step1im](images/Lesson3_Chapter3_step1im.PNG)
 
-2. 在搜索框中键入"RadialView"并选择要将其添加到多维数据集的 RadialView 组件。 解算器处理程序组件将也会自动添加到多维数据集。
+2. 在搜索框中键入"RadialView"并选择要将其添加到立方体的 RadialView 组件。 求解器处理程序组件也将自动添加到立方体。
 
-3. 更改径向视图以不遵循头，但按照左侧显示。 选择"跟踪对象，以引用"选项旁边的下拉列表菜单。 然后，从菜单选择"将剩余的联合"。
+3. 将径向视图更改为不跟随头部，而是跟随左手。 选择“要参考的被追踪对象”选项旁边的下拉菜单。 然后从菜单中选择“左手关节”。
 
-![Lesson3 第 3 章 Step3im](images/Lesson3_chapter3_step3im.PNG)
+![Lesson3 Chapter3 Step3im](images/Lesson3_chapter3_step3im.PNG)
 
-4. 一旦您选择现有联合，可以选择希望多维数据集遵循手形图标的哪个部分。 对于此示例中，我们将使用手腕。 选项旁边"跟踪的手联合"选择下拉列表菜单，然后选择手腕。 
+4. 选择手关节后，可以选择希望立方体跟随的手的某个部分。 对于本示例，我们将使用手腕。 在“被追踪的手关节”选项旁边，选择下拉菜单并选择手腕。 
 
-![Lesson3 第 3 章 Step4im](images/Lesson3_chapter3_step4im.PNG)
+![Lesson3 Chapter3 Step4im](images/Lesson3_chapter3_step4im.PNG)
 
-5. 设置为 0 的最大和最小距离，以使多维数据集不具有任何它与用户的手腕之间的距离。 完成设置后，该多维数据集将是完全对齐手腕。 您还可以调整"引用方向"字段以调整的方式在多维数据集中的方向 （例如，如果你想要允许的对象要随用户的手腕旋转，请将"定位与跟踪对象"引用方向） 的行为
+5. 将最大和最小距离设置为 0，使立方体与用户的手腕之间没有任何距离。 设置后，立方体将与手腕完全对齐。 还可以调整“参考方向”字段以调整立方体的定向行为（例如，如果希望对象与用户的手腕一起旋转，请将参考方向设置为“方向跟随被追踪的对象”）
 
-![Lesson3 第 3 章 Step5im](images/Lesson3_chapter3_step5im.PNG)
+![Lesson3 Chapter3 Step5im](images/Lesson3_chapter3_step5im.PNG)
 
-### <a name="congratulations"></a>恭喜 ！
-祝贺你！ 在本课程中，您学习了如何使用 MRTK 求解器具有直观的用户操作的用户界面。 您还学习了如何将解算器附加到游戏对象 （即，多维数据集），从而按照用户的被跟踪的手。 若要了解有关这些和其他 MRTK 中包含的求解器的详细信息，可随意访问[MRTK 求解器文档页](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)。
+### <a name="congratulations"></a>祝贺你
+祝贺你！ 在本课程中，你了解了如何使用 MRTK 的求解器让 UI 直观地跟随用户。 你还了解了如何将求解器附加到游戏对象（这里是立方体）以跟随用户被追踪的双手。 要详细了解上述求解器以及 MRTK 中包含的其他求解器，请访问 [MRTK 求解器文档页面](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)。
 
-[下一课：三维对象交互](mrlearning-base-ch4.md)
+[下一课：3D 对象交互](mrlearning-base-ch4.md)
 
