@@ -106,7 +106,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
     6.  您还需要确认你已了解的条款和条件应用于此服务。
 
-    7.  选择“创建”。
+    7.  选择“创建”  。
 
         ![Azure 门户](images/AzureLabs-Lab309-03.png)
 
@@ -207,7 +207,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
     1.  在中**其他设置**选项卡：
 
-        1.  **脚本编写** **运行时版本**应**实验 （.NET 4.6 等效）**，这将触发需要重新启动编辑器。
+        1.  **脚本编写** **运行时版本**应**实验 （.NET 4.6 等效）** ，这将触发需要重新启动编辑器。
 
         2.  **脚本编写后端**应为 **.NET**
 
@@ -263,7 +263,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
     > [!NOTE]
     > 将标记此类的插件，将它们配置为仅使用在 Unity 编辑器中。 有一组不同的 Dll 从 Unity 项目会导出后，将使用 WSA 文件夹中。
 
-6.  接下来，您需要打开**WSA**文件夹，在**Insights**文件夹。 您将看到刚配置的相同文件的副本。 选择此文件，然后再检查器中，请确保**Any 平台**是**取消选中**，然后确保**仅** **WSAPlayer**是**检查**。 单击 **“应用”**。
+6.  接下来，您需要打开**WSA**文件夹，在**Insights**文件夹。 您将看到刚配置的相同文件的副本。 选择此文件，然后再检查器中，请确保**Any 平台**是**取消选中**，然后确保**仅** **WSAPlayer**是**检查**。 单击 **“应用”** 。
 
     ![导入 Unity 程序包](images/AzureLabs-Lab309-25.png)
 
@@ -350,7 +350,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
     > [!NOTE]
     > 这些*位置*的值为*建议*。 你可以随意设置对象的位置为喜好，但如果对象距离是不与相机距离太远，则应用程序的用户更容易。
 
-11. 当运行你的应用程序时，它需要能够识别中的场景，来实现此目的的对象，它们需要进行标记。 选择一个对象，并在*Inspector*面板中，单击**添加标记...**，这会交换*Inspector*与**标记和分层式**面板。
+11. 当运行你的应用程序时，它需要能够识别中的场景，来实现此目的的对象，它们需要进行标记。 选择一个对象，并在*Inspector*面板中，单击**添加标记...** ，这会交换*Inspector*与**标记和分层式**面板。
 
     ![设置在 Unity 场景中的对象](images/AzureLabs-Lab309-41.png) ![](images/AzureLabs-Lab309-42.png)
 
@@ -825,7 +825,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
         }
     ```
 
-6.  内**DataFromAnalytics**类中，右键后**start （)** 方法中，添加以下方法调用**FetchAnalytics()**。 此方法负责使用填充的键/值对列表*GameObject*和占位符事件计数数量。 然后初始化**GetWebRequest()** 协同例程。 对调用的查询结构*Application Insights*可在此方法内找到此外，作为*查询 URL*终结点。
+6.  内**DataFromAnalytics**类中，右键后**start （)** 方法中，添加以下方法调用**FetchAnalytics()** 。 此方法负责使用填充的键/值对列表*GameObject*和占位符事件计数数量。 然后初始化**GetWebRequest()** 协同例程。 对调用的查询结构*Application Insights*可在此方法内找到此外，作为*查询 URL*终结点。
 
     ```csharp
         private void FetchAnalytics()
@@ -857,7 +857,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
         }
     ```
 
-7.  下方**FetchAnalytics()** 方法中，添加一个名为方法**GetWebRequest()**，它将返回*IEnumerator*。 此方法负责请求的一个事件，具有特定相对应的次数*GameObject*，已调用内*Application Insights*。 当发送的所有查询均都返回时， **DetermineWinner()** 调用方法。
+7.  下方**FetchAnalytics()** 方法中，添加一个名为方法**GetWebRequest()** ，它将返回*IEnumerator*。 此方法负责请求的一个事件，具有特定相对应的次数*GameObject*，已调用内*Application Insights*。 当发送的所有查询均都返回时， **DetermineWinner()** 调用方法。
 
     ```csharp
         /// <summary>
@@ -923,7 +923,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
         }
     ```
 
-8.  下一个方法是**DetermineWinner()**，该对的列表进行排序*GameObject*并*Int*对，根据最高的事件计数。 然后，它更改材料的颜色*GameObject*到*绿色*（作为它是否具有最高的计数的反馈）。 这将显示包含分析结果的消息。
+8.  下一个方法是**DetermineWinner()** ，该对的列表进行排序*GameObject*并*Int*对，根据最高的事件计数。 然后，它更改材料的颜色*GameObject*到*绿色*（作为它是否具有最高的计数的反馈）。 这将显示包含分析结果的消息。
 
     ```csharp
         /// <summary>
@@ -1205,7 +1205,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 此项目的 Unity 部分所需的所有内容现已完成，因此它是从 Unity 生成的时间。
 
-1.  导航到**生成设置**， **(文件 >...生成设置)**.
+1.  导航到**生成设置**， **(文件 >...生成设置)** .
 
 2.  从**生成设置**窗口中，单击**生成**。
 
