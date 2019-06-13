@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 应用程序质量标准，混合现实，混合现实应用
-ms.openlocfilehash: dfa1390190fad8d84982171dfbcfa101b20501dc
-ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
+ms.openlocfilehash: 8e635585c0981d81bf71fb5577232af28f2a0fdd
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66750316"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024492"
 ---
 # <a name="app-quality-criteria"></a>应用程序质量准则
 
@@ -37,7 +37,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -100,7 +100,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -162,7 +162,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -226,7 +226,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -283,7 +283,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -326,7 +326,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -385,7 +385,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -441,7 +441,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -504,7 +504,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -584,7 +584,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -618,7 +618,7 @@ ms.locfileid: "66750316"
 
 * [可交互对象](interactable-object.md)
 * [Unity 中的文本](text-in-unity.md)
-* [应用栏和边界框](app-bar-and-bounding-box.md)
+* [边界框和应用栏](app-bar-and-bounding-box.md)
 * [语音命令](voice-design.md)
 
 #### <a name="tools-and-tutorials"></a>工具和教程
@@ -639,7 +639,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -694,7 +694,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>
@@ -737,7 +737,7 @@ ms.locfileid: "66750316"
     </colgroup>
     <tr>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
         <td></td>
     </tr>
      <tr>

@@ -6,12 +6,12 @@ ms.author: erpau
 ms.date: 04/5/2019
 ms.topic: article
 keywords: 混合现实，设计，改善环境，HoloLens 2 HoloLens （第 1 代）
-ms.openlocfilehash: 8dea3765f01a6a82fccc002d1cd5c7c9c77d0980
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: e3a78e9a990d207b19b287e1897897a5d6dee3ca
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974780"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024442"
 ---
 # <a name="comfort"></a>舒适
 
@@ -46,7 +46,7 @@ HoloLens 显示固定为光学的距离大约 2.0 m 的用户。 因此，用户
 
 在设计为直接 (near) HoloLens 2 中的交互内容或**中的内容必须放置的位置更接近于 1 百万的任何应用程序，应采取格外小心以确保用户舒适**。 由于 vergence 便利设施冲突不适的几率降低观看距离会呈指数增加。 此外，用户可能会遇到增加的 bluriness 附近交互的距离，查看内容，因此，我们建议测试内容呈现同时也为更接近最佳全息图放置 (小于下剪裁平面的 1.0 m) 区域中时为确保它保持清晰而舒适地查看。 
 
-**我们建议创建基于用户希望查看的内容的接近 (小于 1.0 m) 的时间量，在深度移动应用的"深度 budget"**。 例如，避免将用户放在这些情况下多个 25%的时间。 如果超出深度预算，我们建议仔细用户测试，以确保它保持舒适的体验。 
+**我们建议创建基于用户希望查看的内容的接近 (小于 1.0 m) 的时间量，在深度移动应用的"深度 budget"** 。 例如，避免将用户放在这些情况下多个 25%的时间。 如果超出深度预算，我们建议仔细用户测试，以确保它保持舒适的体验。 
 
 一般情况下，我们还建议仔细测试，以在附近交互距离确保 （例如，速度移动，可访问性等） 的任何交互要求保持熟练的用户。 
 
@@ -63,7 +63,7 @@ IPD 指瞳孔、 或的个人的眼睛中心之间的距离。 VO 是指相对�
 
 ### <a name="guidance-for-holographic-devices"></a>适用于 holographic 设备指南
 
-#### <a name="hololens-1st-gen"></a>HoloLens （第 1 代）
+#### <a name="hololens-1st-gen"></a>HoloLens（第 1 代）
 
 对于 HoloLens （第 1 代），估计和在设备过程中设置 IPD[校准](calibration.md)。 为新用户添加到已设置设备，必须在运行校准或 IPD 必须手动设置。 VO 完全取决于适合的设备。 具体而言，为了尽量减少 VO，在设备需要将停留在其上用户的头，以便显示信息是与他/她眼睛轴的级别。 
 
@@ -127,11 +127,13 @@ Windows Mixed Reality 沉浸式 HMDs 具有 IPD 或 VO 没有自动校准。 可
 
 一般情况下，我们建议测试特定的应用程序以提高可读性并进行字体大小大是可行的舒适的体验。 下面我们作为开发的起始点的常规指南。 请注意，所有字体大小以度为单位都报告[visual 角度](https://en.wikipedia.org/wiki/Visual_angle)而不是特定的物理大小，其中提供指南的最佳全息图放置区域内任何距离因为它的大小文本和它出现在查看器的距离。 
 
+请参阅[版式](typography.md)并[Unity 中的文本](text-in-unity.md)页更多详细指南。
+
 ### <a name="guidance-for-holographic-devices"></a>适用于 holographic 设备指南
 
 对于 holographic 的设备，白色/轻型背景上的呈现黑色/深文本提供最一致对比度，因为在后台将遮蔽呈现背后的真实世界的干扰。 呈现黑色/深色背景上的白色/轻型文本允许多个实际环境以显示通过，这可能会影响文本以增强可读性。 
 
-#### <a name="hololens-1st-gen"></a>HoloLens （第 1 代）
+#### <a name="hololens-1st-gen"></a>HoloLens（第 1 代）
 
 （从字体基线 ascender 测量） 的最小的清晰字体大小为大约 0.35 °，熟练的字体大小至少大约 0.5 ° 用于读取内容向用户显示在 2 分钟的距离。 
 

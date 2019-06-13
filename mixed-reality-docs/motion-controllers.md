@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6dof 控制器，motion 控制器
-ms.openlocfilehash: 7db1c16f8243081dc8f53e8722391f102c38e0d3
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: fc6b0dcf7f338224af9ea9bc59e07187c33adda2
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629113"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024551"
 ---
 # <a name="motion-controllers"></a>运动控制器
 
@@ -23,10 +23,23 @@ ms.locfileid: "65629113"
 ## <a name="device-support"></a>设备支持
 
 <table>
+<colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+</colgroup>
 <tr>
-<th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens （第 1 代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
-</tr><tr>
-<td> 运动控制器</td><td style="text-align: center;"></td><td style="text-align: center;"></td><td style="text-align: center;"> ✔️</td>
+     <td><strong>功能</strong></td>
+     <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
+     <td><strong>HoloLens 2</strong></td>
+     <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
+</tr>
+<tr>
+     <td>运动控制器</td>
+     <td>❌</td>
+     <td>❌</td>
+     <td>✔️</td>
 </tr>
 </table>
 
@@ -231,7 +244,7 @@ Windows Mixed Reality 支持不同的外形规格运动控制器，使用每个�
 
 ## <a name="see-also"></a>请参阅
 * [Unity 中的手势和运动控制器](gestures-and-motion-controllers-in-unity.md)
-* [双手和动作中 DirectX 的控制器](hands-and-motion-controllers-in-directx.md)
+* [DirectX 中的手和运动控制器](hands-and-motion-controllers-in-directx.md)
 * [手势](gestures.md)
 * [MR 输入 213：运动控制器](mixed-reality-213.md)
 * [他酷爱钻研技术的指南：你的主 Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)

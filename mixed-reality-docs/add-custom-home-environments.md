@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows Mixed Reality、 混合现实中，虚拟现实、 VR、 MR、 主页、 自定义环境、 地点、 cliff 房子、 skyloft、 用户，创建
-ms.openlocfilehash: 8f5a3a1bdf5728260b0b7717c74a50f3356ca04a
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
-ms.translationtype: HT
+ms.openlocfilehash: d0cdb878f1994cb5f898f06b98d74dee3dd4fdf1
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829637"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024529"
 ---
 # <a name="add-custom-home-environments"></a>添加自定义主环境
 
@@ -33,7 +33,7 @@ ms.locfileid: "66829637"
     <tr>
         <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
     </tr>
      <tr>
         <td>自定义主环境</td>
@@ -150,6 +150,5 @@ Windows Mixed Reality[不支持超过 256 mb 的环境](#environment-limits)。 
 当创建自定义环境时，它将使用与已创建的物理空间不匹配噪声呈现模拟。 声音可能来自错误的方向和听起来可能 muffled。 
 
 ## <a name="see-also"></a>请参阅
-* [导航 Windows 混合现实主页](#navigating-the-windows-mixed-reality-home.md)
 * [混合现实资产转换器 （GitHub 上） 的 Windows](https://github.com/Microsoft/glTF-Toolkit/releases)
 
