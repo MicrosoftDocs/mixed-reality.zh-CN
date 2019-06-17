@@ -3,15 +3,15 @@ title: 种交互的对象
 description: 一个按钮很长时间以来触发 2D 抽象环境中的事件使用一种工具。 在三维混合的现实世界中，我们无需限制为抽象不再这个世界。
 author: cre8ivepark
 ms.author: jennyk
-ms.date: 02/24/2019
+ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合的现实、 控件、 交互、 ui 和 ux
-ms.openlocfilehash: eea7eff6c591a9319b920936ce2be511cecb7496
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: b0397e00763f70e4caf55a84b6541085e56fafd4
+ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813815"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148735"
 ---
 # <a name="interactable-object"></a>种交互的对象
 
@@ -84,20 +84,51 @@ HoloLens 2 支持明确的手动跟踪输入可用于与对象进行交互。 �
 
 <img src="images/640px-interactibleobject-voicecommand.jpg" alt="Tooltip for the voice command" title="语音命令的工具提示" width="350"><br/>*语音命令的工具提示*
 
+## <a name="sizing"></a>大小调整
+为了确保可能很容易到种交互的所有对象接触的用户，我们建议确保种交互满足基于从用户放置的距离最小大小 （通常在度 visual 角度为单位）。 度 visual 角度基于用户和对象之间的距离，并保持不变，而目标的物理大小可能会从用户更改表示距离而更改。 若要确定对象的距离确保和程度上基于所需物理大小 visual 角度请尝试使用一个计算器，如： http://elvers.us/perception/visualAngle/
+
+以下是种交互内容的最小大小的建议
+
+### <a name="target-size-for-direct-hand-interaction"></a>直接手动交互的目标大小
+| 距离 | 视角 | 大小 |
+|---------|---------|---------|
+| 45 cm  | 不小于 2 ° | 1.6 x 1.6 cm |
+
+![直接手动交互的目标大小](images/TargetSizingNear.jpg)<br>
+*直接手动交互的目标大小*
+
+在创建时直接交互的按钮，建议的更大的最小大小为 3.2 x 3.2 cm 以确保有足够空间来容纳一个图标和可能某些文本 * *
+
+| 距离 | 最小大小 |
+|---------|---------|
+| 45 cm  | 3.2 x 3.2 cm |
+
+![目标大小的按钮](images/TargetSizingButtons.png)<br>
+*目标大小的按钮*
+
+
+### <a name="target-size-for-hand-ray-or-gaze-interaction"></a>目标为手 ray 的大小或注视交互
+| 距离 | 视角 | 大小 |
+|---------|---------|---------|
+| 2m  | 不小于 1 ° | 3.5 x 3.5 cm |
+
+![目标为手 ray 的大小或注视交互](images/TargetSizingFar.jpg)<br>
+*目标为手 ray 的大小或注视交互*
+
 ## <a name="creating-interactable-object-with-mixed-reality-toolkit-mrtk"></a>创建混合现实工具包 (MRTK) 的种交互的对象
 
 在中 **[混合现实工具包](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，可以找到的 Unity 脚本一系列和预设将帮助你创建种交互的对象。 您可以使用这些响应输入的交互状态的各种类型的对象。
 
-* **[Interactable](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)**
-* **[按钮](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)**
-* **[手动交互示例场景](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)**
+* [Interactable](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
+* [Button](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
+* [手动交互示例场景](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)
 
 MixedRealityToolkit 的标准着色器提供了各种选项，例如**邻近 light** ，可帮助您创建视觉和声音提示。
-* **[MRTK 标准着色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_MRTKStandardShader.md)**
+* [MRTK 标准着色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_MRTKStandardShader.md)
 
 
 ## <a name="see-also"></a>请参阅
 
-* **[边界框](app-bar-and-bounding-box.md)**
-* **[对象集合](object-collection.md)**
-* **[公告板和尾随](billboarding-and-tag-along.md)**
+* [边界框](app-bar-and-bounding-box.md)
+* [对象集合](object-collection.md)
+* [公告和尾随](billboarding-and-tag-along.md)

@@ -1,9 +1,9 @@
 # [安装工具](install-the-tools.md)
 # [让应用做好用于 HL2 的准备](mrtk-porting-guide.md)
-# [发现](index.md)
+# 发现
+## [混合现实文档](index.md)
 ## [什么是混合现实？](mixed-reality.md)
 ## [什么是全息图？](hologram.md)
-
 ## 硬件
 ### HoloLens
 #### [HoloLens 2 硬件详细信息](https://www.microsoft.com/hololens/hardware)
@@ -78,7 +78,8 @@
 ### [发行说明 - 2016 年 5 月](release-notes-may-2016.md)
 ### [发行说明 - 2016 年 3 月](release-notes-march-2016.md)
 
-# [设计](design.md)
+# 设计
+## [混合现实设计](design.md)
 ## [关于此设计指南](about-this-design-guidance.md)
 ## 设计入门
 ### [什么是混合现实？](mixed-reality.md)
@@ -129,7 +130,8 @@
 ### [HoloSketch](case-study-building-holosketch,-a-spatial-layout-and-ux-sketching-app-for-hololens.md)
 ### [资产创建过程](asset-creation-process.md)
 
-# [开发](development.md)
+# 开发
+## [开发启动板](development.md)
 ## 混合现实云服务
 ### [Azure 空间定位点](https://docs.microsoft.com/azure/spatial-anchors)
 ### [全息远程播放器](holographic-remoting-player.md)

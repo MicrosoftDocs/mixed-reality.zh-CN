@@ -6,20 +6,37 @@ ms.author: mazeller
 ms.date: 04/1/2019
 ms.topic: article
 keywords: 进行故障排除，已知问题，帮助
-ms.openlocfilehash: a92ab52c899de44f9c5c8c86ebb6f9cd8433d395
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 2423c7292e453d97461c299e8bddfa063a29d3cd
+ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593038"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148695"
 ---
 # <a name="hololens-known-issues"></a>HoloLens 的已知问题
 
 这是面向 HoloLens 影响开发人员的已知问题的当前列表。 首先请查看此处如果看到异常行为。 随着新问题的发现或报告，或在将来的 HoloLens 软件更新中解决问题的方式都将保留此列表已更新。
 
+## <a name="unable-to-connect-and-deploy-to-hololens-through-visual-studio"></a>无法连接并将其部署到 HoloLens 通过 Visual Studio
+
+>[!NOTE]
+>上次更新时间：6/14 下午 6 点-@ 发出正在调查。
+
+HoloLens 和 Visual Studio 团队正在调查可能会阻止用户将部署到通过 Visual Studio 的 HoloLens 设备的问题。
+ 
+在部署阶段，用户将报告以下错误消息，尽管 HoloLens 设备和开发人员计算机无*开发人员模式*启用：
+
+*DEP0100:请确保目标设备已启用的开发人员模式。无法获取开发人员许可证上<device IP>由于错误 80004005。*
+ 
+**解决方法**： 
+ 
+用户报告将设备重置解决了问题，但我们不能保证，这将在所有情况下正常工作。 您可以找到说明重置设备[此处](https://support.microsoft.com/en-us/help/13452/hololens-restart-reset-or-recover-hololens)。
+ 
+我们将提供更新，只要该问题导致的根。 
+
 ## <a name="issues-launching-the-microsoft-store-and-apps-on-hololens"></a>启动的 Microsoft Store 和 HoloLens 上的应用程序的问题
 
->[!IMPORTANT]
+>[!NOTE]
 >上次更新时间：4/2 @ 上午 10 点-解决问题。 
 
 尝试启动的 Microsoft Store 和 HoloLens 上的应用程序时，可能会遇到问题。 我们已确定后台应用程序更新部署时一个特定序列中的框架包的较新版本或多个其依赖的应用程序仍在运行时，会出现此问题。 在这种情况下，自动应用更新提供新版本的.NET 本机框架 （版本 10.0.25531 到 10.0.27413） 引起的不正确的所有正在运行的应用使用以前版本的 framework 的更新运行的应用。  Framework 更新流程如下所示:-
@@ -40,7 +57,7 @@ ms.locfileid: "59593038"
 3.  如果提供了 17763.380 更新，请更新到此版本，以接收应用程序挂起 bug 的修复程序
 4.  在更新到此版本的操作系统时，应用应按预期方式工作。
 
-此外，我们使用每个 HoloLens OS 版本执行的操作，因为我们已发布 FFU 映像到从 Microsoft 下载中心获得 https://aka.ms/hololensdownload/10.0.17763.380。 
+此外，我们使用每个 HoloLens OS 版本执行的操作，因为我们已发布 FFU 映像到从 Microsoft 下载中心获得 https://aka.ms/hololensdownload/10.0.17763.380 。 
 
 如果不想要执行更新，我们发布了截至 3/29 的 Microsoft Store UWP 应用的新版本。 一旦有更新的版本的存储：
 
@@ -54,7 +71,7 @@ ms.locfileid: "59593038"
 
 1)  请下载[此 zip 文件](http://download.microsoft.com/download/8/5/C/85C23745-794C-419D-B8D7-115FBCCD6DA7/netfx_1.7.zip)从 Microsoft 下载中心获得。  解压缩将生成两个文件。  Microsoft.NET.Native.Runtime.1.7.appx 和 Microsoft.NET.Native.Framework.1.7.appx
 2)  请验证你的设备适用于开发人员解锁。  如果您没有这样做之前执行此操作的说明[此处](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fmixed-reality%2Fusing-the-windows-device-portal&data=02%7C01%7Cjalynch%40microsoft.com%7C3622a462ebd04870fccb08d6ae94cad6%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636888351416725140&sdata=ZB6Zdx9GV95PcU6FAVgWaP3eQNMsyIc%2FbNDEby3Sb8A%3D&reserved=0)。
-3)  随后想要将导入 Windows Device Portal。  建议在执行此操作通过 USB 和将会通过键入 http://127.0.0.1:10080到浏览器。  
+3)  随后想要将导入 Windows Device Portal。  建议在执行此操作通过 USB 和将会通过键入 http://127.0.0.1:10080 到浏览器。  
 4)  Windows Device Portal 了我们需要你为"端加载"后的两个文件下载的。  若要执行此操作，需要停机的左侧和右侧栏，直到转到"应用"部分并单击"应用"。
 5)  然后，您将看到一个屏幕，类似于下面。  你想要转到显示"安装应用"部分，并浏览到你在其中解压缩这两个 APPX 文件。  可以仅执行一次一个地操作，因此后选择第一个，然后单击"转到"下的部署部分。  然后执行此操作的第二个 APPX 文件。 
   ![Windows Device Portal 安装旁加载的应用](images/20190322-DevicePortal.png)<br>
@@ -74,7 +91,7 @@ OOBE 设置 （&），在没有凭据超时为 2 分钟。 需要在 2 分钟否
 
 ## <a name="visual-studio"></a>Visual Studio
 * 请参阅[安装的工具](install-the-tools.md)建议 HoloLens 开发的 Visual Studio 的最新版本。
-* 部署到你 HoloLens 从 Visual Studio 应用程序，可能会看到错误：**不能在具有用户映射部分打开的文件上执行请求的操作。（HRESULT 中的异常：0x800704C8)**。 如果发生这种情况，重试，而你的部署通常会成功。
+* 部署到你 HoloLens 从 Visual Studio 应用程序，可能会看到错误：**不能在具有用户映射部分打开的文件上执行请求的操作。（HRESULT 中的异常：0x800704C8)** 。 如果发生这种情况，重试，而你的部署通常会成功。
 
 ## <a name="emulator"></a>仿真程序
 * 在 Microsoft Store 中的并非所有应用都都在仿真程序与兼容。 例如，Young Conker 和片段不是在模拟器上播放。

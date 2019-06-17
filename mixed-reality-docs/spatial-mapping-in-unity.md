@@ -1,17 +1,17 @@
 ---
 title: 在 Unity 中的空间映射
 description: 呈现和与其碰撞周围 Unity 中的实际的几何图形。
-author: thetuvix
-ms.author: alexturn
+author: davidkline-ms
+ms.author: davidkl
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity、 空间映射，呈现器、 碰撞体、 网格、 扫描、 组件
-ms.openlocfilehash: f938f5921cb2c06342a9ebcd376d690c10584df9
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: HT
+ms.openlocfilehash: 8f7bad1651ab31b2e83ad9d9c8f465547fbbdc5a
+ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59593079"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148650"
 ---
 # <a name="spatial-mapping-in-unity"></a>在 Unity 中的空间映射
 
@@ -75,8 +75,8 @@ Unity 提供两个组件： 用于轻松地添加到应用中，空间映射**�
 
 如果需要更多的控制不是获得的空间映射的呈现器和空间映射碰撞体组件，可以使用低级别的空间映射脚本 Api。
 
-**命名空间：** *UnityEngine.XR.WSA*<br>
-**类型**:*SurfaceObserver*， *SurfaceChange*， *SurfaceData*， *SurfaceId*
+**命名空间：**  *UnityEngine.XR.WSA*<br>
+**类型**: *SurfaceObserver*， *SurfaceChange*， *SurfaceData*， *SurfaceId*
 
 以下是使用空间的映射 Api 的应用程序的建议流程的概述。
 
@@ -455,9 +455,9 @@ Import_UnderstandingMesh –
 与混合现实 Toolkit v2 使用空间映射的详细信息，请参阅<a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/SpatialAwareness/SpatialAwarenessGettingStarted.html" target="_blank">空间感知部分</a>MRTK docs。
 
 ## <a name="see-also"></a>请参阅
-* [MR 空间 230:空间映射](holograms-230.md)
+* [MR 空间 230：空间映射](holograms-230.md)
 * [坐标系统](coordinate-systems.md)
-* [在 Unity 中的坐标系统](coordinate-systems-in-unity.md)
+* [Unity 中的坐标系统](coordinate-systems-in-unity.md)
 * <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" target="_blank">MixedRealityToolkit</a>
 * <a href="http://docs.unity3d.com/ScriptReference/MeshFilter.html" target="_blank">UnityEngine.MeshFilter</a>
 * <a href="http://docs.unity3d.com/ScriptReference/MeshCollider.html" target="_blank">UnityEngine.MeshCollider</a>
