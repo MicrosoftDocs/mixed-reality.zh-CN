@@ -145,6 +145,7 @@
 #### [Unity 播放模式](unity-play-mode.md)
 #### [导出和构建 Unity Visual Studio 解决方案](exporting-and-building-a-unity-visual-studio-solution.md)
 #### [使用 Unity 和 Visual Studio 的最佳做法](best-practices-for-working-with-unity-and-visual-studio.md)
+#### [使用 Unity IL2CPP 进行托管调试](managed-debugging-with-unity-il2cpp.md)
 ### 核心构建基块
 #### [Unity 中的相机](camera-in-unity.md)
 #### [Unity 中的坐标系统](coordinate-systems-in-unity.md)
