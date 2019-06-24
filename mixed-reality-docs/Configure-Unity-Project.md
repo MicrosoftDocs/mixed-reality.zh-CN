@@ -6,12 +6,12 @@ ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity 中，混合现实、 开发、 开始、 新建项目
-ms.openlocfilehash: aad38474781fd78425d48034877122d36d9e3e93
-ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
+ms.openlocfilehash: 68dded9d0fc9e861bdda56c4954d72ddafafa686
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940746"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326095"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>针对 Windows Mixed Reality 配置新的 Unity 项目 
 
@@ -21,7 +21,7 @@ ms.locfileid: "65940746"
 
 ## <a name="per-project-settings"></a>每个项目设置
 
-若要针对 Windows Mixed Reality，首先需要设置你的 Unity 项目以导出为通用 Windows 平台应用：
+若要针对 Windows Mixed Reality，首先需要设置你的 Unity 项目以导出为通用 Windows 平台应用： 
 1. 选择**文件 > 生成设置...**
 2. 选择**通用 Windows 平台**在平台中列表，并单击**交换机平台**
 3. 设置**SDK**到**通用 10**

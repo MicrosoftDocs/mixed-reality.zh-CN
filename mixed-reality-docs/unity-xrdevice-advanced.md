@@ -45,7 +45,7 @@ struct HolographicFrameNativeData
 var nativePtr = UnityEngine.XR.XRDevice.GetNativePtr();
 HolographicFrameNativeData hfd = Marshal.PtrToStructure<HolographicFrameNativeData>(nativePtr);
 ```
-***IHolographicCameraPtr**是 IntPtr 的长度等于 MaxNumberOfCameras 与作为 UnmanagedType.ByValArray 封送数组* 
+***IHolographicCameraPtr** 是 IntPtr 的长度等于 MaxNumberOfCameras 与作为 UnmanagedType.ByValArray 封送数组* 
 
 
 ### <a name="using-holographicframenativedata"></a>使用 HolographicFrameNativeData

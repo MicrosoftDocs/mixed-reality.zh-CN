@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、 组件、 传感器、 技术、 技术，拆解，拆卸，
-ms.openlocfilehash: ddbce274a0573ab72e1ff7b523b6ac4b8fbb6ba2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 56b10fa9751c626578c697cd370347482a121b2a
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592974"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326204"
 ---
 # <a name="hololens-1st-gen-hardware-details"></a>HoloLens （第 1 代） 的硬件详细信息
 
@@ -21,7 +21,7 @@ Microsoft HoloLens 是世界上的第一个完全无约束 holographic 计算机
 
 ## <a name="how-to-get-microsoft-hololens"></a>如何获取 Microsoft HoloLens
 
-Microsoft HoloLens 是可作为这两个 Development Edition 购买和商业套件配置 （其中包括增加了安全性和设备管理功能保证和企业功能）。 如果您在北美，您还可以通过合作伙伴租用 HoloLens。
+Microsoft HoloLens 是可作为这两个 Development Edition 购买，包括用于保证和企业功能的商业套件配置添加安全性和设备管理。 如果您在北美，您还可以通过合作伙伴租用 HoloLens。
 
 [单击此处了解更多详细信息上购买或租用 Microsoft HoloLens](https://www.microsoft.com/hololens/buy)。
 
@@ -62,7 +62,7 @@ Microsoft HoloLens 是可作为这两个 Development Edition 购买和商业套�
 * 电池状态 Led
 * Wi-Fi 802.11ac
 * Micro USB 2.0
-* 4.1 蓝牙 LE
+* 4\.1 蓝牙 LE
 
 ### <a name="power"></a>电源
 * 电池寿命
@@ -78,11 +78,11 @@ Microsoft HoloLens 是可作为这两个 Development Edition 购买和商业套�
 * 自定义构建 Microsoft Holographic 处理单元 (HPU 1.0)
 
 ### <a name="weight"></a>粗细
-* 579g
+* 579 g
 
 ### <a name="memory"></a>内存
 * 64 GB Flash
-* 2GB RAM
+* 2 GB 的 RAM
 
 ### <a name="whats-in-the-box"></a>什么是在框中
 * HoloLens 开发版

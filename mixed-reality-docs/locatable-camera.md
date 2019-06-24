@@ -1,17 +1,17 @@
 ---
 title: 可定位照相机
 description: HoloLens 前置相机、 它的工作原理，以及配置文件的常规信息和解决方法可供开发人员。
-author: wguyman
-ms.author: wguyman
+author: cdedmonds
+ms.author: wguyman, cdedmonds
 ms.date: 06/12/2019
 ms.topic: article
-keywords: 照相机、 hololens、 颜色照相机，面向 hololens 2、 cv、 计算机视觉、 基准的前端、 标记、 qr 码、 qr、 照片、 视频
-ms.openlocfilehash: cadcd0762b8adf1001896c614451d2e1c9776c65
-ms.sourcegitcommit: 79398a6b5b7037babcb05d86a5bcc336fd089ea0
+keywords: 相机、 hololens，颜色照相机前端面向
+ms.openlocfilehash: f661fc82fbeab9a870e8ccf7044c9bb375bed7e3
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67028611"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326293"
 ---
 # <a name="locatable-camera"></a>可定位照相机
 
@@ -21,7 +21,7 @@ HoloLens 包括设备这能使应用程序以查看用户看到的内容的正�
 
 ### <a name="hololens-first-generation"></a>HoloLens （第一代）
 
-* 固定的焦点照片/视频 (PV) 照相机，摄像机带有白色自动平衡、 自动公开和完整的映像处理管道。
+* 固定的焦点照片/视频 (PV) 摄像机，白色自动平衡、 自动公开与完整的映像处理管道
 * 面向全球的白色隐私发光二极管会只要照相机处于活动状态
 * 照相机支持在 30、 24、 20、 15 和 5 帧/秒 （所有模式都都纵横比为 16:9） 的以下模式：
 
@@ -35,150 +35,53 @@ HoloLens 包括设备这能使应用程序以查看用户看到的内容的正�
 
 ### <a name="hololens-2"></a>HoloLens 2
 
-* 自动聚焦照片/视频 (PV) 照相机，摄像机带有白色自动平衡、 自动公开和完整的映像处理管道。
-* 面向全球的白色隐私发光二极管会只要照相机处于活动状态。
-* HoloLens 2 支持不同的照相机配置文件。 了解如何[发现和选择照相机功能](https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/camera-profiles)。
-* 照相机支持以下配置文件和 （所有视频的模式是纵横比为 16:9） 的解决方法：
-  
-  | 配置文件                                         | 视频     | 预览   | 仍     | 帧速率 | 水平视野 (FOV H) | 建议的用法                             |
-  |-------------------------------------------------|-----------|-----------|-----------|-------------|----------------------------------|---------------------------------------------|
-  | Legacy,0  BalancedVideoAndPhoto,100             | 2272x1278 | 2272x1278 |           | 15,30       | 64.69                            | 高质量视频录制                |
-  | Legacy,0  BalancedVideoAndPhoto,100             |           |           | 3904x2196 |             | 64.69                            | 高质量照片拍摄                  |
-  | BalancedVideoAndPhoto,120                       | 1952x1100 | 1952x1100 | 1952x1100 | 15,30       | 64.69                            | 持续时间长的方案                     |
-  | BalancedVideoAndPhoto,120                       | 1504x846  | 1504x846  |           | 15,30       | 64.69                            | 持续时间长的方案                     |
-  | 视频会议 100                           | 1952x1100 | 1952x1100 | 1952x1100 | 15,30,60    | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议 100                           | 1504x846  | 1504x846  |           | 5,15,30,60  | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议，100 BalancedVideoAndPhoto 120 | 1920x1080 | 1920x1080 | 1920x1080 | 15,30       | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议，100 BalancedVideoAndPhoto 120 | 1280x720  | 1280x720  | 1280x720  | 15,30       | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议，100 BalancedVideoAndPhoto 120 | 1128x635  |           |           | 15,30       | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议，100 BalancedVideoAndPhoto 120 | 960x540   |           |           | 15,30       | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议，100 BalancedVideoAndPhoto 120 | 760x428   |           |           | 15,30       | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议，100 BalancedVideoAndPhoto 120 | 640x360   |           |           | 15,30       | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议，100 BalancedVideoAndPhoto 120 | 500x282   |           |           | 15,30       | 64.69                            | 视频会议，持续时间长的方案 |
-  | 视频会议，100 BalancedVideoAndPhoto 120 | 424x240   |           |           | 15,30       | 64.69                            | 视频会议，持续时间长的方案 |
+* 自动聚焦照片/视频 (PV) 摄像机，白色自动平衡、 自动公开与完整的映像处理管道
+* 面向全球的白色隐私发光二极管会只要照相机处于活动状态
+* 照相机支持以下模式 （所有视频的模式是纵横比为 16:9）：
 
->[!NOTE]
->客户可以利用[混合现实捕获](mixed-reality-capture.md)使视频或照片应用程序，其中包括全息和视频防抖动。
->
->作为开发人员，有一些创建您的应用程序，如果您希望其客户捕获内容时的外观一样好可能时应考虑的注意事项。 此外可以启用 （并自定义） 从直接在您的应用程序中的混合的现实捕获。 了解详细信息，请[开发人员的混合现实捕获](mixed-reality-capture-for-developers.md)。
+  >[!NOTE]
+  >这些模式会在 HoloLens 2 正式发布之前的更改。
+
+  |  视频  |  预览  |  仍  |  帧速率  |  水平视野 (FOV H) |  建议的用法 | 
+  |----------|----------|----------|----------|----------|----------|
+  |  1920x1080 |  1920x1080 |  不可用 |  30、 15 帧/秒  |  54deg  |  （通过视频防抖动的默认模式） | 
+  |  不可用 |  不可用 |  3904X2196 |  不可用  |  64deg |  最高分辨率静止图像 | 
+  |  2272x1278 |  2272x1278 |  不可用 |  30、 15 帧/秒  |  64deg |  视频防抖动之前自定大小 （填充） 解析 | 
+  |  1952x1100 |  1952x1100 |  1952x1100  |  30、 15 帧/秒  |  64deg |  高质量的流式处理 | 
+  |  1280x720 |  1280x720 |  不可用 |  30、 15、 5 帧/秒  |  64deg |  流式处理和图像处理任务的每个分辨率低电源模式 | 
 
 ## <a name="locating-the-device-camera-in-the-world"></a>在世界上定位设备相机
 
-照片和视频 HoloLens 时，捕获的帧世界，以及相机的角度来看投影中包括的照相机的位置。 这样，应用程序的原因有关的扩充式映像方案现实生活中的照相机的位置信息。 开发人员可以创造性地回滚其自己的方案使用他们最喜爱的图像处理或自定义计算机影像库。
+照片和视频 HoloLens 时，捕获的帧世界，以及照相机的镜头模型中包括的照相机的位置。 这样，应用程序的原因有关的扩充式映像方案现实生活中的照相机的位置信息。 开发人员可以创造性地回滚其自己的方案使用他们最喜爱的图像处理或自定义计算机影像库。
 
 HoloLens 文档中的其他位置的"照相机"可能指"虚拟游戏照相机"（截锥应用程序呈现为）。 否则表示，除非在此页上的"照相机"是指实际的 RGB 颜色照相机。
 
-有关此页面涵盖的详细信息[Media Foundation 特性](https://msdn.microsoft.com/library/windows/desktop/mt740395(v=vs.85).aspx)，但是也有 Api 拉取照相机内部函数使用[WinRT Api](https://msdn.microsoft.com/library/windows/apps/windows.media.devices.core.cameraintrinsics)。  
+有关此页覆盖中使用的详细信息[MediaFrameReference](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.mediaframereference)类，但是也有 Api 拉取照相机内部函数和使用的位置[Media Foundation 属性](https://msdn.microsoft.com/library/windows/desktop/mt740395(v=vs.85).aspx)。 请参阅[Holographic 跟踪示例的人脸](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)有关详细信息。
 
 ### <a name="images-with-coordinate-systems"></a>与坐标系统的映像
 
-每个图像帧 (是否照片或视频) 包括坐标系，以及两个重要的转换。 "视图"转换到相机，提供的坐标系统中的映射和从照相机"投影"映射至图像中的像素。 在一起，这些转换定义为每个像素 ray 在 3D 空间中表示生成像素 photons 所采用的路径。 这些大气可以与通过对某些其他坐标系统从框架的坐标系统获取转换应用程序中的其他内容 (例如，从[固定参考框架](coordinate-systems.md#stationary-frame-of-reference))。 总之，每个图像帧提供以下功能：
+每个图像帧 (是否照片或视频) 包括[SpatialCoordinateSystem](https://docs.microsoft.com/en-us/uwp/api/windows.perception.spatial.spatialcoordinatesystem)捕获可使用访问时根节点的照相机[坐标系](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.mediaframereference.coordinatesystem#Windows_Media_Capture_Frames_MediaFrameReference_CoordinateSystem)属性您[MediaFrameReference](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference)。 此外，每个帧包含照相机镜头模型中可以找到的说明[CameraIntrinsics](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)属性。 在一起，这些转换定义为每个像素 ray 在 3D 空间中表示生成像素 photons 所采用的路径。 这些大气可以与通过对某些其他坐标系统从框架的坐标系统获取转换应用程序中的其他内容 (例如，从[固定参考框架](coordinate-systems.md#stationary-frame-of-reference))。 总之，每个图像帧提供以下功能：
 * 像素格式的数据 （RGB/NV12/JPEG/等）
-* 3 个部分的元数据 (存储为[IMFAttributes](https://msdn.microsoft.com/library/windows/desktop/ms704598(v=vs.85).aspx))，使每个帧"定位":
-
-|  属性名称  |  在任务栏的搜索框中键入  |  GUID  |  描述 | 
-|----------|----------|----------|----------|
-|  MFSampleExtension_Spatial_CameraCoordinateSystem  |  IUnknown ([SpatialCoordinateSystem](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialcoordinatesystem.aspx))  |  {9D13C82F-2199-4E67-91CD-D1A4181F2534}  |  存储[坐标系](coordinate-systems-in-directx.md)的捕获的帧 | 
-|  MFSampleExtension_Spatial_CameraViewTransform  |  Blob ([Matrix4x4](https://msdn.microsoft.com/library/windows/apps/windows.foundation.numerics.matrix4x4.aspx))  |  {4E251FA4-830F-4770-859A-4B8D99AA809B}  |  将照相机的外部转换存储在坐标系统 | 
-|  MFSampleExtension_Spatial_CameraProjectionTransform  |  Blob ([Matrix4x4](https://msdn.microsoft.com/library/windows/apps/windows.foundation.numerics.matrix4x4.aspx))  |  {47F9FCB5-2A02-4F26-A477-792FDF95886A}  |  将存储照相机的投影转换 | 
-
-投影转换表示映射到扩展从-1 到 + 1 中的 X 和 Y 轴图平面上的可重用功能区的内部属性 （焦距，中心的投影，倾斜）。
-
-```
-Matrix4x4 format          Terms
-   m11 m12 m13 m14      fx    0   0   0
-   m21 m22 m23 m24     skew  fy   0   0
-   m31 m32 m33 m34      cx   cy   A  -1
-   m41 m42 m43 m44       0    0   B   0
-```
-
-不同的应用程序将具有不同的坐标系统。 下面是流来查找单个应用程序的照相机像素的概览：
-
-![应用于照相机坐标系统的转换](images/pvcameratransform5-500px.png)
+* 一个[SpatialCoordinateSystem](https://docs.microsoft.com/en-us/uwp/api/windows.perception.spatial.spatialcoordinatesystem)从捕获的位置
+* 一个[CameraIntrinsics](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)类包含照相机的可重用功能区模式
 
 ### <a name="camera-to-application-specified-coordinate-system"></a>照相机传送到应用程序指定坐标系统
 
-若要从 CameraView 和 CameraCoordinateSystem 转到应用程序/世界坐标系统，你将需要：
+若要从 CameraIntrinsics 和 CameraCoordinateSystem 转到应用程序/世界坐标系统，你将需要：
 
 [在 Unity 中的定位照相机](locatable-camera-in-unity.md):CameraToWorldMatrix 会自动提供由 PhotoCaptureFrame 类 （因此，无需担心 CameraCoordinateSystem 转换）。
 
 [在 DirectX 可定位照相机](locatable-camera-in-directx.md):演示了查询的照相机的坐标系统和你自己的应用程序 coordinate system(s) 之间的转换非常简单的方法。
 
-### <a name="application-specified-coordinate-system-to-pixel-coordinates"></a>应用程序指定到像素坐标的坐标系统
-
-让我们假设你想要查找或上的照相机图像绘制在特定的三维位置：
-
-需要采用稍有不同的视图和投影转换时这两个 4 × 4 矩阵。 即执行投影后, 一个将规范化通过 w，在投影中的此额外步骤模拟如何将多个不同的三维位置的最终会得到为 （即任何内容沿某些射线将显示同一像素） 的屏幕上的同一个二维位置。 因此要点 （在着色器代码中）：
-
-```
-// Usual 3d math:
- float4x4 WorldToCamera = inverse( CameraToWorld );
- float4 CameraSpacePos = mul( WorldToCamera, float4( WorldSpacePos.xyz, 1 ) ); // use 1 as the W component
- // Projection math:
- float4 ImagePosUnnormalized = mul( CameraProjection, float4( CameraSpacePos.xyz, 1 ) ); // use 1 as the W component
- float2 ImagePosProjected = ImagePosUnnormalized.xy / ImagePosUnnormalized.w; // normalize by W, gives -1 to 1 space
- float2 ImagePosZeroToOne = ( ImagePosProjected * 0.5 ) + float2( 0.5, 0.5 ); // good for GPU textures
- int2 PixelPos = int2( ImagePosZeroToOne.x * ImageWidth, ( 1 - ImagePosZeroToOne.y ) * ImageHeight ); // good for CPU textures
-```
-
-### <a name="pixel-to-application-specified-coordinate-system"></a>像素到应用程序指定坐标系统
-
-个世界坐标从像素都是个小技巧：
-
-```
-float2 ImagePosZeroToOne = float2( PixelPos.x / ImageWidth, 1.0 - (PixelPos.y / ImageHeight ) );
- float2 ImagePosProjected = ( ( ImagePosZeroToOne * 2.0 ) - float2(1,1) ); // -1 to 1 space
- float3 CameraSpacePos = UnProjectVector( Projection, float3( ImagePosProjected, 1) );
- float3 WorldSpaceRayPoint1 = mul( CameraToWorld, float4(0,0,0,1) ); // camera location in world space
- float3 WorldSpaceRayPoint2 = mul( CameraToWorld, CameraSpacePos ); // ray point in world space
-```
-
-定义作为 UnProject:
-
-```
-public static Vector3 UnProjectVector(Matrix4x4 proj, Vector3 to)
- {
-   Vector3 from = new Vector3(0, 0, 0);
-   var axsX = proj.GetRow(0);
-   var axsY = proj.GetRow(1);
-   var axsZ = proj.GetRow(2);
-   from.z = to.z / axsZ.z;
-   from.y = (to.y - (from.z * axsY.z)) / axsY.y;
-   from.x = (to.x - (from.z * axsX.z)) / axsX.x;
-   return from;
- }
-```
-
-若要查找一个点的实际世界位置，将需要以下两者之一： 两个世界大气和查找它们的交集，或者有已知的点大小。
-
 ### <a name="distortion-error"></a>扭曲错误
 
-HoloLens，在视频和仍图像流是未扭曲系统的映像处理管道中之前帧都提供给应用程序 （预览流包含原始失真的帧）。 由于仅投影矩阵将可用，应用程序必须假定图像帧表示完美 pinhole 照相机，但是变形纠正函数中的图像处理器可能仍将保留最多 10 个像素的错误时使用中的投影矩阵帧的元数据。 在许多用例，此错误将不起作用，但如果要对齐全息到实际海报/标记，例如，且您注意到 < 10px 偏移量 （大致为全息定位 2 米消失的 11 毫米） 此扭曲错误可能是原因。
+HoloLens，在视频和仍图像流是未扭曲系统的映像处理管道中之前帧都提供给应用程序 （预览流包含原始失真的帧）。 由于仅 CameraIntrinsics 都可用，应用程序必须假定图像帧表示完美 pinhole 照相机，但是变形纠正函数中的图像处理器可能仍将保留最多 10 个像素的错误上 HoloLens （第一代）在使用 CameraIntrinsics 帧元数据中。 在许多用例，此错误将不起作用，但如果要对齐全息到实际海报/标记，例如，且您注意到 < 10px 偏移量 （大致为全息定位 2 米消失的 11 毫米） 此扭曲错误可能是原因。 
 
 ## <a name="locatable-camera-usage-scenarios"></a>可定位照相机使用方案
 
 ### <a name="show-a-photo-or-video-in-the-world-where-it-was-captured"></a>在捕获时的世界中显示的照片或视频
 
 设备相机帧附带"照相机 World"转换，用于显示准确的设备时图像捕获。 例如在 （CameraToWorld.MultiplyPoint(Vector3.zero)) 和甚至绘图小箭头方向照相机面向 (CameraToWorld.MultiplyVector(Vector3.forward)) 此位置开始位置小 holographic 图标。
-
-### <a name="painting-the-world-using-a-camera-shader"></a>绘制世界上使用照相机着色器
-
-在本部分中我们将创建材料着色器世界上基于在其中显示的设备照相机的视图中的颜色。 实际上我们将执行的操作是每个顶点将找出相对于照相机，其位置和每个像素然后将投影矩阵利用到图图像与相关联的纹素的扩展。 最后，和 （可选），我们将淡出的角映像使其看起来类似于操作之梦的内存的详细信息：
-
-```
-// In the vertex shader:
- float4 worldSpace = mul( ObjectToWorld, float4( vertexPos.xyz, 1));
- float4 cameraSpace = mul( CameraWorldToLocal, float4(worldSpace.xyz, 1));
-
- // In the pixel shader:
- float4 unprojectedTex = mul( CameraProjection, float4( cameraSpace .xyz, 1));
- float2 projectedTex = (unprojectedTex.xy / unprojectedTex.w);
- float2 unitTexcoord = ((projectedTex * 0.5) + float4(0.5, 0.5, 0, 0));
- float4 cameraTextureColor = tex2D(_CameraTex, unitTexcoord);
- // Fade out edges for better look:
- float pctInView = saturate((1.0 - length(projectedTex.xy)) * 3.0);
- float4 finalColor = float4( cameraTextureColor.rgb, pctInView );
-```
 
 ### <a name="tag--pattern--poster--object-tracking"></a>标记 / 海报 / 对象跟踪
 
@@ -206,7 +109,7 @@ HoloLens，在视频和仍图像流是未扭曲系统的映像处理管道中之
 
 某些图像标记系统仅提供单个像素的位置 (其他人提供完整的转换在这种情况下将不需要此部分)，其相当于一条可能的位置。 若要获取到一个单独的三维位置我们可以利用多个大气并查找其近似的交集的最终结果上。 若要执行此操作将需要：
 1. 获取一个循环将收集多个照相机图像
-2. 查找[关联的功能点](#pixel-to-application-specified-coordinate-system)，并且其全球大气
+2. 查找关联的功能点和其全球大气
 3. 当具有的功能，每个都有多个世界大气，字典时可以使用下面的代码来解决这些射线相交的：
 
 ```
@@ -246,40 +149,6 @@ public static Vector3 ClosestPointBetweenRays(
  trans.position += realTags[0].EstimatedWorldPos - modelledTags[0].transform.position;
 ```
 
-### <a name="render-holograms-from-the-cameras-position"></a>呈现全息从照相机的位置
-
-注意：如果你尝试创建您自己[混合现实捕获 (MRC)](mixed-reality-capture.md)，其中融合全息用照相机的流，则可以使用[MRC 效果](mixed-reality-capture-for-developers.md)或启用中的 showHolograms 属性[在 Unity 中的定位照相机](locatable-camera-in-unity.md)。
-
-如果你想要执行特殊 RGB 照相机流上直接呈现，就可以呈现全息从照相机的位置的空间中以提供自定义全息图录制/实时预览视频源同步。
-
-在 Skype，我们执行此操作以显示远程客户端 HoloLens 用户看到的内容，使他们可以与同一全息进行交互。 在发送前通过 Skype 服务每个视频帧内，我们将获取每个帧的相应相机数据。 我们然后包照相机的外部和内部元数据与视频帧，然后将其发送通过 Skype 服务。
-
-在接收端，使用 Unity 中，我们已同步所有全息 HoloLens 用户空间使用相同的坐标系统中。 这使得我们可以使用照相机的外部元数据将 Unity 照相机放在 HoloLens 用户站着时捕获该视频的帧时，（相对于全息其余） 世界中的确切位置并使用的照相机内部函数信息请确保该视图相同。
-
-一旦我们有摄像机正确设置，我们将组合照相机拖到框架上接收到来自 Skype，创建的 HoloLens 用户会看到使用 Graphics.Blit 混合的现实视图看到哪些全息。
-
-```cs
-private void OnFrameReceived(Texture frameTexture, Vector3 cameraPosition, Quaternion cameraRotation, Matrix4x4 cameraProjectionMatrix)
-{
-    //set material that will be blitted onto the RenderTexture
-    this.compositeMaterial.SetTexture(CompositeRenderer.CameraTextureMaterialProperty, frameTexture);
-    //set the camera to be that of the HoloLens's device camera
-    this.Camera.transform.position = cameraPosition;
-    this.Camera.transform.rotation = cameraRotation;
-    this.Camera.projectionMatrix = cameraProjectionMatrix;
-    //trigger the Graphics's Blit now that the frame and camera are set up
-    this.TextureReady = false;
-}
-private void OnRenderImage(RenderTexture source, RenderTexture destination)
-{
-    if (!this.TextureReady)
-    {
-        Graphics.Blit(source, destination, this.compositeMaterial);
-        this.TextureReady = true;
-    }
-}
-```
-
 ### <a name="track-or-identify-tagged-stationary-or-moving-real-world-objectsfaces-using-leds-or-other-recognizer-libraries"></a>跟踪或标识标记的静态或移动现实世界对象/人脸使用 Led 或其他识别器库
 
 示例：
@@ -293,3 +162,4 @@ private void OnRenderImage(RenderTexture source, RenderTexture destination)
 * [混合现实捕获](mixed-reality-capture.md)
 * [面向开发人员的混合现实捕获](mixed-reality-capture-for-developers.md)
 * [媒体捕获简介](https://msdn.microsoft.com/library/windows/apps/mt243896.aspx)
+* [全息版的人脸跟踪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
