@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity、 设置、 混合的现实
-ms.openlocfilehash: c8b5598fa702954ca14b9b013e44ed38cf6075c2
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: 8afcefb49a860d66a372ebd3d0c4bcdb43038813
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148670"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415447"
 ---
 # <a name="recommended-settings-for-unity"></a>Unity 的推荐的设置
 
@@ -160,5 +160,5 @@ HoloLens 具有移动类的 CPU 和 GPU，这意味着应用程序可能需要�
 
 ## <a name="see-also"></a>请参阅
 * [Unity 开发概述](unity-development-overview.md)
-* [混合现实的 Understaing 性能](understanding-performance-for-mixed-reality.md)
+* [了解混合现实的性能](understanding-performance-for-mixed-reality.md)
 * [针对 Unity 的性能建议](performance-recommendations-for-unity.md)

@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 2D 应用程序中，UWP，平面应用，HoloLens，沉浸式耳机，应用程序模型返回按钮，应用程序栏、 dpi，分辨率，规模
-ms.openlocfilehash: 35a2e7774a79e35893821467f7e9ef8c004efa20
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: f9792a7e5fd9729bf9f5f632c699c74c58c10ddf
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592422"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414224"
 ---
 # <a name="updating-2d-uwp-apps-for-mixed-reality"></a>更新适用于混合现实的 2D UWP 应用
 
@@ -147,7 +147,7 @@ Windows 10 移动所有视觉对象设计从到的实际屏幕像素**有效像�
 
 **标题：** 将显示*displayname*与应用程序实例相关联的磁贴
 
-**后退按钮：** 将引发 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 时按下事件。 通过控制后退按钮可见性 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)*。
+**后退按钮：** 将引发 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 时按下事件。 通过控制后退按钮可见性 *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)* 。
 
 ![应用栏 2D 应用视图中的用户界面](images/12697297-10104100857470613-1470416918759008487-o-500px.jpg)<br>
 *应用栏 2D 应用视图中的用户界面*
@@ -176,10 +176,10 @@ Windows 将负责所有这种复杂性适用于 UWP 应用的转换您[注视](g
 启动并运行您的应用程序后，到将应用打包[将其提交到 Microsoft Store](submitting-an-app-to-the-microsoft-store.md)。
 
 ## <a name="see-also"></a>请参阅
-* [应用程序模型](app-model.md)
-* [Gaze](gaze.md)
+* [应用模型](app-model.md)
+* [凝视](gaze.md)
 * [手势](gestures.md)
 * [运动控制器](motion-controllers.md)
-* [Voice](voice-input.md)
-* [提交到 Microsoft Store 应用](submitting-an-app-to-the-microsoft-store.md)
+* [语音输入](voice-input.md)
+* [将应用提交到 Microsoft Store](submitting-an-app-to-the-microsoft-store.md)
 * [使用 HoloLens 仿真器](using-the-hololens-emulator.md)

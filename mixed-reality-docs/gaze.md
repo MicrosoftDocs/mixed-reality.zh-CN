@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合现实、 提供注视、 交互，设计
-ms.openlocfilehash: e0c1a925f6faeb37ec35e511cef36f9c06672c8a
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 7e65d26d3e9edabbd01d35a887ffc8622a3c6337
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829740"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414368"
 ---
 # <a name="gaze"></a>凝视
 
@@ -37,9 +37,9 @@ HoloLens 上 （第 1 代），交互应通常是其目标从用户的头的视�
     </colgroup>
     <tr>
         <td><strong>功能</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第 1 代）</strong></a></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><strong>HoloLens 2</strong></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
     </tr>
      <tr>
         <td>Head 的视线移动</td>
@@ -84,5 +84,5 @@ HoloLens 上 （第 1 代），交互应通常是其目标从用户的头的视�
 * [MR 输入 210：Head 的视线移动](holograms-210.md)
 * [DirectX 中的头部和眼部凝视](gaze-in-directx.md)
 * [在 Unity 中的头视线移动](gaze-in-unity.md)
-* [眼睛追踪 HoloLens 2 上](eye-tracking.md)
+* [关注注视 HoloLens 2 上](eye-tracking.md)
 * [在 Unity 中使用混合现实工具包的眼睛视线移动](https://aka.ms/mrtk-eyes)

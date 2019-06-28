@@ -6,12 +6,12 @@ ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 混合现实，无需手动、 注视、 注视目标交互，设计
-ms.openlocfilehash: 4d21fa10eabb446565bddebccdbde5e2e7bcc72a
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+ms.openlocfilehash: 7942192f644a7133335f089cfaaccfaebdd9292e
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67326154"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414396"
 ---
 # <a name="hands-free"></a>免提
 
@@ -39,10 +39,10 @@ ms.locfileid: "67326154"
 
 ### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[头部凝视和停留](gaze-and-dwell.md)
 
-在某些无需干预的情况下，使用您的声音不是理想之选或甚至可能。 大声工厂环境、 隐私或社交标准所有可以进行限制。 头注视 + 会仔细斟酌模型允许用户使用其头矢量点时延迟，导航应用程序或抛开按钮将激活它在一段时间，通常大约 1 秒钟左右后。 
+在某些无需干预的情况下，使用您的声音不是理想之选或甚至可能。 大声工厂环境、 隐私或社交标准所有可以进行限制。 头注视 + 会仔细斟酌模型允许用户使用其头矢量点时延迟，导航应用程序或抛开按钮将它后激活一定的时间，通常约 1 秒左右。 
 
 
-## <a name="transitioning-in-and-out-of-hands-freey"></a>转换入和移出手 freey
+## <a name="transitioning-in-and-out-of-hands-free"></a>转换入和移出无
 
 对于这些情况下，释放与命令和导航全息交互手范围可以为要到运行该应用程序，端到端到一种方便性的用户可以在任何转换中是绝对要求时间。 
 
@@ -54,7 +54,7 @@ ms.locfileid: "67326154"
 例如，如果用户是在工厂车间上观看她 hololens 的视频引用，并决定选取扳手以开始使用，她很可能会在中开始工作 handsfree 而无需放下扳手按一个按钮。 她应该能够调用语音会话使用语音命令，开始停留，已经可见 UI 在此再次详述或假设单词"select"。
 
 用户应具有的功能： 
-* 切换到 handsfree handsfree 时
+* 切换到无而无需手动
 * 切换到用手向提供
 * 切换到使用控制器的控制器 
 
@@ -96,5 +96,5 @@ ms.locfileid: "67326154"
 
 ## <a name="see-also"></a>请参阅
 * [头部凝视并提交](gaze-and-commit.md)
-* [直接操作](direct-manipulation.md)
-* [指向并提交](point-and-commit.md)
+* [使用手直接操作](direct-manipulation.md)
+* [使用手指向和提交](point-and-commit.md)

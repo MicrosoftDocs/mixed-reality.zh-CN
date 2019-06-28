@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合的现实、 控件、 交互、 ui 和 ux
-ms.openlocfilehash: b0397e00763f70e4caf55a84b6541085e56fafd4
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: 57299cbb758a69603fc68ad5d43af8f2216e5104
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148735"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415288"
 ---
 # <a name="interactable-object"></a>种交互的对象
 
@@ -85,12 +85,12 @@ HoloLens 2 支持明确的手动跟踪输入可用于与对象进行交互。 �
 <img src="images/640px-interactibleobject-voicecommand.jpg" alt="Tooltip for the voice command" title="语音命令的工具提示" width="350"><br/>*语音命令的工具提示*
 
 ## <a name="sizing"></a>大小调整
-为了确保可能很容易到种交互的所有对象接触的用户，我们建议确保种交互满足基于从用户放置的距离最小大小 （通常在度 visual 角度为单位）。 度 visual 角度基于用户和对象之间的距离，并保持不变，而目标的物理大小可能会从用户更改表示距离而更改。 若要确定对象的距离确保和程度上基于所需物理大小 visual 角度请尝试使用一个计算器，如： http://elvers.us/perception/visualAngle/
+若要确保用户可以轻松地涉及种交互的所有对象，我们建议你确保种交互满足最小大小 （通常以 visual 弧线度为单位的视觉角度） 基于从用户放置的距离。 Visual 角度基于用户的眼睛和对象之间的距离，并保持不变，而目标的物理大小可能会从用户更改表示距离而更改。 若要确定基于用户的距离的对象所需物理大小，请尝试使用诸如 visual 角度计算器[这个](http://elvers.us/perception/visualAngle/)。
 
-以下是种交互内容的最小大小的建议
+下面是种交互内容的最小大小的建议。
 
 ### <a name="target-size-for-direct-hand-interaction"></a>直接手动交互的目标大小
-| 距离 | 视角 | 大小 |
+| 距离 | 视角 | Size |
 |---------|---------|---------|
 | 45 cm  | 不小于 2 ° | 1.6 x 1.6 cm |
 
@@ -108,7 +108,7 @@ HoloLens 2 支持明确的手动跟踪输入可用于与对象进行交互。 �
 
 
 ### <a name="target-size-for-hand-ray-or-gaze-interaction"></a>目标为手 ray 的大小或注视交互
-| 距离 | 视角 | 大小 |
+| 距离 | 视角 | Size |
 |---------|---------|---------|
 | 2m  | 不小于 1 ° | 3.5 x 3.5 cm |
 

@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
 keywords: 提供注视、 头的视线移动、 头跟踪、 眼睛追踪、 directx、 输入、 全息
-ms.openlocfilehash: ac72c5305527ed2d68945aeb32051cf2246a736e
-ms.sourcegitcommit: 60060386305eabfac2758a2c861a43c36286b151
+ms.openlocfilehash: edf20a621178d76bfc97477f9f9b2eca200f1318
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453739"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414410"
 ---
 # <a name="head-and-eye-gaze-input-in-directx"></a>头节点和关注注视中 DirectX 的输入
 
@@ -149,7 +149,7 @@ if (pointerPose)
 
 ## <a name="see-also"></a>请参阅
 * [请提供注视，提交输入的模型](gaze-and-commit.md)
-* [眼睛追踪 HoloLens 2 上](eye-tracking.md)
+* [关注注视 HoloLens 2 上](eye-tracking.md)
 * [DirectX 中的坐标系统](coordinate-systems-in-directx.md)
 * [在 DirectX 语音输入](voice-input-in-directx.md)
 * [DirectX 中的手和运动控制器](hands-and-motion-controllers-in-directx.md)
