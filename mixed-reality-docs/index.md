@@ -8,12 +8,12 @@ ms.date: 02/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目
-ms.openlocfilehash: 810d9846fd217cd1acb3ae0060c11f5c9173191e
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: cf513cebbbf4f05721811cb82d584f9039e378b7
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813743"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415395"
 ---
 # <a name="mixed-reality-documentation"></a>混合现实文档
 
@@ -71,8 +71,8 @@ ms.locfileid: "66813743"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3 class="x-hidden-focus">分配</h3>
-                                                  <p>让应用做好供他人使用的准备，并考虑创建 3D 启动器。</p>
+                                                    <h3 class="x-hidden-focus">分发</h3>
+                                                  <p>让应用程序做好供他人使用的准备，并考虑创建 3D 启动器。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,7 +134,7 @@ ms.locfileid: "66813743"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3 class="x-hidden-focus">视觉服务</h3>
-                                                  <p>使用视觉服务（例如计算机视觉、人脸检测、情感识别或视频索引器）标识和分析图像或视频内容。</p>
+                                                  <p>使用视觉服务（例如计算机视觉、人脸检测、情感识别或视频索引器）识别和分析图像或视频内容。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -147,11 +147,11 @@ ms.locfileid: "66813743"
 
 [![HoloLens 2](images/hololens2.jpg)](https://www.microsoft.com/hololens/hardware)
 
-[HoloLens 2](https://www.microsoft.com/hololens/hardware) 提供最舒适的沉浸式混合现实体验，其行业领先的解决方案可以在数分钟内为你带来价值 - 这一切由 Microsoft 推出的云和 AI 服务所特有的可靠性、安全性和可伸缩性提供坚实支持。 [HoloLens 2 Development Edition](https://www.microsoft.com/en-us/hololens/developers) 提供的套餐将 HoloLens 2 与免费试用版 Unity 软件以及适用于云服务的 Azure 信用额度组合在一起，帮助你快速启动混合现实计划。
+[HoloLens 2](https://www.microsoft.com/hololens/hardware) 提供最舒适的沉浸式混合现实体验，其行业领先的解决方案可以在数分钟内让用户感受到它的价值。 这一切由 Microsoft 推出的云和 AI 服务所特有的可靠性、安全性和可伸缩性提供坚实支持。 [HoloLens 2 Development Edition](https://www.microsoft.com/en-us/hololens/developers) 提供的套餐将 HoloLens 2 与免费试用版 Unity 软件以及适用于云服务的 Azure 信用额度组合在一起，帮助你快速启动混合现实计划。
 
 <h2>新闻和说明</h2>
 
-<h3>2019 年 4 月</h3>
+<h3>2019 年 6 月</h3>
 
 正如我们所承诺的那样，我们很高兴与你分享更多有关混合现实的好消息！ 我们期待你的反馈，并诚挚地邀请你[加入对话](https://holodevelopersslack.azurewebsites.net/)，讨论你想要我们提供的主题、你想要联系的人员，以及你需要的教程或操作指南… 你也可以通过 [Twitter](https://twitter.com/MxdRealityDev) 联系我们，并[加入我们的开发人员计划](https://aka.ms/iwantmr)，获取新文档、工具、活动等方面的直接更新。 请继续关注，还有更多消息！
 
@@ -162,7 +162,7 @@ ms.locfileid: "66813743"
 <tr>
 <td><b>移植指南</b> <br>1. 从 HoloToolKit (HTK)/混合现实工具包 (MRTK) 到 MRTK 版本 2
 <br>2. 从 HoloLens（第 1 代）到 HoloLens 2（x86 到 ARM、交互和设计建议）
-</td></td><td>2019 年 3 月 - 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-porting-guide>Getting your existing app ready for HoloLens 2</a>（让现有应用做好使用 HoloLens 2 的准备）<li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>从 HoloToolKit 移植到 MRTK API</a></td>
+</td></td><td>2019 年 3 月 - 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-porting-guide>让现有应用程序准备好使用 HoloLens 2</a><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>从 HoloToolKit 移植到 MRTK API</a></td>
 </tr>
 <tr>
 <td>每月的开源开发人员模块（教程/示例应用）</td><td>2019 年 3 月 - 6 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base-ch1>MR 学习基础模块</a></td>
@@ -183,4 +183,4 @@ ms.locfileid: "66813743"
 
 
 >[!IMPORTANT]
->本站点提供的所有混合现实开发材料仅供参考。 你作为应用开发人员，必须全权负责你的应用、应用使用情况以及应用对最终用户的影响，包括确保应用不会为最终用户带来不适、伤害或任何其他方式的损害，并提供适当的警告和免责声明。 在开发和发布应用的过程中，你需要时刻采取适当的措施，确保应用的安全并履行 [Microsoft 应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中规定的所有义务。 
+>本站点提供的所有混合现实开发材料仅供参考。 你作为应用程序开发人员，必须全权负责你的应用程序、应用程序使用情况以及应用程序对最终用户的影响，包括确保应用不会为最终用户带来不适、伤害或任何其他方式的损害，并提供适当的警告和免责声明。 在开发和发布应用程序的过程中，你需要时刻采取适当的措施，确保应用程序安全并履行 [Microsoft 应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中规定的所有义务。 
