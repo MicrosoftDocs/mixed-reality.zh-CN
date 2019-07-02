@@ -45,7 +45,8 @@
       "ms.technology": "mr-dev",
       "ms.date": "3/21/2018",
       "keywords": "mixed reality, windows mixed reality, hololens, mr, vr, ar, xr, virtual reality, augmented reality, holographic, develop, design, documentation",
-      "searchScope": ["MixedReality"]
+      "searchScope": ["MixedReality"],
+      "disable_contribution_on_translation_quality": ["MT"]
     },
     "fileMetadata": {},
     "template": [],
