@@ -71,7 +71,8 @@
 
 
 ## 混合现实发行说明
-### [当前的发行说明](release-notes-october-2018.md)
+### [当前的发行说明](release-notes-may-2019.md)
+### [发行说明 - 2018 年 10 月](release-notes-october-2018.md)
 ### [发行说明 - 2018 年 4 月](release-notes-april-2018.md)
 ### [发行说明 - 2017 年 10 月](release-notes-october-2017.md)
 ### [发行说明 - 2016 年 8 月](release-notes-august-2016.md)
@@ -194,16 +195,29 @@
 ### [将 Edge 中的 WebVR 与 Windows Mixed Reality 配合使用](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## [教程和示例应用](tutorials.md)
 ### Unity
-#### MR 学习模块
-##### HoloLens 2
-###### 基础模块
-####### [基础模块 - 概述和目标](mrlearning-base.md)
-####### [项目初始化和第一个应用程序](mrlearning-base-ch1.md)
-####### [用户界面、手跟踪和混合现实工具包配置](mrlearning-base-ch2.md)
-####### [动态内容放置和求解器](mrlearning-base-ch3.md)
-####### [3D 对象交互](mrlearning-base-ch4.md)
-####### [高级输入](mrlearning-base-ch5.md)
-####### [演示应用](mrlearning-base-ch6.md)
+#### HoloLens 2 教程
+##### 入门教程
+###### [1.概述和目标](mrlearning-base.md)
+###### [2.初始化你的项目和第一个应用程序](mrlearning-base-ch1.md)
+###### [3.创建用户界面并配置混合现实工具包](mrlearning-base-ch2.md)
+###### [4.放置动态内容并使用求解器](mrlearning-base-ch3.md)
+###### [5.与 3D 对象交互](mrlearning-base-ch4.md)
+###### [6.探索高级输入选项](mrlearning-base-ch5.md)
+###### [7.创建农历模块示例应用程序](mrlearning-base-ch6.md)
+##### Azure 空间定位点教程
+###### [1.开始使用 Azure 空间定位点](mrlearning-asa-ch1.md)
+###### [2.保存、检索和共享 Azure 空间定位点](mrlearning-asa-ch2.md)
+##### Azure 语音服务教程
+###### [1.集成并使用语音识别和听录](mrlearning-speechSDK-ch1.md)
+###### [2.为本地语音到文本翻译添加脱机模式](mrlearning-speechSDK-ch2.md)
+###### [3.添加 Azure 认知服务语音翻译组件](mrlearning-speechSDK-ch3.md)
+###### [4.设置意向和自然语言理解](mrlearning-speechSDK-ch4.md)
+##### 多用户功能教程
+###### [1.设置 Photon Unity Networking](mrlearning-sharing(photon)-ch1.md)
+###### [2.让 Unity 为开发做好准备](mrlearning-sharing(photon)-ch2.md)
+###### [3.连接多个用户](mrlearning-sharing(photon)-ch3.md)
+###### [4.与多个用户共享对象移动](mrlearning-sharing(photon)-ch4.md)
+###### [5.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch5.md)
 #### HoloLens（第 1 代）开源示例应用
 ##### [元素周期表](periodic-table-of-the-elements.md)
 ##### [月亮模块](lunar-module.md)
