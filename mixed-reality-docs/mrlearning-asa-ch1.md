@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: c120d22f955d366042bbcb9ac73eaa4f13dc20e9
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: fcca828fa228894e0e60986c6c7fd0053b210357
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415270"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523233"
 ---
-# <a name="getting-started-with-azure-spatial-anchors-on-hololens-2"></a>开始使用 Azure HoloLens 2 上的空间定位点
+# <a name="1-getting-started-with-azure-spatial-anchors"></a>1.开始使用 Azure 空间的定位点
 
 欢迎使用 HoloLens 2 教程的第二个模块。 开始之前，请确保所有的[先决条件](https://docs.microsoft.com/en-us/azure/spatial-anchors/quickstarts/get-started-unity-hololens)都已完成。 如果您尚未完成第一种[的基本模块](mrlearning-base.md)尚，建议您首先完成该模块。 如果要从新的 Unity 项目开始，按照中的新项目创建步骤[的基本模块](mrlearning-base.md)。 
 
@@ -21,7 +21,7 @@ ms.locfileid: "67415270"
 
 * 了解使用 Azure HoloLens 2 的空间定位点进行开发基础的知识
 
-* 创建、 上传和下载空间的定位点
+* 创建、 上载和下载空间的定位点
 
   
 
@@ -40,7 +40,7 @@ ms.locfileid: "67415270"
 
 > 注意：有关如何导入 Azure 空间的定位点、 MR 基本模块资产包的具体说明的步骤 6 和步骤 3 到 4 有关具体说明混合现实工具包 (MRKT) 的特定说明，请参阅步骤 5。
 
-1. 在项目中创建新的场景。 右键单击场景文件夹中，单击"创建，"然后场景。 命名新的场景 ASALearningmodule。
+1. 在项目中创建新的场景。 右键单击场景文件夹中，单击创建，然后场景。 命名新的场景 ASALearningmodule。
 
 ![module2chapter1step1im](images/module2chapter1step1im.PNG)
 
@@ -49,7 +49,7 @@ ms.locfileid: "67415270"
 
 ![module2chapter1step3im](images/module2chapter1step3im.PNG)
 
-> 注意：显示弹出窗口，指出，"您必须选择一个文件的混合现实工具包。" 单击确定转到步骤 4。
+> 注意：你将看到一个弹出窗口，指出： 必须为混合现实工具包选择一个文件。 单击确定转到步骤 4。
 
 4. 当为 MRTK 选择一个文件，选择，DefaultMixedRealityToolkitConfigurationProfile。
 
@@ -153,7 +153,7 @@ ms.locfileid: "67415270"
 
 7. 在生成到设备之前，请确保设备处于开发者模式。 如果这是你第一次部署到 HoloLens 2，Visual Studio 可能会要求你将 HoloLens 2 与 pin 配对。 请按照[这些说明](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)如果你需要启用开发人员模式或与 Visual Studio 配对。
 
-8. 通过选择发布配置和"RM"体系结构为构建到 HoloLens 2 配置 Visual Studio。
+8. 通过选择发布配置，以及 RM 体系结构用于构建到 HoloLens 2 配置 Visual Studio。
     ![Lesson1Chapter5Step8](images/Lesson1Chapter5Step8.JPG)
    
 9. 最后一步是向你的设备通过选择生成调试 > 启动但不调试。 选择但不调试的启动将导致应用程序以使其不显示在 Visual Studio 中的成功生成 ithout 调试信息时在设备上立即启动。 这也意味着可以在 HoloLens 2 上运行应用程序时断开 USB 电缆，而无需停止应用程序。 您还可能选择生成 > 部署解决方案，而无需自动启动该应用程序部署到你的设备。
@@ -176,9 +176,9 @@ ms.locfileid: "67415270"
     
     7. 启动 Azure 空间的定位点会话。
     
-    8. 查找 Azure 空间 aachors。 
+    8. 查找 Azure 空间的定位点。 
     
-    e 您应返回到原始位置，将其放在创建定位点时）。
+    e 您应返回到原始位置，将其放在创建定位点时。
     9. 删除 Azure 空间的定位点。
     
     10. 停止 Azure 的会话。
@@ -198,7 +198,7 @@ ms.locfileid: "67415270"
    > 注意：有多种以重新定位体验，包括要切换一个边框环绕体验，请使用 （如多维数据集在此步骤中使用），重新放置对象的位置和旋转 gizmos，请使用一个按钮使用的用户体验流和的详细信息。
 
 ## <a name="congratulations"></a>祝贺
-在本课程中，您学习了 Azure 空间的定位点的基础知识。 此 esson 提供了几个按钮，您可以了解启动和停止 Azure 的会话，并创建、 上载和下载单个设备上的 azure 定位点所需的各种步骤。 在下一课中，我们将了解如何将 Azure 的定位标记 Id 保存到检索，在 HoloLens 2，即使重新启动应用程序。 在系列中，您还将了解如何实现空间对齐方式，并了解有关共享会话 （即将发布的共享模块一部分） 的多用户信息的多个设备之间传输锚点 Id
+本教程中，介绍了 Azure 空间的定位点的基础知识。 此 esson 提供了几个按钮，您可以了解启动和停止 Azure 的会话，并创建、 上载和下载单个设备上的 azure 定位点所需的各种步骤。 在下一课中，我们将了解如何将 Azure 的定位标记 Id 保存到检索，在 HoloLens 2，即使重新启动应用程序。 在系列中，您还将了解如何实现空间对齐方式，并了解有关多个用户共享会话信息的多个设备之间传输锚点 Id 作为共享教程的一部分的即将发布。
 
 [下一课：ASA Lesson 2](mrlearning-asa-ch2.md)
 

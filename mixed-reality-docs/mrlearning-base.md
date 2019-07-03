@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: d4220527a7de8e596f2825fd9d199d536510b972
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: 389a23129d4dfc5819cdc45d071b678e3792089d
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148627"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523157"
 ---
-# <a name="mr-learning-base-module-overview--objectives"></a>MR 学习基本模块概述和目标
+# <a name="1-overview-and-objectives"></a>1.概述和目标
 
 ## <a name="device-support"></a>设备支持
 
@@ -40,7 +40,7 @@ ms.locfileid: "67148627"
 
 ## <a name="before-you-start"></a>开始之前
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>先决条件
 
 * 使用正确配置 Windows 10 电脑[安装工具](install-the-tools.md)
 * Windows 10 SDK 10.0.18362.0 或更高版本

@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: b729de818dfa21df8fbce782a24a611a365ac795
-ms.sourcegitcommit: 78e21e887bf4357c96c9ab2164559d610e8c041e
+ms.openlocfilehash: 2a4ea599fd4887f30589c2d839be305d3dc8d1bd
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465225"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523191"
 ---
-# <a name="synchronizing-shared-object-movements"></a>同步共享的对象移动
+# <a name="4-sharing-object-movements-with-multiple-users"></a>4.与多个用户共享对象移动
 
-在本课中，我们将了解如何共享对象的移动，以便共享会话的所有参与者都可以一起开展协作并查看其他用户交互。 本课基于阴历作为的一部分而构建的启动器[基本模块教程](mrlearning-base.md)。
+在本教程中，我们将了解如何共享对象的移动，以便共享会话的所有参与者都可以共同协作，并查看其他用户交互。 本课基于阴历作为的一部分而构建的启动器[基本模块教程](mrlearning-base.md)。
 
 目标：
 
@@ -26,7 +26,7 @@ ms.locfileid: "67465225"
 ### <a name="instructions"></a>说明
 
 
-1. 从上一课 (控制 + S) 保存场景。 您可以命名它 HLSharedProjectMainPart4.unity 以便更轻松地找到所需的时。
+1. 从上一课 (控制 + S) 保存场景。 您可以将其命名，HLSharedProjectMainPart4.unity，以便更轻松地找到所需的时。
 
 2. 从项目窗口中，在资产中-> 脚本文件夹，双击 GenericNetSync 在 Visual Studio 或其曾经代码正在使用的编辑器中打开它。  ![](images/module3chapter4updatestep2.png)
 
