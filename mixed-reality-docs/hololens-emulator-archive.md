@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 4/25/2019
 ms.topic: article
 keywords: HoloLens，仿真程序中，生成、 版本
-ms.openlocfilehash: 34aee87310cbdfed4e209fbba955db9cf3ff722f
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: b209e444c223c3183d2680976f68c33a3b6ed79b
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414404"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694434"
 ---
 HoloLens 仿真程序 （第 1 代） 和 HoloLens 2 仿真程序版本安装的并行。 我们通常建议使用的最新可用版本，但可能情况下，希望或需要测试针对旧的仿真程序的应用。 此页包含指向已发布版本。
 
@@ -21,7 +21,8 @@ HoloLens 仿真程序 （第 1 代） 和 HoloLens 2 仿真程序版本安装的
 
 |  Build |  发布日期 |  说明 | 
 |----------|----------|----------|
-|  [HoloLens 2 模拟器生成 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日日 | 最新的 HoloLens 2 版本。  不再需要以管理员身份运行。  开始菜单快捷方式添加。 |
+|  [HoloLens 2 模拟器生成 10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019 年 7 月 8日日 | 最新的 HoloLens 2 版本。  解决了与 DiskStream.dll 签名问题 |
+|  [HoloLens 2 模拟器生成 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日日 | 不再需要以管理员身份运行。  开始菜单快捷方式添加。 |
 |  [HoloLens 2 模拟器生成 10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16日日 |  |
 
 

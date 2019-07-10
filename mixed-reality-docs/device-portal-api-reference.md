@@ -6,12 +6,12 @@ ms.author: JLyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，Windows Device Portal API
-ms.openlocfilehash: 507ab98734adea80d0aad41d99124e3d91846f28
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4b5b48c13b1b7ec8bfdf447f42097a8448b6a0e6
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592656"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694438"
 ---
 # <a name="device-portal-api-reference"></a>设备门户 API 参考
 
@@ -278,17 +278,6 @@ Parameters
 
 ## <a name="mixed-reality-capture"></a>混合现实捕获
 
-**/api/holographic/mrc/file (DELETE)**
-
-删除设备中记录了混合的现实。
-
-Parameters
-* 文件名：编码的要删除的文件的名称，hex64
-
-**/api/holographic/mrc/settings (GET)**
-
-获取默认混合现实捕获设置
-
 **/api/holographic/mrc/file (GET)**
 
 从设备下载混合的现实文件。 使用 op = 流式处理的流查询参数。
@@ -297,6 +286,38 @@ Parameters
 * 文件名：编码的要获取的视频文件的名称，hex64
 * 操作： 流
 
+**/api/holographic/mrc/file (DELETE)**
+
+删除设备中记录了混合的现实。
+
+Parameters
+* 文件名：编码的要删除的文件的名称，hex64
+
+**/api/holographic/mrc/files (GET)**
+
+返回存储在设备上的混合的现实文件列表
+
+**/api/holographic/mrc/photo (POST)**
+
+采用混合的现实照片，并创建在设备上的文件
+
+Parameters
+* holo： 捕获全息： true 或 false （默认值为 false）
+* pv： 捕获 PV 照相机： true 或 false （默认值为 false）
+* RenderFromCamera:从照片/视频摄像机角度来看 (仅 HoloLens 2) 呈现器： true 或 false （默认值为 true）
+
+**/api/holographic/mrc/settings (GET)**
+
+获取默认混合现实捕获设置
+
+**/api/holographic/mrc/settings (POST)**
+
+设置默认混合现实捕获设置。  其中某些设置将应用于系统的 MRC 照片和视频捕获。
+
+**/api/holographic/mrc/status (GET)**
+
+获取混合现实的记录 （运行、 已停止） 状态
+
 **/api/holographic/mrc/thumbnail (GET)**
 
 获取指定的文件的缩略图。
@@ -304,81 +325,56 @@ Parameters
 Parameters
 * 文件名：编码为其请求缩略图的文件的名称，hex64
 
-**/api/holographic/mrc/status (GET)**
-
-获取混合现实的记录 （运行、 已停止） 状态
-
-**/api/holographic/mrc/files (GET)**
-
-返回存储在设备上的混合的现实文件列表
-
-**/api/holographic/mrc/settings (POST)**
-
-设置默认混合现实捕获设置
-
 **/api/holographic/mrc/video/control/start (POST)**
 
 启动混合的现实录制
 
 Parameters
-* holo： 捕获全息： true 或 false
-* pv： 捕获 PV 照相机： true 或 false
-* mic： 捕获麦克风： true 或 false
-* 环回： 捕获应用音频： true 或 false
+* holo： 捕获全息： true 或 false （默认值为 false）
+* pv： 捕获 PV 照相机： true 或 false （默认值为 false）
+* mic： 捕获麦克风： true 或 false （默认值为 false）
+* 环回： 捕获应用音频： true 或 false （默认值为 false）
+* RenderFromCamera:从照片/视频摄像机角度来看 (仅 HoloLens 2) 呈现器： true 或 false （默认值为 true）
+* vstab:(仅 HoloLens 2) 启用视频防抖动： true 或 false （默认值为 true）
+* vstabbuffer:(仅 HoloLens 2) 视频防抖动缓冲区滞后时间：0 到 30 帧 （默认为 15 帧）
 
 **/api/holographic/mrc/video/control/stop (POST)**
 
 停止当前混合现实录制
 
-**/api/holographic/mrc/photo (POST)**
+## <a name="mixed-reality-streaming"></a>流式处理的混合的现实
 
-采用混合的现实照片，并创建在设备上的文件
+HoloLens 支持混合现实通过成块下载的分片 mp4 的实时预览。
 
-Parameters
+混合的现实流共享同一组参数来控制捕获内容：
 * holo： 捕获全息： true 或 false
 * pv： 捕获 PV 照相机： true 或 false
+* mic： 捕获麦克风： true 或 false
+* 环回： 捕获应用音频： true 或 false
 
-流式处理的混合的现实
+如果未指定任何这些： 将捕获全息、 照片/视频摄像机和应用音频<br>
+如果指定了任何： 未指定的参数将默认为 false
+
+可选参数 (仅 HoloLens 2)
+* RenderFromCamera: 从照片/视频摄像机的角度来看呈现: true 或 false （默认值为 true）
+* vstab： 启用视频防抖动： true 或 false （默认值为 false）
+* vstabbuffer： 视频防抖动缓冲区延迟：0 到 30 帧 （默认为 15 帧）
 
 **/api/holographic/stream/live.mp4 (GET)**
 
-启动碎片 mp4 的分块下载
-
-Parameters
-* holo： 捕获全息： true 或 false
-* pv： 捕获 PV 照相机： true 或 false
-* mic： 捕获麦克风： true 或 false
-* 环回： 捕获应用音频： true 或 false
+1280x720p 30 fps 5Mbit 流。
 
 **/api/holographic/stream/live_high.mp4 (GET)**
 
-启动碎片 mp4 的分块下载
-
-Parameters
-* holo： 捕获全息： true 或 false
-* pv： 捕获 PV 照相机： true 或 false
-* mic： 捕获麦克风： true 或 false
-* 环回： 捕获应用音频： true 或 false
-
-**/api/holographic/stream/live_low.mp4 (GET)**
-
-启动碎片 mp4 的分块下载
-
-Parameters
-* holo： 捕获全息： true 或 false
-* pv： 捕获 PV 照相机： true 或 false
-* mic： 捕获麦克风： true 或 false
-* 环回： 捕获应用音频： true 或 false
+1280x720p 30 fps 5Mbit 流。
 
 **/api/holographic/stream/live_med.mp4 (GET)**
 
-启动碎片 mp4 的分块下载
+854x480p 30 fps 2.5Mbit 流。
 
-Parameters
-* holo： 捕获全息： true 或 false
-* pv： 捕获 PV 照相机： true 或 false
-* mic： 捕获麦克风： true 或 false
-* 环回： 捕获应用音频： true 或 false
+**/api/holographic/stream/live_low.mp4 (GET)**
+
+428x240p 15 fps 0.6Mbit 流。
 
 ## <a name="networking"></a>网络
 
@@ -532,5 +528,5 @@ Parameters
 * 启动时，返回 WPR 会话状态。
 
 ## <a name="see-also"></a>请参阅
-* [使用 Windows Device Portal](using-the-windows-device-portal.md)
+* [使用 Windows 设备门户](using-the-windows-device-portal.md)
 * [设备门户 core API 参考 (UWP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

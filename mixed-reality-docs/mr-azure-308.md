@@ -6,15 +6,15 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure 的混合现实、 学院、 unity、 教程、 api、 通知、 函数、 表、 通知中心，沉浸式、 hololens、 vr
-ms.openlocfilehash: ed56c936a0498b6e0ac804da15a2c6ec98239d0c
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 3b6e930acd81c7d6e3addc107ec0da605d38cad1
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593004"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694604"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将**_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
 
 <br>
 
@@ -46,7 +46,7 @@ ms.locfileid: "59593004"
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td> MR 和 Azure 308:跨设备通知</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -55,7 +55,7 @@ ms.locfileid: "59593004"
 > [!NOTE]
 > 尽管本课程主要专注于 Windows Mixed Reality 沉浸式 (VR) 耳机，还可以应用到 Microsoft HoloLens 本课程中学习的内容。 按照课程时，您将看到说明您可能需要使用以支持 HoloLens 的任何更改。 使用 HoloLens，您可能注意到某些 echo 语音捕获过程。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 > [!NOTE]
 > 本教程专为开发人员已基本熟悉 Unity 和C#。 此外需要注意的先决条件和本文档内的书面的说明表示什么已测试并验证在撰写本文时 (2018 年 5 月)。 你可以随意使用最新的软件，如中所列[安装的工具](install-the-tools.md)文章中，但它不应假定在此课程中的信息将完全匹配您会发现在较新的软件比下面列出的内容.
@@ -149,7 +149,7 @@ ms.locfileid: "59593004"
 
     6.  您还需要确认你已了解的条款和条件应用于此服务。
 
-    7. 选择“创建”。
+    7. 选择“创建”  。
 
         ![服务详细信息中填充](images/AzureLabs-Lab8-08.png)
 
@@ -196,11 +196,11 @@ ms.locfileid: "59593004"
 
     2. 有关**部署模型**，单击**资源管理器**。
 
-    3.  有关**帐户类型**，使用下拉列表菜单，选择**存储 (常规用途 v1)**。
+    3.  有关**帐户类型**，使用下拉列表菜单，选择**存储 (常规用途 v1)** 。
 
     4. 选择相应**位置**。
     
-    5.  有关**复制**下拉列表菜单中，选择**读取-访问-异地冗余存储 (RA-GRS)**。
+    5.  有关**复制**下拉列表菜单中，选择**读取-访问-异地冗余存储 (RA-GRS)** 。
 
     6.  有关**性能**，单击**标准**。
 
@@ -214,7 +214,7 @@ ms.locfileid: "59593004"
 
     10. 将保留**虚拟网络**作为**禁用**如果这是为你的选项。
 
-    11. 单击“创建”。
+    11. 单击“创建”  。
 
         ![填写存储详细信息](images/AzureLabs-Lab8-15.png)
 
@@ -232,7 +232,7 @@ ms.locfileid: "59593004"
     
     ![](images/AzureLabs-Lab8-18.PNG)
 
-10. 在右侧面板将更改为显示**表服务**其中所需添加一个新表的信息。 执行此操作通过单击**+** **表**左上角的按钮。
+10. 在右侧面板将更改为显示**表服务**其中所需添加一个新表的信息。 执行此操作通过单击 **+** **表**左上角的按钮。
 
     ![打开表](images/AzureLabs-Lab8-19.png)
 
@@ -251,7 +251,7 @@ ms.locfileid: "59593004"
 
 1.  打开**Visual Studio**。
 
-2.  从菜单中，单击**视图 > 云资源管理器**。
+2.  从菜单中，单击**视图** > **云资源管理器**。
 
     ![打开 cloud explorer](images/AzureLabs-Lab8-22.png)
 
@@ -272,7 +272,7 @@ ms.locfileid: "59593004"
 
     ![打开的场景对象表](images/AzureLabs-Lab8-24.png)
 
-6.  将在 Visual Studio 窗口的中心中打开您的表。 单击与表图标**+** （加上） 在其上。
+6.  将在 Visual Studio 窗口的中心中打开您的表。 单击与表图标 **+** （加上） 在其上。
 
     ![添加新表](images/AzureLabs-Lab8-25.png)
 
@@ -293,7 +293,7 @@ ms.locfileid: "59593004"
     > [!WARNING] 
     > 确保您已更改**类型**的**X**， **Y**，以及**Z**，条目**Double**。 
 
-11. 您会注意到您的表现在具有一行数据。 单击**+** （+） 图标重新添加另一个实体。
+11. 您会注意到您的表现在具有一行数据。 单击 **+** （+） 图标重新添加另一个实体。
 
     ![第一行](images/AzureLabs-Lab8-27-5.png)
 
@@ -372,7 +372,7 @@ ms.locfileid: "59593004"
 
     9. 您不需要*Application Insights*在此应用中，所以请随意将其留**关闭**。
 
-    10. 单击“创建”。
+    10. 单击“创建”  。
 
         ![创建新的实例](images/AzureLabs-Lab8-34.png)
 
@@ -388,7 +388,7 @@ ms.locfileid: "59593004"
 
     ![转到资源](images/AzureLabs-Lab8-36.png)
 
-11. 单击**+** （加号） 旁边的图标*函数*到*新建*。
+11. 单击 **+** （加号） 旁边的图标*函数*到*新建*。
 
     ![添加新函数](images/AzureLabs-Lab8-37.png)
 
@@ -492,7 +492,7 @@ ms.locfileid: "59593004"
 
 18. 使用的代码中的位置，单击**保存**。
 
-19. 接下来，单击**\<** （箭头） 图标，在页面的右侧。
+19. 接下来，单击 **\<** （箭头） 图标，在页面的右侧。
 
     ![打开上传面板](images/AzureLabs-Lab8-43.png)
 
@@ -651,15 +651,15 @@ ms.locfileid: "59593004"
 
     ![创建项目](images/AzureLabs-Lab8-53.png)
 
-3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑 > 首选项**，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
+3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑** > **首选项**，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
 
     ![组外部的 VS 工具](images/AzureLabs-Lab8-54.png)
 
-4.  接下来，请转到**文件 > 生成设置**，然后选择**通用 Windows 平台**，然后单击**切换平台**按钮以应用你的选择。
+4.  接下来，请转到**文件** > **生成设置**，然后选择**通用 Windows 平台**，然后单击**切换平台**按钮以应用你的选择。
 
     ![交换机平台](images/AzureLabs-Lab8-55.png)
 
-5.  在仍处于**文件 > 生成设置**，请确保：
+5.  在仍处于**文件** > **生成设置**，请确保：
 
     1.  **设备为目标**设置为**任一设备**
 
@@ -713,7 +713,7 @@ ms.locfileid: "59593004"
 
 9.  关闭**生成设置**窗口。
 
-10. 保存您的场景和项目 **文件 > 保存场景*/ * 文件 > 保存项目 * *。
+10. 保存您的场景和项目**文件** > **保存场景文件** > **保存项目**。
 
     > [!IMPORTANT]
     > 如果你想要跳过*Unity 设置*组件为此项目 （桌面应用），并继续直接插入代码，可以任意[下载此.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20308%20-%20Cross-device%20notifications/Azure-MR-308-Desktop.unitypackage)，将其导入项目中，作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)，然后继续从[第 9 章](#chapter-9---create-the-tabletoscene-class-in-the-desktop-unity-project)。  你将需要添加脚本组件。
@@ -780,7 +780,7 @@ ms.locfileid: "59593004"
 
 若要创建此类：
 
-1.  在中右击**资产**文件夹中项目面板中，位于**创建 > 文件夹**。 将文件夹命名为**脚本**。
+1.  在中右击**资产**文件夹中项目面板中，位于**创建** > **文件夹**。 将文件夹命名为**脚本**。
 
     ![创建脚本的文件夹](images/AzureLabs-Lab8-66.png)
 
@@ -788,7 +788,7 @@ ms.locfileid: "59593004"
 
 2.  双击刚创建的文件夹，以将其打开。
 
-3.  内右击**脚本**文件夹中，单击**创建** **C\#脚本**。 脚本命名为**TableToScene**。
+3.  内右击**脚本**文件夹中，单击**创建** >   **C#脚本**。 脚本命名为**TableToScene**。
 
     ![新的 c# 脚本](images/AzureLabs-Lab8-68.png)
     ![TableToScene 重命名](images/AzureLabs-Lab8-69.png)
@@ -1038,7 +1038,7 @@ ms.locfileid: "59593004"
         }
     ```
 
-6.  内**update （)** 方法中，添加以下代码，它会检测到鼠标输入并拖动，又将场景中移动 Gameobject。 如果用户具有拖动并删除一个对象，它将向方法传递的名称和对象的坐标**UpdateCloudScene()**，这将调用 Azure 函数应用服务，这将更新 Azure 表和触发器通知。
+6.  内**update （)** 方法中，添加以下代码，它会检测到鼠标输入并拖动，又将场景中移动 Gameobject。 如果用户具有拖动并删除一个对象，它将向方法传递的名称和对象的坐标**UpdateCloudScene()** ，这将调用 Azure 函数应用服务，这将更新 Azure 表和触发器通知。
 
     ```csharp
         /// <summary>
@@ -1136,7 +1136,7 @@ ms.locfileid: "59593004"
 
 此项目的 Unity 部分所需的所有内容现在已完成。
 
-1.  导航到**生成设置**(**文件 > 生成设置**)。
+1.  导航到**生成设置**(**文件** > **生成设置**)。
 
 2.  从**生成设置**窗口中，单击**生成**。
 
@@ -1167,15 +1167,15 @@ ms.locfileid: "59593004"
 
     ![name UnityMRNotifHub](images/AzureLabs-Lab8-80.png)
 
-3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑 > 首选项**，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
+3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑** > **首选项**，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
 
     ![vs 设置外部编辑器](images/AzureLabs-Lab8-81.png)
 
-4.  接下来，请转到**文件 > 生成设置**，并切换到平台**通用 Windows 平台**，单击**切换平台**按钮。
+4.  接下来，请转到**文件** > **生成设置**，并切换到平台**通用 Windows 平台**，通过单击**切换平台**按钮。
 
     ![切换到 UWP 的平台](images/AzureLabs-Lab8-82.png)
 
-5.  转到**文件 > 生成设置**并确保选中：
+5.  转到**文件** > **生成设置**并确保选中：
 
     1.  **设备为目标**设置为**任一设备**
 
@@ -1229,11 +1229,11 @@ ms.locfileid: "59593004"
 
             ![刻度线 internet 客户端](images/AzureLabs-Lab8-89.png)
 
-8.  回到**生成设置** *Unity C\#项目*不再灰显： 选中此旁边的复选框。
+8.  回到**生成设置**， **UnityC#项目**不再灰显： 选中此旁边的复选框。
 
 9.  完成这些更改，关闭生成设置窗口。
 
-10. 保存您的场景和项目 **文件**保存场景*/ *文件** 保存项目 * *。
+10. 保存您的场景和项目**文件** > **保存场景文件** > **保存项目**。
 
     > [!IMPORTANT]
     > 如果你想要跳过*Unity 设置*组件为此项目中 （混合现实应用），并继续直接插入代码，可以任意[下载此.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20308%20-%20Cross-device%20notifications/Azure-MR-308-MR.unitypackage)，将其导入项目中，作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)，然后继续从[第 14 章](#chapter-14---creating-the-tabletoscene-class-in-the-mixed-reality-unity-project)。 你将需要添加脚本组件。
@@ -1245,9 +1245,9 @@ ms.locfileid: "59593004"
 
 若要导入您自己的项目的 SDK，请确保已下载最新[.unitypackage](https://aka.ms/azstorage-unitysdk)。 然后，执行以下操作：
 
-1.  添加从以上下载到使用 Unity.unitypackage**资产 > 导入包 > 自定义包**菜单选项。
+1.  添加从以上下载到使用 Unity.unitypackage**资产** > **导入包** > **自定义包**菜单选项.
 
-2.  在中**导入 Unity 程序包**框，弹出，你可以选择下的所有内容**插件 > 存储**。
+2.  在中**导入 Unity 程序包**框，弹出，你可以选择下的所有内容**插件** > **存储**。
 
     ![导入包](images/AzureLabs-Lab8-90.png)
 
@@ -1410,7 +1410,7 @@ ms.locfileid: "59593004"
         }
     ```
 
-8.  下面的方法， **InitNotificationAsync()**，将与通知中心服务在初始化时注册该应用程序。 代码注释掉，如 Unity 将不能生成项目。 导入 Visual Studio 中的 Azure 消息传送 Nuget 包时，将删除注释。
+8.  下面的方法， **InitNotificationAsync()** ，将与通知中心服务在初始化时注册该应用程序。 代码注释掉，如 Unity 将不能生成项目。 导入 Visual Studio 中的 Azure 消息传送 Nuget 包时，将删除注释。
 
     ```csharp
         /// <summary>
@@ -1433,7 +1433,7 @@ ms.locfileid: "59593004"
         }
     ```
 
-9.  下面的处理程序，**通道\_PushNotificationReceived()**，每次收到通知时，将触发。 它将反序列化的通知，它已被移动桌面应用程序，Azure 表实体，然后将相应的 GameObject MR 场景中移动到相同的位置。 
+9.  下面的处理程序，**通道\_PushNotificationReceived()** ，每次收到通知时，将触发。 它将反序列化的通知，它已被移动桌面应用程序，Azure 表实体，然后将相应的 GameObject MR 场景中移动到相同的位置。 
     
     > [!IMPORTANT]
     > 代码注释掉，因为该代码引用 Azure 消息传送库，将生成使用 Nuget 包管理器中，Visual Studio 中的 Unity 项目后添加。 在这种情况下，Unity 项目将不能生成，除非它已被注释掉。请注意，是否应生成你的项目，然后希望返回到 Unity，你将需要**重新加上注释**该代码。
@@ -1483,7 +1483,7 @@ ms.locfileid: "59593004"
 
 此章节都是相同，以生成前一项目的过程。 此项目的 Unity 部分所需的所有内容现已完成，因此它是从 Unity 生成的时间。
 
-1.  导航到**生成设置**(**文件 > 生成设置...** ).
+1.  导航到**生成设置**(**文件** > **生成设置**)。
 
 2.  从**生成设置**菜单上，确保**UnityC#项目*** 勾选了 （这将允许您编辑后生成此项目中的脚本）。
 
@@ -1508,7 +1508,7 @@ ms.locfileid: "59593004"
 ## <a name="chapter-17---add-nuget-packages-to-the-unitymrnotifhub-solution"></a>第 17 章 — 将 NuGet 包添加到 UnityMRNotifHub 解决方案
 
 > [!WARNING] 
-> 请记住，添加以下 NuGet 包后 (并取消注释在接下来的代码[章](#chapter-18---edit-unitymrnotifhub-application,-notificationreciever-class))，代码，在 Unity 项目中，重新打开时将显示错误。 如果你想要返回并继续编辑在 Unity 编辑器中，你将需要注释 errosome 代码，然后，取消注释再次更高版本，一旦您重新登录 Visual Studio。 
+> 请记住，添加以下 NuGet 包后 (并取消注释在接下来的代码[章](#chapter-18---edit-unitymrnotifhub-application-notificationreceiver-class))，代码，在 Unity 项目中，重新打开时将显示错误。 如果你想要返回并继续编辑在 Unity 编辑器中，你将需要注释 errosome 代码，然后，取消注释再次更高版本，一旦您重新登录 Visual Studio。 
 
 混合的现实生成完成后，导航到混合的现实项目，生成示例，请然后双击该文件夹，以使用 Visual Studio 2017 中打开你的解决方案中的解决方案 (.sln) 文件。
 现在需要添加**WindowsAzure.Messaging.managed** NuGet 程序包; 这是一个库，用于从通知中心接收通知。
@@ -1611,17 +1611,17 @@ ms.locfileid: "59593004"
 
 1.  打开的解决方案。
 
-2.  右键单击 UWP 应用项目在解决方案资源管理器窗格中，转到**应用商店**，和**将应用与应用商店关联...**.
+2.  右键单击 UWP 应用项目在解决方案资源管理器窗格中，转到**应用商店**，和**将应用与应用商店关联...** .
 
     ![打开应用商店关联](images/AzureLabs-Lab8-105.png)
 
-3.  将出现一个新窗口调用**将应用与 Windows 应用商店关联**。 单击“下一步” 。
+3.  将出现一个新窗口调用**将应用与 Windows 应用商店关联**。 单击“下一步”  。
 
     ![转到下一个屏幕](images/AzureLabs-Lab8-106.png)
 
 4.  它会加载与已登录的帐户相关联的所有应用程序的运行。 如果您未登录到你的帐户，则可以**日志中**此页上。
 
-5.  查找**应用商店应用程序名称**本教程开始时创建并选择它。 然后，单击“下一步”。
+5.  查找**应用商店应用程序名称**本教程开始时创建并选择它。 然后，单击“下一步”  。
 
     ![找到并选择你的存储区名称](images/AzureLabs-Lab8-107.png)
 

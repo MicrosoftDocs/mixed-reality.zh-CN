@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure 的混合现实、 学院、 unity、 教程、 api、 microsoft graph，沉浸式、 hololens、 vr
-ms.openlocfilehash: 98fe2c872f332a21fff3af6751ae555968073a24
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 04c72a7ef7724cfcc27867f7f003c171a6f7851f
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590126"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694529"
 ---
 >[!NOTE]
 >混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
@@ -37,7 +37,7 @@ ms.locfileid: "59590126"
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td> MR 和 Azure 311:Microsoft Graph</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
@@ -123,15 +123,15 @@ ms.locfileid: "59590126"
 
     ![](images/AzureLabs-Lab311-10.png)
 
-3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑 > 首选项**，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
+3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑** > **首选项**，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
 
     ![](images/AzureLabs-Lab311-11.png)
 
-4.  转到**文件 > 生成设置**，然后选择**通用 Windows 平台**，然后单击**切换平台**按钮以应用你的选择。
+4.  转到**文件** > **生成设置**，然后选择**通用 Windows 平台**，然后单击**切换平台**按钮以应用你的选择。
 
     ![](images/AzureLabs-Lab311-12.png)
 
-5.  在仍处于**文件 > 生成设置**，请确保：
+5.  在仍处于**文件** > **生成设置**，请确保：
 
     1. **设备为目标**设置为**HoloLens**
     2. **生成的类型**设置为**D3D**
@@ -187,7 +187,7 @@ ms.locfileid: "59590126"
 
 9.  关闭*生成设置*窗口。
 
-10.  保存您的场景和项目 (**文件 > 保存场景文件 > 保存项目**)。
+10.  保存您的场景和项目 (**文件** > **保存场景文件** > **保存项目**)。
 
 ## <a name="chapter-3---import-libraries-in-unity"></a>第 3 章-Unity 中的导入库
 
@@ -205,7 +205,7 @@ ms.locfileid: "59590126"
 
 若要将包导入：
 
-1.  使用将 Unity 包添加到 Unity **资产* > *导入包* > *自定义包** 菜单选项。 选择刚下载的包。
+1.  使用将 Unity 包添加到 Unity**资产** > **导入包** > **自定义包**菜单选项。 选择刚下载的包。
 
 2.  在中**导入 Unity 程序包**弹出框、 下 （其中包含） 确保一切**插件**处于选中状态。
 
@@ -234,7 +234,7 @@ ms.locfileid: "59590126"
 
         ![](images/AzureLabs-Lab311-23.png)
 
-7.  单击 **“应用”**。
+7.  单击 **“应用”** 。
 
 ## <a name="chapter-4---camera-setup"></a>第 4 章-照相机设置
 
@@ -266,12 +266,12 @@ ms.locfileid: "59590126"
 
 若要创建此类：
 
-1.  右键单击**资产**中的文件夹*项目面板*，然后选择 **创建*> *文件夹**。 将文件夹命名为**脚本**。
+1.  右键单击**资产**中的文件夹*项目面板*，然后选择**创建** > **文件夹**。 将文件夹命名为**脚本**。
 
     ![](images/AzureLabs-Lab311-26.png)
     ![](images/AzureLabs-Lab311-27.png)
 
-2.  打开**脚本**文件夹然后，在该文件夹中，右键单击，**创建* > *C\# 脚本**。 脚本命名为**MeetingsUI。**
+2.  打开**脚本**文件夹然后，在该文件夹中，右键单击，**创建** >   **C#脚本**。 脚本命名为**MeetingsUI。**
 
     ![](images/AzureLabs-Lab311-28.png)
 
@@ -477,7 +477,7 @@ ms.locfileid: "59590126"
     > [!NOTE]
     > 更改 **appId** 值为 **应用程序 Id** 中记下 **[第 1 章](#chapter-1---create-your-app-in-the-application-registration-portal)，步骤 4** 。 此值应与中显示的相同**应用程序注册门户**在您的应用程序注册页中。
 
-8.  内**Graph**类中，将方法添加**SignInAsync()** 并**AquireTokenAsync()**，用于将提示用户插入登录凭据。
+8.  内**Graph**类中，将方法添加**SignInAsync()** 并**AquireTokenAsync()** ，用于将提示用户插入登录凭据。
 
     ```csharp
         /// <summary>
@@ -548,9 +548,9 @@ ms.locfileid: "59590126"
 
 9.  添加以下两种方法：
 
-    1.  **BuildTodayCalendarEndpoint()**，哪些生成指定日和时间跨度内，在其中检索计划的会议的 URI。
+    1.  **BuildTodayCalendarEndpoint()** ，哪些生成指定日和时间跨度内，在其中检索计划的会议的 URI。
 
-    2.  **ListMeetingsAsync()**，该请求来自已安排的会议*Microsoft Graph*。
+    2.  **ListMeetingsAsync()** ，该请求来自已安排的会议*Microsoft Graph*。
 
     ```csharp
         /// <summary>
@@ -628,7 +628,7 @@ ms.locfileid: "59590126"
 
 3.  双击要使用 Visual Studio 中打开的脚本。
 
-4.  更改命名空间代码，以匹配所示，以及添加 '**\[System.Serializable\]** 上面标记您**GazeInput**类，以便它可以序列化：
+4.  更改命名空间代码，以匹配所示，以及添加 ' **\[System.Serializable\]** 上面标记您**GazeInput**类，以便它可以序列化：
 
     ```csharp
     using UnityEngine;
@@ -945,7 +945,7 @@ ms.locfileid: "59590126"
 
 2.  如果尚不存在，则勾选**Unity C\#项目**。
 
-3.  单击“生成” 。 将启动 unity**文件资源管理器**窗口中，需要创建，然后选择要生成该应用程序的文件夹。 现在，创建该文件夹并将其命名**应用**。 然后使用**应用程序**文件夹选择，单击**选择文件夹**。
+3.  单击“生成”  。 将启动 unity**文件资源管理器**窗口中，需要创建，然后选择要生成该应用程序的文件夹。 现在，创建该文件夹并将其命名**应用**。 然后使用**应用程序**文件夹选择，单击**选择文件夹**。
 
 4.  Unity 将开始构建您的项目**应用**文件夹。
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure 的混合现实、 学院、 edge、 iot edge、 教程、 api、 通知、 函数中，表、 沉浸式 hololens、 vr、 iot、 虚拟机、 ubuntu、 python
-ms.openlocfilehash: 1ab7c48ac3cff1cb2283cadb171098af9e148628
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590108"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694592"
 ---
 >[!NOTE]
 >混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
@@ -49,7 +49,7 @@ ms.locfileid: "59590108"
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td> MR 和 Azure 313:IoT 中心服务</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -91,7 +91,7 @@ ms.locfileid: "59590108"
 3. 设置你**Ubuntu 虚拟机**使用**HYPER-V**。 以下资源将帮助你与该进程。
     1.  首先，按照此链接[下载 Ubuntu 16.04.4 LTS (Xenial Xerus) ISO](http://au.releases.ubuntu.com/16.04/)。 选择**64 位电脑 (AMD64) 桌面映像**。
     2.  请确保**HYPER-V**在 Windows 10 计算机上启用。 您可以在跟踪指导此链接[安装和启用 Windows 10 上的 HYPER-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
-    3.  启动 HYPER-V 并创建一个新的 Ubuntu 虚拟机。 可以按照此链接[有关如何使用 HYPER-V 创建虚拟机的分步指南](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)。 请求时 **"从可启动映像文件安装操作系统"**，选择**Ubuntu ISO**先前已下载。
+    3.  启动 HYPER-V 并创建一个新的 Ubuntu 虚拟机。 可以按照此链接[有关如何使用 HYPER-V 创建虚拟机的分步指南](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)。 请求时 **"从可启动映像文件安装操作系统"** ，选择**Ubuntu ISO**先前已下载。
 
     > [!NOTE]
     > 使用**HYPER-V 快速创建**不建议使用。  
@@ -320,7 +320,7 @@ ms.locfileid: "59590108"
 
     1.  使用键盘上的箭头键可滚动的列表中 （您将需要向下一个小的方式滚动），到达行包含":
 
-        "**\<添加设备连接字符串 &GT;**"。
+        " **\<添加设备连接字符串 >** "。
 
     2. 替换为行中，**包括括号**，使用**设备连接字符串**，如上文所述。
 
@@ -370,7 +370,7 @@ ms.locfileid: "59590108"
 
 4. 一旦安装了扩展，关闭并重新打开 VS Code。
 
-5. 使用 VS Code 一次打开，导航到**视图 > 集成的终端**。
+5. 使用 VS Code 一次打开，导航到**视图** > **集成的终端**。
 
 6. 现在，您将安装**Cookiecutter**。 在终端运行以下 bash 命令：
 
@@ -390,7 +390,7 @@ ms.locfileid: "59590108"
 
 此时，您需要创建具有该模块，若要推送到容器中，*容器注册表*。 已推送到容器，将使用*IoT 中心 Edge*服务，以将其部署到你的设备，这运行*IoT Edge 运行时*。
 
-1. 从 VS Code 中，单击**视图 > 命令面板**。
+1. 从 VS Code 中，单击**视图** > **命令面板**。
 
 2. 在面板中，搜索并运行**Azure IoT Edge:新的 Iot Edge 解决方案**。
 
@@ -404,7 +404,7 @@ ms.locfileid: "59590108"
 
 7. 你会注意到预建*Docker 映像存储库*地址将显示在面板上。 它将如下所示：
 
-    **localhost:5000 /-NAME 的模块-**。 
+    **localhost:5000 /-NAME 的模块-** 。 
 
 8. 删除**localhost:5000**，并在其位置插入*容器注册表***登录服务器**地址，创建时记下**容器注册表服务**([在步骤 8 的第 2 章](#chapter-2---the-container-registry-service))。 按**Enter**密钥，以确认该地址。
 
@@ -744,7 +744,7 @@ ms.locfileid: "59590108"
 
 ## <a name="chapter-9---package-the-solution-as-a-container"></a>第 9 章 — 包的容器解决方案
 
-1.  你现已准备好你的文件"包"作为容器并将其推送到您**Azure 容器注册表**。 在 VS Code 中打开*集成终端*(**视图 > 集成终端 / CTRL + '**)，并使用登录到下面的代码行**Docker** (替换以下值命令的凭据与你**Azure 容器注册表 (ACR)**):
+1.  你现已准备好你的文件"包"作为容器并将其推送到您**Azure 容器注册表**。 在 VS Code 中打开*集成终端*(**视图** > **集成终端**或**Ctrl** + **\`** )，并使用登录到下面的代码行**Docker** (的凭据的命令的值替换你**Azure 容器注册表 (ACR)** ):
 
     ```bash
         docker login -u <ACR username> -p <ACR password> <ACR login server>
@@ -856,11 +856,11 @@ ms.locfileid: "59590108"
 
     2. 有关**部署模型**，单击**资源管理器**。
 
-    3. 有关**帐户类型**，使用下拉列表菜单，单击**存储 (常规用途 v1)**。
+    3. 有关**帐户类型**，使用下拉列表菜单，单击**存储 (常规用途 v1)** 。
 
     4. 单击相应**位置**。
     
-    5. 有关**复制**下拉菜单中，单击**读取-访问-异地冗余存储 (RA-GRS)**。
+    5. 有关**复制**下拉菜单中，单击**读取-访问-异地冗余存储 (RA-GRS)** 。
 
     6. 有关**性能**，单击**标准**。
 
@@ -874,7 +874,7 @@ ms.locfileid: "59590108"
 
     10. 将保留**虚拟网络**作为**禁用**，如果这是为你的选项。
 
-    11. 单击“创建”。
+    11. 单击“创建”  。
 
         ![填写存储详细信息](images/AzureLabs-Lab313-37.png)
 
@@ -916,7 +916,7 @@ ms.locfileid: "59590108"
 
 1. 打开**Visual Studio** (**不**Visual Studio Code)。
 
-2. 从菜单中，单击**视图 > 云资源管理器**。
+2. 从菜单中，单击**视图** > **云资源管理器**。
 
     ![打开 cloud explorer](images/AzureLabs-Lab313-45.png)
 
@@ -1023,7 +1023,7 @@ ms.locfileid: "59590108"
 
     9. 您不需要*Application Insights*在此应用中，所以请随意将其留**关闭**。
 
-    10. 单击“创建”。
+    10. 单击“创建”  。
 
         ![创建新的实例](images/AzureLabs-Lab313-55.png)
 
@@ -1047,7 +1047,7 @@ ms.locfileid: "59590108"
 
     ![自定义函数](images/AzureLabs-Lab313-59.png)
 
-13. 下一个页面，直到找到中向下的滚动**IoT 中心 （事件中心）**，然后单击它。
+13. 下一个页面，直到找到中向下的滚动**IoT 中心 （事件中心）** ，然后单击它。
 
     ![自定义函数](images/AzureLabs-Lab313-60.png)
 
@@ -1190,7 +1190,7 @@ ms.locfileid: "59590108"
 
 3.  登录到*Power BI*与你**Microsoft 365 帐户**。 你可能会重定向到浏览器中，若要注册。 一旦您注册了，请返回到 Power BI 应用，并再次登录。
 
-4.  单击**获取数据**，然后单击**更多...**.
+4.  单击**获取数据**，然后单击**更多...** .
 
     ![Power BI](images/AzureLabs-Lab313-74.png)
 

@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 10/02/2018
 ms.topic: article
 keywords: mrc，混合现实捕获、 照片、 视频、 照相机、 捕获、 使用情况、 流、 流媒体直播、 演示
-ms.openlocfilehash: 18a80083bd25974905874c6c2ec0de87dc7424ab
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 7af60682f78f624e6b41ded88c8a77e70d40194c
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592871"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694481"
 ---
 # <a name="mixed-reality-capture"></a>混合现实捕获
 
@@ -21,9 +21,11 @@ HoloLens 为用户提供了混合现实世界与数字世界的体验。 混合�
 
 ## <a name="live-streaming-from-hololens"></a>实时传送视频流从 HoloLens
 
-[Windows 10 2018 年 10 月更新](release-notes-october-2018.md)将 Miracast 支持添加到 HoloLens。 选择**Connect**开始菜单以显示为已启用 Miracast 的设备和适配器的选取器底部的按钮。 选择你想要开始流式处理的设备。 完成后，选择**断开连接**底部的开始菜单的按钮。  **连接**并**断开连接**快速操作菜单上也有提供。 
+[Windows 10 2018 年 10 月更新](release-notes-october-2018.md)将 Miracast 支持添加到 HoloLens。 选择**Connect**开始菜单以显示为已启用 Miracast 的设备和适配器的选取器底部的按钮。 选择你想要开始流式处理的设备。 完成后，选择**断开连接**底部的开始菜单的按钮。  **连接**并**断开连接**快速操作菜单上也有提供。
 
-[Windows Device Portal](using-the-windows-device-portal.md)公开实时流式处理选项的开发人员模式下的设备。
+[Windows Device Portal](using-the-windows-device-portal.md)并[Microsoft HoloLens 辅助应用程序](https://www.microsoft.com/store/productId/9NBLGGH4QWNX)公开实时传送视频流的开发人员模式下的设备的选项。
+
+[Dynamics 365 远程协助](https://dynamics.microsoft.com/en-us/mixed-reality/remote-assist)支持实时传送视频流从 HoloLens 到远程位置中的员工。
 
 ## <a name="taking-mixed-reality-captures"></a>采用混合的现实捕获
 
@@ -48,7 +50,7 @@ HoloLens 为用户提供了混合现实世界与数字世界的体验。 混合�
 
 ### <a name="limitations-of-mixed-reality-capture"></a>混合的现实捕获的限制
 
-上 HoloLens，系统将限制为 30 Hz 的呈现速率。 这将创建一些空间用于 MRC 运行，因此应用程序不需要保留的常量预算保留，并还与帧速率每秒 30 帧 MRC 视频记录为相匹配。
+上 HoloLens，系统将限制为 30 Hz 的呈现速率。 这将创建一些空间用于 MRC 运行，因此应用程序不需要保留的常量预算保留，并还将匹配 （最多到） 30 fps MRC 视频记录帧速率。
 
 视频的最大长度为五分钟。
 
@@ -58,10 +60,19 @@ HoloLens 为用户提供了混合现实世界与数字世界的体验。 混合�
 
 混合的现实捕获从 Cortana 语音命令和开始菜单工具创建的文件采用以下格式：
 
-|  在任务栏的搜索框中键入  |  格式  |  扩展  |  分辨率  |  Audio | 
+|  type  |  格式  |  扩展  |  分辨率  |  Audio | 
 |----------|----------|----------|----------|----------|
-|  Photo  |  [JPEG](https://en.wikipedia.org/wiki/JPEG)  |  .jpg  |  1408x792px (HoloLens) 1920x1080px<br> （沉浸式耳机） |  不可用 | 
-|  视频  |  [MPEG 4](https://en.wikipedia.org/wiki/MPEG-4)  |  .mp4  |  1408x792px (HoloLens) 1632x918px （沉浸式耳机） |  48khz 立体声 | 
+|  Photo  |  [JPEG](https://en.wikipedia.org/wiki/JPEG)  |  .jpg  |  3904x2196px (HoloLens 2)<br> 1408x792px (HoloLens)<br> 1920x1080px<br> （沉浸式耳机） |  不可用 | 
+|  视频  |  [MPEG 4](https://en.wikipedia.org/wiki/MPEG-4)  |  .mp4  |  1920x1080px<br> 以 30 fps (HoloLens 2)<br> 在 24 每秒帧数 (HoloLens) 1216x684px<br> 以 30 fps （沉浸式耳机） 1632x918px |  48khz 立体声 | 
+
+>[!NOTE]
+>如果照片/视频摄像机已被另一个应用程序，同时实时传送视频流，或当系统资源不足时，可以较小的照片和视频的分辨率。
+
+### <a name="video-stabilization"></a>视频防抖动
+
+默认情况下：
+* 零延迟视频防抖动时实时传送视频流通过 Miracast 应用。
+* 长时间延迟视频防抖动应用于使用内置 MRC 摄像头 UI、 Cortana 语音命令和 Windows Device Portal 捕获的视频。
 
 ## <a name="viewing-mixed-reality-captures"></a>查看混合的现实捕获
 
@@ -75,8 +86,8 @@ HoloLens 为用户提供了混合现实世界与数字世界的体验。 混合�
 >截至 Windows 10 2018 年 4 月更新，照片应用将无法再上传照片和视频到 OneDrive。
 
 ## <a name="see-also"></a>请参阅
-* [Spectator 视图](spectator-view.md)
-* [可定位照相机](locatable-camera.md)
-* [面向开发人员混合现实捕获](mixed-reality-capture-for-developers.md)
-* [请参阅您的照片](see-your-photos.md)
-* [使用 Windows Device Portal](using-the-windows-device-portal.md)
+* [旁观视图](spectator-view.md)
+* [可定位相机](locatable-camera.md)
+* [面向开发人员的混合现实捕获](mixed-reality-capture-for-developers.md)
+* [查看照片](see-your-photos.md)
+* [使用 Windows 设备门户](using-the-windows-device-portal.md)

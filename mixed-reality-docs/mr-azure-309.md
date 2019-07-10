@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure 的混合现实、 学院、 unity、 教程、 api、 应用程序见解，沉浸式、 hololens、 vr
-ms.openlocfilehash: 838dbe38724d29f4c5987e2f6ac7a07231015c82
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: e14a32f9a38e3e8f3054d19310782f7c2d4784a1
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593002"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694562"
 ---
 >[!NOTE]
 >混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
@@ -38,7 +38,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td> MR 和 Azure 309:应用程序见解</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -225,11 +225,11 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
         ![设置 Unity 项目](images/AzureLabs-Lab309-21.png)
 
-9.  回到**生成设置**， **Unity C\#项目**不再灰显; 选中它旁边的复选框。
+9.  回到**生成设置**， **UnityC#项目**不再灰显; 选中它旁边的复选框。
 
 10.  关闭生成设置窗口。
 
-11.  保存您的场景和项目 (**文件 > 保存场景文件 > 保存项目**)。
+11.  保存您的场景和项目 (**文件** > **保存场景文件** > **保存项目**)。
 
 
 ## <a name="chapter-3---import-the-unity-package"></a>第 3 章-导入 Unity 程序包
@@ -275,7 +275,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 在这一章中您将设置照相机和控件允许用户查看和在场景中移动。
 
-1.  右键单击空白区域在层次结构窗格中，然后**创建 > 空**。
+1.  右键单击空白区域在层次结构窗格中，然后**创建** > **空**。
 
     ![设置相机和用户控件](images/AzureLabs-Lab309-26.png)
 
@@ -377,11 +377,11 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 若要创建此类：
 
-1.  在中右击*项目面板*，然后**创建 > 文件夹**。 将文件夹命名为**脚本**。
+1.  在中右击*项目面板*，然后**创建** > **文件夹**。 将文件夹命名为**脚本**。
 
     ![创建 ApplicationInsightsTracker 类](images/AzureLabs-Lab309-46.png)  ![创建 ApplicationInsightsTracker 类](images/AzureLabs-Lab309-47.png)
 
-2.  与**脚本**创建文件夹，双击它，以打开。 然后，在该文件夹中，右键单击，**创建 > C\#脚本**。 脚本命名为**ApplicationInsightsTracker**。
+2.  与**脚本**创建文件夹，双击它，以打开。 然后，在该文件夹中，右键单击，**创建** >   **C#脚本**。 脚本命名为**ApplicationInsightsTracker**。
 
 3.  双击新**ApplicationInsightsTracker**脚本以将其与打开**Visual Studio**。
 
@@ -505,7 +505,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 1.  双击**脚本**文件夹，将其打开。
 
-2.  内右击**脚本**文件夹中，单击**创建** > **C\#脚本**。 脚本命名为**注视**。
+2.  内右击**脚本**文件夹中，单击**创建** >   **C#脚本**。 脚本命名为**注视**。
 
 3.  双击要使用 Visual Studio 中打开的脚本。
 
@@ -699,7 +699,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 1.  双击**脚本**文件夹，将其打开。
 
-2.  内右击**脚本**文件夹中，单击**创建** **C\# > 脚本**。 脚本命名为**ObjectTrigger**。
+2.  内右击**脚本**文件夹中，单击**创建** >   **C#脚本**。 脚本命名为**ObjectTrigger**。
 
 3.  双击要使用 Visual Studio 中打开的脚本。 现有代码替换为以下：
 
@@ -771,7 +771,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 1.  双击**脚本**文件夹，将其打开。
 
-2.  内右击**脚本**文件夹中，单击**创建** **C\# > 脚本**。 脚本命名为**DataFromAnalytics**。
+2.  内右击**脚本**文件夹中，单击**创建** >   **C#脚本**。 脚本命名为**DataFromAnalytics**。
 
 3.  双击要使用 Visual Studio 中打开的脚本。
 
@@ -1000,7 +1000,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 1.  双击**脚本**文件夹，将其打开。
 
-2.  内右击**脚本**文件夹中，单击**创建** > **C\#脚本**。 脚本命名为**移动**。
+2.  内右击**脚本**文件夹中，单击**创建** >   **C#脚本**。 脚本命名为**移动**。
 
 3.  要将其与打开的脚本上双击*Visual Studio*。
 
@@ -1205,7 +1205,7 @@ Application Insights 是 Microsoft 服务，从而允许开发人员从其应用
 
 此项目的 Unity 部分所需的所有内容现已完成，因此它是从 Unity 生成的时间。
 
-1.  导航到**生成设置**， **(文件 >...生成设置)** .
+1.  导航到**生成设置**，(**文件** > **生成设置**)。
 
 2.  从**生成设置**窗口中，单击**生成**。
 

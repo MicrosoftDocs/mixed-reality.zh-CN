@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure 的混合现实、 学院、 unity、 教程、 api、 函数、 存储、 hololens，令人着迷，vr
-ms.openlocfilehash: a828c7f0ac3016462f5c7e874545bf50a2db6771
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 5f3d0c6990249bc32e4c0f55c72dd884c4c2214e
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590254"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694559"
 ---
 >[!NOTE]
 >混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
@@ -42,7 +42,7 @@ ms.locfileid: "59590254"
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td>MR 和 Azure 305:函数和存储</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -51,7 +51,7 @@ ms.locfileid: "59590254"
 > [!NOTE]
 > 尽管本课程主要专注于 Windows Mixed Reality 沉浸式 (VR) 耳机，还可以应用到 Microsoft HoloLens 本课程中学习的内容。 按照课程时，您将看到说明您可能需要使用以支持 HoloLens 的任何更改。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 > [!NOTE]
 > 本教程专为开发人员已基本熟悉 Unity 和C#。 此外需要注意的先决条件和本文档内的书面的说明表示什么已测试并验证在撰写本文时 (2018 年 5 月)。 你可以随意使用最新的软件，如中所列[安装的工具](install-the-tools.md)文章中，但它不应假定在此课程中的信息将完全匹配您会发现在较新的软件比下面列出的内容.
@@ -97,11 +97,11 @@ ms.locfileid: "59590254"
 
     2.  有关*部署模型*，选择**资源管理器**。
 
-    3.  有关*帐户类型*，选择**存储 (常规用途 v1)**。
+    3.  有关*帐户类型*，选择**存储 (常规用途 v1)** 。
 
     4.  确定*位置*为资源组 （如果要创建新的资源组）。 理想情况下，则位置应为该应用程序将运行的区域中。 某些 Azure 资产在特定区域才可用。
 
-    5.  有关*复制*选择**读取-访问-异地冗余存储 (RA-GRS)**。
+    5.  有关*复制*选择**读取-访问-异地冗余存储 (RA-GRS)** 。
 
     6.  有关*性能*，选择**标准**。
 
@@ -115,7 +115,7 @@ ms.locfileid: "59590254"
 
     10. 您还需要确认你已了解的条款和条件应用于此服务。
 
-    11. 选择“创建”。
+    11. 选择“创建”  。
 
         ![输入的服务信息](images/AzureLabs-Lab5-03.png)
 
@@ -178,7 +178,7 @@ ms.locfileid: "59590254"
 
         ![输入的函数应用的详细信息](images/AzureLabs-Lab5-10.png)
 
-4.  单击“创建”按钮。
+4.  单击“创建”  按钮。
 
 5.  一旦你单击**创建**，必须要等待的时间来创建服务，这可能需要一分钟。
 
@@ -223,7 +223,7 @@ ms.locfileid: "59590254"
         }
     ```
 
-13. 选择“保存”。
+13. 选择“保存”。 
 
 14. 结果应如下图所示。
 
@@ -250,15 +250,15 @@ ms.locfileid: "59590254"
 
     ![为新的 unity 项目提供一个名称](images/AzureLabs-Lab5-18.png)
 
-3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到 **编辑* > *首选项** ，然后在新窗口中，导航到 **外部工具** 。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
+3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑** > **首选项**，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
 
     ![设置 visual studio 为脚本编辑器](images/AzureLabs-Lab5-19.png)
 
-4.  接下来，请转到**文件 > 生成设置**，并切换到平台**通用 Windows 平台**，单击**切换平台**按钮。
+4.  接下来，请转到**文件** > **生成设置**，并切换到平台**通用 Windows 平台**，通过单击**切换平台**按钮。
 
     ![切换到 uwp 的平台](images/AzureLabs-Lab5-20.png)
 
-5.  转到**文件 > 生成设置**并确保选中：
+5.  转到**文件** > **生成设置**并确保选中：
 
     1. **设备为目标**设置为**任一设备**。
 
@@ -318,7 +318,7 @@ ms.locfileid: "59590254"
 
 10.  关闭生成设置窗口。
 
-11. 保存您的场景和项目 (**文件 > 保存场景文件 > 保存项目**)。
+11. 保存您的场景和项目 (**文件** > **保存场景文件** > **保存项目**)。
 
 ## <a name="chapter-4---setup-main-camera"></a>第 4 章-安装程序主照相机
 
@@ -421,7 +421,7 @@ ms.locfileid: "59590254"
 
 6.  接下来将创建**三维文字**对象以提供有关 Azure 服务的状态的反馈。
 
-    右键单击**GazeButton**层次结构中面板再次并添加**三维对象 > 三维文字**对象作为*子*。
+    右键单击**GazeButton**层次结构中面板再次并添加**3D 物体** > **三维文字**对象作为*子*。
 
     ![创建新的三维文字对象](images/AzureLabs-Lab5-42.png)
 
@@ -467,9 +467,9 @@ ms.locfileid: "59590254"
 
 若要导入您自己的项目的 SDK，请确保已下载最新[从 GitHub.unitypackage](https://aka.ms/azstorage-unitysdk)。 然后，执行以下操作：
 
-1.  添加 **.unitypackage**通过使用到 Unity 文件**资产 > 导入包 > 自定义包**菜单选项。
+1.  添加 **.unitypackage**通过使用到 Unity 文件**资产** > **导入包** > **自定义包**菜单选项。
 
-2.  在中 **导入 Unity 程序包** 框，弹出，你可以选择下的所有内容 **插件* > *存储**。 取消选中其他任何内容，因为它不需要此课程。
+2.  在中**导入 Unity 程序包**框，弹出，你可以选择下的所有内容**插件** > **存储**。 取消选中其他任何内容，因为它不需要此课程。
 
     ![导入包](images/AzureLabs-Lab5-45.png)
 
@@ -519,7 +519,7 @@ ms.locfileid: "59590254"
 
 若要创建此类：
 
-1.  在中右击*资产*文件夹中，在项目面板中，位于**创建 > 文件夹**。 将文件夹命名为**脚本**。
+1.  在中右击*资产*文件夹中，在项目面板中，位于**创建** > **文件夹**。 将文件夹命名为**脚本**。
 
     ![创建新文件夹](images/AzureLabs-Lab5-50.png)
 
@@ -527,7 +527,7 @@ ms.locfileid: "59590254"
 
 2.  双击刚创建的文件夹，以将其打开。
 
-3.  在文件夹中，右键单击**创建 >C#脚本**。 调用脚本*azure 服务*。
+3.  在文件夹中，右键单击**创建** >   **C#脚本**。 调用脚本*azure 服务*。
 
 4.  双击新*azure 服务*类以打开其与*Visual Studio*。
 
@@ -637,7 +637,7 @@ ms.locfileid: "59590254"
     ```
 
     > [!IMPORTANT]
-    > 我们的代码中将填充*CallAzureFunctionForNextShape()* 中[未来一章](#chapter-10---completing-the-AzureServices-class)。
+    > 我们的代码中将填充*CallAzureFunctionForNextShape()* 中[未来一章](#chapter-10---completing-the-azureservices-class)。
 
 9.  删除*update （)* 方法因为此类不会使用它。
 
@@ -657,7 +657,7 @@ ms.locfileid: "59590254"
 
 1.  转到**脚本**之前创建的文件夹。
 
-2.  在文件夹中，右键单击**创建 >C#脚本**。 调用脚本*ShapeFactory*。
+2.  在文件夹中，右键单击**创建** >   **C#脚本**。 调用脚本*ShapeFactory*。
 
 3.  双击新*ShapeFactory*脚本以将其与打开*Visual Studio*。
 
@@ -767,7 +767,7 @@ ms.locfileid: "59590254"
 
 1.  转到**脚本**之前创建的文件夹。
 
-2.  在项目面板中，右键单击**创建 >C#脚本**。 调用脚本*注视*。
+2.  在项目面板中，右键单击**创建** >   **C#脚本**。 调用脚本*注视*。
 
 3.  双击新*注视*脚本以将其与打开*Visual Studio。*
 
@@ -1033,7 +1033,7 @@ ms.locfileid: "59590254"
 
 与其他脚本中的位置，现在就可以*完整* *azure 服务*类。 将通过实现此目的：
 
-1.  添加名为的新方法*CreateCloudIdentityAsync()*，若要设置用于与 Azure 进行通信所需的身份验证变量。
+1.  添加名为的新方法*CreateCloudIdentityAsync()* ，若要设置用于与 Azure 进行通信所需的身份验证变量。
 
     > 此方法还将检查存在包含形状列表的以前存储文件。
     >
@@ -1106,7 +1106,7 @@ ms.locfileid: "59590254"
         }
     ```
 
-3.  方法的代码中填写*CallAzureFunctionForNextShape()*。 您将使用之前创建*Azure Function App*来请求一个形状的索引。 此方法后收到新形状时，会将发送到形状*ShapeFactory*类，以在场景中创建新的形状。 使用下面的代码来完成的正文*CallAzureFunctionForNextShape()*。
+3.  方法的代码中填写*CallAzureFunctionForNextShape()* 。 您将使用之前创建*Azure Function App*来请求一个形状的索引。 此方法后收到新形状时，会将发送到形状*ShapeFactory*类，以在场景中创建新的形状。 使用下面的代码来完成的正文*CallAzureFunctionForNextShape()* 。
 
     ```csharp
         /// <summary>
@@ -1197,11 +1197,11 @@ ms.locfileid: "59590254"
 
 若要开始生成过程：
 
-1.  转到**文件 > 生成设置**。
+1.  转到**文件** > **生成设置**。
 
     ![生成应用](images/AzureLabs-Lab5-54.png)
 
-2.  单击“生成” 。 将启动 unity*文件资源管理器*窗口中，需要创建，然后选择要生成该应用程序的文件夹。 现在，创建该文件夹并将其命名*应用*。 然后使用*应用程序*文件夹选择，按**选择文件夹**。
+2.  单击“生成”  。 将启动 unity*文件资源管理器*窗口中，需要创建，然后选择要生成该应用程序的文件夹。 现在，创建该文件夹并将其命名*应用*。 然后使用*应用程序*文件夹选择，按**选择文件夹**。
 
 3.  Unity 将开始构建您的项目*应用*文件夹。
 
@@ -1218,8 +1218,8 @@ ms.locfileid: "59590254"
 3.  在中**解决方案配置**选择**调试**。
 
     > 对于 Microsoft HoloLens，您可能会发现它更轻松地将其设置为*远程计算机*，因此您不已接入到你的计算机。 不过，需要还执行以下操作：
-    > - 知道**IP 地址**的你 HoloLens，在中找到*设置 > 网络和 Internet > Wi-fi > 高级选项*; IPv4 是应使用的地址。 
-    > - 请确保**开发人员模式**是**上**; 中找到*设置 > 更新和安全 > 面向开发人员*。
+    > - 知道**IP 地址**的你 HoloLens，在中找到**设置** > **网络和 Internet**  >  **Wi-fi** > **高级选项**; IPv4 是应使用的地址。 
+    > - 请确保**开发人员模式**是**上**; 中找到**设置** > **更新和安全** >  **面向开发人员**。
 
     ![部署解决方案](images/AzureLabs-Lab5-55.png)
 
