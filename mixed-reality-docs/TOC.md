@@ -207,6 +207,7 @@
 ##### Azure 空间定位点教程
 ###### [1.开始使用 Azure 空间定位点](mrlearning-asa-ch1.md)
 ###### [2.保存、检索和共享 Azure 空间定位点](mrlearning-asa-ch2.md)
+###### [3.显示 Azure 空间定位点反馈](mrlearning-asa-ch3.md)
 ##### Azure 语音服务教程
 ###### [1.集成并使用语音识别和听录](mrlearning-speechSDK-ch1.md)
 ###### [2.为本地语音到文本翻译添加脱机模式](mrlearning-speechSDK-ch2.md)
