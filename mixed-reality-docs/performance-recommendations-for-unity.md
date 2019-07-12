@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: 图形，cpu、 gpu 呈现，垃圾回收 hololens
-ms.openlocfilehash: 37eac566a0315009330ac7fee96edd82348d6ba3
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: b0821f07184bff8630f6b6af0d0fc461f6fcd133
+ms.sourcegitcommit: 8f3ff9738397d9b9fdf4703b14b89d416f0186a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593030"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843337"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity 的性能建议
 
@@ -21,7 +21,7 @@ ms.locfileid: "59593030"
 
 ## <a name="how-to-profile-with-unity"></a>如何使用 Unity 的配置文件
 
-Unity 提供了**[Unity Profiler](https://docs.unity3d.com/Manual/Profiler.html)** 内置这是一个不错的资源，以便收集有价值的性能见解为特定应用。 尽管一个可以运行在编辑器探查器，但这些度量值不表示 true 的运行时环境，因此，应谨慎使用此结果。 建议为远程配置文件正在最准确和可操作见解的设备上运行的应用程序。 进一步来说，Unity[帧调试器](https://docs.unity3d.com/Manual/FrameDebugger.html)也是非常强大和见解工具使用。
+Unity 提供了 **[Unity Profiler](https://docs.unity3d.com/Manual/Profiler.html)** 内置这是一个不错的资源，以便收集有价值的性能见解为特定应用。 尽管一个可以运行在编辑器探查器，但这些度量值不表示 true 的运行时环境，因此，应谨慎使用此结果。 建议为远程配置文件正在最准确和可操作见解的设备上运行的应用程序。 进一步来说，Unity[帧调试器](https://docs.unity3d.com/Manual/FrameDebugger.html)也是非常强大和见解工具使用。
 
 Unity 提供了有关的很多文档：
 1) 如何连接[Unity 探查器附加到 UWP 应用程序远程](https://docs.unity3d.com/Manual/windowsstore-profiler.html)
@@ -38,7 +38,7 @@ Unity 提供了有关的很多文档：
 
 #### <a name="cache-references"></a>缓存的引用
 
-它是最佳做法是对所有相关的组件和 GameObjects 在初始化时的缓存引用。 这是因为重复函数调用，如*[GetComponent\<T > （)](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* 是贵很多相对成本来存储指针的内存。 这也为适用于非常，定期用[Camera.main](https://docs.unity3d.com/ScriptReference/Camera-main.html)。 *Camera.main*实际上就是使用*[FindGameObjectsWithTag()](https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html)* 越搜索具有的照相机对象在场景图的下方 *"MainCamera"* 标记。
+它是最佳做法是对所有相关的组件和 GameObjects 在初始化时的缓存引用。 这是因为重复函数调用，如 *[GetComponent\<T > （)](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* 是贵很多相对成本来存储指针的内存。 这也为适用于非常，定期用[Camera.main](https://docs.unity3d.com/ScriptReference/Camera-main.html)。 *Camera.main*实际上就是使用 *[FindGameObjectsWithTag()](https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html)* 越搜索具有的照相机对象在场景图的下方 *"MainCamera"* 标记。
 
 ```CS
 using UnityEngine;
@@ -72,8 +72,9 @@ public class ExampleClass : MonoBehaviour
 }
 ```
 
->[!NOTE] Avoid GetComponent(string) <br/>
-> 使用时 *[GetComponent()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)*，有少量的不同的重载。 请务必始终使用基于的类型实现，而绝不会基于字符串的搜索重载。 搜索由您的场景中的字符串是明显比搜索由类型成本更高。 <br/>
+>[!NOTE] 
+> Avoid GetComponent(string) <br/>
+> 使用时 *[GetComponent()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* ，有少量的不同的重载。 请务必始终使用基于的类型实现，而绝不会基于字符串的搜索重载。 搜索由您的场景中的字符串是明显比搜索由类型成本更高。 <br/>
 > （好）组件 GetComponent （类型） <br/>
 > （好）T GetComponent\<T > （) <br/>
 > （错误）组件 GetComponent(string) > <br/>
@@ -110,7 +111,7 @@ public class ExampleClass : MonoBehaviour
         UnityEngine.Object.FindGameObjectsWithTag()
 
 >[!NOTE]
-> *[Sendmessage （)](https://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html)* 并*[BroadcastMessage()](https://docs.unity3d.com/ScriptReference/GameObject.BroadcastMessage.html)* 应消除不惜一切代价。 这些函数可以是 1000 x 慢于直接函数调用的顺序。
+> *[Sendmessage （)](https://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html)* 并 *[BroadcastMessage()](https://docs.unity3d.com/ScriptReference/GameObject.BroadcastMessage.html)* 应消除不惜一切代价。 这些函数可以是 1000 x 慢于直接函数调用的顺序。
 
 3) **请注意装箱**
 
@@ -225,24 +226,22 @@ Unity 是能够批处理多个静态对象，以减少到 GPU 的绘图调用。
 
 ## <a name="gpu-performance-recommendations"></a>GPU 性能建议
 
-详细了解[优化在 Unity 中的图形呈现](https://unity3d.com/learn/tutorials/temas/performance-optimization/optimizing-graphics-rendering-unity-games)
+详细了解[优化在 Unity 中的图形呈现](https://unity3d.com/learn/tutorials/temas/performance-optimization/optimizing-graphics-rendering-unity-games) 
 
-#### <a name="reduce-poly-count"></a>减少 poly 计数
+### <a name="optimize-depth-buffer-sharing"></a>优化深度缓冲区共享
+
+通常建议以启用**深度缓冲区共享**下**播放器 XR 设置**优化[全息图稳定性](Hologram-stability.md)。 在启用此设置，但是使用基于深度的后期阶段 reprojection，建议选择**16 位深度格式**而不是**24 位深度格式**。 16 位深度缓冲区将极大地减少了带宽 （并因此电源） 深度缓冲区流量与相关联。 这可以是一个强大的动力的优势，但仅适用于小型的深度范围作为经验[z 值争夺](https://en.wikipedia.org/wiki/Z-fighting)更有可能出现的 16 位比 24 位。 若要避免这些项目，请修改的附近/远端剪裁平面[Unity 照相机](https://docs.unity3d.com/Manual/class-Camera.html)来应对较低的精度。 对于基于 HoloLens 的应用程序，而不是 Unity 默认 1000 m 50 m 远端剪裁平面通常可以消除任何 z 值争夺。
+
+### <a name="reduce-poly-count"></a>减少 poly 计数
 
 多边形计数通常会减少通过以下任一方法
 1) 从一个场景中删除对象
 2) 它可以减少为给定的网格的多边形资产抽取
 3) 实现[的详细信息级别 (LOD) 系统](https://docs.unity3d.com/Manual/LevelOfDetail.html)到应用程序来呈现远而具有较低多边形版本的同一个几何对象
 
-#### <a name="limit-overdraw"></a>限制过度绘制
+### <a name="understanding-shaders-in-unity"></a>了解在 Unity 中的着色器
 
-在 Unity 中，其中一个可以显示过度绘制为其场景中，通过切换[**绘图模式菜单**](https://docs.unity3d.com/Manual/ViewModes.html)中的左上角**场景视图**并选择**过度绘制**.
-
-通常情况下，过度绘制可缓解通过剔除提前发送到 GPU 前的对象。 Unity 提供了有关实施的详细信息[封闭剔除](https://docs.unity3d.com/Manual/OcclusionCulling.html)其引擎。
-
-#### <a name="understanding-shaders-in-unity"></a>了解在 Unity 中的着色器
-
-轻松近似值进行比较的性能的着色器是确定每个操作的平均数目将在运行时执行。 这可以在 Unity 中相当轻松地实现。
+轻松近似值进行比较的性能的着色器是确定每个操作的平均数目将在运行时执行。 这可以在 Unity 中轻松地实现。
 
 1) 选择你的着色器资产或其他营销材料，然后在检查器窗口的右上角，选择齿轮图标，然后 **"选择着色器"**
 
@@ -255,11 +254,29 @@ Unity 是能够批处理多个静态对象，以减少到 GPU 的绘图调用。
 
     ![Unity 标准着色器操作](images/unity-standard-shader-compilation.png)
 
-##### <a name="unity-standard-shader-alternatives"></a>Unity 标准着色器替代项
+#### <a name="optmize-pixel-shaders"></a>优化像素着色器
 
-而不是使用以物理方式根据的呈现 (PBR) 或其他高质量着色器，看看利用更高的性能和成本更低的着色器。 [混合现实 Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)提供了[标准着色器](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit/StandardAssets/Shaders/MixedRealityStandard.shader)已针对混合的现实项目进行优化的。
+查看使用上述方法的已编译统计信息结果[片段着色器](https://en.wikipedia.org/wiki/Shader#Pixel_shaders)通常将执行更多操作比[顶点着色器](https://en.wikipedia.org/wiki/Shader#Vertex_shaders)平均值。 片段着色器，也称为像素着色器，每个像素输出仅执行每个顶点绘制到屏幕的所有网格的顶点着色器时在屏幕上执行。 
+
+因此，不仅片段着色器没有比顶点着色器的详细说明由于所有照明计算，几乎始终更大的数据集上执行片段着色器。 例如，如果屏幕输出是由 2 个图像 2 k，然后片段着色器会得到 2，000 * 2，000 = 4,000,000 执行一次时间。 如果呈现两只眼睛，此数两倍，因为有两个屏幕。 如果混合的现实应用程序具有多个传递、 全屏后处理的效果，或呈现到同一像素的多个网格，此数值会显著增加。 
+
+因此，减少片段着色器中的操作的数量通常可以大得多的性能提升通过顶点着色器中的优化。
+
+#### <a name="unity-standard-shader-alternatives"></a>Unity 标准着色器替代项
+
+而不是使用以物理方式根据的呈现 (PBR) 或其他高质量着色器，看看利用更高的性能和成本更低的着色器。 [混合现实 Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)提供[MRTK 标准着色器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_MRTKStandardShader.html)已针对混合的现实项目进行优化的。
 
 Unity 也提供了向标准 Unity 着色器的不亮、 亮起顶点、 明显更快地进行比较的漫射，和其他简化着色器选项。 请参阅[使用情况和内置着色器性能](https://docs.unity3d.com/Manual/shader-Performance.html)更多详细信息。
+
+#### <a name="shader-preloading"></a>预加载的着色器
+
+使用*着色器预加载*和其他技巧来优化[着色器加载时间](http://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html)。 具体而言，预加载的着色器意味着不会看到任何虞由于运行时编译着色器。
+
+### <a name="limit-overdraw"></a>限制过度绘制
+
+在 Unity 中，其中一个可以显示过度绘制为其场景中，通过切换[**绘图模式菜单**](https://docs.unity3d.com/Manual/ViewModes.html)中的左上角**场景视图**并选择**过度绘制**.
+
+通常情况下，过度绘制可缓解通过剔除提前发送到 GPU 前的对象。 Unity 提供了有关实施的详细信息[封闭剔除](https://docs.unity3d.com/Manual/OcclusionCulling.html)其引擎。
 
 ## <a name="memory-recommendations"></a>内存建议
 
@@ -287,7 +304,7 @@ Unity 提供了一个极好的页面，详细说明了垃圾回收器工作原�
 
 ## <a name="startup-performance"></a>启动性能
 
-应考虑使用较小的场景，启动你的应用，然后使用*[SceneManager.LoadSceneAsync](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadSceneAsync.html)* 加载场景的其余部分。 这可让应用能够尽可能快地交互状态。 要注意，可能有较大的 CPU 峰值时激活的新的场景和任何呈现的内容可能会明显变慢或举行的办法。 若要解决此问题的一种方法是上加载场景 AsyncOperation.allowSceneActivation 属性设置为 false，等待场景中，从而加载，请清除为黑色，屏幕，然后重新设置为 true，则完成场景激活。
+应考虑使用较小的场景，启动你的应用，然后使用 *[SceneManager.LoadSceneAsync](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadSceneAsync.html)* 加载场景的其余部分。 这可让应用能够尽可能快地交互状态。 要注意，可能有较大的 CPU 峰值时激活的新的场景和任何呈现的内容可能会明显变慢或举行的办法。 若要解决此问题的一种方法是上加载场景 AsyncOperation.allowSceneActivation 属性设置为 false，等待场景中，从而加载，请清除为黑色，屏幕，然后重新设置为 true，则完成场景激活。
 
 请记住，启动场景加载时全息版的初始屏幕将显示给用户。
 
