@@ -1,56 +1,57 @@
 ---
-title: MR 学习的 HoloLens 2 共享模块
-description: 完成此课程以了解如何实现 HoloLens 2 应用程序中的多用户共享的体验。
+title: HoloLens 2 的 MR 教育共享模块
+description: 完成本课程以了解如何在 HoloLens 2 应用程序中实现多用户共享体验。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 2a16d318c6d749bcbf6ed9db0d6cd2228a6ea06e
-ms.sourcegitcommit: 78e21e887bf4357c96c9ab2164559d610e8c041e
+ms.openlocfilehash: 1ae880208e79e2e045bd5e7298db260b7f0b2232
+ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465205"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293629"
 ---
-# <a name="azure-spatial-anchors-and-shared-experiences"></a>Azure 空间的定位点和分享的经验
+# <a name="azure-spatial-anchors-and-shared-experiences"></a>Azure 空间锚和共享体验
 
-在本课中，我们将了解如何将 Azure 空间的定位点 (ASA) 集成到我们的共享体验。 ASA 允许多个共置的设备具有常见的引用，如果其物理环境到定位点虚拟体验，以便所有参与者都看到同一个物理位置中的对象。
+在本课程中, 我们将了解如何将 Azure 空间锚点 (ASA) 集成到我们的共享体验中。 如果其物理环境要锚定虚拟体验, 使多个归置的设备在其物理环境中能够看到相同的物理位置中的对象, 则可以使用这些设备。
 
-在继续之前本课程中，我们将需要完成 ASA 学习模块，将介绍 ASA 基础知识、 Azure 帐户和资源创建和其他基本建筑物块之前我们可以将 ASA 集成到我们的共享体验所需的。
+在继续学习本课程之前, 我们需要完成 ASA 学习模块, 该模块将涵盖 ASA 基础知识、Azure 帐户和资源创建, 以及在我们可以将 ASA 集成到我们的共享体验之前所需的其他基本建筑物块。
 
-目标：
+目标
 
-- 将 ASA 集成到多设备对齐方式的共享体验
-- 了解 ASA 本地共享体验的上下文中的工作原理的基础知识
+- 将 ASA 集成到多设备对齐的共享体验。
+- 了解 ASA 在本地共享体验环境中的工作原理的基础知识。
 
 ### <a name="instructions"></a>说明
 
-1. 从上一课 （控制 + S） 保存项目并将其命名"HLSharedProjectMainPart5.unity"以便更轻松地查找当你再次需要。
+1. 保存上一课中的项目 (ctrl + S) 并将其命名为 "HLSharedProjectMainPart5", 以便在再次需要时更轻松地找到它。
 
-2. 选择 TableAnchor 预设可下方 MixedRealityPlayspace 父对象，并将其删除。
+2. 选择 MixedRealityPlayspace 父对象下的 TableAnchor prefab, 并将其删除。
 
 ![Module3Chapter5tep2im](images/module3chapter5step2im.PNG)
 
-
-
-3.  在项目视图转到资产-> 资源-> 预设，并将其拖之上 SharedPlayground 对象以使其成为子 TableAnchor 预设。
-4.  展开 MixedRealityPlayspace 父对象、 TableAnchor 对象，并展开按钮对象。 
+3.  在 "项目" 视图中, 中转到 "资产-> 资源-> Prototyping", 然后将 TableAnchor prefab 拖到 SharedPlayground 对象的顶部, 使其成为子对象。
+4.  展开 MixedRealityPlayspace 父对象 TableAnchor 对象, 并同时展开 "按钮" 对象。 
 
 ![Module3hapter5step5im](images/module3chapter5step5im.PNG)
 
-4. 现在在层次结构中，选择 ShareAzureAnchorButton，并移动到 Inaspector 面板关注。 向下滚动到，如下图所示的下拉列表菜单并选择 AnchorModuleScript 单击 ShareAnchorNetework()。
+4. 现在, 在层次结构中, 选择 "ShareAzureAnchorButton", 并将你的注意力转到 "Inaspector" 面板。 向下滚动到下图所示的下拉菜单中, 选择 "AnchorModuleScript", 然后单击 "ShareAnchorNetework" ()。
 
 ![Module3hapter5step6im](images/module3chapter5step6im.PNG)
 
-5. 选择 GetAzureAnchorButton （请参阅步骤 4），并将移回检查器面板关注。 向下滚动到，如下图所示的下拉列表菜单并选择 AnchorModuleScript，并单击 GetSharedAnchorNetwork()，并保存。
+5. 选择 GetAzureAnchorButton (请参阅步骤 4), 并将你的注意力移回到检查器面板。 向下滚动到下图所示的下拉菜单中, 选择 "AnchorModuleScript", 并单击 "GetSharedAnchorNetwork" (), 然后单击 "保存"。
 
 ![Module3hapter5step7im](images/module3chapter5step7im.PNG)
 
+6. 若要测试共享模块, 请单击 "启动 azure ASA 会话" 按钮, 该按钮将启动 azure 空间锚点会话, 然后通过单击 "创建 Azure 锚点" 按钮创建 azure 定位点, 并等待 azure 锚点创建完成。 创建 azure 定位点后, 请单击 "共享 Azure 定位点" 按钮, 从 HoloLens 共享创建的 azure 定位点。
 
+7. 若要在另一个 HoloLens 中接收共享的 azure 定位点, 请单击 "启动 Azure ASA 会话" 以启动并进入当前 ASA 会话, 然后单击 "获取 Azure 锚点" 按钮, 从另一个 HoloLens 获取共享的 azure 定位点。
 
+   > 注意:各个按钮上对应操作的所有详细信息都将显示在调试窗口中。
 
 ## <a name="congratulations"></a>祝贺
 
-本课程中您学习了如何将集成 Azure 的功能强大的新空间定位标记对齐归置的设备中的共享体验 ！ 本课程还得出结论共享模块。 配置虚拟形象和共享的对象，并最后对齐多个参与者使用 ASA，我们了解到如何设置新的 Photon 帐户，请将 Photon 和俏皮话集成到新的 Unity 应用程序。 
+在本课程中, 你学习了如何集成 Azure 强大的新空间锚点, 以便在共享体验中协调归置设备! 本课还将结束共享模块。 我们学习了如何设置新的 Photon 帐户, 将 Photon 和双关语集成到新的 Unity 应用程序中, 配置头像和 shared 对象, 并最终使用 ASA 协调多个参与者。 
 
