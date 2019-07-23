@@ -1,113 +1,113 @@
 ---
 title: 移植指南
-description: 说明如何移植现有 Windows Mixed reality 沉浸式应用程序执行步骤的演练。
+description: 分步演练介绍了如何将现有沉浸式应用程序移植到 Windows Mixed Reality。
 author: ChimeraScorn
 ms.author: cwhite
 ms.date: 10/02/2018
 ms.topic: article
-keywords: 端口、 迁移、 unity、 中间件，引擎，UWP
-ms.openlocfilehash: a4a8c78f1c45fd8e3b85a767d139bae9f67540e0
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+keywords: 端口, 移植, unity, 中间件, 引擎, UWP
+ms.openlocfilehash: ece478f6bc8f43fc75eb8271096cdec37c41dced
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592421"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387756"
 ---
 # <a name="porting-guides"></a>移植指南
 
 > [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
+> 即将[推出](index.md#news-and-notes)特定于 HoloLens 2 的更多指导。
 
-Windows 10 直接包括沉浸式和全息耳机的支持。 如果您已经生成如 Oculus Rift 或 HTC 欢跃另一台设备的内容，这些依赖项上存在上述操作系统的平台 API 的库。 将现有内容引入 Windows Mixed Reality 涉及重定目标到 Windows Api 的这些其他 sdk 的使用情况。 [混合现实的 Windows 平台 Api](https://docs.microsoft.com/uwp/api/Windows.Perception)仅适用于通用 Windows 平台 (UWP) 应用程序模型。 因此如果您的应用程序尚未生成适用于 UWP，移植到 UWP 将移植体验的一部分。
+Windows 10 直接支持沉浸式和全息耳机。 如果为其他设备 (如 Oculus Rift 或 HTC Naopak) 生成了内容, 则这些内容将依赖于操作系统的平台 API 之上的库。 将现有内容引入 Windows Mixed Reality 涉及到重定目标将这些其他 Sdk 用于 Windows Api。 [混合现实的 Windows 平台 api](https://docs.microsoft.com/uwp/api/Windows.Perception)仅适用于通用 WINDOWS 平台 (UWP) 应用模型。 因此, 如果你的应用程序尚未构建给 UWP, 则移植到 UWP 会成为移植体验的一部分。
 
-## <a name="porting-overview"></a>迁移概述
+## <a name="porting-overview"></a>移植概述
 
-在高级别，这些是在移植现有内容所涉及的步骤：
-1. **请确保您的电脑正在运行 Windows 10 Fall Creators Update (版本 16299)。** 我们不再建议提前 Insider 跳过通道，请从接收预览生成的生成不是最稳定的混合的现实开发。
-2. **升级到最新版本的图形或游戏引擎。** 游戏引擎都需要支持 Windows 10 SDK 版本 10.0.15063.0 （在 2017 年 4 月发布） 或更高版本。
-3. **升级任何中间件、 插件或组件。** 如果您的应用程序中包含的任何组件，它是一个好办法升级到最新版本。 较新版本的最常见的插件都适用于 UWP 的支持。
-4. **删除重复的 Sdk 的依赖项**。 具体取决于你的内容所针对的设备，你将需要删除或有条件地编译出该 SDK (例如 SteamVR)，可改为针对 Windows Api。
-5. **解决生成问题。** 此时，移植练习是特定于您的应用程序、 在引擎和有组件依赖项。
+在高级别上, 以下是移植现有内容所涉及的步骤:
+1. **请确保您的 PC 正在运行 Windows 10 秋季创意者更新 (16299)。** 我们不再建议从有问必答向后跳环接收预览版, 因为这些版本对于混合现实开发不是最稳定的。
+2. **升级到最新版本的图形或游戏引擎。** 游戏引擎需要支持 Windows 10 SDK 版本 10.0.15063.0 (发布于2017年4月) 或更高版本。
+3. **升级任何中间件、插件或组件。** 如果你的应用程序包含任何组件, 则最好升级到最新版本。 最常见的插件的较新版本支持 UWP。
+4. **删除重复的 sdk 依赖项**。 根据你的内容面向哪个设备, 你将需要删除或有条件地编译该 SDK (例如 SteamVR), 以便可以改为面向 Windows Api。
+5. **处理生成问题。** 此时, 迁移练习特定于您的应用程序、您的引擎和您拥有的组件依赖项。
 
-## <a name="common-porting-steps"></a>常见的迁移步骤
+## <a name="common-porting-steps"></a>常见的移植步骤
 
-### <a name="common-step-1-make-sure-you-have-the-right-development-hardware"></a>常见的步骤 1:请确保具有正确的开发硬件
+### <a name="common-step-1-make-sure-you-have-the-right-development-hardware"></a>常见步骤 1:请确保具有正确的开发硬件
 
-[安装的工具](install-the-tools.md#for-immersive-vr-headset-development)页列出了建议的开发硬件。
+"[安装工具](install-the-tools.md#for-immersive-vr-headset-development)" 页将列出推荐的开发硬件。
 
-### <a name="common-step-2-upgrade-to-the-latest-flight-of-windows-10"></a>通用步骤 2:升级到最新的 Windows 10 飞行
+### <a name="common-step-2-upgrade-to-the-latest-flight-of-windows-10"></a>常见步骤 2:升级到最新的 Windows 10 航班
 
-Windows Mixed Reality 平台仍处于积极开发阶段，并为最有效，我们建议在"Windows Insider Fast"航班上。 为了有权访问 windows 航班，您需要向[加入 Windows 预览体验计划](https://insider.windows.com/)。
+Windows Mixed Reality 平台仍处于积极开发阶段, 若要最有效地进行开发, 我们建议你在 "Windows 有问必答的快速" 航班上。 若要访问 windows 航班, 你将需要[加入 Windows 预览体验计划](https://insider.windows.com/)。
 1. 安装[Windows 10 创意者更新](https://www.microsoft.com/software-download/windows10)
 2. [加入](https://insider.windows.com/)Windows 预览体验计划。
 3. 启用[开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
-4. 切换到[快速 Windows Insider 航班](https://blogs.technet.microsoft.com/uktechnet/2016/07/01/joining-insider-preview)通过设置--> 更新和安全性部分
+4. 通过 "设置" > 更新 & 安全 "部分切换到" [Windows 有问必答 Fast 航班](https://blogs.technet.microsoft.com/uktechnet/2016/07/01/joining-insider-preview)"
 
-### <a name="common-step-3-upgrade-to-the-most-recent-build-of-visual-studio"></a>常见的步骤 3:升级到最新版本的 Visual Studio
-* 请参阅[安装的工具](install-the-tools.md#installation-checklist)页下 Visual Studio 2017
+### <a name="common-step-3-upgrade-to-the-most-recent-build-of-visual-studio"></a>常见步骤 3:升级到最新版本的 Visual Studio
+* 请参阅安装 Visual Studio 2019 下[的工具](install-the-tools.md#installation-checklist)页
 
-### <a name="common-step-4-be-ready-for-the-store"></a>通用步骤 4:为应用商店做好准备
-* 使用[Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)(又称 WACK) 尽早并经常 ！
-* 使用[可移植性分析器](https://docs.microsoft.com/dotnet/standard/portability-analyzer)([下载](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer))
+### <a name="common-step-4-be-ready-for-the-store"></a>常见步骤 4:准备好应用商店
+* 尽早并经常使用[Windows 应用程序认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)(也称为 WACK)!
+* 使用可[移植性分析器](https://docs.microsoft.com/dotnet/standard/portability-analyzer)([下载](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer))
 
-### <a name="common-step-5-choose-the-correct-adapter"></a>常见的步骤 5:选择正确的适配器
-* 在系统中使用两个 Gpu 的笔记本等[面向正确的适配器](rendering-in-directx.md#hybrid-graphics-pcs-and-mixed-reality-applications)。 这适用于 Unity 应用，此外本机 DirectX 应用程序，其中创建，显式或隐式 ID3D11Device （媒体基础），其功能。
+### <a name="common-step-5-choose-the-correct-adapter"></a>常见步骤 5:选择正确的适配器
+* 在包含两个 Gpu 的笔记本系统中,[针对正确的适配器](rendering-in-directx.md#hybrid-graphics-pcs-and-mixed-reality-applications)。 这适用于 Unity 应用和本机 DirectX 应用, 其中 ID3D11Device 是显式或隐式 (媒体基础) 为其功能创建的。
 
-## <a name="unity-porting-guidance"></a>Unity 的移植指南
+## <a name="unity-porting-guidance"></a>Unity 移植指南
 
-### <a name="unity-step-1-follow-the-common-porting-steps"></a>Unity 步骤 1:请按照常见的迁移步骤
+### <a name="unity-step-1-follow-the-common-porting-steps"></a>Unity 步骤 1:遵循常见的移植步骤
 
-遵循所有常见步骤。 当在步骤 #3 中，选择**使用 Unity 的游戏开发**工作负荷。 因为您将从下面的说明安装 Unity 的较新版本，可能会取消选择 Unity 编辑器的可选组件。
+执行所有常见步骤。 在步骤 #3 中, 选择 "**包含 Unity 的游戏开发**" 工作负荷。 您可以取消选择 Unity 编辑器可选组件, 因为您将从下面的说明中安装新版本的 Unity。
 
-### <a name="unity-step-2-upgrade-to-the-latest-public-build-of-unity-with-windows-mr-support"></a>Unity 步骤 2:升级到最新的公共版本的 Windows MR 支持 Unity
-1. 下载最新[建议使用公共生成的 Unity](install-the-tools.md)与混合现实支持。
-2. 在开始之前保存您的项目的副本
-3. 审阅[文档](https://docs.unity3d.com/Manual/UpgradeGuides.html)从 Unity 移植上可用。
-4. 请按照[说明](https://docs.unity3d.com/Manual/APIUpdater.html)上 Unity 的站点以使用其自动 API 更新程序
-5. 检查并查看是否存在以使项目运行，所需的其他更改，完成任何剩余的错误和警告。 注意：如果你依赖的中间件，可能需要更新该中间件，若要开始 （在下面的步骤 3 中更多详细信息）。
+### <a name="unity-step-2-upgrade-to-the-latest-public-build-of-unity-with-windows-mr-support"></a>Unity 步骤 2:升级到具有 Windows MR 支持的 Unity 的最新公共版本
+1. 下载最新建议的具有混合现实支持[的 Unity 公共内部版本](install-the-tools.md)。
+2. 在开始之前保存项目的副本
+3. 查看在迁移时可从 Unity 获得的[文档](https://docs.unity3d.com/Manual/UpgradeGuides.html)。
+4. 按照 Unity 站点上的[说明](https://docs.unity3d.com/Manual/APIUpdater.html)使用其自动 API 更新程序
+5. 检查并查看你是否需要进行其他更改以使你的项目运行, 并处理剩余的错误和警告。 注意:如果你有依赖的中间件, 则可能需要更新该中间件以继续操作 (更多详细信息, 请访问下面的步骤 3)。
 
-### <a name="unity-step-3-upgrade-your-middleware-to-the-latest-versions"></a>Unity 步骤 3:升级到最新版本的中间件
+### <a name="unity-step-3-upgrade-your-middleware-to-the-latest-versions"></a>Unity 步骤 3:将中间件升级到最新版本
 
-使用 Unity 的任何更新，则很可能需要更新您的游戏或应用程序依赖于的一个或多个中间件包。 此外，最新版本的所有中间件会增加您成功的可能性的移植过程的其余部分。 许多中间件包最近添加了支持的通用 Windows 平台 (UWP)，并升级到最新版本将让您充分利用该工作。
+对于任何 Unity 更新, 都有可能需要更新游戏或应用程序所依赖的一个或多个中间件包。 此外, 在所有中间件的最新版本中, 都将增加在移植过程的其余部分成功的可能性。 许多中间件包都最近添加了对通用 Windows 平台 (UWP) 的支持, 升级到最新版本后, 便可以利用这一工作。
 
-### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 步骤 4:目标应用程序运行在通用 Windows 平台 (UWP)
+### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 步骤 4:定位应用程序以在通用 Windows 平台上运行 (UWP)
 
-安装工具后，你需要获取为通用 Windows 应用运行的应用程序。
-* 请按照[详细的步骤的演练中全程](https://unity3d.com/partners/microsoft/porting-guides)通过 Unity 提供。 请注意，应始终保持最新 LTS 版本 （任何 20xx.4 发行版） 的 Windows MR 上。
-* 有关更多的 UWP 开发资源，看一看[Windows 10 游戏开发指南](https://docs.microsoft.com/windows/uwp/gaming/e2e)。
-* 请注意，Unity 会继续改进 IL2CPP 支持;IL2CPP 会使某些 UWP 端口容易。 如果当前要面向的.Net 后端脚本，则应考虑转换而是利用 IL2CPP 后端。
+安装这些工具后, 需要将应用作为通用 Windows 应用运行。
+* 按照 Unity 提供的[详细分步指导](https://unity3d.com/partners/microsoft/porting-guides)进行操作。 请注意, 你应该保留适用于 Windows 的最新 LTS 版本 (任何20xx 版本)。
+* 有关 UWP 开发资源的详细信息, 请参阅[Windows 10 游戏开发指南](https://docs.microsoft.com/windows/uwp/gaming/e2e)。
+* 请注意, Unity 将继续改进 IL2CPP 支持;IL2CPP 使某些 UWP 端口变得更加简单。 如果你当前面向的是 .Net 脚本编写后端, 则应考虑将转换为使用 IL2CPP 后端。
 
-注意：如果你的应用程序有任何依赖项上设备的特定服务，例如匹配，从而使从流，需要在此步骤中禁用它们。 在更高版本时，你可以连接到 Windows 提供的等效服务。
+注意:如果你的应用程序对设备特定服务具有任何依赖关系, 例如, 从流中进行匹配, 则需要在此步骤中禁用它们。 稍后, 你可以与 Windows 提供的等效服务挂钩。
 
-### <a name="unity-step-5-deprecated"></a>Unity 步骤 5:（已弃用）
+### <a name="unity-step-5-deprecated"></a>Unity 步骤 5:弃用
 
-步骤 5 不再是必需的。 以便对索引步骤保持不变，我们将从此处离开它。
+不再需要步骤5。 我们要将其保留在此处, 以便步骤的索引保持不变。
 
-### <a name="unity-step-6-get-your-windows-mixed-reality-hardware-set-up"></a>Unity 步骤 6:获取 Windows Mixed Reality 硬件设置
-1. 中的步骤查看[沉浸式头戴式安装程序](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/before-you-start
+### <a name="unity-step-6-get-your-windows-mixed-reality-hardware-set-up"></a>Unity 步骤 6:设置 Windows Mixed Reality 硬件
+1. 查看沉浸式[耳机安装程序中的步骤](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/before-you-start
 )
-2. 了解如何[使用 Windows Mixed Reality 模拟器](using-the-windows-mixed-reality-simulator.md)和[导航 Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)
+2. 了解如何[使用 Windows Mixed reality 模拟器](using-the-windows-mixed-reality-simulator.md)并[导航 windows mixed reality 主页](navigating-the-windows-mixed-reality-home.md)
 
-### <a name="unity-step-7-target-your-application-to-run-on-windows-mixed-reality"></a>Unity 步骤 7:在应用程序在 Windows Mixed Reality 上运行的目标
-1. 首先，必须删除或有条件地编译出任何其他特定于特定 VR SDK 的库支持。 这些资产经常更改设置和其他如 Windows Mixed Reality 的 VR Sdk 与不兼容的方法中的项目的属性。
-    * 例如，如果你的项目引用 SteamVR SDK，你将需要更新项目以针对 Windows 应用商店生成目标导出时排除这些预设和脚本 API 调用。
-    * 有条件地不包括其他 VR Sdk 的特定步骤即将推出。
-2. 在 Unity 项目中，[面向 Windows 10 SDK](holograms-100.md#target-windows-10-sdk)
-3. 为每个场景[设置照相机](holograms-100.md#chapter-2---setup-the-camera)
+### <a name="unity-step-7-target-your-application-to-run-on-windows-mixed-reality"></a>Unity 步骤 7:使应用程序面向在 Windows Mixed Reality 上运行
+1. 首先, 必须将特定于特定的 VR SDK 的任何其他库支持删除或有条件地编译掉。 这些资产经常以与其他 VR Sdk (如 Windows Mixed Reality) 不兼容的方式更改项目的设置和属性。
+    * 例如, 如果你的项目引用 SteamVR SDK, 则需要更新你的项目, 以在导出 Windows 应用商店生成目标时排除这些 prototyping 和脚本 API 调用。
+    * 即将推出其他用于有条件地排除其他 VR Sdk 的特定步骤。
+2. 在 Unity 项目中,[面向 Windows 10 SDK](holograms-100.md#target-windows-10-sdk)
+3. 对于每个场景,[设置照相机](holograms-100.md#chapter-2---setup-the-camera)
 
-### <a name="unity-step-8-use-the-stage-to-place-content-on-the-floor"></a>Unity 步骤 8:使用阶段在地板上放置的内容
+### <a name="unity-step-8-use-the-stage-to-place-content-on-the-floor"></a>Unity 步骤 8:使用舞台将内容放到地面上
 
-可以跨各种构建混合现实体验[体验刻度](coordinate-systems.md)。
+您可以在各种[经验](coordinate-systems.md)范围内构建混合现实体验。
 
-如果您要移植**装规模体验**，您必须确保 Unity 设置为**保持静止**跟踪空间类型：
+如果要移植**固定规模的体验**, 必须确保将 Unity 设置为**静止**跟踪空间类型:
 
 ```cs
 XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 ```
 
-这将设置 Unity 的世界坐标系统来跟踪[固定参考框架](coordinate-systems.md#spatial-coordinate-systems)。 在保持静止跟踪模式下，内容放置正前方照相机的默认位置在编辑器中 （正向是-Z） 在应用启动时将显示用户。 自动用户的安装源，您可以调用 Unity 的[XR。InputTracking.Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)方法。
+这将设置 Unity 的世界坐标系统以跟踪[固定的引用框架](coordinate-systems.md#spatial-coordinate-systems)。 在静止跟踪模式下, 当应用程序启动时, 位于面板默认位置 (正向-Z) 前面的编辑器中的内容将显示在用户的前面。 若要 recenter 用户的固定来源, 可以调用 Unity 的[XR。InputTracking. Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)方法。
 
-如果您要移植**现有规模体验**或**聊天室规模体验**，将放置内容相对于基底。 有关用户的原因使用 floor **[空间阶段](coordinate-systems.md#spatial-coordinate-systems)**、 floor 级别来源和可选空间边界表示用户的定义、 设置期间首次运行。 这些体验，您必须确保 Unity 设置为**RoomScale**跟踪空间类型。 尽管 RoomScale 是默认值，你将需要显式设置，并确保你获取返回 true，以捕获其中用户已离开它们校准的房间移动用户的计算机的情况下：
+如果迁移的是**大规模体验**或**房间规模体验**, 将会相对于地面放置内容。 使用 **[空间阶段](coordinate-systems.md#spatial-coordinate-systems)** (表示用户在首次运行期间设置的已定义的层级来源和可选房间边界) 的原因。 对于这些体验, 必须确保将 Unity 设置为**RoomScale**跟踪空间类型。 尽管 RoomScale 是默认值, 但你需要对其进行显式设置, 并确保返回 true, 以便捕获用户将其计算机从其校准的房间离开的情况:
 
 ```cs
 if (XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale))
@@ -120,44 +120,44 @@ else
 }
 ```
 
-一旦您的应用程序已成功设置跟踪空间类型，内容在 y 轴上放置 RoomScale = 的 0 平面将显示在地板。 （0，0，0） 处的原点将在其中用户花了安装过程中的空间，-z 表示的向前他们在安装过程中面临着的车间的具体位置。
+应用成功设置 RoomScale 跟踪空间类型后, 放置在 y = 0 平面上的内容将显示在地面上。 位于 (0, 0, 0) 的原点将是用户在房间安装期间考验的特定位置, 并以-Z 表示在安装过程中所面临的正向方向。
 
-在脚本代码中，随后可以调用你的 TryGetGeometry 方法是 UnityEngine.Experimental.XR.Boundary 类型获取边界多边形指定 TrackedArea 边界类型。 如果用户定义的边界 （重新获取顶点的列表），您知道安全地交付**聊天室规模体验**给用户，他们可以在其中引导在场景周围创建。
+在脚本代码中, 您可以对 UnityEngine 调用 TryGetGeometry 方法来获取边界多边形, 并指定 "TrackedArea" 的边界类型。 如果用户定义了边界 (返回顶点的列表), 则你知道向用户提供**房间规模的体验**是安全的, 他们可以在其中浏览你创建的场景。
 
-请注意，当用户接近其，系统会自动呈现边界。 您的应用程序不需要使用此多边形呈现自身的边界。
+请注意, 当用户接近边界时, 系统将自动呈现边界。 您的应用程序不需要使用此多边形来呈现边界本身。
 
-有关更多详细信息，请参阅[Unity 中的坐标系统](coordinate-systems-in-unity.md)页。
+有关更多详细信息, 请参阅[Unity 页中的坐标系统](coordinate-systems-in-unity.md)。
 
-某些应用程序使用矩形将限制它们的交互。 检索的最大的内接的矩形不直接支持 UWP API 或 Unity 中。 示例代码链接到下显示了如何查找跟踪边界内的矩形。 它是启发式方法，因此可能找不到最佳的解决方案，但是，结果通常是一致的期望。 若要查找更精确的结果，但代价是处理时间，可以优化算法中的参数。 该算法是使用 5.6 预览版 MRTP Unity 版本的混合现实工具包的分支中。 这不是公开提供。 代码应为可在 Unity 2017.2 和更高版本中直接使用。 将在不久的将来将代码移植到当前 MRTK。
+某些应用程序使用矩形来约束其交互。 UWP API 或 Unity 中不直接支持检索最大的内接矩形。 链接到下面的示例代码演示了如何在跟踪边界内查找矩形。 它基于试探法, 因此可能找不到最佳解决方案, 但结果通常与预期一致。 可以优化算法中的参数, 以在处理时间成本中查找更精确的结果。 该算法位于混合现实工具包的分叉中, 该工具包使用 5.6 preview MRTP 版本的 Unity。 这不是公开提供的。 代码应可直接在2017.2 和更高版本的 Unity 中使用。 在不久的将来, 会将代码移植到当前 MRTK。
 
-[GitHub 上的代码的 zip 文件](https://github.com/KevinKennedy/MixedRealityToolkit-Unity/releases/tag/5.6.MRTP20)重要文件：
-* Assets/HoloToolkit/Stage/Scripts/StageManager.cs-用法的示例
-* Assets/HoloToolkit/Stage/Scripts/LargestRectangle.cs-算法的实现
-* Assets/HoloToolkit-UnitTests/Editor/Stage/LargestRectangleTest.cs-算法的简单测试
+[GitHub 上的代码的 zip 文件](https://github.com/KevinKennedy/MixedRealityToolkit-Unity/releases/tag/5.6.MRTP20)重要文件:
+* 资产/HoloToolkit/阶段/脚本/StageManager-用法示例
+* 资产/HoloToolkit/阶段/脚本/LargestRectangle-算法的实现
+* 资产/HoloToolkit-Run-unittests/Editor/Stage/LargestRectangleTest-算法的普通测试
 
-结果的示例：
+结果示例:
 
 ![结果示例](images/largestrectangle-400px.jpg)
 
-算法基于 Daniel Smilkov 博客：[多边形内的最大矩形](https://d3plus.org/blog/behind-the-scenes/2014/07/08/largest-rect/)
+算法基于博客的 Daniel Smilkov:[多边形中的最大矩形](https://d3plus.org/blog/behind-the-scenes/2014/07/08/largest-rect/)
 
-### <a name="unity-step-9-work-through-your-input-model"></a>Unity 步骤 9:通过输入模型起作用
+### <a name="unity-step-9-work-through-your-input-model"></a>Unity 步骤 9:完成输入模型
 
-每个游戏或定位现有 HMD 应用程序将有一组它处理的输入，输入所需的体验，和特定 Api，它调用以获取这些输入的类型。 我们已致力于尝试将其作为简单明了，若要充分利用 Windows Mixed Reality 中提供的输入。
+每个面向现有 HMD 的游戏或应用程序都将具有一组可处理的输入, 其所需的输入类型和体验所需的特定 Api 以及用于获取这些输入的特定 Api。 我们投入了大量努力, 尽可能简单直接地利用 Windows Mixed Reality 中提供的输入。
 1. 通读 **[输入移植指南 Unity](input-porting-guide-for-unity.md)** Windows Mixed Reality 的方式的详细信息公开输入，和如何映射到你的应用程序可能会立即执行。
-2. 选择是否想要利用 Unity 的跨-VR 的 SDK 输入 API，或特定于 MR 的输入 API。 常规 Input.GetButton/Input.GetAxis Api 由 Unity VR 应用如今用来[Oculus 输入](https://docs.unity3d.com/Manual/OculusControllers.html)并[OpenVR 输入](https://docs.unity3d.com/Manual/OpenVRControllers.html)。 如果您的应用程序已对 motion 控制器使用这些 Api，这是最简单路径-只需重新映射按钮和轴中输入管理器。
-    * 您可以访问在 Unity 中使用常规跨 VR SDK Input.GetButton/Input.GetAxis Api 或特定于 MR 的 UnityEngine.XR.WSA.Input Api 的运动控制器数据。 （以前在 Unity 5.6 中的 UnityEngine.XR.WSA.Input 命名空间）
-    * 请参阅[工具包中的示例](https://github.com/Microsoft/HoloToolkit-Unity/pull/572)组合游戏手柄和动作的控制器。
+2. 选择是要使用 Unity 的跨 VR-SDK 输入 API 还是 MR 专用输入 API。 当前, Unity VR 应用使用一般输入. GetButton/GetAxis Api 进行[Oculus 输入](https://docs.unity3d.com/Manual/OculusControllers.html)和[OpenVR 输入](https://docs.unity3d.com/Manual/OpenVRControllers.html)。 如果你的应用程序已使用这些用于运动控制器的 Api, 这是最简单的路径, 你只需在输入管理器中重新映射按钮和轴即可。
+    * 您可以使用一般的 GetButton/GetAxis Api 或 MR 专用 UnityEngine. XR Api 来访问 Unity 中的运动控制器数据. Api。 (以前在 Unity 5.6 的 UnityEngine 命名空间中)
+    * 请参阅组合游戏板和运动控制器的[工具包中的示例](https://github.com/Microsoft/HoloToolkit-Unity/pull/572)。
 
 ### <a name="unity-step-10-performance-testing-and-tuning"></a>Unity 步骤 10:性能测试和优化
 
-Windows Mixed Reality 将在设备的广泛类上可用，范围为从高结束游戏的 Pc，到广泛的市场主流 Pc。 具体取决于您面向的哪些市场，没有为应用程序可用的计算和图形预算显著差异。 在此移植练习中，有可能利用高级 PC，并获得了大量的计算和图形预算提供对您的应用程序。 如果你想要向更广泛的受众提供您的应用程序，应测试并分析你的应用[想要的代表性硬件目标](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)。
+Windows Mixed Reality 将在各种设备上可用, 范围从高端游戏电脑到广泛市场主流 Pc。 根据你的目标市场, 你的应用程序的可用计算和图形预算有很大的差异。 在此迁移过程中, 可能会利用高级 PC, 并为应用提供大量的计算和图形预算。 如果你希望将应用程序提供给更广泛的受众, 则应在[你想要面向的代表硬件](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)上测试和分析你的应用程序。
 
-这两[Unity](https://docs.unity3d.com/Manual/Profiler.html)并[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)包括性能探查器，并且两个[Microsoft](understanding-performance-for-mixed-reality.md)并[Intel](https://software.intel.com/articles/vr-content-developer-guide)上发布指导原则性能分析和优化。 没有在可用的性能的全面讨论[混合现实的了解性能](understanding-performance-for-mixed-reality.md)。 此外，有 Unity 下的特定详细信息[Unity 的性能建议](performance-recommendations-for-unity.md)。
+[Unity](https://docs.unity3d.com/Manual/Profiler.html)和[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)都包含性能探查器, [Microsoft](understanding-performance-for-mixed-reality.md)和[Intel](https://software.intel.com/articles/vr-content-developer-guide)发布有关性能分析和优化的指导原则。 在[了解混合现实的性能](understanding-performance-for-mixed-reality.md)方面提供了更全面的性能讨论。 此外, 针对[unity 的性能建议](performance-recommendations-for-unity.md)下的 unity 有特定的详细信息。
 
 ## <a name="see-also"></a>请参阅
-* [移植指南 Unity 的输入](input-porting-guide-for-unity.md)
-* [Windows Mixed Reality 最小 PC 硬件兼容性指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
-* [混合现实的了解性能](understanding-performance-for-mixed-reality.md)
-* [Unity 的性能建议](performance-recommendations-for-unity.md)
-* [适用于 UWP 将 Xbox Live 支持添加到 Unity](https://docs.microsoft.com/windows/uwp/xbox-live/get-started-with-partner/partner-add-xbox-live-to-unity-uwp)
+* [Unity 的输入移植指南](input-porting-guide-for-unity.md)
+* [Windows Mixed Reality 最小电脑硬件兼容性指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
+* [了解混合现实的性能](understanding-performance-for-mixed-reality.md)
+* [Unity 性能建议](performance-recommendations-for-unity.md)
+* [向适用于 UWP 的 Unity 添加 Xbox Live 支持](https://docs.microsoft.com/windows/uwp/xbox-live/get-started-with-partner/partner-add-xbox-live-to-unity-uwp)

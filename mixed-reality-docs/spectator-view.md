@@ -6,12 +6,12 @@ ms.author: chriba
 ms.date: 02/11/2019
 ms.topic: article
 keywords: Spectator View, iPhone, iOS, iPad, OpenCV, 摄像, ARKit, HoloLens, Mixed Reality, MixedRealityToolkit, demo, 记录
-ms.openlocfilehash: 02088d7b218a25c72f2eb98ae24c85a90e6e5b86
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 135a566456f1000669d2033edcf0d0b4649ccdf3
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293610"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387665"
 ---
 # <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens 和 HoloLens 2 的 Spectator 视图
 
@@ -20,7 +20,7 @@ ms.locfileid: "68293610"
 ## <a name="overview"></a>概述
 
 在戴上 HoloLens 时, 我们经常忘记, 没有 it 人员的人不能绑住。 Spectator 视图允许其他人在二维屏幕上看到一个 HoloLens 用户在其世界中看到的内容。
-Spectator 视图提供了一种快速且经济实惠的方法, 用于通过移动设备录制高清影像。 它还通过 DSLR 相机提供一种专业的影像质量记录。
+Spectator 视图提供了一种快速且经济实惠的方法, 用于通过移动设备录制高清影像。 它还通过视频相机提供一种专业的影像质量记录。
 
 ## <a name="key-resources"></a>关键资源
 
@@ -28,7 +28,7 @@ Spectator 视图提供了一种快速且经济实惠的方法, 用于通过移�
 * [**种**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Architecture.md)
 * [**范例**](https://github.com/microsoft/MixedReality-SpectatorView/tree/master/samples)
 * [**移动设置说明**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.md)
-* [**DSLR 安装说明**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.DSLR.md)
+* [**视频照相机设置说明**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.VideoCamera.md)
 
 ## <a name="use-cases"></a>用例
 * 可以使用 iPhone 或 Android 设备记录混合现实体验。 以完整 HD 记录, 并将抗锯齿应用于全息影像甚至阴影。 这是一种经济高效的方法, 可用于捕获影像的视频。
@@ -48,15 +48,15 @@ Spectator 视图提供了一种快速且经济实惠的方法, 用于通过移�
 
 下表显示了不同的 Spectator 视图功能及其功能。 选择最适合您的视频录制需求的选项:
 
-|                                      | 移动电话                  |                    DSLR 照相机              |
+|                                      | 移动电话                  |                    视频摄像机              |
 |--------------------------------------|:-----------------------:|:-------------------------------------------:|
-| HD 质量                           |         完整高清         |        专业质量与 (由 DSLR 确定)      |
+| HD 质量                           |         完整高清         |        专业质量与 (由视频相机确定)      |
 | 轻松移动相机                 |            ✔            |                      ✔                      |
 | 第三人员视图                    |            ✔            |                      ✔                      |
 | 可以流式传输到屏幕           |            ✔            |                      ✔                      |
 | 可移植                             |            ✔            |                                             |
 | 无线                             |            ✔            |                                             |
-| 其他必需硬件         |     Android 手机, iPhone    | HoloLens + Rig + 架 + DSLR + PC + Unity |
+| 其他必需硬件         |     Android 手机, iPhone    | HoloLens + Rig + "装备 + 视频相机 + PC + Unity" |
 | 硬件投资                  |           低            |                     高                    |
 | 跨平台                       |           Android、iOS   |                                             |
 | 同步内容                 |            ✔            |                      ✔                      |
