@@ -1,103 +1,103 @@
 ---
-title: 案例研究-使用稳定平面以减少 holographic 动荡
-description: 使用稳定平面以减少 holographic 动荡
+title: 案例研究-使用稳定面减少全息 turbulence
+description: 使用稳定面减少全息 turbulence
 author: bstrukus
 ms.author: bestruku
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality，全息、 稳定、 案例研究
+keywords: Windows Mixed Reality, 全息影像, 稳定性, 案例研究
 ms.openlocfilehash: a084ede5f9bf3d5f058cc81ec75840e2c2e75af2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590100"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63526250"
 ---
-# <a name="case-study---using-the-stabilization-plane-to-reduce-holographic-turbulence"></a>案例研究-使用稳定平面以减少 holographic 动荡
+# <a name="case-study---using-the-stabilization-plane-to-reduce-holographic-turbulence"></a>案例研究-使用稳定面减少全息 turbulence
 
-使用全息可能很棘手。 这一事实可以移动你的空间并查看你全息从所有不同的角度提供无法获取正常的计算机屏幕的浸入式的级别。 让这些全息保留不动并查看实际是通过 Microsoft HoloLens 硬件和全息版的应用程序的智能化设计技术功能。
+使用全息影像可能比较棘手。 这样一来, 您可以四处移动空间, 从所有不同角度查看全息影像, 都提供了一种不能使用普通计算机屏幕获得的浸入式。 将这些全息影像置于适当位置并寻找现实, 这是一项技术特征, 由 Microsoft HoloLens 硬件和全息式应用程序的智能设计完成。
 
 ## <a name="the-tech"></a>技术人员
 
-若要使全息看起来就像它们实际上与你共享空间，它们应正确呈现，而无需分色。 由此，部分，技术内置于 HoloLens 硬件使得我们所说的定位点全息[稳定平面](hologram-stability.md#stabilization-plane)。
+为了使全息影像看起来像是实际与你共享空间, 它们应该正确呈现, 无需颜色分离。 这一部分是通过内置于 HoloLens 硬件的技术来实现的, 该技术使全息影像定位在我们称为 "[稳定" 平面](hologram-stability.md#stabilization-plane)上的内容。
 
-由一个点和正常时，定义一个平面，但因为我们始终希望要面临着相机的平面，我们实际上只是关心设置平面的点。 我们可以告诉点能够将精力集中的保留的所有内容锚定到其处理的 HoloLens 和稳定，但如何设置此焦点是特定于应用并可以执行或破坏您的应用程序，具体取决于内容。
+平面由点和法线定义, 但由于我们始终希望该平面面对相机, 因此我们实际上只关心设置平面的点。 我们可以告诉 HoloLens 哪个点将其处理操作集中在一起, 使所有内容保持锚定并稳定, 但如何设置此焦点点是特定于应用的, 并且可以根据内容创建或中断应用。
 
-全息简单地说，工作时，最佳的稳定平面正确应用，但的实际方式取决于要创建应用程序的类型。 让我们看一看如何应用当前可用于 HoloLens 的一些解决此问题。
+简而言之, 在正确应用了稳定平面后, 全息影像最有效, 但实际意味着哪种方式取决于要创建的应用程序的类型。 让我们看看一些当前可用于 HoloLens 的应用如何解决此问题。
 
 ## <a name="behind-the-scenes"></a>幕后
 
-开发以下应用程序，我们注意到我们没有使用平面，当对象将 sway 时我们头移动，并且我们会看到与快速头或全息图动作分色。 开发时间范围内的过程中，我们了解到通过反复试验如何最好地使用稳定平面以及如何设计应用程序围绕它无法修复的问题。
+在开发以下应用程序时, 我们注意到, 当我们未使用该平面时, 对象会在我们的打印头移动时使用 sway, 并且我们会发现, 使用打印头或全息图进行分色。 在开发的整个过程中, 我们已通过试用和错误了解如何最好地使用稳定面, 以及如何在不能解决的问题周围设计应用程序。
 
-### <a name="galaxy-explorer-stationary-content-3d-interactivity"></a>Galaxy 资源管理器：静态内容，三维交互性
+### <a name="galaxy-explorer-stationary-content-3d-interactivity"></a>Galaxy 资源管理器:静止内容, 三维交互
 
-[Galaxy 资源管理器](galaxy-explorer.md)场景中有两个主要元素：天体内容和遵循你的视线移动的小型 UI 工具栏的主视图。 稳定的逻辑中，我们了解你当前的视线移动向量中每个帧，以确定是否抵达指定的冲突层上的所有内容相交使用什么。 在这种情况下，我们感兴趣的层是行星，因此如果你的视线移动落入全球，稳定平面放在该文件夹。 如果命中无目标冲突层中的对象，该应用使用辅助的"计划 B"层。 如果不在正在 gazed，稳定平面保留相同距离时，内容在观望时一样。 UI 工具中省略了作为平面目标为我们找到附近之间的差异并得降低整体场景的稳定性。
+在场景中, [Galaxy 资源管理器](galaxy-explorer.md)具有两个主要元素:你的注视后的天体内容和小 UI 工具栏的主视图。 对于稳定性逻辑, 我们将查看当前看上去向量与每个帧中的相交情况, 以确定它是否达到了指定冲突层上的任何内容。 在这种情况下, 我们感兴趣的层是行星, 因此, 如果注视落在地球上, 则会将稳定平面放置在该处。 如果未命中目标冲突层中的任何对象, 则应用将使用辅助 "计划 B" 层。 如果未在 gazed 任何内容, 则稳定面将保持与 gazing 内容时的距离相同。 UI 工具将作为平面目标, 正如我们发现, 在接近到远处, 降低了整体场景的稳定性。
 
-Galaxy 资源管理器的设计有助于至稳定地保管东西和减少分色的影响。 建议用户四处和轨迹内容而不是从左到右，沿其移动和行星绕速度足够慢，分色并不明显。 此外，会保留常量 60 FPS，这就能防止发生分色。
+Galaxy 资源管理器的设计适合于使其保持稳定并降低颜色分离的效果。 鼓励用户浏览内容, 而不是从一边移动内容, 而是轨道缓慢, 以致颜色分离并不明显。 此外, 还保留了恒定的 60 FPS, 这在防止颜色分离发生的情况下是一种很长的方式。
 
-若要亲自验证这点，查看文件中调用 LSRPlaneModifier.cs [Galaxy 资源管理器代码在 GitHub 上的](https://github.com/Microsoft/GalaxyExplorer/tree/master/Assets/Scripts/Utilities)。
+若要亲自查看此问题, 请在[GitHub 上的 Galaxy 资源管理器代码](https://github.com/Microsoft/GalaxyExplorer/tree/master/Assets/Scripts/Utilities)中查找名为 LSRPlaneModifier.cs 的文件。
 
-### <a name="holostudio-stationary-content-with-a-ui-focus"></a>HoloStudio:使用 UI 焦点的静态内容
+### <a name="holostudio-stationary-content-with-a-ui-focus"></a>HoloStudio:带有 UI 焦点的静止内容
 
-中 HoloStudio，您需要花费大部分时间查看相同的模型在处理。 选择一种新工具或想要导航 UI，因此我们可以简化平面设置逻辑时，你的视线移动没有除移动很长。 查看 UI 时，在平面设置为你的视线移动对应于任何 UI 元素。 查看模型时，平面是设定距离处，使用你与模型之间的默认距离相对应。
+在 HoloStudio 中, 大多数时候都在查看正在使用的同一模型。 如果你选择一个新工具或要浏览 UI, 你的注视不会有很大的影响, 因此, 我们可以将平面设置逻辑保持简单。 查看 UI 时, 平面将设置为您的 "注视" 对齐的任何 UI 元素。 查看模型时, 平面是一组距离, 与您与模型之间的默认距离相对应。
 
-![在中实现可视化的稳定平面以用户身份 HoloStudio gazes 在主页按钮](images/holostudio-stabilization-plane-500px.png)
+!["HoloStudio" 中的 "稳定" 平面以用户在 "主页" 按钮上 gazes](images/holostudio-stabilization-plane-500px.png)
 
-### <a name="holotour-and-3d-viewer-stationary-content-with-animation-and-movies"></a>HoloTour 和三维查看器：动画和电影的静态内容
+### <a name="holotour-and-3d-viewer-stationary-content-with-animation-and-movies"></a>HoloTour 和3D 查看器:带有动画和电影的静止内容
 
-在 HoloTour 和三维查看器中，您就是孤立动画效果的对象或电影与在其上添加三维效果。 这些应用程序稳定性的做法是设置为任何当前正在查看。
+在 HoloTour 和3D 查看器中, 您正在查看孤立动画对象或电影, 其中添加了三维效果。 这些应用中的稳定设置为当前正在查看的内容。
 
-HoloTour 还能防止 straying 太远而从虚拟世界通过让其与你移动而不是保留在固定位置。 这可确保你不会获得足够的距离稳定性问题会悄悄引入许多其他全息。
+HoloTour 还可以让你与你的虚拟世界失去联系, 而不是保持在固定位置。 这可以确保你不会从其他影像中获得足够的空间, 以便在中进行爬出。
 
-![在此示例中从 HoloTour，稳定平面将设置为 Hadrian 的 Pantheon 此电影。](images/holotour-stabilization-plane-500px.jpg)
+![在此示例中, HoloTour 为 Hadrian 的 Pantheon 的此电影。](images/holotour-stabilization-plane-500px.jpg)
 
-### <a name="roboraid-dynamic-content-and-environmental-interactions"></a>RoboRaid:动态内容和环境之间的交互
+### <a name="roboraid-dynamic-content-and-environmental-interactions"></a>RoboRaid:动态内容和环境交互
 
-在 RoboRaid 中设置的稳定平面是非常简单，尽管应用程序需要最突然移动。 在平面面向坚持使用墙纸或周围的对象，并在足够的距离离开它们时将浮动在准备好固定的距离。
+尽管应用程序需要突然移动, 但在 RoboRaid 中设置稳定平面非常简单。 该平面朝向远离墙壁或周围对象的方向, 当您离离这些物体时, 它将在您前面的固定距离处浮动。
 
-RoboRaid 已设计了记住的稳定平面。 标线，因为它是 head 锁定移最，绕过这通过使用仅红色和蓝色的最大程度减少任何颜色大大超出了。 它还包含一小段深度之间的部分，将会通过模糊化具有某种已经预期的视差效果发生任何颜色出血降至最低。 机器人不非常快速地移动，并且仅移动中固定的时间间隔较短的距离。 他们往往停留大约 2 米的前面，其中默认情况下设置稳定性的做法。
+RoboRaid 设计为在设计时考虑到了稳定性。 Reticle, 它将最大程度地移动, 因为它被锁定, 因此只使用红色和蓝色, 这会使任何颜色的颜色最小化。 它还包含各部分之间的一小部分深度, 最大程度地减少了通过使用已预期的视差效果屏蔽的颜色出血。 机器人不会非常快地移动, 而且会按固定的时间间隔轻松移动。 它们的正面往往围绕2米, 在默认情况下, 会设置稳定。
 
-### <a name="fragments-and-young-conker-dynamic-content-with-environmental-interaction"></a>片段和年轻 Conker:环境交互的动态内容
+### <a name="fragments-and-young-conker-dynamic-content-with-environmental-interaction"></a>片段和年轻人 Conker:带有环境交互的动态内容
 
-编写 Asobo Studio 中的C++，片段和 Young Conker 设置稳定平面到采用不同的方法。 点 (POI) 感兴趣的是在代码中定义和排序在优先级方面。 Poi 是如 Young Conker、 菜单、 瞄准标线和徽标的 Conker 型号中的游戏内容。 通过用户的视线移动与相交 Poi，平面设置为具有最高优先级的对象的中心。 如果没有交集发生，在平面设置为默认的距离。
+使用 Asobo Studio C++编写的片段和年轻人 Conker 采用不同的方法来设置 "稳定" 平面。 相关点 (POI) 在代码中定义, 并按优先级排序。 Poi 是游戏中的内容, 例如年轻人 Conker、菜单、目标 reticle 和徽标中的 Conker 模型。 Poi 与用户的 "注视" 相交, "平面" 设置为具有最高优先级的对象的中心。 如果未发生交集, 则将平面设置为默认距离。
 
-片段和 Young Conker 还设计您通过暂停应用程序，如果移动之外什么先前已扫描作为 play 空间太远 straying 从全息周围。 在这种情况下，它们可以让您找到提供最稳定的体验的边界内。
+如果移动到之前已作为播放空间进行了扫描的内容, 则片段和年轻人 Conker 还会通过暂停应用程序来设计离全息 straying 太远的位置。 因此, 它们使你能够在提供最稳定的体验的边界内实现。
 
-## <a name="do-it-yourself"></a>就自己动手
+## <a name="do-it-yourself"></a>自行完成
 
-如果您具有 HoloLens，并且想要琢磨我所讨论的概念，可以下载测试场景并尝试下面的练习。 它使用 Unity 的内置零件 API，它可以帮助您直观地显示设置你的平面。 此代码还用于捕获在此案例研究的屏幕快照。
-1. 同步的最新版本[MixedRealityToolkit Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity)。
-2. 打开[HoloToolkit-Examples/Utilities/Scenes/StabilizationPlaneSetting.unity](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Utilities/Scenes/StabilizationPlaneSetting.unity)场景。
-3. 构建和配置生成的项目。
+如果你有一个 HoloLens, 并且想要与我讨论过的概念进行探讨, 你可以下载一个测试场景并尝试以下练习。 它使用 Unity 的内置别出心裁 API, 它应有助于您直观地显示平面的设置位置。 此代码还用于捕获此案例研究中的屏幕截图。
+1. 同步最新版本的[MixedRealityToolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)。
+2. 打开[HoloToolkit-Examples/公用事业/场景/StabilizationPlaneSetting](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Utilities/Scenes/StabilizationPlaneSetting.unity)场景。
+3. 生成并配置生成的项目。
 4. 在设备上运行。
 
-### <a name="exercise-1"></a>练习 1
+### <a name="exercise-1"></a>练习1
 
-你将看到几个白色点构成您在不同的方向。 准备好，您将看到三个点在不同的深度。 敲击若要更改的点在平面设置为。 对于此练习，以及另外两个，周围移动你的空间以点观望时。 打开头左侧、 右侧，向上和向下。 从点移动更接近于和父亲。 请参阅它们时如何做出反应的稳定平面设置为不同的目标。
+你将看到不同方向的几个白点。 在您之前, 您将在不同的深度看到三个点。 点击以更改平面设置为的点。 对于本练习, 在这两个过程中, 在 gazing 点时移动空间。 向左、向右、向上、向下旋转。 从点接近和成为父亲。 查看稳定性平面设置为不同目标时, 如何做出反应。
 
-### <a name="exercise-2"></a>练习 2
+### <a name="exercise-2"></a>练习2
 
-现在，打开到您的权利，直到您看到一个振荡上水平路径，另一个垂直路径上的两个移动点。 再次重申，-敲击更改平面设置为哪些点。 请注意如何可降低分色显示上连接到平面的点。 再次点击平面设置函数中使用圆点的速度。 此参数为有关对象的预期运动到 HoloLens 提供提示。 务必要了解何时使用此操作，因为您会注意到速度上一个点的使用时，其他移动圆点将显示更高版本分色。 设计您的应用程序时记住这一点 — 具有内聚性流到您的对象的动作可帮助防止项目出现。
+现在, 转到右侧, 直到看到两个移动点、水平路径上的一个振荡和一个垂直路径上的一个。 同样, 单击即可更改该平面设置为的点。 请注意, 在连接到平面的点上出现颜色分离的方式。 再次点击以在 "平面" 设置函数中使用点的速度。 此参数向 HoloLens 提供有关对象的预期运动的提示。 了解何时使用这一点非常重要, 因为当在一个圆点上使用了速度时, 另一个移动点将显示更大的颜色分隔。 在设计应用程序时请牢记这一点, 这会使对象的运动产生内聚性, 从而有助于防止出现项目。
 
-### <a name="exercise-3"></a>练习 3
+### <a name="exercise-3"></a>练习3
 
-启用到你右一次直至看到新的配置的点。 在这种情况下有距离的点和不断增加在它们的前面的传入和传出的一个点。 隔空敲击更改平面设置为，在后面的点和动作中的点之间交替的点。 请注意如何平面位置和方向的速度设置为的螺旋式上升点使项目显示所有位置。
+再次转到右侧, 直到看到新的点配置。 在这种情况下, 这两个点之间存在点, 并在其前面加上一个圆点。 点击以更改平面设置为的点, 在背面的点与运动中的点之间交替。 请注意, 将平面位置与螺旋式点的速度设置为会使项目显示在任何位置。
 
-**提示**
-* 保持简单平面设置逻辑。 如您所见，无需复平面设置算法利用的沉浸式体验。 稳定平面是只有一种填数游戏。
-* 当在所有可能的始终在平面之间移动目标顺利。 即时切换存有一定距离的目标可以直观地中断场景。
-* 请考虑在平面设置逻辑中锁定到特定目标上具有一个选项。 这样一来，如果需要可以可以锁定一个对象，如徽标或标题屏幕上的平面。
+**技巧**
+* 使平面设置逻辑简单。 如您所见, 您不需要使用复杂的平面设置算法来实现沉浸式体验。 稳定平面只是一片谜。
+* 在任何可能的情况下, 始终在目标之间平稳移动平面。 即时切换到远处目标可能会以可视方式中断场景。
+* 请考虑在飞机中设置一个选项, 将逻辑锁定到非常具体的目标。 这样一来, 就可以根据需要在对象 (如徽标或标题屏幕) 上锁定平面。
 
 ## <a name="about-the-author"></a>关于作者
 
 <table style="border-collapse:collapse">
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Ben Strukus" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>Ben Strukus</b><br>软件工程师 @Microsoft</td>
+<td style="border-style: none"><b>Ben Strukus</b><br>软件工程师@Microsoft</td>
 </tr>
 </table>
 
 ## <a name="see-also"></a>请参阅
-* [MR 基础知识 100:开始使用 Unity](holograms-100.md)
-* [在 Unity 中的焦点位置](focus-point-in-unity.md)
-* [全息图稳定性](hologram-stability.md)
+* [MR 基础知识 100：Unity 入门](holograms-100.md)
+* [Unity 中的焦点](focus-point-in-unity.md)
+* [全息影像稳定性](hologram-stability.md)

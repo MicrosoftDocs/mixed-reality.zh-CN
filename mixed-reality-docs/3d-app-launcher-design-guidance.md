@@ -1,65 +1,65 @@
 ---
-title: 三维应用程序启动程序设计指南
-description: 三维应用启动器是他们可以选择启动应用程序的用户的混合的现实房屋中的"物理"对象。
+title: 3D 应用启动器设计指南
+description: 3D 应用启动器是用户混合现实房子中的 "物理" 对象, 他们可以选择启动应用。
 author: thmignon
 ms.author: thmignon
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality，设计、 三维应用程序启动程序、 沉浸式头戴式耳机、 实时的多维数据集
+keywords: Windows Mixed Reality, 设计, 3D 应用程序启动器, 沉浸式耳机, 活动立方体
 ms.openlocfilehash: 47db5bffa121c0cc11d246dc749c464e5f187270
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590304"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63517752"
 ---
-# <a name="3d-app-launcher-design-guidance"></a>三维应用程序启动程序设计指南
+# <a name="3d-app-launcher-design-guidance"></a>3D 应用启动器设计指南
 
-放在 Windows Mixed Reality 沉浸式 (VR) 耳机上，输入的主页、 Windows Mixed Reality 可视化为房屋在由山脉和水包围 cliff (尽管您可以[选择其他环境，甚至创建您自己](add-custom-home-environments.md)). 在此空间内主页，用户可以随意排列和组织的三维对象和他们所关心任何需要的方式的应用。 一个**三维应用启动器**是在用户的"物理"对象的混合现实房屋，他们可以选择启动应用程序。
+当你置于 Windows Mixed Reality 沉浸式 (VR) 头戴式耳机上时, 你将进入 Windows Mixed Reality 主页, 并在 cliff 的周围 (尽管你可以[选择其他环境, 甚至创建你自己的环境](add-custom-home-environments.md)) 以房屋的形式可视化。 在此家中, 用户可以自由地按所需的方式排列和组织3D 对象和应用。 **3d 应用启动器**是用户混合现实房子中的 "物理" 对象, 他们可以选择启动应用。
 
-![示例：浮动鸟的 3D 应用程序启动器](images/20171016-151526-mixedreality1-1200px-1000px.jpg)<br>
-*浮动鸟的 3D 应用程序启动器示例 （虚构应用程序）*
+![实例Floaty 鸟三维应用启动器](images/20171016-151526-mixedreality1-1200px-1000px.jpg)<br>
+*Floaty 鸟3D 应用启动器示例 (虚拟应用)*
 
-## <a name="3d-app-launcher-creation-process"></a>三维应用程序启动器创建过程
+## <a name="3d-app-launcher-creation-process"></a>3D 应用程序启动器创建过程
 
-有 3 个步骤创建的 3D 应用程序启动器：
-1. 设计和 concepting （详见本文）
+创建三维应用启动器有三个步骤:
+1. 设计和 concepting (本文)
 2. [建模和导出](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
-3. 将其集成到你的应用程序：
+3. 将其集成到应用程序中:
     * [UWP 应用](implementing-3d-app-launchers.md)
     * [Win32 应用](implementing-3d-app-launchers-win32.md)
 
 ## <a name="design-concepts"></a>设计概念
 
-### <a name="fantastic-yet-familiar"></a>太棒了，但熟悉
+### <a name="fantastic-yet-familiar"></a>太棒了
 
-应用程序启动程序位于 Windows Mixed Reality 环境是一部分熟悉，一部分精巧/名工商管理学博士的办法。 最佳的启动器遵循这个世界中的规则。 将如何，您可以从你的应用，需要一个熟悉的、 有代表性的对象，但处理一些实际的现实的规则。 Magic 将导致。
+应用启动器所在的 Windows Mixed Reality 环境是部分熟悉的部分精巧/科幻。 最佳启动器遵循这一领域的规则。 考虑如何从应用程序中获取熟悉的代表对象, 但要折上一些实际现实规则。 将产生幻数。
 
 ### <a name="intuitive"></a>直观
 
-当您查看应用程序启动程序时，其用途-若要启动你的应用-显然应该和不应造成任何混淆。 例如，请确保你启动器是您的应用程序不会混淆的一段 Cliff 住宅装潢明显足够的代表。 应用程序启动程序应邀请他人触摸/选择它。
+当你查看应用程序启动器时, 启动你的应用程序的目的是非常明显, 不会造成任何混淆。 例如, 请确保您的启动器是您的应用程序的一个显而易见的代表, 这不会对 Cliff 房子中的一 décor。 应用启动器应邀请人员触摸/选择。
 
-![示例：全新注意三维应用程序启动程序](images/20171016-152145-mixedreality1-1200px-1000px.jpg)<br>
-*全新注意的 3D 应用程序启动器示例 （虚构应用程序）*
+![实例全新备注3D 应用启动器](images/20171016-152145-mixedreality1-1200px-1000px.jpg)<br>
+*全新备注3D 应用启动器示例 (虚拟应用)*
 
-### <a name="home-scale"></a>家庭规模
+### <a name="home-scale"></a>主比例
 
-三维应用启动器上实时 Cliff 住宅和其默认大小应意义与其他"物理"对象的空间中。 如果将应用启动器，说，房屋工厂或某些家具应感到在家里、 size-wise。 很好的起点是请参阅如何查看 30 三次方厘米，但请记住，用户可以缩放它向上或向下根据自己喜好。
+Cliff 房子中的三维应用启动器及其默认大小对于空间中的其他 "物理" 对象应该是有意义的。 如果将您的启动器置于附近 (比如, 房屋植物或某个家具), 则应在家中、按大小进行调整。 很好的起点是查看它如何以30立方米为单位显示, 但请记住, 如果用户喜欢, 可以增加或减少。
 
-### <a name="own-able"></a>可拥有的
+### <a name="own-able"></a>自己可以
 
-应用程序启动程序应该感觉就像一个人会高兴能够在其空间中的对象。 它们将会几乎周围本身与这些内容，因此启动器应感觉像用户想法是不够理想，若要找出并保持附近。
+应用启动器应感觉到某个人很高兴能够在他们的空间中使用。 它们几乎都是通过这些内容来处理的, 因此启动器应喜欢用户认为是足以寻找并保留附近的内容。
 
-![示例：太空式 Warp 的 3D 应用程序启动器](images/20171016-132936-mixedreality-1200px-1000px.jpg)<br>
-*太空式 Warp 的 3D 应用程序启动器示例 （虚构应用程序）*
+![实例Astro 变形三维应用启动器](images/20171016-132936-mixedreality-1200px-1000px.jpg)<br>
+*Astro 变形三维应用启动器示例 (虚拟应用)*
 
-### <a name="recognizable"></a>可识别
+### <a name="recognizable"></a>识别
 
-三维应用程序启动程序应立即表达人员看不到"应用程序的品牌"。 如果应用程序中有一个星型字符或尤其是可识别的对象，我们建议使用它作为你的设计的重要组成部分。 在混合的现实情况下，对象将从用户比只是一个单独的徽标绘制更值得关注。 快速且明确，可识别对象进行通信的品牌。
+你的3D 应用程序启动器应立即将 "你的应用程序" 的品牌表达为看到它的人。 如果应用中有星形或特别可识别的对象, 我们建议将其作为设计的一个很大的组成部分。 在混合现实世界中, 对象对用户的兴趣比单独的徽标要多。 可识别对象快速、清晰地传达品牌。
 
 ### <a name="volumetric"></a>容量耗尽
 
-您应用值得试用而不仅仅平面平面上将你的徽标和一周。 在启动程序应该感觉就像用户的空间中的令人兴奋、 3D、 物理对象。 一个不错的方法是假设您的应用程序将要 Macy 感恩节天入微中有一个气球。 问问自己，什么会真正 wow 人在其传入后在街？ 什么从所有的查看角度看很好？
+您的应用程序只需将徽标置于平整平面上, 并一整天就会调用它。 您的启动器应类似于用户空间中令人兴奋的、三维的物理对象。 一种很好的方法是假设您的应用程序将在 Macy 的感恩节日醒目中有一个气球。 问问自己, 究竟是什么人在街道下出现了什么呢？ 所有查看角度看起来都很好？
 
 
 :::row:::
@@ -86,36 +86,36 @@ ms.locfileid: "59590304"
 :::row-end:::
 
 
-## <a name="tips-for-good-3d-models"></a>很好的三维模型的提示
+## <a name="tips-for-good-3d-models"></a>适用于三维模型的提示
 
-### <a name="best-practices"></a>最佳做法
-* 在规划应用程序启动程序的维度，请给大约为 30 cm 多维数据集。 因此，1:1 对 1 的大小比率。
-* 模型必须是 10,000 多边形。 [了解有关三角形计数和级别 (Lod) 的详细信息的详细信息](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md#triangle-counts-and-levels-of-detail-lods)
-* 如有可能沉浸式头戴式上进行测试。
-* 构建到模型的几何图形的详细信息，在可能的情况 – 不要依赖于纹理的详细信息。
-* 生成"water 紧密"关闭几何图形。 未建模中没有漏洞。
-* 在您的对象中使用自然的材料。 想象一下在现实生活中编写。
-* 请确保您的模型读取在不同距离和大小。
-* 当模型准备就绪，读取[导出资产准则](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md#asset-requirements-overview)。
+### <a name="best-practices"></a>最佳实践
+* 规划应用程序启动器的维度时, 会针对大致的30cm 多维数据集。 因此, 1:1:1 大小的比率。
+* 模型必须在10000多边形下。 [详细了解三角形计数和详细级别 (LODs)](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md#triangle-counts-and-levels-of-detail-lods)
+* 如果可能, 请在沉浸式耳机上测试。
+* 在可能的情况下, 将详细信息生成到模型的几何图形–不要依赖于纹理获取详细信息。
+* 生成 "水紧密型" 闭合几何。 没有在中建模的孔。
+* 使用对象中的自然材料。 想象一下在现实世界中手工制作。
+* 请确保您的模型在不同的距离和大小上都能正常阅读。
+* 模型准备就绪后, 请阅读[导出资产的准则](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md#asset-requirements-overview)。
 
-![具有细节纹理中的模型](images/20171013-143334-mixedreality-640px.jpg)<br>
-*具有细节纹理中的模型*
+![纹理中包含微妙细节的模型](images/20171013-143334-mixedreality-640px.jpg)<br>
+*纹理中包含微妙细节的模型*
 
-### <a name="what-to-avoid"></a>要避免的问题
-* 不要使用高对比度的详细信息或小忙的模式和纹理。
-* 不要使用精简的几何图形 – 它不会工作在距离，并且别名错误。
-* 不要让扩展模型的部分过多超出 1:1 对 1 的大小比率。 它将创建缩放问题。
+### <a name="what-to-avoid"></a>要避免的情况
+* 不要使用高对比度详细信息或较小、繁忙的模式和纹理。
+* 不要使用精简几何-它在某种程度上并不能很好地工作, 并且不会产生错误。
+* 不要让模型的一部分扩展到超过1:1:1 大小的比率。 它将创建缩放问题。
 
-![避免高对比度、 小忙模式](images/20171013-143603-mixedreality-640px.jpg)<br>
-*避免高对比度、 小型、 忙模式*
+![避免高对比度、小型繁忙模式](images/20171013-143603-mixedreality-640px.jpg)<br>
+*避免高对比度、小型、繁忙的模式*
 
 ## <a name="how-to-handle-type"></a>如何处理类型
 
-### <a name="best-practices"></a>最佳做法
-* 我们建议你的类型包括大约 1/3 的应用程序启动程序 （或多个）。 类型为可让人们了解应用启动器中这一事实，因此它很好的如果它是非常重大的启动是重点。
-* 避免创建非常宽的类型 – 尝试使其保持范围内的应用启动器上核心维度 （增加或减少）。
-* 平面类型可以起作用，但请注意，可能难以查看从特定的角度和在某些环境中。 您可以考虑将其放可靠对象或为帮助实现此其后的背景。
-* 添加到你的类型的维度感觉很好以三维形式。 明暗度类型的方面一种不同的深颜色可帮助提高可读性。
+### <a name="best-practices"></a>最佳实践
+* 建议你的类型包含大约1/3 的应用启动器 (或更多)。 类型主要是使用户了解你的启动程序, 事实上, 启动程序很好, 因为它非常重要。
+* 避免使类型成为超级类型-尝试将其放在应用程序启动器核心维度的范围内 (更多或更少)。
+* 平面类型可正常运行, 但请注意, 在某些角度和某些环境下, 可能难以查看。 您可以考虑将它放在一个实体对象或背景上, 以帮助解决此情况。
+* 将维度添加到您的类型非常适合3D。 将类型的两侧的底纹着色为不同、更暗的颜色可帮助提高可读性。
 
 
 :::row:::
@@ -134,60 +134,60 @@ ms.locfileid: "59590304"
 :::row-end:::
 
 
-**工作的类型颜色**
+**键入工作的颜色**
 * 白色
 * 黑色
-* 半饱和的浅色
+* 亮半饱和颜色
 
-![工作的类型颜色。](images/20171016-112111-mixedreality-640px.jpg)<br>
-*工作的类型颜色*
+![键入工作的颜色。](images/20171016-112111-mixedreality-640px.jpg)<br>
+*键入工作的颜色*
 
-### <a name="what-to-avoid"></a>要避免的问题
+### <a name="what-to-avoid"></a>要避免的情况
 
-**会造成问题的类型颜色**
-* 中间色调
+**键入导致问题的颜色**
+* 中声
 * 灰色
-* 过度饱和的颜色或去除饱和度的颜色
+* 过度饱和颜色或 desaturated 颜色
 
-![会造成问题的类型颜色。](images/20171016-112246-mixedreality-640px.jpg)<br>
-*会造成问题的类型颜色*
+![键入导致问题的颜色。](images/20171016-112246-mixedreality-640px.jpg)<br>
+*键入导致问题的颜色*
 
 ## <a name="lighting"></a>照明
 
-为应用程序启动程序照明来自 Cliff 房屋环境。 请确保在整个房屋的多个位置测试你启动程序，以便它看起来不错中光和阴影。 好消息是，如果已按照本文档中的其他设计指南，你启动器应该非常顺利 Cliff 房屋中大多数照明。
+应用启动器的照明来自 Cliff 房子环境。 请确保在整个房子内的多个位置测试启动器, 使其看起来很好。 好消息是, 如果您按照本文档中的其他设计指南进行了, 则您的启动器应该非常适合 Cliff 房子中的大多数照明。
 
-若要测试如何在各种系统正常运行的环境中查找你启动器可作为比较好 Studio 中，媒体文件室，任意位置外部的回阳台使用 （与在草坪具体区域）。 另一个很好的测试是将其放入半光和一半阴影并查看其外观。
+很好地测试启动器在环境中的各种灯光上的外观, 就是工作室、Media 房间、背面的任何位置和背面的 Patio (带有草地的具体区域)。 另一种好的测试是将它放在半轻和半阴影上, 并查看其外观。
 
-![请确保您启动程序看起来不错中光和阴影。](images/20171013-145523-mixedreality-1200px-1000px.jpg)<br>
-*请确保您启动程序看起来不错中光和阴影*
+![请确保启动器在灯光和阴影中都看起来很好。](images/20171013-145523-mixedreality-1200px-1000px.jpg)<br>
+*请确保启动程序在灯光和阴影中都看起来很好*
 
-## <a name="texturing"></a>纹理
+## <a name="texturing"></a>绘制
 
-### <a name="authoring-your-textures"></a>创作你的纹理
+### <a name="authoring-your-textures"></a>创作纹理
 
-在三维应用程序启动程序的最终格式将.glb 文件，它由使用 PBR （以物理方式基于呈现） 管道。 这可以是一个困难的过程-现在是如果你尚未采用技术艺术家的好时机。 如果你是勇敢 DIY-嗯，花费的时间[研究和了解 PBR 术语](http://wiki.polycount.com/wiki/PBR)发生了什么情况实质上在开始之前将帮助你避免常见错误。 
+三维应用启动器的结束格式为 glb 文件, 该文件是使用 .PBR (基于物理的渲染) 管道生成的。 这可能是一项棘手的过程-现在最好是使用技术音乐家 (如果尚未这样做)。 如果你是无畏的 DIY, 则在开始之前, 请花时间[研究并了解 .pbr 术语](http://wiki.polycount.com/wiki/PBR), 在幕后, 这将有助于你避免常见错误。 
 
-![示例：新的笔记应用程序](images/pbr-freshnote1-640px-500px.png)<br>
-*全新注意的 3D 应用程序启动器示例 （虚构应用程序）*
+![实例全新备注应用](images/pbr-freshnote1-640px-500px.png)<br>
+*全新备注3D 应用启动器示例 (虚拟应用)*
 
-**建议使用创作工具**
+**推荐的创作工具**
 
-我们建议使用[物质刷](https://www.allegorithmic.com/products/substance-painter)通过 Allegorithmic 编写最终文件。 如果您不熟悉创作中物质刷，此处的 PBR 着色[教程](https://docs.allegorithmic.com/documentation/display/SPDOC/Tutorials)。
+建议通过 Allegorithmic 使用[材料刷](https://www.allegorithmic.com/products/substance-painter)来创作最终文件。 如果你不熟悉在物质刷中创作 .PBR 着色器, 请参阅以下[教程](https://docs.allegorithmic.com/documentation/display/SPDOC/Tutorials)。
 
-(或者[3D Coat](https://3dcoat.com/home/)， [Quixel 套件 2](https://quixel.se/suite2/)，或[Marmoset Toolbag](https://www.marmoset.co/toolbag/)也有效，如果您更熟悉使用其中一种。)
+(或者, 如果你更熟悉其中的一个, 则[Coat](https://3dcoat.com/home/)、 [Quixel Suite 2](https://quixel.se/suite2/)或[Marmoset Toolbag](https://www.marmoset.co/toolbag/)也会起作用。)
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
-* 如果您的应用启动器对象为 PBR 创作的则应很简单地将其转换为 Cliff 房屋环境。
-* 我们的着色器应为裸机/粗糙度的工作流 – Unreal PBR 着色器关闭传真。
-* 导出你的纹理保持[建议的纹理大小](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md#material-guidelines)记住。
-* 请确保生成您实时光线的对象，这意味着：
-    * 避免甜的阴影 – 或绘制的阴影
-    * 避免纹理中的生成的照明
-    * 使用创作包 PBR 材料之一来获取正确的映射生成我们的着色器
+* 如果你的应用启动器对象是为 .PBR 编写的, 则为 Cliff 房子环境转换该对象应该非常简单。
+* 着色器应为金属/粗糙度工作流– Unreal .PBR 着色器是一个关闭的传真。
+* 导出纹理时, 请牢记[建议的纹理大小](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md#material-guidelines)。
+* 请确保为实时照明生成对象, 这意味着:
+    * 避免融入阴影-或绘制阴影
+    * 避免纹理中的融入光照
+    * 使用其中一个 .PBR 材料创作包获取为着色器生成的正确地图
 
 ## <a name="see-also"></a>请参阅
 
-* [创建主混合现实中使用三维模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
-* [实现的 3D 应用程序启动器 （UWP 应用）](implementing-3d-app-launchers.md)
-* [实现的 3D 应用程序启动器 （Win32 应用）](implementing-3d-app-launchers-win32.md)
+* [创建用于混合现实主页的3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
+* [实现 3D 应用启动器（UWP 应用）](implementing-3d-app-launchers.md)
+* [实现 3D 应用启动器（Win32 应用）](implementing-3d-app-launchers-win32.md)

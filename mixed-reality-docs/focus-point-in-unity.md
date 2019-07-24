@@ -1,37 +1,37 @@
 ---
-title: 在 Unity 中的焦点位置
-description: 手动优化在 Unity 中的 hologram 稳定性通过设置焦点
+title: Unity 中的焦点
+description: 通过设置焦点在 Unity 中手动优化全息影像稳定性
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Unity、 焦点、 焦点平面、 稳定平面、 稳定点、 reprojection，LSR、 深度缓冲区
+keywords: Unity, 焦点, 焦点平面, 稳定平面, 稳定点, reprojection, LSR, 深度缓冲区
 ms.openlocfilehash: 0f43c37df66ecada86dcb309fcd58d822f0f3481
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593024"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63525467"
 ---
-# <a name="focus-point-in-unity"></a>在 Unity 中的焦点位置
+# <a name="focus-point-in-unity"></a>Unity 中的焦点
 
 **命名空间：**  *UnityEngine.XR.WSA*<br>
 类型：*HolographicSettings*
 
-[关注点](hologram-stability.md#stabilization-plane)可以设置为提供有关如何更好地执行上全息稳定，当前提示的 HoloLens 正在显示。
+可以将[焦点](hologram-stability.md#stabilization-plane)设置为提供有关如何在当前显示的全息影像上最好地执行稳定的提示。
 
-如果你想要将焦点设置在 Unity 中，则需要使用每个帧进行设置*HolographicSettings.SetFocusPointForFrame()*。 如果没有为一个帧设置焦点，则将使用默认稳定平面。
+如果要在 Unity 中设置焦点, 则需要使用*HolographicSettings. SetFocusPointForFrame ()* 设置每个框架。 如果未为帧设置焦点, 则将使用默认的稳定平面。
 
 > [!NOTE]
-> 默认情况下，新的 Unity 项目具有设置的"启用深度缓冲区共享"选项。  使用此选项时，令人着迷的桌面耳机或运行 Windows HoloLens 上运行的 Unity 应用 10 2018 年 4 月更新 (RS4) 或更高版本将提交到 Windows，而无需在应用指定自动优化全息图稳定性深度缓冲区焦点位置：
-> * 在沉浸式的桌面耳机，这将使每个像素深度基于 reprojection。
-> * HoloLens 上运行 Windows 10 2018 年 4 月更新或更高版本，这将分析要自动选择最佳稳定平面的深度缓冲区。
+> 默认情况下, 新的 Unity 项目设置了 "启用深度缓冲共享" 选项。  使用此选项时, 在沉浸式桌面耳机上运行的 Unity 应用或运行 Windows 10 4 月2018更新 (RS4) 或更高版本的 HoloLens 将向 Windows 提交深度缓冲区以自动优化全息影像稳定性, 无需应用指定焦点:
+> * 在沉浸式桌面耳机上, 这将启用基于像素深度的 reprojection。
+> * 在运行 Windows 10 4 月2018更新或更高版本的 HoloLens 上, 这将分析深度缓冲区以自动选择最佳的稳定平面。
 >
-> 这两种方法应由您选择的焦点位置的应用程序的每个帧提供更好的图像质量，而无需显式工作。  请注意，如果你手动提供焦点，，将重写自动行为，上面所述，通常会减少全息图稳定性。  通常情况下，只应指定手动焦点上尚未更新到 Windows HoloLens 运行您的应用程序时 10 2018 年 4 月更新。
+> 这两种方法都应该提供更好的图像质量, 无需由应用程序显式工作即可选择每个框架的焦点。  请注意, 如果你确实手动提供了焦点, 这将替代上述自动行为, 并且通常会降低全息图的稳定性。  通常, 仅当你的应用在尚未更新到 Windows 10 4 2018 月版更新的 HoloLens 上运行时, 才应指定手动焦点点。
 
 ### <a name="example"></a>示例
 
-有许多方法可设置焦点，正如建议上可用的重载*SetFocusPointForFrame*静态函数。 以下是一个简单的示例将焦点平面设置为所提供的对象的每个帧：
+有多种方法可设置焦点, 如*SetFocusPointForFrame*静态函数上的可用重载所建议的那样。 下面提供了一个简单的示例, 可将焦点平面设置为每个帧的所提供的对象:
 
 ```cs
 public GameObject focusedObject;
@@ -48,7 +48,7 @@ void Update()
 }
 ```
 
-请注意，上面的简单代码可能最终会减少全息图稳定性，如果已设定焦点的对象，该怎么办背后用户。  这就是原因而不是手动指定的焦点位置应通常设置"启用深度缓冲区共享"。
+请注意, 如果焦点对象最终出现在用户后面, 则上述简单代码可能最终会降低全息体稳定性。  这就是通常应设置 "启用深度缓冲区共享" 而不是手动指定焦点的原因。
 
 ### <a name="see-also"></a>请参阅
 * [稳定平面](hologram-stability.md#stabilization-plane)

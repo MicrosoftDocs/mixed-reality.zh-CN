@@ -1,56 +1,56 @@
 ---
-title: HoloLens 上的帐户
-description: 如何设置和管理 HoloLens 上的用户帐户。
+title: HoloLens 帐户
+description: 如何在 HoloLens 上设置和管理用户帐户。
 author: ''
 ms.author: toddly
 ms.date: 03/21/2018
 ms.topic: article
-keywords: HoloLens、 用户、 帐户、 aad、 adfs、 microsoft 帐户、 msa、 凭据
+keywords: HoloLens, 用户, 帐户, aad, adfs, microsoft 帐户, msa, 凭据
 ms.openlocfilehash: 14f43b08b6ccb396bcf39c4082c840c65ac78cf9
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591745"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63516812"
 ---
-# <a name="accounts-on-hololens"></a>HoloLens 上的帐户
+# <a name="accounts-on-hololens"></a>HoloLens 帐户
 
-安装过程中初始 HoloLens，要求用户使用他们想要在设备上使用的帐户登录。 此帐户可以是一个使用者 Microsoft 帐户或企业帐户已配置 Azure Active Directory (AAD) 或 Active Directory 联合身份验证服务 (ADFS) 中。
+初次安装 HoloLens 期间, 用户需要使用他们要在设备上使用的帐户登录。 此帐户可以是使用者 Microsoft 帐户或已在 Azure Active Directory (AAD) 或 Active Directory 联合身份验证服务 (ADFS) 中配置的企业帐户。
 
-用户可以使用到的设备上登录到此帐户在安装过程中创建用户配置文件登录，并对其数据将存储的所有应用。 此相同帐户还为边缘或通过 Windows 帐户管理器 Api 的 Skype 等的应用提供单一登录。
+在安装过程中登录此帐户将在设备上创建一个用户配置文件, 用户可以使用该配置文件登录, 并且所有应用程序都将在该设备上存储其数据。 此同一帐户还通过 Windows 帐户管理器 Api 为应用 (如 Edge 或 Skype) 提供单一登录。
 
-此外，登录到企业或组织帐户在设备上的，它还可应用移动设备管理 (MDM) 策略，如果配置的 IT 管理员联系。
+此外, 在设备上登录到企业或组织帐户时, 它还可能应用移动设备管理 (MDM) 策略 (如果你的 IT 管理员已配置)。
 
-当在设备重新启动或从待机状态恢复时，使用此帐户的凭据以重新登录。 如果在设置中启用了强制实施显式单一登录选项，用户将需要再次键入其凭据。 在接收和应用 OS 更新后重启设备，只要显式单一登录需要。
+当设备重新启动或从待机状态恢复时, 将使用此帐户的凭据重新登录。 如果在 "设置" 中启用了强制显式登录的选项, 则该用户将需要再次键入其凭据。 如果设备在接收和应用 OS 更新后重新启动, 则需要显式登录。
 
 ## <a name="multi-user-support"></a>多用户支持
 
 >[!NOTE]
->多用户支持需要商业套件，因为这是[Windows Holographic for Business](https://docs.microsoft.com/hololens/hololens-upgrade-enterprise)功能。
+>多用户支持需要商用套件, 因为这是一项[Windows 全息](https://docs.microsoft.com/hololens/hololens-upgrade-enterprise)版功能。
 
-从开始[Windows 10 2018 年 4 月更新](release-notes-april-2018.md)，HoloLens 支持从相同的 AAD 租户内的多个用户。 若要使用此选项必须设置最初具有属于你组织的帐户的设备。 随后，来自同一个租户的其他用户将能够登录到该设备从登录屏幕或通过点击开始面板中的用户磁贴可注销现有用户。 
+从[Windows 10 2018 年4月的更新](release-notes-april-2018.md)开始, HoloLens 支持同一 AAD 租户中的多个用户。 若要使用此设置, 你必须首先使用属于你的组织的帐户设置设备。 随后, 同一租户中的其他用户可以通过登录屏幕登录到该设备, 或通过点击 "开始" 面板上的 "用户" 磁贴来注销现有用户。 
 
-在设备上安装的应用将可供所有其他用户，但各自有自己的应用程序数据和首选项。 删除应用程序还会删除它对于其他所有用户但。 
+设备上安装的应用程序将可供所有其他用户使用, 但每个应用程序都有自己的应用程序数据和首选项。 不过, 删除应用程序时也会将其删除。 
 
-您可以删除设备以回收空间，通过转到设置中的设备用户 > 帐户 > 其他人。 这将还的所有其他用户的应用程序数据从设备中删除。 
+可以通过转到 "设置" > 帐户 > 其他人 ", 从设备中删除设备用户以回收空间。 这也会从设备中删除所有其他用户的应用数据。 
 
 ## <a name="linked-accounts"></a>链接的帐户
 
-在单个设备帐户中，用户可以链接在应用程序 （例如存储） 中更轻松地访问其他 web 帐户凭据或要合并个人和工作资源，类似于 Windows 的桌面版本的访问权限。 登录到这种方式中的其他帐户不会不单独的设备，如图像上创建的用户数据或下载。 后一个帐户具有已连接到设备时，可以进行应用程序使用它与你的权限来减少无需单独登录到每个应用。
+在单个设备帐户内, 用户可以链接更多的 web 帐户凭据, 以使应用中的访问更加轻松 (例如应用商店) 或合并对个人和工作资源的访问权限, 这与 Windows 的桌面版本类似。 以这种方式登录到其他帐户不会分离在设备上创建的用户数据, 如映像或下载。 一旦帐户已连接到设备, 应用就可以将其与你的权限结合使用, 以减少需要单独登录到每个应用的权限。
 
-## <a name="using-single-sign-on-within-an-app"></a>使用应用内的单一登录
+## <a name="using-single-sign-on-within-an-app"></a>在应用中使用单一登录
 
-作为应用开发人员，您可以利用已连接的标识对与 HoloLens [Windows 帐户管理器 Api](https://msdn.microsoft.com/library/windows/apps/xaml/windows.security.authentication.web.core.aspx)，就像其他 Windows 设备上一样。 提供了这些 Api 一些代码示例[此处](http://go.microsoft.com/fwlink/p/?LinkId=620621)。
+作为应用开发人员, 你可以利用使用[Windows 帐户管理器 api](https://msdn.microsoft.com/library/windows/apps/xaml/windows.security.authentication.web.core.aspx)在 HoloLens 上建立连接的标识, 就像在其他 Windows 设备上一样。 [此处](http://go.microsoft.com/fwlink/p/?LinkId=620621)提供了这些 api 的一些代码示例。
 
-例如发出请求的用户可能会发生任何帐户中断许可的帐户信息，当应用程序请求的身份验证令牌时，必须处理双因素身份验证等。
+当应用请求身份验证令牌时, 必须处理任何可能发生的帐户中断, 如请求用户同意帐户信息、双因素身份验证等。
 
-如果您的应用程序要求之前尚未链接将特定的帐户类型，您的应用程序可以让系统提示用户添加一个。 这会触发帐户设置窗格为您的应用程序的子模式启动。 对于 2D 应用程序，此窗口会呈现直接通过中心的应用程序和 Unity 应用，这将简要需要从全息版应用中注销用户，以便可以呈现此子窗口。 描述命令和此窗格上的操作的自定义[此处](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.webaccountcommand.aspx)。
+如果你的应用程序需要以前未链接的特定帐户类型, 你的应用程序可以要求系统提示用户添加一个。 这会触发 "帐户设置" 窗格作为应用的模式子级启动。 对于2D 应用程序, 此窗口将直接呈现在应用的中心, 而对于 Unity 应用, 这会将用户从全息应用中弹出, 以便能够呈现此子窗口。 [此处](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.webaccountcommand.aspx)描述了此窗格上的自定义命令和操作。
 
 ## <a name="enterprise-and-other-authentication"></a>企业和其他身份验证
 
-如果你的应用程序使用的其他类型的身份验证，则可以使用 NTLM、 Basic 或 Kerberos，如[Windows 凭据 UI](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.ui.aspx)收集、 处理和存储用户的凭据。 收集这些凭据的用户体验非常类似于其他云驱动帐户中断并将显示为 2D 应用顶部的子应用程序或暂时挂起的 Unity 应用要显示 UI。
+如果你的应用程序使用其他类型的身份验证, 例如 NTLM、Basic 或 Kerberos, 则可以使用[Windows 凭据 UI](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.ui.aspx)来收集、处理和存储用户凭据。 收集这些凭据的用户体验非常类似于其他云驱动的帐户中断, 它将在2D 应用程序的基础上显示为子应用, 或者只是暂时挂起 Unity 应用以显示 UI。
 
-## <a name="deprecated-apis"></a>已弃用的 Api
+## <a name="deprecated-apis"></a>弃用的 Api
 
-在从桌面 HoloLens 上进行开发的一个区别在于[OnlineIDAuthenticator](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.onlineid.onlineidauthenticator.aspx) API 不完全支持。 尽管它将返回一个令牌，主帐户处于良好支撑会中断如上文所述的那些不会显示任何 UI 对于用户，并且将无法正确进行身份验证帐户。
+从桌面开发 HoloLens 的一个区别是不完全支持[OnlineIDAuthenticator](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.onlineid.onlineidauthenticator.aspx) API。 尽管主帐户在良好的情况下会返回令牌, 但如下所述的中断将不会显示用户的任何 UI, 并且无法正确地对帐户进行身份验证。
 

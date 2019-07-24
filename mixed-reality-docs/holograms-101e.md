@@ -1,36 +1,36 @@
 ---
-title: MR 基础知识 101E-使用仿真程序的完整项目
-description: 遵循此编码使用 Unity、 Visual Studio 和 HoloLens 模拟器了解全息版的应用程序的基础知识的演练。
+title: MR 基本知识 101E-仿真程序的完整项目
+description: 按照此编码演练操作, 使用 Unity、Visual Studio 和 HoloLens 模拟器了解全息应用程序的基础知识。
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 混合的现实，Windows Mixed Reality、 HoloLens、 全息图，学院，教程，仿真程序
+keywords: 混合现实, Windows Mixed Reality, HoloLens, 全息影像, 学院, 教程, 模拟器
 ms.openlocfilehash: 77f7d497396937bf471a69fa514cef84ab0b699d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591574"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63522324"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
 
 <br>
 
-# <a name="mr-basics-101e-complete-project-with-emulator"></a>MR 基础知识 101E:使用模拟器的完整项目
+# <a name="mr-basics-101e-complete-project-with-emulator"></a>MR 基本 101E:用模拟器完成项目
 
  >[!VIDEO https://www.youtube.com/embed/Xzm8_s05mm8]
 
-本教程将引导您完成在 Unity 中，用于演示在 HoloLens 包括核心 Windows Mixed Reality 功能构建的完整项目[注视](gaze.md)，[手势](gestures.md)，[语音输入](voice-input.md)，[空间声音](spatial-sound.md)并[空间映射](spatial-mapping.md)。 本教程需要大约 1 小时才能完成。
+本教程将引导你完成 Unity 中内置的一个完整项目, 该项目演示了 HoloLens 上核心 Windows Mixed Reality 功能, 包括[注视](gaze.md)、[手势](gestures.md)、[语音输入](voice-input.md)、[空间音效](spatial-sound.md)和[空间映射](spatial-mapping.md). 教程大约需要1小时才能完成。
 
 ## <a name="device-support"></a>设备支持
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>摘要</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
-<td>MR 基础知识 101E:使用模拟器的完整项目</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
+<td>MR 基本 101E:用模拟器完成项目</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
 </table>
 
@@ -38,110 +38,110 @@ ms.locfileid: "59591574"
 
 ### <a name="prerequisites"></a>先决条件
 
-* 使用正确配置 Windows 10 电脑[安装工具](install-the-tools.md)。
+* 配置了正确[工具](install-the-tools.md)的 WINDOWS 10 电脑。
 
 ### <a name="project-files"></a>项目文件
 
-* 下载[文件](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip)所需的项目。 需要 Unity 2017.2 或更高版本。
-  * 如果你仍然需要 Unity 5.6 的支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip)。
-  * 如果你仍然需要 Unity 5.5 支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip)。
-  * 如果你仍然需要 Unity 5.4 的支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip)。
-* 取消存档到您的桌面或其他轻松地访问位置的文件。 保留文件夹名称作为**Origami**。
+* 下载项目所需的[文件](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip)。 需要 Unity 2017.2 或更高版本。
+  * 如果仍需要 Unity 5.6 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip)。
+  * 如果仍需要 Unity 5.5 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip)。
+  * 如果仍需要 Unity 5.4 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip)。
+* 取消将文件存档到桌面或其他易于访问的位置。 将文件夹名称保留为**日式折纸**。
 
 >[!NOTE]
->如果你想要查看完成的源代码下载前，它具有[可在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101)。
+>如果要在下载之前查看源代码,[可在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101)找到。
 
-## <a name="chapter-1---holo-world"></a>第 1 章-"Holo"世界
+## <a name="chapter-1---holo-world"></a>第1章-"Holo" 世界
 
 >[!VIDEO https://www.youtube.com/embed/qotpUpIQxVU]
 
-在本章中，我们将安装我们的第一个 Unity 项目并单步执行生成和部署过程。
+在本章中, 我们将设置第一个 Unity 项目, 并逐步完成生成和部署过程。
 
 ### <a name="objectives"></a>目标
 
-* 为 holographic 开发设置 Unity。
-* 请一张全息图。
-* 所做的一张全息图，请参阅。
+* 为全息版开发设置 Unity。
+* 制作全息影像。
+* 查看您创建的全息影像。
 
 ### <a name="instructions"></a>说明
 
 * 启动 Unity。
-* 选择**打开**。
-* 输入与位置**Origami**文件夹你之前未存档。
-* 选择**Origami**然后单击**选择文件夹**。
-* 保存新的场景：**文件** / **另存为场景**。
-* 命名该场景**Origami**然后按**保存**按钮。
+* 选择 "**打开**"。
+* 输入 "位置" 作为以前未存档的**日式折纸**文件夹。
+* 选择 "**日式折纸**" 并单击 "**选择文件夹**"。
+* 保存新场景:文件 / **另存为**。
+* 将场景命名为**日式折纸**, 并按 "**保存**" 按钮。
 
-#### <a name="setup-the-main-camera"></a>安装程序主照相机
+#### <a name="setup-the-main-camera"></a>设置摄像机
 
-* 在中**层次结构面板**，选择**Main Camera**。
-* 在中**Inspector**将其转换位置设置为**0,0,0**。
-* 查找**清除标志**属性，并将更改从下拉列表中**Skybox**到**纯色**。
-* 单击**背景**字段以打开颜色选取器。
-* 设置**R、 G、 B 和 A**到**0**。
+* 在 "**层次结构" 面板**中, 选择 "**主相机**"。
+* **检查器**将其转换位置设置为**0, 0, 0**。
+* 找到 "**清除标志**" 属性, 然后将下拉列表中的**Skybox**更改为**纯色**。
+* 单击 "**背景**" 字段打开颜色选取器。
+* 将**R、G、B 和 A**设置为**0**。
 
 #### <a name="setup-the-scene"></a>设置场景
 
-* 在中**层次结构面板**，单击**创建**并**创建空白**。
-* 右键单击新**GameObject**和选择重命名。 重命名为 GameObject **OrigamiCollection**。
-* 从**全息**中的文件夹**项目面板**:
-  * 拖动**阶段**到层次结构的子级**OrigamiCollection**。
-  * 拖动**Sphere1**到层次结构的子级**OrigamiCollection**。
-  * 拖动**Sphere2**到层次结构的子级**OrigamiCollection**。
-* 右键单击**定向光**对象中**层次结构面板**，然后选择**删除**。
-* 从**全息**文件夹中，拖动**灯**到的根目录**层次结构面板**。
-* 在中**层次结构**，选择**OrigamiCollection**。
-* 在中**Inspector**，将转换位置设置为**0、-0.5、 2.0**。
-* 按**播放**在 Unity 中以预览你全息按钮。
-* 您应看到预览窗口中的 Origami 对象。
-* 按**播放**停止预览模式下的第二个时机。
+* 在 "**层次结构" 面板**中, 单击 "**创建**" 并**创建空**。
+* 右键单击新的 " **GameObject** ", 然后选择 "重命名"。 将 GameObject 重命名为**OrigamiCollection**。
+* 从 "**项目" 面板**中的 "**全息影像**" 文件夹:
+  * 将**阶段**拖到层次结构中, 使其成为**OrigamiCollection**的子级。
+  * 将**Sphere1**拖到层次结构中, 使其成为**OrigamiCollection**的子元素。
+  * 将**Sphere2**拖到层次结构中, 使其成为**OrigamiCollection**的子元素。
+* 右键单击 "**层次结构" 面板**中的**方向浅**对象, 然后选择 "**删除**"。
+* 从 "**全息影像**" 文件夹中, 将**灯光**拖到**层次结构面板**的根。
+* 在**层次结构**中, 选择 " **OrigamiCollection**"。
+* 在**检查器**中, 将转换位置设置为**0、-0.5、2.0**。
+* 按下 Unity 中的 "**播放**" 按钮, 预览全息影像。
+* 预览窗口中应会显示日式折纸对象。
+* 按第二次**播放**以停止预览模式。
 
-#### <a name="export-the-project-from-unity-to-visual-studio"></a>导出到 Visual Studio 从 Unity 项目
+#### <a name="export-the-project-from-unity-to-visual-studio"></a>将项目从 Unity 导出到 Visual Studio
 
-* 在 Unity 中，选择**文件 > 生成设置**。
-* 选择**Windows 应用商店**中**平台**列表中，单击**切换平台**。
-* 设置**SDK**到**通用 10**并**生成类型**到**D3D**。
-* 检查**UnityC#项目**。
-* 单击**添加打开场景**添加场景。
-* 单击**播放器设置...**.
-* 在检查器面板中选择**Windows 应用商店徽标**。 然后选择**发布设置**。
-* 在中**功能**部分中，选择**麦克风**并**SpatialPerception**功能。
-* 在生成设置窗口中，单击**生成**。
-* 创建**新文件夹**名为"应用"。
-* 单击一下**应用程序文件夹**。
-* 按**选择文件夹**。
-* Unity 完成操作后，将出现一个文件资源管理器窗口。
-* 打开**应用**文件夹。
-* 打开**Origami Visual Studio 解决方案**。
-* 在 Visual Studio 中，使用顶部的工具栏将目标更改为调试从**发行**并从到的 ARM **X86**。
-  * 单击设备按钮旁边的箭头，然后选择**HoloLens 模拟器**。
-  * 单击**调试-> 启动不调试**或按**Ctrl + F5**。
-  * 一段时间后在仿真程序将 Origami 项目开始。 首次启动时[仿真程序](using-the-hololens-emulator.md)，可能需要长达 15 分钟的时间可以启动仿真程序。 它一次启动时，不要将其关闭。
+* 在 Unity 中, 选择 "**文件 > 生成设置**"。
+* 选择 "**平台**" 列表中的 " **Windows 应用商店**", 并单击 "**切换平台**"。
+* 将**SDK**设置为**通用 10** , 将**类型**设置为**D3D**。
+* 检查**Unity C#项目**。
+* 单击 "**添加打开的场景**" 添加场景。
+* 单击 "**播放机设置 ...** "。
+* 在 "检查器" 面板中, 选择**Windows 应用商店徽标**。 然后选择 "**发布设置**"。
+* 在 "**功能**" 部分中, 选择 "**麦克风**" 和 " **SpatialPerception** " 功能。
+* 返回到 "生成设置" 窗口, 单击 "**生成**"。
+* 创建名为 "App" 的**新文件夹**。
+* 单击**应用文件夹**。
+* 按 "**选择文件夹**"。
+* 当 Unity 完成后, 将显示文件资源管理器窗口。
+* 打开**应用程序**文件夹。
+* 打开**日式折纸 Visual Studio 解决方案**。
+* 使用 Visual Studio 中的顶部工具栏, 将目标从 "调试" 更改为 "**发布**", 将 "从 ARM" 更改为 " **X86**"。
+  * 单击 "设备" 按钮旁边的箭头, 然后选择 " **HoloLens 模拟器**"。
+  * 单击 "**调试-> 启动但不调试**" 或按**Ctrl + F5**。
+  * 经过一段时间后, 模拟器将从日式折纸项目开始。 首次启动[仿真程序](using-the-hololens-emulator.md)时, 可能需要15分钟的时间来启动仿真器。 启动后, 请不要将其关闭。
 
-## <a name="chapter-2---gaze"></a>第 2 章-的视线移动
+## <a name="chapter-2---gaze"></a>第2章-注视
 
 >[!VIDEO https://www.youtube.com/embed/BPWTbAC210k]
 
-在本章中，我们将推出的三种方式进行交互的第一个与你全息-[注视](gaze.md)。
+在本章中, 我们将介绍第三种与全息影像交互的方式--[注视](gaze.md)。
 
 ### <a name="objectives"></a>目标
 
-* 可视化你的视线移动使用 world 锁定的游标。
+* 使用全球锁定的光标直观显示注视。
 
 ### <a name="instructions"></a>说明
 
-* 返回到你的 Unity 项目，并关闭生成设置窗口中，如果它仍处于打开状态。
-* 选择**全息**中的文件夹**项目面板**。
-* 拖动**游标**对象插入**层次结构面板**根级别。
-* 双击**游标**对象，若要更详细地介绍它。
-* 右键单击**脚本**项目面板中的文件夹。
-* 单击**创建**子菜单。
-* 选择**C#脚本**。
-* 脚本命名为**WorldCursor**。 注意：该名称区分大小写。 不需要添加.cs 扩展名。
-* 选择**游标**对象中**层次结构面板**。
-* 拖放到**WorldCursor**脚本**检查器面板**。
-* 双击**WorldCursor**脚本以在 Visual Studio 中打开它。
-* 为此代码复制并粘贴**WorldCursor.cs**并**全部保存**。
+* 返回到 Unity 项目, 并关闭 "生成设置" 窗口 (如果它仍处于打开状态)。
+* 在 "**项目" 面板**中选择**全息影像**文件夹。
+* 将**光标**对象拖到**层次结构面板**中的根级别。
+* 双击**光标**对象以详细查看它。
+* 右键单击 "项目" 面板中的 "**脚本**" 文件夹。
+* 单击 "**创建**" 子菜单。
+* 选择 **C# "脚本**"。
+* 将脚本命名为**WorldCursor**。 注意:该名称区分大小写。 无需添加 .cs 扩展名。
+* 选择 "**层次结构" 面板**中的**光标**对象。
+* 将**WorldCursor**脚本拖放到**检查器面板**。
+* 双击**WorldCursor**脚本, 在 Visual Studio 中将其打开。
+* 将此代码复制并粘贴到**WorldCursor.cs** , 并**保存全部**。
 
 ```cs
 using UnityEngine;
@@ -188,29 +188,29 @@ public class WorldCursor : MonoBehaviour
 }
 ```
 
-* 重新生成该应用程序从**文件 > 生成设置**。
-* 返回到之前用于将部署到仿真程序的 Visual Studio 解决方案。
-* 选择全部重新加载出现提示时。
-* 单击**调试-> 启动不调试**或按**Ctrl + F5**。
-* 使用 Xbox 控制器在场景周围查找。 请注意光标是如何与对象的形状交互。
+* 从**文件 > 生成设置**重新生成应用。
+* 返回到以前用于部署到模拟器的 Visual Studio 解决方案。
+* 出现提示时, 选择 "全部重新加载"。
+* 单击 "**调试-> 启动但不调试**" 或按**Ctrl + F5**。
+* 使用 Xbox 控制器查看场景。 请注意, 光标如何与对象的形状交互。
 
-## <a name="chapter-3---gestures"></a>第 3 章-手势
+## <a name="chapter-3---gestures"></a>第3章-手势
 
 >[!VIDEO https://www.youtube.com/embed/6d-0RHeKHq4]
 
-在本章中，我们将添加对的支持[手势](gestures.md)。 当用户选择纸张球体时，我们将使处于开启使用 Unity 的物理引擎的重力球体。
+在本章中, 我们将添加对[手势](gestures.md)的支持。 当用户选择某一回形针时, 我们将使用 Unity 的物理引擎开启重心来使球落在一起。
 
 ### <a name="objectives"></a>目标
 
-* 控制你全息与选择的笔势。
+* 用选择手势控制全息影像。
 
 ### <a name="instructions"></a>说明
 
-我们将首先创建一个脚本，不是可以检测到选择手势。
+首先, 我们要创建一个脚本来检测选择的手势。
 
-* 在中**脚本**文件夹中，创建一个名为脚本**GazeGestureManager**。
-* 拖动**GazeGestureManager**拖动到脚本**OrigamiCollection**层次结构中的对象。
-* 打开**GazeGestureManager** Visual Studio 中编写脚本，并添加以下代码：
+* 在 "**脚本**" 文件夹中, 创建一个名为**GazeGestureManager**的脚本。
+* 将**GazeGestureManager**脚本拖到层次结构中的**OrigamiCollection**对象。
+* 在 Visual Studio 中打开**GazeGestureManager**脚本, 并添加以下代码:
 
 ```cs
 using UnityEngine;
@@ -277,11 +277,11 @@ public class GazeGestureManager : MonoBehaviour
 }
 ```
 
-* 在脚本文件夹中名为这次创建另一个脚本**SphereCommands**。
-* 展开**OrigamiCollection**层次结构视图中的对象。
-* 拖动**SphereCommands**拖动到脚本**Sphere1**层次结构面板中的对象。
-* 拖动**SphereCommands**拖动到脚本**Sphere2**层次结构面板中的对象。
-* 在 Visual Studio 中打开脚本进行编辑，并将默认代码替换此为：
+* 在 Scripts 文件夹中创建另一个脚本, 这一次名为**SphereCommands**。
+* 展开层次结构视图中的**OrigamiCollection**对象。
+* 将**SphereCommands**脚本拖到 "层次结构" 面板中的 " **Sphere1** " 对象。
+* 将**SphereCommands**脚本拖到 "层次结构" 面板中的 " **Sphere2** " 对象。
+* 在 Visual Studio 中打开脚本进行编辑, 并将默认代码替换为以下代码:
 
 ```cs
 using UnityEngine;
@@ -301,27 +301,27 @@ public class SphereCommands : MonoBehaviour
 }
 ```
 
-* 导出、 生成和应用部署到 HoloLens 仿真程序。
-* 查找在场景周围和一个球体上居中对齐。
-* 按**A** Xbox 控制器上的按钮或按空格键以模拟选择手势。
+* 导出应用, 生成应用并将其部署到 HoloLens 模拟器。
+* 查看场景, 并将其放在一个球上。
+* 按下 Xbox 控制器上**的按钮,** 或按空格键来模拟选择手势。
 
-## <a name="chapter-4---voice"></a>第 4 章-语音
+## <a name="chapter-4---voice"></a>第4章-语音
 
 >[!VIDEO https://www.youtube.com/embed/LxbOhnd2_GM]
 
-在本章中，我们将添加两个支持[语音命令](voice-input.md):"重置的 world"到返回到其原始位置删除的球体和"Drop 球体"以使处于球体。
+在本章中, 我们将添加对两个[语音命令](voice-input.md)的支持:"重置世界", 将丢球返回到其原始位置, 并将 "击落球" 设置为球落。
 
 ### <a name="objectives"></a>目标
 
-* 在背景中添加始终侦听语音命令。
-* 创建一张全息图，待语音命令做出反应。
+* 添加始终在后台侦听的语音命令。
+* 创建可响应语音命令的全息图。
 
 ### <a name="instructions"></a>说明
 
-* 在中**脚本**文件夹中，创建一个名为脚本**SpeechManager**。
-* 拖动**SpeechManager**拖动到脚本**OrigamiCollection**层次结构中的对象
-* 打开**SpeechManager** Visual Studio 中的脚本。
-* 为此代码复制并粘贴**SpeechManager.cs**并**全部保存**:
+* 在 "**脚本**" 文件夹中, 创建一个名为**SpeechManager**的脚本。
+* 将**SpeechManager**脚本拖到层次结构中的**OrigamiCollection**对象上
+* 在 Visual Studio 中打开**SpeechManager**脚本。
+* 将此代码复制并粘贴到**SpeechManager.cs** , 并**保存全部**内容:
 
 ```cs
 using System.Collections.Generic;
@@ -372,8 +372,8 @@ public class SpeechManager : MonoBehaviour
 }
 ```
 
-* 打开**SphereCommands** Visual Studio 中的脚本。
-* 更新脚本，以读取，如下所示：
+* 在 Visual Studio 中打开**SphereCommands**脚本。
+* 按如下所示更新脚本以进行读取:
 
 ```cs
 using UnityEngine;
@@ -424,36 +424,36 @@ public class SphereCommands : MonoBehaviour
 }
 ```
 
-* 导出、 生成和应用部署到 HoloLens 仿真程序。
-* 在仿真程序将支持你的电脑的麦克风和语音响应： 调整此视图，使光标位于一个球体上, 并说"Drop Sphere"。
-* 说"**重置世界**"将恢复到其初始位置。
+* 导出应用, 生成应用并将其部署到 HoloLens 模拟器。
+* 模拟器将支持您的 PC 麦克风并对您的语音做出响应: 调整视图, 使光标位于球体之一上, 并说 "放置球"。
+* 说 "**重置世界**", 将其返回到其初始位置。
 
-## <a name="chapter-5---spatial-sound"></a>第 5 章-空间声音
+## <a name="chapter-5---spatial-sound"></a>第5章-空间音效
 
 >[!VIDEO https://www.youtube.com/embed/Xc3C4VA10w4]
 
-在本章中，我们将将音乐添加到应用程序中，然后触发特定操作的声音效果。 我们将使用[空间声音](spatial-sound.md)以便声音 3D 空间中的特定位置。
+在本章中, 我们将向应用程序添加音乐, 并触发对某些操作的声音影响。 我们将使用[空间音效](spatial-sound.md)为声音指定3d 空间中的特定位置。
 
 ### <a name="objectives"></a>目标
 
-* 听到全息在您的世界。
+* 收听世界上的全息影像。
 
 ### <a name="instructions"></a>说明
 
-* 在顶部菜单中，Unity 选择**编辑 > 项目设置 > 音频**
-* 查找**Spatializer 插件**设置并选择**MS HRTF Spatializer**。
-* 从**全息**文件夹中，拖动**环境**对象拖到**OrigamiCollection**层次结构面板中的对象。
-* 选择**OrigamiCollection**并找到**音频源**组件。 更改这些属性：
+* 在 Unity 中从顶部菜单中选择 "**编辑 > 项目设置 > 音频**"
+* 找到**Spatializer 插件**设置, 并选择 " **MS HRTF Spatializer**"。
+* 从 "**全息影像**" 文件夹中, 将 "**环境**" 对象拖到 "层次结构" 面板中的**OrigamiCollection**对象上。
+* 选择**OrigamiCollection**并找到**音频源**组件。 更改这些属性:
   * 检查**Spatialize**属性。
-  * 检查**唤醒状态上播放**。
-  * 更改**空间 Blend**到**3D**通过将滑块拖到最右侧。
+  * 选中 "**在唤醒状态播放**"。
+  * 通过将滑块一直拖到右侧, 将**空间混合**更改为**三维**。
   * 检查**循环**属性。
-  * 展开**3D 声音设置**，并输入**0.1**有关**Doppler 级别**。
-  * 设置**卷卷绕**到**对数卷绕**。
-  * 设置**最大距离**到**20**。
-* 在中**脚本**文件夹中，创建一个名为脚本**SphereSounds**。
-* 拖动**SphereSounds**到**Sphere1**并**Sphere2**层次结构中的对象。
-* 打开**SphereSounds** Visual Studio 中更新以下代码，并**全部保存**。
+  * 展开 "**三维声音设置**", 然后为 " **Doppler" 级别**输入**0.1** 。
+  * 将**Volume Rolloff**设置为**对数 Rolloff**。
+  * 将**最大距离**设置为**20**。
+* 在 "**脚本**" 文件夹中, 创建一个名为**SphereSounds**的脚本。
+* 将**SphereSounds**拖到层次结构中的**Sphere1**和**Sphere2**对象。
+* 在 Visual Studio 中打开**SphereSounds** , 更新以下代码并**全部保存**。
 
 ```cs
 using UnityEngine;
@@ -533,39 +533,39 @@ public class SphereSounds : MonoBehaviour
 }
 ```
 
-* 保存脚本，并返回到 Unity。
-* 导出、 生成和应用部署到 HoloLens 仿真程序。
-* 带上耳机以获取完整的效果，并移动更接近和最荒谬不过要听到的声音更改的阶段。
+* 保存该脚本并返回到 Unity。
+* 导出应用, 生成应用并将其部署到 HoloLens 模拟器。
+* 戴耳机以获得全部效果, 并从舞台更近和更深入地收听声音变化。
 
-## <a name="chapter-6---spatial-mapping"></a>第 6 章-空间映射
+## <a name="chapter-6---spatial-mapping"></a>第6章-空间映射
 
 >[!VIDEO https://www.youtube.com/embed/S-517Y63Cnk]
 
-现在，我们将使用[空间映射](spatial-mapping.md)在现实世界中的实际对象上放置游戏板。
+现在, 我们将使用[空间映射](spatial-mapping.md)将游戏板置于真实世界的真实对象上。
 
 ### <a name="objectives"></a>目标
 
-* 将引入虚拟世界的现实世界。
-* 将放置在全息其中它们对你最重要。
+* 将你的真实世界带入虚拟世界。
+* 将全息影像置于最重要的位置。
 
 ### <a name="instructions"></a>说明
 
-* 单击**全息**项目面板中的文件夹。
-* 拖动**空间映射**到的根目录的资产**层次结构**。
-* 单击**空间映射**层次结构中的对象。
-* 在中**检查器面板**，更改下列属性：
-  * 检查**绘制 Visual 网格**框。
-  * 找到**绘制材料**并单击右侧的圆形。 类型"**线框**"顶部搜索字段中。 单击该结果，然后关闭窗口。
-* 导出、 生成和应用部署到 HoloLens 仿真程序。
-* 应用运行时，将在线框中呈现之前已扫描的实际起居室的网格。
-* 观看如何滚动球体将不会出现该阶段，注销再到在地板上 ！
+* 在 "项目" 面板中单击 "**全息影像**" 文件夹。
+* 将**空间映射**资产拖到**层次结构**的根。
+* 单击层次结构中的**空间映射**对象。
+* 在 "**检查器" 面板**中, 更改以下属性:
+  * 选中 "**绘制可视网格**" 框。
+  * 定位**绘图材料**, 并单击右侧的圆圈。 在顶部的搜索字段中键入 "**线框**"。 单击结果, 然后关闭窗口。
+* 导出应用, 生成应用并将其部署到 HoloLens 模拟器。
+* 当应用程序运行时, 先前扫描的现实生活空间的网格将以线框形式呈现。
+* 观看某个滚动球如何偏离舞台, 并观看地面!
 
-现在我们将向您展示如何将 OrigamiCollection 移动到新位置：
+现在, 我们将向你展示如何将 OrigamiCollection 移动到一个新位置:
 
-* 在中**脚本**文件夹中，创建一个名为脚本**TapToPlaceParent**。
-* 在中**层次结构**，展开**OrigamiCollection** ，然后选择**阶段**对象。
-* 拖动**TapToPlaceParent**到阶段对象上的脚本。
-* 打开**TapToPlaceParent**脚本在 Visual Studio 中，并将其更新为如下：
+* 在 "**脚本**" 文件夹中, 创建一个名为**TapToPlaceParent**的脚本。
+* 在**层次结构**中, 展开 " **OrigamiCollection** ", 然后选择 "**暂存**" 对象。
+* 将**TapToPlaceParent**脚本拖到 "暂存" 对象上。
+* 在 Visual Studio 中打开**TapToPlaceParent**脚本, 并将其更新为以下内容:
 
 ```cs
 using UnityEngine;
@@ -623,26 +623,26 @@ public class TapToPlaceParent : MonoBehaviour
 }
 ```
 
-* 导出、 生成和部署应用程序。
-* 现在，您现在应能够通过它在观望在特定位置放游戏，使用选择手势 (**A**键或空格键) 然后将移至新位置，并再次使用选择的手势。
+* 导出、生成并部署应用。
+* 现在, 您应该能够通过 gazing 在特定位置放置游戏, 使用 "选择手势" (**a**或空格键), 然后移动到一个新位置, 然后再次使用 "选择手势"。
 
 ## <a name="the-end"></a>结束
 
-就是本教程结束 ！
+这就是本教程的结尾!
 
-介绍了：
+已学习:
 
-* 如何在 Unity 中创建全息版应用。
-* 如何使提供注视、 手势、 语音、 声音和空间映射的使用。
-* 如何生成和使用 Visual Studio 部署应用。
+* 如何在 Unity 中创建全息应用。
+* 如何使用注视、手势、语音、声音和空间映射。
+* 如何使用 Visual Studio 生成和部署应用。
 
-现已准备好开始创建您自己全息版的应用 ！
+你现在已准备好开始创建自己的全息应用!
 
 ## <a name="see-also"></a>请参阅
 
-* [MR 基础知识 101:与设备的完整项目](holograms-101.md)
-* [Gaze](gaze.md)
+* [MR 基础知识 101：使用设备完成项目](holograms-101.md)
+* [凝视](gaze.md)
 * [手势](gestures.md)
 * [语音输入](voice-input.md)
-* [空间声音](spatial-sound.md)
+* [空间音效](spatial-sound.md)
 * [空间映射](spatial-mapping.md)

@@ -1,41 +1,41 @@
 ---
-title: SF 反应堆学院事件日历
-description: 混合的现实开发人员在旧金山反应堆事件日历。
+title: SF 反应器学院事件日历
+description: 旧金山反应器的混合现实开发人员事件的日历。
 author: danielescudero
 ms.author: daescu
 ms.date: 04/06/2019
 ms.topic: article
-keywords: 现实情况、 显示、 日历、 学院、 计划、 sf、 san francisco 反应堆
-ms.openlocfilehash: 0387f7871361db2eecca9738ac301e6a87b16670
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: 现实、展示、日历、学院、计划、sf、旧金山、反应器
+ms.openlocfilehash: 462d4fbb8a6aaf1ee643a6fa1f0f4ed04c0cefed
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592521"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63524767"
 ---
-# <a name="the-realities-show"></a>实际问题 Show
-![混合现实的设计](images/therealitiesshow.jpg)
+# <a name="the-realities-show"></a>现实
+![混合现实设计](images/therealitiesshow.jpg)
 
-**实际问题显示为每月 30 分钟直播有关 HoloLens 2、 混合现实服务和 MR 技术。在每个节目中我们将深入探讨功能、 功能、 其背后的技术，如何开发适用于不同设备，建议的最佳做法和当然回答问题从我们的目标受众。从我们的 San Francisco 反应堆阶段设置作为起居室环境 （和偶尔会从其他站点） 流式传输到全球开发人员。**
+**现实展示是30分钟的 livestream, 其中介绍了 HoloLens 2、混合现实服务和 MR 技术。在每个剧集中, 我们将深入探讨功能、功能、it 背后的技术, 如何针对不同的设备进行开发, 推荐最佳做法, 当然还会解答我们的受众提出的问题。通过作为客厅环境 (有时也来自其他站点) 从我们的 San 反应器阶段设置流式传输给世界各地的开发人员。**
 
-<a name="watch-live-and-past-episodes-herehttpakamstrs"></a>**[观看直播和过去剧集此处](http://aka.ms/trs)**
+<a name="watch-live-and-past-episodes-herehttpakamstrs"></a>**[观看生活和过去的剧集](http://aka.ms/trs)**
 ---
 
-## <a name="hololens-2-and-mixed-reality-services---march-12-2019-8-am-pdt"></a>**HoloLens 2 和混合现实服务**-2019 年 3 月 12 日，上午 8 点 （太平洋夏令时）
-实际问题显示为第一个段是有关 HoloLens 2 和混合现实服务。 我们将讨论的主要功能、 其背后的构想、 新的交互模型和云的强大功能 ！
+## <a name="hololens-2-and-mixed-reality-services---march-12-2019-8-am-pdt"></a>**HoloLens 2 和混合现实服务**-12 月12日, 2019, 上午8点 (PDT)
+现实展示的第一集就是有关 HoloLens 2 和混合现实服务的所有信息。 我们将讨论主要功能、其背后的构想、新的交互模型和云的强大!
 
 ---
 This episode is all about Human Understanding: 'near interactions, far interactions, eye-tracking and voice.'
 ---
-## <a name="world-understanding---may-10-2019-8-am-pdt"></a>**世界上了解**-2019 5 月 10 日，上午 8 点 （太平洋夏令时）
-如何智能边缘设备 leveredge 云的计算能够了解世界。 包括 HoloLens 2，计算机的愿景，共享定位服务、 语义标签和 Azure Kinect dk。
+## <a name="world-understanding---coming-soon"></a>**世界理解**-即将推出
+智能边缘设备如何 leveredge 云的计算能力, 以了解世界。 包括 HoloLens 2、计算机视觉、共享锚定服务、语义标签和 Azure Kinect 深色。
 
 ---
-## <a name="mixedrealitytoolkit---may-29-2019-8-am-pdt"></a>**MixedRealityToolkit** -2019 5 月 29 日，上午 8 点 （太平洋夏令时）
-MixedRealityToolkit (MRTK) 提供基础组件和功能，可加快 MR 应用开发的一组。 最新版本的 MRTK-Unity (V2) 支持 HoloLens/HoloLens 2、 Windows Mixed Reality 和 OpenVR 平台。让我们深入了解如何使用 endineers 和其背后的设计器。
+## <a name="mixedrealitytoolkit---coming-soon"></a>**MixedRealityToolkit** -即将推出
+MixedRealityToolkit (MRTK) 提供了一组基础组件和功能, 可加速 MR 应用开发。 最新版本的 MRTK (V2) 支持 HoloLens/HoloLens 2、Windows Mixed Reality 和 OpenVR 平台。让我们深入了解一下 endineers 和设计人员。
 
 ---
-## <a name="designing-for-hololens-2---june-17-2019-8-am-pdt"></a>**设计 HoloLens 2** -2019 年 6 月 17 日，上午 8 点 （太平洋夏令时）
-混合现实开发中的最大挑战为其设计。 它是新，因此屏幕的无和因此 real，传统设计不一定适用。 让我们看看如何设计 HoloLens 2 和签出的设计工具 MixedRealityToolkit 得出。
+## <a name="designing-for-hololens-2---coming-soon"></a>**针对 HoloLens 2 的设计**-即将推出
+混合现实开发面临的最大挑战是设计它。 这是个新的功能, 因此无需应用传统设计。 让我们看看如何设计 HoloLens 2, 并查看 MixedRealityToolkit 提供的设计工具。
 
 

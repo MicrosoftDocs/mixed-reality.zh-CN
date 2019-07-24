@@ -1,143 +1,143 @@
 ---
 title: 导航 Windows Mixed Reality 主页
-description: HoloLens 和 Windows 混合现实耳机共享一种用于启动、 放置，和操作应用程序和您的环境中的 3D 模型 （无论是物理还是数字） 的模式。 了解如何导航 Windows Mixed Reality 主页上这两种设备类型。
+description: HoloLens 和 Windows Mixed Reality 耳机共享了一个用于在环境中启动、放置和操作应用和3D 模型的模式 (无论是物理的还是数字的)。 了解如何在这两种设备类型上浏览 Windows Mixed Reality 主页。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 命令行程序、 操作系统、 平台、 cliff 房屋房子、 主页、 环境、 开始、 开始菜单、 主菜单、 pin、 应用和启动应用，将应用程序，teleport、 移动、 导航
+keywords: shell, os, 平台, cliff 房子, 房子, home, 环境, 开始, 开始菜单, 主页菜单, pin, 应用, 启动应用, 放置应用, 传送, 移动, 导航
 ms.openlocfilehash: 1ca6dd66506a64ad2e1c21870fee2725ddf20bd8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593027"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63525173"
 ---
 # <a name="navigating-the-windows-mixed-reality-home"></a>导航 Windows Mixed Reality 主页
 
-就像 Windows PC 体验始于桌面、 Windows Mixed Reality 开头主页。 主 Windows Mixed Reality 利用理解和导航三维位置我们与生俱来的能力。 HoloLens，与您在家是物理空间。 沉浸式耳机，与您在家是一个虚拟位置。
+正如 Windows PC 体验从桌面开始一样, Windows Mixed Reality 从家里开始。 Windows Mixed Reality 主页利用我们原始的能力来理解并浏览三维位置。 通过 HoloLens, 你的家庭是你的物理空间。 使用沉浸式耳机, 您的家庭是一个虚拟位置。
 
-您家也是在其中将使用开始菜单打开和放置应用程序和内容。 可以使用混合的现实内容填充您家并同时使用多个应用程序执行多任务。 在家中放置的内容继续保留在那里，即使您重新启动你的设备。
+你还可以使用 "开始" 菜单打开和放置应用和内容。 您可以使用混合现实内容和多个应用程序同时使用多个应用程序。 即使您重新启动设备, 您在家庭中放置的东西也会保留在那里。
 
 ## <a name="start-menu"></a>“开始”菜单
 
-![Microsoft HoloLens 上开始菜单](images/start-500px.png)
+![Microsoft HoloLens 上的 "开始" 菜单](images/start-500px.png)
 
-开始菜单包括：
-* 系统信息 （网络状态、 电池百分比、 当前时间和卷）
-* Cortana （沉浸式耳机，开始磁贴上; HoloLens，在顶部开始）
-* 固定的应用
-* 所有应用程序按钮 （加号）
-* 照片和视频按钮[混合现实捕获](mixed-reality-capture.md)
+"开始" 菜单包括:
+* 系统信息 (网络状态、电池百分比、当前时间和卷)
+* Cortana (在沉浸式耳机上, 在 "开始" 磁贴上, 在 HoloLens 上, 在 "开始" 的顶部)
+* 固定应用
+* "所有应用" 按钮 (加号)
+* [混合现实捕获](mixed-reality-capture.md)的照片和视频按钮
 
-通过选择加号或减号按钮，切换固定应用程序和所有应用之间视图。 若要打开在 HoloLens 上的开始菜单，请使用布隆手势。 在沉浸式头戴式耳机，在控制器上按 Windows 按钮。
+通过选择加号或减号按钮, 在固定应用程序和所有应用程序视图之间切换。 若要在 HoloLens 上打开 "开始" 菜单, 请使用布隆手势。 在沉浸式耳机上, 按下控制器上的 Windows 按钮。
 
-## <a name="launching-apps"></a>启动应用程序
+## <a name="launching-apps"></a>正在启动应用
 
-若要启动应用，选择在启动它。 开始菜单就会消失，并将在放置模式下，作为 2D 窗口中打开该应用程序或[三维模型](implementing-3d-app-launchers.md)。
+若要启动应用, 请在 "开始" 上选择它。 "开始" 菜单将消失, 应用将在放置模式下打开, 如2D 窗口或[3d 模型](implementing-3d-app-launchers.md)。
 
-若要运行该应用程序，你将需要然后将它放在您家中：
-1. 使用你[注视](gaze.md)或控制器来定位应用程序所需的位置。 它将自动调整 （在大小和位置） 以符合其位置的空间。
-2. 将使用敲击 (HoloLens) 或选择按钮 （沉浸式耳机） 此应用程序。 若要取消并移回开始菜单，请使用布隆手势或 Windows 按钮。
+若要运行该应用, 你需要将其放在家里:
+1. 使用[注视](gaze.md)或控制器将应用定位到所需的位置。 它将自动调整 (大小和位置) 以符合放置它的空间。
+2. 使用 "空中点击" (HoloLens) 或 "选择" 按钮 (沉浸式耳机) 放置应用。 若要取消并返回 "开始" 菜单, 请使用布隆手势或 Windows 按钮。
 
-[2D 应用](building-2d-apps.md)，或创建的桌面、 移动、 Xbox 可进行修改以使用混合的现实沉浸式应用程序以运行[HolographicSpace API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.holographic.holographicspace.aspx)。 沉浸式应用程序采用用户从主页和到的沉浸式体验。 使用布隆手势 (HoloLens) 或通过按其控制器 （沉浸式耳机） 上的 Windows 按钮，用户可开始返回。
+可以使用[HOLOGRAPHICSPACE API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.holographic.holographicspace.aspx)将为桌面、移动或 Xbox 创建的[2d 应用](building-2d-apps.md)修改为作为混合现实沉浸式应用运行。 沉浸式应用使用户离开家里, 并进入沉浸式体验。 用户可以返回 home with 布隆手势 (HoloLens), 也可以通过在控制器 (沉浸式耳机) 上按 Windows 按钮。
 
-此外可以通过应用应用 API 或通过 Cortana 启动应用。
+还可以通过应用程序到应用程序 API 或通过 Cortana 来启动应用。
 
-![中的主 Windows Mixed Reality 应用](images/mixed-reality-home-500px.png)
+![Windows Mixed Reality 主页中的应用](images/mixed-reality-home-500px.png)
 
-## <a name="moving-and-adjusting-apps"></a>移动和调整应用程序
+## <a name="moving-and-adjusting-apps"></a>移动和调整应用
 
-选择**调整**应用上栏以显示控制该移动的同时，小数位数和旋转的混合现实内容。 完成后，选择**完成**。
+选择应用栏上的 "**调整**" 以显示移动、缩放和旋转混合现实内容的控件。 完成后, 请选择 "**完成**"。
 
-![调整模式 （蓝色帧） 中存储静态图像。 请注意应用栏 （顶端） 已更改为包括完成和删除按钮。](images/adjust-500px.png)
+![调整模式下的存储石板 (蓝色帧)。 请注意, 应用栏 (顶部) 已更改为包含 "完成" 和 "删除" 按钮。](images/adjust-500px.png)
 
-不同的应用程序可能在应用栏上的其他选项。 例如，具有 Microsoft Edge*滚动*，*拖动*，并*缩放*选项。 
+不同的应用可能在应用栏上有其他选项。 例如, Microsoft Edge 具有*滚动*、*拖动*和*缩放*选项。 
 
-![2D 上运行的应用 HoloLens 应用栏](images/holobar-500px.png)
+![在 HoloLens 上运行的2D 应用的应用栏](images/holobar-500px.png)
 
-**回**按钮导航回先前已查看屏幕的应用中。 它将停止您即将开始，已显示在应用中，并将导航到其他应用程序的体验。
+"**后退**" 按钮导航回到应用中以前查看过的屏幕。 当你到达已在应用中显示的体验开始时, 它将停止, 并且不会导航到其他应用。
 
-## <a name="getting-around-your-home"></a>获取围绕你的主页
+## <a name="getting-around-your-home"></a>围绕你的家庭
 
-与**HoloLens**，可以逐步完成物理空间您家中移动。
+使用**HoloLens**, 可以在物理空间间移动, 在家里移动。
 
-与**沉浸式耳机**，您同样可以启动，然后在中您 playspace 虚拟世界中的类似区域内移动不同。 若要移动跨距离的增加，可用于摇杆在控制器上几乎遍历，也可以使用*teleportation*立即跳转距离的增加。
+使用**沉浸式耳机**, 你可以类似地在 playspace 中进行浏览, 在虚拟世界中的类似区域内移动。 若要在更远的距离间移动, 可以使用控制器上的操纵杆来几乎 "走到", 也可以使用*teleportation*立即跳转到更长的距离。
 
-![中的主 Windows Mixed Reality Teleportation](images/teleportation-500px.png)
+![Windows Mixed Reality 主页中的 Teleportation](images/teleportation-500px.png)
 
-**到 teleport:**
-1. 显示 teleportation 标线。
-   * 使用[动作控制器](motion-controllers.md): 摇杆向前按住它在该位置。
-   * 使用 Xbox 控制器： 前滚按下左的摇杆并保持它在该位置。
-   * 使用鼠标： 按下右键单击鼠标按钮 (并使用鼠标滚轮旋转方向你想要面临时您 teleport)。
-2. 将放置在要用于 teleport 标线。
-   * 使用[动作控制器](motion-controllers.md)： 倾斜 （在其拿着摇杆前滚） 的控制器移动标线。
-   * 使用 Xbox 控制器： 使用你[注视](gaze.md)移动标线。
-   * 使用鼠标： 将鼠标移动标线移动。
-3. 释放到 teleport 放置标线按钮。
+**若要传送:**
+1. 打开 teleportation reticle。
+   * 使用[运动控制器](motion-controllers.md): 向前按操纵杆并将其放在该位置。
+   * 使用 Xbox 控制器: 向前按左操纵杆, 并将其放在该位置。
+   * 使用鼠标: 按住右键单击鼠标按钮 (并在传送时使用滚轮来旋转要面对的方向)。
+2. 将 reticle 放在要传送的位置。
+   * 使用[运动控制器](motion-controllers.md): 倾斜控制器 (您在其上持有操纵杆) 以移动 reticle。
+   * 使用 Xbox 控制器: 使用[注视](gaze.md)移动 reticle。
+   * 使用鼠标: 移动鼠标移动 reticle。
+3. 释放按钮以传送 reticle 的位置。
 
-**到几乎"引导:"**
-* 使用[动作控制器](motion-controllers.md)： 单击向下该摇杆并保持状态，然后将摇杆移动方向你想要"引导"。
-* 使用 Xbox 控制器： 单击向下的左的摇杆和保持状态，然后移摇杆方向你想要"引导"。
+**到真正的 "行走:"**
+* 使用[运动控制器](motion-controllers.md): 单击操纵杆并按下, 并在要 "走进" 方向上移动操纵杆。
+* 使用 Xbox 控制器: 单击左侧操纵杆并按下, 并在要 "走" 方向上移动操纵杆。
 
-## <a name="immersive-headset-input-support"></a>沉浸式头戴式输入的支持
+## <a name="immersive-headset-input-support"></a>沉浸式耳机输入支持
 
-[Windows Mixed Reality 沉浸式耳机](immersive-headset-hardware-details.md)支持使用多个输入的类型进行导航的主 Windows Mixed Reality。 HoloLens 不用于导航，支持附件的输入，因为以物理方式奔波，请参阅您的环境。 但却提供了 HoloLens[支持输入](hardware-accessories.md)用来与应用交互。
+[Windows Mixed reality 沉浸式耳机](immersive-headset-hardware-details.md)支持用于导航 Windows Mixed reality 主页的多种输入类型。 HoloLens 不支持用于导航的附件输入, 因为您可以物理方式浏览并查看您的环境。 但是, HoloLens 支持与应用进行交互的[输入](hardware-accessories.md)。
 
 ### <a name="motion-controllers"></a>运动控制器
 
-最佳 Windows Mixed Reality 体验不会与 Windows Mixed Reality[动作控制器](motion-controllers.md)在您的头戴式-没有外部照相机或所需的标记中使用只是传感器的支持 6-自由度跟踪 ！
+最佳的 Windows Mixed reality 体验将使用 Windows Mixed Reality[运动控制器](motion-controllers.md), 该控制器仅使用耳机中的传感器支持6度自由跟踪-无需外部照相机或标记!
 
-即将推出的导航命令。
+即将推出导航命令。
 
 ### <a name="gamepad"></a>游戏板
-* **左的摇杆：**
-  * 按下并保持左的摇杆向前弹出[teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)标线。
-  * 点击 left、 right 摇杆或备份继续向左、 右、 或小的增量备份。
-  * 单击向下的左的摇杆和保持状态，然后到所需的方向移动摇杆[几乎遍历。](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)
-* 点击**右摇杆**左或向右旋转所面临的 45 度的方向。
-* 按下**A**按钮执行 select 和的行为类似于[敲击](gestures.md#air-tap)手势。
-* 按下**指南**按钮将显示[开始菜单](navigating-the-windows-mixed-reality-home.md#start-menu)和的行为类似于[布隆](gestures.md#bloom)手势。
-* 按下**左侧和右侧触发器**允许您放大和缩小，在家里的交互与 2D 桌面应用程序。
+* **左操纵杆:**
+  * 按住左操纵杆, 使[teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home) reticle。
+  * 向左、向右或向后移动操纵杆, 以较小的增量向左、向右或向后移动。
+  * 单击左侧操纵杆并按下, 并按所需的方式移动操纵杆, 使其以[实际](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)的方向移动。
+* 向左或向右点击**右操纵杆**, 以将你的方向旋转45度。
+* 按下**按钮将**执行 "选择", 其作用类似于 "[空中点击](gestures.md#air-tap)" 手势。
+* 按 "**指南**" 按钮将显示 "[开始" 菜单](navigating-the-windows-mixed-reality-home.md#start-menu), 并类似于 "[布隆](gestures.md#bloom)" 手势。
+* 按**左和右触发器**可以放大和缩小要在家里交互的2d 桌面应用程序。
 
 ### <a name="keyboard-and-mouse"></a>键盘和鼠标
 
-**注意：** 使用**Windows 键 + Y**切换之间控制你的电脑的桌面和 Windows Mixed Reality 主鼠标。
+**注意：** 使用**Windows 键 + Y**在控制 PC 桌面和 Windows Mixed Reality 主页之间切换鼠标。
 
-在主 Windows Mixed Reality:
-* 按下**左键单击**鼠标按钮执行 select 和的行为类似于[敲击](gestures.md#air-tap)手势。
-* 持有**右击**鼠标按钮将显示[teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)标线。
-* 按下**Windows**引出了键盘上的键[开始菜单](navigating-the-windows-mixed-reality-home.md#start-menu)和的行为类似于[布隆](gestures.md#bloom)手势。
-* 时[观望](gaze.md)在 2D 桌面应用中，你可以**左击**若要选择，**右键单击**打开上下文菜单，并使用**滚轮**滚动 （在你的电脑的桌面上就像一样）。
+在 Windows Mixed Reality 主页中:
+* 按住鼠标**左键**并执行选择操作, 其作用类似于 "[空中点击](gestures.md#air-tap)" 笔势。
+* 按住**右键单击**鼠标按钮将打开[teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home) reticle。
+* 按键盘上的**Windows**键打开 "开始"[菜单](navigating-the-windows-mixed-reality-home.md#start-menu), 并与[布隆](gestures.md#bloom)手势类似。
+* 当[gazing](gaze.md)在2d 桌面应用程序中时, 可以**单击**以选择,**右键单击**以打开上下文菜单, 然后使用滚轮滚动 (就像您的 PC 桌面上一样)。
 
 ## <a name="cortana"></a>Cortana
 
-[Cortana](voice-input.md#hey-cortana) PC 和手机上就像是在 Windows Mixed Reality 应用个人助理。 HoloLens 有内置麦克风，但令人着迷的耳机可能需要额外的硬件。 使用 Cortana 以打开应用，重启设备，联机查找内容和的详细信息。 开发人员也可以选择[集成 Cortana](https://dev.windows.com/cortana)到其体验。
+[Cortana](voice-input.md#hey-cortana)是 Windows Mixed Reality 的个人助手, 就像在电脑和手机上一样。 HoloLens 有内置麦克风, 但沉浸式耳机可能需要额外的硬件。 使用 Cortana 打开应用、重新启动设备、联机查找, 等等。 开发人员也可以选择将[Cortana 集成](https://dev.windows.com/cortana)到其体验中。
 
-语音命令还可用于避免您家出现。 例如，指向上一个按钮 (使用[注视](gaze.md)或控制器，具体取决于设备)，说"Select"。 "转到主页"、"大，""较小，"其他语音命令，包括"关闭"和"面临着我。"
+你还可以使用语音命令来浏览你的主页。 例如, 指向某个按钮 (使用 "[注视](gaze.md)" 或 "控制器", 具体取决于设备), 然后说 "选择"。 其他语音命令包括 "转到主页"、"放大"、"较小"、"关闭" 和 "面部我"。
 
-## <a name="store-settings-and-system-apps"></a>应用商店、 设置和系统应用
+## <a name="store-settings-and-system-apps"></a>存储、设置和系统应用
 
-Windows Mixed Reality 有许多内置的应用程序，例如：
-* **Microsoft Store**若要获取应用程序和游戏
-* **反馈中心**要提交有关系统和系统应用程序的反馈
-* **设置**配置系统设置 ([包括网络](connecting-to-wi-fi-on-hololens.md)和系统更新)
+Windows Mixed Reality 包含许多内置应用, 例如:
+* **Microsoft Store**获取应用和游戏
+* 提交有关系统和系统应用的反馈的**反馈中心**
+* 用于配置系统设置的**设置**([包括网络](connecting-to-wi-fi-on-hololens.md)和系统更新)
 * **Microsoft Edge**浏览网站
-* **照片**查看和共享的照片和视频
-* **校准**(仅 HoloLens) 调整到当前用户的 HoloLens 体验
-* **了解手势**(HoloLens) 或**了解混合现实**（沉浸式耳机），了解如何使用你的设备
-* **三维查看器**来修饰混合的现实内容与您的世界
-* **混合现实门户**（桌面），用于设置和管理您的沉浸式头戴式和流式处理在视图中的其他人看到耳机的实时预览。
-* **电影和电视节目**对于查看 360 视频的最新电影和电视节目显示
-* **Cortana**虽然虚拟助理的所有需要
-* **桌面**（沉浸式耳机） 用于查看在沉浸式头戴式桌面监视器
-* **文件资源管理器**访问文件和文件夹位于你的设备
+* 查看并共享照片和视频的**照片**
+* **校准**(仅限 HoloLens) 用于调整当前用户的 HoloLens 体验
+* **学习手势**(HoloLens) 或**了解混合现实**(沉浸式耳机) 以了解如何使用你的设备
+* **三维查看器**, 可在全球范围内装饰混合现实内容
+* **混合现实门户**(桌面) 设置和管理沉浸式头戴式耳机并流式传输耳机上视图的实时预览, 供其他人查看。
+* 观看360视频和最新电影和电视节目的**电影和电视**节目
+* 所有虚拟助手需求的**Cortana**
+* **桌面**(沉浸式耳机), 用于在沉浸式耳机中查看桌面监视器
+* **文件资源管理器**访问设备上的文件和文件夹
 
 ## <a name="see-also"></a>请参阅
-* [应用程序视图](app-views.md)
+* [应用视图](app-views.md)
 * [运动控制器](motion-controllers.md)
-* [硬件附件](hardware-accessories.md)
+* [硬件配件](hardware-accessories.md)
 * [HoloLens 的环境注意事项](environment-considerations-for-hololens.md)
-* [实现的 3D 应用程序启动器](implementing-3d-app-launchers.md)
-* [在 Windows Mixed Reality 主页中创建用于 3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
+* [实现三维应用启动器](implementing-3d-app-launchers.md)
+* [创建用于 Windows Mixed Reality 主页的3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)

@@ -1,41 +1,41 @@
 ---
 title: MR 共享 240-多个 HoloLens 设备
-description: 遵循此编码使用 Unity、 Visual Studio 和 HoloLens 若要了解详细信息的共享全息演练。
+description: 按照此编码演练操作, 使用 Unity、Visual Studio 和 HoloLens 了解共享全息影像的详细信息。
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: holotoolkit、 mixedrealitytoolkit、 mixedrealitytoolkit unity、 共享、 网络、 学院、 教程
+keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 共享, 网络, 学院, 教程
 ms.openlocfilehash: 70a39a739d360a5032bc8df76b6f0bd57521d9ec
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592263"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63522331"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
 
 <br>
 
-# <a name="mr-sharing-240-multiple-hololens-devices"></a>共享 240 MR:多个 HoloLens 设备
+# <a name="mr-sharing-240-multiple-hololens-devices"></a>尊敬的共享 240:多个 HoloLens 设备
 
-全息提供我们的世界中存在剩余到位，随着我们空间中。 HoloLens 使用各种就地保留全息[坐标系](coordinate-systems.md)来跟踪的位置和方向的对象。 当我们共享这些设备之间的坐标系统时，我们可以创建可用于共享 holographic 世界中的共享的体验。
+随着我们在空间中的发展, 我们将在世界各地提供全息影像。 通过使用各种[坐标系统](coordinate-systems.md)跟踪对象的位置和方向, HoloLens 保留了全息影像。 当我们在设备之间共享这些坐标系统时, 我们可以创建共享体验, 使我们能够参与共享全息环境。
 
-在本教程中，我们将：
+在本教程中, 我们将:
 
-* 设置共享体验的网络。
-* 在 HoloLens 设备之间共享全息。
-* 发现我们共享 holographic 世界中的其他人员。
-* 创建共享的交互式体验，可在其中面向其他玩家-并启动它们的炮弹 ！
+* 为共享体验设置网络。
+* 跨 HoloLens 设备共享全息影像。
+* 了解我们的共享全息领域中的其他人员。
+* 创建可面向其他玩家的共享交互式体验, 并在其上启动炮弹!
 
 ## <a name="device-support"></a>设备支持
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>摘要</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
-<td>共享 240 MR:多个 HoloLens 设备</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
+<td>尊敬的共享 240:多个 HoloLens 设备</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
 </table>
 
@@ -43,148 +43,148 @@ ms.locfileid: "59592263"
 
 ### <a name="prerequisites"></a>先决条件
 
-* 使用正确配置 Windows 10 电脑[安装工具](install-the-tools.md)具有 Internet 访问权限。
-* 至少两个 HoloLens 设备[为开发配置](using-visual-studio.md#enabling-developer-mode)。
+* 使用随 Internet 访问权限安装的正确[工具](install-the-tools.md)配置的 WINDOWS 10 电脑。
+* 至少[为开发配置了](using-visual-studio.md#enabling-developer-mode)两个 HoloLens 设备。
 
 ### <a name="project-files"></a>项目文件
 
-* 下载[文件](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-240-SharedHolograms.zip)所需的项目。 需要 Unity 2017.2 或更高版本。
-  * 如果你仍然需要 Unity 5.6 的支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-240.zip)。
-  * 如果你仍然需要 Unity 5.5 支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-240.zip)。
-  * 如果你仍然需要 Unity 5.4 的支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-240.zip)。
-* 取消存档到您的桌面或其他轻松地访问位置的文件。 保留文件夹名称作为**SharedHolograms**。
+* 下载项目所需的[文件](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-240-SharedHolograms.zip)。 需要 Unity 2017.2 或更高版本。
+  * 如果仍需要 Unity 5.6 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-240.zip)。
+  * 如果仍需要 Unity 5.5 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-240.zip)。
+  * 如果仍需要 Unity 5.4 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-240.zip)。
+* 取消将文件存档到桌面或其他易于访问的位置。 将文件夹名称保留为**SharedHolograms**。
 
 >[!NOTE]
->如果你想要查看完成的源代码下载前，它具有[可在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-240-SharedHolograms)。
+>如果要在下载之前查看源代码,[可在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-240-SharedHolograms)找到。
 
-## <a name="chapter-1---holo-world"></a>第 1 章-Holo 世界
+## <a name="chapter-1---holo-world"></a>第1章-Holo World
 
 >[!VIDEO https://www.youtube.com/embed/c7qHYYW8rxQ]
 
-在本章中，我们将安装我们的第一个 Unity 项目并单步执行生成和部署过程。
+在本章中, 我们将设置第一个 Unity 项目, 并逐步完成生成和部署过程。
 
 ### <a name="objectives"></a>目标
 
-* 设置 Unity 开发全息版的应用程序。
-* 请参阅你全息图 ！
+* 安装 Unity 以开发全息版应用。
+* 查看全息图!
 
 ### <a name="instructions"></a>说明
 
 * 启动 Unity。
-* 选择**打开**。
-* 输入与位置**SharedHolograms**你之前未存档的文件夹。
-* 选择**项目名称**然后单击**选择文件夹**。
-* 在中**层次结构**，右键单击**Main Camera** ，然后选择**删除**。
-* 在中**HoloToolkit 共享-240/预设/相机**文件夹中，找到**Main Camera**预设。
-* 拖放到**Main Camera**成**层次结构**。
-* 在中**层次结构**，单击**创建**并**创建空白**。
-* 右键单击新**GameObject** ，然后选择**重命名**。
-* 重命名为 GameObject **HologramCollection**。
-* 选择**HologramCollection**对象中**层次结构**。
-* 在中**Inspector**设置**转换位置**到：**X:0，Y:-0.25，Z:2**.
-* 在中**全息**中的文件夹**项目面板**，找到**EnergyHub**资产。
-* 拖放到**EnergyHub**对象从**项目面板**到**层次结构**作为**子 HologramCollection**。
-* 选择**文件 > 另存为场景...**
-* 命名该场景**SharedHolograms**然后单击**保存**。
-* 按**播放**在 Unity 中以预览你全息按钮。
-* 按**播放**停止预览模式下的第二个时机。
+* 选择 "**打开**"。
+* 输入位置作为之前 unarchived 的**SharedHolograms**文件夹。
+* 选择 "**项目名称**", 然后单击 "**选择文件夹**"。
+* 在**层次结构**中, 右键单击**主相机**, 然后选择 "**删除**"。
+* 在**HoloToolkit/prototyping/相机**文件夹中, 找到**摄像机的主**prefab。
+* 将**主相机**拖放到**层次结构**中。
+* 在**层次结构**中, 单击 "**创建**" 并**创建空**。
+* 右键单击新的 " **GameObject** ", 然后选择 "**重命名**"。
+* 将 GameObject 重命名为**HologramCollection**。
+* 选择**层次结构**中的**HologramCollection**对象。
+* 在**检查器**中, 将**转换位置**设置为:**X-BLADE0, Y:-0.25, Z:2**。
+* 在 "**项目" 面板**的 "**全息影像**" 文件夹中, 找到 " **EnergyHub**资产"。
+* 将**EnergyHub**对象从 "**项目" 面板**中拖放到**层次结构**中, 将其作为**HologramCollection 的子项**。
+* 选择**文件 > 将场景另存为 ...**
+* 将场景命名为**SharedHolograms** , 然后单击 "**保存**"。
+* 按下 Unity 中的 "**播放**" 按钮, 预览全息影像。
+* 按第二次**播放**以停止预览模式。
 
-**导出到 Visual Studio 从 Unity 项目**
-* 在 Unity 中，选择**文件 > 生成设置**。
-* 单击**添加打开场景**添加场景。
-* 选择**通用 Windows 平台**中**平台**列表中，单击**切换平台**。
-* 设置**SDK**到**通用 10**。
-* 设置**目标设备**到**HoloLens**并**UWP 生成类型**到**D3D**。
-* 检查**UnityC#项目**。
+**将项目从 Unity 导出到 Visual Studio**
+* 在 Unity 中, 选择 "**文件 > 生成设置**"。
+* 单击 "**添加打开的场景**" 添加场景。
+* 选择 "**平台**" 列表中的 "**通用 Windows 平台**", 然后单击 "**切换平台**"。
+* 将**SDK**设置为**通用 10**。
+* 将**目标设备**设置为**HoloLens** , 将 " **UWP" 生成类型**设置为 " **D3D**"。
+* 检查**Unity C#项目**。
 * 单击“生成” 。
-* 在文件资源管理器窗口中显示，创建**新文件夹**名为"应用"。
-* 单击一下**应用**文件夹。
-* 按**选择文件夹**。
-* Unity 完成操作后，将出现一个文件资源管理器窗口。
-* 打开**应用**文件夹。
-* 打开**SharedHolograms.sln**以启动 Visual Studio。
-* 在 Visual Studio 中，使用顶部的工具栏将目标更改为调试从**发行**并从到的 ARM **X86**。
-* 单击本地计算机旁边的下拉箭头，然后选择**远程设备**。
-    * 设置**地址**的名称或 IP 地址在 HoloLens。 如果不知道你设备的 IP 地址，在中查找**设置 > 网络和 Internet > 高级选项**问 Cortana 或 **"你好，小娜，我的 IP 地址是什么？"**
-    * 将保留**身份验证模式**设置为**通用**。
-    * 单击**选择**
-* 单击**调试 > 启动不调试**或按**Ctrl + F5**。 如果这是首次部署到你的设备，你将需要[与 Visual Studio 配对](using-visual-studio.md#pairing-your-device-hololens)。
-* 在你 HoloLens 上并查找 EnergyHub 全息图。
+* 在出现的 "文件资源管理器" 窗口中, 创建一个名为 "App" 的**新文件夹**。
+* 单击**应用**文件夹。
+* 按 "**选择文件夹**"。
+* 当 Unity 完成后, 将显示文件资源管理器窗口。
+* 打开**应用程序**文件夹。
+* 打开**SharedHolograms**以启动 Visual Studio。
+* 使用 Visual Studio 中的顶部工具栏, 将目标从 "调试" 更改为 "**发布**", 将 "从 ARM" 更改为 " **X86**"。
+* 单击 "本地计算机" 旁边的下拉箭头, 然后选择 "**远程设备**"。
+    * 将**地址**设置为 HoloLens 的名称或 IP 地址。 如果你不知道设备 IP 地址, 请在 "设置" 中查找 " **> 网络 & Internet > 高级选项** **" 或 "我的 IP 地址是什么？"。**
+    * 将**身份验证模式**设置为 "**通用**"。
+    * 单击 "**选择**"
+* 单击 "**调试" > "开始但不调试**" 或按**Ctrl + F5**。 如果这是首次部署到设备, 则需要将[其与 Visual Studio 配对](using-visual-studio.md#pairing-your-device-hololens)。
+* 放在你的 HoloLens 上, 找到 EnergyHub 全息图。
 
-## <a name="chapter-2---interaction"></a>第 2 章-交互
+## <a name="chapter-2---interaction"></a>第2章-交互
 
 >[!VIDEO https://www.youtube.com/embed/W60xG15a8gc]
 
-在本章中，我们将与我们全息中进行交互。 首先，我们将添加要可视化的游标我们[注视](gaze.md)。 然后，我们将添加[手势](gestures.md)和用我们一只手我们全息置于空间。
+在本章中, 我们将与全息影像交互。 首先, 我们将添加一个光标以直观显示[注视](gaze.md)。 接下来, 我们将添加[手势](gestures.md), 并使用我们的手在空间中放置全息影像。
 
 ### <a name="objectives"></a>目标
 
-* 使用输入来控制游标的视线移动。
-* 使用笔势输入与全息进行交互。
+* 使用 "注视输入" 控制光标。
+* 使用手势输入与全息影像交互。
 
 ### <a name="instructions"></a>说明
 
-**Gaze**
-* 在中**层次结构面板**选择**HologramCollection**对象。
-* 在中**检查器面板**单击**添加组件**按钮。
-* 在菜单中，在搜索框中键入**注视 Manager**。 选择搜索结果。
-* 在中**HoloToolkit 共享 240\Prefabs\Input**文件夹中，找到**光标**资产。
-* 拖放到**游标**拖动到资产**层次结构**。
+**凝视**
+* 在 "**层次结构" 面板**中, 选择 " **HologramCollection** " 对象。
+* 在**检查器面板**中, 单击 "**添加组件**" 按钮。
+* 在菜单中, 在 "搜索" 框中键入 "**注视经理**"。 选择搜索结果。
+* 在**HoloToolkit-Sharing-240\Prefabs\Input**文件夹中, 找到**光标**资产。
+* 将**光标**资产拖放到**层次结构**中。
 
-**手势**
-* 在中**层次结构面板**选择**HologramCollection**对象。
-* 单击**添加组件**并键入**笔势管理器**搜索字段中。 选择搜索结果。
-* 在中**层次结构面板**，展开**HologramCollection**。
-* 选择子**EnergyHub**对象。
-* 在中**检查器面板**单击**添加组件**按钮。
-* 在菜单中，在搜索框中键入**全息图放置**。 选择搜索结果。
-* 通过选择保存场景**文件 > 保存场景**。
+**姿态**
+* 在 "**层次结构" 面板**中, 选择 " **HologramCollection** " 对象。
+* 单击 "**添加组件**", 并在搜索字段中键入**笔势管理器**。 选择搜索结果。
+* 在 "**层次结构" 面板**中, 展开 " **HologramCollection**"。
+* 选择 "子**EnergyHub** " 对象。
+* 在**检查器面板**中, 单击 "**添加组件**" 按钮。
+* 在 "搜索 **" 框中**, 键入 "搜索" 对话框。 选择搜索结果。
+* 通过选择 "文件" **> 保存**场景来保存场景。
 
-**部署和享受**
-* 生成并部署到你 HoloLens，使用上一章中的说明。
-* 一旦在 HoloLens 上启动该应用程序，移动您，注意 EnergyHub 如何遵循你的视线移动。
-* 请注意，光标出现时您展示全息图，及时不观望在一张全息图将更改为点光的方式。
-* 执行以无线方式点击以放置全息图。 在这次是在我们的项目，您可以仅将 hologram 一次 （重新部署再试一次）。
+**部署和体验**
+* 使用上一章中的说明生成并部署到 HoloLens。
+* 在您的 HoloLens 上启动该应用程序后, 请四处移动您的头, 注意 EnergyHub 如何进入您的注视。
+* 请注意, 在您看出全息影像时光标如何显示, 当不 gazing 在全息图上时, 也会改变点光。
+* 执行轻按下以放置全息影像。 此时, 我们的项目中只能放置一次全息图一次 (重新部署后重试)。
 
-## <a name="chapter-3---shared-coordinates"></a>第 3 章 — 共享坐标
+## <a name="chapter-3---shared-coordinates"></a>第3章-共享坐标
 
 >[!VIDEO https://www.youtube.com/embed/Ey8yBgWiqtg]
 
-它很有趣，请参阅并全息，与之交互，但让我们进一步。 我们将设置我们第一次的共享体验的每个人都可以同时看到一张全息图。
+与全息影像进行查看和交互很有趣, 但让我们进一步了解一下。 我们将设置我们的第一个共享体验-每个人都可以同时查看。
 
 ### <a name="objectives"></a>目标
 
-* 设置共享体验的网络。
-* 建立的常见的参考点。
+* 为共享体验设置网络。
+* 建立一个公共参考点。
 * 跨设备共享坐标系统。
-* 每个人都看到同一个全息图 ！
+* 所有人都看到同一个全息图!
 
 >[!NOTE]
->**InternetClientServer**并**PrivateNetworkClientServer**功能必须声明应用程序无法连接到共享服务器。 这是为您已在全息 240 但记住这一点对于您自己的项目。
->1. 在 Unity 编辑器中，通过导航到"编辑 > 项目设置 > Player"转到播放机设置
->2. 单击"Windows 应用商店"选项卡
->3. 在"发布设置 > 功能"部分中，检查**InternetClientServer**功能并**PrivateNetworkClientServer**功能
+>必须为应用声明**InternetClientServer**和**PrivateNetworkClientServer**功能才能连接到共享服务器。 此操作已在全息影像240中完成, 但请记住你自己的项目。
+>1. 在 Unity 编辑器中, 导航到 "编辑 > 项目设置 > Player", 转到 "播放机" 设置
+>2. 单击 "Windows 应用商店" 选项卡
+>3. 在 "发布设置 > 功能" 部分中, 查看**InternetClientServer**功能和**PrivateNetworkClientServer**功能
 
 ### <a name="instructions"></a>说明
 
-* 在中**项目面板**导航到**HoloToolkit 共享 240\Prefabs\Sharing**文件夹。
-* 拖放到**共享**到 prefab**层次结构面板**。
+* 在 "**项目" 面板**中, 导航到**HoloToolkit-Sharing-240\Prefabs\Sharing**文件夹。
+* 将**共享**prefab 拖放到**层次结构面板**。
 
-接下来我们需要启动该共享服务。 仅**一台 PC**中的共享体验需要执行此步骤。
-* 在 Unity-顶部手工菜单中选择**HoloToolkit 共享 240 菜单**。
-* 选择**启动共享服务**下拉列表中的项。
-* 检查**专用网络**选项，然后单击**允许访问**防火墙提示符出现时。
-* 请记下共享服务控制台窗口中显示的 IPv4 地址。 这是该服务正在运行的计算机相同的 IP。
+接下来, 我们需要启动共享服务。 共享体验中只有**一台 PC**需要执行此步骤。
+* 在 Unity 中-在顶部菜单中, 选择 " **HoloToolkit-240" 菜单**。
+* 在下拉栏中选择 "**启动共享服务**" 项。
+* 选中 "**专用网络**" 选项, 并在出现防火墙提示时单击 "**允许访问**"。
+* 记下 "共享服务控制台" 窗口中显示的 IPv4 地址。 此 IP 与运行服务的计算机的 IP 相同。
 
-说明的其余部分并遵照**所有 Pc** ，将加入的共享的体验。
-* 在中**层次结构**，选择**共享**对象。
-* 中**Inspector**，然后在**共享阶段**组件，更改**服务器地址**从运行 SharingService.exe 的计算机的 IPv4 地址 localhost。
-* 在中**层次结构**选择**HologramCollection**对象。
-* 在中**Inspector**单击**添加组件**按钮。
-* 在搜索框中，键入**导入导出定位点管理器**。 选择搜索结果。
-* 在中**项目面板**导航到**脚本**文件夹。
-* 双击**HologramPlacement**脚本以在 Visual Studio 中打开它。
-* 将下面的代码替换为内容。
+按照将加入共享体验的**所有 pc**上的其余说明进行操作。
+* 在**层次结构**中, 选择**共享**对象。
+* 在**检查器**的**共享阶段**组件上, 将**服务器地址**从 "localhost" 更改为运行 SharingService 的计算机的 IPv4 地址。
+* 在**层次结构**中, 选择 " **HologramCollection** " 对象。
+* 在**检查器**中, 单击 "**添加组件**" 按钮。
+* 在搜索框中, 键入 "**导入导出定位点管理器**"。 选择搜索结果。
+* 在 "**项目" 面板**中, 导航到**Scripts**文件夹。
+* 双击**HologramPlacement**脚本, 在 Visual Studio 中将其打开。
+* 将内容替换为以下代码。
 
 ```cs
 using UnityEngine;
@@ -290,36 +290,36 @@ public class HologramPlacement : Singleton<HologramPlacement>
 }
 ```
 
-* 返回在 Unity 中，选择**HologramCollection**中**层次结构面板**。
-* 在中**检查器面板**单击**添加组件**按钮。
-* 在菜单中，在搜索框中键入**应用程序状态管理器**。 选择搜索结果。
+* 返回 Unity, 在 "**层次结构" 面板**中选择 " **HologramCollection** "。
+* 在**检查器面板**中, 单击 "**添加组件**" 按钮。
+* 在菜单中, 在 "搜索" 框中键入 "**应用状态管理器**"。 选择搜索结果。
 
-**部署和享受**
-* 构建于 HoloLens 设备的项目。
-* 将指定一个 HoloLens 将部署到第一个。 将需要等待要上传到该服务之前可以放置 EnergyHub 的定位点 (这可能需要大约 30-60 秒)。 上传完成之前，将忽略点击手势。
-* 已放 EnergyHub 后，其位置将上载到服务，然后将部署到所有其他 HoloLens 设备。
-* 当新 HoloLens 首次加入会话时，EnergyHub 的位置可能不正确的设备上。 但是，一旦已从服务下载的定位点和 EnergyHub 位置，EnergyHub 应跳转到新的共享位置。 如果此情况发生在大约 30-60 秒，引导到原始 HoloLens 所在设置定位点来收集多个环境线索时。 如果该位置仍不会锁定，重新部署到设备。
-* 当设备已全部准备好并运行该应用程序，查找 EnergyHub。 可以在所有达成全息图的位置和方向面向文本？
+**部署和体验**
+* 生成适用于 HoloLens 设备的项目。
+* 指定要首先部署到的一个 HoloLens。 你将需要等待定位点上载到服务, 然后才能放置 EnergyHub (这可能需要大约30-60 秒)。 完成上传之前, 将忽略攻丝手势。
+* 放置 EnergyHub 后, 其位置将被上传到服务, 然后你可以将其部署到所有其他 HoloLens 设备。
+* 新的 HoloLens 首次加入会话时, 该设备上的 EnergyHub 位置可能不正确。 但是, 一旦从服务下载了定位点和 EnergyHub 位置, EnergyHub 应跳转到新的共享位置。 如果这不是在约30-60 秒内发生的, 则在设置定位点时转到原始 HoloLens 的位置, 以收集更多的环境线索。 如果位置仍未锁定, 请重新部署到设备。
+* 当设备全部准备就绪并运行应用程序时, 请查找 EnergyHub。 你是否完全同意了全息图的位置以及文本的方向:
 
-## <a name="chapter-4---discovery"></a>第 4 章-发现
+## <a name="chapter-4---discovery"></a>第4章-发现
 
 >[!VIDEO https://www.youtube.com/embed/5NxJWMV4BP8]
 
-现在，每个人都可以看到相同的 hologram ！ 现在让我们查看其他连接到共享 holographic 世界。 在本章中，我们将获取的头位置和相同的共享会话中的所有其他 HoloLens 设备旋转。
+现在, 所有人都可以看到相同的全息图! 现在, 让我们看看与共享全息环境连接的其他人。 在本章中, 我们将抓住同一共享会话中所有其他 HoloLens 设备的打印头位置和旋转。
 
 ### <a name="objectives"></a>目标
 
-* 发现彼此共享我们的经验。
+* 了解共享体验。
 * 选择并共享播放机头像。
-* 附加所有人的头旁边的播放机虚拟形象。
+* 将播放机头像附加到每个人的标题旁边。
 
 ### <a name="instructions"></a>说明
 
-* 在中**项目面板**导航到**全息**文件夹。
-* 拖放到**PlayerAvatarStore**成**层次结构**。
-* 在中**项目面板**导航到**脚本**文件夹。
-* 双击**AvatarSelector**脚本以在 Visual Studio 中打开它。
-* 将下面的代码替换为内容。
+* 在 "**项目" 面板**中, 导航到 "**全息影像**" 文件夹。
+* 将**PlayerAvatarStore**拖放到**层次结构**中。
+* 在 "**项目" 面板**中, 导航到**Scripts**文件夹。
+* 双击**AvatarSelector**脚本, 在 Visual Studio 中将其打开。
+* 将内容替换为以下代码。
 
 ```cs
 using UnityEngine;
@@ -361,14 +361,14 @@ public class AvatarSelector : MonoBehaviour
 }
 ```
 
-* 在中**层次结构**选择**HologramCollection**对象。
-* 在中**Inspector**单击**添加组件**。
-* 在搜索框中，键入**本地播放机管理器**。 选择搜索结果。
-* 在中**层次结构**选择**HologramCollection**对象。
-* 在中**Inspector**单击**添加组件**。
-* 在搜索框中，键入**远程播放机管理器**。 选择搜索结果。
-* 打开**HologramPlacement** Visual Studio 中的脚本。
-* 将下面的代码替换为内容。
+* 在**层次结构**中, 选择 " **HologramCollection** " 对象。
+* 在**检查器**中单击 "**添加组件**"。
+* 在搜索框中, 键入 "**本地播放机管理器**"。 选择搜索结果。
+* 在**层次结构**中, 选择 " **HologramCollection** " 对象。
+* 在**检查器**中单击 "**添加组件**"。
+* 在搜索框中, 键入 "**远程播放机管理器**"。 选择搜索结果。
+* 在 Visual Studio 中打开**HologramPlacement**脚本。
+* 将内容替换为以下代码。
 
 ```cs
 using UnityEngine;
@@ -526,8 +526,8 @@ public class HologramPlacement : Singleton<HologramPlacement>
 }
 ```
 
-* 打开**AppStateManager** Visual Studio 中的脚本。
-* 将下面的代码替换为内容。
+* 在 Visual Studio 中打开**AppStateManager**脚本。
+* 将内容替换为以下代码。
 
 ```cs
 using UnityEngine;
@@ -595,29 +595,29 @@ public class AppStateManager : Singleton<AppStateManager>
 }
 ```
 
-**部署和享受**
-* 生成并部署到 HoloLens 设备项目。
-* 当您听到声音执行 ping 操作时，找到头像选择菜单并选择与-敲击手势头像。
-* 如果您不希望在任何全息，浅光标周围的点将变为不同的颜色时你 HoloLens 与服务进行通信： 初始化 （深紫色）、 下载导入/导出位置数据 （黄色） 的定位点 （绿色）上传的定位点 （蓝色）。 如果你浅光标周围的点为默认颜色 （淡紫色），你已准备好在你的会话中与其他玩家进行交互 ！
-* 查看其他人连接到你的空间-会有一个 holographic 机器人浮动上面其即时权限提升和模拟其头动作 ！
+**部署和体验**
+* 生成项目并将其部署到 HoloLens 设备。
+* 听到 ping 声音时, 请找到头像选择菜单, 并选择一个具有 "轻攻器" 手势的头像。
+* 如果你不想查看任何全息影像, 则当你的 HoloLens 与服务进行通信时, 光标周围的点亮将变为不同的颜色: 正在初始化 (深紫色), 下载定位点数据 (绿色)、导入/导出位置数据 (黄色)、正在上载定位点 (蓝色)。 如果光标周围的点亮是默认颜色 (浅紫色), 则已准备好与会话中的其他玩家交互!
+* 查看与你的空间连接的其他人员-将有一个全息机器人浮在其肩上并模拟其头运动!
 
-## <a name="chapter-5---placement"></a>第 5 章-放置
+## <a name="chapter-5---placement"></a>第5章-位置
 
 >[!VIDEO https://www.youtube.com/embed/afFTwHQIw0s]
 
-在本章中，我们将能够在实际的图面上放置的定位点。 我们将使用共享的坐标中的中间点之间连接的共享体验到的每个人都放置该定位点。
+在本章中, 我们将定位标记, 使其能够放置在实际的表面上。 我们将使用共享坐标将该定位点置于连接到共享体验的每个用户之间的中间点。
 
 ### <a name="objectives"></a>目标
 
-* 将全息放置在基于玩家的头位置空间映射。
+* 根据玩家的头位置, 将全息影像置于空间地图上。
 
 ### <a name="instructions"></a>说明
 
-* 在中**项目面板**导航到**全息**文件夹。
-* 拖放到**CustomSpatialMapping**拖动到 prefab**层次结构**。
-* 在中**项目面板**导航到**脚本**文件夹。
-* 双击**AppStateManager**脚本以在 Visual Studio 中打开它。
-* 将下面的代码替换为内容。
+* 在 "**项目" 面板**中, 导航到 "**全息影像**" 文件夹。
+* 将**CustomSpatialMapping** prefab 拖放到**层次结构**中。
+* 在 "**项目" 面板**中, 导航到**Scripts**文件夹。
+* 双击**AppStateManager**脚本, 在 Visual Studio 中将其打开。
+* 将内容替换为以下代码。
 
 ```cs
 using UnityEngine;
@@ -722,9 +722,9 @@ public class AppStateManager : Singleton<AppStateManager>
 }
 ```
 
-* 在中**项目面板**导航到**脚本**文件夹。
-* 双击**HologramPlacement**脚本以在 Visual Studio 中打开它。
-* 将下面的代码替换为内容。
+* 在 "**项目" 面板**中, 导航到**Scripts**文件夹。
+* 双击**HologramPlacement**脚本, 在 Visual Studio 中将其打开。
+* 将内容替换为以下代码。
 
 ```cs
 using UnityEngine;
@@ -972,54 +972,54 @@ public class HologramPlacement : Singleton<HologramPlacement>
 }
 ```
 
-**部署和享受**
-* 生成并部署到 HoloLens 设备项目。
-* 应用程序准备就绪后，在一个圆周中构建并请注意 EnergyHub 的每个用户中心中的显示方式。
-* 点击放置 EnergyHub。
-* 请尝试将全息图移动到新位置的语音命令重置目标以选取 EnergyHub 并作为一个组协同工作。
+**部署和体验**
+* 生成项目并将其部署到 HoloLens 设备。
+* 当应用程序准备就绪时, 请将其放在一个圆圈上, 并注意 EnergyHub 如何出现在每个人的中心。
+* 点击以放置 EnergyHub。
+* 尝试使用语音命令 "重置目标" 来选择 EnergyHub 备份, 并以组的形式协同工作, 以便将全息图移动到新位置。
 
-## <a name="chapter-6---real-world-physics"></a>第 6 章-实际的物理引擎
+## <a name="chapter-6---real-world-physics"></a>第6章-真实物理
 
 >[!VIDEO https://www.youtube.com/embed/XNpQVSyXwMo]
 
-在这一章中我们将添加全息弹实际的图面。 观看您与项目由你和你的朋友启动填满的空间 ！
+在本章中, 我们将添加从实际表面弹跳的全息影像。 观看您和您的朋友所启动的项目的空间。
 
 ### <a name="objectives"></a>目标
 
-* 启动炮弹弹实际的图面。
-* 共享敌人发射的炮弹，因此其他播放机可以查看它们。
+* 启动炮弹, 从实际表面弹跳。
+* 共享炮弹, 使其他玩家可以看到它们。
 
 ### <a name="instructions"></a>说明
 
-* 在中**层次结构**选择**HologramCollection**对象。
-* 在中**Inspector**单击**添加组件**。
-* 在搜索框中，键入**Projectile 启动器**。 选择搜索结果。
+* 在**层次结构**中, 选择 " **HologramCollection** " 对象。
+* 在**检查器**中单击 "**添加组件**"。
+* 在搜索框中, 键入 " **Projectile 启动**程序"。 选择搜索结果。
 
-**部署和享受**
+**部署和体验**
 * 生成并部署到 HoloLens 设备。
-* 当所有设备上运行应用时，执行以无线方式点击以启动 projectile 在现实世界图面。
-* 请参阅与其他播放机的虚拟形象在 projectile 冲突时会发生什么情况 ！
+* 当应用程序在所有设备上运行时, 请在实际的表面上执行轻点击以启动 projectile。
+* 了解 projectile 与其他玩家的头像发生冲突时会发生什么情况!
 
-## <a name="chapter-7---grand-finale"></a>第 7 章 — 凯旋
+## <a name="chapter-7---grand-finale"></a>第7章-总计 Finale
 
 >[!VIDEO https://www.youtube.com/embed/kDUPUvZEqRg]
 
-在本章中，我们将发现一个门户，它只能发现与协作。
+在本章中, 我们将发现一个只能通过协作发现的门户。
 
 ### <a name="objectives"></a>目标
 
-* 协同工作以启动在定位点来发现机密门户足够炮弹 ！
+* 协同工作, 在定位点上启动足够的炮弹来发现机密门户!
 
 ### <a name="instructions"></a>说明
 
-* 在中**项目面板**导航到**全息**文件夹。
-* 拖放到**Underworld**作为资产**HologramCollection 子**。
-* 与**HologramCollection**处于选中状态，单击**添加组件**按钮**Inspector**。
-* 在菜单中，在搜索框中键入**ExplodeTarget**。 选择搜索结果。
-* 与**HologramCollection**选定，从**层次结构**拖动**EnergyHub**对象传递给**目标**字段中**Inspector**。
-* 与**HologramCollection**选定，从**层次结构**拖动**Underworld**对象传递给**Underworld** 字段**检查器**。
+* 在 "**项目" 面板**中, 导航到 "**全息影像**" 文件夹。
+* 将**Underworld**资产拖放为 HologramCollection 的**子项**。
+* 选择**HologramCollection**后, 在**检查器**中单击 "**添加组件**" 按钮。
+* 在菜单中, 在 "搜索" 框中键入**ExplodeTarget**。 选择搜索结果。
+* 选择**HologramCollection**后, 从**层次结构**中,**将 EnergyHub**对象拖到**检查器**中的**目标**字段。
+* 选择**HologramCollection**后, 从**层次结构**中,**将 Underworld**对象拖到**检查器**中的**Underworld**字段。
 
-**部署和享受**
+**部署和体验**
 * 生成并部署到 HoloLens 设备。
-* 当应用启动时，共同协作以启动在 EnergyHub 炮弹。
-* Underworld 出现时，启动炮弹在 underworld 机器人 （命中三倍的额外有趣机器人）。
+* 当应用程序启动时, 在 EnergyHub 上协作以启动炮弹。
+* 显示 underworld 时, 启动炮弹 at underworld 机器人 (单击机器人三次, 以获得更多乐趣)。
