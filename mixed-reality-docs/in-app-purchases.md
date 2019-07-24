@@ -1,27 +1,27 @@
 ---
 title: 应用内购买
-description: 在混合的现实应用中，支持应用内购买，但一些操作来设置它们。
+description: 混合现实应用支持应用内购买, 但有一些工作需要对它们进行设置。
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 在应用内购买、 hololens
+keywords: 应用内购买, hololens
 ms.openlocfilehash: bc96893d1777e94295285736982fd9a7167240a4
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592561"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63515295"
 ---
-# <a name="in-app-purchases"></a><span data-ttu-id="6b9f2-104">应用内购买</span><span class="sxs-lookup"><span data-stu-id="6b9f2-104">In-app purchases</span></span>
+# <a name="in-app-purchases"></a><span data-ttu-id="a9054-104">应用内购买</span><span class="sxs-lookup"><span data-stu-id="a9054-104">In-app purchases</span></span>
 
-<span data-ttu-id="6b9f2-105">HoloLens，支持应用内购买，但可将其设置一些工作。</span><span class="sxs-lookup"><span data-stu-id="6b9f2-105">In-app purchases are supported in HoloLens, but there is some work to set them up.</span></span>
+<span data-ttu-id="a9054-105">HoloLens 中支持应用内购买, 但有一些工作需要进行设置。</span><span class="sxs-lookup"><span data-stu-id="a9054-105">In-app purchases are supported in HoloLens, but there is some work to set them up.</span></span>
 
-<span data-ttu-id="6b9f2-106">若要利用中的应用购买功能，您必须：</span><span class="sxs-lookup"><span data-stu-id="6b9f2-106">In order to leverage the in app-purchase functionality, you must:</span></span>
-* <span data-ttu-id="6b9f2-107">创建 XAML[二维视图](app-views.md)显示为一台平板电脑</span><span class="sxs-lookup"><span data-stu-id="6b9f2-107">Create a XAML [2D view](app-views.md) to appear as a slate</span></span>
-* <span data-ttu-id="6b9f2-108">切换到它，以激活放置，离开沉浸式视图</span><span class="sxs-lookup"><span data-stu-id="6b9f2-108">Switch to it to activate placement, which leaves the immersive view</span></span>
-* <span data-ttu-id="6b9f2-109">Call the API: await [CurrentApp.RequestProductPurchaseAsync("DurableItemIAPName");](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp#Windows_ApplicationModel_Store_CurrentApp_RequestProductPurchaseAsync_System_String_)</span><span class="sxs-lookup"><span data-stu-id="6b9f2-109">Call the API: await [CurrentApp.RequestProductPurchaseAsync("DurableItemIAPName");](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp#Windows_ApplicationModel_Store_CurrentApp_RequestProductPurchaseAsync_System_String_)</span></span>
+<span data-ttu-id="a9054-106">若要利用应用购买功能, 你必须:</span><span class="sxs-lookup"><span data-stu-id="a9054-106">In order to leverage the in app-purchase functionality, you must:</span></span>
+* <span data-ttu-id="a9054-107">创建 XAML [2d 视图](app-views.md)以显示为一个石板</span><span class="sxs-lookup"><span data-stu-id="a9054-107">Create a XAML [2D view](app-views.md) to appear as a slate</span></span>
+* <span data-ttu-id="a9054-108">切换到它以激活放置, 这会使沉浸式视图</span><span class="sxs-lookup"><span data-stu-id="a9054-108">Switch to it to activate placement, which leaves the immersive view</span></span>
+* <span data-ttu-id="a9054-109">调用 API: await [CurrentApp. RequestProductPurchaseAsync ("DurableItemIAPName");](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp#Windows_ApplicationModel_Store_CurrentApp_RequestProductPurchaseAsync_System_String_)</span><span class="sxs-lookup"><span data-stu-id="a9054-109">Call the API: await [CurrentApp.RequestProductPurchaseAsync("DurableItemIAPName");](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp#Windows_ApplicationModel_Store_CurrentApp_RequestProductPurchaseAsync_System_String_)</span></span>
 
-<span data-ttu-id="6b9f2-110">显示应用内购买名称、 说明和价格的股票 Windows OS 弹出窗口会显示此 API。</span><span class="sxs-lookup"><span data-stu-id="6b9f2-110">This API will bring up the stock Windows OS popup that shows the in-app purchase name, description, and price.</span></span> <span data-ttu-id="6b9f2-111">然后，用户可以选择购买选项。</span><span class="sxs-lookup"><span data-stu-id="6b9f2-111">The user can then choose purchase options.</span></span> <span data-ttu-id="6b9f2-112">完成操作后，应用将需要显示 UI，这样用户就可以切换回其[沉浸式视图](app-views.md)。</span><span class="sxs-lookup"><span data-stu-id="6b9f2-112">Once the action is completed, the app will need to present UI which allows the user to switch back to its [immersive view](app-views.md).</span></span>
+<span data-ttu-id="a9054-110">此 API 将显示 "常用 Windows 操作系统" 弹出窗口, 其中显示了应用内购买名称、说明和价格。</span><span class="sxs-lookup"><span data-stu-id="a9054-110">This API will bring up the stock Windows OS popup that shows the in-app purchase name, description, and price.</span></span> <span data-ttu-id="a9054-111">然后, 用户可以选择 "购买选项"。</span><span class="sxs-lookup"><span data-stu-id="a9054-111">The user can then choose purchase options.</span></span> <span data-ttu-id="a9054-112">操作完成后, 应用将需要显示允许用户切换回其[沉浸式视图](app-views.md)的 UI。</span><span class="sxs-lookup"><span data-stu-id="a9054-112">Once the action is completed, the app will need to present UI which allows the user to switch back to its [immersive view](app-views.md).</span></span>
 
-<span data-ttu-id="6b9f2-113">对于面向桌面基于 Windows Mixed Reality 沉浸式耳机的应用程序，它不是需要手动切换到 XAML 视图，然后再调用 RequestProductPurchaseAsync API。</span><span class="sxs-lookup"><span data-stu-id="6b9f2-113">For apps targeting desktop-based Windows Mixed Reality immersive headsets, it is not required to manually switch to a XAML view before calling the RequestProductPurchaseAsync API.</span></span>
+<span data-ttu-id="a9054-113">对于面向基于桌面的 Windows Mixed Reality 沉浸式耳机的应用程序, 无需在调用 RequestProductPurchaseAsync API 之前手动切换到 XAML 视图。</span><span class="sxs-lookup"><span data-stu-id="a9054-113">For apps targeting desktop-based Windows Mixed Reality immersive headsets, it is not required to manually switch to a XAML view before calling the RequestProductPurchaseAsync API.</span></span>
