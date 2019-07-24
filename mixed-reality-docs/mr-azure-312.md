@@ -1,112 +1,112 @@
 ---
-title: MR 和 Azure 312-智能机器人应用程序集成
-description: 完成此课程以了解如何创建和部署智能机器人，使用 Microsoft Bot Framework v4 和混合的现实应用程序中与之进行通信。
+title: MR 和 Azure 312-机器人集成
+description: 完成本课程, 了解如何使用 Microsoft Bot Framework v4 创建和部署 bot, 并在混合现实应用程序中与其通信。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
-keywords: azure 的混合现实、 学院、 unity、 教程、 api、 计算机视觉、 hololens，令人着迷，vr microsoft bot framework v4、 web app 机器人、 bot framework、 microsoft 智能机器人应用程序
+keywords: azure, 混合现实, 学院, unity, 教程, api, 计算机视觉, hololens, 沉浸, vr, microsoft bot framework v4, web 应用机器人, bot framework, microsoft 机器人
 ms.openlocfilehash: b828aa4415103d280459bd2c666004c994b3e59d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59593044"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63542860"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
 
-# <a name="mr-and-azure-312-bot-integration"></a>MR 和 Azure 312:智能机器人应用程序集成
+# <a name="mr-and-azure-312-bot-integration"></a>MR 和 Azure 312:机器人集成
 
-在本课程中，您将学习如何创建和部署使用 Microsoft Bot Framework V4 智能机器人应用程序并与之通信通过 Windows Mixed Reality 应用程序。 
+在本课程中, 你将了解如何使用 Microsoft Bot Framework V4 创建和部署机器人, 并通过 Windows Mixed Reality 应用程序与它进行通信。 
 
 ![](images/AzureLabs-Lab312-00.png)
 
-**Microsoft Bot Framework V4**是一组 Api 设计的开发人员提供工具以生成可扩展和可缩放的智能机器人应用程序。 有关详细信息，请访问[Microsoft Bot Framework 页](https://dev.botframework.com/)或[V4 Git 存储库](https://github.com/Microsoft/botbuilder-dotnet/wiki)。
+**Microsoft 机器人 Framework V4**是一组 api, 旨在向开发人员提供用于构建可扩展、可缩放机器人应用程序的工具。 有关详细信息, 请访问[Microsoft Bot Framework 页](https://dev.botframework.com/)或[V4 Git 存储库](https://github.com/Microsoft/botbuilder-dotnet/wiki)。
 
-完成此课程后，您便会生成一个 Windows Mixed Reality 应用程序，将能够执行以下操作：
+完成本课程后, 你将构建一个 Windows Mixed Reality 应用程序, 该应用程序将能够执行以下操作:
 
-1. 使用**点击手势**开始侦听用户语音的智能机器人应用程序。
-2. 当用户具有所说的内容时，智能机器人应用程序将尝试提供了一个响应。
-3. 显示为文本，附近机器人，Unity 场景中定位的智能机器人答复。
+1. 使用**点击手势**启动机器人来侦听用户语音。
+2. 如果用户已提到某些内容, 机器人会尝试提供响应。
+3. 在 Unity 场景中, 在机器人附近显示 "bot 回复" 作为文本。
 
-在您的应用程序，它是取决于您关于如何将与您的设计集成结果。 本课程旨在教您如何将 Azure 服务集成与你的 Unity 项目。 它是作业以使用此课程以增强混合的现实应用程序中获取的知识。
+在您的应用程序中, 您将由您来决定如何将结果与您的设计相集成。 本课程旨在向您介绍如何将 Azure 服务与 Unity 项目集成。 您可以使用您在本课程中获得的知识来增强混合现实应用程序的工作。
 
 ## <a name="device-support"></a>设备支持
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>摘要</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
-<td> MR 和 Azure 312:智能机器人应用程序集成</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td> MR 和 Azure 312:机器人集成</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
 > [!NOTE]
-> 尽管本课程主要专注于 HoloLens，您还可以应用到 Windows Mixed Reality 沉浸式 (VR) 耳机本课程中学习的内容。 因为沉浸式 (VR) 耳机不具有可访问照相机，您将需要连接到您的 PC 外部照相机。 按照课程时，您将看到说明您可能需要使用以支持沉浸式 (VR) 耳机的任何更改。
+> 尽管本课程主要侧重于 HoloLens, 但你也可以将本课程中学习的内容应用于 Windows Mixed Reality 沉浸 (VR) 耳机。 由于沉浸式 (VR) 耳机没有可访问的摄像机, 因此需要连接到电脑的外部照相机。 在本课程中, 您将看到有关支持沉浸式 (VR) 耳机时可能需要执行的任何更改的说明。
 
 ## <a name="prerequisites"></a>先决条件
 
 > [!NOTE]
-> 本教程专为开发人员已基本熟悉 Unity 和C#。 此外需要注意的先决条件和本文档内的书面的说明表示什么已测试并验证在撰写本文时 (2018 年 7 月)。 你可以随意使用最新的软件，如中所列[安装的工具](install-the-tools.md)文章中，但它不应假定本课程中的信息将完全匹配将在较新软件比列中找到的内容下面。
+> 本教程面向具有 Unity 和C#的基本经验的开发人员。 另外, 请注意, 本文档中的先决条件和书面说明表明了撰写时经过测试和验证的内容 (2018 年7月)。 你可以随意使用最新的软件 (如[安装工具](install-the-tools.md)一文中所述), 但不应假定本课程中的信息将与下面列出的内容完全匹配。
 
-我们建议以下硬件和软件本课程：
+本课程建议采用以下硬件和软件:
 
-- 开发 PC、 一个[与 Windows Mixed Reality 兼容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)沉浸式 (VR) 耳机开发
-- [Windows 10 Fall Creators Update （或更高版本） 开发人员模式下启用](install-the-tools.md#installation-checklist)
+- [与 Windows Mixed Reality 兼容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)的开发 PC, 用于沉浸式 (VR) 耳机开发
+- [Windows 10 秋季创意者更新 (或更高版本) 已启用开发人员模式](install-the-tools.md#installation-checklist)
 - [最新的 Windows 10 SDK](install-the-tools.md#installation-checklist)
-- [Unity 2017.4](install-the-tools.md#installation-checklist)
+- [Unity 2017。4](install-the-tools.md#installation-checklist)
 - [Visual Studio 2017](install-the-tools.md#installation-checklist)
-- 一个[Windows Mixed Reality 沉浸式 (VR) 耳机](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)启用开发人员模式
-- 为 Azure 和 Azure 智能机器人应用程序检索的 Internet 访问。 有关详细信息[请单击以下链接](https://dev.botframework.com/)。
+- 启用了开发人员模式的[Windows Mixed Reality 沉浸式 (VR) 耳机](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)
+- Azure 和 Azure 机器人检索的 Internet 访问。 有关详细信息,[请访问此链接](https://dev.botframework.com/)。
 
 ### <a name="before-you-start"></a>开始之前
 
-1.  若要避免遇到生成此项目的问题，强烈建议您创建在本教程中所述，在根或接近根文件夹中的项目 （长文件夹路径可能会导致在生成时的问题）。
-2.  设置和测试你 HoloLens。 如果需要支持设置你 HoloLens[请确保访问 HoloLens 安装文章](https://docs.microsoft.com/hololens/hololens-setup)。 
-3.  它是一个好办法开始开发新 HoloLens 应用程序 （有时它可帮助执行这些任务的每个用户） 时执行校准和优化传感器。 
+1.  为避免在生成此项目时遇到问题, 强烈建议您在本教程中的根或根文件夹中创建项目 (长文件夹路径可能会在生成时导致问题)。
+2.  设置并测试你的 HoloLens。 如果需要支持设置 HoloLens, 请[确保访问 hololens 设置一文](https://docs.microsoft.com/hololens/hololens-setup)。 
+3.  在开始开发新的 HoloLens 应用程序时, 最好执行校准和传感器调整 (有时它可以帮助为每个用户执行这些任务)。 
 
-有关校准的帮助，请遵循此[HoloLens 校准文章链接](calibration.md#hololens)。
+有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens)。
 
-有关传感器优化的帮助，请遵循此[HoloLens 传感器优化文章链接](sensor-tuning.md)。
+有关传感器优化的帮助, 请单击["HoloLens 传感器优化" 一文](sensor-tuning.md)。
 
-## <a name="chapter-1--create-the-bot-application"></a>第 1 章 – 创建智能机器人应用程序
+## <a name="chapter-1--create-the-bot-application"></a>第1章–创建机器人应用程序
 
-第一步是创建为本地 ASP.Net Core Web 应用程序智能机器人。 一旦完成并对其进行测试后，会将其发布到 Azure 门户。
+第一步是创建机器人作为本地 ASP.Net Core Web 应用程序。 完成并测试后, 将其发布到 Azure 门户。
 
-1.  打开 Visual Studio。 创建新项目，选择**ASP NET Core Web 应用程序**作为项目类型 （它会在.NET Core 的子节下），并调用它**MyBot**。 单击 **“确定”**。
+1.  打开 Visual Studio。 创建一个新项目, 选择 " **ASP NET Core Web 应用程序**" 作为项目类型 (你将在 ".net core" 部分下找到), 并**MyBot**调用它。 单击 **“确定”** 。
 
-2.  选择将显示在窗口中**空**。 此外请确保目标设置为**ASP NET Core 2.0**和身份验证设置为**无身份验证**。 单击 **“确定”**。  
+2.  在将显示的窗口中选择 "**空**"。 此外, 请确保将目标设置为**ASP NET Core 2.0** , 并将身份验证设置为 "**无身份验证**"。 单击 **“确定”** 。  
 
-    ![创建智能机器人应用程序](images/AzureLabs-Lab312-01.png)
+    ![创建机器人应用程序](images/AzureLabs-Lab312-01.png)
 
-3.  现在将打开该解决方案。 右键单击解决方案**Mybot**中**解决方案资源管理器**，然后单击**为解决方案管理 NuGet 包**。 
+3.  解决方案现在将打开。 右键单击 "**解决方案资源管理器**中的" 解决方案**Mybot** ", 然后单击"**管理解决方案的 NuGet 包**"。 
 
-    ![创建智能机器人应用程序](images/AzureLabs-Lab312-02.png)
+    ![创建机器人应用程序](images/AzureLabs-Lab312-02.png)
 
-4.  在**浏览**选项卡上，搜索**Microsoft.Bot.Builder.Integration.AspNet.Core** (请确保您拥有**包括预发行版**检查)。 选择的包版本**4.0.1-preview**，并选中项目框。 然后单击**安装**。 您现在已安装所需的库**Bot Framework v4**。 关闭 NuGet 页。
+4.  在 "**浏览**" 选项卡中 , 搜索 "", 并确保已选中 "**包括预发行版**"。 选择包版本**4.0.1-预览**, 并勾选项目框。 然后单击 "**安装**"。 你现在已安装了**Bot Framework v4**所需的库。 关闭 NuGet 页。
 
-    ![创建智能机器人应用程序](images/AzureLabs-Lab312-03.png)
+    ![创建机器人应用程序](images/AzureLabs-Lab312-03.png)
 
 5.  右键单击你*项目*， **MyBot**，在 **解决方案资源管理器**，然后单击 **添加** **|** **类**。
 
-    ![创建智能机器人应用程序](images/AzureLabs-Lab312-04.png)
+    ![创建机器人应用程序](images/AzureLabs-Lab312-04.png)
 
-6.  将类命名**MyBot** ，然后单击**添加**。
+6.  将类命名为**MyBot** , 然后单击 "**添加**"。
 
-    ![创建智能机器人应用程序](images/AzureLabs-Lab312-05.png)
+    ![创建机器人应用程序](images/AzureLabs-Lab312-05.png)
 
-7.  重复上一个点，以创建名为的另一个类**ConversationContext**。 
+7.  重复上述步骤, 以创建名为**ConversationContext**的另一个类。 
 
-8.  右键单击**wwwroot**中**解决方案资源管理器**，然后单击**添加** **|** **新项**. 选择**HTML 页**（它会在子节 Web 下）。 将文件命名**default.html**。 单击**添加**。
+8.  在**解决方案资源管理器**中右键单击**wwwroot** , 并单击 "**添加** **|** **新项**"。 选择 " **HTML 页**" (你将在 "Web" 子部分下发现)。 将文件命名为 **.html**。 单击**添加**。
 
-    ![创建智能机器人应用程序](images/AzureLabs-Lab312-06.png)
+    ![创建机器人应用程序](images/AzureLabs-Lab312-06.png)
 
-9.  类的列表中的对象 /**解决方案资源管理器**应如下图所示。
+9.  **解决方案资源管理器**中的类/对象的列表应类似于下图。
 
-    ![创建智能机器人应用程序](images/AzureLabs-Lab312-07.png)
+    ![创建机器人应用程序](images/AzureLabs-Lab312-07.png)
 
-10. 双击**ConversationContext**类。 此类负责保存智能机器人应用程序用于维护该会话的上下文的变量。 因为，这些会话上下文值将保留在此类的实例中的任何实例**MyBot**类将刷新每次收到活动。 将以下代码添加到类：
+10. 双击 " **ConversationContext** " 类。 此类负责保存机器人用于维护会话上下文的变量。 这些会话上下文值在此类的实例中维护, 因为每次收到活动时, **MyBot**类的任何实例都将刷新。 将下面的代码添加到类:
 
     ```csharp
     namespace MyBot
@@ -120,7 +120,7 @@ ms.locfileid: "59593044"
     }
     ```
 
-11. 双击**MyBot**类。 此类将托管客户从调用的任何传入活动的处理程序。 在此类将添加用于生成智能机器人应用程序与客户之间的会话的代码。 前面曾提到，初始化此类的实例每次收到活动。 将以下代码添加到此类：
+11. 双击 " **MyBot** " 类。 此类将承载来自客户的任何传入活动所调用的处理程序。 在此类中, 你将添加用于构建机器人和客户之间的会话的代码。 如前文所述, 每次收到活动时都会初始化此类的实例。 将以下代码添加到此类:
 
     ```csharp
     using Microsoft.Bot;
@@ -174,7 +174,7 @@ ms.locfileid: "59593044"
     }
     ```
 
-12. 双击**启动**类。 此类将初始化智能机器人应用程序。 将以下代码添加到类：
+12. 双击**Startup**类。 此类将初始化机器人。 将下面的代码添加到类:
 
     ```csharp
     using Microsoft.AspNetCore.Builder;
@@ -226,7 +226,7 @@ ms.locfileid: "59593044"
     }
     ```
 
-13. 打开**程序**类文件，并验证是否在其代码是相同的如下所示：
+13. 打开**Program**类文件, 验证其中的代码与以下代码相同:
 
     ```csharp
     using Microsoft.AspNetCore;
@@ -249,252 +249,252 @@ ms.locfileid: "59593044"
     }
     ```
 
-14. 请记住保存所做的更改，为此，请转到**文件** > **全部保存**，Visual Studio 顶部工具栏中。
+14. 记住要保存所做的更改, 若要执行此操作, 请从 Visual Studio 顶部的工具栏**中转到** > "**全部保存**"。
 
-## <a name="chapter-2---create-the-azure-bot-service"></a>章 2-创建 Azure 机器人服务
+## <a name="chapter-2---create-the-azure-bot-service"></a>第2章-创建 Azure Bot 服务
 
-既然您已经针对自动程序生成代码，您必须将其发布到的实例*Web App 机器人*服务，在 Azure 门户上的。 这一章将演示如何创建和配置 Azure 上的智能机器人应用程序服务和然后将代码发布到它。
+既然已经为机器人生成了代码, 就必须将其发布到 Azure 门户上的*Web 应用机器人*服务的实例。 本章介绍如何在 Azure 上创建和配置机器人服务, 然后将代码发布到该服务。
 
-1.  首先，登录到 Azure 门户 (https://portal.azure.com)。 
+1.  首先, 登录到 Azure 门户 (https://portal.azure.com) 。 
 
-    1. 如果你还没有 Azure 帐户，你需要创建一个。 如果您按照本教程中在课堂或实验室的情况下，要求教师或新帐户的帮助设置 proctors 之一。
+    1. 如果还没有 Azure 帐户, 则需要创建一个。 如果在课堂或实验室中按照本教程进行学习, 请咨询教师或 proctors, 以获得设置新帐户的帮助。
 
-2.  你登录后，单击**创建资源**在左上角，并搜索*Web App 机器人*，然后单击**Enter**。
+2.  登录后, 单击左上角的 "**创建资源**", 搜索 " *Web 应用程序*", 然后单击 " **Enter**"。
 
-    ![创建 Azure 机器人服务](images/AzureLabs-Lab312-08.png)
+    ![创建 Azure Bot 服务](images/AzureLabs-Lab312-08.png)
  
-3.  该新页面将提供的说明*Web App 机器人*服务。 在左下角此页上，选择**创建**按钮，以创建与此关联服务。
+3.  新页面将提供*Web 应用机器人*服务的说明。 在此页的左下角, 选择 "**创建**" 按钮以创建与此服务的关联。
 
-    ![创建 Azure 机器人服务](images/AzureLabs-Lab312-09.png)
+    ![创建 Azure Bot 服务](images/AzureLabs-Lab312-09.png)
  
-4.  一旦你单击**创建**:
+4.  单击 "**创建**" 后:
 
-    1. 插入所需**名称**此服务实例。
+    1. 为此服务实例插入所需的**名称**。
     2. 选择**订阅**。
-    3. 选择**资源组**或新建一个。 资源组提供了一种方法来监视、 控制访问，预配和管理 Azure 资产的集合的计费。 建议将所有 Azure 服务与常见的资源组下的单个项目 （例如如这些课程））。
+    3. 选择一个**资源组**, 或创建一个新的资源组。 资源组提供一种监视、控制访问、预配和管理 Azure 资产集合的计费的方法。 建议将所有与单个项目关联的 Azure 服务 (如这些课程) 保存在一个公共资源组中。
 
-        > 如果你想要阅读更多有关 Azure 资源组，[请访问以下链接](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)
+        > 若要了解有关 Azure 资源组的详细信息,[请访问此链接](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)
 
-    4. （如果要创建新的资源组） 确定你的资源组的位置。 理想情况下，则位置应为该应用程序将运行的区域中。 某些 Azure 资产在特定区域才可用。
-    5. 选择**定价层**适合您，如果这是第一个时间来创建*Web App 机器人*服务，应可供你免费层 （名为 F0）
-    6. **应用名称**可以只在相同*智能机器人应用程序名称*。 
-    7. 将保留*智能机器人应用程序模板*作为**基本 (C#)**。
-    8. *应用服务计划/位置*应该已自动填充为你的帐户。
-    9. 设置**Azure 存储**你想要使用托管在智能机器人应用程序。 如果你还没有，可以在此处创建它。
-    10. 您还需要确认你已了解的条款和条件应用于此服务。
-    11. 单击创建。
+    4. 确定资源组的位置 (如果要创建新的资源组)。 此位置理想情况下会在应用程序运行所在的区域中。 某些 Azure 资产仅在特定区域提供。
+    5. 选择适合你的**定价层**, 如果这是第一次创建*Web 应用机器人*服务, 则你应该可以使用免费层 (名为 F0)
+    6. **应用名称**可以与*Bot 名称*相同。 
+    7. 将*机器人模板*保留为 "**基本C#" ()** 。
+    8. 应已为你的帐户自动填写*应用服务计划/位置*。
+    9. 设置要用于托管机器人的**Azure 存储**。 如果还没有, 可以在此处创建一个。
+    10. 还需要确认是否已了解应用于此服务的条款和条件。
+    11. 单击 "创建"。
  
-        ![创建 Azure 机器人服务](images/AzureLabs-Lab312-10.png)
+        ![创建 Azure Bot 服务](images/AzureLabs-Lab312-10.png)
 
-5.  一旦你单击**创建**，将需要等待要创建的服务，这可能需要一分钟。
+5.  单击 "**创建**" 后, 需要等待创建服务, 这可能需要一分钟时间。
 
-6.  创建服务实例后，在门户中将显示一条通知。
+6.  创建服务实例后, 门户中将显示一个通知。
 
-    ![创建 Azure 机器人服务](images/AzureLabs-Lab312-11.png) 
+    ![创建 Azure Bot 服务](images/AzureLabs-Lab312-11.png) 
  
-7.  单击通知以了解新的服务实例。 
+7.  单击通知以浏览新服务实例。 
 
-    ![创建 Azure 机器人服务](images/AzureLabs-Lab312-12.png)
+    ![创建 Azure Bot 服务](images/AzureLabs-Lab312-12.png)
  
-8. 单击**转到资源**通知探索新的服务实例中的按钮。 你将转到新的 Azure 服务实例。 
+8. 单击通知中的 "**中转到资源**" 按钮以浏览新服务实例。 你将转到新的 Azure 服务实例。 
 
-    ![创建 Azure 机器人服务](images/AzureLabs-Lab312-13.png)
+    ![创建 Azure Bot 服务](images/AzureLabs-Lab312-13.png)
  
-9.  此时，你需要设置名为的功能**Direct Line**以允许客户端应用程序与此智能机器人应用程序服务进行通信。 单击**通道**，然后在**添加特色的频道**部分中，单击**配置 Direct Line 通道**。
+9.  此时, 你需要设置一个称为 "**直接连线**" 的功能, 以允许客户端应用程序与此 Bot 服务通信。 单击 "**频道**", 然后在 "**添加特色频道**" 部分中, 单击 "**配置直接连线通道**"。
 
-    ![创建 Azure 机器人服务](images/AzureLabs-Lab312-14.png)
+    ![创建 Azure Bot 服务](images/AzureLabs-Lab312-14.png)
 
-10. 在此页中将查找**机密密钥**，将允许客户端应用程序，以使用智能机器人应用程序进行身份验证。 单击**显示**按钮，然后将会更高版本中您的项目需要它时所采取的显示密钥中的一个副本。 
+10. 在此页中, 你将找到允许客户端应用程序通过机器人进行身份验证的**机密密钥**。 单击 "**显示**" 按钮, 然后复制其中一个所显示的密钥, 因为稍后会在项目中使用此项。 
 
-    ![创建 Azure 机器人服务](images/AzureLabs-Lab312-15.png)
+    ![创建 Azure Bot 服务](images/AzureLabs-Lab312-15.png)
 
-## <a name="chapter-3--publish-the-bot-to-the-azure-web-app-bot-service"></a>第 3 – 章将智能机器人应用程序发布到 Azure Web App 机器人服务
+## <a name="chapter-3--publish-the-bot-to-the-azure-web-app-bot-service"></a>第3章–将机器人发布到 Azure Web 应用机器人服务
 
-现在，你的服务已准备就绪，您需要将智能机器人应用程序代码，以前，构建到您新创建的 Web 应用程序智能机器人应用程序服务的发布。
+现在, 你的服务已准备就绪, 你需要将你之前构建的机器人代码发布到新创建的 Web 应用机器人服务。
 
 > [!NOTE] 
-> 必须将智能机器人发布到 Azure 服务，每次对智能机器人应用程序解决方案进行更改时 o。
+> 每次更改机器人解决方案/代码时, 都必须将机器人发布到 Azure 服务。
 
-1.  返回到以前创建的 Visual Studio 解决方案。 
-2.  右键单击你**MyBot**项目，在**解决方案资源管理器**，然后单击**发布**。
+1.  返回到你之前创建的 Visual Studio 解决方案。 
+2.  右键单击 " **MyBot** " 项目, 在 "**解决方案资源管理器**", 然后单击 "**发布**"。
 
-    ![将智能机器人应用程序发布到 Azure Web App 机器人服务](images/AzureLabs-Lab312-16.png)
+    ![将机器人发布到 Azure Web 应用机器人服务](images/AzureLabs-Lab312-16.png)
 
-3.  上*选取发布目标*页上，单击**应用服务**，然后**选择现有**，最后单击**创建配置文件**（您可能需要单击旁边的下拉箭头*发布*按钮，则此项不可见)。
+3.  在 "*选取发布目标*" 页上, 单击 "**应用服务**", 然后**选择 "现有**", 最后单击 "**创建配置文件**" (如果不可见, 则可能需要单击 "*发布*" 按钮旁的下拉箭头)。
 
-    ![将智能机器人应用程序发布到 Azure Web App 机器人服务](images/AzureLabs-Lab312-17.png)
+    ![将机器人发布到 Azure Web 应用机器人服务](images/AzureLabs-Lab312-17.png)
 
-4. 如果您尚未登录到你的 Microsoft 帐户，你必须在这里完成。
-5. 上**发布**您会发现有设置相同的页面**订阅**用于*Web App 机器人*服务创建。 然后设置**视图**作为**资源组**，然后在下拉列表文件夹结构中，选中**资源组**之前创建。 单击 **“确定”**。 
+4. 如果尚未登录到 Microsoft 帐户, 则必须在此处执行此操作。
+5. 在 "**发布**" 页上, 你将发现你必须设置用于*Web 应用程序机器人*服务创建的同一**订阅**。 然后, 将 "**视图**" 设置为 "**资源组**", 并在下拉文件夹结构中, 选择之前创建的**资源组**。 单击 **“确定”** 。 
 
-    ![将智能机器人应用程序发布到 Azure Web App 机器人服务](images/AzureLabs-Lab312-18.png)
+    ![将机器人发布到 Azure Web 应用机器人服务](images/AzureLabs-Lab312-18.png)
 
-6.  现在，单击**发布**按钮，并等待智能机器人应用程序要发布 （可能需要几分钟时间）。
+6.  现在, 单击 "**发布**" 按钮, 并等待机器人发布 (可能需要几分钟时间)。
 
-    ![将智能机器人应用程序发布到 Azure Web App 机器人服务](images/AzureLabs-Lab312-19.png)
+    ![将机器人发布到 Azure Web 应用机器人服务](images/AzureLabs-Lab312-19.png)
 
 
-## <a name="chapter-4--set-up-the-unity-project"></a>第 4 章-设置 Unity 项目
+## <a name="chapter-4--set-up-the-unity-project"></a>第4章–设置 Unity 项目
 
-以下是一组典型使用混合现实，进行开发，并在这种情况下，是合适的模板的其他项目。
+下面是用于使用混合现实进行开发的典型设置, 因此, 这是其他项目的一个不错的模板。
 
-1.  打开*Unity*然后单击**新建**。 
+1.  打开*Unity* , 并单击 "**新建**"。 
 
     ![设置 Unity 项目](images/AzureLabs-Lab312-20.png)
 
-2.  现在，需要提供的 Unity 项目名称。 插入**Hololens 机器人**。 请确保项目模板设置为**3D**。 设置**位置**到适合于您的某个位置 （请记住，更接近于根目录是更好）。 然后，单击**创建项目**。
+2.  现在需要提供 Unity 项目名称。 插入**Hololens 机器人**。 请确保将项目模板设置为**3d**。 将位置设置为合适的**位置**(请记住, 更接近根目录更好)。 然后单击 "**创建项目**"。
 
     ![设置 Unity 项目](images/AzureLabs-Lab312-21.png)
 
-3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到**编辑 > 首选项**，然后在新窗口中，导航到**外部工具**。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
+3.  当 Unity 处于打开状态时, 有必要选中 "默认**脚本编辑器**" 设置为 " **Visual Studio**"。 转到 "**编辑 > 首选项**", 然后在新窗口中导航到 "**外部工具**"。 将**外部脚本编辑器**更改为**Visual Studio 2017**。 关闭 "**首选项**" 窗口。
 
     ![设置 Unity 项目](images/AzureLabs-Lab312-22.png)
 
-4.  接下来，请转到**文件 > 生成设置**，然后选择**通用 Windows 平台**，然后单击**切换平台**按钮以应用你的选择。
+4.  接下来, 转到 "**文件 > 生成设置**", 选择 "**通用 Windows 平台**", 然后单击 "**切换平台**" 按钮以应用所选内容。
 
     ![设置 Unity 项目](images/AzureLabs-Lab312-23.png)
 
-5.  在仍处于**文件 > 生成设置**并确保选中：
+5.  尽管仍处于**文件 > 生成设置**, 但请确保:
 
-    1.  **设备为目标**设置为**Hololens**
+    1.  **目标设备**设置为**Hololens**
 
-        > 对于沉浸式耳机，设置**目标设备**到*任一设备*。
+        > 对于沉浸式耳机, 将 "**目标设备**" 设置为 "*任何设备*"。
 
-    2.  **生成的类型**设置为**D3D**
+    2.  **生成类型**设置为**D3D**
 
-    3.  **SDK**设置为**最新安装**
+    3.  **SDK**设置为 "**最新安装**"
 
-    4.  **Visual Studio 版本**设置为**最新安装**
+    4.  **Visual Studio 版本**设置为 "**最新安装**"
 
-    5.  **生成并运行**设置为**本地计算机**
+    5.  "**生成并运行**" 设置为 "**本地计算机**"
 
-    6.  保存场景，并将其添加到生成。 
+    6.  保存场景并将其添加到生成中。 
 
-        1. 选择执行此**添加打开场景**。 保存窗口将显示。
+        1. 通过选择 "**添加打开的场景**" 来执行此操作。 将显示 "保存" 窗口。
         
             ![设置 Unity 项目](images/AzureLabs-Lab312-24.png)
 
-        2. 创建一个新文件夹，以及任何未来、 场景，然后选择**新文件夹**按钮，创建一个新文件夹，其命名**场景**。
+        2. 为此创建新文件夹, 并为将来的任何场景创建一个新文件夹, 然后选择 "**新建文件夹**" 按钮以创建新文件夹, 将其命名为**场景**。
 
              ![设置 Unity 项目](images/AzureLabs-Lab312-25.png)
 
-        3. 打开新建**场景**文件夹，然后在*文件的名称*： 文本字段中，键入**BotScene**，然后单击**保存**。
+        3. 打开新创建的**场景**文件夹, 然后*在 "文件名*: 文本" 字段中, 键入**BotScene**, 然后单击 "**保存**"。
 
             ![设置 Unity 项目](images/AzureLabs-Lab312-26.png)
 
-    7. 中的剩余设置，**生成设置**，应暂时保留为默认值。
+    7. 现在, "**生成设置**" 中的其余设置应保留为默认值。
 
-6. 在*生成设置*窗口中，单击**播放器设置**按钮，这将打开相关面板中的空间中的*检查器*所在。 
+6. 在 "*生成设置*" 窗口中, 单击 "**播放机设置**" 按钮, 这会在*检查器*所在的空间中打开相关面板。 
 
     ![设置 Unity 项目](images/AzureLabs-Lab312-27.png)
 
-7. 在此面板中，需要验证几个设置：
+7. 在此面板中, 需要验证几项设置:
 
-    1. 在中**其他设置**选项卡：
+    1. 在 "**其他设置**" 选项卡中:
 
-        1. **脚本运行时版本**应 **（NET 4.6 等效） 的实验性**; 更改这将需要重新启动编辑器中。
-        2. **脚本编写后端**应为 **.NET**
-        3. **API 兼容性级别**应为 **.NET 4.6**
+        1. **脚本运行时版本**应为**试验性 (NET 4.6 等效项)** ;更改此要求将需要重新启动编辑器。
+        2. **脚本编写后端**应为 **.net**
+        3. **API 兼容级别**应为 **.net 4.6**
 
             ![设置 Unity 项目](images/AzureLabs-Lab312-28.png)
       
-    2. 内**发布设置**选项卡上，在**功能**，检查：
+    2. 在 "**发布设置**" 选项卡的 "**功能**" 下, 检查:
 
         - **InternetClient**
-        - **Microphone**
+        - **十分**
 
             ![设置 Unity 项目](images/AzureLabs-Lab312-29.png)
 
-    3. 中的后面部分面板**XR 设置**(下面找到**发布设置**)，刻度线**虚拟现实支持**，请确保**Windows 混合现实 SDK**添加。
+    3. 在面板中, 在 " **XR" 设置**(位于 "**发布设置**" 下) 中, 在 "**支持的虚拟现实**" 下, 确保已添加**Windows Mixed reality SDK** 。
 
         ![设置 Unity 项目](images/AzureLabs-Lab312-30.png)
 
-8.  回到*生成设置* _Unity C#_ 项目不再灰显; 选中它旁边的复选框。 
-9.  关闭生成设置窗口。
-10. 保存您的场景和项目 (**文件 > 保存场景文件 > 保存项目**)。
+8.  "返回*生成设置* _" C# Unity_项目不再灰显;勾选此的旁边的复选框。 
+9.  关闭 "生成设置" 窗口。
+10. 保存场景和项目 (**file > SAVE 场景/file > SAVE project**)。
 
 
-## <a name="chapter-5--camera-setup"></a>第 5 章-照相机设置
+## <a name="chapter-5--camera-setup"></a>第5章–照相机设置
 
 > [!IMPORTANT]
-> 如果你想要跳过*Unity 设置*组件的此课程，并继续直接插入代码，欢迎下载这[Azure MR 312 Package.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage)，将其导入项目中，作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)，然后继续从[第 7 章](#chapter-7-–-create-the-botobjects-class)。
+> 如果要跳过本课程的*Unity 设置*组件, 并继续直接进入代码, 请随时下载[312 此 unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), 将其作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)导入项目, 然后继续从[第7章](#chapter-7-–-create-the-botobjects-class):
 
-1.  在中*层次结构面板*，选择**Main Camera**。 
-2.  选择后，你将能够看到的所有组件**Main Camera**中*检查器面板*。
+1.  在 "*层次结构" 面板*中, 选择 "**摄像机**"。 
+2.  选择后, 你将能够在 "*检查器" 面板*中看到**主相机**的所有组件。
 
-    1. **相机对象**必须命名为**Main Camera** （请注意拼写）
-    2. Main Camera**标记**必须设置为**MainCamera** （请注意拼写）
-    3. 请确保**转换位置**设置为**0，0，0**
-    4. 设置**清除标志**到**纯色**。
-    5. 设置**背景**照相机组件到色**黑色、 Alpha 0 (十六进制代码: #00000000)**
+    1. **照相机对象**必须命名为 "**主相机**" (请注意拼写)
+    2. 必须将主相机**标记**设置为**MainCamera** (请注意拼写)
+    3. 请确保将**转换位置**设置为**0, 0, 0**
+    4. 将**清除标志**设置为**纯色**。
+    5. 将相机组件的**背景**色设置为**黑色、Alpha 0 (十六进制代码: #00000000)**
 
     ![照相机设置](images/AzureLabs-Lab312-31.png)
  
 
-## <a name="chapter-6--import-the-newtonsoft-library"></a>第 6 章-导入 Newtonsoft 库
+## <a name="chapter-6--import-the-newtonsoft-library"></a>第6章–导入 Newtonsoft.json 库
 
-若要帮助您反序列化和序列化对象接收和发送到机器人服务需要下载**Newtonsoft**库。 您会发现[兼容的版本与此处正确的 Unity 文件夹结构已组织](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/NewtonsoftDLL.unitypackage)。 
+为了帮助您反序列化和序列化接收并发送到机器人服务的对象, 您需要下载**newtonsoft.json**库。 你将在[此处找到已使用正确的 Unity 文件夹结构组织的兼容版本](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/NewtonsoftDLL.unitypackage)。 
 
-若要 Newtonsoft 库导入到你的项目，使用了随附此课程的 Unity 包。
+若要将 Newtonsoft.json 库导入项目, 请使用本课程附带的 Unity 包。
 
-1.  添加 *.unitypackage*到使用 Unity**资产** > **导入包** > **自定义包**菜单选项。
+1.  使用 "**资产** > **导入包** > **自定义包**" 菜单选项将*unitypackage*添加到 Unity。
 
-    ![导入 Newtonsoft 库](images/AzureLabs-Lab312-34.png)
+    ![导入 Newtonsoft.json 库](images/AzureLabs-Lab312-34.png)
 
-2.  在中**导入 Unity 程序包**弹出框、 下 （其中包含） 确保一切**插件**处于选中状态。
+2.  在弹出的 "**导入 Unity 包**" 框中, 确保选择了 "所有" (并包括)**插件**。
 
-    ![导入 Newtonsoft 库](images/AzureLabs-Lab312-35.png)
+    ![导入 Newtonsoft.json 库](images/AzureLabs-Lab312-35.png)
 
-3.  单击**导入**按钮将项添加到你的项目。
+3.  单击 "**导入**" 按钮, 将项添加到项目。
 
-4.  转到**Newtonsoft**下的文件夹**插件**在项目视图中，选择 Newtonsoft 插件。
+4.  在项目视图中, 在 "**插件**" 下, 单击 " **newtonsoft.json** " 文件夹, 然后选择 "newtonsoft.json" 插件。
 
     ![](images/AzureLabs-Lab312-35b.png)
 
-5.  使用所选 Newtonsoft 插件，请确保**Any 平台**是**取消选中**，然后确保**WSAPlayer**也是**未选中**，然后单击**应用**。 这只是为了确认正确配置文件。
+5.  选择 Newtonsoft.json 插件后, 请确保**未选中** **任何平台**, 并确保还**未选中**" **WSAPlayer** ", 然后单击 "**应用**"。 这只是为了确认已正确配置文件。
 
     ![](images/AzureLabs-Lab312-35c.png)
 
     > [!NOTE]
-    > 将标记这些插件将它们配置为仅使用在 Unity 编辑器中。 有一组不同的它们从 Unity 项目会导出后，将使用 WSA 文件夹中。
+    > 标记这些插件会将它们配置为仅在 Unity 编辑器中使用。 在从 Unity 导出项目后, 将使用 WSA 文件夹中的一组不同的组。
 
-6.  接下来，您需要打开**WSA**文件夹，在**Newtonsoft**文件夹。 您将看到刚配置的相同文件的副本。 选择的文件，然后在检查器中，确保的
-    -   **任何平台**是**未选中状态** 
-    -   **仅** **WSAPlayer**是**检查**
-    -   **不处理**是**检查**
+6.  接下来, 需要在**newtonsoft.json**文件夹中打开**WSA**文件夹。 你将看到刚才配置的同一文件的副本。 选择该文件, 然后在 "检查器" 中, 确保
+    -   **未选中** **任何平台** 
+    -   **仅** **已选中** **WSAPlayer**
+    -   不**检查** **进程**
 
     ![](images/AzureLabs-Lab312-35d.png)
 
-## <a name="chapter-7--create-the-bottag"></a>第 7 – 章创建 BotTag
+## <a name="chapter-7--create-the-bottag"></a>第7章–创建 BotTag
 
-1.  创建一个新**标记**对象调用**BotTag**。 选择场景中的 Main Camera。 单击标记下拉列表中的检查器面板菜单。 单击**将标记添加**。
+1.  创建名为**BotTag**的新的**标记**对象。 选择场景中的主相机。 单击 "检查器" 面板中的 "标记" 下拉菜单。 单击 "**添加标记**"。
 
     ![照相机设置](images/AzureLabs-Lab312-32.png)
  
-2.  单击 **+** 符号。 指定新**标记**作为**BotTag**，*保存*。
+2.  单击 **+** 符号。 将新**标记**命名为**BotTag**,*保存*。
 
     ![照相机设置](images/AzureLabs-Lab312-33.png)
 
 > [!WARNING] 
-> **不这样做**应用**BotTag**到 Main Camera。 如果已意外地执行此操作，请确保更改标记返回到 Main Camera *MainCamera*。
+> **不要**将**BotTag**应用于主摄像机。 如果你意外地执行了此操作, 请确保将主相机标签更改回*MainCamera*。
 
-## <a name="chapter-8--create-the-botobjects-class"></a>第 8 章 – 创建 BotObjects 类
+## <a name="chapter-8--create-the-botobjects-class"></a>第8章–创建 BotObjects 类
 
-您需要创建的第一个脚本是**BotObjects**类，该类是创建一系列的其他类对象可存储在同一个脚本和其他脚本场景中访问的空类。
+你需要创建的第一个脚本是**BotObjects**类, 该类是一个空类, 它是一个空类, 可将一系列其他类对象存储在同一脚本中并由场景中的其他脚本访问。
 
-此类的创建是纯粹的体系结构的选择，这些对象可以改为托管，你将稍后在本课程中创建的智能机器人应用程序脚本中。
+此类的创建只是一种体系结构选择, 这些对象可以托管在你稍后将在本课程中创建的机器人脚本中。
 
-若要创建此类： 
+若要创建此类: 
 
-1.  在中右击*项目面板*，然后**创建 > 文件夹**。 将文件夹命名为**脚本**。 
+1.  右键单击 "*项目" 面板*, 然后**创建 > 文件夹**。 命名文件夹**脚本**。 
 
-    ![创建脚本的文件夹。](images/AzureLabs-Lab312-36.png)
+    ![创建脚本文件夹。](images/AzureLabs-Lab312-36.png)
 
-2.  双击**脚本**文件夹将其打开。 然后在该文件夹，右键单击，并选择**创建 >C#脚本**。 脚本命名为**BotObjects**。 
+2.  双击 "**脚本**" 文件夹将其打开。 然后在该文件夹中, 右键单击, 然后选择 "**创建C# > 脚本**"。 将脚本命名为**BotObjects**。 
 
-3.  双击新**BotObjects**脚本以将其与打开**Visual Studio**。
+3.  双击新的**BotObjects**脚本以通过**Visual Studio**打开它。
 
-4.  删除脚本的内容，并使用以下代码替换它：
+4.  删除脚本的内容, 并将其替换为以下代码:
 
     ```csharp
     using System;
@@ -552,21 +552,21 @@ ms.locfileid: "59593044"
     }
     ```
 
-6.  请务必保存中所做的更改*Visual Studio*才会回到*Unity*。
+6.  在返回到*Unity*之前, 请务必保存*Visual Studio*中所做的更改。
 
-## <a name="chapter-9--create-the-gazeinput-class"></a>第 9 章 – 创建 GazeInput 类
+## <a name="chapter-9--create-the-gazeinput-class"></a>第9章–创建 GazeInput 类
 
-要创建的下一步类是**GazeInput**类。 此类负责：
+要创建的下一个类是**GazeInput**类。 此类负责:
 
-- 表示将创建游标*注视*的播放机。
-- 检测的播放机中，提供注视被命中的对象和保存对检测到的对象的引用。
+- 创建一个游标, 用来表示播放机的外观。
+- 检测在播放机看上碰到的对象, 并保存对检测到的对象的引用。
 
-若要创建此类： 
+若要创建此类: 
 
-1.  转到**脚本**之前创建的文件夹。 
-2.  在文件夹中，右键单击**创建 >C#脚本**。 调用脚本**GazeInput**。 
-3.  双击新**GazeInput**脚本以将其与打开**Visual Studio**。
-4.  插入类名的右侧顶部的以下行：
+1.  中转到前面创建的 "**脚本**" 文件夹。 
+2.  右键单击文件夹内部,**创建 > C#脚本**。 调用脚本**GazeInput**。 
+3.  双击新的**GazeInput**脚本以通过**Visual Studio**打开它。
+4.  在类名的顶部插入以下行:
 
     ```csharp
     /// <summary>
@@ -576,7 +576,7 @@ ms.locfileid: "59593044"
     public class GazeInput : MonoBehaviour
     ```
 
-5.  然后添加以下变量内的**GazeInput**类，更高版本**start （)** 方法：
+5.  然后, 将以下变量添加到**GazeInput**类中的**Start ()** 方法之上:
 
     ```csharp
         [Tooltip("Used to compare whether an object is to be interacted with.")]
@@ -612,7 +612,7 @@ ms.locfileid: "59593044"
         private Vector3 _gazeDirection;
     ```
 
-6.  为代码**start （)** 应添加方法。 类初始化时，这将会调用：
+6.  应添加**Start ()** 方法的代码。 当类初始化时, 将调用此操作:
 
     ```csharp
         /// <summary>
@@ -625,7 +625,7 @@ ms.locfileid: "59593044"
         }
     ```
 
-7.  实现将实例化和设置的视线移动游标的方法： 
+7.  实现一个方法, 该方法将实例化并设置注视光标: 
 
     ```csharp
         /// <summary>
@@ -647,7 +647,7 @@ ms.locfileid: "59593044"
         }
     ```
 
-8.  实现的方法，将在安装程序从 Main Camera Raycast 和跟踪的当前具有焦点的对象。
+8.  实现将从主相机设置 Raycast 的方法, 并跟踪当前聚焦的对象。
 
     ```csharp
         /// <summary>
@@ -745,25 +745,25 @@ ms.locfileid: "59593044"
         }
     ```
  
-9.  请务必保存中所做的更改*Visual Studio*才会回到*Unity*。
+9.  在返回到*Unity*之前, 请务必保存*Visual Studio*中所做的更改。
 
-## <a name="chapter-10--create-the-bot-class"></a>第 10 章 – 创建智能机器人应用程序类
+## <a name="chapter-10--create-the-bot-class"></a>第10章–创建机器人类
 
-要创建的脚本现在称为**机器人**。 这是你的应用程序的核心类，它将存储： 
+现在要创建的脚本称为**机器人**。 这是应用程序的核心类, 它存储: 
 
-- 你的 Web 应用程序智能机器人应用程序凭据
-- 方法，收集用户语音命令
-- 若要启动会话的 Web 应用程序智能机器人，所需的方法 
-- 若要将消息发送到 Web 应用程序智能机器人，所需的方法 
+- Web 应用机器人凭据
+- 收集用户语音命令的方法
+- 启动与 Web 应用机器人的会话所需的方法 
+- 向 Web 应用机器人发送消息所需的方法 
 
-若要将消息发送到 Bot Service **SendMessageToBot()** 协同程序将生成活动，这是识别智能机器人应用程序框架为用户发送的数据的对象。 
+若要将消息发送到机器人服务, **SendMessageToBot ()** 协同程序将生成一个活动, 该活动是由 Bot 框架识别为用户发送的数据的对象。 
  
-若要创建此类： 
+若要创建此类: 
 
-1. 双击**脚本**文件夹，将其打开。 
-2. 内右击**脚本**文件夹中，单击**创建 >C#脚本**。 脚本命名为**机器人**。 
-3. 双击要使用 Visual Studio 中打开的新脚本。
-4. 更新命名空间，如下所示，在顶部相同**机器人**类：
+1. 双击 "**脚本**" 文件夹以将其打开。 
+2. 右键单击 "**脚本**" 文件夹中, 单击 "**创建C# > 脚本**"。 将脚本**Bot**命名为。 
+3. 双击新脚本以通过 Visual Studio 将其打开。
+4. 在**机器人**类的顶部, 将命名空间更新为与以下相同:
 
     ```csharp
     using Newtonsoft.Json;
@@ -774,7 +774,7 @@ ms.locfileid: "59593044"
     using UnityEngine.Windows.Speech;
     ```
  
-5. 内部**机器人**类添加以下变量：
+5. 在**机器人**类中添加以下变量:
 
     ```csharp
         /// <summary>
@@ -836,9 +836,9 @@ ms.locfileid: "59593044"
     ```
 
     > [!NOTE] 
-    > 请确保插入你**智能机器人应用程序机密密钥**成**botSecret**变量。 你将已记下你 **智能机器人应用程序机密密钥** 在本课程中，开头中 **[第 2 章](#chapter-2---create-the-azure-bot-service)，第 10 步** 。
+    > 请确保将你的**机器人机密密钥**插入到**botSecret**变量。 你将已记下你 **智能机器人应用程序机密密钥** 在本课程中，开头中 **[第 2 章](#chapter-2---create-the-azure-bot-service)，第 10 步** 。
 
-7. 为代码**Awake()** 并**start （)** 现在需要添加。 
+7. 现在需要添加**唤醒 ()** 和**Start ()** 的代码。 
 
     ```csharp
         /// <summary>
@@ -858,7 +858,7 @@ ms.locfileid: "59593044"
         }
     ```
 
-8. 添加两个处理程序在语音捕获开始和结束时调用由语音库。 *DictationRecognizer*将自动停止捕获用户之声，当用户停止说到。
+8. 添加语音捕获开始和结束时由语音库调用的两个处理程序。 当用户停止说话时, *DictationRecognizer*将自动停止捕获用户语音。
 
     ```csharp
         /// <summary>
@@ -887,7 +887,7 @@ ms.locfileid: "59593044"
         
     ```
 
-1. 下面的处理程序收集用户语音输入的结果，并调用协同程序负责将消息发送到 Web 应用智能机器人应用程序服务。
+1. 下面的处理程序收集用户语音输入的结果, 并调用负责将消息发送到 Web 应用机器人服务的协同程序。
 
     ```csharp
         /// <summary>
@@ -904,7 +904,7 @@ ms.locfileid: "59593044"
         }     
     ```
 
-10. 下面的协同例程调用以开始与智能机器人应用程序的会话。 你会注意到，会话调用完成后，它将调用**SendMessageToCoroutine()** 表示通过一系列将设置要发送到 Bot 服务作为一条空消息的活动的参数。 这样做是为了提示要启动对话的智能机器人应用程序服务。
+10. 调用以下协同程序来开始与机器人的对话。 你会注意到, 一旦完成会话调用, 它将通过传递一系列参数 (将活动设置为以空消息形式发送到机器人服务) 来调用**SendMessageToCoroutine ()** 。 这样做是为了提示机器人服务启动对话框。
 
     ```csharp
         /// <summary>
@@ -935,7 +935,7 @@ ms.locfileid: "59593044"
         }    
     ```
 
-11. 下面的协同例程调用以生成要发送到机器人服务的活动。 
+11. 调用以下协同程序生成要发送到机器人服务的活动。 
 
     ```csharp
         /// <summary>
@@ -984,7 +984,7 @@ ms.locfileid: "59593044"
         }
     ```
 
-12. 下面的协同例程调用以将活动发送到智能机器人应用程序服务后请求响应。 
+12. 在将活动发送到机器人服务后, 调用以下协同程序来请求响应。 
 
     ```csharp
         /// <summary>
@@ -1018,7 +1018,7 @@ ms.locfileid: "59593044"
         } 
     ```
 
-13. 场景中显示该消息所需的最后一个方法添加到此类：
+13. 要添加到此类中的最后一个方法是在场景中显示消息所必需的:
 
     ```csharp
         /// <summary>
@@ -1031,24 +1031,24 @@ ms.locfileid: "59593044"
     ```
 
     > [!NOTE] 
-    > 您可能会看到一个在 Unity 编辑器控制台中，有关缺少**SceneOrganiser**类。 忽略此消息，因为将稍后在本教程中创建此类。
+    > 你可能会在 Unity 编辑器控制台中看到一个错误, 缺少**SceneOrganiser**类。 请忽略此消息, 因为稍后会在本教程中创建此类。
 
-14.  请务必保存中所做的更改*Visual Studio*才会回到*Unity*。
+14.  在返回到*Unity*之前, 请务必保存*Visual Studio*中所做的更改。
 
-## <a name="chapter-11--create-the-interactions-class"></a>第 11 章 – 创建交互类
+## <a name="chapter-11--create-the-interactions-class"></a>第11章–创建交互类
 
-要创建此类现被称为**交互**。 此类用于检测来自用户的 HoloLens 点击输入。 
+现在要创建的类称为**交互**。 此类用于检测 HoloLens 点击用户的输入。 
 
-如果用户点击时查看*机器人*场景和智能机器人应用程序中的对象已准备好侦听语音输入，智能机器人应用程序对象将更改颜色**红色**并开始侦听语音输入。 
+如果用户在查看场景中的*机器人*对象时点击, 并准备好侦听语音输入, 则机器人对象会将颜色更改为**红色**, 并开始侦听语音输入。 
 
-此类继承自**GazeInput**类，并因此是能够引用**start （)** 方法，并从该类，表示通过使用变量**基**。 
+此类继承自**GazeInput**类, 因此, 可以从该类引用**Start ()** 方法和变量, 这是通过使用**base**表示的。 
  
-若要创建此类：
+若要创建此类:
 
-1.  双击**脚本**文件夹，将其打开。 
-2.  内右击**脚本**文件夹中，单击**创建 >C#脚本**。 脚本命名为**交互**。 
-3.  双击要使用 Visual Studio 中打开的新脚本。
-4.  更新命名空间和类继承，如下所示，在顶部相同**交互**类：
+1.  双击 "**脚本**" 文件夹以将其打开。 
+2.  右键单击 "**脚本**" 文件夹中, 单击 "**创建C# > 脚本**"。 命名脚本**交互**。 
+3.  双击新脚本以通过 Visual Studio 将其打开。
+4.  在**交互**类的顶部, 将命名空间和类继承更新为与以下相同:
 
     ```csharp
     using UnityEngine.XR.WSA.Input;
@@ -1057,7 +1057,7 @@ ms.locfileid: "59593044"
     {
     ```
 
-5.  内部**交互**类中，添加以下变量：
+5.  在**交互**类中添加以下变量:
 
     ```csharp
         /// <summary>
@@ -1065,7 +1065,7 @@ ms.locfileid: "59593044"
         /// </summary>
         private GestureRecognizer _gestureRecognizer;
     ```
-6.  然后添加**start （)** 方法：
+6.  然后添加**Start ()** 方法:
 
     ```csharp
         /// <summary>
@@ -1083,7 +1083,7 @@ ms.locfileid: "59593044"
         }
     ```
 
-7.  添加用户执行点击手势 HoloLens 照相机的前面时，将触发该处理程序
+7.  添加当用户在 HoloLens 相机前面执行分流手势时触发的处理程序
 
     ```csharp
         /// <summary>
@@ -1113,18 +1113,18 @@ ms.locfileid: "59593044"
         }
     ```
 
-8. 请务必保存中所做的更改*Visual Studio*才会回到*Unity*。
+8. 在返回到*Unity*之前, 请务必保存*Visual Studio*中所做的更改。
 
-## <a name="chapter-12--create-the-sceneorganiser-class"></a>第 12 章 – 创建 SceneOrganiser 类
+## <a name="chapter-12--create-the-sceneorganiser-class"></a>第12章–创建 SceneOrganiser 类
 
-在此实验中所需的最后一个类称为**SceneOrganiser**。 此类将在安装程序场景以编程方式，通过将组件和脚本添加到 Main Camera，并在场景中创建相应的对象。
+此实验室中所需的最后一个类称为**SceneOrganiser**。 此类将通过将组件和脚本添加到主相机并在场景中创建相应的对象, 以编程方式设置场景。
  
-若要创建此类：
+若要创建此类:
 
-1.  双击**脚本**文件夹，将其打开。 
-2.  内右击**脚本**文件夹中，单击**创建 >C#脚本**。 脚本命名为**SceneOrganiser**。 
-3.  双击要使用 Visual Studio 中打开的新脚本。
-4.  内部**SceneOrganiser**类添加以下变量：
+1.  双击 "**脚本**" 文件夹以将其打开。 
+2.  右键单击 "**脚本**" 文件夹中, 单击 "**创建C# > 脚本**"。 将脚本命名为**SceneOrganiser**。 
+3.  双击新脚本以通过 Visual Studio 将其打开。
+4.  在**SceneOrganiser**类中, 添加以下变量:
 
     ```csharp
         /// <summary>
@@ -1138,7 +1138,7 @@ ms.locfileid: "59593044"
         internal TextMesh botResponseText;
     ```
 
-6.  然后添加**Awake()** 并**start （)** 方法：
+6.  然后添加**唤醒 ()** 和**Start ()** 方法:
 
     ```csharp
         /// <summary>
@@ -1165,7 +1165,7 @@ ms.locfileid: "59593044"
         }
     ```
 
-7.  添加以下方法，负责在场景中创建智能机器人应用程序对象和设置参数和组件：
+7.  添加以下方法, 负责在场景中创建机器人对象并设置参数和组件:
 
     ```csharp
         /// <summary>
@@ -1192,7 +1192,7 @@ ms.locfileid: "59593044"
         }
     ```
 
-7.  添加以下方法，负责创建 UI 对象在场景中，表示从智能机器人应用程序的响应：
+7.  添加以下方法, 负责在场景中创建 UI 对象, 以表示来自机器人的响应:
 
     ```csharp
         /// <summary>
@@ -1219,73 +1219,73 @@ ms.locfileid: "59593044"
         }
     ```
 
-8.  请务必保存中所做的更改*Visual Studio*才会回到*Unity*。
-9.  在 Unity 编辑器中，拖动**SceneOrganiser**到 Main Camera 脚本文件夹中的脚本。 Main Camera 对象上现在应显示场景组织者组件，如下图中所示。
+8.  在返回到*Unity*之前, 请务必保存*Visual Studio*中所做的更改。
+9.  在 Unity 编辑器中, 将 " **SceneOrganiser** " 脚本从 "脚本" 文件夹拖到主摄像机。 场景 Organiser 组件现在应显示在 "照相机" 对象上, 如下图所示。
 
-    ![创建 Azure 机器人服务](images/AzureLabs-Lab312-37.png)
+    ![创建 Azure Bot 服务](images/AzureLabs-Lab312-37.png)
 
-## <a name="chapter-13--before-building"></a>第 13 章 – 生成前
+## <a name="chapter-13--before-building"></a>第13章–生成之前
 
-若要执行全面测试您的应用程序将需要旁加载它到在 HoloLens 上。
-执行操作之前，请确保：
+若要对应用程序进行全面测试, 需要将其旁加载到 HoloLens。
+在执行此操作之前, 请确保:
 
--   中所述的所有设置[**第 4 章**](#Chapter-4-–-Set-up-the-unity-project)正确设置。 
--   该脚本**SceneOrganiser**附加到**Main Camera**对象。 
--   在**机器人**类中，请确保已插入您**智能机器人应用程序机密密钥**到**botSecret**变量。
+-   [**第4章**](#Chapter-4-–-Set-up-the-unity-project)中提到的所有设置都已正确设置。 
+-   脚本**SceneOrganiser**已附加到**摄像机主**对象。 
+-   在**机器人**类中, 请确保已将**机器人机密密钥**插入到**botSecret**变量。
 
-## <a name="chapter-14--build-and-sideload-to-the-hololens"></a>第 14 章 – 生成和旁的加载到 HoloLens
+## <a name="chapter-14--build-and-sideload-to-the-hololens"></a>第14章–生成并旁加载到 HoloLens
 
-此项目的 Unity 部分所需的所有内容现已完成，因此它是从 Unity 生成的时间。
+此项目的 Unity 部分所需的所有内容现在均已完成, 因此可以从 Unity 构建它。
 
-1.  导航到**生成设置**，**文件 > 生成设置...**.
-2.  从**生成设置**窗口中，单击**生成**。
+1.  导航到 "**生成设置**", "**文件 > 生成设置 ...** "。
+2.  在**生成设置**窗口中, 单击 "**生成**"。
 
-    ![从 Unity 构建应用程序](images/AzureLabs-Lab312-38.png)
+    ![从 Unity 生成应用](images/AzureLabs-Lab312-38.png)
 
-3.  如果尚不存在，则勾选**UnityC#项目**。
-4.  单击“生成” 。 将启动 unity**文件资源管理器**窗口中，需要创建，然后选择要生成该应用程序的文件夹。 现在，创建该文件夹并将其命名**应用**。 然后使用**应用程序**文件夹选择，单击**选择文件夹**。 
-5.  Unity 将开始构建您的项目**应用**文件夹。 
-6.  一次 Unity 已完成的生成 （它可能需要一些时间），它将打开**文件资源管理器**窗口在生成的位置 （检查任务栏中，因为它可能不总是会显示您的窗口上方，但会通知你添加了一个新窗口）。
+3.  如果尚未这样做, 请勾选**Unity C#项目**。
+4.  单击“生成” 。 Unity 将启动**文件资源管理器**窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为**应用**。 选择**应用**文件夹后, 单击 "**选择文件夹**"。 
+5.  Unity 将开始向**应用**文件夹生成项目。 
+6.  Unity 完成生成 (可能需要一些时间) 后, 它会在生成的位置打开 "**文件资源管理器**" 窗口 (检查任务栏, 因为它可能不会始终出现在窗口之上, 但会通知你添加了一个新窗口)。
 
-## <a name="chapter-15--deploy-to-hololens"></a>章 15-将部署到 HoloLens
+## <a name="chapter-15--deploy-to-hololens"></a>第15章–部署到 HoloLens
 
-若要部署在 HoloLens 上：
+在 HoloLens 上部署:
 
-1.  你将 （适用于远程部署），需要在 HoloLens IP 地址，以确保你 HoloLens 处于**开发人员模式**。 要实现此目的，请执行以下操作：
+1.  你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式**。 要实现此目的，请执行以下操作：
 
-    1. 戴上您 HoloLens，同时打开**设置**。
-    2. 转到**网络和 Internet > 的 Wi-fi > 高级选项**
-    3. 请注意**IPv4**地址。
-    4. 接下来，导航回到**设置**，然后**更新和安全 > 适用于开发人员** 
+    1. 在戴上 HoloLens 的同时, 请打开**设置**。
+    2. 中转到**网络 & Internet > wi-fi > 高级选项**
+    3. 记下**IPv4**地址。
+    4. 接下来, 导航回 "**设置**", 然后为**开发人员更新 & Security >** 
     5. 设置开发人员模式。
 
-2.  导航到新的 Unity 生成 (**应用程序**文件夹)，然后打开解决方案文件与**Visual Studio**。
-3.  在中**解决方案配置**选择**调试**。
-4.  在中**解决方案平台**，选择**x86**，**远程计算机**。 
+2.  导航到新的 Unity 生成 (**应用**文件夹), 并在**Visual Studio**中打开解决方案文件。
+3.  在**解决方案配置**中, 选择 "**调试**"。
+4.  在**解决方案平台**中, 选择 " **X86**,**远程计算机**"。 
 
-    ![部署从 Visual Studio 解决方案。](images/AzureLabs-Lab312-39.png)
+    ![从 Visual Studio 部署解决方案。](images/AzureLabs-Lab312-39.png)
  
-5.  转到**生成菜单**，然后单击**部署解决方案**旁, 加载到你 HoloLens 应用程序。
-6.  在准备好启动在 HoloLens 上安装的应用列表中，现在应显示你的应用 ！
+5.  请在 "**生成" 菜单**中, 单击 "**部署解决方案**", 将应用程序旁加载到 HoloLens。
+6.  应用现在应显示在你的 HoloLens 上已安装的应用列表中, 可以启动了!
 
     > [!NOTE]
-    > 若要将部署到沉浸式头戴式耳机，设置**解决方案平台**到*本地计算机*，并设置**配置**到*调试*，与*x86*作为**平台**。 然后将其部署到本地计算机，使用**生成菜单**，选择*部署解决方案*。 
+    > 若要部署到沉浸式耳机, 请将 "**解决方案平台**" 设置为 "*本地计算机*", 并将**配置**设置为 "*调试*", 将 " *x86* " 设置为**平台**。 然后, 使用 "**生成" 菜单**选择 "*部署解决方案*", 将部署到本地计算机。 
 
-## <a name="chapter-16--using-the-application-on-the-hololens"></a>第 16 章 – 在 HoloLens 上使用应用程序
+## <a name="chapter-16--using-the-application-on-the-hololens"></a>第16章–在 HoloLens 上使用应用程序
 
-- 一旦启动该应用程序，您将看到在您面前蓝色球体智能机器人应用程序。
+- 启动应用程序后, 会看到机器人作为你前面的蓝色球。
 
-- 使用**点击手势**时观望在球体，若要启动的会话。 
+- 在 gazing 时使用**点击手势**来启动会话。 
  
-- 等待会话启动 （的 UI 将显示一条消息时都是这样）。 一旦从智能机器人应用程序接收的介绍性消息，再次点击上智能机器人应用程序以便它将变为红色，并开始侦听语音。 
+- 等待会话启动 (在发生此情况时, UI 将显示一条消息)。 收到来自机器人的介绍性消息后, 再次在机器人上点击, 使其变为红色并开始倾听你的声音。 
 
-- 在停止通信后，你的应用程序将在消息发送到智能机器人应用程序并立即将收到一个响应，它将显示在 UI 中。 
+- 停止对话后, 应用程序会将消息发送到机器人, 并立即收到将在 UI 中显示的响应。 
 
-- 重复该过程以将更多的消息发送到智能机器人 （您需要点击每次想发送一条消息的时）。
+- 重复此过程, 将更多的消息发送到机器人 (必须在每次想要 sen 邮件时点击一次)。
 
-此会话演示如何智能机器人应用程序可以保留信息 （你的名称），同时还提供已知的信息 （如所存储的项）。
+此对话演示了机器人如何保留信息 (你的姓名), 同时还提供了已知信息 (如已贮存的项目)。
 
-#### <a name="some-questions-to-ask-the-bot"></a>要让机器人的一些问题：
+#### <a name="some-questions-to-ask-the-bot"></a>询问机器人的一些问题:
 
 ```
 what do you sell? 
@@ -1295,18 +1295,18 @@ how much are umbrellas?
 how much are raincoats?
 ```
 
-## <a name="your-finished-web-app-bot-v4-application"></a>完成的 Web 应用程序智能机器人应用程序 (v4) 应用程序
+## <a name="your-finished-web-app-bot-v4-application"></a>已完成的 Web 应用机器人 (v4) 应用程序
 
-祝贺你，构建利用 Azure Web App 机器人、 Microsoft Bot Framework v4 的混合的现实应用。
+恭喜, 你构建了一个利用 Azure Web 应用机器人、Microsoft Bot Framework v4 的混合现实应用。
 
 ![最终产品](images/AzureLabs-Lab312-00.png)
 
-## <a name="bonus-exercises"></a>Bonus 练习
+## <a name="bonus-exercises"></a>额外练习
 
-### <a name="exercise-1"></a>练习 1
+### <a name="exercise-1"></a>练习1
 
-在此实验中的会话结构是非常基本的。 使用 Microsoft LUIS 为智能机器人提供自然语言理解功能。
+此实验室中的会话结构非常基本。 使用 Microsoft LUIS 为机器人指定自然语言理解功能。
 
-### <a name="exercise-2"></a>练习 2
+### <a name="exercise-2"></a>练习2
 
-此示例不包括终止会话并重新启动一个新。 若要使功能完成的智能机器人应用程序，请尝试实现的对话，闭包。
+此示例不包括终止会话和重新启动新会话。 若要使机器人功能完成, 请尝试将结束实现到会话中。

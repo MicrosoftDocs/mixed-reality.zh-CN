@@ -1,11 +1,11 @@
 ---
-title: 启用在家中的三维模型的位置
-description: 如何在 Windows Mixed Reality 家庭中将从你的网站或应用程序的三维模型
+title: 在主页中启用3D 模型的放置
+description: 如何在 Windows Mixed Reality 主页中放置网站或应用程序中的3D 模型
 author: thmignon
 ms.author: thmignon
 ms.date: 05/04/2018
 ms.topic: article
-keywords: 3D、 模型、 家中的位置、 位置、 世界、 建模、 混合的现实家庭、 web、 应用
+keywords: 3D, 模型, 在家中放置, 地点, 世界, 建模, 混合现实主页, web, 应用
 ms.openlocfilehash: 954086b79e3614e1b75ceb7560f9fc87435530fa
 ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
@@ -13,14 +13,14 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/11/2019
 ms.locfileid: "66829731"
 ---
-# <a name="enable-placement-of-3d-models-in-the-mixed-reality-home"></a>启用主混合现实中的三维模型的位置
+# <a name="enable-placement-of-3d-models-in-the-mixed-reality-home"></a>在混合现实主页中启用3D 模型的放置
 
 > [!NOTE]
-> 此功能已添加的一部分[Windows 10 2018 年 4 月更新](release-notes-april-2018.md)。 较旧版本的 Windows 不使用此功能兼容。
+> 此功能已作为[Windows 10 2018 年4月更新](release-notes-april-2018.md)的一部分添加。 Windows 的较早版本与此功能不兼容。
 
-[Windows Mixed Reality 家庭](navigating-the-windows-mixed-reality-home.md)是用户启动应用程序之前登陆的位置的起始点。 在某些情况下，2D 应用 （如全息应用中） 作为修饰或进一步检查完整三维启用三维模型直接放置混合的现实主页。 *添加模型协议*喜欢其中它将保持不变，可从你的网站或直接在 Windows Mixed Reality 主页、 应用程序发送的三维模型[三维应用启动器上](3d-app-launcher-design-guidance.md)，2D 应用和全息。 
+[Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)是用户在启动应用程序之前居住的起点。 在某些情况下, 二维应用 (如全息影像应用程序) 可将3D 模型直接放置在混合现实主页中作为装饰, 或在完整的3D 中进行进一步检查。 使用 "*添加模型" 协议*, 可以将三维模型从你的网站或应用程序直接发送到 Windows Mixed Reality 主页, 它将在其中持久保存, 如[3d 应用程序启动器](3d-app-launcher-design-guidance.md)、二维应用和全息影像。 
 
-例如，如果要开发应用程序的目录的设计空间的 3D 家具呈现，则可以使用*添加模型协议*以允许用户将放那些 3D 家具模型从目录。 放置在世界中，用户可以移动、 调整大小，和在主页中删除这些三维模型，就像其他全息一样。 本文提供的实现概述*添加模型协议*，以便可以开始使用户能够修饰他们使用从您的应用程序或 web 的三维对象的世界。
+例如, 如果您正在开发一个应用程序, 该应用程序显示了用于设计空间的3D 家具的目录, 则可以使用 "*添加模型" 协议*允许用户将这些3d 家具模型从目录中放置。 一旦进入世界, 用户就可以移动、调整大小和删除这些3D 模型, 就像在家中的其他全息影像一样。 本文概述了如何实现*添加模型协议*, 以便您可以开始使用户能够通过您的应用或 web 中的3d 对象来装饰他们的世界。
 
 ## <a name="device-support"></a>设备支持
 
@@ -33,7 +33,7 @@ ms.locfileid: "66829731"
     <tr>
         <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式耳机</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
     </tr>
      <tr>
         <td>添加模型协议</td>
@@ -44,21 +44,21 @@ ms.locfileid: "66829731"
 
 ## <a name="overview"></a>概述
 
-需要向 Windows Mixed Reality 家庭中的三维模型的位置，使两个步骤：
-1. [确保三维模型与 Windows Mixed Reality 家庭兼容](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)。
-2. 实现*添加模型协议*中你的应用程序或网页 （详见本文）。
+可以通过两个步骤在 Windows Mixed Reality 主页中启用3D 模型的放置:
+1. [确保3d 模型与 Windows Mixed Reality 主页兼容](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)。
+2. 在应用程序或网页中实现*添加模型协议*(本文)。
 
 ## <a name="implementing-the-add-model-protocol"></a>实现*添加模型协议*
 
-一旦您有[兼容的三维模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)，可以实现*添加模型协议*通过激活从任何网页或应用程序的以下 URI:
+获得[兼容的3d 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)后, 可以通过从任何网页或应用程序激活以下 URI 来实现*添加模型协议*:
 
 ```
 ms-mixedreality:addmodel?uri=<Path to a .glb 3D model either local or remote>
 ```
 
-如果 URI 指向远程资源，然后它将自动下载并置于主页。 将复制到混合的现实主页的应用程序数据文件夹之前，在家里放置的本地资源。 我们建议正确设计您的体验到的情况下，用户可能会运行较旧版本的 Windows 不支持此功能通过隐藏按钮或在可能的情况禁用的帐户。 
+如果 URI 指向远程资源, 则它将自动下载并放置在主文件夹中。 本地资源将被复制到混合现实主页的应用数据文件夹中, 然后放入 home。 建议在以下情况下设计你的体验: 用户可能正在运行不支持此功能的较早版本的 Windows (如有可能)。 
 
-### <a name="invoking-the-add-model-protocol-from-a-universal-windows-platform-app"></a>调用*添加模型协议*从通用 Windows 平台应用：
+### <a name="invoking-the-add-model-protocol-from-a-universal-windows-platform-app"></a>从通用 Windows 平台应用调用*添加模型协议*:
 
 ```C#
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -80,18 +80,18 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### <a name="invoking-the-add-model-protocol-from-a-webpage"></a>调用*添加模型协议*网页中：
+### <a name="invoking-the-add-model-protocol-from-a-webpage"></a>从网页调用*添加模型协议*:
 
 ```html
 <a class="btn btn-default" href="ms-mixedreality:addModel?uri=sample.glb"> Place 3D Model </a>
 ```
 
-## <a name="considerations-for-immersive-vr-headsets"></a>沉浸式 (VR) 耳机的注意事项
+## <a name="considerations-for-immersive-vr-headsets"></a>沉浸式 (VR) 耳机注意事项
 
-* 沉浸式 (VR) 耳机，混合现实门户不需要调用之前运行*添加模型协议*。 在这种情况下，*添加模型协议*启动混合现实门户，并将直接其中耳机查找后到达主混合现实中的对象。 
-* 调用时*添加模型协议*从使用混合现实门户已在运行桌面，请确保将耳机会"唤醒"。 如果没有，位置将不会成功。 
+* 对于沉浸式 (VR) 耳机, 在调用*添加模型协议*之前, 混合现实门户无需运行。 在这种情况下, "*添加模型" 协议*将启动混合现实门户, 并将对象直接放置在头戴显示在混合现实中的位置。 
+* 当在已运行混合现实门户的情况下从桌面调用 "*添加模型" 协议*时, 请确保头戴式耳机处于 "唤醒" 状态。 否则, 放置将不会成功。 
 
 ## <a name="see-also"></a>请参阅
 
-* [在 Windows Mixed Reality 主页中创建用于 3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
+* [创建用于 Windows Mixed Reality 主页的3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
 * [导航 Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)

@@ -1,61 +1,61 @@
 ---
-title: 在 Unity 中的空间声音
-description: 播放空间声音来自于您的 Unity 场景中的特定 3D 点。
+title: Unity 中的空间音效
+description: 播放来自 Unity 场景中特定三维点的空间声音。
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Unity 中，空间声音 HRTF，空间大小
+keywords: Unity, 空间音效, HRTF, 房间大小
 ms.openlocfilehash: e2b321d7086314a14a940d57aa17e67636c758b8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590097"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63549084"
 ---
-# <a name="spatial-sound-in-unity"></a>在 Unity 中的空间声音
+# <a name="spatial-sound-in-unity"></a>Unity 中的空间音效
 
-本主题介绍如何在您的 Unity 项目中使用空间声音。 它介绍了必需的插件文件，以及 Unity 组件和启用空间声音的属性。
+本主题介绍如何在 Unity 项目中使用空间声音。 它包含所需的插件文件以及启用空间音效的 Unity 组件和属性。
 
-## <a name="enabling-spatial-sound-in-unity"></a>启用在 Unity 中的空间声音
+## <a name="enabling-spatial-sound-in-unity"></a>在 Unity 中启用空间音效
 
-空间声音，在 Unity 中，使用音频 spatializer 插件启用。 插件文件捆绑到 Unity 直接以便启用空间声音非常简单，只转到**编辑 > 项目设置 > 音频**并更改**Spatializer 插件**到检查器中**MS HRTF Spatializer**。 由于 Microsoft spatializer 当前仅支持 48000 Hz，还应设置你系统采样率为 48000 以防止在极少数的情况下，你的系统输出设备未设置为 48000 已 HRTF 失败：
+使用音频 spatializer 插件启用了 Unity 中的空间音效。 插件文件直接捆绑到 Unity 中, 因此启用空间声音非常简单, 只需**编辑 > 音频 > 项目设置**, 然后将检查器中的**Spatializer 插件**改为**MS HRTF Spatializer**。 由于 Microsoft spatializer 仅支持 48000Hz, 因此还应将系统采样率设置为 48000, 以防止在系统输出设备未设置为48000的罕见情况下出现 HRTF 故障:
 
 ![AudioManager 的检查器](images/audio-250px.png)<br>
 *AudioManager 的检查器*
 
-你的 Unity 项目现在已配置为使用空间声音。
+Unity 项目现在已配置为使用空间音效。
 
 >[!NOTE]
->如果不使用 Windows 10 电脑进行开发，则不会获得空间声音在编辑器中，也不在设备上 （即使使用的 Windows 10 SDK）。
+>如果你没有使用 Windows 10 电脑进行开发, 则不会在编辑器中或设备上获得空间音质 (即使你使用的是 Windows 10 SDK)。
 
-## <a name="using-spatial-sound-in-unity"></a>在 Unity 中使用空间的声音
+## <a name="using-spatial-sound-in-unity"></a>在 Unity 中使用空间音效
 
-空间声音调整音频源组件上的三个设置使用在 Unity 项目中。 以下步骤将配置为空间的声音将音频源组件。
-* 在中**层次结构**面板中，选择具有一个附加的游戏对象**音频源**。
-* 在中**Inspector**面板下**音频源**组件
+通过在音频源组件上调整三个设置, 可在 Unity 项目中使用空间声音。 以下步骤将为空间音效配置音频源组件。
+* 在 "**层次结构**" 面板中, 选择具有附加**音频源**的游戏对象。
+* 在 "**检查器**" 面板中的 "**音频源**" 组件下
     * 检查**Spatialize**选项。
-    * 设置**空间 Blend**到**3D** （数字值 1）。
-    * 为获得最佳结果，展开**3D 声音设置**并设置**卷卷绕**到**自定义卷绕**。
+    * 将**空间 Blend**设置为**3d** (数值 1)。
+    * 为获得最佳结果, 请展开 " **3D 声音设置**", 并将**Volume Rolloff**设置为**自定义 Rolloff**。
 
-![在 Unity 中显示音频源的检查器面板](images/audiosource.png)<br>
-*在 Unity 中显示音频源的检查器面板*
+![Unity 中显示音频源的检查器面板](images/audiosource.png)<br>
+*Unity 中显示音频源的检查器面板*
 
-将声音现在实际上存在于项目的环境内 ！
+你的声音现在实际存在于你的项目环境中!
 
-强烈建议你熟悉[空间声音设计准则](spatial-sound-design.md)。 这些准则有助于将您的音频无缝集成到你的项目并进一步可你的用户访问这个到已创建的体验。
+强烈建议您熟悉[空间音效设计准则](spatial-sound-design.md)。 这些指南可帮助你将音频无缝集成到你的项目中, 并进一步使用户从而深入了解你创建的体验。
 
-## <a name="setting-spatial-sound-settings"></a>设置空间声音设置
+## <a name="setting-spatial-sound-settings"></a>设置空间音质设置
 
-Microsoft 空间声音插件提供了一个额外的参数可设置，在每个音频源的基础，以允许音频模拟的更多控制。 此参数是模拟房间的大小。
+Microsoft 空间声音插件提供一个附加参数, 该参数可根据每个音频源进行设置, 以允许对音频模拟进行更多的控制。 此参数为模拟房间的大小。
 
 ### <a name="room-size"></a>空间大小
 
-正在通过空间声音来模拟的空间大小。 聊天室的近似大小是;小 (到小型会议室 office)、 中 （大型会议房间） 和大型 （会堂）。 此外可以指定的空间大小为 none 以模拟户外环境。 默认的空间大小很小。
+空间音效正在模拟的空间大小。 房间的大致大小为;小型 (办公室到小型会议室)、中型 (大会议室) 和大 (auditorium)。 还可以指定 "无" 的房间大小来模拟户外环境。 默认房间大小为小。
 
 ### <a name="example"></a>示例
 
-为 Unity MixedRealityToolkit 提供了使设置空间声音设置简单的静态类。 此类可在[MixedRealityToolkit\SpatialSound 文件夹](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/SpatialSound)，可以从你的项目中的任何脚本调用。 建议在项目中这些参数在每个音频源组件上设置。 下面的示例演示用于连接的音频源选择中等空间大小。
+MixedRealityToolkit for Unity 提供了一个静态类, 使设置空间声音设置变得简单。 此类可在[MixedRealityToolkit\SpatialSound 文件夹](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/SpatialSound)中找到, 并且可以从项目中的任何脚本中调用。 建议你在项目中的每个音频源组件上设置这些参数。 下面的示例演示如何为附加音频源选择 "介质空间大小"。
 
 ```cs
 AudioSource audioSource = gameObject.GetComponent<AudioSource>()
@@ -65,9 +65,9 @@ if (audioSource != null) {
 }
 ```
 
-### <a name="directly-accessing-parameters-from-unity"></a>直接访问 Unity 中的参数
+### <a name="directly-accessing-parameters-from-unity"></a>直接从 Unity 访问参数
 
-如果不想要使用的极好的音频工具在 MixedRealityToolkit，下面是如何将 HRTF 参数。 您可以复制/粘贴此到一个名为脚本*SetHRTF.cs*想要将附加到每个 HRTF AudioSource。 它允许您为 HRTF 更改重要的参数。
+如果不想使用 MixedRealityToolkit 中的优秀音频工具, 请参阅以下内容: 更改 HRTF 参数的方式。 你可以将其复制/粘贴到名为*SetHRTF.cs*的脚本中, 你需要将其附加到每个 HRTF AudioSource。 它使你可以更改对 HRTF 重要的参数。
 
 ```cs
 using UnityEngine;
@@ -93,13 +93,13 @@ using UnityEngine;
        }
    }
 ```
-### <a name="spatial-sound-in-mixed-reality-toolkit"></a>混合的现实工具包中的空间声音
-- [HoloToolkit-Examples/SpatialSound/Scenes/UAudioManagerTest.unity](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/SpatialSound/Scenes/UAudioManagerTest.unity)
+### <a name="spatial-sound-in-mixed-reality-toolkit"></a>混合现实工具包中的空间音效
+- [HoloToolkit-Examples/SpatialSound/场景/UAudioManagerTest](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/SpatialSound/Scenes/UAudioManagerTest.unity)
 
-混合现实工具包中的以下示例是常规的音频效果示例演示如何通过使用声音，使你的体验更多沉浸式的。
-- [HoloToolkit-Examples/SpatialSound/Scenes/AudioLoFiTest.unity](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/SpatialSound/Scenes/AudioLoFiTest.unity)
-- [HoloToolkit-Examples/SpatialSound/Scenes/AudioOcclusionTest.unity](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/SpatialSound/Scenes/AudioOcclusionTest.unity)
+混合现实工具包中的以下示例是一般的音频效果示例, 演示使用声音提高体验的方式。
+- [HoloToolkit-Examples/SpatialSound/场景/AudioLoFiTest](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/SpatialSound/Scenes/AudioLoFiTest.unity)
+- [HoloToolkit-Examples/SpatialSound/场景/AudioOcclusionTest](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/SpatialSound/Scenes/AudioOcclusionTest.unity)
 
 ## <a name="see-also"></a>请参阅
-* [空间声音](spatial-sound.md)
-* [空间合理的设计](spatial-sound-design.md)
+* [空间音效](spatial-sound.md)
+* [空间音效设计](spatial-sound-design.md)

@@ -1,11 +1,11 @@
 ---
-title: 使用 Unity 使用 Vuforia
-description: 利用 Vuforia 构建在 Unity 中的 Windows Mixed Reality 应用程序。
+title: 将 Vuforia 与 Unity 一起使用
+description: 利用 Vuforia 在 Unity 中构建 Windows Mixed Reality 应用程序。
 author: ailyadis
 ms.author: ''
 ms.date: 01/28/2019
 ms.topic: article
-keywords: Vuforia，标记、 坐标、 参考框架跟踪
+keywords: Vuforia, 标记, 坐标, 引用框架, 跟踪
 ms.openlocfilehash: c0d2f6d0707e1ddd3ee00d3eb80af9fb459f252b
 ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
@@ -13,80 +13,80 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/06/2019
 ms.locfileid: "66750353"
 ---
-# <a name="using-vuforia-engine-with-unity"></a>使用 Unity 使用 Vuforia 引擎
+# <a name="using-vuforia-engine-with-unity"></a>将 Vuforia 引擎与 Unity 一起使用
 
-Vuforia 引擎到 HoloLens 可以让一个重要功能 – 能够连接 AR 体验添加到特定的映像和在环境中的对象。 此功能可用于覆盖引导式的分步说明，工业企业个机制之上或向物理产品或游戏中添加数字功能和体验。 
+Vuforia 引擎为 HoloLens 提供一项重要功能–将 AR 体验连接到环境中的特定映像和对象的能力。 你可以使用此功能来覆盖工业企业的机械上的引导式分步说明, 或者向物理产品或游戏添加数字功能和体验。 
 
-对于更大的灵活性开发 AR 遇到时 Vuforia 引擎提供了广泛的特征和目标。 我们最新功能，Vuforia 模型目标之一是商业和工业使用一项关键能力。 模型目标，应用程序来识别物理对象，例如计算机、 汽车或玩具和跟踪这些基于 CAD 或数字的三维模型。 有关工业用法，此功能可以提供程序集辅助角色和服务技术人员与 AR 工作的说明和工厂中的过程指导或 out 字段中。 
+为了在开发 AR 体验时获得更大的灵活性, Vuforia 引擎提供了范围广泛的功能和目标。 我们最新的功能 Vuforia 模型目标之一是用于商业和工业用途的一项重要功能。 模型目标允许应用程序识别诸如计算机、汽车或玩具等物理对象, 并根据 CAD 或数字3D 模型对其进行跟踪。 对于工业用途, 此功能可以为程序集工作者和服务技术人员提供 AR 工作说明和过程指南, 同时在现场或现场推出。 
 
-在 HoloLens 上运行的 Unity 中可以轻松地配置现有 Vuforia 引擎生成的应用程序适用于手机和平板电脑。 您甚至可以使用 Vuforia 引擎以使新 HoloLens 应用上升到如 Surface Pro 4 和 Surface Book 的 Windows 10 平板电脑。
+在 Unity 中, 可以轻松地在 Unity 中配置为手机和平板电脑构建的现有 Vuforia 引擎应用。 甚至可以使用 Vuforia 引擎将新的 HoloLens 应用程序带到 Windows 10 平板电脑, 如 Surface Pro 4 和 Surface Book。
 
 ## <a name="get-the-tools"></a>获取工具
 
-[安装推荐的版本](install-the-tools.md)的 Visual Studio 和 Unity，然后配置 Unity 使用 Visual Studio 和首选的 IDE 和编译器。 
+安装 Visual Studio 和 Unity[的推荐版本](install-the-tools.md), 然后将 Unity 配置为使用 Visual studio 和首选 IDE 和编译器。 
 
-在安装 Unity 时，请务必安装"Windows 应用商店.NET 脚本编写后端"或"Windows 应用商店 IL2CPP 脚本编写后端"。 此外，请确保选择"Vuforia 增强现实支持"若要启用在 Unity 中 Vuforia 引擎。
+安装 Unity 时, 请确保安装 "Windows 应用商店 .NET 脚本后端" 或 "Windows 应用商店 IL2CPP 脚本后端"。 另外, 请务必选择 "Vuforia 扩充的现实支持", 以在 Unity 内启用 Vuforia 引擎。
 
 
 ## <a name="getting-started-with-vuforia-engine"></a>Vuforia 引擎入门
 
-由于 Vuforia 引擎集成到 Unity 中，因此开发人员无需下载或安装任何额外的工具。 建议使用的版本是 unity 的目前在 2017.3，包含 Vuforia 引擎 7.0.57 的 LTS 流。 学习有关使用和 HoloLens Vuforia 引擎使用的效果最佳起始点[Vuforia 引擎 HoloLens 示例](https://assetstore.unity.com/packages/templates/packs/vuforia-hololens-sample-101553)（Unity 资产商店中提供）。 此示例提供了完整的 HoloLens 项目包括预配置可以部署到 HoloLens 的场景。
+由于 Vuforia 引擎已集成到 Unity 中, 开发人员无需下载或安装任何其他工具。 推荐的 Unity 版本是 LTS 流, 该流目前为 2017.3, 并包括 Vuforia Engine 7.0.57。 了解将 Vuforia Engine 与 HoloLens 配合使用的最佳起点是使用[Vuforia 引擎 HoloLens 示例](https://assetstore.unity.com/packages/templates/packs/vuforia-hololens-sample-101553)(可在 Unity 资产存储库中找到)。 该示例提供了一个完整的 HoloLens 项目, 其中包括可以部署到 HoloLens 的预配置的场景。
 
-在后台显示如何使用 Vuforia 映像目标来识别图像并针对它讨论了 HoloLens 体验中的数字内容。 使用 Unity 和 Vuforia 的较新版本的开发人员有权访问更新的示例包括 HoloLens 上显示的模型目标使用情况的场景。 您可以轻松地替换中在后台，尝试将其与 HoloLens 应用使用 Vuforia 引擎创建您自己的内容。
+幕后介绍了如何使用 Vuforia 图像目标识别映像, 并在 HoloLens 体验中使用数字内容对其进行扩充。 使用最新版本的 Unity 和 Vuforia 的开发人员有权访问更新的示例, 其中包括显示在 HoloLens 上使用模型目标的场景。 你可以轻松地在幕后替换你自己的内容, 以尝试创建使用 Vuforia 引擎的 HoloLens 应用。
 
 
-## <a name="configuring-a-vuforia-app-for-hololens"></a>配置用于 HoloLens 的 Vuforia 应用程序
+## <a name="configuring-a-vuforia-app-for-hololens"></a>为 HoloLens 配置 Vuforia 应用
 
-对于 HoloLens 开发 Vuforia 引擎应用程序是从根本上与开发 Vuforia 引擎的其他设备的应用程序相同。 然后可以应用的生成设置和配置下面的部分中所述。 这就是启用对使用 HoloLens 空间映射和位置跟踪系统 Vuforia 引擎所需的一切。
+开发适用于 HoloLens 的 Vuforia 引擎应用与为其他设备开发 Vuforia 引擎应用基本相同。 然后, 你可以应用以下部分中所述的生成设置和配置。 这就是使 Vuforia 引擎能够使用 HoloLens 空间映射和位置跟踪系统所需的全部操作。
 
-## <a name="build-and-run-the-vuforia-engine-sample-for-hololens"></a>生成并运行 HoloLens Vuforia 引擎示例
-1.  下载[HoloLens 的 Vuforia 引擎示例](https://assetstore.unity.com/packages/templates/packs/vuforia-hololens-sample-101553)从 Unity 资产商店
-2.  将应用[建议能力和性能的 Unity 引擎选项](performance-recommendations-for-unity.md)
-3.  将示例场景添加到生成中的场景。
-4.  在文件中的"通用 Windows 平台"设置你的平台生成目标 > 生成设置。
-5.  选择以下平台生成配置设置： 
-   * 针对设备 = HoloLens
+## <a name="build-and-run-the-vuforia-engine-sample-for-hololens"></a>生成和运行 HoloLens 的 Vuforia 引擎示例
+1.  从 Unity 资产存储区下载[适用于 HoloLens 的 Vuforia 引擎示例](https://assetstore.unity.com/packages/templates/packs/vuforia-hololens-sample-101553)
+2.  [为电源和性能应用建议的 Unity 引擎选项](performance-recommendations-for-unity.md)
+3.  在生成中将示例场景添加到场景中。
+4.  在文件 > 生成设置 "中设置" 通用 Windows 平台 "的平台生成目标。
+5.  选择以下平台生成配置设置: 
+   * 目标设备 = HoloLens
    * 生成类型 = D3D
    * SDK = 最新安装
    * Visual Studio 版本 = 最新安装
-   * 生成并运行在 = 本地计算机
-6.  定义的唯一**产品名称**，在**播放器设置**，作为在 HoloLens 上安装时应用的名称。
-7.  检查**Vuforia 增强现实**并**支持的虚拟现实**中**播放器设置 > XR 设置**
-8.  此外，在**XR 设置**，请确保"Windows Mixed Reality"添加到**虚拟现实 Sdk**列表
-9.  检查在播放机设置中的以下功能 > 发布设置 
+   * 生成并运行于 = 本地计算机
+6.  在**播放机设置**中定义唯一**产品名称**, 以在安装在 HoloLens 上时充当应用程序的名称。
+7.  在**播放机设置 > XR 设置**中检查**Vuforia 扩充的现实**和**虚拟现实**
+8.  同时, 在**XR 设置**下, 确保已将 "Windows Mixed Reality" 添加到**虚拟现实 sdk**列表中
+9.  检查播放机设置中的以下功能 > 发布设置 
    * InternetClient
    * 网络摄像头
-   * SpatialPerception-如果你想要使用面观察者 API
-10. 选择要生成的 Visual Studio 项目生成
+   * SpatialPerception-如果你打算使用 Surface 观察器 API
+10. 选择 "生成" 以生成 Visual Studio 项目
 11. 从 Visual Studio 生成可执行文件并将其安装在 HoloLens 上
 
-注意：从版本 7.2、 HoloLens Vuforia 引擎示例包括包括模型目标的示例用法的示例场景
+注意:从版本7.2 开始, HoloLens 的 Vuforia 引擎示例包含一个示例场景, 其中包括模型目标的示例用法
 
 ## <a name="the-vuforia-developer-portal"></a>Vuforia 开发人员门户
 
-开发人员希望创建自己 AR 遇到与 Vuforia 引擎，且我们 Vuforia 开发人员门户上应注册 HoloLens [developer.vuforia.com](https://developer.vuforia.com/)。 在门户中，开发人员有权访问[Vuforia 引擎论坛](https://developer.vuforia.com/forum)它们可以加入社区讨论，其中[库](https://library.vuforia.com/)与所有 Vuforia 引擎功能，以及深入文档[Vuforia 目标管理器](https://developer.vuforia.com/target-manager)用户可以在其中创建其自己的自定义目标。 开发人员还可以注册免费的开发人员许可证使用[Vuforia 许可证管理器](https://developer.vuforia.com/license-manager)。
+希望用 Vuforia 引擎和 HoloLens 创建自己的 AR 体验的开发人员应在[developer.vuforia.com](https://developer.vuforia.com/)的 Vuforia 开发人员门户注册。 在门户中, 开发人员有权访问[Vuforia 引擎论坛](https://developer.vuforia.com/forum), 他们可以在其中加入社区讨论、包含有关所有 Vuforia 引擎功能的深入文档的[库](https://library.vuforia.com/), 以及用户可以使用的[Vuforia 目标经理](https://developer.vuforia.com/target-manager)创建自己的自定义目标。 开发人员还可以使用[Vuforia 许可证管理器](https://developer.vuforia.com/license-manager)注册免费的开发人员许可证。
 
-## <a name="extended-tracking-with-vuforia"></a>使用 Vuforia 扩展的跟踪
+## <a name="extended-tracking-with-vuforia"></a>Vuforia 扩展跟踪
 
-[扩展跟踪](https://library.vuforia.com/articles/Training/Extended-Tracking)创建环境维护跟踪即使目标不再是视图中的映射。 它是 Vuforia 引擎执行的 HoloLens 的空间映射到对应。 在启用扩展的跟踪在目标上，启用该目标将传递给空间映射系统的姿势。 这样一来，目标可以存在于 Vuforia 引擎和 HoloLens 空间坐标系统，但不同时。
+即使目标不再处于视图中,[扩展跟踪](https://library.vuforia.com/articles/Training/Extended-Tracking)也会创建一个环境映射来维护跟踪。 它是由 HoloLens 执行的空间映射的 Vuforia 引擎。 启用目标的扩展跟踪后, 会使该目标的姿势传递到空间映射系统。 通过这种方式, 目标可以同时存在于 Vuforia 引擎和 HoloLens 空间坐标系统中, 但不能同时存在。
 
 ![Unity 设置窗口](images/vuforia-extendedtracking.png)<br>
 *Unity 设置窗口*
 
-**启用在目标上的扩展的跟踪**
+**启用目标的扩展跟踪**
 
-Vuforia 引擎会将目标使用扩展的跟踪到 HoloLens 空间坐标系统的姿势自动转换。 这允许 HoloLens 接管跟踪，并将集成到空间映射的目标的环境并增加任何内容。 此过程发生 Vuforia 引擎和混合的现实中 Unity Api 之间，并且不需要由开发人员的任何编程-自动对其进行处理。
+Vuforia 引擎会自动将使用扩展跟踪的目标的姿势转换为 HoloLens 空间坐标系统。 这允许 HoloLens 接管跟踪, 并将任何内容扩充集成到目标环境的空间图中。 此过程发生在 Unity 中的 Vuforia 引擎和混合现实 Api 之间, 不需要开发人员进行任何编程-它会自动进行处理。
 
-**下面是所发生的情况...**
+**下面是发生的情况 .。。**
 1. Vuforia 的目标跟踪器识别目标
 2. 然后初始化目标跟踪
-3. 位置和旋转的目标被分析，以提供 HoloLens，若要使用的可靠姿势估计
-4. Vuforia 将目标的姿势转换到 HoloLens 空间映射坐标空间
-5. HoloLens 接管跟踪并停用 Vuforia 跟踪器
+3. 分析目标的位置和旋转, 以便为 HoloLens 提供可靠的姿势估算
+4. Vuforia 将目标的姿势转换为 HoloLens 空间映射坐标空间
+5. HoloLens 接管跟踪, 并停用 Vuforia 跟踪器
 
-开发人员可以控制此过程中，通过禁用扩展的跟踪 TargetBehaviour 控制权返回给 Vuforia。
+开发人员可以通过在 TargetBehaviour 上禁用扩展跟踪来控制此过程, 以将控件返回到 Vuforia。
 
-**注意：** 从 Vuforia 7.2 开始，扩展跟踪已无法再在每个目标的基础上。 相反，开发人员可以启用设备跟踪以便在场景中的所有目标上类似的功能。
+**注意：** 从 Vuforia 7.2 开始, 不再按目标启用扩展跟踪。 相反, 开发人员可以启用设备跟踪, 以便在场景中的所有目标上启用类似的功能。
 
 
 ## <a name="see-also"></a>请参阅
@@ -95,7 +95,7 @@ Vuforia 引擎会将目标使用扩展的跟踪到 HoloLens 空间坐标系统�
 * [空间映射](spatial-mapping.md)
 * [Unity 中的相机](camera-in-unity.md)
 * [导出和构建 Unity Visual Studio 解决方案](exporting-and-building-a-unity-visual-studio-solution.md)
-* [Vuforia 文档：在 Unity 中的 Windows 10 开发](https://library.vuforia.com/articles/Solution/Developing-for-Windows-10-in-Unity)
-* [Vuforia 文档：如何安装 Vuforia Unity 扩展](https://library.vuforia.com/articles/Solution/Installing-the-Unity-Extension)
-* [Vuforia 文档：使用 Unity 中的 HoloLens 示例](https://library.vuforia.com/articles/Solution/Working-with-the-HoloLens-sample-in-Unity)
-* [Vuforia 文档：在 Vuforia 扩展的跟踪](https://library.vuforia.com/articles/Training/Extended-Tracking)
+* [Vuforia 文档:为 Unity 中的 Windows 10 进行开发](https://library.vuforia.com/articles/Solution/Developing-for-Windows-10-in-Unity)
+* [Vuforia 文档:如何安装 Vuforia Unity 扩展](https://library.vuforia.com/articles/Solution/Installing-the-Unity-Extension)
+* [Vuforia 文档:在 Unity 中使用 HoloLens 示例](https://library.vuforia.com/articles/Solution/Working-with-the-HoloLens-sample-in-Unity)
+* [Vuforia 文档:Vuforia 中的扩展跟踪](https://library.vuforia.com/articles/Training/Extended-Tracking)

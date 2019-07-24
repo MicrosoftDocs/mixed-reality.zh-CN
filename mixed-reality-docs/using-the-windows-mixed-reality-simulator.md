@@ -1,11 +1,11 @@
 ---
 title: 使用 Windows Mixed Reality 模拟器
-description: Windows Mixed Reality 模拟器，您可以测试混合的现实应用而无需 Windows Mixed Reality 沉浸式头戴式在 PC 上。
+description: 使用 Windows Mixed Reality 模拟器, 无需 Windows Mixed Reality 沉浸式耳机即可在电脑上测试混合现实应用。
 author: pbarnettms
 ms.author: pbarnett
 ms.date: 04/25/2019
 ms.topic: article
-keywords: Windows 混合现实，模拟器中测试
+keywords: Windows Mixed Reality, 模拟器, 测试
 ms.openlocfilehash: a7cbd5b5ca1c0ed0e4f81715d337d5eec68117f0
 ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
@@ -15,51 +15,51 @@ ms.locfileid: "64580705"
 ---
 # <a name="using-the-windows-mixed-reality-simulator"></a>使用 Windows Mixed Reality 模拟器
 
-Windows Mixed Reality 模拟器，您可以测试混合的现实应用而无需 Windows Mixed Reality 沉浸式头戴式在 PC 上。 它是 Windows 10 创意者更新开始可用。 模拟器是类似于[HoloLens 模拟器](using-the-hololens-emulator.md)，但模拟器不使用虚拟机。 在会话中运行 Windows 10 桌面用户，就像它们会像使用沉浸式头戴式模拟器中运行的应用程序。 通常会在沉浸式头戴式传感器读取的人和环境输入改为模拟使用键盘、 鼠标或 Xbox 控制器。 应用程序无需修改即可运行在模拟器中，并不知道也不运行在沉浸式头戴式上。
+使用 Windows Mixed Reality 模拟器, 无需 Windows Mixed Reality 沉浸式耳机即可在电脑上测试混合现实应用。 它从 Windows 10 创意者更新开始可用。 模拟器与[HoloLens 模拟器](using-the-hololens-emulator.md)类似, 但模拟器不使用虚拟机。 在模拟器中运行的应用将在 Windows 10 桌面用户会话中运行, 就像使用沉浸式耳机一样。 通常由沉浸式耳机上的传感器读取的人工和环境输入使用键盘、鼠标或 Xbox 控制器来模拟。 应用无需修改即可在模拟器中运行, 并且不知道它们没有在沉浸式耳机上运行。
 
 ## <a name="enabling-the-windows-mixed-reality-simulator"></a>启用 Windows Mixed Reality 模拟器
 
-1. **启用开发人员模式**从设置-> 更新和安全-> 面向开发人员
-2. 启动**混合现实门户**从桌面
-3. 如果这是你第一次启动门户，你将需要安装程序体验
-   1. 单击**开始**
-   2. 单击**我同意**接受协议
-   3. 单击 **（适用于开发人员） 设置为模拟**继续通过安装程序而无需物理设备
-   4. 单击**设置**来确认你的选择
-4. 单击**面向开发人员**混合现实门户左侧的按钮
-5. 将模拟切换开关置于**上**
-   * 启用模拟安装，并默认情况下启用模拟的 6 DOF 左的控制器。  在 Windows 之前 2019 年 5 10 个更新，安装模拟的 6 DOF 控制器需要管理员权限。  如果有，你必须接受用户帐户控制对话框。
+1. **启用**开发人员模式-> 更新和安全性-为开发人员 >
+2. 从桌面启动**混合现实门户**
+3. 如果这是你第一次启动门户, 则需要完成安装体验
+   1. 单击 "**入门**"
+   2. 单击 "**我同意**接受协议"
+   3. 单击 "**设置" 进行模拟 (适用于开发人员)** 以在不使用物理设备的情况下进行安装
+   4. 单击 "**设置**" 以确认你的选择
+4. 单击混合现实门户左侧的 "**开发人员**" 按钮
+5. 将模拟切换开关切换到**打开**
+   * 默认情况下, 启用模拟将安装并启用左模拟的 DOF 控制器。  在 Windows 10 可能2019更新之前, 安装模拟 6 DOF 控制器需要管理员权限。  必须接受 "用户帐户控制" 对话框 (如果有)。
 
-你现在应运行与模拟 ！
+现在, 你应该已运行模拟!
 
 ## <a name="deploying-apps-to-the-mixed-reality-simulator"></a>将应用部署到混合现实模拟器
 
-模拟器在本地 PC 而无需虚拟机上运行，因为您只需部署到通用 Windows 应用**本地计算机**调试时。
+由于模拟器在没有虚拟机的情况下在本地 PC 上运行, 因此, 在调试时, 只需将通用 Windows 应用程序部署到**本地计算机**上即可。
 
 ## <a name="basic-simulator-input"></a>基本模拟器输入
 
-控制模拟器是非常类似于许多常见的 3D 视频游戏并[HoloLens 模拟器](using-the-hololens-emulator.md)。 可以使用键盘、 鼠标或 Xbox 控制器是输入的选项。
+控制模拟器非常类似于许多常见的3D 视频游戏和[HoloLens 模拟器](using-the-hololens-emulator.md)。 可以使用键盘、鼠标或 Xbox 控制器提供输入。
 
-你将定向戴上沉浸式头戴式模拟的用户的操作，从而控制模拟器。 你的操作将模拟的用户，并导致与应用程序就像在沉浸式头戴式之间的交互。
-* **引导前滚，、 左和右**-使用 W，A、 S 和 D 键键盘，或在 Xbox 控制器上的左记忆棒。
-* **查找、 下、 左、 左右**-单击并拖动鼠标、 键盘或 Xbox 控制器上的右记忆棒上使用箭头键。
-* **按控制器上的操作按钮**-右键单击鼠标、 键盘上按 Enter 键或 Xbox 控制器上使用一个按钮。
-* **主控制器上的按下按钮**-在键盘上按 Windows 键或 F2 键或 Xbox 控制器上按 B 按钮。
-* **控制器移动滚动**-按住 Alt 键，请按住鼠标右键按钮和向上 / 向下拖动鼠标或 Xbox 控制器中按住正确的触发器和一个按钮并向上和向下移动右。
+可以通过定向模拟用户的操作, 戴上沉浸式耳机来控制模拟器。 你的操作将移动模拟用户, 并与应用进行交互, 使其与沉浸式耳机上的响应相同。
+* **前后左右走动** - 使用键盘上的 WASD 键，或 Xbox 控制器上的左摇杆。
+* **上下左右注视** - 单击并拖动鼠标、使用键盘上的箭头键，或使用 Xbox 控制器上的右摇杆。
+* **操作按钮按下控制器**-右键单击鼠标, 按键盘上的 enter 键, 或使用 Xbox 控制器上的按钮。
+* **"主页" 按钮按下控制器**-按键盘上的 Windows 键或 F2 键, 或按 Xbox 控制器上的 B 按钮。
+* **用于滚动的控制器移动**-按住 Alt 键, 按住鼠标右键, 然后向上/向下拖动鼠标, 或在 Xbox 控制器中按住右触发器并向下移动, 并向下移动适当的按钮。
 
-## <a name="tracked-controllers"></a>跟踪的控制器
+## <a name="tracked-controllers"></a>跟踪控制器
 
-混合现实模拟器可以模拟最多两个手持跟踪的动作控制器。 启用它们在混合现实门户中使用切换开关。 每个模拟的控制器具有：
-* 位置和方向中的空间
+混合现实模拟器最多可以模拟两个手持跟踪的运动控制器。 在混合现实门户中使用切换开关启用它们。 每个模拟控制器都有:
+* 位置和方向 (空间)
 * “主页”按钮
 * “菜单”按钮
 * 手柄按钮
 * 触摸板
-* 摇杆
+* 控制
 * 电池电量水平
 
 ## <a name="see-also"></a>请参阅
 * [使用 HoloLens 仿真器](using-the-hololens-emulator.md)
-* [高级混合的现实模拟器输入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
+* [高级混合现实模拟器输入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
 * [Unity 中的空间映射](spatial-mapping-in-unity.md)
 * [DirectX 中的空间映射](spatial-mapping-in-directx.md)

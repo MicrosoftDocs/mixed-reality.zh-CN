@@ -1,11 +1,11 @@
 ---
-title: 添加 holographic 远程处理
-description: 介绍如何使用 Holographic 远程处理以通过网络将全息呈现到 HoloLens。
+title: 添加全息远程处理
+description: 介绍如何使用全息远程处理通过网络将全息影像呈现到 HoloLens。
 author: MikeRiches
 ms.author: mriches
 ms.date: 05/24/2019
 ms.topic: article
-keywords: Windows Mixed Reality，全息、 全息版的远程处理、 远程呈现、 呈现、 HoloLens，远程全息网络
+keywords: Windows Mixed Reality, 全息影像, 全息远程处理, 远程渲染, 网络渲染, HoloLens, 远程全息影像
 ms.openlocfilehash: 8d645f634ff0fc820893f5554fd602aa3a2f38e3
 ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
@@ -13,39 +13,39 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/11/2019
 ms.locfileid: "66829618"
 ---
-# <a name="add-holographic-remoting"></a>添加 holographic 远程处理
+# <a name="add-holographic-remoting"></a>添加全息远程处理
 
 ## <a name="hololens-2"></a>HoloLens 2
 
 > [!NOTE]
-> 特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。
+> 即将[推出](index.md#news-and-notes)特定于 HoloLens 2 的更多指导。
 
-使用 Holographic 远程处理的 HoloLens 开发人员将需要更新其应用程序，使它们与 HoloLens 2 兼容。  这将要求尚不可公开可用的 Holographic 远程处理 NuGet 包的新版本。  如果使用 HoloLens NuGet 包的应用程序尝试连接到 HoloLens 2 上全息版的远程处理播放机，则连接将失败。  可用 HoloLens 2 NuGet 包后，请观看此页，进行更新。
+使用全息远程处理的 HoloLens 开发人员需要更新其应用程序, 使其与 HoloLens 2 兼容。  这将需要全新版本的全息远程处理 NuGet 包尚未公开提供。  如果使用 HoloLens NuGet 包的应用程序尝试连接到 HoloLens 2 上的全息远程处理播放机, 则连接将失败。  在 HoloLens 2 NuGet 包可用后, 观看此页以获取更新。
 
-## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a>将 holographic 远程处理添加到你的桌面或 UWP 应用
+## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a>将全息远程处理添加到桌面或 UWP 应用
 
-此页介绍了如何将 Holographic 远程处理添加到桌面或 UWP 应用。
+本页介绍如何向桌面或 UWP 应用添加全息远程处理。
 
-全息版的远程处理，应用可以面向 HoloLens 全息版或 UWP 设备，如 Xbox One，允许更多系统资源的访问并使其可以将集成远程桌面 PC 上托管的内容与[沉浸式视图](app-views.md)到现有桌面 PC 软件。 远程处理宿主应用程序从 HoloLens 接收输入的数据流、 呈现内容中的虚拟的沉浸式视图，并流式传输返回到 HoloLens 的内容帧。 使用标准的 Wi-fi 进行连接。 若要使用远程处理，将使用 NuGet 包将 holographic 远程处理添加到你的桌面或 UWP 应用，并编写代码以处理连接，并呈现在沉浸式视图。 帮助程序库包含在简化处理设备连接的任务的代码示例。
+使用全息远程处理, 你的应用程序可以面向在台式计算机或 UWP 设备 (如 Xbox) 上托管的全息内容的 HoloLens, 并允许访问更多系统资源, 并使你能够将远程[沉浸式视图](app-views.md)集成到现有台式计算机软件。 远程处理主机应用从 HoloLens 接收输入数据流, 在虚拟沉浸式视图中呈现内容, 并将内容帧流式传输回 HoloLens。 使用标准 Wi-fi 建立连接。 若要使用远程处理, 你将使用 NuGet 包将全息远程处理添加到桌面或 UWP 应用, 并编写代码来处理连接并在沉浸式视图中呈现。 帮助程序库包括在代码示例中, 用于简化设备连接的处理任务。
 
-典型的远程处理连接会为 50 毫秒的延迟较低。 播放机应用程序可以报告实时的延迟。
+典型的远程处理连接的延迟最低为50毫秒。 播放机应用可以实时报告滞后时间。
 
 >[!NOTE]
->这篇文章中的代码片段当前演示了如何使用C++/CX 而不是 C + + 17 符合C++中使用 /WinRT [ C++全息版的项目模板](creating-a-holographic-directx-project.md)。  这些概念是等效的C++/WinRT 项目，但您将需要将代码转换。
+>本文中的代码片段当前演示了C++ C++ [ C++ ](creating-a-holographic-directx-project.md)如何使用/cx 而不是 C + 17 兼容/WinRT, 这与全息项目模板中使用的不同。  概念对于C++/WinRT 项目是等效的, 但你将需要转换代码。
 
-### <a name="get-the-remoting-nuget-packages"></a>获取 NuGet 包的远程处理
+### <a name="get-the-remoting-nuget-packages"></a>获取远程处理 NuGet 包
 
-请按照下列步骤以 NuGet 包 holographic 远程处理，并添加从您的项目的引用：
-1. 请转到 Visual Studio 中的项目。
-2. 右键单击项目节点并选择**管理 NuGet 包...**
-3. 在显示的面板，单击**浏览**，然后搜索"Holographic 远程处理"。
-4. 选择**Microsoft.Holographic.Remoting**然后单击**安装**。
-5. 如果**预览版**对话框出现后，单击**确定**。
-6. 下一个对话框中显示的是许可协议。 单击**我接受**接受许可协议。
+按照以下步骤获取用于全息远程处理的 NuGet 包, 并从项目中添加引用:
+1. 在 Visual Studio 中中转到你的项目。
+2. 右键单击项目节点, 然后选择 "**管理 NuGet 包 ...** "
+3. 在出现的面板中, 单击 "**浏览**", 然后搜索 "全息远程处理"。
+4. 选择 **"** ", 然后单击 "**安装**"。
+5. 如果**预览**对话框出现, 请单击 **"确定"** 。
+6. 显示的下一个对话框是许可协议。 单击 "**我接受**" 接受许可协议。
 
 ### <a name="create-the-holographicstreamerhelpers"></a>创建 HolographicStreamerHelpers
 
-首先，我们需要 HolographicStreamerHelpers 的实例。 添加到将处理远程处理的类。
+首先, 需要 HolographicStreamerHelpers 的实例。 将此添加到将处理远程处理的类。
 
 ```
 #include <HolographicStreamerHelpers.h>
@@ -54,7 +54,7 @@ ms.locfileid: "66829618"
        Microsoft::Holographic::HolographicStreamerHelpers^ m_streamerHelpers;
 ```
 
-此外需要跟踪连接状态。 如果你想要呈现预览，你需要具有要将其复制到的纹理。 您还需要几个连接状态锁定，存储 HoloLens，IP 地址的某种方式等，依此类推。
+还需要跟踪连接状态。 如果要呈现预览, 则需要有要将其复制到的纹理。 还需要一些功能, 如连接状态锁定、用于存储 HoloLens IP 地址等的方法。
 
 ```
 private:
@@ -73,7 +73,7 @@ private:
 
 ### <a name="initialize-holographicstreamerhelpers-and-connect-to-hololens"></a>初始化 HolographicStreamerHelpers 并连接到 HoloLens
 
-若要连接到 HoloLens 设备，创建的 HolographicStreamerHelpers 实例并连接到的目标 IP 地址。 你将需要设置视频帧大小以匹配 HoloLens 显示宽度和高度，因为 Holographic 远程处理库需要的编码器和解码器的解决方法若要完全匹配。
+若要连接到 HoloLens 设备, 请创建 HolographicStreamerHelpers 的实例并连接到目标 IP 地址。 你将需要设置视频帧大小以匹配 HoloLens 显示宽度和高度, 因为全息远程处理库需要编码器和解码器解析完全匹配。
 
 ```
 m_streamerHelpers = ref new HolographicStreamerHelpers();
@@ -94,9 +94,9 @@ m_streamerHelpers = ref new HolographicStreamerHelpers();
        }
 ```
 
-设备连接是异步的。 你的应用需要提供事件处理程序连接，断开连接，和帧发送事件。
+设备连接是异步的。 应用需要为连接、断开连接和帧发送事件提供事件处理程序。
 
-OnConnected 事件可以更新 UI，开始呈现，依次类推。 在我们的桌面代码示例，我们使用"连接"消息更新窗口标题。
+OnConnected 事件可以更新 UI, 开始呈现, 等等。 在我们的桌面代码示例中, 我们使用 "已连接" 消息更新窗口标题。
 
 ```
 m_streamerHelpers->OnConnected += ref new ConnectedEvent(
@@ -106,7 +106,7 @@ m_streamerHelpers->OnConnected += ref new ConnectedEvent(
            });
 ```
 
-重新连接、 UI 更新等，可以处理 OnDisconnected 事件。 在此示例中，我们重新连接如果暂时性故障。
+OnDisconnected 事件可以处理重新连接、UI 更新等。 在此示例中, 如果发生暂时性故障, 则重新连接。
 
 ```
 Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_streamerHelpers);
@@ -146,7 +146,7 @@ Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_strea
            });
 ```
 
-准备好发送帧远程处理组件时，您的应用程序提供能够 SendFrameEvent 中使它的一个副本。 在这里，我们将在帧到交换链复制，以便我们可以在预览窗口中显示它。
+当远程处理组件准备好发送帧时, 您的应用程序将有机会在 SendFrameEvent 中创建它的副本。 在这里, 我们将帧复制到一个交换链, 以便可以在预览窗口中显示它。
 
 ```
 m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
@@ -174,17 +174,17 @@ m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
            });
 ```
 
-### <a name="render-holographic-content"></a>呈现全息版的内容
+### <a name="render-holographic-content"></a>呈现全息内容
 
-将内容呈现使用远程处理，可以设置你的桌面或 UWP 应用中虚拟 IFrameworkView 并处理从远程处理 holographic 帧。 所有 Windows Holographic Api 都的使用此视图中，但相同的方式设置略有不同。
+若要使用远程处理呈现内容, 请在桌面或 UWP 应用中设置一个虚拟 IFrameworkView, 并处理远程处理中的全息帧。 所有 Windows 全息 Api 的使用方式与此视图相同, 但设置略有不同。
 
-而不是创建它们自己，全息版的空间和语音组件来自 HolographicRemotingHelpers 类：
+全息空间和语音组件来自 HolographicRemotingHelpers 类, 而不是自行创建:
 
 ```
 m_appView->Initialize(m_streamerHelpers->HolographicSpace, m_streamerHelpers->RemoteSpeech);
 ```
 
-而不是使用在运行方法的更新循环，则提供从你的桌面或 UWP 应用的主循环的刻度线更新。 这允许你的桌面或 UWP 应用，以控制消息处理。
+不在 Run 方法内部使用 update 循环, 而是通过桌面或 UWP 应用程序的主循环来提供滴答更新。 这允许桌面或 UWP 应用保持对消息处理的控制。
 
 ```
 void DesktopWindow::Tick()
@@ -196,7 +196,7 @@ void DesktopWindow::Tick()
    }
 ```
 
-全息版的应用程序视图 Tick() 方法完成更新、 绘图、 存在循环一次的迭代。
+全息应用视图的 Tick () 方法完成更新、绘制和呈现循环的一次迭代。
 
 ```
 void AppView::Tick()
@@ -216,11 +216,11 @@ void AppView::Tick()
    }
 ```
 
-全息版的应用程序查看更新、 呈现器，并存在循环与完全相同，只不过在桌面 PC 上有权访问更长的系统资源是在 HoloLens 的运行时。 可以呈现多个更多的三角形，具有多个绘图的阶段，执行多个物理引擎，并使用 x64 进程加载所需内容，超过 2 GB 的 RAM。
+全息应用视图的更新、呈现和呈现循环与在 HoloLens 上运行时完全相同, 只是你有权访问台式计算机上更多的系统资源。 您可以呈现更多的三角形, 更多的绘图走刀, 执行更多物理学, 并使用 x64 进程加载需要 2 GB 以上 RAM 的内容。
 
-### <a name="disconnect-and-end-the-remote-session"></a>断开连接，然后结束远程会话
+### <a name="disconnect-and-end-the-remote-session"></a>断开并结束远程会话
 
-若要断开连接-例如，当用户单击 UI 按钮以断开连接的对 HolographicStreamerHelpers，调用 Disconnect()，然后释放对象。
+若要断开连接, 例如, 当用户单击 UI 按钮以断开 HolographicStreamerHelpers 上的调用 Disconnect (), 然后释放对象。
 
 ```
 void DesktopWindow::DisconnectFromRemoteDevice()
@@ -238,13 +238,13 @@ void DesktopWindow::DisconnectFromRemoteDevice()
    }
 ```
 
-## <a name="get-the-remoting-player"></a>获取远程处理播放器
+## <a name="get-the-remoting-player"></a>获取远程处理播放机
 
-Windows Holographic 远程处理的播放机作为远程处理主机应用程序连接到的终结点在 Windows 应用商店中提供。 若要获取 Windows Holographic 远程处理的播放机，请从您 HoloLens，搜索以进行远程处理，请访问 Windows 应用商店并下载应用。 远程处理的播放机包括用于显示统计信息屏幕上，这可能很有用，调试远程处理主机应用程序时的功能。
+Windows 全息远程处理播放机在 Windows 应用商店中提供, 作为要连接到的远程处理主机应用的终结点。 若要获取 Windows 全息远程处理播放器, 请从 HoloLens 访问 Windows 应用商店, 搜索远程处理并下载应用。 远程处理播放机包含一项功能, 可用于在屏幕上显示统计信息, 这在调试远程处理主机应用时非常有用。
 
-## <a name="notes-and-resources"></a>说明和资源
+## <a name="notes-and-resources"></a>备注和资源
 
-全息版的应用视图将需要一种方法向应用提供的 Direct3D 设备，必须用来初始化全息版的空间。 您的应用程序应使用此 Direct3D 设备复制和显示预览帧。
+全息应用视图需要提供一种方法来为你的应用提供 Direct3D 设备, 该设备必须用于初始化全息空间。 应用应使用此 Direct3D 设备复制和显示预览框架。
 
 ```
 internal:
@@ -254,7 +254,7 @@ internal:
        }
 ```
 
-**代码示例：** 完整的 Holographic 远程处理的代码示例均可用，其中包括与远程处理和远程处理主机项目类型提供的桌面 Win32、 UWP DirectX 和 XAML 与 UWP 兼容的全息版的应用程序视图。 若要获取它，请转到此处：
-* [远程处理的 Windows 全息版的代码示例](https://github.com/Microsoft/HoloLensCompanionKit/)
+**代码示例:** 提供完整的全息远程处理代码示例, 其中包含一个全息应用程序视图, 该视图与用于桌面 Win32、UWP DirectX 和具有 XAML 的 UWP 的远程处理和远程处理主机项目兼容。 若要获取它, 请转到此处:
+* [用于远程处理的 Windows 全息代码示例](https://github.com/Microsoft/HoloLensCompanionKit/)
 
-**调试注意：** 全息版的远程处理库可以引发最可能的异常。 这些异常可能会看到在调试会话，具体取决于当时处于活动状态的 Visual Studio 异常设置。 这些异常由 Holographic 远程处理库在内部捕获，可以忽略。
+**调试说明:** 全息远程处理库可能会引发第一次异常。 这些异常在调试会话中可能会显示, 具体取决于目前处于活动状态的 Visual Studio 异常设置。 这些例外由全息远程处理库在内部捕获, 可被忽略。

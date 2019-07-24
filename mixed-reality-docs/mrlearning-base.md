@@ -40,7 +40,7 @@ ms.locfileid: "68293617"
 
 ## <a name="before-you-start"></a>开始之前
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 * 使用安装了正确的[工具](install-the-tools.md)配置的 WINDOWS 10 电脑
 * Windows 10 SDK 10.0.18362.0 或更高版本

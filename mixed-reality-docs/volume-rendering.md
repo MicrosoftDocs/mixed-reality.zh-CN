@@ -1,38 +1,38 @@
 ---
-title: 批量呈现
-description: 容量耗尽映像包含丰富的信息与不透明度和整个的卷，不能轻松地表示为表面的颜色。 了解如何有效地呈现在 Windows Mixed Reality 容量耗尽图像。
+title: 卷渲染
+description: 容量耗尽映像包含丰富的信息, 这些信息具有不透明度和颜色在整个卷中, 无法轻松地表示为表面。 了解如何在 Windows Mixed Reality 内有效呈现容量耗尽映像。
 author: KevinKennedy
 ms.author: kkennedy
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 容量耗尽映像、 卷呈现、 性能、 混合的现实
+keywords: 容量耗尽映像, 卷渲染, 性能, 混合现实
 ms.openlocfilehash: dc0e75b916ab7cc96be1eccb4ad32ac71f5b75ff
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59592861"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548639"
 ---
-# <a name="volume-rendering"></a>批量呈现
+# <a name="volume-rendering"></a>卷渲染
 
-医疗 MRI 或工程卷，请参阅[Wikipedia 上的卷呈现](https://en.wikipedia.org/wiki/Volume_rendering)。 这些容量耗尽映像包含丰富的信息与不透明度和颜色的卷，无法轻松地表示为面如整个[多边形网格](https://en.wikipedia.org/wiki/Polygon_mesh)。
+对于医学 MRI 或工程量, 请参阅[维基百科上的卷渲染](https://en.wikipedia.org/wiki/Volume_rendering)。 这些 "容量耗尽 images" 包含丰富的信息, 其中包含在整个卷中不透明度和颜色的颜色, 无法轻松地表示为表面 (如[多边形网格](https://en.wikipedia.org/wiki/Polygon_mesh))。
 
-若要提高性能的关键解决方案
-1. 错误：比较天真的方法：显示整个卷，通常运行速度太慢
-2. 很好：切面：显示一个切片的数据量
-3. 很好：剪切子卷：显示仅几个层的数据量
-4. 很好：降低卷呈现的分辨率 （请参阅混合解析场景渲染）
+用于提高性能的关键解决方案
+1. DFX简单方法:显示整个卷, 通常运行速度太慢
+2. 良好切割平面:仅显示卷的单个切片
+3. 良好剪切子卷:只显示卷的几个层
+4. 良好降低卷呈现的分辨率 (请参阅 "混合分辨率场景呈现")
 
-一定数量的应用程序中对任何特定帧中的屏幕可以传输的信息，这是总内存带宽。 此外需要转换该数据以供演示文稿任何处理 （或明暗度） 也需要时间。 执行批量呈现时的主要注意事项是这种情况下：
-* 屏幕宽度 * 屏幕高度 * 屏幕计数 * 卷的层上-，-像素 = 总-卷-示例-每个帧
-* 1028 * 720 * 2 * 256 = 378961920 （100%)(完整 res 卷： 太多的示例)
-* 1028 * 720 * 2 * 1 = 1480320 （完整的 0.3%) (精简切片：顺利运行每个像素，1 示例）
-* 1028 * 720 * 2 * 10 = 14803200 （完整的 3.9%) (子卷切片：每个像素，10 个示例运行相当顺畅，看起来 3d）
-* 200 * 200 * 2 * 256 = 20480000 （完整的 5%) (降低 res 卷： 较少的像素为单位，整卷，看起来 3d，但有些 blury)
+只有一定数量的信息可从应用程序传输到屏幕的任何特定帧, 这是总内存带宽。 此外, 转换该数据以供演示所需的任何处理 (或 "底纹") 也需要时间。 执行卷渲染时的主要注意事项如下:
+* 屏幕宽度 * 屏幕高度 * 屏幕上的屏幕计数 * 每帧的总容量-每帧样本数
+* 1028 * 720 * 2 * 256 = 378961920 (100%)(完全 res 卷: 样本太多)
+* 1028 * 720 * 2 * 1 = 1480320 (已满 0.3%) (瘦切片:每个像素1个采样, 顺利运行)
+* 1028 * 720 * 2 * 10 = 14803200 (已满 3.9%) (子卷片:每个像素10个样本, 以相当平稳的速度运行, 看起来 3d)
+* 200 * 200 * 2 * 256 = 20480000 (全部的 5%) (较小的分辨率量: 更少的像素, 整卷, 看起来是三维但有点 blury)
 
 ## <a name="representing-3d-textures"></a>表示三维纹理
 
-CPU:
+在 CPU 上:
 
 ```
 public struct Int3 { public int X, Y, Z; /* ... */ }
@@ -67,7 +67,7 @@ public struct Int3 { public int X, Y, Z; /* ... */ }
  }
 ```
 
-在 GPU:
+在 GPU 上:
 
 ```
 float3 _VolBufferSize;
@@ -85,9 +85,9 @@ float3 _VolBufferSize;
  }
 ```
 
-## <a name="shading-and-gradients"></a>明暗度和渐变
+## <a name="shading-and-gradients"></a>底纹和渐变
 
-如何添加有用的可视化效果的卷，如 MRI、 阴影。 主要方法是让明暗度窗口 （最小值和最大） 想要查看强度内，并只需扩展到该空间以查看黑色或白色的强度。 可应用于该范围内的值和存储为纹理，以便在强度范畴内形成的不同部分可以是不同的阴影的颜色色阶:
+如何对音量 (如 MRI) 进行着色, 以便进行有用的可视化。 主要方法是在中具有要查看亮度的 "强度窗口" (最小值和最大值), 只需将其缩放到该空间即可查看黑色和白色强度。 然后, 可以将 "颜色斜坡" 应用于该范围内的值, 并将其存储为纹理, 以便强度密度的不同部分可以着色不同的颜色:
 
 ```
 float4 ShadeVol( float intensity ) {
@@ -98,16 +98,16 @@ float4 ShadeVol( float intensity ) {
    color.rgba = tex2d( ColorRampTexture, float2( unitIntensity, 0 ) );
 ```
 
-在许多我们我们在原始的强度值和分段 index 我们卷中存储的应用程序 （如划分不同部分皮肤和骨骼，这些段通常由创建专用工具方面的专家）。 这可以将不同的颜色或甚至不同的颜色为每个段索引的负载增加，上述方法与组合：
+在许多应用程序中, 我们在我们的应用程序中存储了原始强度值和 "分段索引" (用于划分外观和骨骼等不同部分, 这些段通常由专家在专用工具中创建)。 这可以与上述方法结合使用, 为每个段索引放置不同的颜色, 甚至不同的颜色斜坡:
 
 ```
 // Change color to match segment index (fade each segment towards black):
  color.rgb = SegmentColors[ segment_index ] * color.a; // brighter alpha gives brighter color
 ```
 
-## <a name="volume-slicing-in-a-shader"></a>在着色器中切片的卷
+## <a name="volume-slicing-in-a-shader"></a>着色器中的卷切片
 
-第一个重要步骤是创建"切片面"，可以浏览该卷，切片它，并扫描每个点处的值。 这假设没有 VolumeSpace 多维数据集，表示此卷将在世界空间中，可以用作引用放置点：
+第一步是创建一个可在卷上移动的 "切片平面"、"切分它" 以及每个点的扫描值。 这假设有一个 "VolumeSpace" 多维数据集, 该多维数据集表示卷在世界空间中的位置, 可用作放置点的参考:
 
 ```
 // In the vertex shader:
@@ -120,9 +120,9 @@ float4 ShadeVol( float intensity ) {
  float4 color = ShadeVol( SampleVol( volSpace ) );
 ```
 
-## <a name="volume-tracing-in-shaders"></a>着色器中的卷跟踪
+## <a name="volume-tracing-in-shaders"></a>着色中的卷跟踪
 
-如何使用 GPU 进行子卷跟踪 （指导少量 voxels 深度然后层的数据从后向前）：
+如何使用 GPU 进行子卷跟踪 (先走一些 voxels, 然后将数据从后到前面):
 
 ```
 float4 AlphaBlend(float4 dst, float4 src) {
@@ -164,9 +164,9 @@ float4 AlphaBlend(float4 dst, float4 src) {
  float4 color = volTraceSubVolume( volSpace, cameraInVolSpace );
 ```
 
-## <a name="whole-volume-rendering"></a>整个卷呈现
+## <a name="whole-volume-rendering"></a>整个卷渲染
 
-修改上面的子卷代码，我们得到：
+修改以上的子卷代码, 获取:
 
 ```
 float4 volTraceSubVolume(float3 objPosStart, float3 cameraPosVolSpace) {
@@ -177,15 +177,15 @@ float4 volTraceSubVolume(float3 objPosStart, float3 cameraPosVolSpace) {
    int numLoops = min( distanceInVoxels, maxSamples ); // put a min on the voxels to sample
 ```
 
-## <a name="mixed-resolution-scene-rendering"></a>混合的解析场景渲染
+## <a name="mixed-resolution-scene-rendering"></a>混合分辨率场景呈现
 
-如何呈现场景中具有较低分辨率的一部分，并将其放回位置：
-1. 设置两个屏外相机，另一个用于遵循更新每个帧每只眼睛
-2. 安装程序两个较低分辨率呈现器目标 (例如大小为 200x200 每个)，照相机呈现到
-3. 设置移动用户四核
+如何以低分辨率渲染场景的一部分并将其放回原位:
+1. 设置两个离线相机, 每个屏幕上都有一个用于更新每个帧的
+2. 设置相机呈现到的两个低分辨率呈现器目标 (200x200 大小)
+3. 设置在用户前移动的四个
 
-每个帧：
-1. 在较低分辨率绘制每只眼睛的呈现器目标 （卷数据、 昂贵的着色器等）
-2. 绘制场景通常作为完整分辨率 （网格、 UI 等。）
-3. 场景中，通过绘制四呈现给用户，并投影到的低分辨率的呈现。
-4. 使用较低分辨率，但高密度卷数据的高分辨率元素的结果： visual 组合。
+每个帧:
+1. 在低分辨率 (卷数据、昂贵的着色器等) 上绘制每个眼睛的渲染目标。
+2. 通常将场景绘制为完整分辨率 (网格、UI 等)
+3. 在用户面前, 在场景上绘制四个四核, 并在其上绘制低分辨率。
+4. 结果: 包含低分辨率但高密度卷数据的完整分辨率元素的直观组合。

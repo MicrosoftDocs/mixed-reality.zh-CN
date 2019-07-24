@@ -5,14 +5,13 @@ author: liamartinez
 ms.author: liamar
 ms.date: 05/13/2019
 ms.topic: article
-ms.localizationpriority: high
 keywords: 混合现实, 凝视, 停留, 交互, 设计
-ms.openlocfilehash: 70b25949380679d2edc81b07ab54f24fa20e3f3d
-ms.sourcegitcommit: 9b6949d7cd2e67e6bde9b32aebeaeea325baa6c4
-ms.translationtype: HT
+ms.openlocfilehash: d522ca3a6f36995959e8e6e87482279d05bf0aa3
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516007"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387538"
 ---
 # <a name="head-gaze-and-dwell"></a>头部凝视和停留
 
@@ -90,7 +89,8 @@ ms.locfileid: "66516007"
 ## <a name="ui-patterns"></a>UI 模式
 
 ### <a name="high-frequency-buttons"></a>高频率按钮
-![Microsoft Dynamics 365 指南“下一步”按钮](images/GuideNextButton.png "Microsoft Dynamics 365 指南“下一步”按钮")高频率按钮是在整个应用程序中常用的按钮。 其中一个很好的例子是 Microsoft Dynamics 365 指南中的“下一步”和“后退”按钮。
+![Microsoft Dynamics 365 "下一步" 按钮](images/GuideNextButton.png "Microsoft Dynamics 365 \"下一步\" 按钮")<br>
+*高频率按钮是通常在整个应用程序中使用的按钮。下面是 Microsoft Dynamics 365 指南中的 "下一步" 和 "后退" 按钮。*
 
 高频率按钮应...
 * 较大，以便更轻松地进行头部凝视
@@ -114,7 +114,8 @@ ms.locfileid: "66516007"
 切换按钮需要一些细微的逻辑才能正常工作。 当用户停留在切换按钮上并激活它时，他们需要退出该按钮然后返回以重启停留逻辑。 可切换按钮必须具有明确的活动状态与非活动状态。 
 
 ### <a name="list-views"></a>列表视图
-![Microsoft Dynamics 365 指南确认对话框](images/GuidesListView.png "Microsoft Dynamics 365 指南确认对话框")列表视图为头部凝视和停留输入带来了特殊挑战。 用户需要能够浏览内容，而不是感觉必须小心翼翼地绕过停留目标。 
+![Microsoft Dynamics 365 指南确认对话框](images/GuidesListView.png "Microsoft Dynamics 365 指南确认对话框")<br>
+*列表视图为打印头和停留输入提供了一个特定的挑战。用户需要能够在不 tiptoe 的情况下扫描内容, 而无需围绕停留目标。*
 
 设计列表视图的一些提示：
 * 在头部凝视时突出显示整行，但除非头部凝视在特定的停留目标上，否则不会开始停留。
@@ -123,7 +124,7 @@ ms.locfileid: "66516007"
 * 不要一次性显示所有停留目标以避免重复 UI
 * 尽可能多地重复使用相同的模式以建立熟悉的用户体验
  
- ## <a name="see-also"></a>另请参阅
+ ## <a name="see-also"></a>请参阅
 * [使用手直接操作](direct-manipulation.md)
 * [使用手指向和提交](point-and-commit.md)
 * [本能交互](interaction-fundamentals.md)

@@ -1,11 +1,11 @@
 ---
-title: 在 Unity 中展示
-description: 提供注视是用户以确定你的应用创建混合现实中全息了主要途径。
+title: 注视 Unity
+description: 注视是用户在混合现实中以应用程序创建的方式为目标的主要方式。
 author: thetuvix
 ms.author: yoyoz
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 提供注视、 unity、 全息图、 混合的现实
+keywords: 注视, unity, 全息影像, 混合现实
 ms.openlocfilehash: b2cc86db156a1e97b013e4cd6debe3abe5ffb6dd
 ms.sourcegitcommit: 60060386305eabfac2758a2c861a43c36286b151
 ms.translationtype: MT
@@ -13,18 +13,18 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 05/31/2019
 ms.locfileid: "66453720"
 ---
-# <a name="head-gaze-in-unity"></a>在 Unity 中的头视线移动
+# <a name="head-gaze-in-unity"></a>Unity 中的头盔
 
-[注视](gaze.md)是用户以确定了主要途径[全息](hologram.md)您的应用程序中创建[混合现实](mixed-reality.md)。
+[注视](gaze.md)是用户在[混合现实](mixed-reality.md)中以应用程序[创建的方式](hologram.md)为目标的主要方式。
 
 
-## <a name="implementing-head-gaze"></a>实现头的视线移动
+## <a name="implementing-head-gaze"></a>实现打印头
 
-从概念上讲，[注视](gaze.md)实现通过投影从用户的头部向前面向并确定它们耳机所在 ray 的射线与有冲突。 在 Unity 中，用户的头位置和方向公开通过 Unity Main[照相机](camera-in-unity.md)，具体而言[UnityEngine.Camera.main](http://docs.unity3d.com/ScriptReference/Camera-main.html)。[transform.forward](http://docs.unity3d.com/ScriptReference/Transform-forward.html)并[UnityEngine.Camera.main](http://docs.unity3d.com/ScriptReference/Camera-main.html)。[transform.position](http://docs.unity3d.com/ScriptReference/Transform-position.html)。
+从概念上讲,[注视](gaze.md)的实现方式是: 从用户的头投影一条射线, 其中的耳机是正面朝上, 并确定与该射线发生冲突的情况。 在 Unity 中, 用户的头位置和方向通过 Unity 主[摄像机](camera-in-unity.md)公开, 特别是[UnityEngine](http://docs.unity3d.com/ScriptReference/Camera-main.html)。[transform](http://docs.unity3d.com/ScriptReference/Transform-forward.html)和[UnityEngine](http://docs.unity3d.com/ScriptReference/Camera-main.html)。[转换。位置](http://docs.unity3d.com/ScriptReference/Transform-position.html)。
 
-调用[Physics.RayCast](http://docs.unity3d.com/ScriptReference/Physics.Raycast.html)会导致[RaycastHit](http://docs.unity3d.com/ScriptReference/RaycastHit.html)结构，其中包含有关包括发生冲突的三维点碰撞效果和其他 GameObject 的视线移动 ray 信息使用发生碰撞。
+如果调用[RayCast](http://docs.unity3d.com/ScriptReference/Physics.Raycast.html) , 则会生成一个[RaycastHit](http://docs.unity3d.com/ScriptReference/RaycastHit.html)结构, 其中包含有关冲突的信息, 包括发生冲突的三维点, 以及使用 "注视" 光线与的另一个 GameObject。
 
-### <a name="example-implement-head-gaze"></a>例如：实现头的视线移动
+### <a name="example-implement-head-gaze"></a>例如：实现打印头
 
 ```cs
 void Update()
@@ -46,14 +46,14 @@ void Update()
 
 ### <a name="best-practices"></a>最佳方案
 
-尽管上面的示例演示了如何在更新循环中，若要查找的视线移动目标单一 raycast，建议执行此操作管理而不是执行此操作可能会对感兴趣正在 gazed 处的对象的任何对象中的视线移动单个对象中。 这允许您通过执行每个帧的只是一个提供注视 raycast 保存处理的应用程序。
+尽管上面的示例演示了如何在更新循环中执行单个 raycast 来查找注视目标, 但建议在管理注视的单个对象中执行此操作, 而不是在可能对要在 gazed 的对象感兴趣的任何对象中执行此操作。 这样, 你的应用程序就可以通过只对每个帧执行一个注视 raycast 来保存处理。
 
-## <a name="visualizing-gaze"></a>可视化的视线移动
+## <a name="visualizing-gaze"></a>可视化注视
 
-就像在桌面上使用其中的鼠标指针来面向和交互使用内容，则应实现[游标](cursors.md)，它表示用户的视线移动。 这在如何为用户增添了信心地与之交互。
+就像在使用鼠标指针来定位内容并与内容交互的桌面上, 你应该实现表示用户注视的[光标](cursors.md)。 这为用户提供了与交互相关的置信度。
 
-## <a name="gaze-in-mixed-reality-toolkit-v2"></a>对此混合现实 Toolkit v2
-您可以访问从注视[输入管理器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)MRTK v2 中。
+## <a name="gaze-in-mixed-reality-toolkit-v2"></a>注视混合现实工具包 v2
+可以从 MRTK v2 中的[输入管理器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)访问注视。
 
 ## <a name="see-also"></a>请参阅
 * [摄像头](camera-in-unity.md)

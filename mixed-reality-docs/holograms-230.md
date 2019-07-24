@@ -1,11 +1,11 @@
 ---
 title: MR 空间 230-空间映射
-description: 遵循此编码使用 Unity、 Visual Studio 和 HoloLens 学习空间映射概念的详细信息的演练。
+description: 遵循以下编码演练, 使用 Unity、Visual Studio 和 HoloLens 来了解空间映射概念的详细信息。
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: holotoolkit，mixedrealitytoolkit、 mixedrealitytoolkit unity、 学院、 教程、 空间映射，图面上重新构造，网格
+keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程, 空间映射, 表面重建, 网格
 ms.openlocfilehash: ed58676a0fda660cc6b4c197239aeb53166baa4d
 ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
@@ -14,19 +14,19 @@ ms.lasthandoff: 05/02/2019
 ms.locfileid: "64993562"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
 
 <br>
 
 # <a name="mr-spatial-230-spatial-mapping"></a>MR 空间 230:空间映射
 
-[空间映射](spatial-mapping.md)将合并的实际和虚拟世界一起教授全息有关的环境。 在 MR 空间 230 (项目 Planetarium) 中，我们将了解如何：
+[空间映射](spatial-mapping.md)将现实世界和虚拟世界结合在一起, 并讲授有关环境的影像。 在尊敬的空间 230 (项目 Planetarium) 中, 我们将学习如何:
 
-* 扫描的环境和传输数据从 HoloLens 到开发计算机。
-* 了解着色器并了解如何使用它们用于可视化你的空间。
-* 分解到使用网格处理简单的平面空间网格。
-* 我们在中学到的位置技术超越[MR 基础知识 101](holograms-101.md)，并提供有关在环境中的一张全息图可以放置位置的反馈。
-* 探索封闭的效果，因此真实世界物体后面你全息图时，您仍然可以看到与 x 射线视力 ！
+* 扫描环境并将数据从 HoloLens 传输到你的开发计算机。
+* 探索着色器并了解如何使用着色器来可视化空间。
+* 使用网格处理将房间网格分解为简单的平面。
+* 超越我们在[MR 基础知识 101](holograms-101.md)中学习的放置技术, 并提供有关在环境中放置全息影像的位置的反馈。
+* 探索封闭效果, 因此, 当您的全息影像位于真实世界的对象后面时, 您仍然可以看到它具有 x 光愿景!
 
 >[!VIDEO https://www.youtube.com/embed/NSNYRkUX6Mw]
 
@@ -34,7 +34,7 @@ ms.locfileid: "64993562"
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>摘要</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td>MR 空间 230:空间映射</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
@@ -42,202 +42,202 @@ ms.locfileid: "64993562"
 
 ## <a name="before-you-start"></a>开始之前
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
-* 使用正确配置 Windows 10 电脑[安装工具](install-the-tools.md)。
-* 一些基本C#编程功能。
-* 您应当已完成[MR 基础知识 101](holograms-101.md)。
-* HoloLens 设备[为开发配置](using-visual-studio.md#enabling-developer-mode)。
+* 配置了正确[工具](install-the-tools.md)的 WINDOWS 10 电脑。
+* 一些基本C#的编程能力。
+* 应已完成[尊敬的基本知识 101](holograms-101.md)。
+* [为开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 设备。
 
 ### <a name="project-files"></a>项目文件
 
-* 下载[文件](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-230-SpatialMapping.zip)所需的项目。 需要 Unity 2017.2 或更高版本。
-  * 如果你仍然需要 Unity 5.6 的支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-230.zip)。
-  * 如果你仍然需要 Unity 5.5 支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-230.zip)。
-  * 如果你仍然需要 Unity 5.4 的支持，请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-230.zip)。
-* 取消存档到您的桌面或其他轻松地访问位置的文件。
+* 下载项目所需的[文件](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-230-SpatialMapping.zip)。 需要 Unity 2017.2 或更高版本。
+  * 如果仍需要 Unity 5.6 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-230.zip)。
+  * 如果仍需要 Unity 5.5 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-230.zip)。
+  * 如果仍需要 Unity 5.4 支持, 请使用[此版本](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-230.zip)。
+* 取消将文件存档到桌面或其他易于访问的位置。
 
 >[!NOTE]
->如果你想要查看完成的源代码下载前，它具有[可在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-230-SpatialMapping)。
+>如果要在下载之前查看源代码,[可在 GitHub 上](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-230-SpatialMapping)找到。
 
 ### <a name="notes"></a>说明
 
-* Visual Studio 需要禁用中的"启用仅我的代码"(*未选中*) 在工具 > 选项 > 以命中断点在代码中的调试。
+* Visual Studio 中的 "Enable 仅我的代码" 需要在 "工具" > 选项 "下禁用 (*未选中*) > 调试, 以便在代码中命中断点。
 
-## <a name="unity-setup"></a>Unity 安装程序
+## <a name="unity-setup"></a>Unity 设置
 
 >[!VIDEO https://www.youtube.com/embed/y2Y4LhK6TEM]
 
 * 启动**Unity**。
-* 选择**新建**创建新项目。
-* 将项目命名**Planetarium**。
-* 确认**3D**选择设置。
-* 单击**创建项目**。
-* 一旦启动 Unity 时，请转到**编辑 > 项目设置 > 播放机**。
-* 在中**Inspector**面板中，找到并选择绿色**Windows 应用商店**图标。
-* 展开**其他设置**。
-* 在中**呈现**部分中，选择**虚拟现实支持**选项。
-* 确认**Windows Holographic**出现在列表中**虚拟现实 Sdk**。 如果没有，请选择 **+** 按钮在列表的底部，然后选择**Windows Holographic**。
-* 展开**发布设置**。
-* 在中**功能**部分中，检查以下设置：
+* 选择 "**新建**" 以创建新项目。
+* 将项目命名为**Planetarium**。
+* 验证是否选择了**3d**设置。
+* 单击“创建项目”。
+* Unity 启动后, 请参阅 "**编辑 > 项目设置" > Player**"。
+* 在 "**检查器**" 面板中, 找到并选择绿色的**Windows 应用商店**图标。
+* 展开 "**其他设置**"。
+* 在 "**呈现**" 部分中, 查看 "**支持虚拟现实**" 选项。
+* 验证**虚拟现实 sdk**列表中是否出现**Windows 全息**。 如果没有，请选择 **+** 按钮在列表的底部，然后选择**Windows Holographic**。
+* 展开 "**发布设置**"。
+* 在 "**功能**" 部分中, 检查以下设置:
     * InternetClientServer
     * PrivateNetworkClientServer
     * 麦克风
     * SpatialPerception
-* 转到**编辑 > 项目设置 > 质量**
-* 在中**Inspector**面板，在 Windows 应用商店图标，然后选择下的默认行的黑色下拉箭头并将默认设置更改为**非常低**。
-* 转到**资产 > 导入包 > 自定义包**。
-* 导航到 **...\HolographicAcademy-Holograms-230-SpatialMapping\Starting**文件夹。
-* 单击**Planetarium.unitypackage**。
+* 开始**编辑 > 项目设置 > 质量**
+* 在 "**检查器**" 面板中的 "Windows 应用商店" 图标下, 选择 "默认" 行下的黑色下拉箭头并将默认设置更改为 "**非常低**"。
+* 请参阅**资产 > 导入包 > 自定义包**。
+* 导航到 **..\holographicacademy-holograms-230-SpatialMapping\Starting**文件夹。
+* 单击 " **Planetarium. unitypackage**"。
 * 单击“打开” 。
-* **导入 Unity 程序包**应显示窗口，单击**导入**按钮。
-* 等待导入的所有资产，我们将需要完成此项目的 Unity。
-* 在中**层次结构**面板中，删除**Main Camera**。
-* 在中**项目**面板中， **HoloToolkit SpatialMapping 230\Utilities\Prefabs**文件夹中，找到**Main Camera**对象。
-* 拖放到**Main Camera**到 prefab**层次结构**面板。
-* 在中**层次结构**面板中，删除**定向光**对象。
-* 在中**项目**面板中，**全息**文件夹中，找到**游标**对象。
-* 拖放**游标**到 prefab**层次结构**。
-* 在中**层次结构**面板中，选择**光标**对象。
-* 在中**Inspector**面板中，单击**层**下拉列表中，选择**编辑层...**.
-* 名称**用户层 31**作为"**SpatialMapping**"。
-* 保存新的场景：**文件 > 另存为场景...**
-* 单击**新文件夹**，然后将文件夹**场景**。
-* 将文件"**Planetarium**"并将其保存在**场景**文件夹。
+* 随即出现 "**导入 Unity 包**" 窗口, 单击 "**导入**" 按钮。
+* 等待 Unity 导入完成此项目所需的所有资产。
+* 在 "**层次结构**" 面板中, 删除**主摄像机**。
+* 在 "**项目**" 面板中, 找到 " **HoloToolkit-SpatialMapping-230\Utilities\Prefabs** " 文件夹, 查找 "**照相机**" 对象。
+* 将**主相机**prefab 拖放到 "**层次结构**" 面板中。
+* 在 "**层次结构**" 面板中, 删除**方向轻型**对象。
+* 在 "**项目**" 面板的 "**全息影像**" 文件夹中, 找到**Cursor**对象。
+* 拖动 & 将**游标**prefab 拖放到**层次结构**中。
+* 在 "**层次结构**" 面板中, 选择**Cursor**对象。
+* 在**检查器**面板中, 单击 "**层**" 下拉箭头, 然后选择 "**编辑层 ...** "。
+* 将**用户层 31**命名为 "**SpatialMapping**"。
+* 保存新场景:**文件 > 将场景另存为 .。。**
+* 单击 "**新建文件夹**", 然后将文件夹命名为 "**场景**"。
+* 将该文件命名为 "**Planetarium**" 并将其保存在**幕后**文件夹中。
 
-## <a name="chapter-1---scanning"></a>第 1 章-扫描
+## <a name="chapter-1---scanning"></a>第1章-扫描
 
 >[!VIDEO https://www.youtube.com/embed/888oW51z_cE]
 
 **目标**
-* 了解有关 SurfaceObserver 和其设置影响如何体验和性能。
-* 创建聊天室扫描体验，以收集你的聊天室的网格。
+* 了解 SurfaceObserver 及其设置对体验和性能的影响。
+* 创建房间扫描体验, 收集房间的网格。
 
 **说明**
-* 在中**项目**面板**HoloToolkit SpatialMapping 230\SpatialMapping\Prefabs**文件夹中，找到**SpatialMapping**预设。
-* 拖放**SpatialMapping**到 prefab**层次结构**面板。
+* 在 "**项目**" 面板的**HoloToolkit-SpatialMapping-230\SpatialMapping\Prefabs**文件夹中, 找到**SpatialMapping** prefab。
+* 拖动 & 将**SpatialMapping** prefab 拖到 "**层次结构**" 面板中。
 
-**生成和部署 （第 1 部分）**
-* 在 Unity 中，选择**文件 > 生成设置**。
-* 单击**添加打开场景**以添加**Planetarium**到生成的场景。
-* 选择**通用 Windows 平台**中**平台**列表中，单击**切换平台**。
-* 设置**SDK**到**通用 10**并**UWP 生成类型**到**D3D**。
-* 检查**UnityC#项目**。
+**生成和部署 (第1部分)**
+* 在 Unity 中, 选择 "**文件 > 生成设置**"。
+* 单击 "**添加打开的场景**", 将 " **Planetarium** " 场景添加到生成中。
+* 选择 "**平台**" 列表中的 "**通用 Windows 平台**", 然后单击 "**切换平台**"。
+* 将**SDK**设置为**通用 10** , 将**UWP 版本**设置为**D3D**。
+* 检查**Unity C#项目**。
 * 单击“生成” 。
-* 创建**新文件夹**名为"应用"。
-* 单击一下**应用**文件夹。
-* 按**选择文件夹**按钮。
-* 当完成 Unity 构建，将出现一个文件资源管理器窗口。
-* 双击**应用**文件夹将其打开。
-* 双击**Planetarium.sln**加载 Visual Studio 中的项目。
-* 在 Visual Studio 中，使用顶部的工具栏更改为配置**版本**。
-* 更改到平台**x86**。
-* 单击本地计算机，右侧的下拉箭头，然后选择**远程计算机**。
-* 输入[设备的 IP 地址](connecting-to-wi-fi-on-hololens.md#identifying-the-ip-address-of-your-hololens-on-the-wi-fi-network)字段中的地址和身份验证模式更改为**通用 （未加密的协议）**。
-* 单击**调试-> 启动不调试**或按**Ctrl + F5**。
-* 观看**输出**面板在 Visual Studio 中生成和部署状态。
-* 您的应用程序已部署后，聊天室中四处走动。 你将看到由黑色或白色透明框架网格覆盖的周围图面。
-* 扫描周围的环境。 请务必查看墙面、 的上限和地面。
+* 创建名为 "App" 的**新文件夹**。
+* 单击**应用**文件夹。
+* 按 "**选择文件夹**" 按钮。
+* 当 Unity 完成生成后, 将显示文件资源管理器窗口。
+* 双击**应用**文件夹以将其打开。
+* 双击**Planetarium**以在 Visual Studio 中加载项目。
+* 在 Visual Studio 中, 使用顶部工具栏将配置更改为 "**发布**"。
+* 将平台更改为**x86**。
+* 单击 "本地计算机" 右侧的下拉箭头, 然后选择 "**远程计算机**"。
+* 在 "地址" 字段中输入[设备的 IP 地址](connecting-to-wi-fi-on-hololens.md#identifying-the-ip-address-of-your-hololens-on-the-wi-fi-network), 并将身份验证模式更改为**通用 (未加密的协议)** 。
+* 单击 "**调试-> 启动但不调试**" 或按**Ctrl + F5**。
+* 在 Visual Studio 中查看 "**输出**" 面板以了解 "生成和部署" 状态。
+* 在应用程序部署完成后, 请四处浏览聊天室。 你将看到由黑色和白色线框网格覆盖的周围面。
+* 扫描您的环境。 务必查看墙壁、上限和楼层。
 
-**生成和部署 （第 2 部分）**
+**生成和部署 (第2部分)**
 
-现在我们来探讨一下如何空间映射可能会影响性能。
-* 在 Unity 中，选择**窗口 > Profiler**。
-* 单击**添加 Profiler > GPU**。
-* 单击**Active Profiler > <Enter IP>** 。
-* 输入**IP 地址**你 HoloLens。
+现在, 让我们了解空间映射如何影响性能。
+* 在 Unity 中, 选择 " **Window > Profiler**"。
+* 单击 "**添加探查器 > GPU**"。
+* 单击 "**活动探查<Enter IP>器 >** 。
+* 输入 HoloLens 的**IP 地址**。
 * 单击“连接”。
-* 观察到 GPU 呈现一个帧所需的毫秒的数。
-* 停止从设备上运行应用程序。
-* 返回到 Visual Studio 并打开**SpatialMappingObserver.cs**。 将程序集 c# (通用 Windows) 项目的 HoloToolkit\SpatialMapping 文件夹中找到它。
-* 查找**Awake()** 函数，并添加以下代码行：**TrianglesPerCubicMeter = 1200;**
-* 重新部署到设备，在该项目，然后**重新连接探查器**。 观察中要呈现一个帧的毫秒数的更改。
-* 停止从设备上运行应用程序。
+* 观察 GPU 呈现帧所花的时间 (以毫秒为单位)。
+* 阻止应用程序在设备上运行。
+* 返回到 Visual Studio 并打开**SpatialMappingObserver.cs**。 你会在 Assembly-CSharp (通用 Windows) 项目的 HoloToolkit\SpatialMapping 文件夹中找到它。
+* 找到**唤醒 ()** 函数, 并添加以下代码行:**TrianglesPerCubicMeter = 1200;**
+* 将项目重新部署到你的设备, 然后**重新连接探查器**。 观察帧的呈现时间 (毫秒)。
+* 阻止应用程序在设备上运行。
 
-**在 Unity 中加载和保存**
+**在 Unity 中保存和加载**
 
-最后，让我们保存我们的空间网格，并将其加载到 Unity。
-* 返回到 Visual Studio 并删除**TrianglesPerCubicMeter**中添加行**Awake()** 函数在上一节。
-* 重新部署到设备项目。 我们现在应该运行带有**500**每三次方计量的三角形。
-* 打开浏览器并导航到你 HoloLens IPAddress 中输入**Windows Device Portal**。
-* 选择**三维视图**左侧面板中的选项。
-* 下**图面重建**选择**更新**按钮。
-* 观看显示窗口中显示已在 HoloLens 扫描的区域。
-* 若要保存房间扫描，请按**保存**按钮。
-* 打开你**下载**文件夹，以便找到保存的房间模型**SRMesh.obj**。
-* 复制**SRMesh.obj**到**资产**Unity 项目的文件夹。
-* 在 Unity 中，选择**SpatialMapping**对象中**层次结构**面板。
-* 找到**对象图面观察者 （脚本）** 组件。
-* 单击右侧的圆形**聊天室模型**属性。
-* 找到并选择**SRMesh**对象，然后关闭窗口。
-* 确认**聊天室模型**属性中的**Inspector**面板现在设置为**SRMesh**。
-* 按**播放**按钮以输入 Unity 的预览模式。
-* SpatialMapping 组件将从已保存的房间模型加载网格，因此可以在 Unity 中使用它们。
-* 切换到**场景**视图，以查看所有聊天室模型显示与线框着色器。
-* 按**播放**按钮再次退出预览模式。
+最后, 让我们保存房间网格, 并将其加载到 Unity。
+* 返回到 Visual Studio 并删除在上一节中在**唤醒 ()** 函数中添加的**TrianglesPerCubicMeter**行。
+* 将项目重新部署到你的设备。 现在, 我们应该运行每个立方米的**500**三角形。
+* 打开浏览器并输入你的 HoloLens IPAddress 以导航到**Windows 设备门户**。
+* 在左侧面板中选择 " **3D 视图**" 选项。
+* 在 "**表面重建**" 下, 选择 "**更新**" 按钮。
+* 观看您在 HoloLens 上扫描的区域显示在 "显示" 窗口中。
+* 若要保存房间扫描, 请按 "**保存**" 按钮。
+* 打开 "**下载**" 文件夹, 查找保存的会议室模型**SRMesh**。
+* 将**SRMesh**复制到 Unity 项目的 "**资产**" 文件夹。
+* 在 Unity 中, 在 "**层次结构**" 面板中选择 " **SpatialMapping** " 对象。
+* 找到**对象图面观察器 (脚本)** 组件。
+* 单击 "**房间模型**" 属性右侧的圆圈。
+* 找到并选择 " **SRMesh** " 对象, 然后关闭窗口。
+* 验证**检查器**面板中的 "**房间模型**" 属性现在是否设置为 " **SRMesh**"。
+* 按 "**播放**" 按钮进入 Unity 的预览模式。
+* SpatialMapping 组件将从保存的房间模型加载网格, 以便可以在 Unity 中使用它们。
+* 切换到**场景**视图, 查看以线框着色器显示的所有房间模型。
+* 再次按 "**播放**" 按钮以退出预览模式。
 
-**注意：** 下次在 Unity 中，输入预览模式下它将按默认加载已保存的空间网格。
+**注意：** 下次在 Unity 中进入预览模式时, 它会默认加载已保存的会议室网格。
 
-## <a name="chapter-2---visualization"></a>第 2 章-可视化效果
+## <a name="chapter-2---visualization"></a>第2章-可视化
 
 >[!VIDEO https://www.youtube.com/embed/RnkvXl-aXD4]
 
 **目标**
-* 了解着色器的基础知识。
-* 可视化周围的环境。
+* 了解着色器的基本知识。
+* 可视化你的环境。
 
 **说明**
-* 在 Unity 中的**层次结构**面板中，选择**SpatialMapping**对象。
-* 在中**Inspector**面板中，找到**空间映射管理器 （脚本）** 组件。
-* 单击右侧的圆形**面材料**属性。
+* 在 Unity 的 "**层次结构**" 面板中, 选择 " **SpatialMapping** " 对象。
+* 在 "**检查器**" 面板中, 找到**空间映射管理器 (脚本)** 组件。
+* 单击 "**表面材料**" 属性右侧的圆圈。
 * 找到并选择**BlueLinesOnWalls**材料并关闭窗口。
-* 在中**项目**面板**着色器**文件夹中，双击**BlueLinesOnWalls**在 Visual Studio 中打开着色器。
-* 这是一个简单的像素 （顶点片段） 着色器，完成以下任务：
-    1. 将顶点位置转换为世界空间中。
-    2. 检查顶点的普通以确定是否垂直像素。
-    3. 设置用于呈现像素的颜色。
+* 在 "**项目**面板**着色**器" 文件夹中, 双击**BlueLinesOnWalls**以在 Visual Studio 中打开着色器。
+* 这是一个简单像素 (顶点到片段) 着色器, 用于完成以下任务:
+    1. 将顶点的位置转换为世界空间。
+    2. 检查顶点的法线, 确定像素是否为垂直。
+    3. 设置要呈现的像素的颜色。
 
 **生成和部署**
-* 返回到 Unity 并按**播放**输入预览模式。
-* 蓝线将空间网格 （它会自动加载已保存扫描数据） 的所有垂直图面上呈现。
-* 切换到**场景**选项卡上调整聊天室的视图并查看整个空间网格在 Unity 中的显示方式。
-* 在中**项目**面板中，找到**材料**文件夹，然后选择**BlueLinesOnWalls**材料。
-* 修改某些属性，并查看所做的更改在 Unity 编辑器中的显示方式。
-    * 在中**Inspector**面板中，调整**LineScale**值，使各行显示较粗或变小。
-    * 在中**Inspector**面板中，调整**LinesPerMeter**值可以更改每面墙上显示的行数。
-* 单击**播放**再次以退出预览模式。
-* 生成和部署到 HoloLens 并观察着色器呈现实际的图面上的显示方式。
+* 返回到 Unity, 按 "**播放**" 进入预览模式。
+* 将在房间网格的所有垂直表面上呈现蓝线 (自动从已保存的扫描数据加载)。
+* 切换到 "**场景**" 选项卡以调整房间的视图, 并查看整个房间网格在 Unity 中的显示方式。
+* 在 "**项目**" 面板中, 找到 "**材料**" 文件夹, 并选择**BlueLinesOnWalls**材料。
+* 修改某些属性, 并查看更改在 Unity 编辑器中的显示方式。
+    * 在 "**检查器**" 面板中, 调整**LineScale**值, 使线条显得更粗或更细。
+    * 在 "**检查器**" 面板中, 调整**LinesPerMeter**值以更改每个墙壁上显示的行数。
+* 再次单击 "**播放**" 退出预览模式。
+* 生成并部署到 HoloLens, 并观察着色器呈现在真实表面上的显示方式。
 
-Unity 能够很好的预览材料，但始终签出呈现设备中的一个好主意。
+Unity 非常适合用于预览材料, 但在设备中签出渲染始终是一个好主意。
 
-## <a name="chapter-3---processing"></a>第 3 章 — 处理
+## <a name="chapter-3---processing"></a>第3章-处理
 
 >[!VIDEO https://www.youtube.com/embed/kaUKiNiDxwY]
 
 **目标**
-* 了解技术来处理应用程序中使用的空间映射数据。
-* 分析空间映射的数据，查找平面并删除三角形。
-* 使用平面全息图放置虚拟机。
+* 了解用于处理空间映射数据以在应用程序中使用的方法。
+* 分析空间映射数据以查找平面并删除三角形。
+* 使用平面放置全息图。
 
 **说明**
-* 在 Unity 中的**项目**面板中，**全息**文件夹中，找到**SpatialProcessing**对象。
-* 拖放**SpatialProcessing**对象插入**层次结构**面板。
+* 在 Unity 的 "**项目**" 面板**中, 找到**" **SpatialProcessing** " 对象。
+* 拖动 & 将**SpatialProcessing**对象放入**层次结构**面板。
 
-SpatialProcessing 预设可包括用于处理空间映射数据的组件。 **SurfaceMeshesToPlanes.cs**将查找并生成基于空间映射数据平面。 我们将在我们的应用程序中使用平面来表示墙、 楼层和上限。 此预设还包括**RemoveSurfaceVertices.cs**这可以从空间映射网格中删除顶点。 这可以用于在网格中创建的孔或删除过多 （因为可改为使用平面） 不再需要的三角形。
-* 在 Unity 中的**项目**面板中，**全息**文件夹中，找到**SpaceCollection**对象。
-* 拖放到**SpaceCollection**对象插入**层次结构**面板。
-* 在中**层次结构**面板中，选择**SpatialProcessing**对象。
-* 在中**Inspector**面板中，找到**播放空间管理器 （脚本）** 组件。
-* 双击**PlaySpaceManager.cs**若要在 Visual Studio 中打开它。
+SpatialProcessing prefab 包含用于处理空间映射数据的组件。 **SurfaceMeshesToPlanes.cs**将根据空间映射数据查找并生成平面。 我们将在应用程序中使用平面来表示墙壁、地面和上限。 此 prefab 还包含**RemoveSurfaceVertices.cs** , 可从空间映射网格中删除顶点。 这可用于在网格中创建孔, 或删除不再需要的多余三角形 (因为可以改用平面)。
+* 在 Unity 的 "**项目**" 面板**中, 找到**" **SpaceCollection** " 对象。
+* 将**SpaceCollection**对象拖放到**层次结构**面板。
+* 在 "**层次结构**" 面板中, 选择 " **SpatialProcessing** " 对象。
+* 在 "**检查器**" 面板中, 找到 "**播放空间管理器 (脚本)** " 组件。
+* 双击**PlaySpaceManager.cs** , 在 Visual Studio 中将其打开。
 
-PlaySpaceManager.cs 包含特定于应用程序的代码。 我们将功能添加到此脚本以启用以下行为：
-1. 停止收集数据空间映射后超过扫描时间限制 （10 秒）。
-2. 处理空间映射数据：
-    1. 使用 SurfaceMeshesToPlanes 创建更简单的表示形式世界平面 （墙壁、 楼层、 的上限，等等）。
-    2. 使用 RemoveSurfaceVertices 删除平面边界之内的图面上的三角形。
-3. 在世界中生成的全息集合并将其放置在靠近用户的墙上插座和 floor 平面上。
+PlaySpaceManager.cs 包含应用程序特定的代码。 我们将向此脚本添加功能, 以实现以下行为:
+1. 超过扫描时间限制后停止收集空间映射数据 (10 秒)。
+2. 处理空间映射数据:
+    1. 使用 SurfaceMeshesToPlanes 将世界的更简单表示为平面 (墙壁、楼层、上限等)。
+    2. 使用 RemoveSurfaceVertices 可删除位于平面边界内的曲面三角形。
+3. 在世界各地生成全息影像的集合, 并将其放在靠近用户的墙壁和地面平面上。
 
-完成编码练习中 PlaySpaceManager.cs，标记为或将该脚本完成的解决方案替换为从下面：
+完成标记为在 PlaySpaceManager.cs 中的编码练习, 或将脚本替换为以下已完成的解决方案:
 
 ```cs
 using System.Collections.Generic;
@@ -434,41 +434,41 @@ public class PlaySpaceManager : Singleton<PlaySpaceManager>
 ```
 
 **生成和部署**
-* 部署到 HoloLens 之前，按**播放**Unity 进入播放模式中的按钮。
-* 从文件加载的空间网格后，等待 10 秒之前空间映射网格上开始进行处理。
-* 处理完成后，将显示平面表示 floor、 墙、 ceiling、 等等。
-* 毕竟平面的发现，你应看到太阳系 floor 附近照相机的表上显示。
-* 两个海报应该过显示附近照相机墙上。 切换到**场景**选项卡上，如果你不能看到它们在**游戏**模式。
-* 按**播放**按钮再次退出 play 模式。
-* 生成并部署到 HoloLens，像往常一样。
-* 等待扫描和要完成的空间映射数据的处理。
-* 一旦您看到平面的尝试在您的世界中查找太阳系和海报。
+* 在部署到 HoloLens 之前, 请按 Unity 中的 "**播放**" 按钮进入播放模式。
+* 从文件加载房间网格后, 请等待10秒, 然后再开始处理空间映射网格。
+* 处理完成后, 平面将显示为表示地面、墙壁、天花板等。
+* 找到所有平面后, 应会看到一个阳历系统出现在摄像机附近的地面表上。
+* 照相机附近的墙壁上还应显示两个海报。 切换到 "**场景**" 选项卡 (如果在**游戏**模式下看不到这些选项卡)。
+* 再次按 "**播放**" 按钮以退出播放模式。
+* 照常生成并部署到 HoloLens。
+* 等待扫描和处理空间映射数据完成。
+* 看到飞机后, 请尝试在世界各地查找太阳系和海报。
 
-## <a name="chapter-4---placement"></a>第 4 章-放置
+## <a name="chapter-4---placement"></a>第4章-位置
 
 >[!VIDEO https://www.youtube.com/embed/Srhtpid1uZc]
 
 **目标**
-* 确定是否一张全息图将显示在图面。
-* 当一张全息图可以/无法放入图面上时向用户提供反馈。
+* 确定是否可在表面上容纳全息图。
+* 在图面上无法容纳时, 为用户提供反馈。
 
 **说明**
-* 在 Unity 中的**层次结构**面板中，选择**SpatialProcessing**对象。
-* 在中**Inspector**面板中，找到**平面到图面网格 （脚本）** 组件。
-* 更改**绘制平面**属性设置为**Nothing**以清除选定内容。
-* 更改**绘制平面**属性设置为**墙**，以便将呈现仅墙平面。
-* 在中**项目**面板中，**脚本**文件夹中，双击**Placeable.cs**若要在 Visual Studio 中打开它。
+* 在 Unity 的 "**层次结构**" 面板中, 选择 " **SpatialProcessing** " 对象。
+* 在 "**检查器**" 面板中, 找到 "**平面到平面 (脚本)** " 组件。
+* 将 "**绘图平面**" 属性更改为 "**无**" 以清除选定内容。
+* 将 "**绘图平面**" 属性更改为 "**墙壁**", 以便仅呈现墙壁平面。
+* 在 "**项目**" 面板的 "**脚本**" 文件夹中, 双击**Placeable.cs**以在 Visual Studio 中将其打开。
 
-**Placeable**脚本已经连接到平面查找完成后创建的海报和投影框。 我们需要做的就是取消注释一些代码，以及此脚本将实现以下目标：
-1. 确定是否一张全息图将显示在面来从中心和边界的多维数据集的四个角光线投射的细节。
-2. 检查曲面法线以确定它是平滑的 hologram 设有刷新。
-3. 呈现边界的多维数据集，围绕全息图放置时显示其实际大小。
-4. 转换卷影下/隐藏全息图以显示其中它将要被放置在基底/墙上插座上。
-5. 如果不能放置在图面上或绿色全息图，如果它能够为红色，呈现阴影。
-6. 重定向的全息图，它具有与关联的图面上的类型 （垂直或水平） 与对齐。
-7. 顺利地将全息图放在选定的面，以避免跳转或对齐行为。
+可**放置**脚本已附加到在完成平面查找之后创建的 "海报和投影" 框。 我们需要做的就是取消注释某些代码, 此脚本将实现以下内容:
+1. 通过 raycasting 从边界多维数据中心的中心和四个角来确定是否适合某个图面。
+2. 检查表面法线, 确定它是否平滑足以使全息影像能够坐在一起。
+3. 在子图的周围渲染边界立方体, 以在放置时显示其实际大小。
+4. 在全息图的下方/后面转换阴影, 以显示将其放在地面/墙壁上的位置。
+5. 如果无法在图面上放置全息影像, 则将阴影渲染为红色; 如果可能, 则显示绿色。
+6. 重新调整全息图的方向, 使之与它具有关联的表面类型 (垂直或水平) 对齐。
+7. 将全息图平滑放置在所选表面上, 以避免跳跃或对齐行为。
 
-取消注释下面，编码的演练中的所有代码或使用此已完成的解决方案中**Placeable.cs**:
+取消注释以下代码中的所有代码, 或在**Placeable.cs**中使用此完整解决方案:
 
 ```cs
 using System.Collections.Generic;
@@ -1052,40 +1052,40 @@ public class Placeable : MonoBehaviour
 ```
 
 **生成和部署**
-* 与前面一样，生成项目，并将部署到 HoloLens。
-* 等待扫描和要完成的空间映射数据的处理。
-* 当您看到的 solar system 时，注视在下面的投影文本框中，并执行选择手势以将其四处移动。 投影框处于选中状态，边界的多维数据集将是围绕投影框可见。
-* 移动头看在聊天室中的其他位置。 投影框应遵循你的视线移动。 当投影框下方的阴影变为红色时，不能在该图面上放置全息图。 当投影框下方的阴影将变为绿色时，您可以通过执行另一个选择手势放置全息图。
-* 查找并选择一个 wall，以将其移到新位置上的 holographic 海报。 请注意，不能将此海报放上下限或上限，并且它保持正确定向到每面墙因为四处移动。
+* 与之前一样, 生成项目并将其部署到 HoloLens。
+* 等待扫描和处理空间映射数据完成。
+* 看到阳历系统后, 请看下面的投影框, 然后执行选择手势来移动它。 选择 "投影" 框时, 将在投影框周围显示一个边界多维数据集。
+* 将您转到房间中的不同位置。 应遵循您的注视。 当投影框下的阴影变为红色时, 您不能将全息图放置在该图面上。 当投影框下的阴影变为绿色时, 可以通过执行另一个选择手势来放置全息图。
+* 在墙壁上查找并选择一个全息版海报, 以将其移动到新位置。 请注意, 不能将海报放置在地面或天花板上, 并且在四处移动时, 它将一直面向每个墙。
 
-## <a name="chapter-5---occlusion"></a>第 5 章-封闭
+## <a name="chapter-5---occlusion"></a>第5章-封闭
 
 >[!VIDEO https://www.youtube.com/embed/6Xrzh_w-7SE]
 
 **目标**
-* 确定一张全息图封闭空间映射网格的像素。
-* 应用不同的阻挡物技术来实现一个有趣的效果。
+* 确定空间映射网格是否封闭像素全息图。
+* 运用不同的封闭技术来实现有趣的效果。
 
 **说明**
 
-首先，我们将允许其他全息遮蔽而无需 occluding 现实世界空间映射网格：
-* 在中**层次结构**面板中，选择**SpatialProcessing**对象。
-* 在中**Inspector**面板中，找到**播放空间管理器 （脚本）** 组件。
-* 单击右侧的圆形**辅助材料**属性。
+首先, 我们将允许空间映射网格遮蔽其他影像, 而不 occluding 现实世界:
+* 在 "**层次结构**" 面板中, 选择 " **SpatialProcessing** " 对象。
+* 在 "**检查器**" 面板中, 找到 "**播放空间管理器 (脚本)** " 组件。
+* 单击 "**次要材料**" 属性右侧的圆圈。
 * 找到并选择**封闭**材料并关闭窗口。
 
-接下来，我们要将特殊行为添加到地球，以使其具有蓝色突出显示时它将成为封闭的 （如周日），另一个全息图或空间映射网格：
-* 在中**项目**面板**全息**文件夹中，展开**SolarSystem**对象。
+接下来, 我们将向地球添加特殊行为, 使其在另一个全息图 (例如 sun) 或空间映射网格封闭像素时具有蓝色突出显示:
+* 在 "**项目**" 面板的 "**全息影像**" 文件夹中, 展开 " **SolarSystem** " 对象。
 * 单击**地球**。
-* 在中**Inspector**面板中，查找地球的材料 （底部组件）。
-* 在中**着色器下拉列表**，更改到着色器**自定义 > OcclusionRim**。 只要它封闭的像素由另一个对象，这将致使地球周围的蓝色突出显示。
+* 在 "**检查器**" 面板中, 找到地球材料 (底部组件)。
+* 在 "**着色器" 下拉**> OcclusionRim 中, 将着色器更改为 "**自定义**"。 当另一对象封闭像素时, 这会在地球周围呈现蓝色突出显示。
 
-最后，我们将启用我们太阳系中行星 x 射线视觉效果。 我们将需要编辑**PlanetOcclusion.cs** （Scripts\SolarSystem 文件夹中找到） 以实现以下：
-1. 确定地球封闭 SpatialMapping 层 （空间网格和平面） 的像素。
-2. 只要它封闭的像素由 SpatialMapping 层显示全球线框表示形式。
-3. 它不阻止由 SpatialMapping 层时隐藏全球线框表示形式。
+最后, 我们将为太阳系中的行星启用 x 光视觉效果。 需要编辑**PlanetOcclusion.cs** (在 Scripts\SolarSystem 文件夹中找到) 以实现以下目的:
+1. 确定 SpatialMapping 层 (房间网格和平面) 是否封闭像素。
+2. 在 SpatialMapping 层封闭像素时显示行星的线框表示。
+3. 隐藏 SpatialMapping 层不阻止的行星的线框表示。
 
-请遵循 PlanetOcclusion.cs 中的编码练习，或使用以下解决方案：
+按照 PlanetOcclusion.cs 中的编码练习进行操作, 或使用以下解决方案:
 
 ```cs
 using UnityEngine;
@@ -1179,18 +1179,18 @@ public class PlanetOcclusion : MonoBehaviour
 ```
 
 **生成和部署**
-* 生成和部署应用程序到 HoloLens，像往常一样。
-* 等待扫描和完整的空间映射数据的处理 （应能看到显示在墙上的蓝线）。
-* 查找和选择太阳系的投影框，然后设置框旁边墙或落后一个计数器。
-* 通过隐藏图面，使其在海报或投影框对等后，可以查看基本的阻挡物。
-* 查找地球，只要去往另一个全息图或面后面应为蓝色突出显示效果。
-* 观看行星移动墙上或其他表面的空间中的后面。 现在已创建 x 射线视力，并可以看到其线框主干 ！
+* 照常构建应用程序并将其部署到 HoloLens。
+* 等待扫描和处理空间映射数据完成 (在墙壁上显示蓝色线)。
+* 找到并选择 "阳历系统" 的投影框, 然后设置墙或计数器后的框。
+* 您可以通过在 "海报" 或 "投影" 框中隐藏对等图面, 查看基本封闭。
+* 寻找地球, 无论何时出现在另一个全息图或表面上, 都应有蓝色的突出显示效果。
+* 观察行星在房间后移动, 或在房间中的其他表面上移动。 现在, 你有了 x 光愿景, 可以看到其线框骨架!
 
 ## <a name="the-end"></a>结束
 
-祝贺你！ 你现在已经完成**MR 空间 230:空间映射**。
-* 您知道如何扫描到 Unity 环境和负载空间映射数据。
-* 了解着色器和如何材料可用于重新实现世界可视化效果基础的知识。
-* 你已了解的新处理技术，用于查找平面和从网格中删除三角形。
-* 您就能够移动并将全息放是很有意义的图面上。
-* 您遇到不同的阻挡物技术，利用 x 射线视力的强大功能 ！
+祝贺你！ 你现在已经完成**了 MR 空间 230:空间映射**。
+* 你知道如何扫描环境并将空间映射数据加载到 Unity。
+* 你了解着色器的基本知识, 以及如何使用材料来重新可视化世界。
+* 了解了用于查找平面和从网格中删除三角形的新处理技术。
+* 您可以在有意义的表面上移动和放置全息影像。
+* 您经历了不同的封闭技术, 伴随了 x 光愿景的强大功能!

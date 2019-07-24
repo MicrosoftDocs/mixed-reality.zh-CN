@@ -1,88 +1,88 @@
 ---
-title: MR 和 Azure 302b-自定义视觉
-description: 完成此课程以了解如何定型机器学习模型，以及如何将训练的模型来识别混合的现实应用程序中的类似对象。
+title: MR 和 Azure 302b-自定义构想
+description: 完成本课程, 了解如何训练机器学习模型, 然后使用训练的模型识别混合现实应用程序内的类似对象。
 author: drneil
 ms.author: jemccull
 ms.date: 07/03/2018
 ms.topic: article
-keywords: azure 的混合现实、 学院、 unity、 教程、 api、 自定义影像，沉浸式、 hololens、 vr
+keywords: azure, 混合现实, 学院, unity, 教程, api, 自定义视觉, hololens, 沉浸, vr
 ms.openlocfilehash: e6e9782a8d559af660dc4765556f1e926c5360b1
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591813"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63553908"
 ---
 >[!NOTE]
->混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。  在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  它们都将保留在受支持的设备上继续工作。 将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。  在发布时，将使用这些教程的链接更新此通知。
+>混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
 
 <br>
 
 # <a name="mr-and-azure-302b-custom-vision"></a>MR 和 Azure 302b:自定义视觉
 
-在本课程中，您将学习如何识别自定义可视化内容中提供的映像，在混合的现实应用程序中使用 Azure 自定义视觉功能。
+在本课程中, 你将了解如何在混合现实应用程序中使用 Azure 自定义视觉功能, 识别提供的映像中的自定义视觉对象内容。
 
-此服务将允许你定型机器学习模型，使用对象映像。 然后将使用经过训练的模型来识别类似对象，提供的 Microsoft HoloLens 或照相机连接到您的 PC 以沉浸式 (VR) 耳机的相机捕捉。
+此服务允许你使用对象图像训练机器学习模型。 然后, 你将使用训练的模型来识别类似对象, 这些对象由 Microsoft HoloLens 的相机捕获或连接到你的电脑以用于沉浸式 (VR) 耳机提供。
 
 ![课程结果](images/AzureLabs-Lab302b-00.png)
 
-Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以构建自定义图像分类器。 这些分类器可以随后可用于新的映像识别，或进行分类、 设置了新的映像中的对象。 该服务提供简单、 易于使用、 联机门户以简化过程。 有关详细信息，请访问[Azure 自定义影像服务页](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/home)。
+Azure 自定义视觉是一种 Microsoft 认知服务, 允许开发人员构建自定义映像分类器。 然后, 可以将这些分类器与新图像一起使用, 以识别或分类该新图像中的对象。 此服务提供简单易用的联机门户来简化流程。 有关详细信息, 请访问[Azure 自定义影像服务页](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/home)。
 
-完成本课程时，之后您将拥有一个混合的现实应用程序，将能够在两个模式下工作：
+完成本课程后, 你将拥有一个混合现实应用程序, 可以在两种模式下工作:
 
--   **分析模式**： 自定义影像服务手动设置通过将映像上传、 创建标记，并训练服务来识别不同 （在此事例的鼠标和键盘） 的对象。 然后，您将创建一个 HoloLens 应用，它将捕获映像使用相机，并尝试识别现实生活中的这些对象。
+-   **分析模式**: 通过上传图像、创建标记以及训练服务来识别不同的对象 (在本例中为鼠标和键盘), 手动设置自定义影像服务。 然后, 将创建一个将使用相机捕获图像的 HoloLens 应用, 并尝试识别真实环境中的对象。
 
--   **训练模式**： 将实现将启用"培训模式"应用程序中的代码。 训练模式将允许您捕获使用 HoloLens 的照相机图像、 将捕获的映像上传到服务，并为自定义影像模型定型。
+-   **定型模式**: 将实现在应用中启用 "定型模式" 的代码。 训练模式允许使用 HoloLens 相机捕获图像, 将捕获的图像上传到服务, 并训练自定义视觉模型。
 
-本课程将介绍如何将结果从自定义影像服务到基于 Unity 的示例应用程序。 它将取决于您要应用于您可能要构建一个自定义应用程序的这些概念。
+本课程将介绍如何将自定义影像服务中的结果获取到基于 Unity 的示例应用程序。 您可以将这些概念应用到您可能生成的自定义应用程序。
 
 ## <a name="device-support"></a>设备支持
 
 <table>
 <tr>
-<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式耳机</a></th>
+<th>摘要</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td> MR 和 Azure 302b:自定义视觉</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
 > [!NOTE]
-> 尽管本课程主要专注于 HoloLens，您还可以应用到 Windows Mixed Reality 沉浸式 (VR) 耳机本课程中学习的内容。 因为沉浸式 (VR) 耳机不具有可访问照相机，您将需要连接到您的 PC 外部照相机。 按照课程时，您将看到说明您可能需要使用以支持沉浸式 (VR) 耳机的任何更改。
+> 尽管本课程主要侧重于 HoloLens, 但你也可以将本课程中学习的内容应用于 Windows Mixed Reality 沉浸 (VR) 耳机。 由于沉浸式 (VR) 耳机没有可访问的摄像机, 因此需要连接到电脑的外部照相机。 在本课程中, 您将看到有关支持沉浸式 (VR) 耳机时可能需要执行的任何更改的说明。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 > [!NOTE]
-> 本教程专为开发人员已基本熟悉 Unity 和C#。 此外需要注意的先决条件和本文档内的书面的说明表示什么已测试并验证在撰写本文时 (2018 年 7 月)。 你可以随意使用最新的软件，如中所列[安装的工具](install-the-tools.md)文章中，但它不应假定本课程中的信息将完全匹配将在较新软件比列中找到的内容下面。
+> 本教程面向具有 Unity 和C#的基本经验的开发人员。 另外, 请注意, 本文档中的先决条件和书面说明表明了撰写时经过测试和验证的内容 (2018 年7月)。 你可以随意使用最新的软件 (如[安装工具](install-the-tools.md)一文中所述), 但不应假定本课程中的信息将与下面列出的内容完全匹配。
 
-我们建议以下硬件和软件本课程：
+本课程建议采用以下硬件和软件:
 
-- 开发 PC、 一个[与 Windows Mixed Reality 兼容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)沉浸式 (VR) 耳机开发
-- [Windows 10 Fall Creators Update （或更高版本） 开发人员模式下启用](install-the-tools.md#installation-checklist)
+- [与 Windows Mixed Reality 兼容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)的开发 PC, 用于沉浸式 (VR) 耳机开发
+- [Windows 10 秋季创意者更新 (或更高版本) 已启用开发人员模式](install-the-tools.md#installation-checklist)
 - [最新的 Windows 10 SDK](install-the-tools.md#installation-checklist)
-- [Unity 2017.4](install-the-tools.md#installation-checklist)
+- [Unity 2017。4](install-the-tools.md#installation-checklist)
 - [Visual Studio 2017](install-the-tools.md#installation-checklist)
-- 一个[Windows Mixed Reality 沉浸式 (VR) 耳机](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)启用开发人员模式
-- 照相机连接到您的 PC （适用于沉浸式头戴式开发）
-- Internet 访问的 Azure 设置和自定义视觉 API 检索
-- 一系列的至少五 （5） 图像 （十 （10） 建议） 为你想自定义影像服务识别每个对象。 如果您愿意，可以使用[已随附此课程 （计算机鼠标和键盘） 的映像](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/ComputerVision_Images.zip)。
+- 启用了开发人员模式的[Windows Mixed Reality 沉浸式 (VR) 耳机](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)
+- 连接到电脑的相机 (适用于沉浸式耳机开发)
+- Azure 安装和自定义视觉 API 检索的 Internet 访问
+- 对于想要自定义影像服务识别的每个对象, 必须有一系列至少五 (5) 个映像 (为 10 (10))。 如果需要, 可以使用[本课程提供的映像 (计算机鼠标和键盘) ](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/ComputerVision_Images.zip)。
 
 ## <a name="before-you-start"></a>开始之前
 
-1.  若要避免遇到生成此项目的问题，强烈建议您创建在本教程中所述，在根或接近根文件夹中的项目 （长文件夹路径可能会导致在生成时的问题）。
-2.  设置和测试你 HoloLens。 如果需要支持设置你 HoloLens[请确保访问 HoloLens 安装文章](https://docs.microsoft.com/hololens/hololens-setup)。 
-3.  它是一个好办法开始开发新 HoloLens 应用程序 （有时它可帮助执行这些任务的每个用户） 时执行校准和优化传感器。 
+1.  为避免在生成此项目时遇到问题, 强烈建议您在本教程中的根或根文件夹中创建项目 (长文件夹路径可能会在生成时导致问题)。
+2.  设置并测试你的 HoloLens。 如果需要支持设置 HoloLens, 请[确保访问 hololens 设置一文](https://docs.microsoft.com/hololens/hololens-setup)。 
+3.  在开始开发新的 HoloLens 应用程序时, 最好执行校准和传感器调整 (有时它可以帮助为每个用户执行这些任务)。 
 
-有关校准的帮助，请遵循此[HoloLens 校准文章链接](calibration.md#hololens)。
+有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens)。
 
-有关传感器优化的帮助，请遵循此[HoloLens 传感器优化文章链接](sensor-tuning.md)。
+有关传感器优化的帮助, 请单击["HoloLens 传感器优化" 一文](sensor-tuning.md)。
 
-## <a name="chapter-1---the-custom-vision-service-portal"></a>第 1 章-自定义影像服务门户
+## <a name="chapter-1---the-custom-vision-service-portal"></a>第1章-自定义影像服务门户
 
-若要使用*自定义影像服务*在 Azure 中，你将需要配置要成为可用于应用程序的服务的实例。
+若要在 Azure 中使用*自定义影像服务*, 你将需要配置服务的实例, 使其可用于你的应用程序。
 
-1.  首先，[导航到*自定义影像服务*主页](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/)。
+1.  首先,[导航到*自定义影像服务*主页](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/)。
 
-2.  单击**开始**按钮。
+2.  单击 "**开始**" 按钮。
 
     ![](images/AzureLabs-Lab302b-01.png)
 
@@ -91,268 +91,268 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     ![](images/AzureLabs-Lab302b-02.png)
 
     > [!NOTE]
-    > 如果你还没有 Azure 帐户，你需要创建一个。 如果您按照本教程中在课堂或实验室的情况下，要求教师或新帐户的帮助设置 proctors 之一。
+    > 如果还没有 Azure 帐户, 则需要创建一个。 如果在课堂或实验室中按照本教程进行学习, 请咨询教师或 proctors, 以获得设置新帐户的帮助。
 
-4.  登录第一次，系统会提示使用*服务条款*面板。 单击该复选框以同意这些条款。 然后单击**我同意**。
+4.  首次登录后, 系统会提示 "*服务*" 面板。 单击相应的复选框以同意条款。 然后单击 "**我同意**"。
 
     ![](images/AzureLabs-Lab302b-03.png)
 
-5.  具有同意这些条款，你将导航至*项目*门户的一部分。 单击**新的项目**。
+5.  同意这些条款后, 你将会导航到门户的 "*项目*" 部分。 单击 "**新建项目**"。
 
     ![](images/AzureLabs-Lab302b-04.png)
 
-6.  将提示你指定项目的某些字段的右侧将显示一个选项卡。
+6.  右侧将显示一个选项卡, 该选项卡将提示你为项目指定某些字段。
 
-    1.  插入*名称*为你的项目。
+    1.  插入项目的*名称*。
 
-    2.  插入*描述*为你的项目 (*可选*)。
+    2.  为项目插入*说明*(*可选*)。
 
-    3.  选择*资源组*或新建一个。 资源组提供了一种方法来监视、 控制访问，预配和管理 Azure 资产的集合的计费。 建议将所有 Azure 服务与常见的资源组下的单个项目 （例如如这些课程））。
+    3.  选择一个*资源组*, 或创建一个新的资源组。 资源组提供一种监视、控制访问、预配和管理 Azure 资产集合的计费的方法。 建议将所有与单个项目关联的 Azure 服务 (如这些课程) 保存在一个公共资源组中。
 
-    4. 设置*项目类型*到**分类**
+    4. 将*项目类型*设置为**分类**
     
-    5. 设置*域*作为**常规**。
+    5. 将*域*设置为 "**常规**"。
 
         ![](images/AzureLabs-Lab302b-05.png)
 
-        > 如果你想要阅读更多有关 Azure 资源组，请[访问该资源组文章](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
+        > 若要了解有关 Azure 资源组的详细信息, 请[访问资源组一文](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
 
-7.  完成后，单击**创建项目**，你将重定向到自定义影像服务，项目页。
+7.  完成后, 单击 "**创建项目**", 你会被重定向到自定义影像服务, "项目" 页。
 
-## <a name="chapter-2---training-your-custom-vision-project"></a>第 2 章-培训您的自定义视觉项目
+## <a name="chapter-2---training-your-custom-vision-project"></a>第2章-培训自定义视觉项目
 
-一次在自定义视觉门户中，您的主要目标是训练你的项目以识别图像中的特定对象。 需要至少五 （5） 映像，但十 （10） 是首选方法，你想要识别您应用程序的每个对象。 [可以使用与此课程 （计算机鼠标和键盘） 提供的映像](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/ComputerVision_Images.zip)。 
+在自定义视觉门户中, 你的主要目标是训练你的项目以识别图像中的特定对象。 对于你希望应用程序识别的每个对象, 你需要至少五 (5) 个映像, 但最好是十 (10) 个映像。 [您可以使用本课程提供的图像 (计算机鼠标和键盘)](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/ComputerVision_Images.zip)。 
 
-若要训练你自定义影像服务的项目：
+训练自定义影像服务项目:
 
 1.  单击 **+** 按钮旁边 **标记。**
 
     ![](images/AzureLabs-Lab302b-06.png)
 
-2.  添加**名称**你想要识别的对象。 单击**保存**。
+2.  添加要识别的对象的**名称**。 单击 "**保存**"。
 
     ![](images/AzureLabs-Lab302b-07.png)
 
-3.  你会注意到您**标记**已添加 （可能需要重新加载它才会显示在页面）。 如果未选中，请单击与你的新标记，该复选框。
+3.  你将注意到已添加**标记**(可能需要重新加载页面以使其显示)。 单击新标记旁边的复选框 (如果尚未选中)。
 
     ![](images/AzureLabs-Lab302b-08.png)
 
-4.  单击**添加映像**中页的中心。
+4.  单击页中心的 "**添加图像**"。
 
     ![](images/AzureLabs-Lab302b-09.png)
 
-5.  单击**浏览本地文件**，并搜索，然后选择你想要上传，最小为映像五 （5)。 请记住所有这些映像应包含将训练的对象。
+5.  单击 "**浏览本地文件**", 然后选择 "要上传的映像", 然后选择 "最小为五 (5)"。 请记住, 这些映像应该包含您正在训练的对象。
 
     > [!NOTE]
-    >  一次，若要上传，可以选择多个映像。
+    >  你可以一次选择多个图像来上传。
 
-6.  一旦您所见的映像的选项卡中，选择中的适当标记**我标记**框。
+6.  在选项卡中看到图像后, 请在 "**我的标记**" 框中选择相应的标记。
 
     ![](images/AzureLabs-Lab302b-10.png)
 
-7.  单击**将文件上传**。 随即开始将文件上传。 上传的确认后，单击**完成**。
+7.  单击 "上**传文件**"。 文件将开始上传。 确认上传后, 单击 "**完成**"。
 
     ![](images/AzureLabs-Lab302b-11.png)
 
-8.  重复相同的过程来创建新**标记**名为**键盘**并将相应的照片上传它。 请确保 **取消选中** *鼠标* 创建新标记，因此，若要显示后 *将映像添加* 窗口。
+8.  重复相同的过程, 创建名为 "**键盘**" 的新**标记**, 并为其上传适当的照片。 请确保 **取消选中** *鼠标* 创建新标记，因此，若要显示后 *将映像添加* 窗口。
 
-9.  设置这两个标记后，单击**训练**，并第一次训练迭代将开始构建。
+9.  设置两个标记后, 单击 "**训练**", 第一次训练迭代将开始生成。
 
     ![](images/AzureLabs-Lab302b-12.png)
 
-10. 一旦建立，您将能够看到两个按钮名为**设为默认**并**预测 URL**。 单击**设为默认**第一次，然后单击**预测 URL**。
+10. 构建后, 你将能够看到两个称为 "**创建默认值**和**预测 URL**" 的按钮。 先单击 "**设为默认值**", 然后单击 "**预测 URL**"。
 
     ![](images/AzureLabs-Lab302b-13.png)
 
     > [!NOTE] 
-    > 此操作，请从提供的终结点 URL 设置为准*迭代*已被标记为默认值。 同样，如果您更高版本进行的新*迭代*和更新为默认值，不需要更改代码。
+    > 从此提供的端点 URL 设置为标记为默认值的任何*迭代*。 这种情况下, 如果您以后生成新的*迭代*并将其更新为默认值, 则无需更改代码。
 
-11. 一旦你单击*预测 URL*，打开*记事本*，然后复制并粘贴**URL**和**预测密钥**，以便你可以需要在代码中更高版本时进行检索。
+11. 单击 "*预测 URL*" 后, 打开 "*记事本*", 复制并粘贴该**url**和**预测密钥**, 以便稍后在代码中需要时进行检索。
 
     ![](images/AzureLabs-Lab302b-14.png)
 
-12. 单击**嵌齿**顶部的屏幕。
+12. 单击屏幕右上角的**齿轮**。
 
     ![](images/AzureLabs-Lab302b-15.png)
 
-13. 复制**培训键**将其粘贴到*记事本*，以供将来使用。
+13. 复制**定型密钥**, 并将其粘贴到*记事本*中供以后使用。
 
     ![](images/AzureLabs-Lab302b-16.png)
 
-14. 另外，将复制你**项目 Id**，还将其粘贴到你*记事本*文件，以供将来使用。
+14. 还应复制**项目 Id**, 并将其粘贴到*记事本*文件中供以后使用。
 
     ![](images/AzureLabs-Lab302b-16a.png)
 
-## <a name="chapter-3---set-up-the-unity-project"></a>第 3 章 — 设置 Unity 项目
+## <a name="chapter-3---set-up-the-unity-project"></a>第3章-设置 Unity 项目
 
-以下是一组典型使用混合现实，进行开发，并在这种情况下，是合适的模板的其他项目。
+下面是用于使用混合现实进行开发的典型设置, 因此, 这是其他项目的一个不错的模板。
 
-1.  打开*Unity*然后单击**新建**。
+1.  打开*Unity* , 并单击 "**新建**"。
 
     ![](images/AzureLabs-Lab302b-17.png)
 
-2.  现在，需要提供的 Unity 项目名称。 插入**AzureCustomVision。** 请确保项目模板设置为**3D**。 设置**位置**到适合于您的某个位置 （请记住，更接近于根目录是更好）。 然后，单击**创建项目**。
+2.  现在需要提供 Unity 项目名称。 插入**AzureCustomVision。** 请确保将项目模板设置为**3d**。 将位置设置为合适的**位置**(请记住, 更接近根目录更好)。 然后单击 "**创建项目**"。
 
     ![](images/AzureLabs-Lab302b-18.png)
 
-3.  使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。 转到 **编辑* > *首选项** ，然后在新窗口中，导航到 **外部工具** 。 更改**外部脚本编辑器**到**Visual Studio 2017**。 关闭**首选项**窗口。
+3.  当 Unity 处于打开状态时, 有必要选中 "默认**脚本编辑器**" 设置为 " **Visual Studio**"。 转到 **编辑* > *首选项** ，然后在新窗口中，导航到 **外部工具** 。 将**外部脚本编辑器**更改为**Visual Studio 2017**。 关闭 "**首选项**" 窗口。
 
     ![](images/AzureLabs-Lab302b-19.png)
 
-4.  接下来，请转到**文件 > 生成设置**，然后选择**通用 Windows 平台**，然后单击**切换平台**按钮以应用你的选择。
+4.  接下来, 转到 "**文件 > 生成设置**", 选择 "**通用 Windows 平台**", 然后单击 "**切换平台**" 按钮以应用所选内容。
 
     ![](images/AzureLabs-Lab302b-20.png)
 
-5.  在仍处于**文件 > 生成设置**并确保选中：
+5.  尽管仍处于**文件 > 生成设置**, 但请确保:
 
-    1.  **设备为目标**设置为**Hololens**
+    1.  **目标设备**设置为**Hololens**
 
-        > 对于沉浸式耳机，设置**目标设备**到*任一设备*。
+        > 对于沉浸式耳机, 将 "**目标设备**" 设置为 "*任何设备*"。
         
-    2.  **生成的类型**设置为**D3D**
-    3.  **SDK**设置为**最新安装**
-    4.  **Visual Studio 版本**设置为**最新安装**
-    5.  **生成并运行**设置为**本地计算机**
-    6.  保存场景，并将其添加到生成。 
+    2.  **生成类型**设置为**D3D**
+    3.  **SDK**设置为 "**最新安装**"
+    4.  **Visual Studio 版本**设置为 "**最新安装**"
+    5.  "**生成并运行**" 设置为 "**本地计算机**"
+    6.  保存场景并将其添加到生成中。 
 
-        1. 选择执行此**添加打开场景**。 保存窗口将显示。
+        1. 通过选择 "**添加打开的场景**" 来执行此操作。 将显示 "保存" 窗口。
 
             ![](images/AzureLabs-Lab302b-21.png)
 
-        2. 创建一个新文件夹，以及任何未来、 场景，然后选择**新文件夹**按钮，创建一个新文件夹，其命名**场景**。
+        2. 为此创建新文件夹, 并为将来的任何场景创建一个新文件夹, 然后选择 "**新建文件夹**" 按钮以创建新文件夹, 将其命名为**场景**。
 
             ![](images/AzureLabs-Lab302b-22.png)
 
-        3. 打开新建**场景**文件夹，然后在*文件的名称：* 文本字段中，键入**CustomVisionScene**，然后单击**保存**。
+        3. 打开新创建的**场景**文件夹, 然后在 "文件名 *:* 文本" 字段中, 键入**CustomVisionScene**, 然后单击 "**保存**"。
 
             ![](images/AzureLabs-Lab302b-23.png)
 
-            > 请注意，必须将保存您的 Unity 场景中*资产*文件夹中，因为它们必须与 Unity 项目相关联。 创建场景文件夹 （和其他类似的文件夹） 是用于结构化的 Unity 项目的典型方式。
+            > 请注意, 必须将 Unity 场景保存在 "*资产*" 文件夹中, 因为它们必须与 Unity 项目相关联。 创建场景文件夹 (以及其他类似文件夹) 是构造 Unity 项目的典型方式。
             
-    7.  中的剩余设置，*生成设置*，应暂时保留为默认值。
+    7.  现在, "*生成设置*" 中的其余设置应保留为默认值。
 
         ![](images/AzureLabs-Lab302b-24.png)
 
-6.  在*生成设置*窗口中，单击**播放器设置**按钮，这将打开相关面板中的空间中的*检查器*所在。
+6.  在 "*生成设置*" 窗口中, 单击 "**播放机设置**" 按钮, 这会在*检查器*所在的空间中打开相关面板。
 
-7. 在此面板中，需要验证几个设置：
+7. 在此面板中, 需要验证几项设置:
 
-    1.  在中**其他设置**选项卡：
+    1.  在 "**其他设置**" 选项卡中:
 
-        1.  **脚本运行时版本**应**实验 （.NET 4.6 等效）** ，这将触发需要重新启动编辑器。
+        1.  **脚本运行时版本**应为试验性的 **(.Net 4.6 等效项)** , 这会触发重新启动编辑器的需要。
 
-        2. **脚本编写后端**应为 **.NET**
+        2. **脚本编写后端**应为 **.net**
 
-        3. **API 兼容性级别**应为 **.NET 4.6**
+        3. **API 兼容级别**应为 **.net 4.6**
 
         ![](images/AzureLabs-Lab302b-25.png)
 
-    2.  内**发布设置**选项卡上，在**功能**，检查：
+    2.  在 "**发布设置**" 选项卡的 "**功能**" 下, 检查:
 
         1. **InternetClient**
 
-        2.  **Webcam**
+        2.  **摄像头**
 
-        3. **Microphone**
+        3. **十分**
 
         ![](images/AzureLabs-Lab302b-26.png)
 
-    3.  中的后面部分面板**XR 设置**(下面找到**发布设置**)，刻度线**虚拟现实支持**，请确保**Windows 混合现实 SDK**添加。
+    3.  在面板中, 在 " **XR" 设置**(位于 "**发布设置**" 下) 中, 在 "**支持的虚拟现实**" 下, 确保已添加**Windows Mixed reality SDK** 。
 
     ![](images/AzureLabs-Lab302b-27.png)
 
-8.  回到*生成设置* *Unity C\#项目*不再灰显; 选中它旁边的复选框。
+8.  返回*生成设置* *Unity\# C 项目*不再灰显; 勾选此的旁边的复选框。
 
-9.  关闭生成设置窗口。
+9.  关闭 "生成设置" 窗口。
 
-10.  保存您的场景和项目 (**文件 > 保存场景文件 > 保存项目**)。
+10.  保存场景和项目 (**file > SAVE 场景/file > SAVE project**)。
 
 
-## <a name="chapter-4---importing-the-newtonsoft-dll-in-unity"></a>第 4 章-导入 Unity 中 Newtonsoft DLL
+## <a name="chapter-4---importing-the-newtonsoft-dll-in-unity"></a>第4章-导入 Unity 中的 Newtonsoft.json DLL
 
 > [!IMPORTANT]
-> 如果你想要跳过*Unity 设置*组件的此课程，并继续直接插入代码，欢迎下载这[Azure MR 302b.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/Azure-MR-302b.unitypackage)，将其导入项目中，作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)，然后继续从[第 6 章](#chapter-6---create-the-customvisionanalyser-class)。
+> 如果要跳过本课程的*Unity 设置*组件, 并继续直接进入代码, 请随时下载此[Azure-302b. unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/Azure-MR-302b.unitypackage), 将其作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)导入项目, 然后从[第6章继续](#chapter-6---create-the-customvisionanalyser-class).
 
-此课程需要使用**Newtonsoft**库，可以作为 DLL 添加到你的资产。 包包含[可以从以下链接下载此库](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/NewtonsoftDLL.unitypackage)。
-若要 Newtonsoft 库导入到你的项目，使用了随附此课程的 Unity 包。
+本课程需要使用**newtonsoft.json**库, 可将其作为 DLL 添加到资产中。 [可以从此链接下载包含此库](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/NewtonsoftDLL.unitypackage)的包。
+若要将 Newtonsoft.json 库导入项目, 请使用本课程附带的 Unity 包。
 
 1.  添加 *.unitypackage* 到使用 Unity **资产* > *导入* *包* > *自定义* *包** 菜单选项。
 
-2.  在中**导入 Unity 程序包**弹出框、 下 （其中包含） 确保一切**插件**处于选中状态。
+2.  在弹出的 "**导入 Unity 包**" 框中, 确保选择了 "所有" (并包括)**插件**。
 
     ![](images/AzureLabs-Lab302b-28.png)
 
-3.  单击**导入**按钮将项添加到你的项目。
+3.  单击 "**导入**" 按钮, 将项添加到项目。
 
-4.  转到**Newtonsoft**下的文件夹**插件**在项目视图中，选择*Newtonsoft.Json 插件*。
+4.  在项目视图中, 在 "**插件**" 下, 单击 " **newtonsoft.json** " 文件夹, 然后选择 " *newtonsoft.json" 插件*。
 
     ![](images/AzureLabs-Lab302b-29.png)
 
-5.  与*Newtonsoft.Json 插件*选择，确保**Any 平台**是**未选中**，然后确保**WSAPlayer**也**unchecked**，然后单击**应用**。 这只是为了确认正确配置文件。
+5.  选择*newtonsoft.json 插件*后, 请确保**未选中** **任何平台**, 然后确保还**取消选中** **WSAPlayer** , 并单击 "**应用**"。 这只是为了确认已正确配置文件。
 
     ![](images/AzureLabs-Lab302b-30.png)
 
     > [!NOTE]
-    > 将标记这些插件将它们配置为仅使用在 Unity 编辑器中。 有一组不同的它们从 Unity 项目会导出后，将使用 WSA 文件夹中。
+    > 标记这些插件会将它们配置为仅在 Unity 编辑器中使用。 在从 Unity 导出项目后, 将使用 WSA 文件夹中的一组不同的组。
 
-6.  接下来，您需要打开**WSA**文件夹，在**Newtonsoft**文件夹。 您将看到刚配置的相同文件的副本。 选择的文件，然后在检查器中，确保的
-    -   **任何平台**是**未选中状态** 
-    -   **仅** **WSAPlayer**是**检查**
-    -   **不处理**是**检查**
+6.  接下来, 需要在**newtonsoft.json**文件夹中打开**WSA**文件夹。 你将看到刚才配置的同一文件的副本。 选择该文件, 然后在 "检查器" 中, 确保
+    -   **未选中** **任何平台** 
+    -   **仅** **已选中** **WSAPlayer**
+    -   不**检查** **进程**
 
     ![](images/AzureLabs-Lab302b-31.png)
 
-## <a name="chapter-5---camera-setup"></a>第 5 章-照相机设置
+## <a name="chapter-5---camera-setup"></a>第5章-照相机设置
 
-1.  在层次结构窗格中，选择*Main Camera*。
+1.  在 "层次结构" 面板中, 选择 "*摄像机*"。
 
-2.  选择后，你将能够看到的所有组件*Main Camera*中*检查器面板*。
+2.  选择后, 你将能够在 "*检查器" 面板*中看到*主相机*的所有组件。
 
-    1.  *照相机*对象必须命名为**Main Camera** （请注意拼写 ！）
+    1.  *照相机*对象必须命名为 "**主相机**" (请注意拼写正确!)
 
-    2.  Main Camera**标记**必须设置为**MainCamera** （请注意拼写 ！）
+    2.  必须将主相机**标记**设置为**MainCamera** (请注意拼写!)
 
-    3.  请确保**转换位置**设置为**0，0，0**
+    3.  请确保将**转换位置**设置为**0, 0, 0**
 
-    4.  设置**清除标志**到**纯色**（忽略这的沉浸式头戴式耳机）。
+    4.  将**清除标志**设置为**纯色**(对于沉浸式耳机, 请忽略此设置)。
 
-    5.  设置**背景**相机的颜色组件**黑色、 Alpha 0 (十六进制代码: #00000000)** （忽略这的沉浸式头戴式耳机）。
+    5.  将相机组件的**背景**色设置为**黑色、Alpha 0 (十六进制代码: #00000000)** (对沉浸式耳机忽略此颜色)。
 
     ![](images/AzureLabs-Lab302b-32.png)
 
 
-## <a name="chapter-6---create-the-customvisionanalyser-class"></a>章 6-创建 CustomVisionAnalyser 类。
+## <a name="chapter-6---create-the-customvisionanalyser-class"></a>第6章-创建 CustomVisionAnalyser 类。
 
-此时已准备好编写一些代码。
+此时, 您可以编写一些代码。
 
-您将首先*CustomVisionAnalyser*类。
+你将从*CustomVisionAnalyser*类开始。
 
 > [!NOTE]
-> 对调用**自定义影像服务**中所示的代码所做下面所用**自定义视觉 REST API**。 通过使用此，您将学会如何实现并使用此 api （适用于了解如何在您自己实现类似的内容）。 请注意，Microsoft 提供了**自定义影像服务 SDK** ，还可用于对服务进行调用。 有关详细信息，请访问[自定义影像服务 SDK](https://github.com/Microsoft/Cognitive-CustomVision-Windows/)一文。
+> 在下面显示的代码中对**自定义影像服务**所做的调用是使用**自定义视觉 REST API**进行的。 通过使用此功能, 您将了解如何实现和使用此 API (对于理解如何实现类似于您自己的操作非常有用)。 请注意, Microsoft 提供了一个**自定义影像服务 SDK** , 该 SDK 还可用于对服务进行调用。 有关详细信息, 请访问[自定义影像服务 SDK](https://github.com/Microsoft/Cognitive-CustomVision-Windows/)文章。
 
-此类负责：
+此类负责:
 
--   正在加载最新的映像捕获为一个字节数组。
+-   加载作为字节数组捕获的最新映像。
 
--   将字节数组发送到你的 Azure*自定义影像服务*实例以进行分析。
+-   将字节数组发送给 Azure*自定义影像服务*实例以进行分析。
 
--   接收响应以 JSON 字符串。
+-   接收 JSON 字符串形式的响应。
 
--   反序列化响应并传递得到*预测*到*SceneOrganiser*类，该类将负责响应的显示方式。
+-   反序列化响应并将结果*预测*传递给*SceneOrganiser*类, 这将负责显示响应的方式。
 
-若要创建此类：
+若要创建此类:
 
-1.  在中右击*资产文件夹*位于*项目面板*，然后单击**创建 > 文件夹**。 将该文件夹**脚本**。
+1.  右键单击位于 "*项目" 面板*中的*资产文件夹*, 然后单击 "**创建 > 文件夹**。 调用文件夹**脚本**。
 
     ![](images/AzureLabs-Lab302b-33.png)
 
-2.  双击刚创建的文件夹，以将其打开。
+2.  双击刚创建的文件夹以将其打开。
 
-3.  在文件夹中，右键单击，然后单击**创建** > **C\#脚本**。 脚本命名为*CustomVisionAnalyser*。
+3.  右键单击文件夹内, 然后单击 "**创建** > **C\#脚本**"。 将脚本命名为*CustomVisionAnalyser*。
 
-4.  双击新*CustomVisionAnalyser*脚本以将其与打开**Visual Studio**。
+4.  双击新的*CustomVisionAnalyser*脚本以通过**Visual Studio**打开它。
 
-5.  更新你的文件以匹配以下顶部的命名空间：
+5.  更新文件顶部的命名空间, 以匹配以下内容:
 
     ```csharp
     using System.Collections;
@@ -362,7 +362,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     using Newtonsoft.Json;
     ```
 
-6.  在中*CustomVisionAnalyser*类中，添加以下变量：
+6.  在*CustomVisionAnalyser*类中, 添加以下变量:
 
     ```csharp
         /// <summary>
@@ -387,9 +387,9 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     ```
 
     > [!NOTE]
-    > 请确保插入你**预测键**到**predictionKey**变量和你**预测终结点**到**predictionEndpoint**变量。 复制到*记事本*前面的课程。
+    > 请确保将**预测密钥**插入到**predictionKey**变量中, 并将**预测终结点**插入到**predictionEndpoint**变量中。 您在本课程的前面部分将它们复制到*记事本*。
 
-7.  为代码**Awake()** 现在需要添加初始化该实例变量：
+7.  现在需要添加用于**唤醒 ()** 的代码以初始化实例变量:
 
     ```csharp
         /// <summary>
@@ -402,12 +402,12 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-8.  删除方法**start （)** 并**update （)** 。
+8.  删除方法**Start ()** 和**Update ()** 。
 
-9.  接下来，添加协同程序 (使用静态**GetImageAsByteArray()** 它下面的方法)，这将获取由捕获映像的分析结果*ImageCapture*类。
+9.  接下来, 添加协同程序 (在其下面带有 static **GetImageAsByteArray ()** 方法), 该方法将获得*ImageCapture*类捕获的映像的分析结果。
 
     > [!NOTE]
-    > 在中**AnalyseImageCapture**协同程序，没有调用*SceneOrganiser*尚若要创建的类。 因此，**保留这些行注释现在**。
+    > 在**AnalyseImageCapture**协同程序中, 有一个对你还需要创建的*SceneOrganiser*类的调用。 因此, 请**暂时将这些行注释为**。
 
     ```csharp    
         /// <summary>
@@ -460,24 +460,24 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-10.  请务必保存中所做的更改**Visual Studio**才会回到**Unity**。
+10.  在返回到**Unity**之前, 请务必保存**Visual Studio**中所做的更改。
 
-## <a name="chapter-7---create-the-customvisionobjects-class"></a>章 7-创建 CustomVisionObjects 类
+## <a name="chapter-7---create-the-customvisionobjects-class"></a>第7章-创建 CustomVisionObjects 类
 
-现在，您将创建的类是*CustomVisionObjects*类。
+你现在将创建的类是*CustomVisionObjects*类。
 
-此脚本包含的对象由其他类用于序列化和反序列化对所做的调用数*自定义影像服务*。
+此脚本包含其他类用于序列化和反序列化对*自定义影像服务*进行的调用的许多对象。
 
 > [!WARNING]
-> 非常重要，需要记下的终结点，可自定义影像服务提供，与以下 JSON 结构已设置为使用[*自定义视觉预测 v2.0*](https://southcentralus.dev.cognitive.microsoft.com/docs/services/450e4ba4d72542e889d93fd7b8e960de/operations/5a6264bc40d86a0ef8b2c290)。 如果您拥有的不同版本，您可能需要更新以下结构。
+> 请务必记下自定义影像服务提供的终结点, 因为下面的 JSON 结构已设置为使用[*自定义视觉预测*](https://southcentralus.dev.cognitive.microsoft.com/docs/services/450e4ba4d72542e889d93fd7b8e960de/operations/5a6264bc40d86a0ef8b2c290)v2.0。 如果你的版本不同, 可能需要更新以下结构。
 
-若要创建此类：
+若要创建此类:
 
-1.  内右击**脚本**文件夹，然后单击**创建** > **C\#脚本**。 调用脚本*CustomVisionObjects*。
+1.  右键单击 "**脚本**" 文件夹内, 然后单击 "**创建** > **C\#脚本**"。 调用脚本*CustomVisionObjects*。
 
-2.  双击新**CustomVisionObjects**脚本以将其与打开**Visual Studio**。
+2.  双击新的**CustomVisionObjects**脚本以通过**Visual Studio**打开它。
 
-3.  将以下命名空间添加到文件顶部：
+3.  将以下命名空间添加到文件顶部:
 
     ```csharp
     using System;
@@ -486,9 +486,9 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     using UnityEngine.Networking;
     ```
 
-4.  删除**start （)** 并**update （)** 中的方法*CustomVisionObjects*类; 此类应为空。
+4.  删除*CustomVisionObjects*类中的**Start ()** 和**Update ()** 方法;此类现在应为空。
 
-5.  添加以下类**外部** *CustomVisionObjects*类。 这些对象由*Newtonsoft*库进行序列化和反序列化响应数据：
+5.  将以下类添加到*CustomVisionObjects*类的**外部**。 *Newtonsoft.json*库使用这些对象序列化和反序列化响应数据:
 
     ```csharp
     // The objects contained in this script represent the deserialized version
@@ -604,17 +604,17 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     }
     ```
 
-## <a name="chapter-8---create-the-voicerecognizer-class"></a>章 8-创建 VoiceRecognizer 类
+## <a name="chapter-8---create-the-voicerecognizer-class"></a>第8章-创建 VoiceRecognizer 类
 
 此类将识别用户的语音输入。
 
-若要创建此类：
+若要创建此类:
 
-1.  内右击**脚本**文件夹，然后单击**创建** > **C\#脚本**。 调用脚本*VoiceRecognizer*。
+1.  右键单击 "**脚本**" 文件夹内, 然后单击 "**创建** > **C\#脚本**"。 调用脚本*VoiceRecognizer*。
 
-2.  双击新**VoiceRecognizer**脚本以将其与打开**Visual Studio**。
+2.  双击新的**VoiceRecognizer**脚本以通过**Visual Studio**打开它。
 
-3.  添加以下命名空间上述*VoiceRecognizer*类：
+3.  将以下命名空间添加到*VoiceRecognizer*类的上方:
 
     ```csharp
     using System;
@@ -624,7 +624,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     using UnityEngine.Windows.Speech;
     ```
 
-4.  然后添加以下变量内的*VoiceRecognizer*类，更高版本*start （)* 方法：
+4.  然后, 将以下变量添加到*VoiceRecognizer*类中的*Start ()* 方法之上:
 
     ```csharp
         /// <summary>
@@ -643,7 +643,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         private Dictionary<string, Action> _keywords = new Dictionary<string, Action>();
     ```
 
-5.  添加**Awake()** 并**start （)** 方法，后者将设置注册该用户*关键字*能够识别相关联的图像标记时：
+5.  添加**唤醒 ()** 和**Start ()** 方法, 后者将设置在将标记关联到图像时要识别的用户*关键字*:
 
     ```csharp
         /// <summary>
@@ -688,9 +688,9 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-6.  删除**update （)** 方法。
+6.  删除**Update ()** 方法。
 
-7.  添加以下处理程序，每当识别语音输入时调用：
+7.  添加以下处理程序, 只要识别语音输入, 就会调用该处理程序:
 
     ```csharp    
         /// <summary>
@@ -707,22 +707,22 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-8.  请务必保存中所做的更改**Visual Studio**才会回到**Unity**。
+8.  在返回到**Unity**之前, 请务必保存**Visual Studio**中所做的更改。
 
 > [!NOTE]
-> 不必担心可能显示为具有错误，将提供进一步的类，可以修复这些代码。
+> 不要担心可能出现错误的代码, 因为您很快就会提供更多的类, 这将修复这些问题。
 
-## <a name="chapter-9---create-the-customvisiontrainer-class"></a>章 9-创建 CustomVisionTrainer 类
+## <a name="chapter-9---create-the-customvisiontrainer-class"></a>第9章-创建 CustomVisionTrainer 类
 
-此类将链接的一系列 web 调用来训练*自定义影像服务*。 每次调用将代码的正上方的详细信息中所述。
+此类将链接一系列 web 调用以训练*自定义影像服务*。 每次调用都将在代码的上方详细说明。
 
-若要创建此类：
+若要创建此类:
 
-1.  内右击**脚本**文件夹，然后单击**创建** > **C\#脚本**。 调用脚本*CustomVisionTrainer*。
+1.  右键单击 "**脚本**" 文件夹内, 然后单击 "**创建** > **C\#脚本**"。 调用脚本*CustomVisionTrainer*。
 
-2.  双击新*CustomVisionTrainer*脚本以将其与打开**Visual Studio**。
+2.  双击新的*CustomVisionTrainer*脚本以通过**Visual Studio**打开它。
 
-3.  添加以下命名空间上述*CustomVisionTrainer*类：
+3.  将以下命名空间添加到*CustomVisionTrainer*类的上方:
 
     ```csharp
     using Newtonsoft.Json;
@@ -734,14 +734,14 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     using UnityEngine.Networking;
     ```
 
-4.  然后添加以下变量内的*CustomVisionTrainer*类，更高版本**start （)** 方法。 
+4.  然后, 将以下变量添加到*CustomVisionTrainer*类中的**Start ()** 方法之上。 
 
     > [!NOTE]
-    > 中提供此处使用的培训 URL*自定义视觉训练 1.2*文档，并具有的结构： https://southcentralus.api.cognitive.microsoft.com/customvision/v1.2/Training/projects/{projectId}/  
-    > 有关详细信息，请访问[ *v1.2 引用自定义视觉训练 API*](https://southcentralus.dev.cognitive.microsoft.com/docs/services/f2d62aa3b93843d79e948fe87fa89554/operations/5a3044ee08fa5e06b890f11f)。
+    > 此处使用的训练 URL 在*自定义视觉培训 1.2*文档中提供, 并具有以下结构: https://southcentralus.api.cognitive.microsoft.com/customvision/v1.2/Training/projects/{projectId}/  
+    > 有关详细信息, 请访问[*自定义视觉培训 v1.0 参考 API*](https://southcentralus.dev.cognitive.microsoft.com/docs/services/f2d62aa3b93843d79e948fe87fa89554/operations/5a3044ee08fa5e06b890f11f)。
 
     > [!WARNING]
-    > 非常重要，需要注意的自定义影像服务提供培训模式下，为使用的 JSON 结构的终结点 (内**CustomVisionObjects**类) 已设置为使用[ *自定义视觉训练 v1.2*](https://southcentralus.dev.cognitive.microsoft.com/docs/services/f2d62aa3b93843d79e948fe87fa89554/operations/5a3044ee08fa5e06b890f11f)。 如果您拥有的不同版本，您可能需要更新*对象*结构。
+    > 请务必记下自定义影像服务为您提供培训模式的终结点, 因为使用的 JSON 结构 (在**CustomVisionObjects**类中) 已设置为与[*自定义视觉培训*](https://southcentralus.dev.cognitive.microsoft.com/docs/services/f2d62aa3b93843d79e948fe87fa89554/operations/5a3044ee08fa5e06b890f11f)v1.0 一起使用。 如果有不同的版本, 则可能需要更新*对象*结构。
 
     ```csharp
         /// <summary>
@@ -781,9 +781,9 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     ```
 
     > [!IMPORTANT]
-    > 确保添加你**服务密钥**（培训密钥） 值和**项目 Id**值，其下前面记下; 这些都是值您[从前面的课程 （门户收集第 2 章步骤 10 及更高版本）](#chapter-2---training-your-custom-vision-oroject)。
+    > 确保你添加了你之前记下的**服务密钥**(定型密钥) 值和**项目 Id**值;这是你[在本课程前面部分中收集的值 (第2章、第10章)](#chapter-2---training-your-custom-vision-oroject)。
 
-5.  添加以下**start （)** 并**Awake()** 方法。 这些方法在初始化时调用，并包含调用以设置用户界面：
+5.  添加以下**Start ()** 和**唤醒 ()** 方法。 这些方法在初始化时调用, 并包含设置 UI 的调用:
 
     ```csharp
         /// <summary>
@@ -803,9 +803,9 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-6.  删除**update （)** 方法。 此类将不需要它。
+6.  删除**Update ()** 方法。 此类不需要此类。
 
-7.  添加**RequestTagSelection()** 方法。 此方法是在捕获映像并将其存储在设备时要调用的第一个和现已准备好提交给*自定义影像服务*、 训练它。 此方法显示在训练 UI 中，一组用户可以使用标记已捕获映像的关键字。 它还会发出警报*VoiceRecognizer*类以开始侦听到用户的语音输入。
+7.  添加**RequestTagSelection ()** 方法。 此方法是在捕获图像并将其存储在设备中, 并且现在已准备好提交到*自定义影像服务*的第一个调用。 此方法在定型 UI 中显示一组关键字, 用户可以使用这些关键字标记已捕获的映像。 它还提醒*VoiceRecognizer*类开始倾听用户的语音输入。
 
     ```csharp
         internal void RequestTagSelection()
@@ -817,7 +817,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-8.  添加**VerifyTag()** 方法。 此方法将接收语音输入识别**VoiceRecognizer**类和验证其有效性，然后开始训练过程。
+8.  添加**VerifyTag ()** 方法。 此方法将接收**VoiceRecognizer**类识别的语音输入并验证其有效性, 然后开始训练过程。
 
     ```csharp
         /// <summary>
@@ -835,7 +835,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-9.  添加**SubmitImageForTraining()** 方法。 此方法将开始自定义影像服务训练过程。 第一步是检索**标记 Id**从与用户的已验证的语音输入相关联的服务。 **标记 Id**然后以及映像上传。
+9.  添加**SubmitImageForTraining ()** 方法。 此方法将开始自定义影像服务训练过程。 第一步是从服务中检索与用户的经验证的语音输入相关联的**标记 Id** 。 **标记 Id**随后将连同图像一起上传。
 
     ```csharp
         /// <summary>
@@ -905,7 +905,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-10. 添加**TrainCustomVisionProject()** 方法。 一旦已提交并标记该映像，将调用此方法。 它将创建新的迭代，将使用提交到服务以及映像的所有以前的图像训练刚上传。 完成定型后，此方法将调用一个方法来设置新创建**迭代**作为**默认**，以便将用于分析的终结点是最新的训练的迭代。
+10. 添加**TrainCustomVisionProject ()** 方法。 提交并标记该映像后, 将调用此方法。 它将创建一个新的迭代, 该迭代将使用提交到服务的所有之前的图像以及刚刚上传的图像进行训练。 完成训练后, 此方法将调用方法将新创建的**迭代**设置为**默认值**, 以便用于分析的终结点是最新的定型迭代。
 
     ```csharp
         /// <summary>
@@ -947,7 +947,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-11. 添加**SetDefaultIteration()** 方法。 此方法将设置为以前创建并训练迭代*默认*。 完成后，此方法必须删除现有服务中的上一个迭代。 在编写本课程时，没有最大十 （10） 的迭代的允许在服务中同时存在限制。
+11. 添加**SetDefaultIteration ()** 方法。 此方法会将以前创建和训练的迭代设置为*默认值*。 完成后, 此方法将不得不删除服务中的上一个迭代。 编写本课程时, 在服务中允许同时存在的最大迭代数限制为 10 (10)。
 
     ```csharp
         /// <summary>
@@ -988,7 +988,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-12. 添加**DeletePreviousIteration()** 方法。 此方法将查找并删除之前的非默认迭代：
+12. 添加**DeletePreviousIteration ()** 方法。 此方法将查找并删除以前的非默认迭代:
 
     ```csharp
         /// <summary>
@@ -1047,7 +1047,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-13. 此类中添加的最后一个方法是**GetImageAsByteArray()** 方法，用于在 web 调用要将映像捕获到的字节数组转换。
+13. 要添加到此类中的最后一个方法是**GetImageAsByteArray ()** 方法, 用于在 web 调用上将捕获的图像转换为字节数组。
 
     ```csharp
         /// <summary>
@@ -1061,35 +1061,35 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-14. 请务必保存中所做的更改**Visual Studio**才会回到**Unity**。
+14. 在返回到**Unity**之前, 请务必保存**Visual Studio**中所做的更改。
 
-## <a name="chapter-10---create-the-sceneorganiser-class"></a>章 10-创建 SceneOrganiser 类
+## <a name="chapter-10---create-the-sceneorganiser-class"></a>第10章-创建 SceneOrganiser 类
 
-将此类：
+此类将:
 
--   创建**游标**要附加到 Main Camera 对象。
+-   创建要附加到主相机的**Cursor**对象。
 
--   创建**标签**对象，该服务识别出的实际对象时，将显示对象。
+-   创建一个**标签**对象, 该对象将在服务识别现实世界对象时显示。
 
--   通过附加到适当的组件设置 Main Camera。
+-   通过向主摄像机附加相应的组件来设置它。
 
--   在何时**分析模式**、 生成的标签，在运行时，相对于主相机的位置的适当世界空间中并显示从自定义影像服务接收的数据。
+-   在**分析模式**下, 将在运行时、相对于主摄像机位置的适当世界空间中生成标签, 并显示从自定义影像服务收到的数据。
 
--   在何时**培训模式**，生成将显示在定型过程的不同阶段的 UI。
+-   处于**定型模式**时, 将生成 UI, 该 UI 将显示训练过程的不同阶段。
 
-若要创建此类：
+若要创建此类:
 
-1.  内右击**脚本**文件夹，然后单击**创建** > **C\#脚本**。 脚本命名为*SceneOrganiser*。
+1.  右键单击 "**脚本**" 文件夹内, 然后单击 "**创建** > **C\#脚本**"。 将脚本命名为*SceneOrganiser*。
 
-2.  双击新*SceneOrganiser*脚本以将其与打开**Visual Studio**。
+2.  双击新的*SceneOrganiser*脚本以通过**Visual Studio**打开它。
 
-3.  您只需要一个命名空间，删除上面提供的其他*SceneOrganiser*类：
+3.  你只需要一个命名空间, 并从*SceneOrganiser*类的上方删除其他命名空间:
 
     ```csharp
     using UnityEngine;
     ```
 
-4.  然后添加以下变量内的*SceneOrganiser*类，更高版本**start （)** 方法：
+4.  然后, 将以下变量添加到*SceneOrganiser*类中的**Start ()** 方法之上:
 
     ```csharp
         /// <summary>
@@ -1129,9 +1129,9 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         internal float probabilityThreshold = 0.5f;
     ```
 
-5.  删除**start （)** 并**update （)** 方法。
+5.  删除**Start ()** 和**Update ()** 方法。
 
-6.  右下方变量中，添加**Awake()** 方法，它将初始化类并设置场景。
+6.  在变量的下方, 添加**唤醒 ()** 方法, 这将初始化类并设置场景。
 
     ```csharp
         /// <summary>
@@ -1172,7 +1172,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-7.  现在，添加**CreateCameraCursor()** 方法，用于创建将 Main Camera 光标定位并**CreateLabel()** 方法，用于创建**分析标签**对象.
+7.  现在, 添加用于创建和定位主照相机光标的**CreateCameraCursor ()** 方法和**CreateLabel ()** 方法, 该方法创建**分析标签**对象。
 
     ```csharp
         /// <summary>
@@ -1221,7 +1221,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-8. 添加**SetCameraStatus()** 方法，它将处理适用于文本网格提供的相机的状态消息。
+8. 添加**SetCameraStatus ()** 方法, 该方法将处理旨在提供相机状态的文本网格的消息。
 
     ```csharp
         /// <summary>
@@ -1262,7 +1262,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-9. 添加**PlaceAnalysisLabel()** 并**SetTagsToLastLabel()** 方法，这将生成并向场景中显示自定义影像服务中的数据。
+9. 添加**PlaceAnalysisLabel ()** 和**SetTagsToLastLabel ()** 方法, 该方法将生成数据并将其从自定义影像服务显示到场景中。
 
     ```csharp
         /// <summary>
@@ -1295,7 +1295,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-10. 最后，将添加**CreateTrainingUI()** 方法，将生成应用程序时在定型模式下都显示在定型过程的多个阶段的 UI。 此方法还会利用创建相机状态对象。
+10. 最后, 添加**CreateTrainingUI ()** 方法, 该方法将生成在应用程序处于定型模式时显示训练过程的多个阶段的 UI。 此方法也将伴随创建相机状态对象。
 
     ```csharp
         /// <summary>
@@ -1322,10 +1322,10 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-11. 请务必保存中所做的更改**Visual Studio**才会回到**Unity**。
+11. 在返回到**Unity**之前, 请务必保存**Visual Studio**中所做的更改。
 
 > [!IMPORTANT]
-> 在继续之前，打开**CustomVisionAnalyser**类，并在**AnalyseLastImageCaptured()** 方法，*取消注释*以下行：
+> 继续之前, 请打开**CustomVisionAnalyser**类, 并在**AnalyseLastImageCaptured ()** 方法中*取消注释*以下行:
 >
 > ```csharp
 >   AnalysisObject analysisObject = new AnalysisObject();
@@ -1333,27 +1333,27 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
 >   SceneOrganiser.Instance.SetTagsToLastLabel(analysisObject);
 > ```
 
-## <a name="chapter-11---create-the-imagecapture-class"></a>章 11-创建 ImageCapture 类
+## <a name="chapter-11---create-the-imagecapture-class"></a>第11章-创建 ImageCapture 类
 
-要创建的下一步类是*ImageCapture*类。
+要创建的下一个类是*ImageCapture*类。
 
-此类负责：
+此类负责:
 
--   捕获映像使用 HoloLens 相机并将其存储在*应用*文件夹。
+-   使用 HoloLens 相机捕获映像, 并将其存储在*App*文件夹中。
 
--   处理来自用户的点击手势。
+-   处理用户的敲击手势。
 
--   维护*Enum*值，该值确定是否运行该应用程序*Analysis*模式或*培训*模式。
+-   维护用于确定应用程序是否将在*分析*模式或*定型*模式下运行的*枚举*值。
 
-若要创建此类：
+若要创建此类:
 
-1.  转到**脚本**之前创建的文件夹。
+1.  中转到前面创建的 "**脚本**" 文件夹。
 
-2.  在文件夹中，右键单击，然后单击**创建 > C\#脚本**。 脚本命名为*ImageCapture*。
+2.  右键单击文件夹内, 然后单击 "**创建 > C\#脚本**"。 将脚本命名为*ImageCapture*。
 
-3.  双击新**ImageCapture**脚本以将其与打开**Visual Studio**。
+3.  双击新的**ImageCapture**脚本以通过**Visual Studio**打开它。
 
-4.  使用以下内容替换该文件顶部的命名空间：
+4.  将文件顶部的命名空间替换为以下内容:
 
     ```csharp
     using System;
@@ -1364,7 +1364,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     using UnityEngine.XR.WSA.WebCam;
     ```
 
-5.  然后添加以下变量内的*ImageCapture*类，更高版本**start （)** 方法：
+5.  然后, 将以下变量添加到*ImageCapture*类中的**Start ()** 方法之上:
 
     ```csharp
         /// <summary>
@@ -1413,7 +1413,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         internal string filePath = string.Empty;
     ```
 
-6.  为代码**Awake()** 并**start （)** 方法现在需要添加：
+6.  现在需要添加**唤醒 ()** 和**Start ()** 方法的代码:
 
     ```csharp
         /// <summary>
@@ -1457,7 +1457,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-7.  实现的点击动作时将调用的处理程序。
+7.  实现一个处理程序, 该处理程序将在出现分流手势时调用。
 
     ```csharp
         /// <summary>
@@ -1509,15 +1509,15 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
     ```
 
     > [!NOTE] 
-    > 在中*分析*模式下， **TapHandler**方法充当一个开关，用于启动或停止照片捕获循环。
+    > 在*分析*模式下, **TapHandler**方法充当开始或停止照片捕获循环的开关。
     >
-    > 在中*培训*模式下，它将从捕获映像照相机。
+    > 在*定型*模式下, 它将从相机捕获图像。
     >
-    > 当光标位于绿色时，这意味着照相机是可用于获取映像。
+    > 如果光标为绿色, 则表示相机可用于拍摄映像。
     >
-    > 当光标位于红色时，这意味着照相机正忙。
+    > 如果光标为红色, 则表示相机处于繁忙状态。
 
-8.  添加应用程序使用启动映像捕获过程并将图像存储的方法。
+8.  添加应用程序用于启动映像捕获过程并存储映像的方法。
 
     ```csharp
         /// <summary>
@@ -1562,7 +1562,7 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-9.  添加捕获照片和时准备好对其进行分析将调用处理程序。 然后将结果传递给*CustomVisionAnalyser*或*CustomVisionTrainer*具体取决于哪种模式上设置的代码。
+9.  添加在捕获照片时要调用的处理程序, 并将其添加到已准备好进行分析的时间。 然后, 将结果传递给*CustomVisionAnalyser*或*CustomVisionTrainer* , 具体取决于设置了代码的模式。
 
     ```csharp
         /// <summary>
@@ -1619,76 +1619,76 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         }
     ```
 
-10. 请务必保存中所做的更改**Visual Studio**才会回到**Unity**。
+10. 在返回到**Unity**之前, 请务必保存**Visual Studio**中所做的更改。
 
-11. 现在，所有脚本都完成后，返回在 Unity 编辑器中，然后单击并拖动**SceneOrganiser**类派生**脚本**文件夹**Main Camera**对象中*层次结构面板*。
+11. 现在, 所有脚本都已完成, 请返回 Unity 编辑器, 然后在 "*层次结构" 面板*中单击 "**脚本**" 文件夹中的**SceneOrganiser**类, 并将其拖到**主相机**对象。
 
-## <a name="chapter-12---before-building"></a>第 12 章 — 生成前
+## <a name="chapter-12---before-building"></a>第12章-生成之前
 
-若要执行全面测试您的应用程序将需要旁加载它到在 HoloLens 上。
+若要对应用程序进行全面测试, 需要将其旁加载到 HoloLens。
 
-执行操作之前，请确保：
+在执行此操作之前, 请确保:
 
-- 中所述的所有设置[第 2 章](#chapter-2---training-your-custom-vision-project)正确设置。
+- [第2章](#chapter-2---training-your-custom-vision-project)中提到的所有设置都已正确设置。
 
-- 中的所有字段**Main Camera**，检查器面板中，正确分配。
+- **主相机**"检查器" 面板中的所有字段均已正确分配。
 
-- 该脚本**SceneOrganiser**附加到**Main Camera**对象。
+- 脚本**SceneOrganiser**已附加到**摄像机主**对象。
 
-- 请确保插入你**预测键**成**predictionKey**变量。
+- 请确保将你的**预测密钥**插入到**predictionKey**变量。
 
-- 已插入您**预测终结点**成**predictionEndpoint**变量。
+- 已在**predictionEndpoint**变量中插入了**预测终结点**。
 
-- 已插入您**培训键**成**trainingKey**变量的*CustomVisionTrainer*类。
+- 已将**定型密钥**插入*CustomVisionTrainer*类的**trainingKey**变量中。
 
-- 已插入您**项目 ID**成**projectId**变量的*CustomVisionTrainer*类。
+- 已在*CustomVisionTrainer*类的**projectId**变量中插入了**项目 ID** 。
 
-## <a name="chapter-13---build-and-sideload-your-application"></a>第 13 章 — 生成和旁加载应用程序
+## <a name="chapter-13---build-and-sideload-your-application"></a>第13章-构建并旁加载应用程序
 
-若要开始*生成*过程：
+开始*生成*过程:
 
-1.  转到**文件 > 生成设置**。
+1.  请参阅**文件 > 生成设置**。
 
-2.  刻度线**Unity C\#项目**。
+2.  勾选**Unity C\#项目**。
 
-3.  单击“生成”  。 将启动 unity**文件资源管理器**窗口中，需要创建，然后选择要生成该应用程序的文件夹。 现在，创建该文件夹并将其命名**应用**。 然后使用**应用程序**文件夹选择，单击**选择文件夹**。
+3.  单击“生成” 。 Unity 将启动**文件资源管理器**窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为**应用**。 选择**应用**文件夹后, 单击 "**选择文件夹**"。
 
-4.  Unity 将开始构建您的项目**应用**文件夹。
+4.  Unity 将开始向**应用**文件夹生成项目。
 
-5.  一次 Unity 已完成的生成 （它可能需要一些时间），它将打开**文件资源管理器**窗口在生成的位置 （检查任务栏中，因为它可能不总是会显示您的窗口上方，但会通知你添加了一个新窗口）。
+5.  Unity 完成生成 (可能需要一些时间) 后, 它会在生成的位置打开 "**文件资源管理器**" 窗口 (检查任务栏, 因为它可能不会始终出现在窗口之上, 但会通知你添加了一个新窗口)。
 
-若要部署在 HoloLens 上：
+在 HoloLens 上部署:
 
-1.  你将 （适用于远程部署），需要在 HoloLens IP 地址，以确保你 HoloLens 处于**开发人员模式**。 要实现此目的，请执行以下操作：
+1.  你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式**。 要实现此目的，请执行以下操作：
 
-    1.  戴上您 HoloLens，同时打开**设置**。
+    1.  在戴上 HoloLens 的同时, 请打开**设置**。
 
-    2.  转到**网络和 Internet** > **的 Wi-fi** > **高级选项**
+    2.  中转到**网络 & Internet** > **wi-fi** > **高级选项**
 
-    3.  请注意**IPv4**地址。
+    3.  记下**IPv4**地址。
 
-    4.  接下来，导航回到**设置**，然后**更新和安全** > **面向开发人员**
+    4.  接下来, 导航回 "**设置**", 然后为**开发人员** **更新 & 安全性** > 
 
-    5.  设置**上的开发人员模式**。
+    5.  设置**开发人员模式**。
 
-2.  导航到新的 Unity 生成 (**应用程序**文件夹)，然后打开解决方案文件与**Visual Studio**。
+2.  导航到新的 Unity 生成 (**应用**文件夹), 并在**Visual Studio**中打开解决方案文件。
 
-3.  在中*解决方案配置*选择**调试**。
+3.  在*解决方案配置*中, 选择 "**调试**"。
 
-4.  在中*解决方案平台*，选择**x86，远程计算机**。 系统会提示要插入**IP 地址**的远程设备 (HoloLens，在这种情况下，记下)。
+4.  在*解决方案平台*中, 选择 " **X86, 远程计算机**"。 系统将提示你插入远程设备的**IP 地址**(在本例中, 你记下了此项)。
 
     ![](images/AzureLabs-Lab302b-34.png)
 
-5. 转到**构建**菜单，并单击**部署解决方案**旁加载到你 HoloLens 应用程序。
+5. 中转到 "**生成**" 菜单, 然后单击 "**部署解决方案**", 将应用程序旁加载到 HoloLens。
 
-6. 在准备好启动在 HoloLens 上安装的应用列表中，现在应显示你的应用 ！
+6. 应用现在应显示在你的 HoloLens 上已安装的应用列表中, 可以启动了!
 
 > [!NOTE]
-> 若要将部署到沉浸式头戴式耳机，设置**解决方案平台**到*本地计算机*，并设置**配置**到*调试*，与*x86*作为**平台**。 然后将其部署到本地计算机，使用**构建**菜单项，选择*部署解决方案*。 
+> 若要部署到沉浸式耳机, 请将 "**解决方案平台**" 设置为 "*本地计算机*", 并将**配置**设置为 "*调试*", 将 " *x86* " 设置为**平台**。 然后, 使用 "**生成**" 菜单项选择 "*部署解决方案*", 将部署到本地计算机。 
 
-## <a name="to-use-the-application"></a>若要使用应用程序：
+## <a name="to-use-the-application"></a>使用应用程序:
 
-若要切换之间的应用功能*培训*模式和*预测*模式需要更新**AppMode**变量，它位于**Awake()** 方法对位于*ImageCapture*类。
+若要在*定型*模式和*预测*模式间切换应用功能, 需要更新位于*ImageCapture*类**中的** **AppMode**变量。
 
 ```
         // Change this flag to switch between Analysis mode and Training mode 
@@ -1700,63 +1700,63 @@ Azure 自定义影像是一种 Microsoft 认知服务，允许开发人员可以
         AppMode = AppModes.Analysis;
 ```
 
-在中*培训*模式：
+在*定型*模式下:
 
-- 看看**鼠标**或**键盘**，并使用**点击手势**。
+- 查看**鼠标**或**键盘**, 并使用**点击手势**。
 
-- 接下来，文本将显示要求你提供一个标记。
+- 接下来, 将显示文本, 要求你提供标记。
 
-- 指示**鼠标**或**键盘**。
+- 说**鼠标**或**键盘**。
 
 
-在中*预测*模式：
+在*预测*模式下:
 
-- 查看对象，并使用**点击手势**。
+- 查看对象并使用**点击动作**。
 
-- 文本将显示提供检测到，（这规范化的） 的概率最高的对象。
+- 将显示文本, 以提供检测到的对象, 最高的概率 (这是标准化的)。
 
-## <a name="chapter-14---evaluate-and-improve-your-custom-vision-model"></a>14-评估和改进您的自定义影像模型
+## <a name="chapter-14---evaluate-and-improve-your-custom-vision-model"></a>第14章-评估并改善自定义视觉模型
 
-若要使你的服务更准确，您需要继续训练用于预测的模型。 这通过使用两个新应用程序，来实现*培训*并*预测*模式下，使用后一种无需访问门户，它是这一章中涵盖的内容。 要准备好，若要再次访问你的门户很多时候，可以不断改进您的模型。
+若要使您的服务更准确, 需要继续训练用于预测的模型。 这是通过将新应用程序与*培训*和*预测*模式结合使用来实现的, 后者要求你访问门户, 本章将介绍这一点。 准备多次重新访问您的门户, 以不断改善您的模型。
 
-1. 同样，转到你的 Azure 自定义视觉门户并在项目中后，选择*预测*（从页面的顶部中心） 的选项卡：
+1. 再次转到 Azure 自定义视觉门户, 在项目中选择 "*预测*" 选项卡 (从页面的顶部中心):
 
     ![](images/AzureLabs-Lab302b-35.png)
 
-2. 你将看到所有已发送到你的服务，同时你的应用程序正在运行的映像。 如果将鼠标悬停鼠标悬停在图像，他们将您提供有关该映像所做的预测：
+2. 在应用程序运行时, 你将看到所有已发送到服务的映像。 如果你将鼠标悬停在这些图像上, 它们将为你提供对该映像进行的预测:
 
     ![](images/AzureLabs-Lab302b-36.png)
 
-3. 选择其中一个映像以将其打开。 一旦打开，你将看到右侧进行该图像的预测。 如果您预测正确的并且你想要将此映像添加到你的服务的训练模型中，单击*我标记*输入框，然后选择你想要将相关联的标记。 完成后，单击*保存并关闭*靠下右对齐，向按钮，然后继续学习下一幅图像。
+3. 选择其中一个映像, 将其打开。 打开后, 您将看到对该图像的预测。 如果预测是正确的, 并且您希望将此图像添加到服务的训练模型, 请单击 "*我的标记*" 输入框, 然后选择您要关联的标记。 完成后, 单击右下角的 "*保存并关闭*" 按钮, 然后继续转到下一张图像。
 
     ![](images/AzureLabs-Lab302b-37.png)
 
-4. 返回到网格的映像后，你会注意到已添加到标记 （并保存），映像将被删除。 如果您发现您认为不具有在其中你带标记的项的任何映像，则可以删除它们，通过单击该映像 （可以执行此操作的多个映像） 上的刻度线，然后单击*删除*网格页右上角。 在弹出窗口后面，你可以单击*可以，请删除*或*否*，以确认删除，或分别取消。 
+4. 返回到图像网格后, 你会注意到已将标记添加到 (和保存) 的映像将被删除。 如果你发现你认为没有标记项的任何图像, 则可以通过单击该图像上的勾选标记 (可以对几个图像执行此操作), 然后单击网格页右上角的 "*删除*" 来删除它们。 在下面的弹出窗口中, 可以单击 *"是"、"删除*" 或 "*否*" 以确认删除或取消。 
 
     ![](images/AzureLabs-Lab302b-38.png)
 
-5. 若要继续，准备就绪后，单击绿色*训练*在右上角的按钮。 你的服务模型将使用的所有映像现在已提供 （这将使其更准确） 训练。 培训完成后，请务必单击*设为默认*次，按钮，以便你*预测 URL*仍会继续使用你的服务的最新迭代。
+5. 准备好继续时, 单击右上方的绿色*训练*按钮。 你的服务模型将使用你现在提供的所有映像 (这将使其更准确) 训练。 训练完成后, 请确保再次单击 "设置*默认值*" 按钮, 使*预测 URL*继续使用最新的服务迭代。
 
     ![](images/AzureLabs-Lab302b-39.png) ![](images/AzureLabs-Lab302b-40.png)
 
-## <a name="your-finished-custom-vision-api-application"></a>完成自定义视觉 API 的应用程序
+## <a name="your-finished-custom-vision-api-application"></a>已完成的自定义视觉 API 应用程序
 
-祝贺你，构建利用 Azure 自定义视觉 API 能够识别现实世界对象、 训练服务模型，并显示的内容出现的置信度的混合的现实应用。
+恭喜, 你构建了一个使用 Azure 自定义视觉 API 来识别真实世界对象的混合现实应用, 为服务模型定型, 并显示对所见内容的信心。
 
 ![](images/AzureLabs-Lab302b-00.png)
 
-## <a name="bonus-exercises"></a>Bonus 练习
+## <a name="bonus-exercises"></a>额外练习
 
-### <a name="exercise-1"></a>练习 1
+### <a name="exercise-1"></a>练习1
 
-训练你**自定义影像服务**识别更多的对象。
+训练**自定义影像服务**来识别更多对象。
 
-### <a name="exercise-2"></a>练习 2
+### <a name="exercise-2"></a>练习2
 
-作为一种方式扩展您学到了什么，完成以下练习：
+若要在了解的情况下进行扩展, 请完成以下练习:
 
-识别对象时播放声音。
+在识别对象时播放声音。
 
-### <a name="exercise-3"></a>练习 3
+### <a name="exercise-3"></a>练习3
 
-若要重新训练你的服务使用相同的图像分析您的应用程序，因此若要使服务更准确地使用 API （执行预测和同时培训）。
+使用 API 来重新训练你的服务, 使其与你的应用程序正在分析的映像相同, 以便使该服务更准确 (同时执行预测和定型)。
