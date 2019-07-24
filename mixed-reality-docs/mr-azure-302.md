@@ -1,305 +1,305 @@
 ---
 title: MR 和 Azure 302-计算机视觉
-description: 完成此课程以了解如何识别中提供的映像，在混合的现实应用程序中使用 Azure 计算机视觉的可视内容。
+description: 完成本课程, 了解如何使用 Azure 计算机视觉在混合现实应用程序中识别所提供的映像中的视觉内容。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
-keywords: azure 的混合现实、 学院、 unity、 教程、 api、 计算机视觉、 沉浸式、 hololens、 vr
+keywords: azure, 混合现实, 学院, unity, 教程, api, 计算机视觉, hololens, 沉浸, vr
 ms.openlocfilehash: 9d5288904dd6cae08a995ae40a31b00fea655776
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59590172"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63552328"
 ---
 >[!NOTE]
-><span data-ttu-id="5dca0-104">混合现实学院教程均针对具有 HoloLens （第 1 代） 和混合现实沉浸式耳机记住。</span><span class="sxs-lookup"><span data-stu-id="5dca0-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="5dca0-105">在这种情况下，我们认为很重要的开发人员仍在查找中针对这些设备进行开发指南将这些教程保留在原处。</span><span class="sxs-lookup"><span data-stu-id="5dca0-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="5dca0-106">这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。</span><span class="sxs-lookup"><span data-stu-id="5dca0-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="5dca0-107">它们都将保留在受支持的设备上继续工作。</span><span class="sxs-lookup"><span data-stu-id="5dca0-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="5dca0-108">将一系列新的将在将来发布的教程将演示如何开发适用于 HoloLens 2。</span><span class="sxs-lookup"><span data-stu-id="5dca0-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="5dca0-109">在发布时，将使用这些教程的链接更新此通知。</span><span class="sxs-lookup"><span data-stu-id="5dca0-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
+><span data-ttu-id="e5c46-104">混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。</span><span class="sxs-lookup"><span data-stu-id="e5c46-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="e5c46-105">因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。</span><span class="sxs-lookup"><span data-stu-id="e5c46-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="e5c46-106">这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。</span><span class="sxs-lookup"><span data-stu-id="e5c46-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="e5c46-107">将保留这些设备以继续使用支持的设备。</span><span class="sxs-lookup"><span data-stu-id="e5c46-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="e5c46-108">将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。</span><span class="sxs-lookup"><span data-stu-id="e5c46-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="e5c46-109">此通知将在发布时通过指向这些教程的链接进行更新。</span><span class="sxs-lookup"><span data-stu-id="e5c46-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
 
 <br>
 
-# <a name="mr-and-azure-302-computer-vision"></a><span data-ttu-id="5dca0-110">MR 和 Azure 302:计算机视觉</span><span class="sxs-lookup"><span data-stu-id="5dca0-110">MR and Azure 302: Computer vision</span></span>
+# <a name="mr-and-azure-302-computer-vision"></a><span data-ttu-id="e5c46-110">MR 和 Azure 302:计算机视觉</span><span class="sxs-lookup"><span data-stu-id="e5c46-110">MR and Azure 302: Computer vision</span></span>
 
-<span data-ttu-id="5dca0-111">在本课程中，您将学习如何识别可视内容中提供的映像，在混合的现实应用程序中使用 Azure 计算机视觉功能。</span><span class="sxs-lookup"><span data-stu-id="5dca0-111">In this course, you will learn how to recognize visual content within a provided image, using Azure Computer Vision capabilities in a mixed reality application.</span></span>
+<span data-ttu-id="e5c46-111">在本课程中, 你将了解如何在混合现实应用程序中使用 Azure 计算机视觉功能识别所提供的映像中的视觉内容。</span><span class="sxs-lookup"><span data-stu-id="e5c46-111">In this course, you will learn how to recognize visual content within a provided image, using Azure Computer Vision capabilities in a mixed reality application.</span></span>
 
-<span data-ttu-id="5dca0-112">识别结果将显示为描述性标记。</span><span class="sxs-lookup"><span data-stu-id="5dca0-112">Recognition results will be displayed as descriptive tags.</span></span> <span data-ttu-id="5dca0-113">可用于此服务而无需定型的机器学习模型。</span><span class="sxs-lookup"><span data-stu-id="5dca0-113">You can use this service without needing to train a machine learning model.</span></span> <span data-ttu-id="5dca0-114">如果您的实现需要定型的机器学习模型，请参阅[MR 和 Azure 302b](mr-azure-302b.md)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-114">If your implementation requires training a machine learning model, see [MR and Azure 302b](mr-azure-302b.md).</span></span>
+<span data-ttu-id="e5c46-112">识别结果将显示为描述性标记。</span><span class="sxs-lookup"><span data-stu-id="e5c46-112">Recognition results will be displayed as descriptive tags.</span></span> <span data-ttu-id="e5c46-113">您可以使用此服务, 无需训练机器学习模型。</span><span class="sxs-lookup"><span data-stu-id="e5c46-113">You can use this service without needing to train a machine learning model.</span></span> <span data-ttu-id="e5c46-114">如果实现需要训练机器学习模型, 请参阅[MR And Azure 302b](mr-azure-302b.md)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-114">If your implementation requires training a machine learning model, see [MR and Azure 302b](mr-azure-302b.md).</span></span>
 
-![实验结果](images/AzureLabs-Lab2-000.png)
+![实验室结果](images/AzureLabs-Lab2-000.png)
 
-<span data-ttu-id="5dca0-116">Microsoft 计算机视觉是一组 Api，可让开发人员提供图像处理和分析 （并返回信息），所有这些操作通过在云中使用高级的算法。</span><span class="sxs-lookup"><span data-stu-id="5dca0-116">The Microsoft Computer Vision is a set of APIs designed to provide developers with image processing and analysis (with return information), using advanced algorithms, all from the cloud.</span></span> <span data-ttu-id="5dca0-117">开发人员上传图像或图像 URL 和 Microsoft 计算机视觉 API 算法分析视觉内容中，基于所选用户，然后可以返回的信息，请输入包括标识的类型和质量的图像的检测人脸 （返回其坐标），并标记，或对图像分类。</span><span class="sxs-lookup"><span data-stu-id="5dca0-117">Developers upload an image or image URL, and the Microsoft Computer Vision API algorithms analyze the visual content, based upon inputs chosen the user, which then can return information, including, identifying the type and quality of an image, detect human faces (returning their coordinates), and tagging, or categorizing images.</span></span> <span data-ttu-id="5dca0-118">有关详细信息，请访问[Azure 计算机视觉 API 页](https://azure.microsoft.com/services/cognitive-services/computer-vision/)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-118">For more information, visit the [Azure Computer Vision API page](https://azure.microsoft.com/services/cognitive-services/computer-vision/).</span></span>
+<span data-ttu-id="e5c46-116">Microsoft 计算机视觉是一组 Api, 旨在向开发人员提供使用高级算法的图像处理和分析 (使用返回信息), 所有这些都来自云。</span><span class="sxs-lookup"><span data-stu-id="e5c46-116">The Microsoft Computer Vision is a set of APIs designed to provide developers with image processing and analysis (with return information), using advanced algorithms, all from the cloud.</span></span> <span data-ttu-id="e5c46-117">开发人员可上传图像或图像 URL, Microsoft 计算机视觉 API 算法将根据输入的输入来分析视觉内容, 然后, 该用户可以返回信息, 包括标识图像的类型和质量、检测人脸 (返回它们的坐标)、标记或分类图像。</span><span class="sxs-lookup"><span data-stu-id="e5c46-117">Developers upload an image or image URL, and the Microsoft Computer Vision API algorithms analyze the visual content, based upon inputs chosen the user, which then can return information, including, identifying the type and quality of an image, detect human faces (returning their coordinates), and tagging, or categorizing images.</span></span> <span data-ttu-id="e5c46-118">有关详细信息, 请访问[Azure 计算机视觉 API 页](https://azure.microsoft.com/services/cognitive-services/computer-vision/)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-118">For more information, visit the [Azure Computer Vision API page](https://azure.microsoft.com/services/cognitive-services/computer-vision/).</span></span>
 
-<span data-ttu-id="5dca0-119">已完成本课程，您将具有混合的现实 HoloLens 应用程序，将能够执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="5dca0-119">Having completed this course, you will have a mixed reality HoloLens application, which will be able to do the following:</span></span>
+<span data-ttu-id="e5c46-119">完成本课程后, 你将拥有一个混合现实 HoloLens 应用程序, 该应用程序将能够执行以下操作:</span><span class="sxs-lookup"><span data-stu-id="e5c46-119">Having completed this course, you will have a mixed reality HoloLens application, which will be able to do the following:</span></span>
 
-1.  <span data-ttu-id="5dca0-120">使用手势，HoloLens 的照相机将捕获映像。</span><span class="sxs-lookup"><span data-stu-id="5dca0-120">Using the Tap gesture, the camera of the HoloLens will capture an image.</span></span>
-2.  <span data-ttu-id="5dca0-121">图像将发送到 Azure 的计算机视觉 API 服务。</span><span class="sxs-lookup"><span data-stu-id="5dca0-121">The image will be sent to the Azure Computer Vision API Service.</span></span> 
-3.  <span data-ttu-id="5dca0-122">将在 Unity 场景中定位的简单用户界面组中列出识别的对象。</span><span class="sxs-lookup"><span data-stu-id="5dca0-122">The objects recognized will be listed in a simple UI group positioned in the Unity Scene.</span></span>
+1.  <span data-ttu-id="e5c46-120">使用点击手势, HoloLens 的照相机将捕获图像。</span><span class="sxs-lookup"><span data-stu-id="e5c46-120">Using the Tap gesture, the camera of the HoloLens will capture an image.</span></span>
+2.  <span data-ttu-id="e5c46-121">映像将发送到 Azure 计算机视觉 API 服务。</span><span class="sxs-lookup"><span data-stu-id="e5c46-121">The image will be sent to the Azure Computer Vision API Service.</span></span> 
+3.  <span data-ttu-id="e5c46-122">识别的对象将在位于 Unity 场景中的一个简单 UI 组中列出。</span><span class="sxs-lookup"><span data-stu-id="e5c46-122">The objects recognized will be listed in a simple UI group positioned in the Unity Scene.</span></span>
 
-<span data-ttu-id="5dca0-123">在您的应用程序，它是取决于您关于如何将与您的设计集成结果。</span><span class="sxs-lookup"><span data-stu-id="5dca0-123">In your application, it is up to you as to how you will integrate the results with your design.</span></span> <span data-ttu-id="5dca0-124">本课程旨在教您如何将 Azure 服务集成与你的 Unity 项目。</span><span class="sxs-lookup"><span data-stu-id="5dca0-124">This course is designed to teach you how to integrate an Azure Service with your Unity project.</span></span> <span data-ttu-id="5dca0-125">它是作业以使用此课程以增强混合的现实应用程序中获取的知识。</span><span class="sxs-lookup"><span data-stu-id="5dca0-125">It is your job to use the knowledge you gain from this course to enhance your mixed reality application.</span></span>
+<span data-ttu-id="e5c46-123">在您的应用程序中, 您将由您来决定如何将结果与您的设计相集成。</span><span class="sxs-lookup"><span data-stu-id="e5c46-123">In your application, it is up to you as to how you will integrate the results with your design.</span></span> <span data-ttu-id="e5c46-124">本课程旨在向您介绍如何将 Azure 服务与 Unity 项目集成。</span><span class="sxs-lookup"><span data-stu-id="e5c46-124">This course is designed to teach you how to integrate an Azure Service with your Unity project.</span></span> <span data-ttu-id="e5c46-125">您可以使用您在本课程中获得的知识来增强混合现实应用程序的工作。</span><span class="sxs-lookup"><span data-stu-id="e5c46-125">It is your job to use the knowledge you gain from this course to enhance your mixed reality application.</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="5dca0-126">设备支持</span><span class="sxs-lookup"><span data-stu-id="5dca0-126">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="e5c46-126">设备支持</span><span class="sxs-lookup"><span data-stu-id="e5c46-126">Device support</span></span>
 
 <table>
 <tr>
-<th><span data-ttu-id="5dca0-127">课程</span><span class="sxs-lookup"><span data-stu-id="5dca0-127">Course</span></span></th><th style="width:150px"> <span data-ttu-id="5dca0-128"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="5dca0-128"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="5dca0-129"><a href="immersive-headset-hardware-details.md">沉浸式耳机</a></span><span class="sxs-lookup"><span data-stu-id="5dca0-129"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+<th><span data-ttu-id="e5c46-127">摘要</span><span class="sxs-lookup"><span data-stu-id="e5c46-127">Course</span></span></th><th style="width:150px"> <span data-ttu-id="e5c46-128"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="e5c46-128"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="e5c46-129"><a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></span><span class="sxs-lookup"><span data-stu-id="e5c46-129"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
 </tr><tr>
-<td> <span data-ttu-id="5dca0-130">MR 和 Azure 302:计算机视觉</span><span class="sxs-lookup"><span data-stu-id="5dca0-130">MR and Azure 302: Computer vision</span></span></td><td style="text-align: center;"> <span data-ttu-id="5dca0-131">✔️</span><span class="sxs-lookup"><span data-stu-id="5dca0-131">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="5dca0-132">✔️</span><span class="sxs-lookup"><span data-stu-id="5dca0-132">✔️</span></span></td>
+<td> <span data-ttu-id="e5c46-130">MR 和 Azure 302:计算机视觉</span><span class="sxs-lookup"><span data-stu-id="e5c46-130">MR and Azure 302: Computer vision</span></span></td><td style="text-align: center;"> <span data-ttu-id="e5c46-131">✔️</span><span class="sxs-lookup"><span data-stu-id="e5c46-131">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="e5c46-132">✔️</span><span class="sxs-lookup"><span data-stu-id="e5c46-132">✔️</span></span></td>
 </tr>
 </table>
 
 > [!NOTE]
-> <span data-ttu-id="5dca0-133">尽管本课程主要专注于 HoloLens，您还可以应用到 Windows Mixed Reality 沉浸式 (VR) 耳机本课程中学习的内容。</span><span class="sxs-lookup"><span data-stu-id="5dca0-133">While this course primarily focuses on HoloLens, you can also apply what you learn in this course to Windows Mixed Reality immersive (VR) headsets.</span></span> <span data-ttu-id="5dca0-134">因为沉浸式 (VR) 耳机不具有可访问照相机，您将需要连接到您的 PC 外部照相机。</span><span class="sxs-lookup"><span data-stu-id="5dca0-134">Because immersive (VR) headsets do not have accessible cameras, you will need an external camera connected to your PC.</span></span> <span data-ttu-id="5dca0-135">按照课程时，您将看到说明您可能需要使用以支持沉浸式 (VR) 耳机的任何更改。</span><span class="sxs-lookup"><span data-stu-id="5dca0-135">As you follow along with the course, you will see notes on any changes you might need to employ to support immersive (VR) headsets.</span></span>
+> <span data-ttu-id="e5c46-133">尽管本课程主要侧重于 HoloLens, 但你也可以将本课程中学习的内容应用于 Windows Mixed Reality 沉浸 (VR) 耳机。</span><span class="sxs-lookup"><span data-stu-id="e5c46-133">While this course primarily focuses on HoloLens, you can also apply what you learn in this course to Windows Mixed Reality immersive (VR) headsets.</span></span> <span data-ttu-id="e5c46-134">由于沉浸式 (VR) 耳机没有可访问的摄像机, 因此需要连接到电脑的外部照相机。</span><span class="sxs-lookup"><span data-stu-id="e5c46-134">Because immersive (VR) headsets do not have accessible cameras, you will need an external camera connected to your PC.</span></span> <span data-ttu-id="e5c46-135">在本课程中, 您将看到有关支持沉浸式 (VR) 耳机时可能需要执行的任何更改的说明。</span><span class="sxs-lookup"><span data-stu-id="e5c46-135">As you follow along with the course, you will see notes on any changes you might need to employ to support immersive (VR) headsets.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="5dca0-136">系统必备</span><span class="sxs-lookup"><span data-stu-id="5dca0-136">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="e5c46-136">先决条件</span><span class="sxs-lookup"><span data-stu-id="e5c46-136">Prerequisites</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5dca0-137">本教程专为开发人员已基本熟悉 Unity 和C#。</span><span class="sxs-lookup"><span data-stu-id="5dca0-137">This tutorial is designed for developers who have basic experience with Unity and C#.</span></span> <span data-ttu-id="5dca0-138">此外需要注意的先决条件和本文档内的书面的说明表示什么已测试并验证在撰写本文时 (2018 年 5 月)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-138">Please also be aware that the prerequisites and written instructions within this document represent what has been tested and verified at the time of writing (May 2018).</span></span> <span data-ttu-id="5dca0-139">你可以随意使用最新的软件，如中所列[安装的工具](install-the-tools.md)文章中，但它不应假定在此课程中的信息将完全匹配您会发现在较新的软件比下面列出的内容.</span><span class="sxs-lookup"><span data-stu-id="5dca0-139">You are free to use the latest software, as listed within the [install the tools](install-the-tools.md) article, though it should not be assumed that the information in this course will perfectly match what you'll find in newer software than what's listed below.</span></span>
+> <span data-ttu-id="e5c46-137">本教程面向具有 Unity 和C#的基本经验的开发人员。</span><span class="sxs-lookup"><span data-stu-id="e5c46-137">This tutorial is designed for developers who have basic experience with Unity and C#.</span></span> <span data-ttu-id="e5c46-138">另外请注意, 本文档中的先决条件和书面说明表明了在编写时已测试和验证的内容 (5 月 2018)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-138">Please also be aware that the prerequisites and written instructions within this document represent what has been tested and verified at the time of writing (May 2018).</span></span> <span data-ttu-id="e5c46-139">您可以随意使用最新的软件 (如[安装工具](install-the-tools.md)一文中所述), 但不应假定本课程中的信息将与下面列出的内容完全匹配。</span><span class="sxs-lookup"><span data-stu-id="e5c46-139">You are free to use the latest software, as listed within the [install the tools](install-the-tools.md) article, though it should not be assumed that the information in this course will perfectly match what you'll find in newer software than what's listed below.</span></span>
 
-<span data-ttu-id="5dca0-140">我们建议以下硬件和软件本课程：</span><span class="sxs-lookup"><span data-stu-id="5dca0-140">We recommend the following hardware and software for this course:</span></span>
+<span data-ttu-id="e5c46-140">本课程建议采用以下硬件和软件:</span><span class="sxs-lookup"><span data-stu-id="e5c46-140">We recommend the following hardware and software for this course:</span></span>
 
-- <span data-ttu-id="5dca0-141">开发 PC、 一个[与 Windows Mixed Reality 兼容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)沉浸式 (VR) 耳机开发</span><span class="sxs-lookup"><span data-stu-id="5dca0-141">A development PC, [compatible with Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines) for immersive (VR) headset development</span></span>
-- [<span data-ttu-id="5dca0-142">Windows 10 Fall Creators Update （或更高版本） 开发人员模式下启用</span><span class="sxs-lookup"><span data-stu-id="5dca0-142">Windows 10 Fall Creators Update (or later) with Developer mode enabled</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="5dca0-143">最新的 Windows 10 SDK</span><span class="sxs-lookup"><span data-stu-id="5dca0-143">The latest Windows 10 SDK</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="5dca0-144">Unity 2017.4</span><span class="sxs-lookup"><span data-stu-id="5dca0-144">Unity 2017.4</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="5dca0-145">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="5dca0-145">Visual Studio 2017</span></span>](install-the-tools.md#installation-checklist)
-- <span data-ttu-id="5dca0-146">一个[Windows Mixed Reality 沉浸式 (VR) 耳机](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)启用开发人员模式</span><span class="sxs-lookup"><span data-stu-id="5dca0-146">A [Windows Mixed Reality immersive (VR) headset](immersive-headset-hardware-details.md) or [Microsoft HoloLens](hololens-hardware-details.md) with Developer mode enabled</span></span>
-- <span data-ttu-id="5dca0-147">照相机连接到您的 PC （适用于沉浸式头戴式开发）</span><span class="sxs-lookup"><span data-stu-id="5dca0-147">A camera connected to your PC (for immersive headset development)</span></span>
-- <span data-ttu-id="5dca0-148">Internet 访问的 Azure 设置和计算机视觉 API 检索</span><span class="sxs-lookup"><span data-stu-id="5dca0-148">Internet access for Azure setup and Computer Vision API retrieval</span></span>
+- <span data-ttu-id="e5c46-141">[与 Windows Mixed Reality 兼容](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)的开发 PC, 用于沉浸式 (VR) 耳机开发</span><span class="sxs-lookup"><span data-stu-id="e5c46-141">A development PC, [compatible with Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines) for immersive (VR) headset development</span></span>
+- [<span data-ttu-id="e5c46-142">Windows 10 秋季创意者更新 (或更高版本) 已启用开发人员模式</span><span class="sxs-lookup"><span data-stu-id="e5c46-142">Windows 10 Fall Creators Update (or later) with Developer mode enabled</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="e5c46-143">最新的 Windows 10 SDK</span><span class="sxs-lookup"><span data-stu-id="e5c46-143">The latest Windows 10 SDK</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="e5c46-144">Unity 2017。4</span><span class="sxs-lookup"><span data-stu-id="e5c46-144">Unity 2017.4</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="e5c46-145">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="e5c46-145">Visual Studio 2017</span></span>](install-the-tools.md#installation-checklist)
+- <span data-ttu-id="e5c46-146">启用了开发人员模式的[Windows Mixed Reality 沉浸式 (VR) 耳机](immersive-headset-hardware-details.md)或[Microsoft HoloLens](hololens-hardware-details.md)</span><span class="sxs-lookup"><span data-stu-id="e5c46-146">A [Windows Mixed Reality immersive (VR) headset](immersive-headset-hardware-details.md) or [Microsoft HoloLens](hololens-hardware-details.md) with Developer mode enabled</span></span>
+- <span data-ttu-id="e5c46-147">连接到电脑的相机 (适用于沉浸式耳机开发)</span><span class="sxs-lookup"><span data-stu-id="e5c46-147">A camera connected to your PC (for immersive headset development)</span></span>
+- <span data-ttu-id="e5c46-148">Azure 安装和计算机视觉 API 检索的 Internet 访问</span><span class="sxs-lookup"><span data-stu-id="e5c46-148">Internet access for Azure setup and Computer Vision API retrieval</span></span>
 
-## <a name="before-you-start"></a><span data-ttu-id="5dca0-149">开始之前</span><span class="sxs-lookup"><span data-stu-id="5dca0-149">Before you start</span></span>
+## <a name="before-you-start"></a><span data-ttu-id="e5c46-149">开始之前</span><span class="sxs-lookup"><span data-stu-id="e5c46-149">Before you start</span></span>
 
-1.  <span data-ttu-id="5dca0-150">若要避免遇到生成此项目的问题，强烈建议您创建在本教程中所述，在根或接近根文件夹中的项目 （长文件夹路径可能会导致在生成时的问题）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-150">To avoid encountering issues building this project, it is strongly suggested that you create the project mentioned in this tutorial in a root or near-root folder (long folder paths can cause issues at build-time).</span></span>
-2.  <span data-ttu-id="5dca0-151">设置和测试你 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="5dca0-151">Set up and test your HoloLens.</span></span> <span data-ttu-id="5dca0-152">如果需要支持设置你 HoloLens[请确保访问 HoloLens 安装文章](https://docs.microsoft.com/hololens/hololens-setup)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-152">If you need support setting up your HoloLens, [make sure to visit the HoloLens setup article](https://docs.microsoft.com/hololens/hololens-setup).</span></span> 
-3.  <span data-ttu-id="5dca0-153">它是一个好办法开始开发新 HoloLens 应用程序 （有时它可帮助执行这些任务的每个用户） 时执行校准和优化传感器。</span><span class="sxs-lookup"><span data-stu-id="5dca0-153">It is a good idea to perform Calibration and Sensor Tuning when beginning developing a new HoloLens App (sometimes it can help to perform those tasks for each user).</span></span> 
+1.  <span data-ttu-id="e5c46-150">为避免在生成此项目时遇到问题, 强烈建议您在本教程中的根或根文件夹中创建项目 (长文件夹路径可能会在生成时导致问题)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-150">To avoid encountering issues building this project, it is strongly suggested that you create the project mentioned in this tutorial in a root or near-root folder (long folder paths can cause issues at build-time).</span></span>
+2.  <span data-ttu-id="e5c46-151">设置并测试你的 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="e5c46-151">Set up and test your HoloLens.</span></span> <span data-ttu-id="e5c46-152">如果需要支持设置 HoloLens, 请[确保访问 hololens 设置一文](https://docs.microsoft.com/hololens/hololens-setup)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-152">If you need support setting up your HoloLens, [make sure to visit the HoloLens setup article](https://docs.microsoft.com/hololens/hololens-setup).</span></span> 
+3.  <span data-ttu-id="e5c46-153">在开始开发新的 HoloLens 应用程序时, 最好执行校准和传感器调整 (有时它可以帮助为每个用户执行这些任务)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-153">It is a good idea to perform Calibration and Sensor Tuning when beginning developing a new HoloLens App (sometimes it can help to perform those tasks for each user).</span></span> 
 
-<span data-ttu-id="5dca0-154">有关校准的帮助，请遵循此[HoloLens 校准文章链接](calibration.md#hololens)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-154">For help on Calibration, please follow this [link to the HoloLens Calibration article](calibration.md#hololens).</span></span>
+<span data-ttu-id="e5c46-154">有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-154">For help on Calibration, please follow this [link to the HoloLens Calibration article](calibration.md#hololens).</span></span>
 
-<span data-ttu-id="5dca0-155">有关传感器优化的帮助，请遵循此[HoloLens 传感器优化文章链接](sensor-tuning.md)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-155">For help on Sensor Tuning, please follow this [link to the HoloLens Sensor Tuning article](sensor-tuning.md).</span></span>
+<span data-ttu-id="e5c46-155">有关传感器优化的帮助, 请单击["HoloLens 传感器优化" 一文](sensor-tuning.md)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-155">For help on Sensor Tuning, please follow this [link to the HoloLens Sensor Tuning article](sensor-tuning.md).</span></span>
 
-## <a name="chapter-1--the-azure-portal"></a><span data-ttu-id="5dca0-156">第 1 章 – Azure 门户</span><span class="sxs-lookup"><span data-stu-id="5dca0-156">Chapter 1 – The Azure Portal</span></span>
+## <a name="chapter-1--the-azure-portal"></a><span data-ttu-id="e5c46-156">第1章-Azure 门户</span><span class="sxs-lookup"><span data-stu-id="e5c46-156">Chapter 1 – The Azure Portal</span></span>
 
-<span data-ttu-id="5dca0-157">若要使用*计算机视觉 API*服务在 Azure 中，你将需要配置要成为可用于应用程序的服务的实例。</span><span class="sxs-lookup"><span data-stu-id="5dca0-157">To use the *Computer Vision API* service in Azure, you will need to configure an instance of the service to be made available to your application.</span></span>
+<span data-ttu-id="e5c46-157">若要在 Azure 中使用*计算机视觉 API*服务, 你将需要配置服务的实例, 使其可用于你的应用程序。</span><span class="sxs-lookup"><span data-stu-id="e5c46-157">To use the *Computer Vision API* service in Azure, you will need to configure an instance of the service to be made available to your application.</span></span>
 
-1.  <span data-ttu-id="5dca0-158">首先，登录到[Azure 门户](https://portal.azure.com)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-158">First, log in to the [Azure Portal](https://portal.azure.com).</span></span> 
-
-    > [!NOTE]
-    > <span data-ttu-id="5dca0-159">如果你还没有 Azure 帐户，你需要创建一个。</span><span class="sxs-lookup"><span data-stu-id="5dca0-159">If you do not already have an Azure account, you will need to create one.</span></span> <span data-ttu-id="5dca0-160">如果您按照本教程中在课堂或实验室的情况下，要求教师或新帐户的帮助设置 proctors 之一。</span><span class="sxs-lookup"><span data-stu-id="5dca0-160">If you are following this tutorial in a classroom or lab situation, ask your instructor or one of the proctors for help setting up your new account.</span></span>
-
-2.  <span data-ttu-id="5dca0-161">你登录后，单击**新建**在左上角，并搜索*计算机视觉 API*，然后单击**Enter**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-161">Once you are logged in, click on **New** in the top left corner, and search for *Computer Vision API*, and click **Enter**.</span></span>
-
-    ![在 Azure 中创建新的资源](images/AzureLabs-Lab2-00.png)
+1.  <span data-ttu-id="e5c46-158">首先, 登录到[Azure 门户](https://portal.azure.com)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-158">First, log in to the [Azure Portal](https://portal.azure.com).</span></span> 
 
     > [!NOTE]
-    > <span data-ttu-id="5dca0-163">单词**新建**可能已替换**创建资源**，较新的门户网站中。</span><span class="sxs-lookup"><span data-stu-id="5dca0-163">The word **New** may have been replaced with **Create a resource**, in newer portals.</span></span>
+    > <span data-ttu-id="e5c46-159">如果还没有 Azure 帐户, 则需要创建一个。</span><span class="sxs-lookup"><span data-stu-id="e5c46-159">If you do not already have an Azure account, you will need to create one.</span></span> <span data-ttu-id="e5c46-160">如果在课堂或实验室中按照本教程进行学习, 请咨询教师或 proctors, 以获得设置新帐户的帮助。</span><span class="sxs-lookup"><span data-stu-id="e5c46-160">If you are following this tutorial in a classroom or lab situation, ask your instructor or one of the proctors for help setting up your new account.</span></span>
+
+2.  <span data-ttu-id="e5c46-161">登录后, 单击左上角的 "**新建**", 搜索 "*计算机视觉 API*", 然后单击 " **Enter**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-161">Once you are logged in, click on **New** in the top left corner, and search for *Computer Vision API*, and click **Enter**.</span></span>
+
+    ![在 Azure 中创建新资源](images/AzureLabs-Lab2-00.png)
+
+    > [!NOTE]
+    > <span data-ttu-id="e5c46-163">在较新的门户中, 可能已将 "**新建**" 一词替换为 "**创建资源**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-163">The word **New** may have been replaced with **Create a resource**, in newer portals.</span></span>
  
-3.  <span data-ttu-id="5dca0-164">该新页面将提供的说明*计算机视觉 API*服务。</span><span class="sxs-lookup"><span data-stu-id="5dca0-164">The new page will provide a description of the *Computer Vision API* service.</span></span> <span data-ttu-id="5dca0-165">在左下角此页上，选择**创建**按钮，以创建与此服务的关联。</span><span class="sxs-lookup"><span data-stu-id="5dca0-165">At the bottom left of this page, select the **Create** button, to create an association with this service.</span></span>
+3.  <span data-ttu-id="e5c46-164">新页将提供*计算机视觉 API*服务的说明。</span><span class="sxs-lookup"><span data-stu-id="e5c46-164">The new page will provide a description of the *Computer Vision API* service.</span></span> <span data-ttu-id="e5c46-165">在此页的左下角, 选择 "**创建**" 按钮以创建与此服务的关联。</span><span class="sxs-lookup"><span data-stu-id="e5c46-165">At the bottom left of this page, select the **Create** button, to create an association with this service.</span></span>
 
-    ![有关计算机视觉 api 服务](images/AzureLabs-Lab2-01.png)
+    ![关于计算机视觉 api 服务](images/AzureLabs-Lab2-01.png)
  
-4.  <span data-ttu-id="5dca0-167">一旦你单击**创建**:</span><span class="sxs-lookup"><span data-stu-id="5dca0-167">Once you have clicked on **Create**:</span></span>
+4.  <span data-ttu-id="e5c46-167">单击 "**创建**" 后:</span><span class="sxs-lookup"><span data-stu-id="e5c46-167">Once you have clicked on **Create**:</span></span>
 
-    1. <span data-ttu-id="5dca0-168">插入所需**名称**此服务实例。</span><span class="sxs-lookup"><span data-stu-id="5dca0-168">Insert your desired **Name** for this service instance.</span></span>
-    2. <span data-ttu-id="5dca0-169">选择**订阅**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-169">Select a **Subscription**.</span></span>
-    3. <span data-ttu-id="5dca0-170">选择**定价层**适合您，如果这是首次创建*计算机视觉 API*服务，应可供你免费层 （名为 F0）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-170">Select the **Pricing Tier** appropriate for you, if this is the first time creating a *Computer Vision API* Service, a free tier (named F0) should be available to you.</span></span>
-    4. <span data-ttu-id="5dca0-171">选择**资源组**或新建一个。</span><span class="sxs-lookup"><span data-stu-id="5dca0-171">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="5dca0-172">资源组提供了一种方法来监视、 控制访问，预配和管理 Azure 资产的集合的计费。</span><span class="sxs-lookup"><span data-stu-id="5dca0-172">A resource group provides a way to monitor, control access, provision and manage billing for a collection of Azure assets.</span></span> <span data-ttu-id="5dca0-173">建议尽量与常见的资源组下的单个项目 （例如如这些实验室） 相关联的所有 Azure 服务）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-173">It is recommended to keep all the Azure services associated with a single project (e.g. such as these labs) under a common resource group).</span></span> 
+    1. <span data-ttu-id="e5c46-168">为此服务实例插入所需的**名称**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-168">Insert your desired **Name** for this service instance.</span></span>
+    2. <span data-ttu-id="e5c46-169">选择**订阅**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-169">Select a **Subscription**.</span></span>
+    3. <span data-ttu-id="e5c46-170">选择适合你的**定价层**, 如果这是第一次创建*计算机视觉 API*服务, 则你应该可以使用免费层 (名为 F0)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-170">Select the **Pricing Tier** appropriate for you, if this is the first time creating a *Computer Vision API* Service, a free tier (named F0) should be available to you.</span></span>
+    4. <span data-ttu-id="e5c46-171">选择一个**资源组**, 或创建一个新的资源组。</span><span class="sxs-lookup"><span data-stu-id="e5c46-171">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="e5c46-172">资源组提供一种监视、控制访问、预配和管理 Azure 资产集合的计费的方法。</span><span class="sxs-lookup"><span data-stu-id="e5c46-172">A resource group provides a way to monitor, control access, provision and manage billing for a collection of Azure assets.</span></span> <span data-ttu-id="e5c46-173">建议将所有与单个项目关联的 Azure 服务 (例如这些实验室) 保存在一个公共资源组中。</span><span class="sxs-lookup"><span data-stu-id="e5c46-173">It is recommended to keep all the Azure services associated with a single project (e.g. such as these labs) under a common resource group).</span></span> 
 
-        > <span data-ttu-id="5dca0-174">如果你想要阅读更多有关 Azure 资源组，请[访问该资源组文章](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-174">If you wish to read more about Azure Resource Groups, please [visit the resource group article](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
+        > <span data-ttu-id="e5c46-174">若要了解有关 Azure 资源组的详细信息, 请[访问资源组一文](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-174">If you wish to read more about Azure Resource Groups, please [visit the resource group article](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
 
-    5. <span data-ttu-id="5dca0-175">（如果要创建新的资源组） 确定你的资源组的位置。</span><span class="sxs-lookup"><span data-stu-id="5dca0-175">Determine the Location for your resource group (if you are creating a new Resource Group).</span></span> <span data-ttu-id="5dca0-176">理想情况下，则位置应为该应用程序将运行的区域中。</span><span class="sxs-lookup"><span data-stu-id="5dca0-176">The location would ideally be in the region where the application would run.</span></span> <span data-ttu-id="5dca0-177">某些 Azure 资产在特定区域才可用。</span><span class="sxs-lookup"><span data-stu-id="5dca0-177">Some Azure assets are only available in certain regions.</span></span>
+    5. <span data-ttu-id="e5c46-175">确定资源组的位置 (如果要创建新的资源组)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-175">Determine the Location for your resource group (if you are creating a new Resource Group).</span></span> <span data-ttu-id="e5c46-176">此位置理想情况下会在应用程序运行所在的区域中。</span><span class="sxs-lookup"><span data-stu-id="e5c46-176">The location would ideally be in the region where the application would run.</span></span> <span data-ttu-id="e5c46-177">某些 Azure 资产仅在特定区域提供。</span><span class="sxs-lookup"><span data-stu-id="e5c46-177">Some Azure assets are only available in certain regions.</span></span>
 
-    6. <span data-ttu-id="5dca0-178">您还需要确认你已了解的条款和条件应用于此服务。</span><span class="sxs-lookup"><span data-stu-id="5dca0-178">You will also need to confirm that you have understood the Terms and Conditions applied to this Service.</span></span>
-    7. <span data-ttu-id="5dca0-179">单击创建。</span><span class="sxs-lookup"><span data-stu-id="5dca0-179">Click Create.</span></span>
+    6. <span data-ttu-id="e5c46-178">还需要确认是否已了解应用于此服务的条款和条件。</span><span class="sxs-lookup"><span data-stu-id="e5c46-178">You will also need to confirm that you have understood the Terms and Conditions applied to this Service.</span></span>
+    7. <span data-ttu-id="e5c46-179">单击 "创建"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-179">Click Create.</span></span>
 
         ![服务创建信息](images/AzureLabs-Lab2-02.png)
 
-5.  <span data-ttu-id="5dca0-181">一旦你单击**创建**，必须要等待的时间来创建服务，这可能需要一分钟。</span><span class="sxs-lookup"><span data-stu-id="5dca0-181">Once you have clicked on **Create**, you will have to wait for the service to be created, this might take a minute.</span></span>
-6.  <span data-ttu-id="5dca0-182">创建服务实例后，在门户中将显示一条通知。</span><span class="sxs-lookup"><span data-stu-id="5dca0-182">A notification will appear in the portal once the Service instance is created.</span></span>
+5.  <span data-ttu-id="e5c46-181">单击 "**创建**" 后, 需要等待创建服务, 这可能需要一分钟时间。</span><span class="sxs-lookup"><span data-stu-id="e5c46-181">Once you have clicked on **Create**, you will have to wait for the service to be created, this might take a minute.</span></span>
+6.  <span data-ttu-id="e5c46-182">创建服务实例后, 门户中将显示一个通知。</span><span class="sxs-lookup"><span data-stu-id="e5c46-182">A notification will appear in the portal once the Service instance is created.</span></span>
 
-    ![请参阅您的新服务的新通知](images/AzureLabs-Lab2-03.png) 
+    ![查看新服务的新通知](images/AzureLabs-Lab2-03.png) 
  
-7.  <span data-ttu-id="5dca0-184">单击通知以了解新的服务实例。</span><span class="sxs-lookup"><span data-stu-id="5dca0-184">Click on the notification to explore your new Service instance.</span></span> 
+7.  <span data-ttu-id="e5c46-184">单击通知以浏览新服务实例。</span><span class="sxs-lookup"><span data-stu-id="e5c46-184">Click on the notification to explore your new Service instance.</span></span> 
 
-    ![选择转到资源按钮。](images/AzureLabs-Lab2-04.png)
+    ![选择 "中转到资源" 按钮。](images/AzureLabs-Lab2-04.png)
  
-8. <span data-ttu-id="5dca0-186">单击**转到资源**通知探索新的服务实例中的按钮。</span><span class="sxs-lookup"><span data-stu-id="5dca0-186">Click the **Go to resource** button in the notification to explore your new Service instance.</span></span> <span data-ttu-id="5dca0-187">你将转到新的计算机视觉 API 服务实例。</span><span class="sxs-lookup"><span data-stu-id="5dca0-187">You will be taken to your new Computer Vision API service instance.</span></span> 
+8. <span data-ttu-id="e5c46-186">单击通知中的 "**中转到资源**" 按钮以浏览新服务实例。</span><span class="sxs-lookup"><span data-stu-id="e5c46-186">Click the **Go to resource** button in the notification to explore your new Service instance.</span></span> <span data-ttu-id="e5c46-187">你将转到新的计算机视觉 API 服务实例。</span><span class="sxs-lookup"><span data-stu-id="e5c46-187">You will be taken to your new Computer Vision API service instance.</span></span> 
 
     ![新的计算机视觉 API 服务](images/AzureLabs-Lab2-05.png)
  
-9.  <span data-ttu-id="5dca0-189">在本教程中，你的应用程序将需要对你的服务，通过使用服务的订阅密钥来完成进行调用。</span><span class="sxs-lookup"><span data-stu-id="5dca0-189">Within this tutorial, your application will need to make calls to your service, which is done through using your service’s Subscription Key.</span></span>
-10. <span data-ttu-id="5dca0-190">从*快速入门*页上的你*计算机视觉 API*服务，，请导航到的第一步*捕捉密钥*，然后单击**密钥**(也可以在此通过单击蓝色超链接密钥，位于服务导航菜单中，由密钥图标表示）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-190">From the *Quick start* page, of your *Computer Vision API* service, navigate to the first step, *Grab your keys*, and click **Keys** (you can also achieve this by clicking the blue hyperlink Keys, located in the services navigation menu, denoted by the key icon).</span></span> <span data-ttu-id="5dca0-191">此时会显示你的服务*密钥*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-191">This will reveal your service *Keys*.</span></span>
-11. <span data-ttu-id="5dca0-192">需要一份某个显示的密钥，因为你将需要此更高版本中您的项目。</span><span class="sxs-lookup"><span data-stu-id="5dca0-192">Take a copy of one of the displayed keys, as you will need this later in your project.</span></span> 
+9.  <span data-ttu-id="e5c46-189">在本教程中, 你的应用程序将需要调用你的服务, 这是通过使用你的服务的订阅密钥来完成的。</span><span class="sxs-lookup"><span data-stu-id="e5c46-189">Within this tutorial, your application will need to make calls to your service, which is done through using your service’s Subscription Key.</span></span>
+10. <span data-ttu-id="e5c46-190">在*计算机视觉 API*服务的 "*快速启动*" 页上, 导航到第一步,*获取你的密钥*, 然后单击 "**密钥**" (也可以通过单击位于 "服务" 导航菜单中的蓝色超链接项来实现此目的)。由键图标表示)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-190">From the *Quick start* page, of your *Computer Vision API* service, navigate to the first step, *Grab your keys*, and click **Keys** (you can also achieve this by clicking the blue hyperlink Keys, located in the services navigation menu, denoted by the key icon).</span></span> <span data-ttu-id="e5c46-191">这会显示你的服务*密钥*。</span><span class="sxs-lookup"><span data-stu-id="e5c46-191">This will reveal your service *Keys*.</span></span>
+11. <span data-ttu-id="e5c46-192">复制其中一个所显示的密钥, 因为稍后会在项目中使用此密钥。</span><span class="sxs-lookup"><span data-stu-id="e5c46-192">Take a copy of one of the displayed keys, as you will need this later in your project.</span></span> 
 
-12. <span data-ttu-id="5dca0-193">返回到*快速入门*页上，并从中提取你的终结点。</span><span class="sxs-lookup"><span data-stu-id="5dca0-193">Go back to the *Quick start* page, and from there, fetch your endpoint.</span></span> <span data-ttu-id="5dca0-194">请注意您可能会有所不同，具体取决于你的区域 (这是，如果需要更高版本对代码进行更改)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-194">Be aware yours may be different, depending on your region (which if it is, you will need to make a change to your code later).</span></span> <span data-ttu-id="5dca0-195">获取供以后使用此终结点的副本：</span><span class="sxs-lookup"><span data-stu-id="5dca0-195">Take a copy of this endpoint for use later:</span></span>
+12. <span data-ttu-id="e5c46-193">返回到 "*快速启动*" 页, 从该处获取终结点。</span><span class="sxs-lookup"><span data-stu-id="e5c46-193">Go back to the *Quick start* page, and from there, fetch your endpoint.</span></span> <span data-ttu-id="e5c46-194">请注意, 你可能会有所不同, 具体取决于你所在的区域 (如果是, 你将需要在以后对代码进行更改)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-194">Be aware yours may be different, depending on your region (which if it is, you will need to make a change to your code later).</span></span> <span data-ttu-id="e5c46-195">获取此终结点的副本供以后使用:</span><span class="sxs-lookup"><span data-stu-id="e5c46-195">Take a copy of this endpoint for use later:</span></span>
 
     ![新的计算机视觉 API 服务](images/AzureLabs-Lab2-05-5.png)
 
     > [!TIP]
-    > <span data-ttu-id="5dca0-197">你可以检查各个终结点是什么[此处](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-197">You can check what the various endpoints are [HERE](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).</span></span> 
+    > <span data-ttu-id="e5c46-197">可在[此处](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)检查各种终结点。</span><span class="sxs-lookup"><span data-stu-id="e5c46-197">You can check what the various endpoints are [HERE](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).</span></span> 
 
-## <a name="chapter-2--set-up-the-unity-project"></a><span data-ttu-id="5dca0-198">第 2 章-设置 Unity 项目</span><span class="sxs-lookup"><span data-stu-id="5dca0-198">Chapter 2 – Set up the Unity project</span></span>
+## <a name="chapter-2--set-up-the-unity-project"></a><span data-ttu-id="e5c46-198">第2章–设置 Unity 项目</span><span class="sxs-lookup"><span data-stu-id="e5c46-198">Chapter 2 – Set up the Unity project</span></span>
 
-<span data-ttu-id="5dca0-199">以下是一组典型使用混合现实，进行开发，并在这种情况下，是合适的模板的其他项目。</span><span class="sxs-lookup"><span data-stu-id="5dca0-199">The following is a typical set up for developing with mixed reality, and as such, is a good template for other projects.</span></span>
+<span data-ttu-id="e5c46-199">下面是用于使用混合现实进行开发的典型设置, 因此, 这是其他项目的一个不错的模板。</span><span class="sxs-lookup"><span data-stu-id="e5c46-199">The following is a typical set up for developing with mixed reality, and as such, is a good template for other projects.</span></span>
 
-1.  <span data-ttu-id="5dca0-200">打开*Unity*然后单击**新建**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-200">Open *Unity* and click **New**.</span></span> 
+1.  <span data-ttu-id="e5c46-200">打开*Unity* , 并单击 "**新建**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-200">Open *Unity* and click **New**.</span></span> 
 
     ![启动新的 Unity 项目。](images/AzureLabs-Lab2-06.png)
 
-2.  <span data-ttu-id="5dca0-202">现在，需要提供 Unity 项目的名称。</span><span class="sxs-lookup"><span data-stu-id="5dca0-202">You will now need to provide a Unity Project name.</span></span> <span data-ttu-id="5dca0-203">插入**MR_ComputerVision**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-203">Insert **MR_ComputerVision**.</span></span> <span data-ttu-id="5dca0-204">请确保项目类型设置为**3D**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-204">Make sure the project type is set to **3D**.</span></span> <span data-ttu-id="5dca0-205">设置**位置**到适合于您的某个位置 （请记住，更接近于根目录是更好）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-205">Set the **Location** to somewhere appropriate for you (remember, closer to root directories is better).</span></span> <span data-ttu-id="5dca0-206">然后，单击**创建项目**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-206">Then, click **Create project**.</span></span>
+2.  <span data-ttu-id="e5c46-202">现在需要提供 Unity 项目名称。</span><span class="sxs-lookup"><span data-stu-id="e5c46-202">You will now need to provide a Unity Project name.</span></span> <span data-ttu-id="e5c46-203">插入**MR_ComputerVision**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-203">Insert **MR_ComputerVision**.</span></span> <span data-ttu-id="e5c46-204">请确保 "项目类型" 设置为 " **3d**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-204">Make sure the project type is set to **3D**.</span></span> <span data-ttu-id="e5c46-205">将位置设置为合适的**位置**(请记住, 更接近根目录更好)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-205">Set the **Location** to somewhere appropriate for you (remember, closer to root directories is better).</span></span> <span data-ttu-id="e5c46-206">然后单击 "**创建项目**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-206">Then, click **Create project**.</span></span>
 
-    ![提供新的 Unity 项目的详细信息。](images/AzureLabs-Lab2-07.png)
+    ![提供新 Unity 项目的详细信息。](images/AzureLabs-Lab2-07.png)
 
-3.  <span data-ttu-id="5dca0-208">使用 Unity 打开，它是值得选择，默认值**脚本编辑器**设置为**Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-208">With Unity open, it is worth checking the default **Script Editor** is set to **Visual Studio**.</span></span> <span data-ttu-id="5dca0-209">转到**编辑 > 首选项**，然后在新窗口中，导航到**外部工具**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-209">Go to **Edit > Preferences** and then from the new window, navigate to **External Tools**.</span></span> <span data-ttu-id="5dca0-210">更改**外部脚本编辑器**到**Visual Studio 2017**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-210">Change **External Script Editor** to **Visual Studio 2017**.</span></span> <span data-ttu-id="5dca0-211">关闭**首选项**窗口。</span><span class="sxs-lookup"><span data-stu-id="5dca0-211">Close the **Preferences** window.</span></span>
+3.  <span data-ttu-id="e5c46-208">当 Unity 处于打开状态时, 有必要选中 "默认**脚本编辑器**" 设置为 " **Visual Studio**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-208">With Unity open, it is worth checking the default **Script Editor** is set to **Visual Studio**.</span></span> <span data-ttu-id="e5c46-209">转到 "**编辑 > 首选项**", 然后在新窗口中导航到 "**外部工具**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-209">Go to **Edit > Preferences** and then from the new window, navigate to **External Tools**.</span></span> <span data-ttu-id="e5c46-210">将**外部脚本编辑器**更改为**Visual Studio 2017**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-210">Change **External Script Editor** to **Visual Studio 2017**.</span></span> <span data-ttu-id="e5c46-211">关闭 "**首选项**" 窗口。</span><span class="sxs-lookup"><span data-stu-id="e5c46-211">Close the **Preferences** window.</span></span>
 
     ![更新脚本编辑器首选项。](images/AzureLabs-Lab2-08.png)
 
-4.  <span data-ttu-id="5dca0-213">接下来，请转到**文件 > 生成设置**，然后选择**通用 Windows 平台**，然后单击**切换平台**按钮以应用你的选择。</span><span class="sxs-lookup"><span data-stu-id="5dca0-213">Next, go to **File > Build Settings** and select **Universal Windows Platform**, then click on the **Switch Platform** button to apply your selection.</span></span>
+4.  <span data-ttu-id="e5c46-213">接下来, 转到 "**文件 > 生成设置**", 选择 "**通用 Windows 平台**", 然后单击 "**切换平台**" 按钮以应用所选内容。</span><span class="sxs-lookup"><span data-stu-id="e5c46-213">Next, go to **File > Build Settings** and select **Universal Windows Platform**, then click on the **Switch Platform** button to apply your selection.</span></span>
 
-    ![生成设置窗口中，切换到 UWP 的平台。](images/AzureLabs-Lab2-10.png)
+    ![生成设置窗口, 将平台切换到 UWP。](images/AzureLabs-Lab2-10.png)
 
-5.  <span data-ttu-id="5dca0-215">在仍处于**文件 > 生成设置**并确保选中：</span><span class="sxs-lookup"><span data-stu-id="5dca0-215">While still in **File > Build Settings** and make sure that:</span></span>
+5.  <span data-ttu-id="e5c46-215">尽管仍处于**文件 > 生成设置**, 但请确保:</span><span class="sxs-lookup"><span data-stu-id="e5c46-215">While still in **File > Build Settings** and make sure that:</span></span>
 
-    1. <span data-ttu-id="5dca0-216">**设备为目标**设置为**HoloLens**</span><span class="sxs-lookup"><span data-stu-id="5dca0-216">**Target Device** is set to **HoloLens**</span></span>
+    1. <span data-ttu-id="e5c46-216">**目标设备**设置为**HoloLens**</span><span class="sxs-lookup"><span data-stu-id="e5c46-216">**Target Device** is set to **HoloLens**</span></span>
 
-        > <span data-ttu-id="5dca0-217">对于沉浸式耳机，设置**目标设备**到*任一设备*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-217">For the immersive headsets, set **Target Device** to *Any Device*.</span></span>
+        > <span data-ttu-id="e5c46-217">对于沉浸式耳机, 将 "**目标设备**" 设置为 "*任何设备*"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-217">For the immersive headsets, set **Target Device** to *Any Device*.</span></span>
 
-    2. <span data-ttu-id="5dca0-218">**生成的类型**设置为**D3D**</span><span class="sxs-lookup"><span data-stu-id="5dca0-218">**Build Type** is set to **D3D**</span></span>
-    3. <span data-ttu-id="5dca0-219">**SDK**设置为**最新安装**</span><span class="sxs-lookup"><span data-stu-id="5dca0-219">**SDK** is set to **Latest installed**</span></span>
-    4. <span data-ttu-id="5dca0-220">**Visual Studio 版本**设置为**最新安装**</span><span class="sxs-lookup"><span data-stu-id="5dca0-220">**Visual Studio Version** is set to **Latest installed**</span></span>
-    5. <span data-ttu-id="5dca0-221">**生成并运行**设置为**本地计算机**</span><span class="sxs-lookup"><span data-stu-id="5dca0-221">**Build and Run** is set to **Local Machine**</span></span>
-    6. <span data-ttu-id="5dca0-222">保存场景，并将其添加到生成。</span><span class="sxs-lookup"><span data-stu-id="5dca0-222">Save the scene and add it to the build.</span></span>
+    2. <span data-ttu-id="e5c46-218">**生成类型**设置为**D3D**</span><span class="sxs-lookup"><span data-stu-id="e5c46-218">**Build Type** is set to **D3D**</span></span>
+    3. <span data-ttu-id="e5c46-219">**SDK**设置为 "**最新安装**"</span><span class="sxs-lookup"><span data-stu-id="e5c46-219">**SDK** is set to **Latest installed**</span></span>
+    4. <span data-ttu-id="e5c46-220">**Visual Studio 版本**设置为 "**最新安装**"</span><span class="sxs-lookup"><span data-stu-id="e5c46-220">**Visual Studio Version** is set to **Latest installed**</span></span>
+    5. <span data-ttu-id="e5c46-221">"**生成并运行**" 设置为 "**本地计算机**"</span><span class="sxs-lookup"><span data-stu-id="e5c46-221">**Build and Run** is set to **Local Machine**</span></span>
+    6. <span data-ttu-id="e5c46-222">保存场景并将其添加到生成中。</span><span class="sxs-lookup"><span data-stu-id="e5c46-222">Save the scene and add it to the build.</span></span>
 
-        1. <span data-ttu-id="5dca0-223">选择执行此**添加打开场景**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-223">Do this by selecting **Add Open Scenes**.</span></span> <span data-ttu-id="5dca0-224">保存窗口将显示。</span><span class="sxs-lookup"><span data-stu-id="5dca0-224">A save window will appear.</span></span>
+        1. <span data-ttu-id="e5c46-223">通过选择 "**添加打开的场景**" 来执行此操作。</span><span class="sxs-lookup"><span data-stu-id="e5c46-223">Do this by selecting **Add Open Scenes**.</span></span> <span data-ttu-id="e5c46-224">将显示 "保存" 窗口。</span><span class="sxs-lookup"><span data-stu-id="e5c46-224">A save window will appear.</span></span>
         
-            ![单击添加打开场景按钮](images/AzureLabs-Lab2-11.png)
+            ![单击 "添加打开的场景" 按钮](images/AzureLabs-Lab2-11.png)
 
-        2. <span data-ttu-id="5dca0-226">创建一个新文件夹，以及任何未来、 场景，然后选择**新文件夹**按钮，创建一个新文件夹，其命名**场景**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-226">Create a new folder for this, and any future, scene, then select the **New folder** button, to create a new folder, name it **Scenes**.</span></span>
+        2. <span data-ttu-id="e5c46-226">为此创建新文件夹, 并为将来的任何场景创建一个新文件夹, 然后选择 "**新建文件夹**" 按钮以创建新文件夹, 将其命名为**场景**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-226">Create a new folder for this, and any future, scene, then select the **New folder** button, to create a new folder, name it **Scenes**.</span></span>
 
-            ![创建新的 scripts 文件夹](images/AzureLabs-Lab2-12.png)
+            !["创建新脚本" 文件夹](images/AzureLabs-Lab2-12.png)
 
-        3. <span data-ttu-id="5dca0-228">打开新建**场景**文件夹，然后在*文件名*： 文本字段中，键入**MR_ComputerVisionScene**，然后单击**保存**.</span><span class="sxs-lookup"><span data-stu-id="5dca0-228">Open your newly created **Scenes** folder, and then in the *File name*: text field, type **MR_ComputerVisionScene**, then click **Save**.</span></span>
+        3. <span data-ttu-id="e5c46-228">打开新创建的**场景**文件夹, 然后在 "文件名 *: 文本*" 字段中, 键入**MR_ComputerVisionScene**, 然后单击 "**保存**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-228">Open your newly created **Scenes** folder, and then in the *File name*: text field, type **MR_ComputerVisionScene**, then click **Save**.</span></span>
 
-            ![为新的场景提供一个名称。](images/AzureLabs-Lab2-13.png)
+            ![为新场景指定名称。](images/AzureLabs-Lab2-13.png)
 
-            > <span data-ttu-id="5dca0-230">请注意，必须将保存您的 Unity 场景中*资产*文件夹中，因为它们必须与 Unity 项目相关联。</span><span class="sxs-lookup"><span data-stu-id="5dca0-230">Be aware, you must save your Unity scenes within the *Assets* folder, as they must be associated with the Unity Project.</span></span> <span data-ttu-id="5dca0-231">创建场景文件夹 （和其他类似的文件夹） 是用于结构化的 Unity 项目的典型方式。</span><span class="sxs-lookup"><span data-stu-id="5dca0-231">Creating the scenes folder (and other similar folders) is a typical way of structuring a Unity project.</span></span>
+            > <span data-ttu-id="e5c46-230">请注意, 必须将 Unity 场景保存在 "*资产*" 文件夹中, 因为它们必须与 Unity 项目相关联。</span><span class="sxs-lookup"><span data-stu-id="e5c46-230">Be aware, you must save your Unity scenes within the *Assets* folder, as they must be associated with the Unity Project.</span></span> <span data-ttu-id="e5c46-231">创建场景文件夹 (以及其他类似文件夹) 是构造 Unity 项目的典型方式。</span><span class="sxs-lookup"><span data-stu-id="e5c46-231">Creating the scenes folder (and other similar folders) is a typical way of structuring a Unity project.</span></span>
 
-    7. <span data-ttu-id="5dca0-232">中的剩余设置，*生成设置*，应暂时保留为默认值。</span><span class="sxs-lookup"><span data-stu-id="5dca0-232">The remaining settings, in *Build Settings*, should be left as default for now.</span></span>
+    7. <span data-ttu-id="e5c46-232">现在, "*生成设置*" 中的其余设置应保留为默认值。</span><span class="sxs-lookup"><span data-stu-id="e5c46-232">The remaining settings, in *Build Settings*, should be left as default for now.</span></span>
 
-6. <span data-ttu-id="5dca0-233">在*生成设置*窗口中，单击**播放器设置**按钮，这将打开相关面板中的空间中的*检查器*所在。</span><span class="sxs-lookup"><span data-stu-id="5dca0-233">In the *Build Settings* window, click on the **Player Settings** button, this will open the related panel in the space where the *Inspector* is located.</span></span> 
+6. <span data-ttu-id="e5c46-233">在 "*生成设置*" 窗口中, 单击 "**播放机设置**" 按钮, 这会在*检查器*所在的空间中打开相关面板。</span><span class="sxs-lookup"><span data-stu-id="e5c46-233">In the *Build Settings* window, click on the **Player Settings** button, this will open the related panel in the space where the *Inspector* is located.</span></span> 
 
-    ![打开播放器设置。](images/AzureLabs-Lab2-14.png)
+    ![打开播放机设置。](images/AzureLabs-Lab2-14.png)
 
-7. <span data-ttu-id="5dca0-235">在此面板中，需要验证几个设置：</span><span class="sxs-lookup"><span data-stu-id="5dca0-235">In this panel, a few settings need to be verified:</span></span>
+7. <span data-ttu-id="e5c46-235">在此面板中, 需要验证几项设置:</span><span class="sxs-lookup"><span data-stu-id="e5c46-235">In this panel, a few settings need to be verified:</span></span>
 
-    1. <span data-ttu-id="5dca0-236">在中**其他设置**选项卡：</span><span class="sxs-lookup"><span data-stu-id="5dca0-236">In the **Other Settings** tab:</span></span>
+    1. <span data-ttu-id="e5c46-236">在 "**其他设置**" 选项卡中:</span><span class="sxs-lookup"><span data-stu-id="e5c46-236">In the **Other Settings** tab:</span></span>
 
-        1. <span data-ttu-id="5dca0-237">**脚本运行时版本**应**稳定**（.NET 3.5 等效）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-237">**Scripting Runtime Version** should be **Stable** (.NET 3.5 Equivalent).</span></span>
-        2. <span data-ttu-id="5dca0-238">**脚本编写后端**应为 **.NET**</span><span class="sxs-lookup"><span data-stu-id="5dca0-238">**Scripting Backend** should be **.NET**</span></span>
-        3. <span data-ttu-id="5dca0-239">**API 兼容性级别**应为 **.NET 4.6**</span><span class="sxs-lookup"><span data-stu-id="5dca0-239">**API Compatibility Level** should be **.NET 4.6**</span></span>
+        1. <span data-ttu-id="e5c46-237">**脚本运行时版本**应**稳定**(与 .net 3.5 等效)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-237">**Scripting Runtime Version** should be **Stable** (.NET 3.5 Equivalent).</span></span>
+        2. <span data-ttu-id="e5c46-238">**脚本编写后端**应为 **.net**</span><span class="sxs-lookup"><span data-stu-id="e5c46-238">**Scripting Backend** should be **.NET**</span></span>
+        3. <span data-ttu-id="e5c46-239">**API 兼容级别**应为 **.net 4.6**</span><span class="sxs-lookup"><span data-stu-id="e5c46-239">**API Compatibility Level** should be **.NET 4.6**</span></span>
 
             ![更新其他设置。](images/AzureLabs-Lab2-15.png)
       
-    2. <span data-ttu-id="5dca0-241">内**发布设置**选项卡上，在**功能**，检查：</span><span class="sxs-lookup"><span data-stu-id="5dca0-241">Within the **Publishing Settings** tab, under **Capabilities**, check:</span></span>
+    2. <span data-ttu-id="e5c46-241">在 "**发布设置**" 选项卡的 "**功能**" 下, 检查:</span><span class="sxs-lookup"><span data-stu-id="e5c46-241">Within the **Publishing Settings** tab, under **Capabilities**, check:</span></span>
 
-        1. <span data-ttu-id="5dca0-242">**InternetClient**</span><span class="sxs-lookup"><span data-stu-id="5dca0-242">**InternetClient**</span></span>
-        2. <span data-ttu-id="5dca0-243">**Webcam**</span><span class="sxs-lookup"><span data-stu-id="5dca0-243">**Webcam**</span></span>
+        1. <span data-ttu-id="e5c46-242">**InternetClient**</span><span class="sxs-lookup"><span data-stu-id="e5c46-242">**InternetClient**</span></span>
+        2. <span data-ttu-id="e5c46-243">**摄像头**</span><span class="sxs-lookup"><span data-stu-id="e5c46-243">**Webcam**</span></span>
 
-            ![正在更新的发布设置。](images/AzureLabs-Lab2-16.png)
+            ![正在更新发布设置。](images/AzureLabs-Lab2-16.png)
 
-    3. <span data-ttu-id="5dca0-245">中的后面部分面板**XR 设置**(下面找到**发布设置**)，刻度线**虚拟现实支持**，请确保**Windows 混合现实 SDK**添加。</span><span class="sxs-lookup"><span data-stu-id="5dca0-245">Further down the panel, in **XR Settings** (found below **Publish Settings**), tick **Virtual Reality Supported**, make sure the **Windows Mixed Reality SDK** is added.</span></span>
+    3. <span data-ttu-id="e5c46-245">在面板中, 在 " **XR" 设置**(位于 "**发布设置**" 下) 中, 在 "**支持的虚拟现实**" 下, 确保已添加**Windows Mixed reality SDK** 。</span><span class="sxs-lookup"><span data-stu-id="e5c46-245">Further down the panel, in **XR Settings** (found below **Publish Settings**), tick **Virtual Reality Supported**, make sure the **Windows Mixed Reality SDK** is added.</span></span>
 
-        ![更新的 X R 设置。](images/AzureLabs-Lab2-17.png)
+        ![更新 X R 设置。](images/AzureLabs-Lab2-17.png)
 
-8.  <span data-ttu-id="5dca0-247">回到*生成设置* _Unity C#_ 项目不再灰显; 选中它旁边的复选框。</span><span class="sxs-lookup"><span data-stu-id="5dca0-247">Back in *Build Settings* _Unity C#_ Projects is no longer greyed out; tick the checkbox next to this.</span></span> 
-9.  <span data-ttu-id="5dca0-248">关闭生成设置窗口。</span><span class="sxs-lookup"><span data-stu-id="5dca0-248">Close the Build Settings window.</span></span>
-10. <span data-ttu-id="5dca0-249">保存您的场景和项目 (**文件 > 保存场景文件 > 保存项目**)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-249">Save your Scene and Project (**FILE > SAVE SCENE / FILE > SAVE PROJECT**).</span></span>
+8.  <span data-ttu-id="e5c46-247">"返回*生成设置* _" C# Unity_项目不再灰显;勾选此的旁边的复选框。</span><span class="sxs-lookup"><span data-stu-id="e5c46-247">Back in *Build Settings* _Unity C#_ Projects is no longer greyed out; tick the checkbox next to this.</span></span> 
+9.  <span data-ttu-id="e5c46-248">关闭 "生成设置" 窗口。</span><span class="sxs-lookup"><span data-stu-id="e5c46-248">Close the Build Settings window.</span></span>
+10. <span data-ttu-id="e5c46-249">保存场景和项目 (**file > SAVE 场景/file > SAVE Project**)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-249">Save your Scene and Project (**FILE > SAVE SCENE / FILE > SAVE PROJECT**).</span></span>
 
-## <a name="chapter-3--main-camera-setup"></a><span data-ttu-id="5dca0-250">第 3 章 – 主照相机设置</span><span class="sxs-lookup"><span data-stu-id="5dca0-250">Chapter 3 – Main Camera setup</span></span>
+## <a name="chapter-3--main-camera-setup"></a><span data-ttu-id="e5c46-250">第3章–照相机设置</span><span class="sxs-lookup"><span data-stu-id="e5c46-250">Chapter 3 – Main Camera setup</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="5dca0-251">如果你想要跳过*Unity 设置*组件的此课程，并继续直接插入代码，欢迎下载这[.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302%20-%20Computer%20vision/Azure-MR-302.unitypackage)，将其导入项目中，作为[自定义包](https://docs.unity3d.com/Manual/AssetPackages.html)，然后继续从[第 5 章：](#chapter-5--create-the-resultslabel-class)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-251">If you wish to skip the *Unity Set up* component of this course, and continue straight into code, feel free to download this [.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302%20-%20Computer%20vision/Azure-MR-302.unitypackage), import it into your project as a [Custom Package](https://docs.unity3d.com/Manual/AssetPackages.html), and then continue from [Chapter 5](#chapter-5--create-the-resultslabel-class).</span></span>
+> <span data-ttu-id="e5c46-251">如果希望跳过本课程的*Unity 设置*组件, 并继续直接进入代码, 可以下载[unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302%20-%20Computer%20vision/Azure-MR-302.unitypackage), 将其作为[自定义包](https://docs.unity3d.com/Manual/AssetPackages.html)导入项目, 然后从[第5章](#chapter-5--create-the-resultslabel-class)继续。</span><span class="sxs-lookup"><span data-stu-id="e5c46-251">If you wish to skip the *Unity Set up* component of this course, and continue straight into code, feel free to download this [.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302%20-%20Computer%20vision/Azure-MR-302.unitypackage), import it into your project as a [Custom Package](https://docs.unity3d.com/Manual/AssetPackages.html), and then continue from [Chapter 5](#chapter-5--create-the-resultslabel-class).</span></span>
 
-1.  <span data-ttu-id="5dca0-252">在中*层次结构面板*，选择**Main Camera**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-252">In the *Hierarchy Panel*, select the **Main Camera**.</span></span> 
-2.  <span data-ttu-id="5dca0-253">选择后，你将能够看到的所有组件**Main Camera**中*检查器面板*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-253">Once selected, you will be able to see all the components of the **Main Camera** in the *Inspector Panel*.</span></span>
+1.  <span data-ttu-id="e5c46-252">在 "*层次结构" 面板*中, 选择 "**摄像机**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-252">In the *Hierarchy Panel*, select the **Main Camera**.</span></span> 
+2.  <span data-ttu-id="e5c46-253">选择后, 你将能够在 "*检查器" 面板*中看到**主相机**的所有组件。</span><span class="sxs-lookup"><span data-stu-id="e5c46-253">Once selected, you will be able to see all the components of the **Main Camera** in the *Inspector Panel*.</span></span>
 
-    1. <span data-ttu-id="5dca0-254">**相机对象**必须命名为**Main Camera** （请注意拼写 ！）</span><span class="sxs-lookup"><span data-stu-id="5dca0-254">The **Camera object** must be named **Main Camera** (note the spelling!)</span></span>
-    2. <span data-ttu-id="5dca0-255">Main Camera**标记**必须设置为**MainCamera** （请注意拼写 ！）</span><span class="sxs-lookup"><span data-stu-id="5dca0-255">The Main Camera **Tag** must be set to **MainCamera** (note the spelling!)</span></span>
-    3. <span data-ttu-id="5dca0-256">请确保**转换位置**设置为**0，0，0**</span><span class="sxs-lookup"><span data-stu-id="5dca0-256">Make sure the **Transform Position** is set to **0, 0, 0**</span></span>
-    4. <span data-ttu-id="5dca0-257">设置**清除标志**到**纯色**（忽略这的沉浸式头戴式耳机）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-257">Set **Clear Flags** to **Solid Color** (ignore this for immersive headset).</span></span>
-    5. <span data-ttu-id="5dca0-258">设置**背景**照相机组件到色**黑色、 Alpha 0 (十六进制代码: #00000000)** （忽略这的沉浸式头戴式耳机）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-258">Set the **Background** Color of the Camera Component to **Black, Alpha 0 (Hex Code: #00000000)** (ignore this for immersive headset).</span></span>
+    1. <span data-ttu-id="e5c46-254">**照相机对象**必须命名为 "**主相机**" (请注意拼写正确!)</span><span class="sxs-lookup"><span data-stu-id="e5c46-254">The **Camera object** must be named **Main Camera** (note the spelling!)</span></span>
+    2. <span data-ttu-id="e5c46-255">必须将主相机**标记**设置为**MainCamera** (请注意拼写!)</span><span class="sxs-lookup"><span data-stu-id="e5c46-255">The Main Camera **Tag** must be set to **MainCamera** (note the spelling!)</span></span>
+    3. <span data-ttu-id="e5c46-256">请确保将**转换位置**设置为**0, 0, 0**</span><span class="sxs-lookup"><span data-stu-id="e5c46-256">Make sure the **Transform Position** is set to **0, 0, 0**</span></span>
+    4. <span data-ttu-id="e5c46-257">将**清除标志**设置为**纯色**(对于沉浸式耳机, 请忽略此设置)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-257">Set **Clear Flags** to **Solid Color** (ignore this for immersive headset).</span></span>
+    5. <span data-ttu-id="e5c46-258">将相机组件的**背景**色设置为**黑色、Alpha 0 (十六进制代码: #00000000)** (对沉浸式耳机忽略此颜色)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-258">Set the **Background** Color of the Camera Component to **Black, Alpha 0 (Hex Code: #00000000)** (ignore this for immersive headset).</span></span>
 
-        ![更新相机组件。](images/AzureLabs-Lab2-18.png)
+        ![更新照相机组件。](images/AzureLabs-Lab2-18.png)
  
-3.  <span data-ttu-id="5dca0-260">接下来，需要创建附加到一个简单的"游标"对象**Main Camera**，这将帮助你放置图像分析输出运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="5dca0-260">Next, you will have to create a simple “Cursor” object attached to the **Main Camera**, which will help you position the image analysis output when the application is running.</span></span> <span data-ttu-id="5dca0-261">此游标将确定摄像机焦点的中心点。</span><span class="sxs-lookup"><span data-stu-id="5dca0-261">This Cursor will determine the center point of the camera focus.</span></span>
+3.  <span data-ttu-id="e5c46-260">接下来, 必须创建一个附加到**主相机**的简单 "Cursor" 对象, 这将帮助你在应用程序运行时定位图像分析输出。</span><span class="sxs-lookup"><span data-stu-id="e5c46-260">Next, you will have to create a simple “Cursor” object attached to the **Main Camera**, which will help you position the image analysis output when the application is running.</span></span> <span data-ttu-id="e5c46-261">此光标将确定相机焦点的中心点。</span><span class="sxs-lookup"><span data-stu-id="e5c46-261">This Cursor will determine the center point of the camera focus.</span></span>
 
-<span data-ttu-id="5dca0-262">若要创建该游标：</span><span class="sxs-lookup"><span data-stu-id="5dca0-262">To create the Cursor:</span></span>
+<span data-ttu-id="e5c46-262">创建游标:</span><span class="sxs-lookup"><span data-stu-id="e5c46-262">To create the Cursor:</span></span>
 
-1.  <span data-ttu-id="5dca0-263">在中*层次结构面板*，右键单击**Main Camera**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-263">In the *Hierarchy Panel*, right-click on the **Main Camera**.</span></span> <span data-ttu-id="5dca0-264">下**3D 物体**，单击**球体**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-264">Under **3D Object**, click on **Sphere**.</span></span>
+1.  <span data-ttu-id="e5c46-263">在 "*层次结构" 面板*中, 右键单击**主相机**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-263">In the *Hierarchy Panel*, right-click on the **Main Camera**.</span></span> <span data-ttu-id="e5c46-264">在 " **3D 对象**" 下, 单击 "**球面**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-264">Under **3D Object**, click on **Sphere**.</span></span>
 
-    ![选择光标对象。](images/AzureLabs-Lab2-19.png)
+    ![选择 Cursor 对象。](images/AzureLabs-Lab2-19.png)
  
-2.  <span data-ttu-id="5dca0-266">重命名**球体**到**光标**（双击光标对象或与所选对象按 F2 键盘按钮），并确保它位于作为子级**Main Camera**.</span><span class="sxs-lookup"><span data-stu-id="5dca0-266">Rename the **Sphere** to **Cursor** (double click the Cursor object or press the ‘F2’ keyboard button with the object selected), and make sure it is located as child of the **Main Camera**.</span></span>
+2.  <span data-ttu-id="e5c46-266">将**球体**重命名为**光标**(双击光标对象或按选定对象的 "F2" 键盘按钮), 并确保它位于**主相机**的子项中。</span><span class="sxs-lookup"><span data-stu-id="e5c46-266">Rename the **Sphere** to **Cursor** (double click the Cursor object or press the ‘F2’ keyboard button with the object selected), and make sure it is located as child of the **Main Camera**.</span></span>
 
-3.  <span data-ttu-id="5dca0-267">在中*层次结构面板*，在单击鼠标左键**光标**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-267">In the *Hierarchy Panel*, left click on the **Cursor**.</span></span> <span data-ttu-id="5dca0-268">选择光标，调整中的以下变量*检查器面板*:</span><span class="sxs-lookup"><span data-stu-id="5dca0-268">With the Cursor selected, adjust the following variables in the *Inspector Panel*:</span></span>
+3.  <span data-ttu-id="e5c46-267">在 "*层次结构" 面板*中, 左键单击**光标**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-267">In the *Hierarchy Panel*, left click on the **Cursor**.</span></span> <span data-ttu-id="e5c46-268">选择光标后, 在 "*检查器" 面板*中调整以下变量:</span><span class="sxs-lookup"><span data-stu-id="e5c46-268">With the Cursor selected, adjust the following variables in the *Inspector Panel*:</span></span>
 
-    1. <span data-ttu-id="5dca0-269">设置*转换位置*到**0，0，5**</span><span class="sxs-lookup"><span data-stu-id="5dca0-269">Set the *Transform Position* to **0, 0, 5**</span></span>
-    2. <span data-ttu-id="5dca0-270">设置*规模*到**0.02、 0.02、 0.02**</span><span class="sxs-lookup"><span data-stu-id="5dca0-270">Set the *Scale* to **0.02, 0.02, 0.02**</span></span>
+    1. <span data-ttu-id="e5c46-269">将*转换位置*设置为**0、0、5**</span><span class="sxs-lookup"><span data-stu-id="e5c46-269">Set the *Transform Position* to **0, 0, 5**</span></span>
+    2. <span data-ttu-id="e5c46-270">将*刻度*设置为**0.02、0.02、0.02**</span><span class="sxs-lookup"><span data-stu-id="e5c46-270">Set the *Scale* to **0.02, 0.02, 0.02**</span></span>
 
-        ![更新的转换位置和小数位数。](images/AzureLabs-Lab2-20.png)
+        ![更新转换位置和缩放比例。](images/AzureLabs-Lab2-20.png)
   
-## <a name="chapter-4--setup-the-label-system"></a><span data-ttu-id="5dca0-272">第 4 章-设置标签系统</span><span class="sxs-lookup"><span data-stu-id="5dca0-272">Chapter 4 – Setup the Label system</span></span>
+## <a name="chapter-4--setup-the-label-system"></a><span data-ttu-id="e5c46-272">第4章–设置标签系统</span><span class="sxs-lookup"><span data-stu-id="e5c46-272">Chapter 4 – Setup the Label system</span></span>
 
-<span data-ttu-id="5dca0-273">该映像后使用 HoloLens 的照相机中捕获了映像，将发送到您*Azure 计算机视觉 API*服务实例以进行分析。</span><span class="sxs-lookup"><span data-stu-id="5dca0-273">Once you have captured an image with the HoloLens’ camera, that image will be sent to your *Azure Computer Vision API* Service instance for analysis.</span></span> 
+<span data-ttu-id="e5c46-273">使用 HoloLens 相机捕获映像后, 该映像将发送到*Azure 计算机视觉 API*服务实例进行分析。</span><span class="sxs-lookup"><span data-stu-id="e5c46-273">Once you have captured an image with the HoloLens’ camera, that image will be sent to your *Azure Computer Vision API* Service instance for analysis.</span></span> 
 
-<span data-ttu-id="5dca0-274">该分析的结果将是一系列已识别的对象调用**标记**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-274">The results of that analysis will be a list of recognized objects called **Tags**.</span></span> 
+<span data-ttu-id="e5c46-274">此分析的结果将是被识别对象 (称为**标记**) 的列表。</span><span class="sxs-lookup"><span data-stu-id="e5c46-274">The results of that analysis will be a list of recognized objects called **Tags**.</span></span> 
 
-<span data-ttu-id="5dca0-275">将使用标签 （作为全局空间中三维文字），要在拍摄照片的位置显示这些标记。</span><span class="sxs-lookup"><span data-stu-id="5dca0-275">You will use Labels (as a 3D text in world space) to display these Tags at the location the photo was taken.</span></span>
+<span data-ttu-id="e5c46-275">您将使用标签 (作为世界空间中的3D 文本) 在拍摄照片的位置显示这些标记。</span><span class="sxs-lookup"><span data-stu-id="e5c46-275">You will use Labels (as a 3D text in world space) to display these Tags at the location the photo was taken.</span></span>
 
-<span data-ttu-id="5dca0-276">以下步骤将演示如何设置**标签**对象。</span><span class="sxs-lookup"><span data-stu-id="5dca0-276">The following steps will show how to setup the **Label** object.</span></span>
+<span data-ttu-id="e5c46-276">以下步骤将演示如何设置**标签**对象。</span><span class="sxs-lookup"><span data-stu-id="e5c46-276">The following steps will show how to setup the **Label** object.</span></span>
 
-1.  <span data-ttu-id="5dca0-277">在层次结构窗格中 （位置并不重要此时），在任意位置右击**3D 物体**，添加**三维文字**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-277">Right-click anywhere in the Hierarchy Panel (the location does not matter at this point), under **3D Object**, add a **3D Text**.</span></span> <span data-ttu-id="5dca0-278">其命名为**LabelText**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-278">Name it **LabelText**.</span></span>
+1.  <span data-ttu-id="e5c46-277">右键单击 "层次结构" 面板中的任意位置 (此时位置并不重要), 在 "**三维对象**" 下添加**3d 文本**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-277">Right-click anywhere in the Hierarchy Panel (the location does not matter at this point), under **3D Object**, add a **3D Text**.</span></span> <span data-ttu-id="e5c46-278">将其命名为**LabelText**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-278">Name it **LabelText**.</span></span>
 
-    ![创建三维文本对象。](images/AzureLabs-Lab2-21.png)
+    ![创建3D 文本对象。](images/AzureLabs-Lab2-21.png)
  
-2.  <span data-ttu-id="5dca0-280">在中*层次结构面板*，在单击鼠标左键**LabelText**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-280">In the *Hierarchy Panel*, left click on the **LabelText**.</span></span> <span data-ttu-id="5dca0-281">与**LabelText**选择，调整中的以下变量*检查器面板*:</span><span class="sxs-lookup"><span data-stu-id="5dca0-281">With the **LabelText** selected, adjust the following variables in the *Inspector Panel*:</span></span>
+2.  <span data-ttu-id="e5c46-280">在 "*层次结构" 面板*中, 单击**LabelText**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-280">In the *Hierarchy Panel*, left click on the **LabelText**.</span></span> <span data-ttu-id="e5c46-281">选择**LabelText**后, 在 "*检查器" 面板*中调整以下变量:</span><span class="sxs-lookup"><span data-stu-id="e5c46-281">With the **LabelText** selected, adjust the following variables in the *Inspector Panel*:</span></span>
 
-    1. <span data-ttu-id="5dca0-282">设置**位置**到**0,0,0**</span><span class="sxs-lookup"><span data-stu-id="5dca0-282">Set the **Position** to **0,0,0**</span></span>
-    2. <span data-ttu-id="5dca0-283">设置**规模**到**0.01，0.01，0.01**</span><span class="sxs-lookup"><span data-stu-id="5dca0-283">Set the **Scale** to **0.01, 0.01, 0.01**</span></span>
-    3. <span data-ttu-id="5dca0-284">组件中**文本 Mesh**:</span><span class="sxs-lookup"><span data-stu-id="5dca0-284">In the component **Text Mesh**:</span></span>
-    4. <span data-ttu-id="5dca0-285">替换中的所有文本**文本**，使用"..."</span><span class="sxs-lookup"><span data-stu-id="5dca0-285">Replace all the text within **Text**, with "..."</span></span>        
-    5. <span data-ttu-id="5dca0-286">设置**定位点**到**中间 Center**</span><span class="sxs-lookup"><span data-stu-id="5dca0-286">Set the **Anchor** to **Middle Center**</span></span>
-    6. <span data-ttu-id="5dca0-287">设置**对齐**到**Center**</span><span class="sxs-lookup"><span data-stu-id="5dca0-287">Set the **Alignment** to **Center**</span></span>
-    7. <span data-ttu-id="5dca0-288">设置**选项卡大小**到**4**</span><span class="sxs-lookup"><span data-stu-id="5dca0-288">Set the **Tab Size** to **4**</span></span>
-    8. <span data-ttu-id="5dca0-289">设置**字号**到**50**</span><span class="sxs-lookup"><span data-stu-id="5dca0-289">Set the **Font Size** to **50**</span></span>
-    9. <span data-ttu-id="5dca0-290">设置**颜色**到 **#FFFFFFFF**</span><span class="sxs-lookup"><span data-stu-id="5dca0-290">Set the **Color** to **#FFFFFFFF**</span></span>
+    1. <span data-ttu-id="e5c46-282">将**位置**设置为**0, 0, 0**</span><span class="sxs-lookup"><span data-stu-id="e5c46-282">Set the **Position** to **0,0,0**</span></span>
+    2. <span data-ttu-id="e5c46-283">将**刻度**设置为**0.01、0.01、0.01**</span><span class="sxs-lookup"><span data-stu-id="e5c46-283">Set the **Scale** to **0.01, 0.01, 0.01**</span></span>
+    3. <span data-ttu-id="e5c46-284">在组件**文本网格**中:</span><span class="sxs-lookup"><span data-stu-id="e5c46-284">In the component **Text Mesh**:</span></span>
+    4. <span data-ttu-id="e5c46-285">将**文本**中的所有文本替换为 "..."</span><span class="sxs-lookup"><span data-stu-id="e5c46-285">Replace all the text within **Text**, with "..."</span></span>        
+    5. <span data-ttu-id="e5c46-286">将**定位点**设置为**中间中心**</span><span class="sxs-lookup"><span data-stu-id="e5c46-286">Set the **Anchor** to **Middle Center**</span></span>
+    6. <span data-ttu-id="e5c46-287">将**对齐方式**设置为**居中**</span><span class="sxs-lookup"><span data-stu-id="e5c46-287">Set the **Alignment** to **Center**</span></span>
+    7. <span data-ttu-id="e5c46-288">将**选项卡大小**设置为**4**</span><span class="sxs-lookup"><span data-stu-id="e5c46-288">Set the **Tab Size** to **4**</span></span>
+    8. <span data-ttu-id="e5c46-289">将**字体大小**设置为**50**</span><span class="sxs-lookup"><span data-stu-id="e5c46-289">Set the **Font Size** to **50**</span></span>
+    9. <span data-ttu-id="e5c46-290">将**颜色**设置为 **#FFFFFFFF**</span><span class="sxs-lookup"><span data-stu-id="e5c46-290">Set the **Color** to **#FFFFFFFF**</span></span>
 
     ![文本组件](images/AzureLabs-Lab2-21-5.png)
 
-3.  <span data-ttu-id="5dca0-292">拖动**LabelText**从*层次结构面板*，为*资产文件夹*，在中*项目面板*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-292">Drag the **LabelText** from the *Hierarchy Panel*, into the *Asset Folder*, within in the *Project Panel*.</span></span> <span data-ttu-id="5dca0-293">这将使**LabelText**预设，因此它可以在代码中实例化。</span><span class="sxs-lookup"><span data-stu-id="5dca0-293">This will make the **LabelText** a Prefab, so that it can be instantiated in code.</span></span>
+3.  <span data-ttu-id="e5c46-292">将**LabelText**从 "*层次结构" 面板*中拖到 "*资源" 文件夹*内的 "*项目" 面板*中。</span><span class="sxs-lookup"><span data-stu-id="e5c46-292">Drag the **LabelText** from the *Hierarchy Panel*, into the *Asset Folder*, within in the *Project Panel*.</span></span> <span data-ttu-id="e5c46-293">这会将**LabelText**设置为 Prefab, 以便可以在代码中对其进行实例化。</span><span class="sxs-lookup"><span data-stu-id="e5c46-293">This will make the **LabelText** a Prefab, so that it can be instantiated in code.</span></span>
 
-    ![创建 LabelText 对象的预设。](images/AzureLabs-Lab2-22.png)
+    ![创建 LabelText 对象的 prefab。](images/AzureLabs-Lab2-22.png)
  
-4.  <span data-ttu-id="5dca0-295">应删除**LabelText**从*层次结构面板*，以便打开场景中将不会显示。</span><span class="sxs-lookup"><span data-stu-id="5dca0-295">You should delete the **LabelText** from the *Hierarchy Panel*, so that it will not be displayed in the opening scene.</span></span> <span data-ttu-id="5dca0-296">因为它现在是预设，您将从资产文件夹调用的单独实例，没有无需将其保持在场景。</span><span class="sxs-lookup"><span data-stu-id="5dca0-296">As it is now a prefab, which you will call on for individual instances from your Assets folder, there is no need to keep it within the scene.</span></span> 
-5.  <span data-ttu-id="5dca0-297">中的最后一个对象结构*层次结构面板*应类似于下图中所示：</span><span class="sxs-lookup"><span data-stu-id="5dca0-297">The final object structure in the *Hierarchy Panel* should be like the one shown in the image below:</span></span>
+4.  <span data-ttu-id="e5c46-295">你应从 "*层次结构" 面板*中删除**LabelText** , 以使其不会在打开场景中显示。</span><span class="sxs-lookup"><span data-stu-id="e5c46-295">You should delete the **LabelText** from the *Hierarchy Panel*, so that it will not be displayed in the opening scene.</span></span> <span data-ttu-id="e5c46-296">由于它现在是一个 prefab, 你将从资产文件夹中的单个实例上调用, 无需将其保存在场景中。</span><span class="sxs-lookup"><span data-stu-id="e5c46-296">As it is now a prefab, which you will call on for individual instances from your Assets folder, there is no need to keep it within the scene.</span></span> 
+5.  <span data-ttu-id="e5c46-297">"*层次结构" 面板*中的最后一个对象结构应类似于下图所示:</span><span class="sxs-lookup"><span data-stu-id="e5c46-297">The final object structure in the *Hierarchy Panel* should be like the one shown in the image below:</span></span>
 
     ![层次结构面板的最终结构。](images/AzureLabs-Lab2-23.png)
 
-## <a name="chapter-5--create-the-resultslabel-class"></a><span data-ttu-id="5dca0-299">第 5 章-创建 ResultsLabel 类</span><span class="sxs-lookup"><span data-stu-id="5dca0-299">Chapter 5 – Create the ResultsLabel class</span></span>
+## <a name="chapter-5--create-the-resultslabel-class"></a><span data-ttu-id="e5c46-299">第5章–创建 ResultsLabel 类</span><span class="sxs-lookup"><span data-stu-id="e5c46-299">Chapter 5 – Create the ResultsLabel class</span></span>
 
-<span data-ttu-id="5dca0-300">您需要创建的第一个脚本是*ResultsLabel*类，该类负责以下：</span><span class="sxs-lookup"><span data-stu-id="5dca0-300">The first script you need to create is the *ResultsLabel* class, which is responsible for the following:</span></span> 
+<span data-ttu-id="e5c46-300">需要创建的第一个脚本是*ResultsLabel*类, 该类负责以下操作:</span><span class="sxs-lookup"><span data-stu-id="e5c46-300">The first script you need to create is the *ResultsLabel* class, which is responsible for the following:</span></span> 
 
-- <span data-ttu-id="5dca0-301">在适当的世界空间中，相对于照相机的位置中创建标签。</span><span class="sxs-lookup"><span data-stu-id="5dca0-301">Creating the Labels in the appropriate world space, relative to the position of the Camera.</span></span>
-- <span data-ttu-id="5dca0-302">显示从映像解放标记。</span><span class="sxs-lookup"><span data-stu-id="5dca0-302">Displaying the Tags from the Image Anaysis.</span></span>
+- <span data-ttu-id="e5c46-301">在适当的世界空间中创建标签, 相对于照相机的位置。</span><span class="sxs-lookup"><span data-stu-id="e5c46-301">Creating the Labels in the appropriate world space, relative to the position of the Camera.</span></span>
+- <span data-ttu-id="e5c46-302">显示图像 Analysis 中的标记。</span><span class="sxs-lookup"><span data-stu-id="e5c46-302">Displaying the Tags from the Image Anaysis.</span></span>
 
-<span data-ttu-id="5dca0-303">若要创建此类：</span><span class="sxs-lookup"><span data-stu-id="5dca0-303">To create this class:</span></span> 
+<span data-ttu-id="e5c46-303">若要创建此类:</span><span class="sxs-lookup"><span data-stu-id="e5c46-303">To create this class:</span></span> 
 
-1.  <span data-ttu-id="5dca0-304">在中右击*项目面板*，然后**创建 > 文件夹**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-304">Right-click in the *Project Panel*, then **Create > Folder**.</span></span> <span data-ttu-id="5dca0-305">将文件夹命名为**脚本**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-305">Name the folder **Scripts**.</span></span> 
+1.  <span data-ttu-id="e5c46-304">右键单击 "*项目" 面板*, 然后**创建 > 文件夹**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-304">Right-click in the *Project Panel*, then **Create > Folder**.</span></span> <span data-ttu-id="e5c46-305">命名文件夹**脚本**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-305">Name the folder **Scripts**.</span></span> 
 
-    ![创建脚本的文件夹。](images/AzureLabs-Lab2-24.png)
+    ![创建脚本文件夹。](images/AzureLabs-Lab2-24.png)
 
-2.  <span data-ttu-id="5dca0-307">与**脚本**文件夹中创建，双击它打开。</span><span class="sxs-lookup"><span data-stu-id="5dca0-307">With the **Scripts** folder create, double click it to open.</span></span> <span data-ttu-id="5dca0-308">然后在该文件夹，右键单击，并选择**创建 >** 然后**C#脚本**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-308">Then within that folder, right-click, and select **Create >** then **C# Script**.</span></span> <span data-ttu-id="5dca0-309">脚本命名为*ResultsLabel*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-309">Name the script *ResultsLabel*.</span></span> 
+2.  <span data-ttu-id="e5c46-307">在 "**脚本**" 文件夹中, 双击以打开。</span><span class="sxs-lookup"><span data-stu-id="e5c46-307">With the **Scripts** folder create, double click it to open.</span></span> <span data-ttu-id="e5c46-308">在该文件夹中, 右键单击, 然后选择 "**创建 >** 然后**C#** 选择" 脚本 "。</span><span class="sxs-lookup"><span data-stu-id="e5c46-308">Then within that folder, right-click, and select **Create >** then **C# Script**.</span></span> <span data-ttu-id="e5c46-309">将脚本命名为*ResultsLabel*。</span><span class="sxs-lookup"><span data-stu-id="e5c46-309">Name the script *ResultsLabel*.</span></span> 
 
-3.  <span data-ttu-id="5dca0-310">双击新*ResultsLabel*脚本以将其与打开**Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-310">Double click on the new *ResultsLabel* script to open it with **Visual Studio**.</span></span>
+3.  <span data-ttu-id="e5c46-310">双击新的*ResultsLabel*脚本以通过**Visual Studio**打开它。</span><span class="sxs-lookup"><span data-stu-id="e5c46-310">Double click on the new *ResultsLabel* script to open it with **Visual Studio**.</span></span>
 
-4.  <span data-ttu-id="5dca0-311">在类中插入下面的代码*ResultsLabel*类：</span><span class="sxs-lookup"><span data-stu-id="5dca0-311">Inside the Class insert the following code in the *ResultsLabel* class:</span></span>
+4.  <span data-ttu-id="e5c46-311">在类中, 在*ResultsLabel*类中插入以下代码:</span><span class="sxs-lookup"><span data-stu-id="e5c46-311">Inside the Class insert the following code in the *ResultsLabel* class:</span></span>
 
     ```csharp
         using System.Collections.Generic;
@@ -357,30 +357,30 @@ ms.locfileid: "59590172"
         }
     ```
 
-6.  <span data-ttu-id="5dca0-312">请务必保存中所做的更改*Visual Studio*才会回到*Unity*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-312">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
-7.  <span data-ttu-id="5dca0-313">回到*Unity 编辑器*，单击并拖动*ResultsLabel*类**脚本**文件夹**Main Camera**中对象*层次结构面板*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-313">Back in the *Unity Editor*, click and drag the *ResultsLabel* class from the **Scripts** folder to the **Main Camera** object in the *Hierarchy Panel*.</span></span>
-8.  <span data-ttu-id="5dca0-314">单击**Main Camera**并查看*检查器面板*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-314">Click on the **Main Camera** and look at the *Inspector Panel*.</span></span>
+6.  <span data-ttu-id="e5c46-312">在返回到*Unity*之前, 请务必保存*Visual Studio*中所做的更改。</span><span class="sxs-lookup"><span data-stu-id="e5c46-312">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+7.  <span data-ttu-id="e5c46-313">返回*Unity 编辑器*, 单击 "**脚本**" 文件夹中的*ResultsLabel*类并将其拖到 "*层次结构" 面板*中的**主相机**对象。</span><span class="sxs-lookup"><span data-stu-id="e5c46-313">Back in the *Unity Editor*, click and drag the *ResultsLabel* class from the **Scripts** folder to the **Main Camera** object in the *Hierarchy Panel*.</span></span>
+8.  <span data-ttu-id="e5c46-314">单击**主摄像机**, 查看*检查器面板*。</span><span class="sxs-lookup"><span data-stu-id="e5c46-314">Click on the **Main Camera** and look at the *Inspector Panel*.</span></span>
 
-<span data-ttu-id="5dca0-315">您将注意到，您只需拖放到相机的脚本，还有两个字段：**游标**并**标签 Prefab**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-315">You will notice that from the script you just dragged into the Camera, there are two fields: **Cursor** and **Label Prefab**.</span></span>
+<span data-ttu-id="e5c46-315">你会注意到, 从刚才拖到摄像机的脚本中, 有两个字段:**光标**和**标签 Prefab**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-315">You will notice that from the script you just dragged into the Camera, there are two fields: **Cursor** and **Label Prefab**.</span></span>
 
-9.  <span data-ttu-id="5dca0-316">拖动对象调用**游标**从*层次结构面板*到名为槽**游标**，如下图中所示。</span><span class="sxs-lookup"><span data-stu-id="5dca0-316">Drag the object called **Cursor** from the *Hierarchy Panel* to the slot named **Cursor**, as shown in the image below.</span></span>
-10. <span data-ttu-id="5dca0-317">拖动对象调用**LabelText**从*Assets 文件夹*中*项目面板*到名为槽**标签 Prefab**，如中所示下图所示。</span><span class="sxs-lookup"><span data-stu-id="5dca0-317">Drag the object called **LabelText** from the *Assets Folder* in the *Project Panel* to the slot named **Label Prefab**, as shown in the image below.</span></span> 
+9.  <span data-ttu-id="e5c46-316">将名为**cursor**的对象从 "*层次结构" 面板*拖动到名为 " **cursor**" 的槽中, 如下图所示。</span><span class="sxs-lookup"><span data-stu-id="e5c46-316">Drag the object called **Cursor** from the *Hierarchy Panel* to the slot named **Cursor**, as shown in the image below.</span></span>
+10. <span data-ttu-id="e5c46-317">将名为**LabelText**的对象从 "*项目" 面板*中的 "*资产" 文件夹*拖到名为**Label Prefab**的槽中, 如下图所示。</span><span class="sxs-lookup"><span data-stu-id="e5c46-317">Drag the object called **LabelText** from the *Assets Folder* in the *Project Panel* to the slot named **Label Prefab**, as shown in the image below.</span></span> 
 
-    ![设置在 Unity 中的引用目标。](images/AzureLabs-Lab2-25.png)
+    ![在 Unity 中设置引用目标。](images/AzureLabs-Lab2-25.png)
 
-## <a name="chapter-6--create-the-imagecapture-class"></a><span data-ttu-id="5dca0-319">第 6 章-创建 ImageCapture 类</span><span class="sxs-lookup"><span data-stu-id="5dca0-319">Chapter 6 – Create the ImageCapture class</span></span>
+## <a name="chapter-6--create-the-imagecapture-class"></a><span data-ttu-id="e5c46-319">第6章–创建 ImageCapture 类</span><span class="sxs-lookup"><span data-stu-id="e5c46-319">Chapter 6 – Create the ImageCapture class</span></span>
 
-<span data-ttu-id="5dca0-320">要创建的下一步类是*ImageCapture*类。</span><span class="sxs-lookup"><span data-stu-id="5dca0-320">The next class you are going to create is the *ImageCapture* class.</span></span> <span data-ttu-id="5dca0-321">此类负责：</span><span class="sxs-lookup"><span data-stu-id="5dca0-321">This class is responsible for:</span></span>
+<span data-ttu-id="e5c46-320">要创建的下一个类是*ImageCapture*类。</span><span class="sxs-lookup"><span data-stu-id="e5c46-320">The next class you are going to create is the *ImageCapture* class.</span></span> <span data-ttu-id="e5c46-321">此类负责:</span><span class="sxs-lookup"><span data-stu-id="e5c46-321">This class is responsible for:</span></span>
 
--   <span data-ttu-id="5dca0-322">捕获映像使用 HoloLens 相机并将其存储在应用程序文件夹中。</span><span class="sxs-lookup"><span data-stu-id="5dca0-322">Capturing an Image using the HoloLens Camera and storing it in the App Folder.</span></span>
--   <span data-ttu-id="5dca0-323">捕获来自用户的点击手势。</span><span class="sxs-lookup"><span data-stu-id="5dca0-323">Capturing Tap gestures from the user.</span></span>
+-   <span data-ttu-id="e5c46-322">使用 HoloLens 相机捕获映像, 并将其存储在 App 文件夹中。</span><span class="sxs-lookup"><span data-stu-id="e5c46-322">Capturing an Image using the HoloLens Camera and storing it in the App Folder.</span></span>
+-   <span data-ttu-id="e5c46-323">正在捕获用户的点击手势。</span><span class="sxs-lookup"><span data-stu-id="e5c46-323">Capturing Tap gestures from the user.</span></span>
 
-<span data-ttu-id="5dca0-324">若要创建此类：</span><span class="sxs-lookup"><span data-stu-id="5dca0-324">To create this class:</span></span> 
+<span data-ttu-id="e5c46-324">若要创建此类:</span><span class="sxs-lookup"><span data-stu-id="e5c46-324">To create this class:</span></span> 
 
-1.  <span data-ttu-id="5dca0-325">转到**脚本**之前创建的文件夹。</span><span class="sxs-lookup"><span data-stu-id="5dca0-325">Go to the **Scripts** folder you created previously.</span></span> 
-2.  <span data-ttu-id="5dca0-326">在文件夹中，右键单击**创建 >C#脚本**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-326">Right-click inside the folder, **Create > C# Script**.</span></span> <span data-ttu-id="5dca0-327">调用脚本*ImageCapture*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-327">Call the script *ImageCapture*.</span></span> 
-3.  <span data-ttu-id="5dca0-328">双击新*ImageCapture*脚本以将其与打开**Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-328">Double click on the new *ImageCapture* script to open it with **Visual Studio**.</span></span>
-4.  <span data-ttu-id="5dca0-329">将以下命名空间添加到文件顶部：</span><span class="sxs-lookup"><span data-stu-id="5dca0-329">Add the following namespaces to the top of the file:</span></span>
+1.  <span data-ttu-id="e5c46-325">中转到前面创建的 "**脚本**" 文件夹。</span><span class="sxs-lookup"><span data-stu-id="e5c46-325">Go to the **Scripts** folder you created previously.</span></span> 
+2.  <span data-ttu-id="e5c46-326">右键单击文件夹内部,**创建 > C#脚本**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-326">Right-click inside the folder, **Create > C# Script**.</span></span> <span data-ttu-id="e5c46-327">调用脚本*ImageCapture*。</span><span class="sxs-lookup"><span data-stu-id="e5c46-327">Call the script *ImageCapture*.</span></span> 
+3.  <span data-ttu-id="e5c46-328">双击新的*ImageCapture*脚本以通过**Visual Studio**打开它。</span><span class="sxs-lookup"><span data-stu-id="e5c46-328">Double click on the new *ImageCapture* script to open it with **Visual Studio**.</span></span>
+4.  <span data-ttu-id="e5c46-329">将以下命名空间添加到文件顶部:</span><span class="sxs-lookup"><span data-stu-id="e5c46-329">Add the following namespaces to the top of the file:</span></span>
 
     ```csharp
         using System.IO;
@@ -390,7 +390,7 @@ ms.locfileid: "59590172"
         using UnityEngine.XR.WSA.WebCam;
     ```
 
-5.  <span data-ttu-id="5dca0-330">然后添加以下变量内的*ImageCapture*类，更高版本*start （)* 方法：</span><span class="sxs-lookup"><span data-stu-id="5dca0-330">Then add the following variables inside the *ImageCapture* class, above the *Start()* method:</span></span>
+5.  <span data-ttu-id="e5c46-330">然后, 将以下变量添加到*ImageCapture*类中的*Start ()* 方法之上:</span><span class="sxs-lookup"><span data-stu-id="e5c46-330">Then add the following variables inside the *ImageCapture* class, above the *Start()* method:</span></span>
 
     ```csharp
         public static ImageCapture instance; 
@@ -400,9 +400,9 @@ ms.locfileid: "59590172"
         private bool currentlyCapturing = false;
     ```
  
-<span data-ttu-id="5dca0-331">**TapsCount**变量将存储捕获来自用户的点击手势的号。</span><span class="sxs-lookup"><span data-stu-id="5dca0-331">The **tapsCount** variable will store the number of tap gestures captured from the user.</span></span> <span data-ttu-id="5dca0-332">此编号使用命名的捕获的映像中。</span><span class="sxs-lookup"><span data-stu-id="5dca0-332">This number is used in the naming of the images captured.</span></span>
+<span data-ttu-id="e5c46-331">**TapsCount**变量将存储从用户捕获的攻丝手势的数目。</span><span class="sxs-lookup"><span data-stu-id="e5c46-331">The **tapsCount** variable will store the number of tap gestures captured from the user.</span></span> <span data-ttu-id="e5c46-332">此编号用于捕获的映像的命名。</span><span class="sxs-lookup"><span data-stu-id="e5c46-332">This number is used in the naming of the images captured.</span></span>
 
-6.  <span data-ttu-id="5dca0-333">为代码*Awake()* 并*start （)* 方法现在需要添加。</span><span class="sxs-lookup"><span data-stu-id="5dca0-333">Code for *Awake()* and *Start()* methods now needs to be added.</span></span> <span data-ttu-id="5dca0-334">类初始化时将会调用：</span><span class="sxs-lookup"><span data-stu-id="5dca0-334">These will be called when the class initializes:</span></span>
+6.  <span data-ttu-id="e5c46-333">现在需要添加*唤醒 ()* 和*Start ()* 方法的代码。</span><span class="sxs-lookup"><span data-stu-id="e5c46-333">Code for *Awake()* and *Start()* methods now needs to be added.</span></span> <span data-ttu-id="e5c46-334">当类初始化时, 将调用以下内容:</span><span class="sxs-lookup"><span data-stu-id="e5c46-334">These will be called when the class initializes:</span></span>
 
     ```csharp
         private void Awake()
@@ -421,7 +421,7 @@ ms.locfileid: "59590172"
         }
     ```
 
-7.  <span data-ttu-id="5dca0-335">实现的点击动作时将调用的处理程序。</span><span class="sxs-lookup"><span data-stu-id="5dca0-335">Implement a handler that will be called when a Tap gesture occurs.</span></span> 
+7.  <span data-ttu-id="e5c46-335">实现一个处理程序, 该处理程序将在出现分流手势时调用。</span><span class="sxs-lookup"><span data-stu-id="e5c46-335">Implement a handler that will be called when a Tap gesture occurs.</span></span> 
 
     ```csharp
         /// <summary>
@@ -446,11 +446,11 @@ ms.locfileid: "59590172"
         }
     ```
  
-<span data-ttu-id="5dca0-336">*TapHandler()* 方法递增捕获来自用户的点击数，并使用当前光标位置以确定要将新的标签位置。</span><span class="sxs-lookup"><span data-stu-id="5dca0-336">The *TapHandler()* method increments the number of taps captured from the user and uses the current Cursor position to determine where to position a new Label.</span></span>
+<span data-ttu-id="e5c46-336">*TapHandler ()* 方法会递增从用户捕获的点击次数, 并使用当前光标位置确定新标签的位置。</span><span class="sxs-lookup"><span data-stu-id="e5c46-336">The *TapHandler()* method increments the number of taps captured from the user and uses the current Cursor position to determine where to position a new Label.</span></span>
 
-<span data-ttu-id="5dca0-337">然后，此方法调用*ExecuteImageCaptureAndAnalysis()* 方法开始此应用程序的核心功能。</span><span class="sxs-lookup"><span data-stu-id="5dca0-337">This method then calls the *ExecuteImageCaptureAndAnalysis()* method to begin the core functionality of this application.</span></span>
+<span data-ttu-id="e5c46-337">然后, 此方法会调用*ExecuteImageCaptureAndAnalysis ()* 方法来开始此应用程序的核心功能。</span><span class="sxs-lookup"><span data-stu-id="e5c46-337">This method then calls the *ExecuteImageCaptureAndAnalysis()* method to begin the core functionality of this application.</span></span>
 
-8.  <span data-ttu-id="5dca0-338">一旦已捕获并存储映像，将调用以下处理程序。</span><span class="sxs-lookup"><span data-stu-id="5dca0-338">Once an Image has been captured and stored, the following handlers will be called.</span></span> <span data-ttu-id="5dca0-339">如果该过程成功，将结果传递给*VisionManager* （即你尚未创建） 以进行分析。</span><span class="sxs-lookup"><span data-stu-id="5dca0-339">If the process is successful, the result is passed to the *VisionManager* (which you are yet to create) for analysis.</span></span>
+8.  <span data-ttu-id="e5c46-338">捕获并存储映像后, 将调用以下处理程序。</span><span class="sxs-lookup"><span data-stu-id="e5c46-338">Once an Image has been captured and stored, the following handlers will be called.</span></span> <span data-ttu-id="e5c46-339">如果该过程成功, 则会将结果传递给要分析的*VisionManager* (尚未创建)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-339">If the process is successful, the result is passed to the *VisionManager* (which you are yet to create) for analysis.</span></span>
 
     ```csharp
         /// <summary>
@@ -473,7 +473,7 @@ ms.locfileid: "59590172"
         }
     ```
  
-9.  <span data-ttu-id="5dca0-340">然后添加该应用程序使用启动映像捕获过程并存储映像的方法。</span><span class="sxs-lookup"><span data-stu-id="5dca0-340">Then add the method that the application uses to start the Image capture process and store the image.</span></span>
+9.  <span data-ttu-id="e5c46-340">然后添加应用程序用于启动映像捕获进程并存储映像的方法。</span><span class="sxs-lookup"><span data-stu-id="e5c46-340">Then add the method that the application uses to start the Image capture process and store the image.</span></span>
 
     ```csharp    
         /// <summary>    
@@ -515,25 +515,25 @@ ms.locfileid: "59590172"
     ```
  
 > [!WARNING] 
-> <span data-ttu-id="5dca0-341">此时你会注意到出现在错误*Unity 编辑器控制台面板*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-341">At this point you will notice an error appearing in the *Unity Editor Console Panel*.</span></span> <span data-ttu-id="5dca0-342">这是因为该代码引用*VisionManager*将在下一章中创建的类。</span><span class="sxs-lookup"><span data-stu-id="5dca0-342">This is because the code references the *VisionManager* class which you will create in the next Chapter.</span></span>
+> <span data-ttu-id="e5c46-341">此时, 你会注意到在*Unity 编辑器控制台面板*中出现错误。</span><span class="sxs-lookup"><span data-stu-id="e5c46-341">At this point you will notice an error appearing in the *Unity Editor Console Panel*.</span></span> <span data-ttu-id="e5c46-342">这是因为代码引用了将在下一章中创建的*VisionManager*类。</span><span class="sxs-lookup"><span data-stu-id="e5c46-342">This is because the code references the *VisionManager* class which you will create in the next Chapter.</span></span>
 
-## <a name="chapter-7--call-to-azure-and-image-analysis"></a><span data-ttu-id="5dca0-343">第 7 章 – 对 Azure 和图像分析的调用</span><span class="sxs-lookup"><span data-stu-id="5dca0-343">Chapter 7 – Call to Azure and Image Analysis</span></span>
+## <a name="chapter-7--call-to-azure-and-image-analysis"></a><span data-ttu-id="e5c46-343">第7章–调用 Azure 和映像分析</span><span class="sxs-lookup"><span data-stu-id="e5c46-343">Chapter 7 – Call to Azure and Image Analysis</span></span>
 
-<span data-ttu-id="5dca0-344">若要创建所需的最后一个脚本是*VisionManager*类。</span><span class="sxs-lookup"><span data-stu-id="5dca0-344">The last script you need to create is the *VisionManager* class.</span></span> 
+<span data-ttu-id="e5c46-344">需要创建的最后一个脚本是*VisionManager*类。</span><span class="sxs-lookup"><span data-stu-id="e5c46-344">The last script you need to create is the *VisionManager* class.</span></span> 
 
-<span data-ttu-id="5dca0-345">此类负责：</span><span class="sxs-lookup"><span data-stu-id="5dca0-345">This class is responsible for:</span></span>
+<span data-ttu-id="e5c46-345">此类负责:</span><span class="sxs-lookup"><span data-stu-id="e5c46-345">This class is responsible for:</span></span>
 
--   <span data-ttu-id="5dca0-346">正在加载最新的映像捕获为一个字节数组。</span><span class="sxs-lookup"><span data-stu-id="5dca0-346">Loading the latest image captured as an array of bytes.</span></span>
--   <span data-ttu-id="5dca0-347">发送到的字节数组你*Azure 计算机视觉 API*服务实例以进行分析。</span><span class="sxs-lookup"><span data-stu-id="5dca0-347">Sending the byte array to your *Azure Computer Vision API* Service instance for analysis.</span></span>
--   <span data-ttu-id="5dca0-348">接收响应以 JSON 字符串。</span><span class="sxs-lookup"><span data-stu-id="5dca0-348">Receiving the response as a JSON string.</span></span>
--   <span data-ttu-id="5dca0-349">反序列化响应并将传递到生成的标记*ResultsLabel*类。</span><span class="sxs-lookup"><span data-stu-id="5dca0-349">Deserializing the response and passing the resulting Tags to the *ResultsLabel* class.</span></span>
+-   <span data-ttu-id="e5c46-346">加载作为字节数组捕获的最新映像。</span><span class="sxs-lookup"><span data-stu-id="e5c46-346">Loading the latest image captured as an array of bytes.</span></span>
+-   <span data-ttu-id="e5c46-347">将字节数组发送给*Azure 计算机视觉 API*服务实例进行分析。</span><span class="sxs-lookup"><span data-stu-id="e5c46-347">Sending the byte array to your *Azure Computer Vision API* Service instance for analysis.</span></span>
+-   <span data-ttu-id="e5c46-348">接收 JSON 字符串形式的响应。</span><span class="sxs-lookup"><span data-stu-id="e5c46-348">Receiving the response as a JSON string.</span></span>
+-   <span data-ttu-id="e5c46-349">反序列化响应并将生成的标记传递给*ResultsLabel*类。</span><span class="sxs-lookup"><span data-stu-id="e5c46-349">Deserializing the response and passing the resulting Tags to the *ResultsLabel* class.</span></span>
  
-<span data-ttu-id="5dca0-350">若要创建此类：</span><span class="sxs-lookup"><span data-stu-id="5dca0-350">To create this class:</span></span>
+<span data-ttu-id="e5c46-350">若要创建此类:</span><span class="sxs-lookup"><span data-stu-id="e5c46-350">To create this class:</span></span>
 
-1.  <span data-ttu-id="5dca0-351">双击**脚本**文件夹，将其打开。</span><span class="sxs-lookup"><span data-stu-id="5dca0-351">Double click on the **Scripts** folder, to open it.</span></span> 
-2.  <span data-ttu-id="5dca0-352">内右击**脚本**文件夹中，单击**创建 >C#脚本**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-352">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="5dca0-353">脚本命名为*VisionManager*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-353">Name the script *VisionManager*.</span></span> 
-3.  <span data-ttu-id="5dca0-354">双击要使用 Visual Studio 中打开的新脚本。</span><span class="sxs-lookup"><span data-stu-id="5dca0-354">Double click on the new script to open it with Visual Studio.</span></span>
-4.  <span data-ttu-id="5dca0-355">更新命名空间，如下所示，在顶部相同*VisionManager*类：</span><span class="sxs-lookup"><span data-stu-id="5dca0-355">Update the namespaces to be the same as the following, at the top of the *VisionManager* class:</span></span>
+1.  <span data-ttu-id="e5c46-351">双击 "**脚本**" 文件夹以将其打开。</span><span class="sxs-lookup"><span data-stu-id="e5c46-351">Double click on the **Scripts** folder, to open it.</span></span> 
+2.  <span data-ttu-id="e5c46-352">右键单击 "**脚本**" 文件夹中, 单击 "**创建C# > 脚本**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-352">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="e5c46-353">将脚本命名为*VisionManager*。</span><span class="sxs-lookup"><span data-stu-id="e5c46-353">Name the script *VisionManager*.</span></span> 
+3.  <span data-ttu-id="e5c46-354">双击新脚本以通过 Visual Studio 打开它。</span><span class="sxs-lookup"><span data-stu-id="e5c46-354">Double click on the new script to open it with Visual Studio.</span></span>
+4.  <span data-ttu-id="e5c46-355">在*VisionManager*类的顶部, 将命名空间更新为与以下相同:</span><span class="sxs-lookup"><span data-stu-id="e5c46-355">Update the namespaces to be the same as the following, at the top of the *VisionManager* class:</span></span>
 
     ```csharp
         using System;
@@ -544,7 +544,7 @@ ms.locfileid: "59590172"
         using UnityEngine.Networking;
     ```
  
-5.  <span data-ttu-id="5dca0-356">在脚本顶部*内* *VisionManager*类 (上面*start （)* 方法)，现在需要创建两个*类*，将表示 Azure 的反序列化的 JSON 响应：</span><span class="sxs-lookup"><span data-stu-id="5dca0-356">At the top of your script, *inside* the *VisionManager* class (above the *Start()* method), you now need to create two *Classes* that will represent the deserialized JSON response from Azure:</span></span>
+5.  <span data-ttu-id="e5c46-356">在脚本的*顶部, 在* *VisionManager*类 (位于*Start ()* 方法的上面) 中, 现在需要创建两个*类*来表示来自 Azure 的反序列化 JSON 响应:</span><span class="sxs-lookup"><span data-stu-id="e5c46-356">At the top of your script, *inside* the *VisionManager* class (above the *Start()* method), you now need to create two *Classes* that will represent the deserialized JSON response from Azure:</span></span>
 
     ```csharp
         [System.Serializable]
@@ -564,9 +564,9 @@ ms.locfileid: "59590172"
     ```
 
     > [!NOTE] 
-    > <span data-ttu-id="5dca0-357">*TagData*并*AnalysedObject*类都必须具有 *[System.Serializable]* 的声明，以便能够使用 Unity 进行反序列化之前添加属性库。</span><span class="sxs-lookup"><span data-stu-id="5dca0-357">The *TagData* and *AnalysedObject* classes need to have the *[System.Serializable]* attribute added before the declaration to be able to be deserialized with the Unity libraries.</span></span>
+    > <span data-ttu-id="e5c46-357">*TagData*和*AnalysedObject*类需要添加 *[system.exception]* 特性, 然后才能使用 Unity 库反序列化声明。</span><span class="sxs-lookup"><span data-stu-id="e5c46-357">The *TagData* and *AnalysedObject* classes need to have the *[System.Serializable]* attribute added before the declaration to be able to be deserialized with the Unity libraries.</span></span>
 
-6.  <span data-ttu-id="5dca0-358">在 VisionManager 类中，应添加以下变量：</span><span class="sxs-lookup"><span data-stu-id="5dca0-358">In the VisionManager class, you should add the following variables:</span></span>
+6.  <span data-ttu-id="e5c46-358">在 VisionManager 类中, 应添加以下变量:</span><span class="sxs-lookup"><span data-stu-id="e5c46-358">In the VisionManager class, you should add the following variables:</span></span>
 
     ```csharp
         public static VisionManager instance;
@@ -582,15 +582,15 @@ ms.locfileid: "59590172"
     ```
 
     > [!WARNING] 
-    > <span data-ttu-id="5dca0-359">请确保插入你**身份验证密钥**成**authorizationKey**变量。</span><span class="sxs-lookup"><span data-stu-id="5dca0-359">Make sure you insert your **Auth Key** into the **authorizationKey** variable.</span></span> <span data-ttu-id="5dca0-360">你将已记下你**身份验证密钥**在本课程中，开头[第 1 章](#chapter-1--the-azure-portal)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-360">You will have noted your **Auth Key** at the beginning of this course, [Chapter 1](#chapter-1--the-azure-portal).</span></span>
+    > <span data-ttu-id="e5c46-359">请确保将**身份验证密钥**插入到**authorizationKey**变量。</span><span class="sxs-lookup"><span data-stu-id="e5c46-359">Make sure you insert your **Auth Key** into the **authorizationKey** variable.</span></span> <span data-ttu-id="e5c46-360">你将在本课程开头注明**身份验证密钥**,[第1章](#chapter-1--the-azure-portal)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-360">You will have noted your **Auth Key** at the beginning of this course, [Chapter 1](#chapter-1--the-azure-portal).</span></span>
 
     > [!WARNING] 
-    > <span data-ttu-id="5dca0-361">**VisionAnalysisEndpoint**变量可能不同于在此示例中指定。</span><span class="sxs-lookup"><span data-stu-id="5dca0-361">The **visionAnalysisEndpoint** variable might differ from the one specified in this example.</span></span> <span data-ttu-id="5dca0-362">**西部-我们**严格地指的是为美国西部区域创建的服务实例。</span><span class="sxs-lookup"><span data-stu-id="5dca0-362">The **west-us** strictly refers to Service instances created for the West US region.</span></span> <span data-ttu-id="5dca0-363">更新此与您[终结点 URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa); 此处的一些示例可能如下所示的是：</span><span class="sxs-lookup"><span data-stu-id="5dca0-363">Update this with your [endpoint URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa); here are some examples of what that might look like:</span></span>
-    > - <span data-ttu-id="5dca0-364">欧洲西部： `https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="5dca0-364">West Europe: `https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
-    > - <span data-ttu-id="5dca0-365">亚洲东南部： `https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="5dca0-365">Southeast Asia: `https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
-    > - <span data-ttu-id="5dca0-366">澳大利亚东部： `https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="5dca0-366">Australia East: `https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
+    > <span data-ttu-id="e5c46-361">**VisionAnalysisEndpoint**变量可能不同于在此示例中指定的变量。</span><span class="sxs-lookup"><span data-stu-id="e5c46-361">The **visionAnalysisEndpoint** variable might differ from the one specified in this example.</span></span> <span data-ttu-id="e5c46-362">"**美国西部**" 严格指为 "美国西部" 区域创建的服务实例。</span><span class="sxs-lookup"><span data-stu-id="e5c46-362">The **west-us** strictly refers to Service instances created for the West US region.</span></span> <span data-ttu-id="e5c46-363">用[终结点 URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)更新此值;下面是一些可能的示例:</span><span class="sxs-lookup"><span data-stu-id="e5c46-363">Update this with your [endpoint URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa); here are some examples of what that might look like:</span></span>
+    > - <span data-ttu-id="e5c46-364">西欧:`https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="e5c46-364">West Europe: `https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
+    > - <span data-ttu-id="e5c46-365">东南亚:`https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="e5c46-365">Southeast Asia: `https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
+    > - <span data-ttu-id="e5c46-366">澳大利亚东部:`https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="e5c46-366">Australia East: `https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
 
-7.  <span data-ttu-id="5dca0-367">Awake 现在需要添加代码。</span><span class="sxs-lookup"><span data-stu-id="5dca0-367">Code for Awake now needs to be added.</span></span> 
+7.  <span data-ttu-id="e5c46-367">现在需要添加用于唤醒的代码。</span><span class="sxs-lookup"><span data-stu-id="e5c46-367">Code for Awake now needs to be added.</span></span> 
 
     ```csharp
         private void Awake()
@@ -600,7 +600,7 @@ ms.locfileid: "59590172"
         }
     ```
 
-8.  <span data-ttu-id="5dca0-368">接下来，添加协同程序 （使用其下方的静态流方法），将获取由捕获映像的分析结果*ImageCapture*类。</span><span class="sxs-lookup"><span data-stu-id="5dca0-368">Next, add the coroutine (with the static stream method below it), which will obtain the results of the analysis of the image captured by the *ImageCapture* Class.</span></span> 
+8.  <span data-ttu-id="e5c46-368">接下来, 添加协同程序 (使用其下面的静态流方法), 该方法将获取*ImageCapture*类捕获的映像的分析结果。</span><span class="sxs-lookup"><span data-stu-id="e5c46-368">Next, add the coroutine (with the static stream method below it), which will obtain the results of the analysis of the image captured by the *ImageCapture* Class.</span></span> 
 
     ```csharp
         /// <summary>
@@ -676,69 +676,69 @@ ms.locfileid: "59590172"
         }  
     ```
 
-9.  <span data-ttu-id="5dca0-369">请务必保存中所做的更改*Visual Studio*才会回到*Unity*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-369">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
-10. <span data-ttu-id="5dca0-370">返回在 Unity 编辑器中，单击并拖动*VisionManager*并*ImageCapture*类**脚本**文件夹到**Main Camera**中的对象*层次结构面板*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-370">Back in the Unity Editor, click and drag the *VisionManager* and *ImageCapture* classes from the **Scripts** folder to the **Main Camera** object in the *Hierarchy Panel*.</span></span> 
+9.  <span data-ttu-id="e5c46-369">在返回到*Unity*之前, 请务必保存*Visual Studio*中所做的更改。</span><span class="sxs-lookup"><span data-stu-id="e5c46-369">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+10. <span data-ttu-id="e5c46-370">返回 Unity 编辑器, 单击 "**脚本**" 文件夹中的*VisionManager*和*ImageCapture*类, 然后将其拖到*层次结构面板*中的**主相机**对象。</span><span class="sxs-lookup"><span data-stu-id="e5c46-370">Back in the Unity Editor, click and drag the *VisionManager* and *ImageCapture* classes from the **Scripts** folder to the **Main Camera** object in the *Hierarchy Panel*.</span></span> 
 
-## <a name="chapter-8--before-building"></a><span data-ttu-id="5dca0-371">第 8 章 – 生成前</span><span class="sxs-lookup"><span data-stu-id="5dca0-371">Chapter 8 – Before building</span></span>
+## <a name="chapter-8--before-building"></a><span data-ttu-id="e5c46-371">第8章–生成之前</span><span class="sxs-lookup"><span data-stu-id="e5c46-371">Chapter 8 – Before building</span></span>
 
-<span data-ttu-id="5dca0-372">若要执行全面测试您的应用程序将需要旁加载它到在 HoloLens 上。</span><span class="sxs-lookup"><span data-stu-id="5dca0-372">To perform a thorough test of your application you will need to sideload it onto your HoloLens.</span></span>
-<span data-ttu-id="5dca0-373">执行操作之前，请确保：</span><span class="sxs-lookup"><span data-stu-id="5dca0-373">Before you do, ensure that:</span></span>
+<span data-ttu-id="e5c46-372">若要对应用程序进行全面测试, 需要将其旁加载到 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="e5c46-372">To perform a thorough test of your application you will need to sideload it onto your HoloLens.</span></span>
+<span data-ttu-id="e5c46-373">在执行此操作之前, 请确保:</span><span class="sxs-lookup"><span data-stu-id="e5c46-373">Before you do, ensure that:</span></span>
 
--   <span data-ttu-id="5dca0-374">中所述的所有设置[第 2 章](#chapter-2--set-up-the-unity-project)正确设置。</span><span class="sxs-lookup"><span data-stu-id="5dca0-374">All the settings mentioned in [Chapter 2](#chapter-2--set-up-the-unity-project) are set correctly.</span></span> 
--   <span data-ttu-id="5dca0-375">所有脚本都附加到**Main Camera**对象。</span><span class="sxs-lookup"><span data-stu-id="5dca0-375">All the scripts are attached to the **Main Camera** object.</span></span> 
--   <span data-ttu-id="5dca0-376">中的所有字段*主相机检查器面板*正确分配。</span><span class="sxs-lookup"><span data-stu-id="5dca0-376">All the fields in the *Main Camera Inspector Panel* are assigned properly.</span></span>
--   <span data-ttu-id="5dca0-377">请确保插入你**身份验证密钥**成**authorizationKey**变量。</span><span class="sxs-lookup"><span data-stu-id="5dca0-377">Make sure you insert your **Auth Key** into the **authorizationKey** variable.</span></span>
--   <span data-ttu-id="5dca0-378">确保具有还检查你的终结点您*VisionManager*脚本，并与对齐*你*区域 (本文档使用*西-我们*默认情况下)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-378">Ensure that you have also checked your endpoint in your *VisionManager* script, and that it aligns to *your* region (this document uses *west-us* by default).</span></span>
+-   <span data-ttu-id="e5c46-374">[第2章](#chapter-2--set-up-the-unity-project)中提到的所有设置都已正确设置。</span><span class="sxs-lookup"><span data-stu-id="e5c46-374">All the settings mentioned in [Chapter 2](#chapter-2--set-up-the-unity-project) are set correctly.</span></span> 
+-   <span data-ttu-id="e5c46-375">所有脚本都附加到**相机**对象上。</span><span class="sxs-lookup"><span data-stu-id="e5c46-375">All the scripts are attached to the **Main Camera** object.</span></span> 
+-   <span data-ttu-id="e5c46-376">*主相机检查器面板*中的所有字段均已正确分配。</span><span class="sxs-lookup"><span data-stu-id="e5c46-376">All the fields in the *Main Camera Inspector Panel* are assigned properly.</span></span>
+-   <span data-ttu-id="e5c46-377">请确保将**身份验证密钥**插入到**authorizationKey**变量。</span><span class="sxs-lookup"><span data-stu-id="e5c46-377">Make sure you insert your **Auth Key** into the **authorizationKey** variable.</span></span>
+-   <span data-ttu-id="e5c46-378">确保你还在*VisionManager*脚本中检查了你的终结点, 并且它与*你*的区域保持一致 (本文档默认使用*美国西部*)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-378">Ensure that you have also checked your endpoint in your *VisionManager* script, and that it aligns to *your* region (this document uses *west-us* by default).</span></span>
 
-## <a name="chapter-9--build-the-uwp-solution-and-sideload-the-application"></a><span data-ttu-id="5dca0-379">章 9 – 生成 UWP 解决方案和旁加载应用程序</span><span class="sxs-lookup"><span data-stu-id="5dca0-379">Chapter 9 – Build the UWP Solution and sideload the application</span></span>
-<span data-ttu-id="5dca0-380">此项目的 Unity 部分所需的所有内容现已完成，因此它是从 Unity 生成的时间。</span><span class="sxs-lookup"><span data-stu-id="5dca0-380">Everything needed for the Unity section of this project has now been completed, so it is time to build it from Unity.</span></span>
+## <a name="chapter-9--build-the-uwp-solution-and-sideload-the-application"></a><span data-ttu-id="e5c46-379">第9章–构建 UWP 解决方案并旁加载应用程序</span><span class="sxs-lookup"><span data-stu-id="e5c46-379">Chapter 9 – Build the UWP Solution and sideload the application</span></span>
+<span data-ttu-id="e5c46-380">此项目的 Unity 部分所需的所有内容现在均已完成, 因此可以从 Unity 构建它。</span><span class="sxs-lookup"><span data-stu-id="e5c46-380">Everything needed for the Unity section of this project has now been completed, so it is time to build it from Unity.</span></span>
 
-1.  <span data-ttu-id="5dca0-381">导航到*生成设置* - **文件 > 生成设置...**</span><span class="sxs-lookup"><span data-stu-id="5dca0-381">Navigate to *Build Settings* - **File > Build Settings…**</span></span>
-2.  <span data-ttu-id="5dca0-382">从*生成设置*窗口中，单击**生成**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-382">From the *Build Settings* window, click **Build**.</span></span>
+1.  <span data-ttu-id="e5c46-381">导航到 "*生成设置* - "**文件 > 生成设置 ...**</span><span class="sxs-lookup"><span data-stu-id="e5c46-381">Navigate to *Build Settings* - **File > Build Settings…**</span></span>
+2.  <span data-ttu-id="e5c46-382">在*生成设置*窗口中, 单击 "**生成**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-382">From the *Build Settings* window, click **Build**.</span></span>
 
-    ![从 Unity 构建应用程序](images/AzureLabs-Lab2-26.png)
+    ![从 Unity 生成应用](images/AzureLabs-Lab2-26.png)
 
-3.  <span data-ttu-id="5dca0-384">如果尚不存在，则勾选**UnityC#项目**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-384">If not already, tick **Unity C# Projects**.</span></span>
-4.  <span data-ttu-id="5dca0-385">单击“生成” 。</span><span class="sxs-lookup"><span data-stu-id="5dca0-385">Click **Build**.</span></span> <span data-ttu-id="5dca0-386">将启动 unity*文件资源管理器*窗口中，需要创建，然后选择要生成该应用程序的文件夹。</span><span class="sxs-lookup"><span data-stu-id="5dca0-386">Unity will launch a *File Explorer* window, where you need to create and then select a folder to build the app into.</span></span> <span data-ttu-id="5dca0-387">现在，创建该文件夹并将其命名*应用*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-387">Create that folder now, and name it *App*.</span></span> <span data-ttu-id="5dca0-388">然后使用*应用程序*文件夹选择，按**选择文件夹**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-388">Then with the *App* folder selected, press **Select Folder**.</span></span> 
-5.  <span data-ttu-id="5dca0-389">Unity 将开始构建您的项目*应用*文件夹。</span><span class="sxs-lookup"><span data-stu-id="5dca0-389">Unity will begin building your project to the *App* folder.</span></span> 
-6.  <span data-ttu-id="5dca0-390">一次 Unity 已完成的生成 （它可能需要一些时间），它将打开*文件资源管理器*窗口在生成的位置 （检查任务栏中，因为它可能不总是会显示您的窗口上方，但会通知你添加了一个新窗口）。</span><span class="sxs-lookup"><span data-stu-id="5dca0-390">Once Unity has finished building (it might take some time), it will open a *File Explorer* window at the location of your build (check your task bar, as it may not always appear above your windows, but will notify you of the addition of a new window).</span></span>
+3.  <span data-ttu-id="e5c46-384">如果尚未这样做, 请勾选**Unity C#项目**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-384">If not already, tick **Unity C# Projects**.</span></span>
+4.  <span data-ttu-id="e5c46-385">单击“生成” 。</span><span class="sxs-lookup"><span data-stu-id="e5c46-385">Click **Build**.</span></span> <span data-ttu-id="e5c46-386">Unity 将启动*文件资源管理器*窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。</span><span class="sxs-lookup"><span data-stu-id="e5c46-386">Unity will launch a *File Explorer* window, where you need to create and then select a folder to build the app into.</span></span> <span data-ttu-id="e5c46-387">立即创建该文件夹并将其命名为*应用*。</span><span class="sxs-lookup"><span data-stu-id="e5c46-387">Create that folder now, and name it *App*.</span></span> <span data-ttu-id="e5c46-388">选择*应用*文件夹后, 按 "**选择文件夹**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-388">Then with the *App* folder selected, press **Select Folder**.</span></span> 
+5.  <span data-ttu-id="e5c46-389">Unity 将开始向*应用*文件夹生成项目。</span><span class="sxs-lookup"><span data-stu-id="e5c46-389">Unity will begin building your project to the *App* folder.</span></span> 
+6.  <span data-ttu-id="e5c46-390">Unity 完成生成 (可能需要一些时间) 后, 它会在生成的位置打开 "*文件资源管理器*" 窗口 (检查任务栏, 因为它可能不会始终出现在窗口之上, 但会通知你添加了一个新窗口)。</span><span class="sxs-lookup"><span data-stu-id="e5c46-390">Once Unity has finished building (it might take some time), it will open a *File Explorer* window at the location of your build (check your task bar, as it may not always appear above your windows, but will notify you of the addition of a new window).</span></span>
 
-## <a name="chapter-10--deploy-to-hololens"></a><span data-ttu-id="5dca0-391">第 10 章将部署到 HoloLens</span><span class="sxs-lookup"><span data-stu-id="5dca0-391">Chapter 10 – Deploy to HoloLens</span></span>
+## <a name="chapter-10--deploy-to-hololens"></a><span data-ttu-id="e5c46-391">第10章–部署到 HoloLens</span><span class="sxs-lookup"><span data-stu-id="e5c46-391">Chapter 10 – Deploy to HoloLens</span></span>
 
-<span data-ttu-id="5dca0-392">若要部署在 HoloLens 上：</span><span class="sxs-lookup"><span data-stu-id="5dca0-392">To deploy on HoloLens:</span></span>
+<span data-ttu-id="e5c46-392">在 HoloLens 上部署:</span><span class="sxs-lookup"><span data-stu-id="e5c46-392">To deploy on HoloLens:</span></span>
 
-1.  <span data-ttu-id="5dca0-393">你将 （适用于远程部署），需要在 HoloLens IP 地址，以确保你 HoloLens 处于**开发人员模式**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-393">You will need the IP Address of your HoloLens (for Remote Deploy), and to ensure your HoloLens is in **Developer Mode**.</span></span> <span data-ttu-id="5dca0-394">要实现此目的，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="5dca0-394">To do this:</span></span>
+1.  <span data-ttu-id="e5c46-393">你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-393">You will need the IP Address of your HoloLens (for Remote Deploy), and to ensure your HoloLens is in **Developer Mode**.</span></span> <span data-ttu-id="e5c46-394">要实现此目的，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="e5c46-394">To do this:</span></span>
 
-    1. <span data-ttu-id="5dca0-395">戴上您 HoloLens，同时打开**设置**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-395">Whilst wearing your HoloLens, open the **Settings**.</span></span>
-    2. <span data-ttu-id="5dca0-396">转到**网络和 Internet > 的 Wi-fi > 高级选项**</span><span class="sxs-lookup"><span data-stu-id="5dca0-396">Go to **Network & Internet > Wi-Fi > Advanced Options**</span></span>
-    3. <span data-ttu-id="5dca0-397">请注意**IPv4**地址。</span><span class="sxs-lookup"><span data-stu-id="5dca0-397">Note the **IPv4** address.</span></span>
-    4. <span data-ttu-id="5dca0-398">接下来，导航回到**设置**，然后**更新和安全 > 适用于开发人员**</span><span class="sxs-lookup"><span data-stu-id="5dca0-398">Next, navigate back to **Settings**, and then to **Update & Security > For Developers**</span></span> 
-    5. <span data-ttu-id="5dca0-399">设置开发人员模式。</span><span class="sxs-lookup"><span data-stu-id="5dca0-399">Set Developer Mode On.</span></span>
+    1. <span data-ttu-id="e5c46-395">在戴上 HoloLens 的同时, 请打开**设置**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-395">Whilst wearing your HoloLens, open the **Settings**.</span></span>
+    2. <span data-ttu-id="e5c46-396">中转到**网络 & Internet > wi-fi > 高级选项**</span><span class="sxs-lookup"><span data-stu-id="e5c46-396">Go to **Network & Internet > Wi-Fi > Advanced Options**</span></span>
+    3. <span data-ttu-id="e5c46-397">记下**IPv4**地址。</span><span class="sxs-lookup"><span data-stu-id="e5c46-397">Note the **IPv4** address.</span></span>
+    4. <span data-ttu-id="e5c46-398">接下来, 导航回 "**设置**", 然后为**开发人员更新 & Security >**</span><span class="sxs-lookup"><span data-stu-id="e5c46-398">Next, navigate back to **Settings**, and then to **Update & Security > For Developers**</span></span> 
+    5. <span data-ttu-id="e5c46-399">设置开发人员模式。</span><span class="sxs-lookup"><span data-stu-id="e5c46-399">Set Developer Mode On.</span></span>
 
-2.  <span data-ttu-id="5dca0-400">导航到新的 Unity 生成 (*应用程序*文件夹)，然后打开解决方案文件与*Visual Studio*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-400">Navigate to your new Unity build (the *App* folder) and open the solution file with *Visual Studio*.</span></span>
-3.  <span data-ttu-id="5dca0-401">在解决方案配置中，选择**调试**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-401">In the Solution Configuration select **Debug**.</span></span>
-4.  <span data-ttu-id="5dca0-402">在解决方案平台中，选择**x86**，**远程计算机**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-402">In the Solution Platform, select **x86**, **Remote Machine**.</span></span> 
+2.  <span data-ttu-id="e5c46-400">导航到新的 Unity 生成 (*应用*文件夹), 并在*Visual Studio*中打开解决方案文件。</span><span class="sxs-lookup"><span data-stu-id="e5c46-400">Navigate to your new Unity build (the *App* folder) and open the solution file with *Visual Studio*.</span></span>
+3.  <span data-ttu-id="e5c46-401">在解决方案配置中, 选择 "**调试**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-401">In the Solution Configuration select **Debug**.</span></span>
+4.  <span data-ttu-id="e5c46-402">在解决方案平台中, 选择 " **x86**,**远程计算机**"。</span><span class="sxs-lookup"><span data-stu-id="e5c46-402">In the Solution Platform, select **x86**, **Remote Machine**.</span></span> 
 
-    ![部署从 Visual Studio 解决方案。](images/AzureLabs-Lab2-27.png)
+    ![从 Visual Studio 部署解决方案。](images/AzureLabs-Lab2-27.png)
  
-5.  <span data-ttu-id="5dca0-404">转到**生成菜单**，然后单击**部署解决方案**旁, 加载到你 HoloLens 应用程序。</span><span class="sxs-lookup"><span data-stu-id="5dca0-404">Go to the **Build menu** and click on **Deploy Solution**, to sideload the application to your HoloLens.</span></span>
-6.  <span data-ttu-id="5dca0-405">在准备好启动在 HoloLens 上安装的应用列表中，现在应显示你的应用 ！</span><span class="sxs-lookup"><span data-stu-id="5dca0-405">Your App should now appear in the list of installed apps on your HoloLens, ready to be launched!</span></span>
+5.  <span data-ttu-id="e5c46-404">请在 "**生成" 菜单**中, 单击 "**部署解决方案**", 将应用程序旁加载到 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="e5c46-404">Go to the **Build menu** and click on **Deploy Solution**, to sideload the application to your HoloLens.</span></span>
+6.  <span data-ttu-id="e5c46-405">应用现在应显示在你的 HoloLens 上已安装的应用列表中, 可以启动了!</span><span class="sxs-lookup"><span data-stu-id="e5c46-405">Your App should now appear in the list of installed apps on your HoloLens, ready to be launched!</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5dca0-406">若要将部署到沉浸式头戴式耳机，设置**解决方案平台**到*本地计算机*，并设置**配置**到*调试*，与*x86*作为**平台**。</span><span class="sxs-lookup"><span data-stu-id="5dca0-406">To deploy to immersive headset, set the **Solution Platform** to *Local Machine*, and set the **Configuration** to *Debug*, with *x86* as the **Platform**.</span></span> <span data-ttu-id="5dca0-407">然后将其部署到本地计算机，使用**生成菜单**，选择*部署解决方案*。</span><span class="sxs-lookup"><span data-stu-id="5dca0-407">Then deploy to the local machine, using the **Build menu**, selecting *Deploy Solution*.</span></span> 
+> <span data-ttu-id="e5c46-406">若要部署到沉浸式耳机, 请将 "**解决方案平台**" 设置为 "*本地计算机*", 并将**配置**设置为 "*调试*", 将 " *x86* " 设置为**平台**。</span><span class="sxs-lookup"><span data-stu-id="e5c46-406">To deploy to immersive headset, set the **Solution Platform** to *Local Machine*, and set the **Configuration** to *Debug*, with *x86* as the **Platform**.</span></span> <span data-ttu-id="e5c46-407">然后, 使用 "**生成" 菜单**选择 "*部署解决方案*", 将部署到本地计算机。</span><span class="sxs-lookup"><span data-stu-id="e5c46-407">Then deploy to the local machine, using the **Build menu**, selecting *Deploy Solution*.</span></span> 
 
-## <a name="your-finished-computer-vision-api-application"></a><span data-ttu-id="5dca0-408">完成的计算机视觉 API 的应用程序</span><span class="sxs-lookup"><span data-stu-id="5dca0-408">Your finished Computer Vision API application</span></span>
+## <a name="your-finished-computer-vision-api-application"></a><span data-ttu-id="e5c46-408">已完成的计算机视觉 API 应用程序</span><span class="sxs-lookup"><span data-stu-id="e5c46-408">Your finished Computer Vision API application</span></span>
 
-<span data-ttu-id="5dca0-409">祝贺你，构建利用 Azure 计算机视觉 API 能够识别现实世界对象，并显示的内容出现的置信度的混合的现实应用。</span><span class="sxs-lookup"><span data-stu-id="5dca0-409">Congratulations, you built a mixed reality app that leverages the Azure Computer Vision API to recognize real world objects, and display confidence of what has been seen.</span></span>
+<span data-ttu-id="e5c46-409">恭喜, 你构建了一个使用 Azure 计算机视觉 API 来识别真实世界对象的混合现实应用, 并清楚地显示了所见的内容。</span><span class="sxs-lookup"><span data-stu-id="e5c46-409">Congratulations, you built a mixed reality app that leverages the Azure Computer Vision API to recognize real world objects, and display confidence of what has been seen.</span></span>
 
-![实验结果](images/AzureLabs-Lab2-000.png)
+![实验室结果](images/AzureLabs-Lab2-000.png)
 
-## <a name="bonus-exercises"></a><span data-ttu-id="5dca0-411">Bonus 练习</span><span class="sxs-lookup"><span data-stu-id="5dca0-411">Bonus exercises</span></span>
+## <a name="bonus-exercises"></a><span data-ttu-id="e5c46-411">额外练习</span><span class="sxs-lookup"><span data-stu-id="e5c46-411">Bonus exercises</span></span>
 
-### <a name="exercise-1"></a><span data-ttu-id="5dca0-412">练习 1</span><span class="sxs-lookup"><span data-stu-id="5dca0-412">Exercise 1</span></span>
+### <a name="exercise-1"></a><span data-ttu-id="e5c46-412">练习1</span><span class="sxs-lookup"><span data-stu-id="e5c46-412">Exercise 1</span></span>
 
-<span data-ttu-id="5dca0-413">正如您使用过*标记*参数 (如内*终结点*中使用*VisionManager*)，扩展应用程序以检测其他信息; 我们来看一下有权访问的其他参数[此处](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)。</span><span class="sxs-lookup"><span data-stu-id="5dca0-413">Just as you have used the *Tags* parameter (as evidenced within the *endpoint* used within the *VisionManager*), extend the app to detect other information; have a look at what other parameters you have access to [HERE](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).</span></span>
+<span data-ttu-id="e5c46-413">正如使用*标记*参数 (在*VisionManager*中使用的*终结点*中的出现), 扩展应用程序以检测其他信息;查看你可以访问的其他[参数。](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)</span><span class="sxs-lookup"><span data-stu-id="e5c46-413">Just as you have used the *Tags* parameter (as evidenced within the *endpoint* used within the *VisionManager*), extend the app to detect other information; have a look at what other parameters you have access to [HERE](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).</span></span>
 
-### <a name="exercise-2"></a><span data-ttu-id="5dca0-414">练习 2</span><span class="sxs-lookup"><span data-stu-id="5dca0-414">Exercise 2</span></span>
+### <a name="exercise-2"></a><span data-ttu-id="e5c46-414">练习2</span><span class="sxs-lookup"><span data-stu-id="e5c46-414">Exercise 2</span></span>
 
-<span data-ttu-id="5dca0-415">显示返回的 Azure 数据，以更便于交谈，和可读的方式，可能隐藏的数字。</span><span class="sxs-lookup"><span data-stu-id="5dca0-415">Display the returned Azure data, in a more conversational, and readable way, perhaps hiding the numbers.</span></span> <span data-ttu-id="5dca0-416">像智能机器人应用程序可能会对用户说话。</span><span class="sxs-lookup"><span data-stu-id="5dca0-416">As though a bot might be speaking to the user.</span></span>
+<span data-ttu-id="e5c46-415">显示返回的 Azure 数据, 其显示方式更多, 而且可能会隐藏数字。</span><span class="sxs-lookup"><span data-stu-id="e5c46-415">Display the returned Azure data, in a more conversational, and readable way, perhaps hiding the numbers.</span></span> <span data-ttu-id="e5c46-416">如机器人可能对用户讲话。</span><span class="sxs-lookup"><span data-stu-id="e5c46-416">As though a bot might be speaking to the user.</span></span>

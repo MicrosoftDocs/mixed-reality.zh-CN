@@ -1,11 +1,11 @@
 ---
-title: 添加 holographic 远程处理
-description: 介绍如何使用 Holographic 远程处理以通过网络将全息呈现到 HoloLens。
+title: 添加全息远程处理
+description: 介绍如何使用全息远程处理通过网络将全息影像呈现到 HoloLens。
 author: MikeRiches
 ms.author: mriches
 ms.date: 05/24/2019
 ms.topic: article
-keywords: Windows Mixed Reality，全息、 全息版的远程处理、 远程呈现、 呈现、 HoloLens，远程全息网络
+keywords: Windows Mixed Reality, 全息影像, 全息远程处理, 远程渲染, 网络渲染, HoloLens, 远程全息影像
 ms.openlocfilehash: 8d645f634ff0fc820893f5554fd602aa3a2f38e3
 ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
@@ -13,39 +13,39 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/11/2019
 ms.locfileid: "66829618"
 ---
-# <a name="add-holographic-remoting"></a><span data-ttu-id="8634a-104">添加 holographic 远程处理</span><span class="sxs-lookup"><span data-stu-id="8634a-104">Add holographic remoting</span></span>
+# <a name="add-holographic-remoting"></a><span data-ttu-id="63f36-104">添加全息远程处理</span><span class="sxs-lookup"><span data-stu-id="63f36-104">Add holographic remoting</span></span>
 
-## <a name="hololens-2"></a><span data-ttu-id="8634a-105">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="8634a-105">HoloLens 2</span></span>
+## <a name="hololens-2"></a><span data-ttu-id="63f36-105">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="63f36-105">HoloLens 2</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8634a-106">特定于 HoloLens 2 的更多指导[即将推出](index.md#news-and-notes)。</span><span class="sxs-lookup"><span data-stu-id="8634a-106">More guidance specific to HoloLens 2 [coming soon](index.md#news-and-notes).</span></span>
+> <span data-ttu-id="63f36-106">即将[推出](index.md#news-and-notes)特定于 HoloLens 2 的更多指导。</span><span class="sxs-lookup"><span data-stu-id="63f36-106">More guidance specific to HoloLens 2 [coming soon](index.md#news-and-notes).</span></span>
 
-<span data-ttu-id="8634a-107">使用 Holographic 远程处理的 HoloLens 开发人员将需要更新其应用程序，使它们与 HoloLens 2 兼容。</span><span class="sxs-lookup"><span data-stu-id="8634a-107">HoloLens developers using Holographic Remoting will need to update their apps to make them compatible with HoloLens 2.</span></span>  <span data-ttu-id="8634a-108">这将要求尚不可公开可用的 Holographic 远程处理 NuGet 包的新版本。</span><span class="sxs-lookup"><span data-stu-id="8634a-108">This will require a new version of the Holographic Remoting NuGet package that is not publicly available yet.</span></span>  <span data-ttu-id="8634a-109">如果使用 HoloLens NuGet 包的应用程序尝试连接到 HoloLens 2 上全息版的远程处理播放机，则连接将失败。</span><span class="sxs-lookup"><span data-stu-id="8634a-109">If an application using the HoloLens NuGet package attempts to connect to the Holographic Remoting Player on HoloLens 2, the connection will fail.</span></span>  <span data-ttu-id="8634a-110">可用 HoloLens 2 NuGet 包后，请观看此页，进行更新。</span><span class="sxs-lookup"><span data-stu-id="8634a-110">Watch this page for updates once the HoloLens 2 NuGet package is available.</span></span>
+<span data-ttu-id="63f36-107">使用全息远程处理的 HoloLens 开发人员需要更新其应用程序, 使其与 HoloLens 2 兼容。</span><span class="sxs-lookup"><span data-stu-id="63f36-107">HoloLens developers using Holographic Remoting will need to update their apps to make them compatible with HoloLens 2.</span></span>  <span data-ttu-id="63f36-108">这将需要全新版本的全息远程处理 NuGet 包尚未公开提供。</span><span class="sxs-lookup"><span data-stu-id="63f36-108">This will require a new version of the Holographic Remoting NuGet package that is not publicly available yet.</span></span>  <span data-ttu-id="63f36-109">如果使用 HoloLens NuGet 包的应用程序尝试连接到 HoloLens 2 上的全息远程处理播放机, 则连接将失败。</span><span class="sxs-lookup"><span data-stu-id="63f36-109">If an application using the HoloLens NuGet package attempts to connect to the Holographic Remoting Player on HoloLens 2, the connection will fail.</span></span>  <span data-ttu-id="63f36-110">在 HoloLens 2 NuGet 包可用后, 观看此页以获取更新。</span><span class="sxs-lookup"><span data-stu-id="63f36-110">Watch this page for updates once the HoloLens 2 NuGet package is available.</span></span>
 
-## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a><span data-ttu-id="8634a-111">将 holographic 远程处理添加到你的桌面或 UWP 应用</span><span class="sxs-lookup"><span data-stu-id="8634a-111">Add holographic remoting to your desktop or UWP app</span></span>
+## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a><span data-ttu-id="63f36-111">将全息远程处理添加到桌面或 UWP 应用</span><span class="sxs-lookup"><span data-stu-id="63f36-111">Add holographic remoting to your desktop or UWP app</span></span>
 
-<span data-ttu-id="8634a-112">此页介绍了如何将 Holographic 远程处理添加到桌面或 UWP 应用。</span><span class="sxs-lookup"><span data-stu-id="8634a-112">This page describes how to add Holographic Remoting to a desktop or UWP app.</span></span>
+<span data-ttu-id="63f36-112">本页介绍如何向桌面或 UWP 应用添加全息远程处理。</span><span class="sxs-lookup"><span data-stu-id="63f36-112">This page describes how to add Holographic Remoting to a desktop or UWP app.</span></span>
 
-<span data-ttu-id="8634a-113">全息版的远程处理，应用可以面向 HoloLens 全息版或 UWP 设备，如 Xbox One，允许更多系统资源的访问并使其可以将集成远程桌面 PC 上托管的内容与[沉浸式视图](app-views.md)到现有桌面 PC 软件。</span><span class="sxs-lookup"><span data-stu-id="8634a-113">Holographic remoting allows your app to target a HoloLens with holographic content hosted on a desktop PC or on a UWP device such as the Xbox One, allowing access to more system resources and making it possible to integrate remote [immersive views](app-views.md) into existing desktop PC software.</span></span> <span data-ttu-id="8634a-114">远程处理宿主应用程序从 HoloLens 接收输入的数据流、 呈现内容中的虚拟的沉浸式视图，并流式传输返回到 HoloLens 的内容帧。</span><span class="sxs-lookup"><span data-stu-id="8634a-114">A remoting host app receives an input data stream from a HoloLens, renders content in a virtual immersive view, and streams content frames back to HoloLens.</span></span> <span data-ttu-id="8634a-115">使用标准的 Wi-fi 进行连接。</span><span class="sxs-lookup"><span data-stu-id="8634a-115">The connection is made using standard Wi-Fi.</span></span> <span data-ttu-id="8634a-116">若要使用远程处理，将使用 NuGet 包将 holographic 远程处理添加到你的桌面或 UWP 应用，并编写代码以处理连接，并呈现在沉浸式视图。</span><span class="sxs-lookup"><span data-stu-id="8634a-116">To use remoting, you will use a NuGet package to add holographic remoting to your desktop or UWP app, and write code to handle the connection and to render in an immersive view.</span></span> <span data-ttu-id="8634a-117">帮助程序库包含在简化处理设备连接的任务的代码示例。</span><span class="sxs-lookup"><span data-stu-id="8634a-117">Helper libraries are included in the code sample that simplify the task of handling the device connection.</span></span>
+<span data-ttu-id="63f36-113">使用全息远程处理, 你的应用程序可以面向在台式计算机或 UWP 设备 (如 Xbox) 上托管的全息内容的 HoloLens, 并允许访问更多系统资源, 并使你能够将远程[沉浸式视图](app-views.md)集成到现有台式计算机软件。</span><span class="sxs-lookup"><span data-stu-id="63f36-113">Holographic remoting allows your app to target a HoloLens with holographic content hosted on a desktop PC or on a UWP device such as the Xbox One, allowing access to more system resources and making it possible to integrate remote [immersive views](app-views.md) into existing desktop PC software.</span></span> <span data-ttu-id="63f36-114">远程处理主机应用从 HoloLens 接收输入数据流, 在虚拟沉浸式视图中呈现内容, 并将内容帧流式传输回 HoloLens。</span><span class="sxs-lookup"><span data-stu-id="63f36-114">A remoting host app receives an input data stream from a HoloLens, renders content in a virtual immersive view, and streams content frames back to HoloLens.</span></span> <span data-ttu-id="63f36-115">使用标准 Wi-fi 建立连接。</span><span class="sxs-lookup"><span data-stu-id="63f36-115">The connection is made using standard Wi-Fi.</span></span> <span data-ttu-id="63f36-116">若要使用远程处理, 你将使用 NuGet 包将全息远程处理添加到桌面或 UWP 应用, 并编写代码来处理连接并在沉浸式视图中呈现。</span><span class="sxs-lookup"><span data-stu-id="63f36-116">To use remoting, you will use a NuGet package to add holographic remoting to your desktop or UWP app, and write code to handle the connection and to render in an immersive view.</span></span> <span data-ttu-id="63f36-117">帮助程序库包括在代码示例中, 用于简化设备连接的处理任务。</span><span class="sxs-lookup"><span data-stu-id="63f36-117">Helper libraries are included in the code sample that simplify the task of handling the device connection.</span></span>
 
-<span data-ttu-id="8634a-118">典型的远程处理连接会为 50 毫秒的延迟较低。</span><span class="sxs-lookup"><span data-stu-id="8634a-118">A typical remoting connection will have as low as 50 ms of latency.</span></span> <span data-ttu-id="8634a-119">播放机应用程序可以报告实时的延迟。</span><span class="sxs-lookup"><span data-stu-id="8634a-119">The player app can report the latency in real-time.</span></span>
+<span data-ttu-id="63f36-118">典型的远程处理连接的延迟最低为50毫秒。</span><span class="sxs-lookup"><span data-stu-id="63f36-118">A typical remoting connection will have as low as 50 ms of latency.</span></span> <span data-ttu-id="63f36-119">播放机应用可以实时报告滞后时间。</span><span class="sxs-lookup"><span data-stu-id="63f36-119">The player app can report the latency in real-time.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="8634a-120">这篇文章中的代码片段当前演示了如何使用C++/CX 而不是 C + + 17 符合C++中使用 /WinRT [ C++全息版的项目模板](creating-a-holographic-directx-project.md)。</span><span class="sxs-lookup"><span data-stu-id="8634a-120">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="8634a-121">这些概念是等效的C++/WinRT 项目，但您将需要将代码转换。</span><span class="sxs-lookup"><span data-stu-id="8634a-121">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
+><span data-ttu-id="63f36-120">本文中的代码片段当前演示了C++ C++ [ C++ ](creating-a-holographic-directx-project.md)如何使用/cx 而不是 C + 17 兼容/WinRT, 这与全息项目模板中使用的不同。</span><span class="sxs-lookup"><span data-stu-id="63f36-120">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="63f36-121">概念对于C++/WinRT 项目是等效的, 但你将需要转换代码。</span><span class="sxs-lookup"><span data-stu-id="63f36-121">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
 
-### <a name="get-the-remoting-nuget-packages"></a><span data-ttu-id="8634a-122">获取 NuGet 包的远程处理</span><span class="sxs-lookup"><span data-stu-id="8634a-122">Get the remoting NuGet packages</span></span>
+### <a name="get-the-remoting-nuget-packages"></a><span data-ttu-id="63f36-122">获取远程处理 NuGet 包</span><span class="sxs-lookup"><span data-stu-id="63f36-122">Get the remoting NuGet packages</span></span>
 
-<span data-ttu-id="8634a-123">请按照下列步骤以 NuGet 包 holographic 远程处理，并添加从您的项目的引用：</span><span class="sxs-lookup"><span data-stu-id="8634a-123">Follow these steps to get the NuGet package for holographic remoting, and add a reference from your project:</span></span>
-1. <span data-ttu-id="8634a-124">请转到 Visual Studio 中的项目。</span><span class="sxs-lookup"><span data-stu-id="8634a-124">Go to your project in Visual Studio.</span></span>
-2. <span data-ttu-id="8634a-125">右键单击项目节点并选择**管理 NuGet 包...**</span><span class="sxs-lookup"><span data-stu-id="8634a-125">Right-click on the project node and select **Manage NuGet Packages...**</span></span>
-3. <span data-ttu-id="8634a-126">在显示的面板，单击**浏览**，然后搜索"Holographic 远程处理"。</span><span class="sxs-lookup"><span data-stu-id="8634a-126">In the panel that appears, click **Browse** and then search for "Holographic Remoting".</span></span>
-4. <span data-ttu-id="8634a-127">选择**Microsoft.Holographic.Remoting**然后单击**安装**。</span><span class="sxs-lookup"><span data-stu-id="8634a-127">Select **Microsoft.Holographic.Remoting** and click **Install**.</span></span>
-5. <span data-ttu-id="8634a-128">如果**预览版**对话框出现后，单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="8634a-128">If the **Preview** dialog appears, click **OK**.</span></span>
-6. <span data-ttu-id="8634a-129">下一个对话框中显示的是许可协议。</span><span class="sxs-lookup"><span data-stu-id="8634a-129">The next dialog that appears is the license agreement.</span></span> <span data-ttu-id="8634a-130">单击**我接受**接受许可协议。</span><span class="sxs-lookup"><span data-stu-id="8634a-130">Click on **I Accept** to accept the license agreement.</span></span>
+<span data-ttu-id="63f36-123">按照以下步骤获取用于全息远程处理的 NuGet 包, 并从项目中添加引用:</span><span class="sxs-lookup"><span data-stu-id="63f36-123">Follow these steps to get the NuGet package for holographic remoting, and add a reference from your project:</span></span>
+1. <span data-ttu-id="63f36-124">在 Visual Studio 中中转到你的项目。</span><span class="sxs-lookup"><span data-stu-id="63f36-124">Go to your project in Visual Studio.</span></span>
+2. <span data-ttu-id="63f36-125">右键单击项目节点, 然后选择 "**管理 NuGet 包 ...** "</span><span class="sxs-lookup"><span data-stu-id="63f36-125">Right-click on the project node and select **Manage NuGet Packages...**</span></span>
+3. <span data-ttu-id="63f36-126">在出现的面板中, 单击 "**浏览**", 然后搜索 "全息远程处理"。</span><span class="sxs-lookup"><span data-stu-id="63f36-126">In the panel that appears, click **Browse** and then search for "Holographic Remoting".</span></span>
+4. <span data-ttu-id="63f36-127">选择 **"** ", 然后单击 "**安装**"。</span><span class="sxs-lookup"><span data-stu-id="63f36-127">Select **Microsoft.Holographic.Remoting** and click **Install**.</span></span>
+5. <span data-ttu-id="63f36-128">如果**预览**对话框出现, 请单击 **"确定"** 。</span><span class="sxs-lookup"><span data-stu-id="63f36-128">If the **Preview** dialog appears, click **OK**.</span></span>
+6. <span data-ttu-id="63f36-129">显示的下一个对话框是许可协议。</span><span class="sxs-lookup"><span data-stu-id="63f36-129">The next dialog that appears is the license agreement.</span></span> <span data-ttu-id="63f36-130">单击 "**我接受**" 接受许可协议。</span><span class="sxs-lookup"><span data-stu-id="63f36-130">Click on **I Accept** to accept the license agreement.</span></span>
 
-### <a name="create-the-holographicstreamerhelpers"></a><span data-ttu-id="8634a-131">创建 HolographicStreamerHelpers</span><span class="sxs-lookup"><span data-stu-id="8634a-131">Create the HolographicStreamerHelpers</span></span>
+### <a name="create-the-holographicstreamerhelpers"></a><span data-ttu-id="63f36-131">创建 HolographicStreamerHelpers</span><span class="sxs-lookup"><span data-stu-id="63f36-131">Create the HolographicStreamerHelpers</span></span>
 
-<span data-ttu-id="8634a-132">首先，我们需要 HolographicStreamerHelpers 的实例。</span><span class="sxs-lookup"><span data-stu-id="8634a-132">First, we need an instance of HolographicStreamerHelpers.</span></span> <span data-ttu-id="8634a-133">添加到将处理远程处理的类。</span><span class="sxs-lookup"><span data-stu-id="8634a-133">Add this to the class that will be handling remoting.</span></span>
+<span data-ttu-id="63f36-132">首先, 需要 HolographicStreamerHelpers 的实例。</span><span class="sxs-lookup"><span data-stu-id="63f36-132">First, we need an instance of HolographicStreamerHelpers.</span></span> <span data-ttu-id="63f36-133">将此添加到将处理远程处理的类。</span><span class="sxs-lookup"><span data-stu-id="63f36-133">Add this to the class that will be handling remoting.</span></span>
 
 ```
 #include <HolographicStreamerHelpers.h>
@@ -54,7 +54,7 @@ ms.locfileid: "66829618"
        Microsoft::Holographic::HolographicStreamerHelpers^ m_streamerHelpers;
 ```
 
-<span data-ttu-id="8634a-134">此外需要跟踪连接状态。</span><span class="sxs-lookup"><span data-stu-id="8634a-134">You'll also need to track connection state.</span></span> <span data-ttu-id="8634a-135">如果你想要呈现预览，你需要具有要将其复制到的纹理。</span><span class="sxs-lookup"><span data-stu-id="8634a-135">If you want to render the preview, you need to have a texture to copy it to.</span></span> <span data-ttu-id="8634a-136">您还需要几个连接状态锁定，存储 HoloLens，IP 地址的某种方式等，依此类推。</span><span class="sxs-lookup"><span data-stu-id="8634a-136">You also need a few things like a connection state lock, some way of storing the IP address of HoloLens, and so on.</span></span>
+<span data-ttu-id="63f36-134">还需要跟踪连接状态。</span><span class="sxs-lookup"><span data-stu-id="63f36-134">You'll also need to track connection state.</span></span> <span data-ttu-id="63f36-135">如果要呈现预览, 则需要有要将其复制到的纹理。</span><span class="sxs-lookup"><span data-stu-id="63f36-135">If you want to render the preview, you need to have a texture to copy it to.</span></span> <span data-ttu-id="63f36-136">还需要一些功能, 如连接状态锁定、用于存储 HoloLens IP 地址等的方法。</span><span class="sxs-lookup"><span data-stu-id="63f36-136">You also need a few things like a connection state lock, some way of storing the IP address of HoloLens, and so on.</span></span>
 
 ```
 private:
@@ -71,9 +71,9 @@ private:
        Microsoft::WRL::ComPtr<ID3D11Texture2D>             m_spTexture;
 ```
 
-### <a name="initialize-holographicstreamerhelpers-and-connect-to-hololens"></a><span data-ttu-id="8634a-137">初始化 HolographicStreamerHelpers 并连接到 HoloLens</span><span class="sxs-lookup"><span data-stu-id="8634a-137">Initialize HolographicStreamerHelpers and connect to HoloLens</span></span>
+### <a name="initialize-holographicstreamerhelpers-and-connect-to-hololens"></a><span data-ttu-id="63f36-137">初始化 HolographicStreamerHelpers 并连接到 HoloLens</span><span class="sxs-lookup"><span data-stu-id="63f36-137">Initialize HolographicStreamerHelpers and connect to HoloLens</span></span>
 
-<span data-ttu-id="8634a-138">若要连接到 HoloLens 设备，创建的 HolographicStreamerHelpers 实例并连接到的目标 IP 地址。</span><span class="sxs-lookup"><span data-stu-id="8634a-138">To connect to a HoloLens device, create an instance of HolographicStreamerHelpers and connect to the target IP address.</span></span> <span data-ttu-id="8634a-139">你将需要设置视频帧大小以匹配 HoloLens 显示宽度和高度，因为 Holographic 远程处理库需要的编码器和解码器的解决方法若要完全匹配。</span><span class="sxs-lookup"><span data-stu-id="8634a-139">You will need to set the video frame size to match the HoloLens display width and height, because the Holographic Remoting library expects the encoder and decoder resolutions to match exactly.</span></span>
+<span data-ttu-id="63f36-138">若要连接到 HoloLens 设备, 请创建 HolographicStreamerHelpers 的实例并连接到目标 IP 地址。</span><span class="sxs-lookup"><span data-stu-id="63f36-138">To connect to a HoloLens device, create an instance of HolographicStreamerHelpers and connect to the target IP address.</span></span> <span data-ttu-id="63f36-139">你将需要设置视频帧大小以匹配 HoloLens 显示宽度和高度, 因为全息远程处理库需要编码器和解码器解析完全匹配。</span><span class="sxs-lookup"><span data-stu-id="63f36-139">You will need to set the video frame size to match the HoloLens display width and height, because the Holographic Remoting library expects the encoder and decoder resolutions to match exactly.</span></span>
 
 ```
 m_streamerHelpers = ref new HolographicStreamerHelpers();
@@ -94,9 +94,9 @@ m_streamerHelpers = ref new HolographicStreamerHelpers();
        }
 ```
 
-<span data-ttu-id="8634a-140">设备连接是异步的。</span><span class="sxs-lookup"><span data-stu-id="8634a-140">The device connection is asynchronous.</span></span> <span data-ttu-id="8634a-141">你的应用需要提供事件处理程序连接，断开连接，和帧发送事件。</span><span class="sxs-lookup"><span data-stu-id="8634a-141">Your app needs to provide event handlers for connect, disconnect, and frame send events.</span></span>
+<span data-ttu-id="63f36-140">设备连接是异步的。</span><span class="sxs-lookup"><span data-stu-id="63f36-140">The device connection is asynchronous.</span></span> <span data-ttu-id="63f36-141">应用需要为连接、断开连接和帧发送事件提供事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="63f36-141">Your app needs to provide event handlers for connect, disconnect, and frame send events.</span></span>
 
-<span data-ttu-id="8634a-142">OnConnected 事件可以更新 UI，开始呈现，依次类推。</span><span class="sxs-lookup"><span data-stu-id="8634a-142">The OnConnected event can update the UI, start rendering, and so on.</span></span> <span data-ttu-id="8634a-143">在我们的桌面代码示例，我们使用"连接"消息更新窗口标题。</span><span class="sxs-lookup"><span data-stu-id="8634a-143">In our desktop code sample, we update the window title with a "connected" message.</span></span>
+<span data-ttu-id="63f36-142">OnConnected 事件可以更新 UI, 开始呈现, 等等。</span><span class="sxs-lookup"><span data-stu-id="63f36-142">The OnConnected event can update the UI, start rendering, and so on.</span></span> <span data-ttu-id="63f36-143">在我们的桌面代码示例中, 我们使用 "已连接" 消息更新窗口标题。</span><span class="sxs-lookup"><span data-stu-id="63f36-143">In our desktop code sample, we update the window title with a "connected" message.</span></span>
 
 ```
 m_streamerHelpers->OnConnected += ref new ConnectedEvent(
@@ -106,7 +106,7 @@ m_streamerHelpers->OnConnected += ref new ConnectedEvent(
            });
 ```
 
-<span data-ttu-id="8634a-144">重新连接、 UI 更新等，可以处理 OnDisconnected 事件。</span><span class="sxs-lookup"><span data-stu-id="8634a-144">The OnDisconnected event can handle reconnection, UI updates, and so on.</span></span> <span data-ttu-id="8634a-145">在此示例中，我们重新连接如果暂时性故障。</span><span class="sxs-lookup"><span data-stu-id="8634a-145">In this example, we reconnect if there is a transient failure.</span></span>
+<span data-ttu-id="63f36-144">OnDisconnected 事件可以处理重新连接、UI 更新等。</span><span class="sxs-lookup"><span data-stu-id="63f36-144">The OnDisconnected event can handle reconnection, UI updates, and so on.</span></span> <span data-ttu-id="63f36-145">在此示例中, 如果发生暂时性故障, 则重新连接。</span><span class="sxs-lookup"><span data-stu-id="63f36-145">In this example, we reconnect if there is a transient failure.</span></span>
 
 ```
 Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_streamerHelpers);
@@ -146,7 +146,7 @@ Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_strea
            });
 ```
 
-<span data-ttu-id="8634a-146">准备好发送帧远程处理组件时，您的应用程序提供能够 SendFrameEvent 中使它的一个副本。</span><span class="sxs-lookup"><span data-stu-id="8634a-146">When the remoting component is ready to send a frame, your app is provided an opportunity to make a copy of it in the SendFrameEvent.</span></span> <span data-ttu-id="8634a-147">在这里，我们将在帧到交换链复制，以便我们可以在预览窗口中显示它。</span><span class="sxs-lookup"><span data-stu-id="8634a-147">Here, we copy the frame to a swap chain so that we can display it in a preview window.</span></span>
+<span data-ttu-id="63f36-146">当远程处理组件准备好发送帧时, 您的应用程序将有机会在 SendFrameEvent 中创建它的副本。</span><span class="sxs-lookup"><span data-stu-id="63f36-146">When the remoting component is ready to send a frame, your app is provided an opportunity to make a copy of it in the SendFrameEvent.</span></span> <span data-ttu-id="63f36-147">在这里, 我们将帧复制到一个交换链, 以便可以在预览窗口中显示它。</span><span class="sxs-lookup"><span data-stu-id="63f36-147">Here, we copy the frame to a swap chain so that we can display it in a preview window.</span></span>
 
 ```
 m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
@@ -174,17 +174,17 @@ m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
            });
 ```
 
-### <a name="render-holographic-content"></a><span data-ttu-id="8634a-148">呈现全息版的内容</span><span class="sxs-lookup"><span data-stu-id="8634a-148">Render holographic content</span></span>
+### <a name="render-holographic-content"></a><span data-ttu-id="63f36-148">呈现全息内容</span><span class="sxs-lookup"><span data-stu-id="63f36-148">Render holographic content</span></span>
 
-<span data-ttu-id="8634a-149">将内容呈现使用远程处理，可以设置你的桌面或 UWP 应用中虚拟 IFrameworkView 并处理从远程处理 holographic 帧。</span><span class="sxs-lookup"><span data-stu-id="8634a-149">To render content using remoting, you set up a virtual IFrameworkView within your desktop or UWP app and process holographic frames from remoting.</span></span> <span data-ttu-id="8634a-150">所有 Windows Holographic Api 都的使用此视图中，但相同的方式设置略有不同。</span><span class="sxs-lookup"><span data-stu-id="8634a-150">All of the Windows Holographic APIs are uses the same way by this view, but it is set up slightly differently.</span></span>
+<span data-ttu-id="63f36-149">若要使用远程处理呈现内容, 请在桌面或 UWP 应用中设置一个虚拟 IFrameworkView, 并处理远程处理中的全息帧。</span><span class="sxs-lookup"><span data-stu-id="63f36-149">To render content using remoting, you set up a virtual IFrameworkView within your desktop or UWP app and process holographic frames from remoting.</span></span> <span data-ttu-id="63f36-150">所有 Windows 全息 Api 的使用方式与此视图相同, 但设置略有不同。</span><span class="sxs-lookup"><span data-stu-id="63f36-150">All of the Windows Holographic APIs are uses the same way by this view, but it is set up slightly differently.</span></span>
 
-<span data-ttu-id="8634a-151">而不是创建它们自己，全息版的空间和语音组件来自 HolographicRemotingHelpers 类：</span><span class="sxs-lookup"><span data-stu-id="8634a-151">Instead of creating them yourself, the holographic space and speech components come from your HolographicRemotingHelpers class:</span></span>
+<span data-ttu-id="63f36-151">全息空间和语音组件来自 HolographicRemotingHelpers 类, 而不是自行创建:</span><span class="sxs-lookup"><span data-stu-id="63f36-151">Instead of creating them yourself, the holographic space and speech components come from your HolographicRemotingHelpers class:</span></span>
 
 ```
 m_appView->Initialize(m_streamerHelpers->HolographicSpace, m_streamerHelpers->RemoteSpeech);
 ```
 
-<span data-ttu-id="8634a-152">而不是使用在运行方法的更新循环，则提供从你的桌面或 UWP 应用的主循环的刻度线更新。</span><span class="sxs-lookup"><span data-stu-id="8634a-152">Instead of using an update loop inside of a Run method, you provide tick updates from the main loop of your desktop or UWP app.</span></span> <span data-ttu-id="8634a-153">这允许你的桌面或 UWP 应用，以控制消息处理。</span><span class="sxs-lookup"><span data-stu-id="8634a-153">This allows your desktop or UWP app to remain in control of message processing.</span></span>
+<span data-ttu-id="63f36-152">不在 Run 方法内部使用 update 循环, 而是通过桌面或 UWP 应用程序的主循环来提供滴答更新。</span><span class="sxs-lookup"><span data-stu-id="63f36-152">Instead of using an update loop inside of a Run method, you provide tick updates from the main loop of your desktop or UWP app.</span></span> <span data-ttu-id="63f36-153">这允许桌面或 UWP 应用保持对消息处理的控制。</span><span class="sxs-lookup"><span data-stu-id="63f36-153">This allows your desktop or UWP app to remain in control of message processing.</span></span>
 
 ```
 void DesktopWindow::Tick()
@@ -196,7 +196,7 @@ void DesktopWindow::Tick()
    }
 ```
 
-<span data-ttu-id="8634a-154">全息版的应用程序视图 Tick() 方法完成更新、 绘图、 存在循环一次的迭代。</span><span class="sxs-lookup"><span data-stu-id="8634a-154">The holographic app view's Tick() method completes one iteration of the update, draw, present loop.</span></span>
+<span data-ttu-id="63f36-154">全息应用视图的 Tick () 方法完成更新、绘制和呈现循环的一次迭代。</span><span class="sxs-lookup"><span data-stu-id="63f36-154">The holographic app view's Tick() method completes one iteration of the update, draw, present loop.</span></span>
 
 ```
 void AppView::Tick()
@@ -216,11 +216,11 @@ void AppView::Tick()
    }
 ```
 
-<span data-ttu-id="8634a-155">全息版的应用程序查看更新、 呈现器，并存在循环与完全相同，只不过在桌面 PC 上有权访问更长的系统资源是在 HoloLens 的运行时。</span><span class="sxs-lookup"><span data-stu-id="8634a-155">The holographic app view update, render, and present loop is exactly the same as it is when running on HoloLens - except that you have access to a much greater amount of system resources on your desktop PC.</span></span> <span data-ttu-id="8634a-156">可以呈现多个更多的三角形，具有多个绘图的阶段，执行多个物理引擎，并使用 x64 进程加载所需内容，超过 2 GB 的 RAM。</span><span class="sxs-lookup"><span data-stu-id="8634a-156">You can render many more triangles, have more drawing passes, do more physics, and use x64 processes to load content that requires more than 2 GB of RAM.</span></span>
+<span data-ttu-id="63f36-155">全息应用视图的更新、呈现和呈现循环与在 HoloLens 上运行时完全相同, 只是你有权访问台式计算机上更多的系统资源。</span><span class="sxs-lookup"><span data-stu-id="63f36-155">The holographic app view update, render, and present loop is exactly the same as it is when running on HoloLens - except that you have access to a much greater amount of system resources on your desktop PC.</span></span> <span data-ttu-id="63f36-156">您可以呈现更多的三角形, 更多的绘图走刀, 执行更多物理学, 并使用 x64 进程加载需要 2 GB 以上 RAM 的内容。</span><span class="sxs-lookup"><span data-stu-id="63f36-156">You can render many more triangles, have more drawing passes, do more physics, and use x64 processes to load content that requires more than 2 GB of RAM.</span></span>
 
-### <a name="disconnect-and-end-the-remote-session"></a><span data-ttu-id="8634a-157">断开连接，然后结束远程会话</span><span class="sxs-lookup"><span data-stu-id="8634a-157">Disconnect and end the remote session</span></span>
+### <a name="disconnect-and-end-the-remote-session"></a><span data-ttu-id="63f36-157">断开并结束远程会话</span><span class="sxs-lookup"><span data-stu-id="63f36-157">Disconnect and end the remote session</span></span>
 
-<span data-ttu-id="8634a-158">若要断开连接-例如，当用户单击 UI 按钮以断开连接的对 HolographicStreamerHelpers，调用 Disconnect()，然后释放对象。</span><span class="sxs-lookup"><span data-stu-id="8634a-158">To disconnect - for example, when the user clicks a UI button to disconnect - call Disconnect() on the HolographicStreamerHelpers, and then release the object.</span></span>
+<span data-ttu-id="63f36-158">若要断开连接, 例如, 当用户单击 UI 按钮以断开 HolographicStreamerHelpers 上的调用 Disconnect (), 然后释放对象。</span><span class="sxs-lookup"><span data-stu-id="63f36-158">To disconnect - for example, when the user clicks a UI button to disconnect - call Disconnect() on the HolographicStreamerHelpers, and then release the object.</span></span>
 
 ```
 void DesktopWindow::DisconnectFromRemoteDevice()
@@ -238,13 +238,13 @@ void DesktopWindow::DisconnectFromRemoteDevice()
    }
 ```
 
-## <a name="get-the-remoting-player"></a><span data-ttu-id="8634a-159">获取远程处理播放器</span><span class="sxs-lookup"><span data-stu-id="8634a-159">Get the remoting player</span></span>
+## <a name="get-the-remoting-player"></a><span data-ttu-id="63f36-159">获取远程处理播放机</span><span class="sxs-lookup"><span data-stu-id="63f36-159">Get the remoting player</span></span>
 
-<span data-ttu-id="8634a-160">Windows Holographic 远程处理的播放机作为远程处理主机应用程序连接到的终结点在 Windows 应用商店中提供。</span><span class="sxs-lookup"><span data-stu-id="8634a-160">The Windows Holographic remoting player is offered in the Windows app store as an endpoint for remoting host apps to connect to.</span></span> <span data-ttu-id="8634a-161">若要获取 Windows Holographic 远程处理的播放机，请从您 HoloLens，搜索以进行远程处理，请访问 Windows 应用商店并下载应用。</span><span class="sxs-lookup"><span data-stu-id="8634a-161">To get the Windows Holographic remoting player, visit the Windows app store from your HoloLens, search for Remoting, and download the app.</span></span> <span data-ttu-id="8634a-162">远程处理的播放机包括用于显示统计信息屏幕上，这可能很有用，调试远程处理主机应用程序时的功能。</span><span class="sxs-lookup"><span data-stu-id="8634a-162">The remoting player includes a feature to display statistics on-screen, which can be useful when debugging remoting host apps.</span></span>
+<span data-ttu-id="63f36-160">Windows 全息远程处理播放机在 Windows 应用商店中提供, 作为要连接到的远程处理主机应用的终结点。</span><span class="sxs-lookup"><span data-stu-id="63f36-160">The Windows Holographic remoting player is offered in the Windows app store as an endpoint for remoting host apps to connect to.</span></span> <span data-ttu-id="63f36-161">若要获取 Windows 全息远程处理播放器, 请从 HoloLens 访问 Windows 应用商店, 搜索远程处理并下载应用。</span><span class="sxs-lookup"><span data-stu-id="63f36-161">To get the Windows Holographic remoting player, visit the Windows app store from your HoloLens, search for Remoting, and download the app.</span></span> <span data-ttu-id="63f36-162">远程处理播放机包含一项功能, 可用于在屏幕上显示统计信息, 这在调试远程处理主机应用时非常有用。</span><span class="sxs-lookup"><span data-stu-id="63f36-162">The remoting player includes a feature to display statistics on-screen, which can be useful when debugging remoting host apps.</span></span>
 
-## <a name="notes-and-resources"></a><span data-ttu-id="8634a-163">说明和资源</span><span class="sxs-lookup"><span data-stu-id="8634a-163">Notes and resources</span></span>
+## <a name="notes-and-resources"></a><span data-ttu-id="63f36-163">备注和资源</span><span class="sxs-lookup"><span data-stu-id="63f36-163">Notes and resources</span></span>
 
-<span data-ttu-id="8634a-164">全息版的应用视图将需要一种方法向应用提供的 Direct3D 设备，必须用来初始化全息版的空间。</span><span class="sxs-lookup"><span data-stu-id="8634a-164">The holographic app view will need a way to provide your app with the Direct3D device, which must be used to initialize the holographic space.</span></span> <span data-ttu-id="8634a-165">您的应用程序应使用此 Direct3D 设备复制和显示预览帧。</span><span class="sxs-lookup"><span data-stu-id="8634a-165">Your app should use this Direct3D device to copy and display the preview frame.</span></span>
+<span data-ttu-id="63f36-164">全息应用视图需要提供一种方法来为你的应用提供 Direct3D 设备, 该设备必须用于初始化全息空间。</span><span class="sxs-lookup"><span data-stu-id="63f36-164">The holographic app view will need a way to provide your app with the Direct3D device, which must be used to initialize the holographic space.</span></span> <span data-ttu-id="63f36-165">应用应使用此 Direct3D 设备复制和显示预览框架。</span><span class="sxs-lookup"><span data-stu-id="63f36-165">Your app should use this Direct3D device to copy and display the preview frame.</span></span>
 
 ```
 internal:
@@ -254,7 +254,7 @@ internal:
        }
 ```
 
-<span data-ttu-id="8634a-166">**代码示例：** 完整的 Holographic 远程处理的代码示例均可用，其中包括与远程处理和远程处理主机项目类型提供的桌面 Win32、 UWP DirectX 和 XAML 与 UWP 兼容的全息版的应用程序视图。</span><span class="sxs-lookup"><span data-stu-id="8634a-166">**Code sample:** A complete Holographic Remoting code sample is available, which includes a holographic application view that is compatible with remoting and remoting host projects for desktop Win32, UWP DirectX, and UWP with XAML.</span></span> <span data-ttu-id="8634a-167">若要获取它，请转到此处：</span><span class="sxs-lookup"><span data-stu-id="8634a-167">To get it, go here:</span></span>
-* [<span data-ttu-id="8634a-168">远程处理的 Windows 全息版的代码示例</span><span class="sxs-lookup"><span data-stu-id="8634a-168">Windows Holographic Code Sample for Remoting</span></span>](https://github.com/Microsoft/HoloLensCompanionKit/)
+<span data-ttu-id="63f36-166">**代码示例:** 提供完整的全息远程处理代码示例, 其中包含一个全息应用程序视图, 该视图与用于桌面 Win32、UWP DirectX 和具有 XAML 的 UWP 的远程处理和远程处理主机项目兼容。</span><span class="sxs-lookup"><span data-stu-id="63f36-166">**Code sample:** A complete Holographic Remoting code sample is available, which includes a holographic application view that is compatible with remoting and remoting host projects for desktop Win32, UWP DirectX, and UWP with XAML.</span></span> <span data-ttu-id="63f36-167">若要获取它, 请转到此处:</span><span class="sxs-lookup"><span data-stu-id="63f36-167">To get it, go here:</span></span>
+* [<span data-ttu-id="63f36-168">用于远程处理的 Windows 全息代码示例</span><span class="sxs-lookup"><span data-stu-id="63f36-168">Windows Holographic Code Sample for Remoting</span></span>](https://github.com/Microsoft/HoloLensCompanionKit/)
 
-<span data-ttu-id="8634a-169">**调试注意：** 全息版的远程处理库可以引发最可能的异常。</span><span class="sxs-lookup"><span data-stu-id="8634a-169">**Debugging note:** The Holographic Remoting library can throw first-chance exceptions.</span></span> <span data-ttu-id="8634a-170">这些异常可能会看到在调试会话，具体取决于当时处于活动状态的 Visual Studio 异常设置。</span><span class="sxs-lookup"><span data-stu-id="8634a-170">These exceptions may be visible in debugging sessions, depending on the Visual Studio exception settings that are active at the time.</span></span> <span data-ttu-id="8634a-171">这些异常由 Holographic 远程处理库在内部捕获，可以忽略。</span><span class="sxs-lookup"><span data-stu-id="8634a-171">These exceptions are caught internally by the Holographic Remoting library and can be ignored.</span></span>
+<span data-ttu-id="63f36-169">**调试说明:** 全息远程处理库可能会引发第一次异常。</span><span class="sxs-lookup"><span data-stu-id="63f36-169">**Debugging note:** The Holographic Remoting library can throw first-chance exceptions.</span></span> <span data-ttu-id="63f36-170">这些异常在调试会话中可能会显示, 具体取决于目前处于活动状态的 Visual Studio 异常设置。</span><span class="sxs-lookup"><span data-stu-id="63f36-170">These exceptions may be visible in debugging sessions, depending on the Visual Studio exception settings that are active at the time.</span></span> <span data-ttu-id="63f36-171">这些例外由全息远程处理库在内部捕获, 可被忽略。</span><span class="sxs-lookup"><span data-stu-id="63f36-171">These exceptions are caught internally by the Holographic Remoting library and can be ignored.</span></span>

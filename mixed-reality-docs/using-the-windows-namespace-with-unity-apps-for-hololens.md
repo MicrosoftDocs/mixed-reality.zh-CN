@@ -1,27 +1,32 @@
 ---
-title: 适用于 Unity 应用的 Windows 命名空间用于 HoloLens
-description: 介绍了如何进行的 HoloLens 在 Unity 项目中使用的 WinRT Api。
+title: 将 Windows 命名空间用于 HoloLens 的 Unity 应用
+description: 说明如何在适用于 HoloLens 的 Unity 项目中使用 WinRT Api。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Unity 中，WinRT，windows 混合的现实，API，演练
-ms.openlocfilehash: ed65b5995d74c54057a49b878c1206d0f06394ca
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: Unity, WinRT, windows mixed reality, API, 演练
+ms.openlocfilehash: fd25548de8eeb3c8157a3f9de283dc5004ed1180
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59591761"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548731"
 ---
-# <a name="using-the-windows-namespace-with-unity-apps-for-hololens"></a><span data-ttu-id="dfb59-104">适用于 Unity 应用的 Windows 命名空间用于 HoloLens</span><span class="sxs-lookup"><span data-stu-id="dfb59-104">Using the Windows namespace with Unity apps for HoloLens</span></span>
+# <a name="using-the-windows-namespace-with-unity-apps-for-hololens"></a><span data-ttu-id="08f3d-104">将 Windows 命名空间用于 HoloLens 的 Unity 应用</span><span class="sxs-lookup"><span data-stu-id="08f3d-104">Using the Windows namespace with Unity apps for HoloLens</span></span>
 
-<span data-ttu-id="dfb59-105">此页介绍了如何为 HoloLens 在 Unity 项目中使用的 WinRT Api。</span><span class="sxs-lookup"><span data-stu-id="dfb59-105">This page describes how to make use of WinRT APIs in your Unity project for HoloLens.</span></span>
+<span data-ttu-id="08f3d-105">本页介绍如何在适用于 HoloLens 的 Unity 项目中使用 WinRT Api。</span><span class="sxs-lookup"><span data-stu-id="08f3d-105">This page describes how to make use of WinRT APIs in your Unity project for HoloLens.</span></span>
 
-## <a name="conditionally-include-winrt-api-calls"></a><span data-ttu-id="dfb59-106">有条件地包括 WinRT API 调用</span><span class="sxs-lookup"><span data-stu-id="dfb59-106">Conditionally include WinRT API calls</span></span>
+## <a name="conditionally-include-winrt-api-calls"></a><span data-ttu-id="08f3d-106">有条件地包含 WinRT API 调用</span><span class="sxs-lookup"><span data-stu-id="08f3d-106">Conditionally include WinRT API calls</span></span>
 
-<span data-ttu-id="dfb59-107">仅将面向 Windows 8、 Windows 8.1 或通用 Windows 平台中; Unity 项目生成中使用 WinRT Api在 Unity 脚本中编写面向 WinRT Api 的任何代码必须是有条件地包括仅这些生成。</span><span class="sxs-lookup"><span data-stu-id="dfb59-107">WinRT APIs will only be used in Unity project builds that target Windows 8, Windows 8.1, or the Universal Windows Platform; any code that you write in Unity scripts that targets WinRT APIs must be conditionally included for only those builds.</span></span> <span data-ttu-id="dfb59-108">这是使用 netfx_core 两种或 WINDOWS_UWP 预处理器定义。</span><span class="sxs-lookup"><span data-stu-id="dfb59-108">This is done using the NETFX_CORE or WINDOWS_UWP preprocessor definitions.</span></span> <span data-ttu-id="dfb59-109">此规则适用于使用语句，以及其他代码。</span><span class="sxs-lookup"><span data-stu-id="dfb59-109">This rule applies to using statements, as well as other code.</span></span>
+<span data-ttu-id="08f3d-107">WinRT Api 可用于针对通用 Windows 平台和 Xbox one 平台构建的 Unity 项目;在 Unity 脚本中编写的面向 WinRT Api 的任何代码必须仅有条件地包含在这些内部版本中。</span><span class="sxs-lookup"><span data-stu-id="08f3d-107">WinRT APIs can be leveraged for Unity projects built for the Universal Windows Platform and Xbox One platform; any code that you write in Unity scripts that target WinRT APIs must be conditionally included for only those builds.</span></span> 
 
-<span data-ttu-id="dfb59-110">以下代码片段是通过 Unity 手动页[通用 Windows 平台：中的 WinRT APIC#脚本](http://docs.unity3d.com/Manual/windowsstore-scripts.html)。</span><span class="sxs-lookup"><span data-stu-id="dfb59-110">The following code snippet is from the Unity manual page for [Universal Windows Platform: WinRT API in C# scripts](http://docs.unity3d.com/Manual/windowsstore-scripts.html).</span></span> <span data-ttu-id="dfb59-111">在此示例中，广告 ID 返回，但仅在 Windows 8.0 或更高的目标上的生成：</span><span class="sxs-lookup"><span data-stu-id="dfb59-111">In this example, an advertising ID is returned, but only on Windows 8.0 or higher target builds:</span></span>
+<span data-ttu-id="08f3d-108">这可以通过 Unity 中的两个步骤完成:</span><span class="sxs-lookup"><span data-stu-id="08f3d-108">This can be done via two steps in Unity:</span></span>
+1) <span data-ttu-id="08f3d-109">API 兼容级别必须设置为 " **.net 4.6** " 或 "播放机设置" 中 **.NET Standard 2.0**</span><span class="sxs-lookup"><span data-stu-id="08f3d-109">API compatibility level must be set to **.NET 4.6** or **.NET Standard 2.0** in the player settings</span></span>
+    - <span data-ttu-id="08f3d-110">**编辑** **项目设置**   播放器配置 Api 兼容级别到 .net 4.6 或 .NET Standard 2.0 >  >  >  > </span><span class="sxs-lookup"><span data-stu-id="08f3d-110">**Edit** > **Project Settings** > **Player** > **Configuration** > **Api Compatibility Level** to **.NET 4.6** or **.NET Standard 2.0**</span></span>
+2) <span data-ttu-id="08f3d-111">预处理器指令**ENABLE_WINMD_SUPPORT**必须围绕任何 WinRT 利用代码进行包装</span><span class="sxs-lookup"><span data-stu-id="08f3d-111">The preprocessor directive **ENABLE_WINMD_SUPPORT** must be wrapped around any WinRT-leveraged code</span></span>
+
+<span data-ttu-id="08f3d-112">下面的代码片段来自[通用 Windows 平台的 Unity 手动页:脚本](http://docs.unity3d.com/Manual/windowsstore-scripts.html)中的C# WinRT API。</span><span class="sxs-lookup"><span data-stu-id="08f3d-112">The following code snippet is from the Unity manual page for [Universal Windows Platform: WinRT API in C# scripts](http://docs.unity3d.com/Manual/windowsstore-scripts.html).</span></span> <span data-ttu-id="08f3d-113">在此示例中, 将返回一个广告 ID, 但只能在 UWP 和 Xbox one build 上生成:</span><span class="sxs-lookup"><span data-stu-id="08f3d-113">In this example, an advertising ID is returned, but only on UWP and Xbox One builds:</span></span>
 
 ```
 using UnityEngine;
@@ -32,7 +37,7 @@ public class WinRTAPI : MonoBehaviour {
     }
 
     string GetAdvertisingId() {
-        #if NETFX_CORE
+        #if ENABLE_WINMD_SUPPORT
             return Windows.System.UserProfile.AdvertisingManager.AdvertisingId;
         #else
             return "";
@@ -41,11 +46,10 @@ public class WinRTAPI : MonoBehaviour {
 }
 ```
 
-## <a name="edit-your-scripts-in-a-unity-c-project"></a><span data-ttu-id="dfb59-112">编辑您在 Unity 中的脚本C#项目</span><span class="sxs-lookup"><span data-stu-id="dfb59-112">Edit your scripts in a Unity C# project</span></span>
+## <a name="edit-your-scripts-in-a-unity-c-project"></a><span data-ttu-id="08f3d-114">在 Unity C#项目中编辑脚本</span><span class="sxs-lookup"><span data-stu-id="08f3d-114">Edit your scripts in a Unity C# project</span></span>
 
-<span data-ttu-id="dfb59-113">当您双击在 Unity 编辑器中的脚本时，它将默认情况下启动您的脚本编辑器项目中。</span><span class="sxs-lookup"><span data-stu-id="dfb59-113">When you double-click a script in the Unity editor, it will by default launch your script in an editor project.</span></span> <span data-ttu-id="dfb59-114">WinRT Api 将显示为未知的两个原因：Netfx_core 两种未定义此环境中，并且该项目未引用 Windows 运行时。</span><span class="sxs-lookup"><span data-stu-id="dfb59-114">The WinRT APIs will appear to be unknown for two reasons: NETFX_CORE is not defined in this environment, and the project does not reference the Windows Runtime.</span></span> <span data-ttu-id="dfb59-115">如果您使用[建议使用导出和构建设置](exporting-and-building-a-unity-visual-studio-solution.md)，并改为编辑该项目中的脚本，它将定义 netfx_core 两种，还包括到 Windows 运行时; 使用此配置的引用就地，WinRT Api 将是可用于智能感知。</span><span class="sxs-lookup"><span data-stu-id="dfb59-115">If you use the [recommended export and built settings](exporting-and-building-a-unity-visual-studio-solution.md), and edit the scripts in that project instead, it will define NETFX_CORE and also include a reference to the Windows Runtime; with this configuration in place, WinRT APIs will be available for IntelliSense.</span></span>
+<span data-ttu-id="08f3d-115">双击 Unity 编辑器中的脚本时, 默认情况下, 该脚本将在编辑器项目中启动。</span><span class="sxs-lookup"><span data-stu-id="08f3d-115">When you double-click a script in the Unity editor, it will by default launch your script in an editor project.</span></span> <span data-ttu-id="08f3d-116">WinRT Api 将显示为 "未知", 因为 Visual Studio 项目未引用 Windows 运行时。</span><span class="sxs-lookup"><span data-stu-id="08f3d-116">The WinRT APIs will appear to be unknown because the Visual Studio project does not reference the Windows Runtime.</span></span> <span data-ttu-id="08f3d-117">此外, **ENALBE_WINMD_SUPPORT**指令将是未定义的, 并且在你将项目生成到 UWP Visual Studio 解决方案之前, 将忽略任何 *#if*包装代码。</span><span class="sxs-lookup"><span data-stu-id="08f3d-117">Further, the **ENALBE_WINMD_SUPPORT** directive will be undefined and any *#if* wrapped code will be ignored until you build your project into a UWP Visual Studio solution.</span></span>
 
-<span data-ttu-id="dfb59-116">请注意，您的 UnityC#项目还可用于通过使用 F5 在 Visual Studio 中调试远程脚本调试。</span><span class="sxs-lookup"><span data-stu-id="dfb59-116">Note that your Unity C# project can also be used to debug through your scripts using F5 remote debugging in Visual Studio.</span></span> <span data-ttu-id="dfb59-117">如果您看不到使用第一次打开您的 Unity 的 IntelliSenseC#项目，请关闭该项目并重新打开它。</span><span class="sxs-lookup"><span data-stu-id="dfb59-117">If you do not see IntelliSense working the first time that you open your Unity C# project, close the project and re-open it.</span></span> <span data-ttu-id="dfb59-118">IntelliSense 应开始工作。</span><span class="sxs-lookup"><span data-stu-id="dfb59-118">IntelliSense should start working.</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="dfb59-119">请参阅</span><span class="sxs-lookup"><span data-stu-id="dfb59-119">See also</span></span>
-* [<span data-ttu-id="dfb59-120">导出和构建 Unity 的 Visual Studio 解决方案</span><span class="sxs-lookup"><span data-stu-id="dfb59-120">Exporting and building a Unity Visual Studio solution</span></span>](exporting-and-building-a-unity-visual-studio-solution.md)
+## <a name="see-also"></a><span data-ttu-id="08f3d-118">请参阅</span><span class="sxs-lookup"><span data-stu-id="08f3d-118">See also</span></span>
+* [<span data-ttu-id="08f3d-119">导出和构建 Unity Visual Studio 解决方案</span><span class="sxs-lookup"><span data-stu-id="08f3d-119">Exporting and building a Unity Visual Studio solution</span></span>](exporting-and-building-a-unity-visual-studio-solution.md)
+* [<span data-ttu-id="08f3d-120">Windows 运行时支持 Unity</span><span class="sxs-lookup"><span data-stu-id="08f3d-120">Windows Runtime Support Unity</span></span>](https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html)

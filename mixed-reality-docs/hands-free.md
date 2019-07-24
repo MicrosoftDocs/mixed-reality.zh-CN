@@ -1,11 +1,11 @@
 ---
 title: 免提
-description: 优化应用程序进行无
+description: 优化你的应用程序以进行无人参与
 author: liamar
 ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
-keywords: 混合现实，无需手动、 注视、 注视目标交互，设计
+keywords: 混合现实, 无人参与, 注视, 注视目标, 交互, 设计
 ms.openlocfilehash: 7942192f644a7133335f089cfaaccfaebdd9292e
 ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
@@ -13,88 +13,88 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67414396"
 ---
-# <a name="hands-free"></a><span data-ttu-id="0f42d-104">免提</span><span class="sxs-lookup"><span data-stu-id="0f42d-104">Hands-free</span></span>
+# <a name="hands-free"></a><span data-ttu-id="8c404-104">免提</span><span class="sxs-lookup"><span data-stu-id="8c404-104">Hands-free</span></span>
 
 
 
-## <a name="scenarios"></a><span data-ttu-id="0f42d-105">方案</span><span class="sxs-lookup"><span data-stu-id="0f42d-105">Scenarios</span></span>
+## <a name="scenarios"></a><span data-ttu-id="8c404-105">方案</span><span class="sxs-lookup"><span data-stu-id="8c404-105">Scenarios</span></span>
 
-<span data-ttu-id="0f42d-106">中所述[交互模型概述](interaction-fundamentals.md)，一旦您已确定用户和他们的目标，问问自己环境或态势处理来完成其任务，它们可能会遇到的挑战。</span><span class="sxs-lookup"><span data-stu-id="0f42d-106">As outlined in the [Interaction model overview](interaction-fundamentals.md), once you have identified the users and their goals, ask yourself what environmental or situational challenges they might face as they work to accomplish their tasks.</span></span> <span data-ttu-id="0f42d-107">例如，许多用户需要使用太多的事情来完成实际的目标，并将有困难手控制器基于接口与之进行交互。</span><span class="sxs-lookup"><span data-stu-id="0f42d-107">For example, many users need to use their hands to accomplish their real-world goals, and will have difficulty interacting with a hands-and-controllers based interface.</span></span> 
+<span data-ttu-id="8c404-106">如[交互模型概述](interaction-fundamentals.md)中所述, 一旦确定了用户及其目标, 就可以在工作完成任务时询问自己面临的环境或环境挑战。</span><span class="sxs-lookup"><span data-stu-id="8c404-106">As outlined in the [Interaction model overview](interaction-fundamentals.md), once you have identified the users and their goals, ask yourself what environmental or situational challenges they might face as they work to accomplish their tasks.</span></span> <span data-ttu-id="8c404-107">例如, 许多用户都需要使用他们的手来完成其真实的目标, 并且难以与基于手工控制器的界面进行交互。</span><span class="sxs-lookup"><span data-stu-id="8c404-107">For example, many users need to use their hands to accomplish their real-world goals, and will have difficulty interacting with a hands-and-controllers based interface.</span></span> 
 
-<span data-ttu-id="0f42d-108">某些特定方案可能是：</span><span class="sxs-lookup"><span data-stu-id="0f42d-108">Some specific scenarios might be:</span></span> 
-* <span data-ttu-id="0f42d-109">虽然为忙正在指导您完成一个任务，</span><span class="sxs-lookup"><span data-stu-id="0f42d-109">Being guided through a task, while hands are busy</span></span>
-* <span data-ttu-id="0f42d-110">虽然都在忙于手引用材料</span><span class="sxs-lookup"><span data-stu-id="0f42d-110">Referencing materials while your hands are busy</span></span>
-* <span data-ttu-id="0f42d-111">手疲劳</span><span class="sxs-lookup"><span data-stu-id="0f42d-111">Hand fatigue</span></span>
-* <span data-ttu-id="0f42d-112">无法跟踪手套</span><span class="sxs-lookup"><span data-stu-id="0f42d-112">Gloves that can't be tracked</span></span>
-* <span data-ttu-id="0f42d-113">执行的内容</span><span class="sxs-lookup"><span data-stu-id="0f42d-113">Carrying something</span></span>
-
-
-## <a name="hands-free-modalities"></a><span data-ttu-id="0f42d-114">无模式</span><span class="sxs-lookup"><span data-stu-id="0f42d-114">Hands-free modalities</span></span>
-
-### <a name="voice-commandingvoice-designmd"></a>[<span data-ttu-id="0f42d-115">语音命令</span><span class="sxs-lookup"><span data-stu-id="0f42d-115">Voice commanding</span></span>](voice-design.md)
-
-<span data-ttu-id="0f42d-116">使用语音命令和控制接口可以不只是允许用户运行 handsfree，但还跳过多个步骤。</span><span class="sxs-lookup"><span data-stu-id="0f42d-116">Using your voice to command and control an interface can not only allow the user to operate handsfree, but also skip multiple steps.</span></span> <span data-ttu-id="0f42d-117">此模式的使用情况的范围可以从允许用户只需读取大声读出要激活它，如下所示，请参阅 it-say-it，活跃的可以为您完成任务代理的任何按钮的名称。</span><span class="sxs-lookup"><span data-stu-id="0f42d-117">The usage of this modality can range from allowing the user to simply read any button's name out loud to activate it, as in See-it-say-it, to conversing with an agent who can accomplish tasks for you.</span></span>
+<span data-ttu-id="8c404-108">某些特定情况可能如下:</span><span class="sxs-lookup"><span data-stu-id="8c404-108">Some specific scenarios might be:</span></span> 
+* <span data-ttu-id="8c404-109">正在通过任务进行指导, 而实际情况却非常繁忙</span><span class="sxs-lookup"><span data-stu-id="8c404-109">Being guided through a task, while hands are busy</span></span>
+* <span data-ttu-id="8c404-110">在您的计算机忙时引用材料</span><span class="sxs-lookup"><span data-stu-id="8c404-110">Referencing materials while your hands are busy</span></span>
+* <span data-ttu-id="8c404-111">手动疲劳</span><span class="sxs-lookup"><span data-stu-id="8c404-111">Hand fatigue</span></span>
+* <span data-ttu-id="8c404-112">无法跟踪的手套</span><span class="sxs-lookup"><span data-stu-id="8c404-112">Gloves that can't be tracked</span></span>
+* <span data-ttu-id="8c404-113">携带东西</span><span class="sxs-lookup"><span data-stu-id="8c404-113">Carrying something</span></span>
 
 
+## <a name="hands-free-modalities"></a><span data-ttu-id="8c404-114">无人参与情态</span><span class="sxs-lookup"><span data-stu-id="8c404-114">Hands-free modalities</span></span>
 
-### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[<span data-ttu-id="0f42d-118">头部凝视和停留</span><span class="sxs-lookup"><span data-stu-id="0f42d-118">Head-gaze and dwell</span></span>](gaze-and-dwell.md)
+### <a name="voice-commandingvoice-designmd"></a>[<span data-ttu-id="8c404-115">语音命令</span><span class="sxs-lookup"><span data-stu-id="8c404-115">Voice commanding</span></span>](voice-design.md)
 
-<span data-ttu-id="0f42d-119">在某些无需干预的情况下，使用您的声音不是理想之选或甚至可能。</span><span class="sxs-lookup"><span data-stu-id="0f42d-119">In some hands-free situations, using your voice is not ideal or even possible.</span></span> <span data-ttu-id="0f42d-120">大声工厂环境、 隐私或社交标准所有可以进行限制。</span><span class="sxs-lookup"><span data-stu-id="0f42d-120">Loud factory environments, privacy, or social norms can all be constraints.</span></span> <span data-ttu-id="0f42d-121">头注视 + 会仔细斟酌模型允许用户使用其头矢量点时延迟，导航应用程序或抛开按钮将它后激活一定的时间，通常约 1 秒左右。</span><span class="sxs-lookup"><span data-stu-id="0f42d-121">The head gaze + dwell model allows the user to navigate the app by using their head vector to point, while lingering, or dwelling on a button will activate it after a certain amount of time, typically around 1 second or so.</span></span> 
-
-
-## <a name="transitioning-in-and-out-of-hands-free"></a><span data-ttu-id="0f42d-122">转换入和移出无</span><span class="sxs-lookup"><span data-stu-id="0f42d-122">Transitioning in and out of hands-free</span></span>
-
-<span data-ttu-id="0f42d-123">对于这些情况下，释放与命令和导航全息交互手范围可以为要到运行该应用程序，端到端到一种方便性的用户可以在任何转换中是绝对要求时间。</span><span class="sxs-lookup"><span data-stu-id="0f42d-123">For these scenarios, freeing your hands from interacting with holograms for commanding and navigation can range from being an absolute requirement to operating the application, end-to-end, to an added convenience that the user can transition in and out of at any time.</span></span> 
-
-<span data-ttu-id="0f42d-124">如果应用程序的要求是，它将始终使用无，通过使用停留、 语音命令或单个语音命令，"select"，然后请务必在 UI 中进行相应的住宿部。</span><span class="sxs-lookup"><span data-stu-id="0f42d-124">If the requirement of the application is that it will always be used hands-free, whether by using dwell, voice commands, or the single voice command, "select", then make sure to make the appropriate accomodations in your UI.</span></span> 
-
-<span data-ttu-id="0f42d-125">如果目标用户需要能够从手中切换到无自行，然后务必考虑以下原则。</span><span class="sxs-lookup"><span data-stu-id="0f42d-125">If your target user needs to be able to switch from hands to hands-free at their discretion, then it is important to take the following principles into account.</span></span>
-
-### <a name="assume-the-user-is-already-in-the-mode-that-they-want-to-switch-to"></a><span data-ttu-id="0f42d-126">假定用户已在他们想要切换到的模式</span><span class="sxs-lookup"><span data-stu-id="0f42d-126">Assume the user is already in the mode that they want to switch to</span></span>
-<span data-ttu-id="0f42d-127">例如，如果用户是在工厂车间上观看她 hololens 的视频引用，并决定选取扳手以开始使用，她很可能会在中开始工作 handsfree 而无需放下扳手按一个按钮。</span><span class="sxs-lookup"><span data-stu-id="0f42d-127">For instance, if the user is on the factory floor, watching a video reference on her Hololens, and decides to pick up a wrench to start working, she most likely would start working in handsfree without having to put down the wrench to press a button.</span></span> <span data-ttu-id="0f42d-128">她应该能够调用语音会话使用语音命令，开始停留，已经可见 UI 在此再次详述或假设单词"select"。</span><span class="sxs-lookup"><span data-stu-id="0f42d-128">She should be able to invoke a voice session with a voice command, dwell on an already-visible UI to begin dwell, or say the word "select".</span></span>
-
-<span data-ttu-id="0f42d-129">用户应具有的功能：</span><span class="sxs-lookup"><span data-stu-id="0f42d-129">The user should have the ability to:</span></span> 
-* <span data-ttu-id="0f42d-130">切换到无而无需手动</span><span class="sxs-lookup"><span data-stu-id="0f42d-130">Switch to hands-free while hands-free</span></span>
-* <span data-ttu-id="0f42d-131">切换到用手向提供</span><span class="sxs-lookup"><span data-stu-id="0f42d-131">Switch to hands with your hands</span></span>
-* <span data-ttu-id="0f42d-132">切换到使用控制器的控制器</span><span class="sxs-lookup"><span data-stu-id="0f42d-132">Switch to the controller using a controller</span></span> 
-
-### <a name="create-redundant-ways-to-switch-modes"></a><span data-ttu-id="0f42d-133">创建冗余的方式，若要切换模式</span><span class="sxs-lookup"><span data-stu-id="0f42d-133">Create redundant ways to switch modes</span></span>
-<span data-ttu-id="0f42d-134">有关访问的第一个原则时，第二个是有关可用性。</span><span class="sxs-lookup"><span data-stu-id="0f42d-134">While the first principle is about access, the second one is about availability.</span></span> <span data-ttu-id="0f42d-135">存在不应只需为转换入和移出一种模式有一种方法。</span><span class="sxs-lookup"><span data-stu-id="0f42d-135">There should not just be a single way to transition in and out of a mode.</span></span> 
-
-<span data-ttu-id="0f42d-136">将一些示例：</span><span class="sxs-lookup"><span data-stu-id="0f42d-136">Some examples would be:</span></span> 
-* <span data-ttu-id="0f42d-137">按钮以开始的语音交互</span><span class="sxs-lookup"><span data-stu-id="0f42d-137">A button to begin voice interactions</span></span>
-* <span data-ttu-id="0f42d-138">使用提供注视 + 停留转换语音命令</span><span class="sxs-lookup"><span data-stu-id="0f42d-138">A voice command to transition to using gaze + dwell</span></span>
-
-### <a name="add-a-dash-of-drama"></a><span data-ttu-id="0f42d-139">添加短划线 drama</span><span class="sxs-lookup"><span data-stu-id="0f42d-139">Add a dash of drama</span></span>
-<span data-ttu-id="0f42d-140">一种模式切换很了不起-非常重要，这些转换发生时它们是显式、 甚至显著交换机，以让用户知道发生了什么情况。</span><span class="sxs-lookup"><span data-stu-id="0f42d-140">A mode switch is a big deal--it is important that when these transitions happen that they be an explicit, even dramatic switch, to let the user know what happened.</span></span> 
+<span data-ttu-id="8c404-116">使用语音执行命令和控制接口不仅可允许用户操作 handsfree, 还可以跳过多个步骤。</span><span class="sxs-lookup"><span data-stu-id="8c404-116">Using your voice to command and control an interface can not only allow the user to operate handsfree, but also skip multiple steps.</span></span> <span data-ttu-id="8c404-117">这种形式的使用范围包括允许用户只需大声地阅读任何按钮名称以激活它, 如中所示, 可以使用可以完成任务的代理。</span><span class="sxs-lookup"><span data-stu-id="8c404-117">The usage of this modality can range from allowing the user to simply read any button's name out loud to activate it, as in See-it-say-it, to conversing with an agent who can accomplish tasks for you.</span></span>
 
 
-## <a name="usability-checklist"></a><span data-ttu-id="0f42d-141">可用性核对清单</span><span class="sxs-lookup"><span data-stu-id="0f42d-141">Usability checklist</span></span>
 
-<span data-ttu-id="0f42d-142">**用户可以做的所有内容和无、 端到端的任何内容？**</span><span class="sxs-lookup"><span data-stu-id="0f42d-142">**Can the user do everything and anything hands-free, end-to-end?**</span></span>
-* <span data-ttu-id="0f42d-143">每个 interactible 应可访问无</span><span class="sxs-lookup"><span data-stu-id="0f42d-143">Every interactible should be accessible hands-free</span></span>
-* <span data-ttu-id="0f42d-144">确保所有的自定义笔势，例如重设大小、 放置、 扫，点击等的替换。</span><span class="sxs-lookup"><span data-stu-id="0f42d-144">Ensure that there is a replacement for all custom gestures, such as resizing, placing, swipes, taps, etc.</span></span>
-* <span data-ttu-id="0f42d-145">确保用户始终可以确信控制的 UI 状态、 位置和详细级别</span><span class="sxs-lookup"><span data-stu-id="0f42d-145">Ensure that the user has confident control of UI presence, placement, and verbosity at all times</span></span>
-    * <span data-ttu-id="0f42d-146">获取 UI 开</span><span class="sxs-lookup"><span data-stu-id="0f42d-146">Getting UI out of the way</span></span>
-    * <span data-ttu-id="0f42d-147">寻址超出视野 (FOV) 的 UI</span><span class="sxs-lookup"><span data-stu-id="0f42d-147">Addressing UI that is out of field of view (FOV)</span></span>
-    * <span data-ttu-id="0f42d-148">我看到多少，其中时,</span><span class="sxs-lookup"><span data-stu-id="0f42d-148">How much I see, where, when</span></span>
+### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[<span data-ttu-id="8c404-118">头部凝视和停留</span><span class="sxs-lookup"><span data-stu-id="8c404-118">Head-gaze and dwell</span></span>](gaze-and-dwell.md)
 
-<span data-ttu-id="0f42d-149">**是的交互机制正在讲授和强化与正确的提示？**</span><span class="sxs-lookup"><span data-stu-id="0f42d-149">**Are the mechanics of the interaction being taught and reinforced with the right affordances?**</span></span>
+<span data-ttu-id="8c404-119">在某些免提情况下, 使用语音并不理想或甚至可能。</span><span class="sxs-lookup"><span data-stu-id="8c404-119">In some hands-free situations, using your voice is not ideal or even possible.</span></span> <span data-ttu-id="8c404-120">很大的工厂环境、隐私或社会规范都可以进行限制。</span><span class="sxs-lookup"><span data-stu-id="8c404-120">Loud factory environments, privacy, or social norms can all be constraints.</span></span> <span data-ttu-id="8c404-121">使用 head + 停留模型, 用户可以通过使用其头向量在应用中导航, 而延迟或按钮上的 dwelling 会在一段时间后激活它, 通常为1秒左右。</span><span class="sxs-lookup"><span data-stu-id="8c404-121">The head gaze + dwell model allows the user to navigate the app by using their head vector to point, while lingering, or dwelling on a button will activate it after a certain amount of time, typically around 1 second or so.</span></span> 
 
-<span data-ttu-id="0f42d-150">用户了解...</span><span class="sxs-lookup"><span data-stu-id="0f42d-150">Does the user understand ...</span></span>
-* <span data-ttu-id="0f42d-151">...它们是哪种模式中？</span><span class="sxs-lookup"><span data-stu-id="0f42d-151">... What mode they are in?</span></span>
-* <span data-ttu-id="0f42d-152">...就像在此模式下？</span><span class="sxs-lookup"><span data-stu-id="0f42d-152">... What they can do in this mode?</span></span>
-* <span data-ttu-id="0f42d-153">...当前状态是怎样的？</span><span class="sxs-lookup"><span data-stu-id="0f42d-153">... What is the current state?</span></span>
-* <span data-ttu-id="0f42d-154">...他们如何可以向外转换？</span><span class="sxs-lookup"><span data-stu-id="0f42d-154">... How they can transition out?</span></span>
+
+## <a name="transitioning-in-and-out-of-hands-free"></a><span data-ttu-id="8c404-122">转换为无干预</span><span class="sxs-lookup"><span data-stu-id="8c404-122">Transitioning in and out of hands-free</span></span>
+
+<span data-ttu-id="8c404-123">在这些情况下, 让你可以轻松地与用于发出命令和导航的全息影像交互, 范围可能是对应用程序进行端到端操作的绝对要求, 而不是用户可以在任何阶段.</span><span class="sxs-lookup"><span data-stu-id="8c404-123">For these scenarios, freeing your hands from interacting with holograms for commanding and navigation can range from being an absolute requirement to operating the application, end-to-end, to an added convenience that the user can transition in and out of at any time.</span></span> 
+
+<span data-ttu-id="8c404-124">如果应用程序的要求是始终使用免提, 无论是使用停留、语音命令还是单个语音命令 "select", 都请确保在用户界面中设置适当的 accomodations。</span><span class="sxs-lookup"><span data-stu-id="8c404-124">If the requirement of the application is that it will always be used hands-free, whether by using dwell, voice commands, or the single voice command, "select", then make sure to make the appropriate accomodations in your UI.</span></span> 
+
+<span data-ttu-id="8c404-125">如果你的目标用户需要能够自行从手切换到无人参与, 则必须考虑以下原则。</span><span class="sxs-lookup"><span data-stu-id="8c404-125">If your target user needs to be able to switch from hands to hands-free at their discretion, then it is important to take the following principles into account.</span></span>
+
+### <a name="assume-the-user-is-already-in-the-mode-that-they-want-to-switch-to"></a><span data-ttu-id="8c404-126">假设用户已处于要切换到的模式</span><span class="sxs-lookup"><span data-stu-id="8c404-126">Assume the user is already in the mode that they want to switch to</span></span>
+<span data-ttu-id="8c404-127">例如, 如果用户在工厂地面上, 观看其 Hololens 上的视频参考, 并决定选取一个扳手开始工作, 那么她很可能会开始在 handsfree 中工作, 而无需将扳手按下某个按钮。</span><span class="sxs-lookup"><span data-stu-id="8c404-127">For instance, if the user is on the factory floor, watching a video reference on her Hololens, and decides to pick up a wrench to start working, she most likely would start working in handsfree without having to put down the wrench to press a button.</span></span> <span data-ttu-id="8c404-128">她应能够使用语音命令调用语音会话, 停留在已可见的 UI 上, 开始停留, 或说 "选择" 一词。</span><span class="sxs-lookup"><span data-stu-id="8c404-128">She should be able to invoke a voice session with a voice command, dwell on an already-visible UI to begin dwell, or say the word "select".</span></span>
+
+<span data-ttu-id="8c404-129">用户应该能够:</span><span class="sxs-lookup"><span data-stu-id="8c404-129">The user should have the ability to:</span></span> 
+* <span data-ttu-id="8c404-130">在无人参与的情况下切换到无人参与</span><span class="sxs-lookup"><span data-stu-id="8c404-130">Switch to hands-free while hands-free</span></span>
+* <span data-ttu-id="8c404-131">用双手切换</span><span class="sxs-lookup"><span data-stu-id="8c404-131">Switch to hands with your hands</span></span>
+* <span data-ttu-id="8c404-132">使用控制器切换到控制器</span><span class="sxs-lookup"><span data-stu-id="8c404-132">Switch to the controller using a controller</span></span> 
+
+### <a name="create-redundant-ways-to-switch-modes"></a><span data-ttu-id="8c404-133">创建冗余方式来切换模式</span><span class="sxs-lookup"><span data-stu-id="8c404-133">Create redundant ways to switch modes</span></span>
+<span data-ttu-id="8c404-134">第一个原则就是访问, 另一个原则就是可用性。</span><span class="sxs-lookup"><span data-stu-id="8c404-134">While the first principle is about access, the second one is about availability.</span></span> <span data-ttu-id="8c404-135">不应该只是一种在模式中执行转换的方法。</span><span class="sxs-lookup"><span data-stu-id="8c404-135">There should not just be a single way to transition in and out of a mode.</span></span> 
+
+<span data-ttu-id="8c404-136">以下是一些示例:</span><span class="sxs-lookup"><span data-stu-id="8c404-136">Some examples would be:</span></span> 
+* <span data-ttu-id="8c404-137">用于开始语音交互的按钮</span><span class="sxs-lookup"><span data-stu-id="8c404-137">A button to begin voice interactions</span></span>
+* <span data-ttu-id="8c404-138">用注视 + 停留转换为的语音命令</span><span class="sxs-lookup"><span data-stu-id="8c404-138">A voice command to transition to using gaze + dwell</span></span>
+
+### <a name="add-a-dash-of-drama"></a><span data-ttu-id="8c404-139">添加 drama 的短划线</span><span class="sxs-lookup"><span data-stu-id="8c404-139">Add a dash of drama</span></span>
+<span data-ttu-id="8c404-140">模式切换是一项很重要的事情, 这一点很重要, 在这些过渡发生时, 它们是一种显式甚至巨大的交换机, 让用户知道发生了什么情况。</span><span class="sxs-lookup"><span data-stu-id="8c404-140">A mode switch is a big deal--it is important that when these transitions happen that they be an explicit, even dramatic switch, to let the user know what happened.</span></span> 
+
+
+## <a name="usability-checklist"></a><span data-ttu-id="8c404-141">可用性清单</span><span class="sxs-lookup"><span data-stu-id="8c404-141">Usability checklist</span></span>
+
+<span data-ttu-id="8c404-142">**用户可以执行所有操作, 也可以从端到端免费完成,**</span><span class="sxs-lookup"><span data-stu-id="8c404-142">**Can the user do everything and anything hands-free, end-to-end?**</span></span>
+* <span data-ttu-id="8c404-143">每个 interactible 应可随时访问</span><span class="sxs-lookup"><span data-stu-id="8c404-143">Every interactible should be accessible hands-free</span></span>
+* <span data-ttu-id="8c404-144">确保所有自定义手势都有替换, 如调整大小、放置、swipes、点击等。</span><span class="sxs-lookup"><span data-stu-id="8c404-144">Ensure that there is a replacement for all custom gestures, such as resizing, placing, swipes, taps, etc.</span></span>
+* <span data-ttu-id="8c404-145">确保用户完全控制 UI 的存在、位置和详细程度</span><span class="sxs-lookup"><span data-stu-id="8c404-145">Ensure that the user has confident control of UI presence, placement, and verbosity at all times</span></span>
+    * <span data-ttu-id="8c404-146">正在获取 UI</span><span class="sxs-lookup"><span data-stu-id="8c404-146">Getting UI out of the way</span></span>
+    * <span data-ttu-id="8c404-147">对超出视图 (FOV) 的 UI 进行寻址</span><span class="sxs-lookup"><span data-stu-id="8c404-147">Addressing UI that is out of field of view (FOV)</span></span>
+    * <span data-ttu-id="8c404-148">我看到了多少,</span><span class="sxs-lookup"><span data-stu-id="8c404-148">How much I see, where, when</span></span>
+
+<span data-ttu-id="8c404-149">**与正确的实用一起教授和加强的交互的机制是什么？**</span><span class="sxs-lookup"><span data-stu-id="8c404-149">**Are the mechanics of the interaction being taught and reinforced with the right affordances?**</span></span>
+
+<span data-ttu-id="8c404-150">用户了解 。</span><span class="sxs-lookup"><span data-stu-id="8c404-150">Does the user understand ...</span></span>
+* <span data-ttu-id="8c404-151">...它们处于哪种模式？</span><span class="sxs-lookup"><span data-stu-id="8c404-151">... What mode they are in?</span></span>
+* <span data-ttu-id="8c404-152">...在此模式下可以执行哪些操作？</span><span class="sxs-lookup"><span data-stu-id="8c404-152">... What they can do in this mode?</span></span>
+* <span data-ttu-id="8c404-153">...什么是当前状态？</span><span class="sxs-lookup"><span data-stu-id="8c404-153">... What is the current state?</span></span>
+* <span data-ttu-id="8c404-154">...如何转换？</span><span class="sxs-lookup"><span data-stu-id="8c404-154">... How they can transition out?</span></span>
     
-<span data-ttu-id="0f42d-155">**UI 适用于无？**</span><span class="sxs-lookup"><span data-stu-id="0f42d-155">**Is the UI optimized for hands-free?**</span></span>   
+<span data-ttu-id="8c404-155">**UI 是否经过优化, 无人参与？**</span><span class="sxs-lookup"><span data-stu-id="8c404-155">**Is the UI optimized for hands-free?**</span></span>   
 
-* <span data-ttu-id="0f42d-156">例如：停留提供不是内置于典型的 2D 模式</span><span class="sxs-lookup"><span data-stu-id="0f42d-156">Example: Dwell affordances are not built-in to typical 2D patterns</span></span>
-* <span data-ttu-id="0f42d-157">例如：语音目标是更好地与对象突出显示</span><span class="sxs-lookup"><span data-stu-id="0f42d-157">Example: Voice targeting is better with object highlighting</span></span>
-* <span data-ttu-id="0f42d-158">例如：语音交互是更好地与已启用的隐藏式字幕</span><span class="sxs-lookup"><span data-stu-id="0f42d-158">Example: Voice interactions are better with captions that have to be turned on</span></span>
+* <span data-ttu-id="8c404-156">例如：停留实用不能内置于典型的2D 模式</span><span class="sxs-lookup"><span data-stu-id="8c404-156">Example: Dwell affordances are not built-in to typical 2D patterns</span></span>
+* <span data-ttu-id="8c404-157">例如：对象突出显示效果更佳</span><span class="sxs-lookup"><span data-stu-id="8c404-157">Example: Voice targeting is better with object highlighting</span></span>
+* <span data-ttu-id="8c404-158">例如：与必须打开的字幕相比, 语音交互更好</span><span class="sxs-lookup"><span data-stu-id="8c404-158">Example: Voice interactions are better with captions that have to be turned on</span></span>
 
 
-## <a name="see-also"></a><span data-ttu-id="0f42d-159">请参阅</span><span class="sxs-lookup"><span data-stu-id="0f42d-159">See also</span></span>
-* [<span data-ttu-id="0f42d-160">头部凝视并提交</span><span class="sxs-lookup"><span data-stu-id="0f42d-160">Head-gaze and commit</span></span>](gaze-and-commit.md)
-* [<span data-ttu-id="0f42d-161">使用手直接操作</span><span class="sxs-lookup"><span data-stu-id="0f42d-161">Direct manipulation with hands</span></span>](direct-manipulation.md)
-* [<span data-ttu-id="0f42d-162">使用手指向和提交</span><span class="sxs-lookup"><span data-stu-id="0f42d-162">Point and commit with hands</span></span>](point-and-commit.md)
+## <a name="see-also"></a><span data-ttu-id="8c404-159">请参阅</span><span class="sxs-lookup"><span data-stu-id="8c404-159">See also</span></span>
+* [<span data-ttu-id="8c404-160">头部凝视并提交</span><span class="sxs-lookup"><span data-stu-id="8c404-160">Head-gaze and commit</span></span>](gaze-and-commit.md)
+* [<span data-ttu-id="8c404-161">使用手直接操作</span><span class="sxs-lookup"><span data-stu-id="8c404-161">Direct manipulation with hands</span></span>](direct-manipulation.md)
+* [<span data-ttu-id="8c404-162">使用手指向和提交</span><span class="sxs-lookup"><span data-stu-id="8c404-162">Point and commit with hands</span></span>](point-and-commit.md)
