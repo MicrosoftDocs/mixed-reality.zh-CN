@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 3e4be00ddeab6d91dbbc8226bfa3dc543cded095
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 529a888dfa00180ca908fbc7f4c62f9a9086c661
+ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293685"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68460321"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4.与多个用户共享对象移动
 
@@ -50,7 +50,7 @@ ms.locfileid: "68293685"
 
 ![module3chapter4updatestep6](images/module3chapter4updatestep6.png)
 
-7. 在 "项目" 视图中, 导航到 "资产-> 资源-> Prototyping"。 首先, 将表 prefab 拖放到 PhotonRoom 类中的 Tableprefab 槽。 接下来, 将 LunarModule prefab 拖放到 PhotonRoom 类上的 Module Prefab 槽。
+7. 在 "项目" 视图中, 导航到 "资产-> 资源-> Prototyping"。 首先, 将表 prefab 拖放到 PhotonRoom 类中的 Tableprefab 槽。 接下来, 将 RocketLauncherCompleteVariantprefab 拖放到 PhotonRoom 类中的模块 Prefab 槽。
 
 ![module3chapter4updatestep7](images/module3chapter4updatestep7.png)
 
@@ -67,10 +67,6 @@ ms.locfileid: "68293685"
 10. 在层次结构中选择新对象后, 请在 "检查器" 面板中将对象的名称更改为 TableAnchor。 另外, 单击 "添加组件", 然后搜索 "TableAnchor" 组件。 选择它并将其添加到对象。 
 
 ![Module3Chapter4step6im](images/module3chapter4step7im.PNG)
-
-> 注意:将定位设置为 x = 1、y =-0.55 和 z = 2。 同时, 将旋转设置为 y = 90。 
->
-> ![Module3Chapter4step6im](images/module3chapter4noteim.PNG)
 
 11. 现在, 在 Prototyping 文件夹中的 "项目" 面板中, 将 "prefab" 表拖入刚刚创建的 "TableAnchor" 子对象。
 
