@@ -1,28 +1,43 @@
-## <a name="lesson-2"></a><span data-ttu-id="d9caf-101">第 2 课</span><span class="sxs-lookup"><span data-stu-id="d9caf-101">Lesson 2</span></span>
+---
+title: MR SpeechSDK Module-语音识别和脚本
+description: 完成本课程, 了解如何在混合现实应用程序中实现 Azure Speech SDK。
+author: jessemcculloch
+ms.author: jemccull
+ms.date: 06/27/2019
+ms.topic: article
+keywords: 混合现实, unity, 教程, hololens
+ms.openlocfilehash: e8dc5da5a089079ba38a26969df6070af8bc6200
+ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68460307"
+---
+# <a name="2----adding-an-offline-mode-for-local-speech-to-text-translation"></a><span data-ttu-id="3eb8e-104">2.  添加本地语音到文本转换的脱机模式</span><span class="sxs-lookup"><span data-stu-id="3eb8e-104">2.    Adding an offline mode for local speech-to-text translation</span></span>
 
-<span data-ttu-id="d9caf-102">在第 2 课，我们将添加的脱机模式，将使我们能够时无法连接到 Azure 服务，我们将执行本地语音到文本翻译*模拟*断开连接的状态。</span><span class="sxs-lookup"><span data-stu-id="d9caf-102">In Lesson 2, we will add an Offline mode that will allow us to perform local speech-to-text translation when we are unable to connect to the Azure service and we will *simulate* a disconnected state.</span></span>
+<span data-ttu-id="3eb8e-105">在本教程中, 我们将添加一个脱机模式, 使你能够在无法连接到 Azure 服务时执行本地语音到文本转换。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-105">In this tutorial, we'll add an offline mode that lets you perform local speech-to-text translation when we are unable to connect to the Azure service.</span></span> <span data-ttu-id="3eb8e-106">我们还将*模拟*断开连接状态。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-106">We will also *simulate* a disconnected state.</span></span>
 
-1. <span data-ttu-id="d9caf-103">在层次结构中选择"Lunarcom_Base"对象和检查器面板中单击"添加组件"。</span><span class="sxs-lookup"><span data-stu-id="d9caf-103">Select the "Lunarcom_Base" object in the hierarchy and click “Add Component” in the inspector panel.</span></span> <span data-ttu-id="d9caf-104">搜索并选择"Lunarcom 脱机识别。"</span><span class="sxs-lookup"><span data-stu-id="d9caf-104">Search for and select the "Lunarcom Offline Recognition."</span></span>
+1. <span data-ttu-id="3eb8e-107">选择层次结构中的 Lunarcom_Base 对象, 并在 "检查器" 面板中单击 "添加组件"。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-107">Select the Lunarcom_Base object in the hierarchy, and click Add Component in the Inspector panel.</span></span> <span data-ttu-id="3eb8e-108">搜索并选择 "Lunarcom 脱机识别"。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-108">Search for and select the Lunarcom Offline Recognition.</span></span>
 
 ![Module4Chapter2step1im](images/module4chapter2step1im.PNG)
 
-
-
-2. <span data-ttu-id="d9caf-106">单击"LunarcomOfflineRecognizer"中的下拉列表，然后选择"已启用"。</span><span class="sxs-lookup"><span data-stu-id="d9caf-106">Click the dropdown in the “LunarcomOfflineRecognizer” and select “Enabled.”</span></span> <span data-ttu-id="d9caf-107">此程序将成为用户不具有连接的项目。</span><span class="sxs-lookup"><span data-stu-id="d9caf-107">This will program the project to act like the user doesn't have connection.</span></span> 
+2. <span data-ttu-id="3eb8e-110">单击 LunarcomOfflineRecognizer 中的下拉箭头, 然后选择 "已启用"。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-110">Click the drop-down in the LunarcomOfflineRecognizer, and select Enabled.</span></span> <span data-ttu-id="3eb8e-111">这会使项目的行为类似于用户没有连接。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-111">This programs the project to act like the user doesn't have a connection.</span></span> 
 
 ![Module4Chapter2step1im](images/module4chapter2step2im.PNG)
 
-3. <span data-ttu-id="d9caf-109">现在，按播放在 Unity 编辑器中，并对其进行测试。</span><span class="sxs-lookup"><span data-stu-id="d9caf-109">Now, press play on the Unity Editor and test it.</span></span> <span data-ttu-id="d9caf-110">按场景中左下角中的麦克风并开始说话。</span><span class="sxs-lookup"><span data-stu-id="d9caf-110">Press the microphone in the bottom left hand corner in the scene and begin speaking.</span></span> 
+3. <span data-ttu-id="3eb8e-113">现在, 按下 "在 Unity 编辑器中播放" 并对其进行测试。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-113">Now, press play in Unity Editor, and test it.</span></span> <span data-ttu-id="3eb8e-114">在屏幕左下角按下麦克风, 开始说话。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-114">Press the microphone in the bottom left hand corner in the scene, and begin speaking.</span></span> 
 
-> <span data-ttu-id="d9caf-111">注意： 我们处于脱机状态，因为已禁用唤醒 Word 功能。</span><span class="sxs-lookup"><span data-stu-id="d9caf-111">note: because we’re offline, the Wake Word functionality has been disabled.</span></span> <span data-ttu-id="d9caf-112">因此，需要以物理方式在每次您想要拥有语音识别单击麦克风时脱机。</span><span class="sxs-lookup"><span data-stu-id="d9caf-112">So, you will have to physically click the microphone every time you wish to have your speech recognized while offline.</span></span> 
+> [!NOTE]
+> <span data-ttu-id="3eb8e-115">由于我们处于脱机状态, 因此唤醒 word 功能已禁用。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-115">Because we’re offline, wake word functionality has been disabled.</span></span> <span data-ttu-id="3eb8e-116">每次希望在离线时识别语音时, 您都必须每次都单击麦克风。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-116">You'll have to physically click the microphone every time you wish to have your speech recognized when offline.</span></span> 
 
-<span data-ttu-id="d9caf-113">下面是您的场景可能如下所示的示例：</span><span class="sxs-lookup"><span data-stu-id="d9caf-113">Below is an example of what your scene could look like:</span></span>
+<span data-ttu-id="3eb8e-117">下面是场景外观的示例。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-117">Below is an example of what your scene could look like.</span></span>
 
 ![Module4Chapter2exampleim](images/module4chapter2exampleim.PNG)
 
-## <a name="congratulations"></a><span data-ttu-id="d9caf-115">祝贺</span><span class="sxs-lookup"><span data-stu-id="d9caf-115">Congratulations</span></span>
+## <a name="congratulations"></a><span data-ttu-id="3eb8e-119">祝贺</span><span class="sxs-lookup"><span data-stu-id="3eb8e-119">Congratulations</span></span>
 
-<span data-ttu-id="d9caf-116">已启用脱机模式 ！</span><span class="sxs-lookup"><span data-stu-id="d9caf-116">The offline mode has been enabled!</span></span> <span data-ttu-id="d9caf-117">现在当您离开任何形式的 internet，您仍可使用语音 SDK 项目 ！</span><span class="sxs-lookup"><span data-stu-id="d9caf-117">Now when you're away from any form of internet, you can still work on your project with Speech-SDK!</span></span> 
+<span data-ttu-id="3eb8e-120">脱机模式已启用。</span><span class="sxs-lookup"><span data-stu-id="3eb8e-120">The offline mode has been enabled.</span></span> <span data-ttu-id="3eb8e-121">现在, 脱机时, 仍可以使用 speech SDK 来处理项目!</span><span class="sxs-lookup"><span data-stu-id="3eb8e-121">Now, when you're offline, you can still work on your project with the speech-SDK!</span></span> 
 
-[<span data-ttu-id="d9caf-118">下一课：第 3 课 SpeechSDK</span><span class="sxs-lookup"><span data-stu-id="d9caf-118">Next Lesson: SpeechSDK Lesson 3</span></span>](link placeholder)
+
+[<span data-ttu-id="3eb8e-122">下一教程:3.添加 Azure 认知服务语音翻译组件</span><span class="sxs-lookup"><span data-stu-id="3eb8e-122">Next Tutorial: 3.  Adding the Azure Cognitive Services speech translation component</span></span>](mrlearning-speechSDK-ch3.md)
 
