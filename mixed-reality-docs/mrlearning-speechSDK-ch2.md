@@ -6,16 +6,18 @@ ms.author: jemccull
 ms.date: 06/27/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: e8dc5da5a089079ba38a26969df6070af8bc6200
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: b13b22fcdce2e7fa1319d241302b764f457aabba
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460307"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485606"
 ---
 # <a name="2----adding-an-offline-mode-for-local-speech-to-text-translation"></a>2.  添加本地语音到文本转换的脱机模式
 
 在本教程中, 我们将添加一个脱机模式, 使你能够在无法连接到 Azure 服务时执行本地语音到文本转换。 我们还将*模拟*断开连接状态。
+
+## <a name="instructions"></a>说明
 
 1. 选择层次结构中的 Lunarcom_Base 对象, 并在 "检查器" 面板中单击 "添加组件"。 搜索并选择 "Lunarcom 脱机识别"。
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 690ece3a02aeefd598db18baa66de3ddabfa43eb
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 391e797ad9cc8933b057366ab47a3f453c68723e
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293819"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485776"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.Azure 空间定位点入门
 
@@ -199,5 +199,5 @@ ms.locfileid: "68293819"
 ## <a name="congratulations"></a>祝贺
 在本教程中, 已了解 Azure 空间锚的基础知识。 此 esson 提供了多个按钮, 使你可以浏览启动和停止 Azure 会话所需的各种步骤, 以及在单个设备上创建、上传和下载 azure 锚。 在下一课中, 我们将了解如何将 Azure 定位 Id 保存到 HoloLens 2 以便检索, 甚至在应用程序重新启动后也是如此。 在此系列中, 你还将了解如何在多个设备之间传输定位点 Id 以实现空间对齐, 并了解多用户共享会话, 作为共享教程的一部分。
 
-[下一课：ASA 第2课](mrlearning-asa-ch2.md)
+[下一课：2.保存、检索和共享 Azure 空间定位点](mrlearning-asa-ch2.md)
 

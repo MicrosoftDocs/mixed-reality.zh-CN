@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: d47f2940ad741cb436322a824a67f54bb6376c55
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 314af3e1e38e1698943f07dc32f5e1e3e2f36d4f
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387702"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485702"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5.与三维对象交互
 
@@ -202,8 +202,8 @@ ms.locfileid: "68387702"
 
 ![Lesson4 Chapter4 Step3 5 Noteim](images/Lesson4_chapter4_step3-5-noteim.PNG)
 
-### <a name="congratulations"></a>祝贺 
+## <a name="congratulations"></a>祝贺 
 在本教程中, 您学习了如何在网格集合中组织3D 对象, 以及如何使用接近的交互 (直接捕获到手) 和远距离交互 (使用看片或手写光线) 来操作三维对象 (缩放、旋转和移动)。 还了解了如何在三维对象周围添加边界框, 并了解了如何使用和自定义边界框中的 gizmos。 最后，你已了解如何在触摸对象时触发事件。
 
-[下一课：高级输入](mrlearning-base-ch5.md)
+[下一课：6.探索高级输入选项](mrlearning-base-ch5.md)
 

@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 92bea1f3130f67645c10e36fe40cd4bc6f8b9151
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 53519d7bb2832fe8ce500f1ee146c91488b09366
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293656"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485661"
 ---
-# <a name="connecting-multiple-users"></a>连接多个用户
+# <a name="3-connecting-multiple-users"></a>3.连接多个用户
 
 在本课程中, 我们将了解如何将多个用户连接为实时共享体验的一部分。 在本课结束时, 你将能够在多个设备上打开应用程序, 并查看每个加入人员的表示形式的头像 (由一个球体表示)。 
 
@@ -23,7 +23,7 @@ ms.locfileid: "68293656"
 - 配置播放机
 - 了解如何在共享体验中连接多个用户
 
-### <a name="instructions"></a>说明
+## <a name="instructions"></a>说明
 
 1. 在 "资产-> 资源-> Prototyping" 文件夹的 "项目" 面板中, 将 NetworkLobby prefab 拖放到层次结构中, 如下图所示。
 
@@ -72,5 +72,5 @@ ms.locfileid: "68293656"
 
 完成上述所有步骤后, 生成过程也已完成, 按下 "播放" 按钮并连接 HoloLens 2。 当您移动头时, 您应该会看到一个球四处移动。 这将显示加入 Unity 项目的任何用户!
 
-[下一课：共享 (Photon) 第4课](mrlearning-sharing(photon)-ch4.md)
+[下一课：4.与多个用户共享对象移动](mrlearning-sharing(photon)-ch4.md)
 

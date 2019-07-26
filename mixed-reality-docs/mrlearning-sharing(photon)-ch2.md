@@ -1,4 +1,4 @@
-### <a name="getting-unity-ready-for-development"></a>正在准备好用于开发的 Unity 
+# <a name="2-getting-unity-ready-for-development"></a>2.正在准备好用于开发的 Unity 
 
 
 在本教程中, 我们将了解如何为应用程序开发准备和配置 Unity, 包括导入混合现实工具包、配置生成设置和准备场景。
@@ -11,7 +11,7 @@
 
 - 准备项目场景
 
-### <a name="instructions"></a>说明
+## <a name="instructions"></a>说明
 
 1. 单击此处下载并保存混合现实工具包 unity 包[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)
 
@@ -76,5 +76,5 @@
 
 你的 Unity 项目现在已准备好 Photon。 在随后的教程中, 我们将在此场景和 Unity 项目的基础上构建全面的共享体验。
 
-[下一教程:连接多个用户](mrlearning-sharing(photon)-ch3.md)
+[下一教程:3.连接多个用户](mrlearning-sharing(photon)-ch3.md)
 

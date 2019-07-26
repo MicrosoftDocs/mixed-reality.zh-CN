@@ -6,16 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: e5d0919a69c9e6b0c4233d23bf6d370f3def6576
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: 7fe3c96cf7b888a4a91960147270be81a0973980
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460315"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485758"
 ---
 # <a name="3----adding-the-azure-cognitive-services-speech-translation-component"></a>3.  添加 Azure 认知服务语音翻译组件
 
 在本教程中, 我们将了解如何 aabout 项目中的 Azure 认知服务语音翻译组件, 并将其翻译为三种不同的语言。 
+
+## <a name="instructions"></a>说明
 
 1. 选择层次结构中的 Lunarcom_Base 对象, 并在 "检查器" 面板中单击 "添加组件"。 搜索并选择 "LunarcomTranslationRecognizer"。
 

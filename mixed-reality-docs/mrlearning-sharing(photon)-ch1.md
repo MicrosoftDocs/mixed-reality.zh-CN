@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: e40cd50f75ca509c601d215cb865161ea3596565
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 46c32abaf45623b7ccba90f257959e4ef4f8e1b5
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293646"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485641"
 ---
-#  <a name="setting-up-photon-unity-networking"></a>设置 Photon Unity 网络
+#  <a name="1-setting-up-photon-unity-networking"></a>1.设置 Photon Unity 网络
 
 在本教程中, 我们将了解如何通过将 Photon Unity 联网 (双关语) 导入到 Unity 项目来创建共享体验。 Photon 是可供混合现实开发人员用来创建共享体验的多个网络选项之一。 我们将了解如何创建 Photon 帐户、导入 Photon 以及创建可选的本地服务器
 
-目标
+## <a name="objectives"></a>目标
 
 * 了解如何创建 Photon 帐户
 
@@ -27,7 +27,7 @@ ms.locfileid: "68293646"
 
   
 
-### <a name="setting-up-photon"></a>设置 Photon
+## <a name="setting-up-photon"></a>设置 Photon
 
 1. 设置[Photon](https://dashboard.photonengine.com/en-US/Account/SignUp)帐户。 通过单击[此链接](https://dashboard.photonengine.com/en-US/Account/SignUp)导航到 "Photon 注册" 页。 按照注册页上的说明来创建帐户。 
    
@@ -69,5 +69,5 @@ ms.locfileid: "68293646"
 
 已成功创建 Photon 帐户, 设置本地 Photon 服务器, 并将双关语导入到 Unity。 下一步是设置项目, 并允许与其他用户建立连接, 使多个用户能够看到你的工作。 
 
-[下一教程:让 Unity 为开发做好准备](mrlearning-sharing(photon)-ch2.md)
+[下一教程:2.让 Unity 为开发做好准备](mrlearning-sharing(photon)-ch2.md)
 

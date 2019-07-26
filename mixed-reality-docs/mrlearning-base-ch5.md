@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: f9da038fe917e9e45b386de54049d6aa312ecfba
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: d7ef68d1a1e64ca85d76b11376d0916b2693e8e1
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387776"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485714"
 ---
-# <a name="6exploring-advanced-input-options"></a>6. 浏览高级输入选项
+# <a name="6-exploring-advanced-input-options"></a>6.浏览高级输入选项
 
 在本教程中, 我们将探讨 HoloLens 2 的几个高级输入选项, 包括使用语音命令、平移手势和目视跟踪。 
 
@@ -198,8 +198,9 @@ ms.locfileid: "68387776"
 6. 在 HoloLens 2 中生成之前，请确保已正确配置眼动跟踪功能。 在撰写本文时, Unity 尚不能为眼睛跟踪功能设置注视输入。 若要在 HoloLens 2 中使用目视跟踪, 需要设置此功能。 请遵照混合现实工具包文档中的以下说明启用视线输入功能： https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2 
 
 
-### <a name="congratulations"></a>祝贺你！ 
+## <a name="congratulations"></a>祝贺
+
 已成功将基本的目视跟踪功能添加到应用程序。 这些操作仅为眼动跟踪实现的探索领域开了一个头。 本章还结束第5课, 其中介绍了高级输入功能, 如语音命令、平移手势和目视跟踪。 
 
-[下一课：登月舱模块装配示例体验](mrlearning-base-ch6.md)
+[下一课：7.创建农历模块示例应用程序](mrlearning-base-ch6.md)
 

@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 混合现实, 动手, 运动控制器, 交互, 设计
-ms.openlocfilehash: d0e54c71ab42a09f2f9c6063a85441b98e729af1
-ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
+ms.openlocfilehash: b6efb0a9651cad8eee9b80bb130aa1a85b9a9941
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66039168"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507872"
 ---
 # <a name="hands-and-motion-controllers"></a>双手和运动控制器
 ## <a name="scenarios"></a>方案
@@ -32,9 +32,11 @@ ms.locfileid: "66039168"
 这种模态使用户能够在远处与全息影像交互。 它使用户能够充分利用环境。 用户可以在任何位置放置全息影像, 还可以从任意距离访问。 用于控制和操作2D 和3D 全息影像的心理模型和手势与直接操作的情况有关。
 
 ### <a name="motion-controllersmotion-controllersmd"></a>[运动控制器](motion-controllers.md)
-运动控制器是通过在使用一种或两种手时跨大量距离提供精确交互来扩展用户的物理功能的工具。 这些硬件附件提供了许多常用交互的快捷方式, 并为各种操作提供了 surefooted、tactile 的反馈。 目前, 运动控制器仅适用于 WMR 方案。 
+运动控制器是通过在使用一种或两种手时跨大量距离提供精确交互来扩展用户的物理功能的工具。 这些硬件附件提供了许多常用交互的快捷方式, 并为各种操作提供了 surefooted、tactile 的反馈。 目前, 运动控制器仅适用于 Windows Mixed Reality (WMR) 方案。 
 
-![](images/Hands-and-controllers-720px.jpg)<br>
+![双手和运动控制器的比较情态](images/Hands-and-controllers-720px.jpg)<br>
+
+*双手和运动控制器的比较情态*
 
 ## <a name="see-also"></a>请参阅
 * [头部凝视并提交](gaze-and-commit.md)

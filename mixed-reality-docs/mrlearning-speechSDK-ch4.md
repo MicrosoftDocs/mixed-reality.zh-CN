@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 0cffb9ac8f61f77b77fc5925264b95ba57d94ece
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: b434b9c79a702067a9c3db6fb25b0f75cdc6030d
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460347"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485778"
 ---
-# <a name="speech-sdk-learning-module---intent-and-natural-language-understanding"></a>语音 SDK 学习模块-意向和自然语言理解
+# <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.设置意向和自然语言理解
 
 在本课程中, 我们将探讨 Azure 语音服务的目的功能。 使用意向功能, 我们可以使用 AI 功能的语音命令为应用程序提供支持, 其中用户可以说出非特定的语音命令, 并使系统能够理解其意图。 在本课程中, 我们将设置 Azure LUIS 门户, 设置我们的意向/实体/最谈话, 发布我们的意图资源, 将我们的 Unity 应用连接到我们的意图资源, 并进行第一次意向 API 调用。
 

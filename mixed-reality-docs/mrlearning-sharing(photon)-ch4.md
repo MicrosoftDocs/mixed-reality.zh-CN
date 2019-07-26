@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 529a888dfa00180ca908fbc7f4c62f9a9086c661
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: 77ae779b4bb32dd66a722c9793d1b83c4a64ae2e
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460321"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485675"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4.与多个用户共享对象移动
 
@@ -23,7 +23,7 @@ ms.locfileid: "68460321"
 - 将项目配置为共享三维模型的变动。
 - 了解如何构建基本的多用户协作应用程序
 
-### <a name="instructions"></a>说明
+## <a name="instructions"></a>说明
 
 
 1. 从上一课 (Ctrl + S) 保存场景。 可以将其命名为 HLSharedProjectMainPart4, 以便在需要时更轻松地找到它。
@@ -85,5 +85,5 @@ ms.locfileid: "68460321"
 
 在继续学习下一课之前, 我们需要先完成 ASA 学习模块, 其中包含 ASA 基础知识、Azure 帐户和资源创建, 以及在我们可以将其集成到我们的共享体验之前所需的其他基本建筑块。
 
-[下一课：共享 (Photon) 第5课](mrlearning-sharing(photon)-ch5.md)
+[下一课：5.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch5.md)
 

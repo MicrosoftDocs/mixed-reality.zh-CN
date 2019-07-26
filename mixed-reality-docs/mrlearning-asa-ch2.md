@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 80367ed818168c1d642fadbd7316d3d6481dd2a9
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: b263d30905c5a1ba81bfb59ba6a49c7710c43869
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293799"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485745"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.保存、检索和共享 Azure 空间锚
 
@@ -81,5 +81,5 @@ ms.locfileid: "68293799"
 
 在下一课中, 我们将学习如何向用户提供实时反馈。 此反馈将包括有关定位点创建、环境理解质量以及 Azure 会话状态的信息。 如果没有反馈, 用户可能不知道某个定位点是否已成功上传到 Azure, 无论该环境的质量是否足以用于创建定位点或当前状态。
 
-[下一课：ASA 教程3](mrlearning-asa-ch3.md)
+[下一课：3.显示 Azure 空间定位点反馈](mrlearning-asa-ch3.md)
 

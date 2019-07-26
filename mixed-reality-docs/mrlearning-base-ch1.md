@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 51cfc123f7da8d25a53eecfb730f60cf10fe7377
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: e79c3ea719a71d6df8ffd9e2be009d14a846a16a
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387792"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485722"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化项目和首个应用程序
 
@@ -112,4 +112,4 @@ ms.locfileid: "68387792"
 
 >注意:[第 5 课](mrlearning-base-ch5.md)将介绍如何使用语音命令切换帧速率计数器
 
-[下一课：用户界面、手跟踪和混合现实工具包配置](mrlearning-base-ch2.md)
+[下一课：3.创建用户界面并配置混合现实工具包](mrlearning-base-ch2.md)

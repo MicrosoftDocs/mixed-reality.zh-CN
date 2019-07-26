@@ -6,12 +6,12 @@ ms.author: Yoyoz
 ms.date: 05/15/19
 ms.topic: article
 keywords: Windows Mixed Reality, 测试, 混合现实工具包, MRTK 版本 2, MRTK, 工具, SDK, HoloLens, HoloLens 2
-ms.openlocfilehash: 249a0ce0e608410983934b75e399d013e1ff1879
-ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
+ms.openlocfilehash: 7eded2c766765a5ccebf741eed2f8b7fe8f65a93
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66750363"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507929"
 ---
 # <a name="getting-started-with-mrtk-v2"></a>MRTK v2 入门
 
@@ -209,4 +209,4 @@ MRTK 是一种令人惊叹的开源工具包, 它是自2015首次发布后开始
 * [MRTK 入门指南](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
 * [MRTK 文档主页](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
 * [安装工具](install-the-tools.md)
-* [从 HTK/MRTK 迁移到 MRTK 版本2](mrtk-porting-guide.md)
+* [从 HTK/MRTK 迁移到 MRTK 版本2](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html)

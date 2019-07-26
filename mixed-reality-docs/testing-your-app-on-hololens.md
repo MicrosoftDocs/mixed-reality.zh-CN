@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens, 测试
-ms.openlocfilehash: 35e8eff230cdcd719952ad2633ec610c9a9a26a0
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: b8c8e7ea8f90633cbb3b2aa01764398ef9a5c12a
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63549053"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507909"
 ---
 # <a name="testing-your-app-on-hololens"></a>在 HoloLens 上测试你的应用
 
@@ -71,7 +71,11 @@ ms.locfileid: "63549053"
 
 ### <a name="battery"></a>电池
 
-在未连接电源的情况下测试应用程序, 以了解它消耗电池的速度。 通过查看电源 LED 读数, 可以轻松地了解电池状态。 ![指示电池电量的 LED 状态](images/batterypowerledindication-500px.png)
+在未连接电源的情况下测试应用程序, 以了解它消耗电池的速度。 通过查看电源 LED 读数, 可以轻松地了解电池状态。 
+
+![指示电池电量的 LED 状态](images/batterypowerledindication-500px.png)<br>
+
+*指示电池电量的 LED 状态*
 
 ### <a name="power-state-transitions"></a>电源状态转换
 

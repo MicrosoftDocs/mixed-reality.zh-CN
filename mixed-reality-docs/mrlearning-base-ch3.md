@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 4baee7ba8643f5bb80e0456eb97d915405431654
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 401c667ef80042da9182b7f4e065dfd6884cf061
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387707"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485689"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4.放置动态内容并使用 solvers
 
@@ -74,8 +74,8 @@ ms.locfileid: "68387707"
 
 ![Lesson3 Chapter3 Step5im](images/Lesson3_chapter3_step5im.PNG)
 
-### <a name="congratulations"></a>祝贺
+## <a name="congratulations"></a>祝贺
 在本教程中, 已学习如何使用 MRTK 的 solvers 让 UI 直观地追随用户。 你还了解了如何将求解器附加到游戏对象（这里是立方体）以跟随用户被追踪的双手。 要详细了解上述求解器以及 MRTK 中包含的其他求解器，请访问 [MRTK 求解器文档页面](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)。
 
-[下一课：3D 对象交互](mrlearning-base-ch4.md)
+[下一课：5.  与 3D 对象交互](mrlearning-base-ch4.md)
 
