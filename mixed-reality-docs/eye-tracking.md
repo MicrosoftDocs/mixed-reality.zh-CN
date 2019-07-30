@@ -47,7 +47,7 @@ HoloLens 2 允许开发人员使用有关用户正在查看的信息的功能, �
 ### <a name="user-intent"></a>用户意图    
 有关用户所在位置和内容的信息**为其他输入**提供了强大的上下文, 例如语音、动手和控制器。
 可在各种任务中使用此信息。
-例如,**在整个场景**中, 这种情况的范围包括: 只需查看一个全息影像[并显示 "](gaze-and-commit.md)选择" (还可以看到 "选择"), 或者说 "put ...", 然后查找用户要放置到的位置。全息图, 如 ".。。出现 "。 在[混合现实工具包 - 视线支持的目标选择](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_TargetSelection.html)和[混合现实工具包 - 视线支持的目标定位](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_Positioning.html)中可以找到相关示例。
+例如,**在整个场景**中, 这种情况的范围包括: 只需查看一个全息影像[并显示 "](gaze-and-commit.md)选择" (还可以看到 "选择"), 或者说 "put ...", 然后查找用户要放置到的位置。全息图, 如 "...出现 "。 在[混合现实工具包 - 视线支持的目标选择](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_TargetSelection.html)和[混合现实工具包 - 视线支持的目标定位](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_Positioning.html)中可以找到相关示例。
 
 此外, 用户意向的示例可能包括使用用户查看的信息来增强使用所介绍的虚拟代理和交互式全息影像。 例如, 虚拟代理可能会根据当前查看的内容来调整可用选项及其行为。 
 
