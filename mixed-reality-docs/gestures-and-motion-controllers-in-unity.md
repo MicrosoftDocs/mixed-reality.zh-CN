@@ -17,7 +17,7 @@ ms.locfileid: "63525753"
 
 [您可以](gaze-in-unity.md)通过两种主要方式在您的 HMD 中进行操作, 在 HoloLens 和沉浸式的中的[手势](gestures.md)和[运动控制器](motion-controllers.md)。 可以通过 Unity 中的相同 Api 访问空间输入的两个源的数据。
 
-Unity 提供了两种主要方法来访问 Windows Mixed Reality 的空间输入数据、跨多个 Unity XR Sdk 工作的*GetButton/GetAxis* api, 以及特定于公开一组可用空间输入数据的 Windows 混合现实。
+Unity 提供了两种主要方法来访问 Windows Mixed Reality 的空间输入数据、跨多个 Unity XR Sdk 工作的*GetButton/GetAxis* api, 以及特定于  公开一组可用空间输入数据的 Windows 混合现实。
 
 ## <a name="unity-buttonaxis-mapping-table"></a>Unity 按钮/轴映射表
 
@@ -94,7 +94,7 @@ Windows Mixed Reality 支持多种形式的运动控制器, 其中每个控制�
 
 系统提供的指针姿势最适合用于在**呈现控制器模型本身**时进行 raycast。 如果要渲染某个其他虚拟对象来替代控制器 (如虚拟压力), 则应使用该虚拟对象的最自然的光线, 如沿应用定义的机枪模型的桶向下移动的射线。 由于用户可以看到虚拟对象, 而不是物理控制器, 因此, 使用虚拟对象指向虚拟对象可能会更自然地使用应用。
 
-目前, 指针姿势仅通过 Windows MR 专用 API TryGetPosition/轮换提供, 并传入 InteractionSourceNode 作为参数传递 。 *sourceState/sourcePose。*
+目前, 指针姿势仅通过 Windows MR 专用 API TryGetPosition/轮换提供, 并传入 InteractionSourceNode 作为参数传递  。 *sourceState/sourcePose。*
 
 ## <a name="controller-tracking-state"></a>控制器跟踪状态
 

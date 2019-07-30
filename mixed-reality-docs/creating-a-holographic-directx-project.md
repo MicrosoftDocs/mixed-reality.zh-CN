@@ -153,7 +153,7 @@ int APIENTRY wWinMain(
 
 混合现实应用在游戏循环中更新, 默认情况下, 该循环在的**Update**方法`AppMain.cpp`中实现。 **Update**方法更新场景对象, 如旋转立方体, 并返回一个<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>对象, 该对象用于获取最新的视图和投影矩阵并显示交换链。
 
-中 `AppMain.cpp`的 Render 方法采用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a> , 并根据当前应用和空间定位状态将当前帧呈现到每个全息相机。
+中  `AppMain.cpp`的 Render 方法采用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a> , 并根据当前应用和空间定位状态将当前帧呈现到每个全息相机。
 
 ## <a name="see-also"></a>请参阅
 * [获取 HolographicSpace](getting-a-holographicspace.md)
