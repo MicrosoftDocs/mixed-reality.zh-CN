@@ -4,28 +4,36 @@ title: 教程和示例应用
 description: 提供有关混合现实开发的代码示例和教程。
 author: keveleigh
 ms.author: kurtie
-ms.date: 03/21/2018
+ms.date: 03/26/2019
 ms.topic: article
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程
-ms.openlocfilehash: 4f1402cb9b91e0d0619c0516de9120302323b799
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 862cf8726df6143ece0d87a135a8e9cc6101948b
+ms.sourcegitcommit: 23e172664c2ee1220fe3b4468c104b37ef3ceda9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415397"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601618"
 ---
 # <a name="tutorials-and-sample-apps"></a>教程和示例应用
 
 目前, 我们的所有教程和示例应用均基于 Unity。  随着我们为其他引擎和平台开发内容, 你会在目录中的相关标题下找到它们。
 
-## <a name="mr-learning-modules"></a>MR 学习模块
+## <a name="hololens-2-tutorials"></a>HoloLens 2 教程
 
-MR 学习模块旨在帮助开发人员了解用于开发混合现实应用程序的技术和最佳实践。  初始模块适用于 HoloLens 2 并实施混合现实工具包 2.0 (MRTK 2.0)。
-* 基本模块旨在向开发人员展示如何设置 MRTK 的项目, 以及实现 UI、空间映射以及基本和高级交互
+HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程序的技术和最佳实践。  本教程基于[混合现实工具包 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)。
+
+* 入门教程-第[1 步 (共7概述和目标](mrlearning-base.md))
+* Azure 空间定位点教程-第[1 个, 共3个 Azure 空间定位点](mrlearning-asa-ch1.md)入门
+* Azure 语音服务教程-第[1 个, 共4个集成和使用语音识别和](mrlearning-speechSDK-ch1.md)脚本
+* 多用户功能教程-第[1 项, 共5项设置 Photon Unity 网络](mrlearning-sharing(photon)-ch1.md)
 
 ## <a name="open-source-sample-apps"></a>开源示例应用
 
 开源示例应用是由我们的团队创建的应用程序, 我们提供了源代码, 使开发人员能够查看并从我们的项目中学习。
+
+* [元素周期表](periodic-table-of-the-elements.md)
+* [月亮模块](lunar-module.md)
+* [星系探索者](galaxy-explorer.md)
 
 ## <a name="mixed-reality-academy-tutorials"></a>混合现实学院教程
 
