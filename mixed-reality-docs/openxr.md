@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR, Khronos, BasicXRApp, Mixed Reality OpenXR 开发人员门户, DirectX, 本机, 本机应用自定义引擎, 中间件
-ms.openlocfilehash: 057d01527163f2ffcfe10d2e105592f07ff9e9e2
-ms.sourcegitcommit: 23e172664c2ee1220fe3b4468c104b37ef3ceda9
+ms.openlocfilehash: efad0809356f969c825ef7285885fdb9431c7fce
+ms.sourcegitcommit: c0d5c19b756b8e6ff95ea26a4d8d2b3a53878c2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601592"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671958"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -36,7 +36,7 @@ Core OpenXR 1.0 API 提供生成引擎的基本功能, 你可以将其作为一�
 * 输入和 haptics
 * 图形 API + 平台集成
 
-若要了解有关 OpenXR API 的信息, 请参阅[OpenXR 1.0 规范](https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html)和[OpenXR 1.0 API 参考](https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/)。  有关详细信息, 请参阅[Khronos OpenXR 页](https://www.khronos.org/openxr/)。
+若要了解有关 OpenXR API 的信息, 请参阅[OpenXR 1.0 规范](https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html)和[OpenXR 1.0 API 参考](https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html)。  有关详细信息, 请参阅[Khronos OpenXR 页](https://www.khronos.org/openxr/)。
 
 若要面向一组完整的 HoloLens 2 功能, 还将使用跨供应商和供应商特定的 OpenXR 扩展, 这些扩展启用 OpenXR 1.0 核心之外的其他功能, 例如已表述的手动跟踪、目视跟踪、空间映射和空间锚。  请参阅下面的 "[规划" 部分](openxr.md#roadmap), 了解有关今年晚些扩展的详细信息。
 
@@ -117,5 +117,5 @@ OpenXR 规范定义了一种扩展机制, 它使运行时实现程序能够公�
 
 * [有关 OpenXR 的详细信息](https://www.khronos.org/openxr/)
 * [OpenXR 1.0 规范](https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html)
-* [OpenXR 1.0 API 参考](https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/)
+* [OpenXR 1.0 API 参考](https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html)
 * [OpenXR 1.0 快速参考指南](https://www.khronos.org/registry/OpenXR/specs/1.0/refguide/OpenXR-1.0-web.pdf)
