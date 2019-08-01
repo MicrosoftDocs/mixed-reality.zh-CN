@@ -8,12 +8,12 @@ ms.date: 02/12/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实、开发、HoloLens、unity、directx
-ms.openlocfilehash: b2bd9c4d81e5c7156ad753859a299209bad70c44
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: bf80b676d03fce9011f5952af476dcaa5e2b4eb2
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414434"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507917"
 ---
 # <a name="development-launchpad"></a>开发启动板
 
@@ -164,7 +164,7 @@ ms.locfileid: "67414434"
                             <a href="rendering.md">全息呈现</a>
                         </p>
                          <p>
-                            <a href="testing-your-app-on-hololens.md">测试</a>
+                            <a href="testing-your-app-on-hololens.md">测试应用</a>
                         </p>                    
                     </div>
                 </div>

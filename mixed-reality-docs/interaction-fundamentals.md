@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 凝视, 设定凝视目标, 交互, 设计, hololens, MMR, 多模式
-ms.openlocfilehash: 7b04141c832597be4bb58447629e0ef6e248dc2b
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 3ba1a2fc46aa88c856e4cc9531382c479b3fb17a
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415256"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507897"
 ---
 # <a name="introducing-instinctual-interactions"></a>本能交互简介
 
@@ -115,13 +115,13 @@ ms.locfileid: "67415256"
     <tr>
         <td><a href="hands-and-tools.md">手和运动控制器</a></td>
         <td>我看到一个手部网格，以及一个指尖视觉元素或手/控制器光线。</td>
-        <td>当我的手靠近时，我看到可抓握的手柄或边界框出现。</td>
+        <td>当我的手靠近对象时，我看到可抓握的手柄或边界框出现。</td>
         <td>我听到有声音调，看到抓取和释放的动画。</td>
     </tr>
     <tr>
         <td><a href="gaze-and-commit.md">头部凝视并提交</a></td>
         <td>我在视野中央看到一个光标。</td>
-        <td>头部凝视光标的状态在置于某些对象上时发生改变。</td>
+        <td>在头部凝视光标置于某些对象上时，其状态会发生改变。</td>
         <td>当我执行动作时，我会看到/听到视觉和听觉确认。</td>
     </tr>   
     <tr>
@@ -133,7 +133,7 @@ ms.locfileid: "67415256"
     <tr>
         <td><a href="hands-free.md">（语音命令）</a></td>
         <td>我看到一个侦听指示器和字幕，显示系统听到的内容。</td>
-        <td>我获得了语音提示。 当我说“我可以说什么？” 我看到了反馈。</td>
+        <td>我获得了语音提示。 当我说：“我可以说什么？” 我看到了反馈。</td>
         <td>当我发出命令时，我看到/听到视觉和听觉确认，或者在需要时得到消除歧义 UX。</a></td>
     </tr>
 </table>
