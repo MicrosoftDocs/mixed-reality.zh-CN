@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 设计, 控件, 字体, 版式, ui, ux
-ms.openlocfilehash: f57b04c7d57219b7426793879004ef010d2b1ea8
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 739dee36ffcbaa92fad705d1b0e58506801c9a4d
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415435"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701902"
 ---
 # <a name="text-in-unity"></a>Unity 中的文本
 
@@ -20,7 +20,7 @@ ms.locfileid: "67415435"
 ![如何获取明锐而漂亮的文本](images/hug-text-02-640px.png)<br>
 *Unity 中的默认文本模糊*
 
-## <a name="working-with-unitys-3d-texttext-mesh-and-ui-text"></a>使用 Unity 的3D 文本 (文本网格) 和 UI 文本
+## <a name="working-with-unitys-3d-text-text-mesh-and-ui-text"></a>使用 Unity 的3D 文本 (文本网格) 和 UI 文本
 
 Unity 假设添加到场景的所有新元素都是大小为1个 Unity 单元, 或 100% 的转换比例, 这将转换为在 HoloLens 上约1米。 对于字体, 默认情况下, 3D TextMesh 的边界框在大约1米的高度内进入。
 
@@ -32,6 +32,8 @@ Unity 假设添加到场景的所有新元素都是大小为1个 Unity 单元, �
 
 ![具有不同字体大小的 Unity 3D 文本网格](images/Text_In_Unity_Measurements1.png)<br>
 *Unity 3D 文本和 UI 文本的缩放值*
+
+<br>
 
 ![具有不同字体大小的 Unity 3D 文本网格](images/hug-text-05-1000px.png)<br>
 *包含优化值的 Unity 3D 文本网格*
@@ -49,7 +51,7 @@ Unity 假设添加到场景的所有新元素都是大小为1个 Unity 单元, �
 
 ## <a name="working-with-text-mesh-pro"></a>使用文本网格 Pro
 
-通过 Unity 的文本网格 Pro, 可以保护文本呈现质量。 它支持简洁文本大纲, 而不考虑使用[.sdf (带符号距离字段)](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)技术的距离。 使用上文用于3D 文本网格和 UI 文本的相同计算方法, 我们可以找到适当的缩放值以使用传统的排版点。 由于大小为36的默认3D 文本网格 Pro 字体显示 2.5 Unity 单元 (2.5 m) 的边界, 因此, 我们可以使用缩放值0.005 来使用点大小。 UI 菜单下的文本网格 Pro 的默认边界大小为25个 Unity 单元 (25m)。 这为缩放值提供了0.0005。
+通过 Unity 的文本网格 Pro, 可以保护文本呈现质量。 它支持简洁文本轮廓, 而不考虑使用[带符号距离字段 (.sdf)](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)技术的距离。 使用我们在上面用于3D 文本网格和 UI 文本的相同计算方法, 我们可以找到适当的缩放值, 以便与传统排字点一起使用。 由于默认的3D 文本网格 Pro 字体的大小为 2.5 36, 因此, 我们可以使用缩放值0.005 来获取点大小。 UI 菜单下的文本网格 Pro 的默认边界大小为25个 Unity 单位 (25m)。 这为缩放值提供了0.0005。
 
 ![具有不同字体大小的 Unity 3D 文本网格](images/Text_In_Unity_Measurements2.png)<br>
 *Unity 3D 文本和 UI 文本的缩放值*

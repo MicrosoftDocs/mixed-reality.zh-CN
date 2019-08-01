@@ -1,17 +1,17 @@
 ---
-title: MR 学习基础模块 - 登月舱组装示例体验
+title: 入门教程-7。 创建农历模块示例应用程序
 description: 在本节课中，我们将结合在以前课程中所学的多个概念来创建一个独特的示例体验。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 79f2d3a4a3224533761ea2e4a7e73dc3d4d5e53e
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 97dd8fce1ebe53efc37cb48cde7dc9e207be9a42
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387683"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701984"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7.创建农历模块示例应用程序
 

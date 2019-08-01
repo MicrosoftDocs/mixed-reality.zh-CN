@@ -1,19 +1,19 @@
 ---
-title: HoloLens 2 的 MR 教育共享模块
+title: 多用户功能教程-5。 将 Azure 空间锚点集成到共享体验中
 description: 完成本课程以了解如何在 HoloLens 2 应用程序中实现多用户共享体验。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 1ae880208e79e2e045bd5e7298db260b7f0b2232
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: cb4645d197238d8712719625bf11eac0650a8246
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293629"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701871"
 ---
-# <a name="azure-spatial-anchors-and-shared-experiences"></a>Azure 空间锚和共享体验
+# <a name="5-integrating-azure-spatial-anchors-into-a-shared-experience"></a>5.将 Azure 空间锚点集成到共享体验中
 
 在本课程中, 我们将了解如何将 Azure 空间锚点 (ASA) 集成到我们的共享体验中。 如果其物理环境要锚定虚拟体验, 使多个归置的设备在其物理环境中能够看到相同的物理位置中的对象, 则可以使用这些设备。
 

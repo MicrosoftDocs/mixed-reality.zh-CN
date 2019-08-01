@@ -1,17 +1,17 @@
 ---
-title: MR 学习基础模块 - 高级输入
+title: 入门教程-6。 浏览高级输入选项
 description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: d7ef68d1a1e64ca85d76b11376d0916b2693e8e1
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 0f01b789cfc358500ec94a10f82315bca55dd622
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485714"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702010"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6.浏览高级输入选项
 

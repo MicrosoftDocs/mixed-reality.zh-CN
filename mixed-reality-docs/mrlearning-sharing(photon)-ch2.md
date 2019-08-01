@@ -1,3 +1,18 @@
+---
+title: 多用户功能教程-2。 正在准备好用于开发的 Unity
+description: 完成本课程以了解如何在 HoloLens 2 应用程序中实现多用户共享体验。
+author: jessemcculloch
+ms.author: jemccull
+ms.date: 02/26/2019
+ms.topic: article
+keywords: 混合现实, unity, 教程, hololens
+ms.openlocfilehash: 9d42811157db108baad51eab3f367a06a11b7f7b
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701980"
+---
 # <a name="2-getting-unity-ready-for-development"></a>2.正在准备好用于开发的 Unity 
 
 

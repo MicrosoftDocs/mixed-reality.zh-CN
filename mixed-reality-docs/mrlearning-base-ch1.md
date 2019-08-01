@@ -1,17 +1,17 @@
 ---
-title: MR 学习基本模块 - 项目初始化和第一个应用程序
+title: 入门教程-2。 初始化项目和首个应用程序
 description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: e79c3ea719a71d6df8ffd9e2be009d14a846a16a
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: f003bebf51859122b679162f41797bff1becd3fb
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485722"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702063"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化项目和首个应用程序
 
@@ -28,15 +28,15 @@ ms.locfileid: "68485722"
 ### <a name="create-new-unity-project"></a>创建新的 Unity 项目
 
 1. 启动 Unity。
-2. 选择“新建”。
+2. 选择“新建”  。
 ![第 1 课 第 1 章 第 2 步](images/Lesson1Chapter1Step2.JPG)
 3. 输入项目名称（例如“MixedRealityBase”）。
 ![第 1 课 第 1 章 第 3 步](images/Lesson1Chapter1Step3.JPG)
 4. 输入保存项目的位置。
 ![第 1 课 第 1 章 第 4 步](images/Lesson1Chapter1Step4.JPG)
-5. 请确保将项目设置为“3D”。
+5. 请确保将项目设置为“3D”  。
 ![第 1 课 第 1 章 第 5 步](images/Lesson1Chapter1Step5.JPG)
-6. 单击“创建项目”。
+6. 单击“创建项目”  。
 ![第 1 课 第 1 章 第 6 步](images/Lesson1Chapter1Step6.JPG)
 
 ### <a name="configure-the-unity-project-for-windows-mixed-reality"></a>配置用于 Windows Mixed Reality 的 Unity 项目

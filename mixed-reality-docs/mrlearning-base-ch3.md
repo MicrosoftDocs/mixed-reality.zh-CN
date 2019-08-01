@@ -1,17 +1,17 @@
 ---
-title: MR 学习基础模块 - 动态内容放置和求解器
+title: 入门教程-4。 放置动态内容并使用 solvers
 description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 401c667ef80042da9182b7f4e065dfd6884cf061
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: a73be40180e582058ae3e9bbaeffebe462042fbb
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485689"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702001"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4.放置动态内容并使用 solvers
 

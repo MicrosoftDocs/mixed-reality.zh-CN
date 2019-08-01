@@ -1,17 +1,17 @@
 ---
-title: MR SpeechSDK Module-语音识别和脚本
+title: Azure Speech Services 教程-1。 集成和使用语音识别与脚本
 description: 完成本课程, 了解如何在混合现实应用程序中实现 Azure Speech SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: c1ca44ffcaa8dced988b829d9875ebe304f14a12
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: 501e8bc2e70248a4ca8a79f90d74d30129830701
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460357"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701954"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.集成和使用语音识别与脚本
 

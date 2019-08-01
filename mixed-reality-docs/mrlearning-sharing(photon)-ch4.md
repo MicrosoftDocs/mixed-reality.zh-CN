@@ -1,17 +1,17 @@
 ---
-title: HoloLens 2 的 MR 教育共享模块
+title: 多用户功能教程-4。 与多个用户共享对象移动
 description: 完成本课程以了解如何在 HoloLens 2 应用程序中实现多用户共享体验。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 77ae779b4bb32dd66a722c9793d1b83c4a64ae2e
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 2e676d319ba7221cf9549b200b3d748f26025aa7
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485675"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701903"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4.与多个用户共享对象移动
 

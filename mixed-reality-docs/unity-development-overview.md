@@ -6,17 +6,16 @@ ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity, 混合现实, 开发, 入门, 新项目, 移植, 功能, 照相机, 模拟, 仿真, 文档
-ms.openlocfilehash: 24217b4c61bf2d438ebc1c4114bc9dc20dc62f64
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: b1384e886a2b4d0b3ed9f8008fca6af6ad4b78d5
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414524"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701793"
 ---
 # <a name="unity-development-overview"></a>Unity 开发概述
 
 构建[混合现实应用](app-views.md)的最快途径是使用[Unity](http://aka.ms/HoloLensUnity)。 建议你花时间浏览[Unity 教程](https://unity3d.com/learn/tutorials)。 如果需要资产, Unity 有一个全面的[资产存储区](https://www.assetstore.unity3d.com/)。 构建基本的 Unity 理解后, 可以访问这些[教程](tutorials.md), 了解使用 unity 进行混合现实开发的细节。 请务必访问[Unity 混合现实论坛](http://forum.unity3d.com/forums/hololens.102/), 与在 Unity 中构建混合现实应用的其他社区合作, 查找可能遇到的问题的解决方案。
-
 
 若要开始通过 Unity 构建混合现实应用, 请先[安装这些工具](install-the-tools.md)。 
 
@@ -71,7 +70,7 @@ ms.locfileid: "67414524"
 
 ## <a name="unity-documentation"></a>Unity 文档
 
-除了 Windows 开发人员中心提供的此文档外, Unity 还随 Unity 编辑器一起安装 Windows Mixed Reality 功能的文档。 Unity 提供的文档包括两个单独的部分:
+除了 docs.microsoft.com 上提供的此文档, Unity 还随 Unity 编辑器一起安装 Windows Mixed Reality 功能的文档。 Unity 提供的文档包括两个单独的部分:
 1. **Unity 脚本参考**
     * 文档的本节包含 Unity 提供的脚本编写 API 的详细信息。
     * 可以通过 "**帮助" > 脚本参考来**访问 Unity 编辑器

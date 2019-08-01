@@ -1,17 +1,17 @@
 ---
-title: MR SpeechSDK Module-语音识别和脚本
+title: Azure 语音服务教程-4。 设置意向和自然语言理解
 description: 完成本课程, 了解如何在混合现实应用程序中实现 Azure Speech SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: b434b9c79a702067a9c3db6fb25b0f75cdc6030d
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 5ca2df56eee3ae41d97de4e8b1e88a39d4d36718
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485778"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701950"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.设置意向和自然语言理解
 

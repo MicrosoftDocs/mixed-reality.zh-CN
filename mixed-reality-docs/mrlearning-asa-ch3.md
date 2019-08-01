@@ -1,17 +1,17 @@
 ---
-title: 在 HoloLens 2 上学习 ASA 模块 Azure 空间锚的 MR
+title: Azure 空间锚点教程-3。 显示 Azure 空间锚点反馈
 description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: cfd6ac9997a8a5d962603922f473bd6fc5d708ed
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 45a71cada97dff4a2fb32f2eaf7700816f2e0d42
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485727"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702031"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3.显示 Azure 空间锚点反馈
 

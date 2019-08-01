@@ -1,17 +1,17 @@
 ---
-title: 在 HoloLens 2 上学习 ASA 模块 Azure 空间锚的 MR
+title: Azure 空间锚点教程-1。 Azure 空间定位点入门
 description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 9f830bc4ead35fd308108051617c61c65d98d451
-ms.sourcegitcommit: c0d5c19b756b8e6ff95ea26a4d8d2b3a53878c2e
+ms.openlocfilehash: 110c8ae1a529d4a3b4796a5d2b6ee44c150741cb
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671968"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702073"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.Azure 空间定位点入门
 
@@ -32,7 +32,7 @@ ms.locfileid: "68671968"
 
 [MR 基本模块资产包版本1。2](https://github.com/microsoft/MixedRealityLearning/releases/download/1.2/BaseModuleAssets-1.2.unitypackage)
 
-[ASA 模块资产包 v1。0](https://github.com/microsoft/MixedRealityLearning/releases/download/v1/ASAModuleAssets_1.unitypackage)
+[ASA 模块资产包 v1。0](https://github.com/microsoft/MixedRealityLearning/releases/download/ASA_1.1/ASAModuleAssetsBeta.unitypackage)
 
 [混合现实工具包 2.0.0 RC1](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC1-Refresh/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC1-Refresh.unitypackage)
 

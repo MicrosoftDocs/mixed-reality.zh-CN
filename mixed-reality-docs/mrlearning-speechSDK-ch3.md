@@ -1,19 +1,19 @@
 ---
-title: MR SpeechSDK Module-语音识别和脚本
+title: Azure 语音服务教程-3。 添加 Azure 认知服务语音翻译组件
 description: 完成本课程, 了解如何在混合现实应用程序中实现 Azure Speech SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 7fe3c96cf7b888a4a91960147270be81a0973980
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 27742702f7a274b3212cdf12c77d8acfa0a29834
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485758"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701829"
 ---
-# <a name="3----adding-the-azure-cognitive-services-speech-translation-component"></a>3.  添加 Azure 认知服务语音翻译组件
+# <a name="3-adding-the-azure-cognitive-services-speech-translation-component"></a>3.添加 Azure 认知服务语音翻译组件
 
 在本教程中, 我们将了解如何 aabout 项目中的 Azure 认知服务语音翻译组件, 并将其翻译为三种不同的语言。 
 

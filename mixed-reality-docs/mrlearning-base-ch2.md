@@ -1,17 +1,17 @@
 ---
-title: MR 学习基础模块 - 用户界面、手跟踪和混合现实工具包配置
+title: 入门教程-3。 创建用户界面并配置混合现实工具包
 description: 请完成本课程来了解如何在混合现实应用程序中实现 Azure 人脸识别。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 6257b5a4b42127a7f15b235dbdd6b44967684fcb
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 925ab825c2716a847726ac763dc6800914d87c6b
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485747"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702038"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.创建用户界面并配置混合现实工具包 
 

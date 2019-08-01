@@ -1,19 +1,19 @@
 ---
-title: MR SpeechSDK Module-语音识别和脚本
+title: Azure Speech Services 教程-2。 添加本地语音到文本转换的脱机模式
 description: 完成本课程, 了解如何在混合现实应用程序中实现 Azure Speech SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 06/27/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: b13b22fcdce2e7fa1319d241302b764f457aabba
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 1dd6c01768ddf5dda954f50e0f7507022bd59c3b
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485606"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701860"
 ---
-# <a name="2----adding-an-offline-mode-for-local-speech-to-text-translation"></a>2.  添加本地语音到文本转换的脱机模式
+# <a name="2-adding-an-offline-mode-for-local-speech-to-text-translation"></a>2.添加本地语音到文本转换的脱机模式
 
 在本教程中, 我们将添加一个脱机模式, 使你能够在无法连接到 Azure 服务时执行本地语音到文本转换。 我们还将*模拟*断开连接状态。
 
