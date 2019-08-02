@@ -134,8 +134,6 @@
 ## [开发启动板](development.md)
 ## 混合现实云服务
 ### [Azure 空间定位点](https://docs.microsoft.com/azure/spatial-anchors)
-### [全息远程播放器](holographic-remoting-player.md)
-### [全息远程软件许可条款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 ## Unity
 ### [Unity 开发概述](unity-development-overview.md)
 ### 即刻体验
@@ -188,7 +186,6 @@
 #### [DirectX 中的键盘、鼠标和控制器输入](keyboard,-mouse,-and-controller-input-in-directx.md)
 ### 高级主题
 #### [将 XAML 与全息 DirectX 应用配合使用](using-xaml-with-holographic-directx-apps.md)
-#### [添加全息远程功能](add-holographic-remoting.md)
 ### [OpenXR](openxr.md)
 ## WebVR
 ### [将 Edge 中的 WebVR 与 Windows Mixed Reality 配合使用](using-webvr-in-edge-with-windows-mixed-reality.md)
@@ -289,7 +286,16 @@
 ## 远程工具和研究工具
 ### [使用 Windows 设备门户](using-the-windows-device-portal.md)
 ### [设备门户 API 参考](device-portal-api-reference.md)
+## 全息远程处理
 ### [全息远程播放器](holographic-remoting-player.md)
+### [编写全息远程处理主机应用](holographic-remoting-create-host.md)
+### [编写自定义全息远程处理播放器](holographic-remoting-create-player.md)
+### [自定义全息远程处理数据通道](holographic-remoting-custom-data-channels.md)
+### [使用全息远程处理时建立安全连接](holographic-remoting-secure-connection.md)
+### [故障排除和限制](holographic-remoting-troubleshooting.md)
+### [全息远程处理软件许可条款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
+### HoloLens 1 的全息远程处理
+#### [添加全息远程处理](add-holographic-remoting.md)
 ## 其他
 ### [QR 码跟踪](qr-code-tracking.md)
 ### [混合现实中的共享体验](shared-experiences-in-mixed-reality.md)
