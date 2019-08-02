@@ -6,21 +6,25 @@ ms.author: mriches
 ms.date: 05/24/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 全息影像, 全息远程处理, 远程渲染, 网络渲染, HoloLens, 远程全息影像
-ms.openlocfilehash: 8d645f634ff0fc820893f5554fd602aa3a2f38e3
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 71a763b0660867bf910c0dcecb5fba921f19d068
+ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829618"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712431"
 ---
-# <a name="add-holographic-remoting"></a>添加全息远程处理
+# <a name="add-holographic-remoting-hololens-1"></a>添加全息远程处理 (HoloLens 1)
+
+>[!IMPORTANT]
+>本文档介绍了如何为 HoloLens 1 创建主机应用程序。 适用于**HoloLens 1**的主机应用程序必须使用NuGet 包版本1.x。 这意味着, 为 HoloLens 1 编写的主机应用程序与 HoloLens 2 不兼容, 反之亦然。
 
 ## <a name="hololens-2"></a>HoloLens 2
 
-> [!NOTE]
-> 即将[推出](index.md#news-and-notes)特定于 HoloLens 2 的更多指导。
+使用全息远程处理的 HoloLens 开发人员需要更新其应用程序, 使其与 HoloLens 2 兼容。 这需要全新版本的全息远程处理 NuGet 包。 如果使用全息远程处理 NuGet 包的应用程序的版本号小于 2.0.0.0, 尝试连接到 HoloLens 2 上的全息远程处理播放机, 则连接将失败。
 
-使用全息远程处理的 HoloLens 开发人员需要更新其应用程序, 使其与 HoloLens 2 兼容。  这将需要全新版本的全息远程处理 NuGet 包尚未公开提供。  如果使用 HoloLens NuGet 包的应用程序尝试连接到 HoloLens 2 上的全息远程处理播放机, 则连接将失败。  在 HoloLens 2 NuGet 包可用后, 观看此页以获取更新。
+>[!NOTE]
+>可在[此处](holographic-remoting-create-host.md)找到特定于 HoloLens 2 的指南。
+
 
 ## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a>将全息远程处理添加到桌面或 UWP 应用
 
@@ -39,7 +43,7 @@ ms.locfileid: "66829618"
 1. 在 Visual Studio 中中转到你的项目。
 2. 右键单击项目节点, 然后选择 "**管理 NuGet 包 ...** "
 3. 在出现的面板中, 单击 "**浏览**", 然后搜索 "全息远程处理"。
-4. 选择 **"** ", 然后单击 "**安装**"。
+4. 选择 "", 然后单击 "**安装**"。
 5. 如果**预览**对话框出现, 请单击 **"确定"** 。
 6. 显示的下一个对话框是许可协议。 单击 "**我接受**" 接受许可协议。
 
@@ -47,7 +51,7 @@ ms.locfileid: "66829618"
 
 首先, 需要 HolographicStreamerHelpers 的实例。 将此添加到将处理远程处理的类。
 
-```
+```cpp
 #include <HolographicStreamerHelpers.h>
 
    private:
@@ -56,7 +60,7 @@ ms.locfileid: "66829618"
 
 还需要跟踪连接状态。 如果要呈现预览, 则需要有要将其复制到的纹理。 还需要一些功能, 如连接状态锁定、用于存储 HoloLens IP 地址等的方法。
 
-```
+```cpp
 private:
        Microsoft::Holographic::HolographicStreamerHelpers^ m_streamerHelpers;
 
@@ -75,7 +79,7 @@ private:
 
 若要连接到 HoloLens 设备, 请创建 HolographicStreamerHelpers 的实例并连接到目标 IP 地址。 你将需要设置视频帧大小以匹配 HoloLens 显示宽度和高度, 因为全息远程处理库需要编码器和解码器解析完全匹配。
 
-```
+```cpp
 m_streamerHelpers = ref new HolographicStreamerHelpers();
        m_streamerHelpers->CreateStreamer(m_d3dDevice);
 
@@ -98,7 +102,7 @@ m_streamerHelpers = ref new HolographicStreamerHelpers();
 
 OnConnected 事件可以更新 UI, 开始呈现, 等等。 在我们的桌面代码示例中, 我们使用 "已连接" 消息更新窗口标题。
 
-```
+```cpp
 m_streamerHelpers->OnConnected += ref new ConnectedEvent(
            [this]()
            {
@@ -108,7 +112,7 @@ m_streamerHelpers->OnConnected += ref new ConnectedEvent(
 
 OnDisconnected 事件可以处理重新连接、UI 更新等。 在此示例中, 如果发生暂时性故障, 则重新连接。
 
-```
+```cpp
 Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_streamerHelpers);
        m_streamerHelpers->OnDisconnected += ref new DisconnectedEvent(
            [this, streamerHelpersWeakRef](_In_ HolographicStreamerConnectionFailureReason failureReason)
@@ -148,7 +152,7 @@ Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_strea
 
 当远程处理组件准备好发送帧时, 您的应用程序将有机会在 SendFrameEvent 中创建它的副本。 在这里, 我们将帧复制到一个交换链, 以便可以在预览窗口中显示它。
 
-```
+```cpp
 m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
            [this](_In_ const ComPtr<ID3D11Texture2D>& spTexture, _In_ FrameMetadata metadata)
            {
@@ -180,13 +184,13 @@ m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
 
 全息空间和语音组件来自 HolographicRemotingHelpers 类, 而不是自行创建:
 
-```
+```cpp
 m_appView->Initialize(m_streamerHelpers->HolographicSpace, m_streamerHelpers->RemoteSpeech);
 ```
 
 不在 Run 方法内部使用 update 循环, 而是通过桌面或 UWP 应用程序的主循环来提供滴答更新。 这允许桌面或 UWP 应用保持对消息处理的控制。
 
-```
+```cpp
 void DesktopWindow::Tick()
    {
        auto lock = m_deviceLock.Lock();
@@ -198,7 +202,7 @@ void DesktopWindow::Tick()
 
 全息应用视图的 Tick () 方法完成更新、绘制和呈现循环的一次迭代。
 
-```
+```cpp
 void AppView::Tick()
    {
        if (m_main)
@@ -222,7 +226,7 @@ void AppView::Tick()
 
 若要断开连接, 例如, 当用户单击 UI 按钮以断开 HolographicStreamerHelpers 上的调用 Disconnect (), 然后释放对象。
 
-```
+```cpp
 void DesktopWindow::DisconnectFromRemoteDevice()
    {
        // Disconnecting from the remote device can change the connection state.
@@ -246,7 +250,7 @@ Windows 全息远程处理播放机在 Windows 应用商店中提供, 作为要�
 
 全息应用视图需要提供一种方法来为你的应用提供 Direct3D 设备, 该设备必须用于初始化全息空间。 应用应使用此 Direct3D 设备复制和显示预览框架。
 
-```
+```cpp
 internal:
        const std::shared_ptr<DX::DeviceResources>& GetDeviceResources()
        {
