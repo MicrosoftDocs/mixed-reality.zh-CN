@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 设计, 控件, 字体, 版式, ui, ux
-ms.openlocfilehash: 739dee36ffcbaa92fad705d1b0e58506801c9a4d
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 238f99442bcc5cf02de6760f0ce52d07c9d9c567
+ms.sourcegitcommit: be3631932ea1c88ac3ad8b2390c98c5a6e8b93ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701902"
+ms.lasthandoff: 08/04/2019
+ms.locfileid: "68776395"
 ---
 # <a name="text-in-unity"></a>Unity 中的文本
 
@@ -51,7 +51,7 @@ Unity 假设添加到场景的所有新元素都是大小为1个 Unity 单元, �
 
 ## <a name="working-with-text-mesh-pro"></a>使用文本网格 Pro
 
-通过 Unity 的文本网格 Pro, 可以保护文本呈现质量。 它支持简洁文本轮廓, 而不考虑使用[带符号距离字段 (.sdf)](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)技术的距离。 使用我们在上面用于3D 文本网格和 UI 文本的相同计算方法, 我们可以找到适当的缩放值, 以便与传统排字点一起使用。 由于默认的3D 文本网格 Pro 字体的大小为 2.5 36, 因此, 我们可以使用缩放值0.005 来获取点大小。 UI 菜单下的文本网格 Pro 的默认边界大小为25个 Unity 单位 (25m)。 这为缩放值提供了0.0005。
+通过 Unity 的文本网格 Pro, 可以保护文本呈现质量。 它支持简洁文本轮廓, 而不考虑使用[带符号距离字段 (.sdf)](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)技术的距离。 使用我们在上面用于3D 文本网格和 UI 文本的相同计算方法, 我们可以找到适当的缩放值, 以便与传统排字点一起使用。 由于大小为36的默认3D 文本网格 Pro 字体的边界大小为 2.5 Unity 单位 (2.5 m), 因此我们可以使用 "0.005" 的缩放值获取点大小。 UI 菜单下的文本网格 Pro 的默认边界大小为25个 Unity 单位 (25m)。 这为缩放值提供了0.0005。
 
 ![具有不同字体大小的 Unity 3D 文本网格](images/Text_In_Unity_Measurements2.png)<br>
 *Unity 3D 文本和 UI 文本的缩放值*
