@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 设计, 控件, 字体, 版式, ui, ux
-ms.openlocfilehash: 238f99442bcc5cf02de6760f0ce52d07c9d9c567
-ms.sourcegitcommit: be3631932ea1c88ac3ad8b2390c98c5a6e8b93ed
+ms.openlocfilehash: 55c25400a061366e045398da3196db208b4ab590
+ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2019
-ms.locfileid: "68776395"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817362"
 ---
 # <a name="text-in-unity"></a>Unity 中的文本
 
