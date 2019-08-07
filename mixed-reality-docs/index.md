@@ -8,12 +8,12 @@ ms.date: 02/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目
-ms.openlocfilehash: cf513cebbbf4f05721811cb82d584f9039e378b7
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: c39a5f2f31dc962758456f743e17aaf37fd4ed64
+ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415395"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817357"
 ---
 # <a name="mixed-reality-documentation"></a>混合现实文档
 
@@ -71,7 +71,7 @@ ms.locfileid: "67415395"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3 class="x-hidden-focus">分发</h3>
+                                                    <h3 class="x-hidden-focus">分配</h3>
                                                   <p>让应用程序做好供他人使用的准备，并考虑创建 3D 启动器。</p>
                                                 </div>
                                             </div>
