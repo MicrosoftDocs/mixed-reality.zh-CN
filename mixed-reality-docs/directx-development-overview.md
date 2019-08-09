@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: DirectX, 全息呈现, 本机, 本机应用, WinRT, WinRT 应用, 平台 Api, 自定义引擎, 中间件
-ms.openlocfilehash: da6beae6e256fef49481b581395e507b3f2acd04
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 58b311038633dc325cc2c5425fd09b9a0192b161
+ms.sourcegitcommit: 4ac761fed7a9570977f6d031ba4f870585d6630a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414385"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861706"
 ---
 # <a name="directx-development-overview"></a>DirectX 开发概述
 
@@ -56,7 +56,6 @@ Windows Mixed Reality 支持[两种类型的应用](app-views.md):
 许多沉浸式应用程序都要使用其他重要功能, 这些功能也会向 DirectX 应用程序公开:
 
 * [DirectX 中的共享空间定位点](shared-spatial-anchors-in-directx.md)
-* [DirectX 中的可定位相机](locatable-camera-in-directx.md)
 * [DirectX 中的键盘、鼠标和控制器输入](keyboard,-mouse,-and-controller-input-in-directx.md)
 
 ## <a name="see-also"></a>请参阅

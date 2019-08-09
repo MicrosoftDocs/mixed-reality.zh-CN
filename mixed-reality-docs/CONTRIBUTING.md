@@ -5,12 +5,12 @@ author: mattwojo
 ms.author: mattwoj
 ms.date: 03/21/2018
 ms.topic: article
-ms.openlocfilehash: c110b549603f42ec03fd6c0dc8df7bf70ba5ba9f
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: a6c2574a35ec1240c573532dabfdc6cec1696947
+ms.sourcegitcommit: 4ac761fed7a9570977f6d031ba4f870585d6630a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63516239"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861710"
 ---
 # <a name="contributing-to-windows-mixed-reality-developer-documentation"></a>参与 Windows Mixed Reality 开发人员文档
 
@@ -57,6 +57,28 @@ Windows Mixed Reality 文档现在位于 docs.microsoft.com 平台, 该平台使
 5. 完成文章编辑后, 向下滚动并单击 "**建议文件更改**" 按钮。
 6. 在下一页上, 单击 "**创建拉取请求**" 将自动创建的分支合并到 "master"。
 7. 对于要编辑的下一篇文章, 请重复上述步骤。
+
+## <a name="renaming-or-deleting-an-existing-article"></a>重命名或删除现有项目
+
+如果更改将重命名或删除现有项目, 请确保添加一个重定向。 这样一来, 具有现有文章的链接的任何人仍将在正确的位置结束。 重定向由存储库根目录中的 .openpublishing.publish.config.json 文件进行管理。
+
+若要将重定向添加到 .openpublishing.publish.config.json, 请将条目添加到`redirections`数组中:
+
+```json
+{
+    "redirections": [
+        {
+            "source_path": "mixed-reality-docs/old-article.md",
+            "redirect_url": "new-article#section-about-old-topic",
+            "redirect_document_id": false
+        },
+```
+
+- `source_path`是要删除的旧项目的相对存储库路径。 请确保路径以开头`mixed-reality-docs` , 并以`.md`结尾。
+- `redirect_url`是从旧文章到新文章的相对公共 URL。 请确保此 URL**不**包含`mixed-reality-docs`或`.md`, 因为它引用的是公共 URL, 而不是存储库路径。 允许使用`#section`链接到新项目中的部分。 如果需要, 还可以在此处使用其他站点的绝对路径。
+- `redirect_document_id`指示是否要保留以前文件中的文档 ID。 默认值为 `false`。 如果`true`要保留重定向的项目`ms.documentid`中的属性值, 请使用。 如果保留文档 ID, 数据 (如页面视图和分级) 将传输到目标文章。 如果重定向主要用于重命名, 而不是指向仅涵盖一些相同内容的不同项目的指针, 则执行此操作。
+
+如果添加重定向, 请确保同时删除旧文件。
 
 ## <a name="creating-a-new-article"></a>创建新项目
 

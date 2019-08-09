@@ -6,12 +6,12 @@ ms.author: wguyman, cdedmonds
 ms.date: 06/12/2019
 ms.topic: article
 keywords: 照相机, hololens, 彩色相机, 正面朝, hololens 2, cv, 计算机视觉, 基准, 标记, qr 码, qr, 照片, 视频
-ms.openlocfilehash: b80e201723f8f499a6d35008b9d308f93b925b1c
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 368943dd70c721a41ca7c265a19ecb7c394db312
+ms.sourcegitcommit: 4ac761fed7a9570977f6d031ba4f870585d6630a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694539"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861723"
 ---
 # <a name="locatable-camera"></a>定位照相机
 
@@ -84,11 +84,13 @@ HoloLens 文档中其他地方的 "照相机" 可能指的是 "虚拟游戏相�
 
 [Unity 中的定位照相机](locatable-camera-in-unity.md):CameraToWorldMatrix 由 PhotoCaptureFrame 类自动提供 (因此你无需担心 CameraCoordinateSystem 转换)。
 
-[DirectX 中的定位照相机](locatable-camera-in-directx.md):显示查询照相机坐标系统和自己的应用程序坐标系统之间的转换的相当直接的方法。
+[DirectX 中的定位照相机](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking):全息面部跟踪示例显示了查询照相机坐标系统和自己的应用程序坐标系统之间转换的相当直接的方法。
 
 ### <a name="distortion-error"></a>失真错误
 
-在 HoloLens 上, 视频和静态图像流在系统的图像处理管道中 undistorted, 然后才能将帧提供给应用程序 (预览流包含原始扭曲帧)。 由于仅 CameraIntrinsics 可用, 因此, 应用程序必须假设图像帧表示完美的 pinhole 相机, 但图像处理器中的 undistortion 函数可能仍会在 HoloLens 上留下最多10像素的错误 (第一代)在框架元数据中使用 CameraIntrinsics 时。 在许多用例中, 此错误并不重要, 但如果将全息影像与真实的海报/标记对齐, 则会注意到 < 10px 的偏移量 (大约 11mm, 对于离 
+在 HoloLens 上, 视频和静态图像流在系统的图像处理管道中 undistorted, 然后才能将帧提供给应用程序 (预览流包含原始扭曲帧)。 由于只有 CameraIntrinsics 可用, 因此应用程序必须假定图像帧表示完美的 pinhole 相机。
+
+在 HoloLens (第一代) 上, 在帧元数据中使用 CameraIntrinsics 时, 图像处理器中的 undistortion 函数可能仍会导致最大为10像素的错误。 在许多用例中, 此错误并不重要, 但如果将全息影像与真实的海报/标记对齐, 则会注意到 < 10px 的偏移量 (大约 11mm, 对于离 
 
 ## <a name="locatable-camera-usage-scenarios"></a>定位照相机使用方案
 
@@ -170,7 +172,7 @@ public static Vector3 ClosestPointBetweenRays(
 * 确定并识别房间中的人员 (例如, 在人脸上放置全息的联系人卡片)
 
 ## <a name="see-also"></a>请参阅
-* [DirectX 中的可定位相机](locatable-camera-in-directx.md)
+* [定位相机示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
 * [Unity 中的可定位相机](locatable-camera-in-unity.md)
 * [混合现实捕获](mixed-reality-capture.md)
 * [面向开发人员的混合现实捕获](mixed-reality-capture-for-developers.md)

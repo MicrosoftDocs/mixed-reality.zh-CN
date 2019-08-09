@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/10/2019
 ms.topic: article
 keywords: 故障排除、已知问题、帮助
-ms.openlocfilehash: 1ef9e9f411e16d2f604930f3146ede1d03d7c0f6
-ms.sourcegitcommit: c36b8c8573f51afa79504c4a17084e4f55d2f664
+ms.openlocfilehash: 9ec15957b75ca3ec51dd01f5b9b4bc7371912c5a
+ms.sourcegitcommit: a11999e92e4e87516a6dcceabc2c5ed7642f1fd9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67789482"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68887268"
 ---
 # <a name="hololens-known-issues"></a>HoloLens 已知问题
 
@@ -20,11 +20,11 @@ ms.locfileid: "67789482"
 ## <a name="unable-to-connect-and-deploy-to-hololens-through-visual-studio"></a>无法通过 Visual Studio 进行连接和部署到 HoloLens
 
 >[!NOTE]
->上次更新:7/8 @ 7: 25PM-团队已确定根本原因, 当前正在修复。 解决方法如下: 
+>上次更新:8/8 @ 5: 晚上11点-Visual Studio 已发布 VS 2019 版本 16.2, 其中包括对此问题的修复。 建议更新到此最新版本, 以避免出现此错误。
 
-我们能够确定此问题的根本原因。 使用 Visual Studio 2015 或早期版本的 Visual Studio 2017 的用户在其 HoloLens 上部署和调试应用程序, 然后使用同一 HoloLens 的最新版本的 Visual Studio 2017 或 Visual Studio 2019 将受到影响。 
+Visual Studio 发布了 VS 2019 版本 16.2, 其中包括对此问题的修复。 建议更新到此最新版本, 以避免出现此错误。
 
-较新版本的 Visual Studio 部署了新版本的组件, 但较旧版本中的文件仍保留在设备上, 导致较新版本失败。  这会导致出现以下错误消息:DEP0100:请确保目标设备已启用开发人员模式。 <ip>由于错误 80004005, 无法获取开发人员许可证。
+问题根本原因:使用 Visual Studio 2015 或早期版本的 Visual Studio 2017 的用户在其 HoloLens 上部署和调试应用程序, 然后使用同一 HoloLens 的最新版本的 Visual Studio 2017 或 Visual Studio 2019 将受到影响。 较新版本的 Visual Studio 部署了新版本的组件, 但较旧版本中的文件仍保留在设备上, 导致较新版本失败。  这会导致出现以下错误消息:DEP0100:请确保目标设备已启用开发人员模式。 <ip>由于错误 80004005, 无法获取开发人员许可证。
  
 **解决方法**： 
 

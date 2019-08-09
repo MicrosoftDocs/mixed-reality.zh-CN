@@ -182,7 +182,6 @@
 #### [DirectX 中的空间映射](spatial-mapping-in-directx.md)
 ### 其他关键功能
 #### [DirectX 中的共享空间定位点](shared-spatial-anchors-in-directx.md)
-#### [DirectX 中的可定位相机](locatable-camera-in-directx.md)
 #### [DirectX 中的键盘、鼠标和控制器输入](keyboard,-mouse,-and-controller-input-in-directx.md)
 ### 高级主题
 #### [将 XAML 与全息 DirectX 应用配合使用](using-xaml-with-holographic-directx-apps.md)
