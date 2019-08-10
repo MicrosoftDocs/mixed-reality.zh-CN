@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空间映射, HoloLens, 混合现实, 表面重建, 网格, sr
-ms.openlocfilehash: 31abeca624512f1d5e721dbe879ca2243cf41345
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 4914cf5b7864ecb2430a39af73729eb6dfc0e2bd
+ms.sourcegitcommit: c4c293971bb3205a82121bbfb40d1ac52b5cb38e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63550489"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68937061"
 ---
 # <a name="spatial-mapping"></a>空间映射
 
@@ -220,4 +220,5 @@ ms.locfileid: "63550489"
 * [DirectX 中的空间映射](spatial-mapping-in-directx.md)
 * [Unity 中的空间映射](spatial-mapping-in-unity.md)
 * [空间映射设计](spatial-mapping-design.md)
+* [场景理解](scene-understanding.md)
 * [案例研究 - 看透现实中的洞](case-study-looking-through-holes-in-your-reality.md)
