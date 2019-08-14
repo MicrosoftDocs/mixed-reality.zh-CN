@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 4e60ed844e64d736c268dd3ec8453c6c2cb7ad75
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 70f84c1ec03919a15bed486ffa51fb57db39deec
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68702049"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977970"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.保存、检索和共享 Azure 空间锚
 
@@ -46,13 +46,13 @@ ms.locfileid: "68702049"
 
    - 对于名为 GetFromDisk 的按钮, 在 "按下" 事件触发器和 On Click 事件触发器下创建一个新事件。 将 ParentAnchor 对象拖到空字段, 然后从 ParentAnchor 对象的 ASAmoduleScript 组件分配 LoadAzureAnchorIDsFromDisk () 方法。
 
-3. 按照 Tutoiral 1 中的说明, 将更新后的应用程序生成到你的设备。 按下一课所述, 按 "创建 Azure 锚点" 按钮后, 现在可以通过按 "保存到磁盘" 按钮将 Azure 定位 ID 保存到磁盘。
+3. 按照教程1中的说明, 将更新后的应用程序生成到你的设备。 按下一课所述, 按 "创建 Azure 锚点" 按钮后, 现在可以通过按 "保存到磁盘" 按钮将 Azure 定位 ID 保存到磁盘。
 
 4. 重新启动应用程序, 启动 Azure 会话, 按 "加载定位点 ID", 然后按 "查找 Azure 定位点", 找到与我们保存到磁盘的 ID 相关联的定位点。 整个场景现在应在您之前保存锚点的位置上对齐!
 
 ### <a name="share-azure-anchors-between-multiple-devices"></a>在多个设备之间共享 Azure 锚
 
-在本部分中, 我们将了解如何在多个设备之间共享 Azure 锚 ID。 这将允许多个设备在 Azure 中查询相同的定位 ID, 以允许我们的定位全息影像和场景进行立体调整。 空间对齐 (在多个设备之间的同一物理位置查看相同的全息影像) 是 HoloLens 2 中的本地共享体验的关键所在。 可以通过多种方式在设备之间传输有关 azure Id 的信息, 包括 Azure 空间锚式共享体验教程中所述的方法 (TODO: 添加链接。)此示例使用简单的 web 服务在设备之间上传和下载定位点 Id。
+在本部分中, 我们将了解如何在多个设备之间共享 Azure 锚 ID。 这将允许多个设备在 Azure 中查询相同的定位 ID, 以允许我们的定位全息影像和场景进行立体调整。 空间对齐 (在多个设备之间的同一物理位置查看相同的全息影像) 是 HoloLens 2 中的本地共享体验的关键所在。 可以通过多种方式在设备之间传输有关 azure Id 的信息, 包括 Azure 空间锚式共享体验教程[教程](mrlearning-sharing(photon)-ch1.md)中所述的方法。 此示例使用简单的 web 服务在设备之间上传和下载定位点 Id。
 
 1. 将 ShareAnchor prefab 添加到层次结构中。 此 prefab 将两个新按钮添加到场景中;一个用于上载定位点 ID 信息, 另一个用于下载定位点 ID 信息。 
 
@@ -70,7 +70,7 @@ ms.locfileid: "68702049"
 
 3. 按照[教程 1](mrlearning-base-ch1.md)中的说明进行操作。 将更新后的应用程序生成到你的设备。 按下一课中所述, 按 "创建 Azure 锚点" 按钮后, 现在可以通过按 "共享到其他设备" 按钮将 Azure 锚 ID 共享到其他设备。
 
-   > 注意:选择父定位点并向下滚动到父定位点脚本。 确保你的公共共享 pin 是唯一的, 因此, 当你共享它时, 你知道自己正在共享。 可能有成千上万用户共享其 Azure 定位点, 因此这样做可以确保共享正确的 Azure 锚。
+   > 注意：选择父定位点并向下滚动到父定位点脚本。 确保你的公共共享 pin 是唯一的, 因此, 当你共享它时, 你知道自己正在共享。 可能有成千上万用户共享其 Azure 定位点, 因此这样做可以确保共享正确的 Azure 锚。
 
 4. 如果有另一个 HoloLens 2 设备, 则启动该应用程序, 然后启动 Azure 会话。 按 "获取共享定位点 ID" 按钮, 然后按 "查找 Azure 定位点" 按钮, 找到与我们保存到磁盘的 ID 相关联的定位点。 整个场景现在应在其放置在另一个 HoloLens 2 设备上的位置对齐! 如果只有一个 HoloLens 2, 则仍可通过以下方式测试功能: 重新启动应用程序、启动 Azure 会话, 然后按 "获取共享定位点 ID" 按钮, 然后按 "查找 Azure 定位点" 按钮以找到与已保存到磁盘的 ID。 整个场景现在应在您之前保存锚点的位置上对齐!
 

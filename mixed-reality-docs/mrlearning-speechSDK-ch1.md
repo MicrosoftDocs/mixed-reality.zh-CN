@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 501e8bc2e70248a4ca8a79f90d74d30129830701
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: a6367a1be1bcaeab911b925641dbb3a66998c2dc
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701954"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977994"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.集成和使用语音识别与脚本
 
@@ -31,7 +31,7 @@ ms.locfileid: "68701954"
 
 ![Module2Chapter3step1im](images/module4chapter1step1im.PNG)
 
-> 注意:请确保将模板设置为 "三维", 如上图所示。
+> 注意：请确保将模板设置为 "三维", 如上图所示。
 
 2. 下载[混合现实工具包](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.unitypackage)Unity 包, 并将其保存到电脑上的文件夹中。 将包导入 Unity 项目。 有关如何执行此操作的详细说明, 请参阅[基本模块第1课](mrlearning-base-ch1.md)。 
 
@@ -58,7 +58,7 @@ ms.locfileid: "68701954"
 
 8. 你的场景现在有多个 MRTK 中的新项。 单击 "文件", 然后单击 "另存为", 然后将场景命名为 "SpeechScene", 以其他名称保存场景。 
 
-> 注意:如果在将 MRTK 添加到项目中后按下了场景, 而不进入播放模式, 则可能需要重新启动 Unity。 
+> 注意：如果在将 MRTK 添加到项目中后按下了场景, 而不进入播放模式, 则可能需要重新启动 Unity。 
 
 9. 在层次结构中选择 MixedRealityToolkit 对象后, 单击 "检查器" 面板中的 "复制" 和 "自定义"。
 
@@ -133,34 +133,34 @@ ms.locfileid: "68701954"
 ![学习 Chapter5 步骤1](images/Lesson1Chapter5Step1.JPG)
 
 2. 通过单击“添加打开的场景”按钮，确保要尝试的场景位于“生成中的场景”列表中。
-
-3. 按“生成”按钮开始生成过程。
+3. 按 "播放机设置" 按钮, 并单击 "发布设置"。 在 "功能" 下, 启用:Internet, Internet 客户端服务器, 专用网络客户端服务器, 麦克风和空间感知。
+4. 在相同的播放机设置中, 选择 "XR 设置", 并选择 "支持的虚拟现实"。
+5. 按“生成”按钮开始生成过程。
 
 ![学习 Chapter5 步骤3](images/Lesson1Chapter5Step3.JPG)
 
-4. 为应用程序创建一个新文件夹并为其命名。 在下图中，创建了一个名为“应用”的文件夹以包含该应用程序。 单击“选择文件夹”，开始生成新创建的文件夹。 生成完成后，可以关闭 Unity 中的“生成设置”窗口。 
+6. 为应用程序创建一个新文件夹并为其命名。 在下图中，创建了一个名为“应用”的文件夹以包含该应用程序。 单击“选择文件夹”，开始生成新创建的文件夹。 生成完成后，可以关闭 Unity 中的“生成设置”窗口。 
 
 ![学习 Chapter5 步骤4](images/Lesson1Chapter5Step4.JPG)
 
 > 注意：如果生成失败，尝试再次生成或重启 Unity 并再次生成。 如果看到错误，如“错误：CS0246 = 找不到类型或命名空间名称“XX”（是否缺少 using 指令或程序集引用？）”，可能需要安装 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
 
-5. 生成完成后，打开包含新生成的应用程序文件的新创建的文件夹。 双击 ".sln" 解决方案文件, 在 Visual Studio 中打开解决方案文件。
+7. 生成完成后，打开包含新生成的应用程序文件的新创建的文件夹。 双击 ".sln" 解决方案文件, 在 Visual Studio 中打开解决方案文件。
 
-> 注意:请务必打开新创建的文件夹（即“应用”文件夹，如果遵循前面步骤中的命名约定），因为在该文件夹之外会有一个类似名称的 .sln 文件，不能将其与“生成”文件夹内的 .sln 文件混淆。 
+> 注意：请务必打开新创建的文件夹（即“应用”文件夹，如果遵循前面步骤中的命名约定），因为在该文件夹之外会有一个类似名称的 .sln 文件，不能将其与“生成”文件夹内的 .sln 文件混淆。 
 
 ![第 1 课 第 5 章 第 5 步](images/Lesson1Chapter5Step5.JPG)
 
-> 注意:如果 Visual Studio 要求你安装新组件，请花一点时间确保按照[“安装工具”页面](install-the-tools.md)中的说明安装所有必备组件
+> 注意：如果 Visual Studio 要求你安装新组件，请花一点时间确保按照[“安装工具”页面](install-the-tools.md)中的说明安装所有必备组件
 
-6. 使用 USB 电缆将 HoloLens 2 插入电脑。 虽然这些课程说明假设你将使用 HoloLens 2 设备部署测试，但你也可以选择部署到 [HoloLens 2 仿真器](using-the-hololens-emulator.md)或选择创建[应用包以进行旁加载](<https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps>)
+8. 使用 USB 电缆将 HoloLens 2 插入电脑。 虽然这些课程说明假设你将使用 HoloLens 2 设备部署测试，但你也可以选择部署到 [HoloLens 2 仿真器](using-the-hololens-emulator.md)或选择创建[应用包以进行旁加载](<https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps>)
+9. 在生成到设备之前，请确保设备处于开发者模式。 如果这是你第一次部署到 HoloLens 2，Visual Studio 可能会要求你将 HoloLens 2 与 pin 配对。 如果需要启用开发者模式或与 Visual Studio 配对，请按照[这些说明](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)进行操作。
 
-7. 在生成到设备之前，请确保设备处于开发者模式。 如果这是你第一次部署到 HoloLens 2，Visual Studio 可能会要求你将 HoloLens 2 与 pin 配对。 如果需要启用开发者模式或与 Visual Studio 配对，请按照[这些说明](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)进行操作。
-
-8. 通过选择“发布”配置和“ARM”体系结构，配置 Visual Studio 以生成到 HoloLens 2。
+10. 通过选择“发布”配置和“ARM”体系结构，配置 Visual Studio 以生成到 HoloLens 2。
 
 ![学习 Chapter5 Step8](images/Lesson1Chapter5Step8.JPG)
 
-9. 最后一步是通过选择“调试”>“在不调试的情况下启动”来生成到你的设备。 选择“在不调试的情况下启动”将导致应用程序在成功生成后立即在设备上启动，但不会在 Visual Studio 中显示调试信息。 这也意味着可以在 HoloLens 2 上运行应用程序时断开 USB 电缆，而无需停止应用程序。 也可以选择“生成”>“部署解决方案”以部署到你的设备，而无需自动启动应用程序。
+11. 最后一步是通过选择“调试”>“在不调试的情况下启动”来生成到你的设备。 选择“在不调试的情况下启动”将导致应用程序在成功生成后立即在设备上启动，但不会在 Visual Studio 中显示调试信息。 这也意味着可以在 HoloLens 2 上运行应用程序时断开 USB 电缆，而无需停止应用程序。 也可以选择“生成”>“部署解决方案”以部署到你的设备，而无需自动启动应用程序。
 
 ![学习 Chapter5 Step9](images/Lesson1Chapter5Step9.JPG)
 

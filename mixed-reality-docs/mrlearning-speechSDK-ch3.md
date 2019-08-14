@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 27742702f7a274b3212cdf12c77d8acfa0a29834
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: c7cbdca3c22253042a9be44a194fca8925f0f446
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701829"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977963"
 ---
 # <a name="3-adding-the-azure-cognitive-services-speech-translation-component"></a>3.添加 Azure 认知服务语音翻译组件
 
-在本教程中, 我们将了解如何 aabout 项目中的 Azure 认知服务语音翻译组件, 并将其翻译为三种不同的语言。 
+在本教程中, 我们将了解项目中的 Azure 认知服务语音翻译组件, 并将其翻译为三种不同的语言。 
 
 ## <a name="instructions"></a>说明
 
@@ -23,7 +23,7 @@ ms.locfileid: "68701829"
 
 ![Module4Chapter3step1im](images/module4chapter3step1im.PNG)
 
-> 注意:请确保在测试 Speech SDK 转换器之前禁用了脱机模式模拟器。 若要进行转换, 必须连接到 internet。 请参阅下图中的查找此设置的位置。 
+> 注意：请确保在测试 Speech SDK 转换器之前禁用了脱机模式模拟器。 若要进行转换, 必须连接到 internet。 请参阅下图中的查找此设置的位置。 
 >
 > ![Module4Chapter3noteim](images/module4chapter3noteim.PNG)
 
@@ -33,7 +33,7 @@ ms.locfileid: "68701829"
 
 3. 现在, 运行该应用程序并通过单击 "附属项" 按钮来测试转换器, 然后开始说话。 再次按卫星按钮以停止识别。 下面是场景外观的示例。 可以随时更改 "目标语言" 下拉列表下的语言 (请参阅上图), 以浏览其他语言的翻译。
 
-> 注意:在测试之前, 请确保脱机模拟器已禁用, 如下图所示。
+> 注意：在测试之前, 请确保脱机模拟器已禁用, 如下图所示。
 >
 > ![Module4Chapter3noteim](images/module4chapter3noteim.PNG)
 

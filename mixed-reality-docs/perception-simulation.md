@@ -869,7 +869,7 @@ public interface ISimulatedHand
 
 检索 SimulatedDevice 当前是否对可见 (即, 该手形是否处于 HandTracker 检测到的位置)。
 
-**PerceptionSimulation. ISimulatedHand. Ensurevisible\**
+**PerceptionSimulation. ISimulatedHand. Ensurevisible**
 
 移动手使其对 SimulatedDevice 可见。
 
