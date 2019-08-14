@@ -17,7 +17,7 @@ ms.locfileid: "63525753"
 
 [您可以](gaze-in-unity.md)通过两种主要方式在您的 HMD 中进行操作, 在 HoloLens 和沉浸式的中的[手势](gestures.md)和[运动控制器](motion-controllers.md)。 可以通过 Unity 中的相同 Api 访问空间输入的两个源的数据。
 
-Unity 提供了两种主要方法来访问 Windows Mixed Reality 的空间输入数据、跨多个 Unity XR Sdk 工作的*GetButton/GetAxis* api, 以及特定于  公开一组可用空间输入数据的 Windows 混合现实。
+Unity 提供了两种主要方法来访问 Windows Mixed Reality 的空间输入数据、跨多个 Unity XR Sdk 工作的*GetButton/GetAxis* api, 以及特定于公开一组可用空间输入数据的 Windows 混合现实。
 
 ## <a name="unity-buttonaxis-mapping-table"></a>Unity 按钮/轴映射表
 
@@ -94,7 +94,7 @@ Windows Mixed Reality 支持多种形式的运动控制器, 其中每个控制�
 
 系统提供的指针姿势最适合用于在**呈现控制器模型本身**时进行 raycast。 如果要渲染某个其他虚拟对象来替代控制器 (如虚拟压力), 则应使用该虚拟对象的最自然的光线, 如沿应用定义的机枪模型的桶向下移动的射线。 由于用户可以看到虚拟对象, 而不是物理控制器, 因此, 使用虚拟对象指向虚拟对象可能会更自然地使用应用。
 
-目前, 指针姿势仅通过 Windows MR 专用 API TryGetPosition/轮换提供, 并传入 InteractionSourceNode 作为参数传递  。 *sourceState/sourcePose。*
+目前, 指针姿势仅通过 Windows MR 专用 API TryGetPosition/轮换提供, 并传入 InteractionSourceNode 作为参数传递 。 *sourceState/sourcePose。*
 
 ## <a name="controller-tracking-state"></a>控制器跟踪状态
 
@@ -490,7 +490,7 @@ void OnDestroy()
 
 可在[此处](https://github.com/keluecke/MixedRealityToolkit-Unity/blob/master/External/Unitypackages/ThrowingStarter.unitypackage)找到如何实现引发的示例。 此示例遵循以下四个准则:
 * **使用控制器的*速度*(而不是位置**)。 在11月的 Windows 更新中, 我们引入了["近似" 位置跟踪状态](motion-controllers.md#controller-tracking-state)下的行为更改。 在此状态下, 只要我们认为它是高准确度, 就会继续报告关于控制器的速度信息, 这通常比位置长。
-* **合并控制器的*角度速度*** 。 此逻辑全部包含在`throwing.cs`文件`GetThrownObjectVelAngVel`中的静态方法中, 该文件位于以上链接的包中:
+* **合并控制器的 *角度速度* 。** 此逻辑全部包含在`throwing.cs`文件`GetThrownObjectVelAngVel`中的静态方法中, 该文件位于以上链接的包中:
    1. 在角度速度 conserved 时, 引发的对象必须保持与抛出时相同的角度速度:`objectAngularVelocity = throwingControllerAngularVelocity;`
    2. 由于引发的对象很大范围可能不会成为手柄姿势的中心, 因此它可能具有不同的速度, 而控制器在用户的引用框架中。 以这种方式提供的对象速度的部分是围绕控制器原点的已抛出对象的质量的瞬间相切速度。 此相切速度是控制器角度速度的叉积, 向量表示控制器原点与所引发对象的质量中心之间的距离。
     
