@@ -18,7 +18,6 @@
 #### [HoloLens 已知问题](hololens-known-issues.md)
 #### [HoloLens 故障排除](troubleshooting.md)
 #### [混合现实捕获](mixed-reality-capture.md)
-#### [导航 Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)
 #### [重置或恢复 HoloLens](reset-or-recover-your-hololens.md)
 #### [保存和查找文件](saving-and-finding-your-files.md)
 #### [查看照片](see-your-photos.md)
@@ -27,6 +26,7 @@
 #### [HoloLens 演示调整和清理指南](hololens-demo-guide.md)
 ### 沉浸式头戴显示设备
 #### [沉浸式头戴显示设备硬件详细信息](immersive-headset-hardware-details.md)
+#### [导航 Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)
 #### [爱好者指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [硬件配件](hardware-accessories.md)
 ### [HoloLens 演示调整和清理指南](hololens-demo-guide.md)
