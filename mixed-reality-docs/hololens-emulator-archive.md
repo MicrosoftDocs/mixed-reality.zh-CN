@@ -3,15 +3,15 @@ title: HoloLens 模拟器存档
 description: Microsoft HoloLens 模拟器的已发布版本的列表。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 4/25/2019
+ms.date: 8/14/2019
 ms.topic: article
 keywords: HoloLens、模拟器、版本、版本
-ms.openlocfilehash: b209e444c223c3183d2680976f68c33a3b6ed79b
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 548e8fb72af137e53c10c4507c56f29c8bd6a4ca
+ms.sourcegitcommit: 06c27acdac24c845952f9c1d3611770756f25820
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694434"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69030157"
 ---
 HoloLens 模拟器 (第一代) 和 HoloLens 2 模拟器会并行安装。 我们通常建议使用最新的可用版本, 但在某些情况下, 你可能希望或需要针对旧的模拟器来测试应用程序。 此页面包含已发布版本的链接。
 
@@ -21,7 +21,8 @@ HoloLens 模拟器 (第一代) 和 HoloLens 2 模拟器会并行安装。 我们
 
 |  Build |  发布日期 |  说明 | 
 |----------|----------|----------|
-|  [HoloLens 2 模拟器生成10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019年7月8日 | 最新的 HoloLens 2 生成。  使用 DiskStream 解决签名问题 |
+|  [HoloLens 2 模拟器生成10.0.18362.1028](https://go.microsoft.com/fwlink/?linkid=2101019) | 2019年8月14日 | 2019年8月2日生成。  自2019年9月起, 将不再包括全息应用程序模板, 但在 Visual Studio Marketplace 中提供了这些模板。  在将 Sdk 安装到自定义位置时, 模拟器将起作用。 |
+|  [HoloLens 2 模拟器生成10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019年7月8日 | 使用 DiskStream 解决签名问题 |
 |  [HoloLens 2 模拟器生成10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019年6月11日 | 不再需要以管理员身份运行。  添加了开始菜单快捷方式。 |
 |  [HoloLens 2 模拟器生成10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019年4月16日 |  |
 

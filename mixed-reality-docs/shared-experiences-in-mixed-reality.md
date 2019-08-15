@@ -6,12 +6,12 @@ ms.author: grbury
 ms.date: 02/10/2019
 ms.topic: article
 keywords: 共享体验, 混合现实, 全息影像, 空间锚, 多用户, 多
-ms.openlocfilehash: b27da1e73c927a26e33746cd2db08e67c6f70acc
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: fbc636a5d65e605ae9e9f9655eb15550ff8de7b7
+ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63518485"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020206"
 ---
 # <a name="shared-experiences-in-mixed-reality"></a>混合现实中的共享体验
 
@@ -50,7 +50,7 @@ ms.locfileid: "63518485"
 
 ### <a name="3-where-is-everyone"></a>3.所有人位于何处？
 
-当在同一位置发生共享体验时, 混合现实的强度会成为一种情况。 我们称之为该**归置**。 相反, 当分配组时, 至少有一个参与者不在同一物理空间 (如使用 VR 时), 我们称之为远程体验。 通常情况下, 您的**组具有共同**加入和远程参与者 (例如, 会议室中的两个组)。
+当在同一位置发生共享体验时, 混合现实的强度会成为一种情况。 我们称之为该**归置**。 相反, 当分配组时, 至少有一个参与者不在同一物理空间 (如使用 VR 时), 我们称之为远程体验。 通常情况下, 您的组具有共同加入和远程参与者 (例如, 会议室中的两个组)。
 
 ![表上有 holograph 的三个用户](images/three-people-with-holograph-on-table-500px.png)
 
@@ -118,7 +118,7 @@ ms.locfileid: "63518485"
 
 直观的协作是对话的成为, 并了解如何将此直觉应用到混合现实的复杂性, 这一点非常重要。 如果我们不仅可以在混合现实中重新创建共享体验, 还可以提升它们, 但对于未来的工作来说, 这是一项转变。 在混合现实中设计共享体验是一项新的令人兴奋的空间-我们只是一开始。
 
-## <a name="get-started-sharing-experiences"></a>共享体验入门
+## <a name="get-started-building-shared-experiences"></a>开始构建共享体验
 
 根据您的应用程序和方案, 将有各种要求来实现您所需的体验。 其中一些包括
 * 匹配-正在进行:能够创建会话、播发会话并发现和邀请特定人员, 同时在本地和远程加入会话。
@@ -135,6 +135,32 @@ ms.locfileid: "63518485"
 
 使用共享空间定位点, 每个设备上的应用现在都有一个可放置内容的通用坐标系统。 现在, 应用可以确保在同一位置定位和定位全息影像。
 在 HoloLens 设备上, 你还可以从一个设备离线共享锚点。  使用以下链接来确定最适合你的应用程序。
+
+
+## <a name="evaluating-tech-options"></a>评估技术选项:
+有各种服务和技术选项可用于帮助构建多用户混合现实体验。  选择路径可能比较困难, 因此, 要采用以方案为中心的角度, 下面详细介绍了一些选项。
+
+## <a name="shared-static-holograms-no-interactions"></a>共享静态全息影像 (无交互):
+在应用中利用<a href="https://docs.microsoft.com/azure/spatial-anchors/" target="_blank">Azure 空间锚</a>。  通过跨设备启用并共享空间锚, 你可以创建一个应用程序, 让用户同时查看同一位置的全息影像。  需要跨设备进行额外的同步, 以使用户能够与全息影像交互, 并查看影像的移动或状态更新。
+
+## <a name="share-1st-person-perspective"></a>共享第一人称观点:
+如果有受支持的 Miracast 接收方 (如 PC 或电视), 则对本地用户利用内置 Miracast 支持, 无需其他应用代码。
+
+在应用中利用<a href="https://github.com/microsoft/mixedreality-webrtc" target="_blank">MixedReality-WebRTC</a> , 对于远程用户, 或在你具有要共享的非 Miracast 设备时。  启用 WebRTC 连接将在用户之间启用1:1 音频/视频流, 并使用数据通道在设备间进行消息传送。  混合现实实现通过向其他人提供 HoloLens 用户视图的混合现实视频流, 针对 HoloLens 进行优化。  如果要将视频流扩展到多个远程客户端, 通常使用<a href="https://webrtcglossary.com/mcu/" target="_blank">MCU 服务提供程序</a>(多点会议单位), 例如 SignalWire。  可通过<a href="https://github.com/andywolk/azure-freeswitch-gpu-windows" target="_blank">Freeswitch</a>获取对 Azure 的一键式 SignalWire 部署。  请注意, 这是付费服务, SignalWire 不属于 Microsoft。
+
+## <a name="presenter-spectator-applications-and-demos"></a>Spectator 应用程序和演示:
+在应用中利用<a href="https://github.com/microsoft/MixedReality-SpectatorView" target="_blank">MixedReality-SpectatorView</a> 。  启用其他设备 (HL、Android、iOS 和摄像机), 查看 HoloLens 从同一位置的不同透视中看到的内容, 并接收有关与全息影像交互的主机 HoloLens 用户交互的更新。  观看、拍摄照片 *, 并使用同一应用的 spectator 伴随的空间透视图, 记录主机对应用程序中的全息影像的处理情况的视频。
+
+*注意：图片是通过 iOS/Android 设备上的屏幕截图拍摄的。
+
+## <a name="multi-user-collaborative-experience"></a>多用户协作体验:
+首先介绍[多用户学习教程](mrlearning-sharing(photon)-ch1.md), 该教程利用了用于本地用户和<a href="https://www.photonengine.com/PUN" target="_blank">Photon SDK</a>的<a href="https://docs.microsoft.com/azure/spatial-anchors/" target="_blank">Azure 空间锚点</a>来同步场景中的内容/状态。  创建本地协作应用程序, 其中每个用户在场景中的全息影像上都有自己的观点, 每个用户都可以完全与全息影像交互。  所有设备都提供更新, 交互冲突管理由 Photon 处理。  请注意, Photon 是一种非 Microsoft 产品, 因此, 可能需要使用 Photon 进行计费关系, 以实现更高的使用量。
+
+## <a name="future-work"></a>未来工作:
+组件功能和接口将帮助提供跨各种方案和基础技术的常见一致性和可靠支持。  在此之前, 请选择与你要在应用程序中实现的方案相符的最佳路径。
+
+不同的方案或希望使用不同的技术/服务？  
+请在此页底部的相应存储库中提供 GitHub 问题的反馈, 或在<a href="https://holodevelopers.slack.com/">HoloDevelopers 的时差</a>上联系。
 
 
 ## <a name="see-also"></a>请参阅
