@@ -1,5 +1,5 @@
 ---
-title: 种不可交互对象
+title: 可交互对象
 description: "\"Button\" 是一种用于在二维抽象环境中触发事件的比喻。 在这三维混合现实世界中, 我们不必再局限于这种抽象领域。"
 author: cre8ivepark
 ms.author: jennyk
@@ -13,20 +13,20 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67415288"
 ---
-# <a name="interactable-object"></a>种不可交互对象
+# <a name="interactable-object"></a>可交互对象
 
-"Button" 是一种用于在二维抽象环境中触发事件的比喻。 在这三维混合现实世界中, 我们不必再局限于这种抽象领域。 任何内容都可以是触发事件的**种不可交互对象**。 种不可交互对象可表示为从桌子上的咖啡杯到悬浮的球标的任何内容。 在某些情况下 (例如, 在对话框 UI 中), 我们仍要使用传统按钮。 按钮的可视化表示形式取决于上下文。
+"Button" 是一种用于在二维抽象环境中触发事件的比喻。 在这三维混合现实世界中, 我们不必再局限于这种抽象领域。 任何内容都可以是触发事件的**可交互对象**。 可交互对象可表示为从桌子上的咖啡杯到悬浮的球标的任何内容。 在某些情况下 (例如, 在对话框 UI 中), 我们仍要使用传统按钮。 按钮的可视化表示形式取决于上下文。
 
 ![Interactible 对象](images/640px-interactibleobject-hero-640px.jpg)
 
 
-## <a name="important-properties-of-the-interactable-object"></a>种不可交互对象的重要属性
+## <a name="important-properties-of-the-interactable-object"></a>可交互对象的重要属性
 
 ### <a name="visual-cue"></a>视觉提示
 
 视觉提示是视觉对象的视觉对象系统中的眼睛传感器提示, 由视觉对象系统处理。 由于视觉对象系统在很多物种中是主导的, 尤其是在人们看来, 直观提示是了解世界上的信息。
 
-在混合现实中, 由于全息对象与真实环境混合, 因此很难理解哪些对象是种不可交互的。 对于你的体验中的任何种不可交互对象, 为每个输入状态提供不同的视觉提示非常重要。 这可以帮助用户了解你的体验的哪个部分是种不可交互的, 并使用户能够通过一致的交互方法进行自信。
+在混合现实中, 由于全息对象与真实环境混合, 因此很难理解哪些对象是可交互的。 对于你的体验中的任何可交互对象, 为每个输入状态提供不同的视觉提示非常重要。 这可以帮助用户了解你的体验的哪个部分是可交互的, 并使用户能够通过一致的交互方法进行自信。
 
 #### <a name="far-interactions"></a>远距离交互
 
@@ -80,14 +80,14 @@ HoloLens 2 支持已表述的手动跟踪输入, 可用于与对象进行交互�
 * **抓取结束**:在抓取结束时播放声音
 
 ### <a name="voice-command"></a>语音命令
-对于任何种不可交互对象, 支持替代交互选项非常重要。 默认情况下, 建议为种不可交互的任何对象支持语音命令。 若要改进可发现性, 你可以提供悬停状态的工具提示。
+对于任何可交互对象, 支持替代交互选项非常重要。 默认情况下, 建议为可交互的任何对象支持语音命令。 若要改进可发现性, 你可以提供悬停状态的工具提示。
 
 <img src="images/640px-interactibleobject-voicecommand.jpg" alt="Tooltip for the voice command" title="语音命令的工具提示" width="350"><br/>*语音命令的工具提示*
 
 ## <a name="sizing"></a>大小调整
-为了确保用户可以轻松地接触到所有种不可交互对象, 我们建议您确保种不可交互的大小达到最小值 (通常以视觉弧线度量的视觉角度), 这取决于从用户的距离。 视觉角度基于用户眼睛与对象之间的距离并保持不变, 而目标的物理大小可能会随用户更改的距离而更改。 若要根据用户的距离确定对象的必要物理大小, 请尝试使用视觉角度计算器 (如[此](http://elvers.us/perception/visualAngle/)类)。
+为了确保用户可以轻松地接触到所有可交互对象, 我们建议您确保可交互的大小达到最小值 (通常以视觉弧线度量的视觉角度), 这取决于从用户的距离。 视觉角度基于用户眼睛与对象之间的距离并保持不变, 而目标的物理大小可能会随用户更改的距离而更改。 若要根据用户的距离确定对象的必要物理大小, 请尝试使用视觉角度计算器 (如[此](http://elvers.us/perception/visualAngle/)类)。
 
-下面是有关种不可交互内容的最小大小建议。
+下面是有关可交互内容的最小大小建议。
 
 ### <a name="target-size-for-direct-hand-interaction"></a>直接手动交互的目标大小
 | 长途 | 查看角度 | Size |
@@ -115,11 +115,11 @@ HoloLens 2 支持已表述的手动跟踪输入, 可用于与对象进行交互�
 ![手动 ray 或注视交互的目标大小](images/TargetSizingFar.jpg)<br>
 *手动 ray 或注视交互的目标大小*
 
-## <a name="creating-interactable-object-with-mixed-reality-toolkit-mrtk"></a>利用混合现实工具包创建种不可交互对象 (MRTK)
+## <a name="creating-interactable-object-with-mixed-reality-toolkit-mrtk"></a>利用混合现实工具包创建可交互对象 (MRTK)
 
-在 **[混合现实工具包](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 中, 可以找到可帮助你创建种不可交互对象的一系列 Unity 脚本和 prototyping。 您可以使用这些对象来对各种类型的输入交互状态进行响应。
+在 **[混合现实工具包](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 中, 可以找到可帮助你创建可交互对象的一系列 Unity 脚本和 prototyping。 您可以使用这些对象来对各种类型的输入交互状态进行响应。
 
-* [种不可交互](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
+* [可交互](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
 * [Button](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
 * [手动交互示例场景](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)
 
