@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 97dd8fce1ebe53efc37cb48cde7dc9e207be9a42
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: f45aa7e2f07a8a67cd56f0aae140de3a68afc918
+ms.sourcegitcommit: e9a55528965048ce34f8247ef6e544f9f432ee37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701984"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559889"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7.创建农历模块示例应用程序
 
@@ -33,7 +33,7 @@ ms.locfileid: "68701984"
 
 1. 将农历模块程序集 prefab 添加到基础场景中。 为此, 请在 "项目" 选项卡中搜索 "火箭 Launcher_Tutorial"。 
 查找资产 > BaseModuleAssets-> Prototyping 中的 prefab。 还会看到两个火箭启动器 prototyping;一个名为 "教程", 另一个名为 "complete"。 将火箭 Launcher_Tutorial prefab 拖到基础场景, 并根据需要进行定位。
-   注意:火箭 Launcher_Complete prefab 是已完成的启动程序, 旨在供参考。 
+   注意：火箭 Launcher_Complete prefab 是已完成的启动程序, 旨在供参考。 
 
 ![Lesson6 Chapter1 Step1im](images/Lesson6_Chapter1_step1im.PNG)
 
@@ -49,9 +49,9 @@ ms.locfileid: "68701984"
 
 ![Lesson6 Chapter1 Notebim](images/Lesson6_Chapter1_notebim.PNG)
 
-> 注意:在基本场景层次结构中看到的游戏对象名称与场景中对象的名称不一致。
+> 注意：在基本场景层次结构中看到的游戏对象名称与场景中对象的名称不一致。
 
-步骤 2：为登月舱添加一个音频源。 请确保在基本场景层次结构中选择了农历模块, 并单击 "添加组件"。 搜索 "音频源", 并将其添加到对象。 暂时将其留空。 我们稍后会用它来播放发射声。
+步骤 2：为登月舱添加一个音频源。 请确保在基本场景层次结构中选择了农历模块, 并单击 "添加组件"。 搜索 "音频源", 并将其添加到对象。 暂时将其留空, 但请确保单击 "Spatialize" 复选框以启用空间音频。 我们稍后会用它来播放发射声。
 
  ![Lesson6 Chapter1.txt Step2im](images/Lesson6_Chapter1_step2im.PNG)  
 步骤 3：添加脚本, 切换放置提示。 单击 "添加组件", 然后搜索切换放置提示。 这是一个自定义脚本, 通过它可以打开和关闭前面提到的半透明提示 (带有 x 光材料的对象)。  
@@ -132,7 +132,7 @@ Part Assembly Demo script (如上所示) 是管理用户在农历模块上的用
 
 ![Lesson6 Chapter4 Step3im](images/Lesson6_Chapter4_step3im.PNG)
 
-> 注意:请注意, 默认情况下, GameObject 配置为 ResetPlacement。 这会为 RocketLauncher_Tutorial 的每个子对象广播一条名为 ResetPlacement 的消息。 具有 ResetPlacement () 方法的任何对象通过重置其位置来响应该消息。 
+> 注意：请注意, 默认情况下, GameObject 配置为 ResetPlacement。 这会为 RocketLauncher_Tutorial 的每个子对象广播一条名为 ResetPlacement 的消息。 具有 ResetPlacement () 方法的任何对象通过重置其位置来响应该消息。 
 
 ### <a name="launching-the-lunar-module"></a>启动农历模块
 本部分介绍如何配置 "启动" 按钮 explaings。 这允许用户按下该按钮, 并将农历模块启动到空间中。
