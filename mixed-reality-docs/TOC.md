@@ -22,6 +22,7 @@
 #### [保存和查找文件](saving-and-finding-your-files.md)
 #### [查看照片](see-your-photos.md)
 #### [更新 HoloLens](updating-hololens.md)
+#### [在新空间中使用 HoloLens](use-hololens-in-new-spaces.md)
 #### [设备共享](device-sharing.md)
 #### [HoloLens 演示调整和清理指南](hololens-demo-guide.md)
 ### 沉浸式头戴显示设备
