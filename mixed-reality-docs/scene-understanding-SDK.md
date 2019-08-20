@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/19
 ms.topic: article
 keywords: 场景了解, 空间映射, Windows Mixed Reality, Unity
-ms.openlocfilehash: 88138622987800ff86a24d05e1308e694e2dd2b1
-ms.sourcegitcommit: c4c293971bb3205a82121bbfb40d1ac52b5cb38e
+ms.openlocfilehash: 152ffdbd84798c164963717a8dc41beb2e1a0902
+ms.sourcegitcommit: e9a55528965048ce34f8247ef6e544f9f432ee37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68941234"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559861"
 ---
 ## <a name="scene-understanding-sdk-overview"></a>场景理解 SDK 概述
 
@@ -266,7 +266,11 @@ foreach (var mesh in firstFloor.Meshes)
         return sceneToUnityTransform;
     }
 
-    // Converts from right-handed to left handed coordinates
+    /// <summary>
+    /// Converts a transformation matrix from right handed (+x is right, +y is up, +z is back) to left handed (+x is right, +y is up, +z is front).
+    /// </summary>
+    /// <param name="transformationMatrix">Right-handed transformation matrix to convert.</param>
+    /// <returns>Converted left-handed matrix.</returns>
     public System.Numerics.Matrix4x4 ConvertRightHandedMatrix4x4ToLeftHanded(System.Numerics.Matrix4x4 transformationMatrix)
     {
         transformationMatrix.M13 = -transformationMatrix.M13;

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: fc65dccfcbc181af0c0b321374c721797e120e5d
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: 43a6f02eaf09fcf43775374fae4fbe2d0bc8c346
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460339"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977981"
 ---
 # <a name="speech-sdk-learning-module---rocket-launcher-control-using-speech-commands"></a>Speech SDK 学习模块-使用语音命令的火箭启动器控件
 
@@ -23,17 +23,17 @@ ms.locfileid: "68460339"
 - 了解如何使用语音意向语音命令作为火箭控制输入命令。
 
 ## <a name="instructions"></a>说明
-1. 在本教程中, 我们将使用 "BaseModule" 资源将火箭启动器与语音命令集成。 为此, 我们需要将资产导入到项目中。 你可以使用此链接 (附加链接) 下载 "火箭启动器" 资产。 
+1. 在本教程中, 我们将使用 "BaseModule" 资源将火箭启动器与语音命令集成。 为此, 我们需要将资产导入到项目中。 你可以使用此[链接](https://github.com/microsoft/MixedRealityLearning/releases/tag/1.2)下载 "火箭启动器" 资产。 
 
 2. 若要导入资产, 请转到 "资产-> 导入包-> 自定义包" > 导航到下载的文件, 然后单击 "导入"。
 
 ![module4chapter5step1](images/module4chapter5step1.PNG)
 
-3. 导入 "火箭启动器" 资产后, 在 "火箭启动器" 文件夹内导航 > Prototyping-> 选择 "火箭 Launcher_Complete", 然后将其拖放到现有场景层次结构。
+3. 导入 "基本模块资产" 资产后, 在 "基本模块资产" 文件夹中导航-> Prototyping-> 选择 "火箭 Launcher_Complete", 然后将其拖放到现有场景层次结构。
 
 ![module4chapter5step2](images/module4chapter5step2.PNG)
 
-4. 现在, 我们需要将 "火箭启动器" 与我们在上一课中处理的 LUIS 项目集成 (lesson4 的链接)。 为此, 请在层次结构中展开 "火箭 Launcher_Complete" prefab, 并找到 "LaunchRoundButton"、"ResetRoundButton" 和 "位置提示" 按钮。
+4. 现在, 我们需要将 "火箭启动器" 与我们在上一[课](mrlearning-speechSDK-ch4.md)中介绍的 LUIS 项目相集成。 为此, 请在层次结构中展开 "火箭 Launcher_Complete" prefab, 并找到 "LaunchRoundButton"、"ResetRoundButton" 和 "位置提示" 按钮。
 
 ![module4chapter5step3](images/module4chapter5step3.PNG)
 

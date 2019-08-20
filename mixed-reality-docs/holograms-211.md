@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程, 手势
-ms.openlocfilehash: 76d2b4c0ac3d0a3783b091f7dc8c39548a18b548
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 694f51f1b56588e100d6d2676a8194d7e9936133
+ms.sourcegitcommit: e9a55528965048ce34f8247ef6e544f9f432ee37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63522450"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559884"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -46,7 +46,7 @@ ms.locfileid: "63522450"
 
 ## <a name="before-you-start"></a>开始之前
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>先决条件
 
 * 配置了正确[工具](install-the-tools.md)的 WINDOWS 10 电脑。
 * 一些基本C#的编程能力。
@@ -84,7 +84,7 @@ ms.locfileid: "63522450"
 2. 如果场景 **/ModelExplorer**未列在 "**生成**" 中, 请单击 "**添加打开的场景**" 添加场景。
 3. 如果要专门针对 HoloLens 进行开发, 请将 "**目标设备**" 设置为 " **hololens**"。 否则, 请将其留在**任何设备**上。
 4. 确保将 "**生成类型**" 设置为 " **D3D** ", 并将 " **SDK** " 设置为 "**最新安装**的" (应为 SDK 16299 或更高版本)
-5. 单击“生成” 。
+5. 单击“生成”。
 6. 创建名为 "App" 的**新文件夹**。
 7. 单击**应用**文件夹。
 8. 按**选择文件夹**, Unity 将开始为 Visual Studio 生成项目。
@@ -120,6 +120,9 @@ ms.locfileid: "63522450"
 
 * 订阅手动跟踪事件。
 * 使用光标反馈向用户显示要跟踪的用户。
+
+>[!NOTE]
+>在 HoloLens 2 上, 只要指针可见 (而不仅仅是指手指处于向上状态时), 就会触发指针。
 
 ### <a name="instructions"></a>说明
 
@@ -316,7 +319,7 @@ public class GestureAction : MonoBehaviour, INavigationHandler, IManipulationHan
 1. 在 "**层次结构**" 面板中, 选择 " **CursorWithFeedback** " 对象。
 2. 在**检查器**面板中, 单击 "**添加组件**" 按钮。
 3. 在菜单中, 键入搜索框的**指导**。 选择搜索结果。
-4. 在 "**项目**"**面板中**, 找到 " **HandGuidanceFeedback**资产"。
+4. 在 "**项目**"面板中, 找到 " **HandGuidanceFeedback**资产"。
 5. 将**HandGuidanceFeedback**资产拖放到 "**检查器**" 面板中的 "**手写指南" 指示符**属性上。
 
 ### <a name="build-and-deploy"></a>生成和部署
@@ -364,7 +367,7 @@ GestureManager.cs 和 AstronautManager.cs 将允许我们执行以下操作:
 
 接下来, 我们将在游标上设置操作反馈。
 
-1. 在 "**项目**"**面板中**, 找到 " **PathingFeedback**资产"。
+1. 在 "**项目**"面板中, 找到 " **PathingFeedback**资产"。
 2. 将**PathingFeedback** prefab 拖放到**层次结构**中的**CursorWithFeedback**对象上。
 3. 在 "**层次结构**" 面板中, 单击 " **CursorWithFeedback**"。
 4. 将**PathingFeedback**对象从**层次结构**中拖放到**检查器**的 "**游标反馈**" 组件中的 "**检测到路径" 游戏对象**属性上。
@@ -491,7 +494,7 @@ public class GestureAction : MonoBehaviour, INavigationHandler, IManipulationHan
 * 将索引向下减小到拇指, 并使其 pinched 在一起。
 * 在四处移动手时, astronaut 也会移动 (这是操作)。
 * 抬起索引手指, 停止操作 astronaut。
-* 注意:如果在移动手前未说 "移动 Astronaut", 则将改用导航手势。
+* 注意：如果在移动手前未说 "移动 Astronaut", 则将改用导航手势。
 * 说 "旋转 Astronaut" 返回到 rotatable 状态。
 
 ## <a name="chapter-5---model-expansion"></a>第5章-模型扩展
