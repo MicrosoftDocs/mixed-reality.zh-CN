@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: 图形, cpu, gpu, 呈现, 垃圾回收, hololens
-ms.openlocfilehash: b0821f07184bff8630f6b6af0d0fc461f6fcd133
-ms.sourcegitcommit: 8f3ff9738397d9b9fdf4703b14b89d416f0186a5
+ms.openlocfilehash: 16a923697985e3686992dc31ea8e6fc39249c276
+ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67843337"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817342"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity 性能建议
 
@@ -230,7 +230,19 @@ Unity 能够批处理多个静态对象, 以减少对 GPU 的调用。 静态批
 
 ### <a name="optimize-depth-buffer-sharing"></a>优化深度缓冲区共享
 
-通常建议在**播放机 XR 设置**下启用**深度缓冲区共享**以优化[全息影像稳定性](Hologram-stability.md)。 但是, 在使用此设置启用基于深度的后期 reprojection 时, 建议选择**16 位深度格式**而不是**24 位深度格式**。 16位深度缓冲区会大幅降低与深度缓冲区通信关联的带宽 (以及与电源相关的能力)。 这可能是一项巨大的能源优势, 但它仅适用于具有较小深度范围的体验[, 因为它](https://en.wikipedia.org/wiki/Z-fighting)比24位的16位更有可能发生。 若要避免这些项目, 请修改[Unity 相机](https://docs.unity3d.com/Manual/class-Camera.html)的 "近处/远处" 剪辑平面以降低精度。 对于基于 HoloLens 的应用程序, 50m (而不是 Unity 的默认 1000m) 的 far 剪裁平面通常可以消除任何 z 反击。
+通常建议在**播放机 XR 设置**下启用**深度缓冲区共享**以优化[全息影像稳定性](Hologram-stability.md)。 但是, 在使用此设置启用基于深度的后期 reprojection 时, 建议选择**16 位深度格式**而不是**24 位深度格式**。 16位深度缓冲区会大幅降低与深度缓冲区通信关联的带宽 (以及与电源相关的能力)。 这可能是一项巨大的能源优势, 但它仅适用于具有较小深度范围的体验, 因为它比24位的16位更有可能发生 [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) 。 若要避免这些项目, 请修改[Unity 相机](https://docs.unity3d.com/Manual/class-Camera.html)的 "近处/远处" 剪辑平面以降低精度。 对于基于 HoloLens 的应用程序, 50m (而不是 Unity 的默认 1000m) 的 far 剪裁平面通常可以消除任何 z 反击。
+
+### <a name="avoid-full-screen-effects"></a>避免全屏效果
+
+在全屏幕上操作的方法可能相当昂贵, 因为它们的数量级顺序是每个帧的数百万个操作。 因此, 建议避免使用[后期处理效果](https://docs.unity3d.com/Manual/PostProcessingOverview.html), 如抗锯齿、布隆等。 
+
+### <a name="optimal-lighting-settings"></a>最佳照明设置
+
+Unity 中的[实时全局照明](https://docs.unity3d.com/Manual/GIIntro.html)可提供数量的视觉效果, 但涉及到非常昂贵的照明计算。 建议通过**窗口** > 渲染 > **照明设置**来禁用每个 Unity 场景文件的实时全局照明 > 取消选中 "**实时全局照明**"。 
+
+此外, 建议禁用所有阴影转换, 因为这也会将昂贵的 GPU 传递添加到 Unity 场景。 可以按光禁用阴影, 但也可以通过质量设置对其进行控制整体。 
+ 
+**编辑**项目设置, 然后选择 "质量" 类别 > 为 UWP 平台选择低质量。 >  还可以仅设置**shadows**属性来**禁用阴影**。
 
 ### <a name="reduce-poly-count"></a>减少 poly 计数
 
