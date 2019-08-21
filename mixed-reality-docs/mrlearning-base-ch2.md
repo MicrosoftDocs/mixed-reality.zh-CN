@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 925ab825c2716a847726ac763dc6800914d87c6b
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 45833ba22305acedb45bfdc9752c0b278a693190
+ms.sourcegitcommit: 9636573eabdc78db6875e831a9c894a2ff173a99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68702038"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629184"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.创建用户界面并配置混合现实工具包 
 
@@ -34,7 +34,7 @@ ms.locfileid: "68702038"
 
 >注意:默认情况下，MRTK 配置文件不可编辑。 这些是可以复制和自定义的默认配置文件模板。 自定义项和配置文件有多个层。 因此, 在配置一个或多个设置时, 可以复制和自定义多个配置文件。
 >
->若要了解有关 MRTK 配置文件及其体系结构的详细信息, 请访问[MRTK 文档](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/SpatialAwareness/SpatialAwarenessSystemArchitecture.html>)。
+>若要了解有关 MRTK 配置文件及其体系结构的详细信息, 请访问[MRTK 文档](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html>)。
 
 2. 创建默认配置文件的副本以对其进行自定义。 若要复制默认配置文件, 请单击 "复制 & 自定义 (请参阅映像)。 随即会创建 MRTK 配置文件的副本。 现在，可以使用自己的 MRTK 配置文件副本，自定义此配置文件中的任何设置。 还需要对此配置文件下嵌套的任何其他配置文件重复执行复制和自定义步骤, 如后续步骤中所述。
 
