@@ -7,12 +7,12 @@ ms.date: 04/12/19
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 测试, MRTK, MRTK 版本 2, HoloLens 2
-ms.openlocfilehash: ccf2bb9de1e69cfe306fe9fa8f7d3b80158348d4
-ms.sourcegitcommit: 23e172664c2ee1220fe3b4468c104b37ef3ceda9
+ms.openlocfilehash: 307a20f14c9602fd84b25bdec481e9a6076c5e78
+ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601607"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020197"
 ---
 # <a name="getting-your-existing-application-ready-for-hololens-2"></a>让现有应用程序准备好使用 HoloLens 2
 
@@ -39,7 +39,7 @@ ms.locfileid: "68601607"
 开发人员应该评估其项目中当前存在的任何[插件依赖项](https://docs.unity3d.com/Manual/Plugins.html)，以及是否可为 ARM64 生成这些 DLL。 如果无法为 ARM64 生成必需的依赖项插件，则必须使用 Unity 2018 LTS。
 
 
-| Unity 2018.3.x | Unity 2019.1+ |
+| Unity 2018.4.x | Unity 2019.1+ |
 |----------|-------------------|
 | ARM32 生成支持 | ARM32 和 ARM64 生成支持 |
 | 稳定的 LTS 生成版本 | Beta 稳定性 |
