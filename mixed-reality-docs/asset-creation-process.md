@@ -1,17 +1,17 @@
 ---
 title: 资产创建过程
 description: 有关为混合现实体验创建资产的指导。
-author: paseb
-ms.author: paseb
+author: shengkait
+ms.author: shentan
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 资产, 创建, 处理, 预算, 多边形, 纹理, 着色器, 性能
-ms.openlocfilehash: 513a9856ac35e4229cfb7bc8bcb92d9d6a152980
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: f7bee55249764af37453ea0fab01730b43907569
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692298"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896507"
 ---
 # <a name="asset-creation-process"></a>资产创建过程
 
@@ -60,7 +60,7 @@ Windows Mixed Reality 构建于 Microsoft 投入了 DirectX 的数十年中。 �
 
 **资产复杂性**
 * 三角形/多边形有多少？
-* 着色器的复杂程度如何？
+* 着色器的复杂程度如何？ 使用混合现实工具包时, 建议使用[混合现实工具包标准着色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_MRTKStandardShader.md)来降低着色器的复杂性。
 
 开发人员和艺术家都必须考虑设备和图形引擎的功能。 Microsoft HoloLens 包含内置于设备中的所有计算和图形。 它共享开发人员在移动平台上所能找到的功能。
 

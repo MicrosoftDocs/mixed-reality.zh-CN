@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, 混合现实, 学院, unity, 教程, api, 媒体服务, 流视频, 360, 沉浸, vr
-ms.openlocfilehash: f6974ab6a72828a557649d5dc65b4e505a7484ff
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: e27bda2a9309f335feb0056703da492555c39fde
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63556117"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896586"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -47,7 +47,7 @@ ms.locfileid: "63556117"
 </tr>
 </table>
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 > [!NOTE]
 > 本教程面向具有 Unity 和C#的基本经验的开发人员。 另外请注意, 本文档中的先决条件和书面说明表明了在编写时已测试和验证的内容 (5 月 2018)。 您可以随意使用最新的软件 (如[安装工具一文](install-the-tools.md)中所述), 但不应假定本课程中的信息将与下面列出的内容完全匹配。
@@ -148,7 +148,7 @@ ms.locfileid: "63556117"
 
     6.  还需要确认是否已了解应用于此服务的条款和条件。
 
-    7.  单击“创建”  。
+    7.  单击“创建”。
 
         ![Azure 门户](images/AzureLabs-Lab6-08.png)
 
@@ -205,7 +205,7 @@ ms.locfileid: "63556117"
 
         ![Azure 门户](images/AzureLabs-Lab6-16.png)
 
-16. 单击“创建”  按钮。
+16. 单击“创建”按钮。
 
 17. 你将注意到添加了**编码作业**的栏, 单击该栏, 此时将显示一个面板, 其中显示了编码进度。
 
@@ -226,7 +226,7 @@ ms.locfileid: "63556117"
 
     ![Azure 门户](images/AzureLabs-Lab6-21.png)
 
-20. 你将看到你的视频以及其他的 **资产类型*多比特率 MP4***。
+20. 你将看到视频以及另一个, 它属于**资产类型 "_多比特率_** "。
 
     ![Azure 门户](images/AzureLabs-Lab6-22.png)
 

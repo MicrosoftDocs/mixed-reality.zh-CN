@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity, 设置, 混合现实
-ms.openlocfilehash: 8afcefb49a860d66a372ebd3d0c4bcdb43038813
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 395363cb99fd7e9e61adbea8ebc341aab50755e0
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415447"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896529"
 ---
 # <a name="recommended-settings-for-unity"></a>适用于 Unity 的推荐设置
 
@@ -67,9 +67,9 @@ Unity 提供了一组默认选项, 这些选项通常是所有平台的平均事
 
 为了使 Windows Mixed Reality 平台优化全息影像稳定性, 它依赖于深度缓冲区来精确并匹配屏幕上呈现的所有全息影像。 因此, 在上进行深度缓冲共享时, 在呈现颜色时, 这一点很重要, 也是呈现深度。 在 Unity 中, 大多数不透明或 TransparentCutout 的材料将默认呈现深度, 但透明和文本对象通常不会呈现深度, 尽管这是依赖于着色器等。 
 
-如果使用混合现实工具包标准着色器来呈现透明对象的深度:
+如果使用[混合现实工具包标准着色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_MRTKStandardShader.md)来呈现透明对象的深度:
 1) 选择使用 MRTK 标准着色器的透明材料, 并打开检查器编辑器窗口
-2) 将**呈现模式**设置为 "**自定义**", 然后将**模式**设置为**透明**, 最后将 "**深度写入**" 设置为**打开**
+2) 选择深度缓冲区共享警告中的 "**立即修复**" 按钮。 也可以通过将**呈现模式**设置为 "**自定义**", 然后将**模式**设置为 "**透明**" 并最终将 **"** **深度写入**" 设置为 "手动执行"
 
 >[!NOTE]
 > 在更改这些值时, 开发人员应注意 Z 反击, 同时还应注意相机的近/远平面设置。 当两个 gameobject 尝试呈现到相同的像素并由于深度缓冲区保真的限制 (即 z 深度), Unity 无法识别哪个对象位于另一个对象之前。 开发人员将注意两个游戏对象之间的闪烁, 因为它们会*抵抗*相同的 z 深度值。 这可以通过切换到24位深度格式来解决, 因为每个对象的值的范围都要根据其 z 深度从相机计算。

@@ -1,17 +1,17 @@
 ---
 title: 案例研究-更多个人计算能力
 description: 未来的机会已通过构建产品来发现。 这些产品提供的解决方案展示了需要提前做哪些工作。
-author: mavitazk
-ms.author: mavitazk
+author: danielescudero
+ms.author: daescu
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, HoloLens, 案例研究, 构想, 方案
-ms.openlocfilehash: 64ec4b9e55758b760c294d933fb80a2a638e0088
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 9e142d72866079e34e6f4a8df78b79d6f846275e
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63522972"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896526"
 ---
 # <a name="case-study---the-pursuit-of-more-personal-computing"></a>案例研究-更多个人计算能力
 
@@ -46,7 +46,7 @@ ms.locfileid: "63522972"
 计算工作过于频繁。 抓取我们的设备, 告诉他们我们是谁以及我们想要的。 抗争我们思考并调整我们所说的内容, 以便与我们认为计算机需要听到的内容相匹配。
 
 混合现实的承诺 (特别是在现实生活中, 只是在现实世界中), 这就减少了与技术的交互。 降低认知负载, 因为用户会导航到目前为止的计算的抽象层。 如何设计不仅利用上下文理解的体验, 还可以更轻松地绘制见解和采取措施呢？ 两个共同技术也在尝试解决此问题:
-* 语音 **, 就**语音和对话而言, 这使用户能够通过更自然的方式与计算机通信: 通过文本或向对话硬件发出命令来回应机器人。
+* 语音, 就语音和对话而言, 这使用户能够通过更自然的方式与计算机通信: 通过文本或向对话硬件发出命令来回应机器人。
 * **AI**是从越来越复杂的数据集中提取见解的电源体验。 虽然 AI 非常大, 但最近的进度已经为依赖于计算机视觉、更自然数字助手和向用户推荐操作的设备奠定了基础。
 
 混合现实提供了一个将这些技术合并为单一用户体验的媒介。 当戴上全息耳机时, 语音成为一种功能强大的、自然的输入方法。 AI 充当关键的密码, 以 contextualize 连接物理和数字世界的大量信息。 这就是 Sataya Nadella 将 HoloLens 称为 "终极计算机" 的原因, 它是一种 culminating 设备, 适用于三种核心技术。 一种平台, 使人们能够更轻松地与设备和服务的不断增长的复杂性交互。

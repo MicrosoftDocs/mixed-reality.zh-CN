@@ -6,12 +6,12 @@ ms.author: pinkb
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, 设计, 颜色, 细, 材料
-ms.openlocfilehash: 3f8ee8edfe4cbbaf8a55b3c4a9125f752823be9c
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: bef0c8b63c109baa536e4192ce94919eb888faf2
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63526504"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896511"
 ---
 # <a name="color-light-and-materials"></a>颜色、光线和材料
 
@@ -28,7 +28,7 @@ ms.locfileid: "63526504"
 ## <a name="fundamentals-of-rendering-on-holographic-devices"></a>全息设备上呈现的基本知识
 * **全息设备具有累加性显示器**–通过向现实世界中的灯光添加光源来创建全息影像–白色将显示为明亮, 而黑色将显示为透明。
 * **颜色影响因用户的环境而异**–用户房间内有很多不同的照明条件。 创建具有适当的对比度级别的内容, 以便清晰地提供帮助。
-* **避免动态照明**–在全息体验中均匀发亮的全息影像是最有效的。 使用 "高级" 时, 动态照明可能会超出移动着色器的功能。
+* **避免动态照明**–在全息体验中均匀发亮的全息影像是最有效的。 使用 "高级" 时, 动态照明可能会超出移动设备的功能。 需要动态照明时, 建议使用[混合现实工具包标准着色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_MRTKStandardShader.md)。 
 
 ## <a name="designing-with-color"></a>用 color 设计
 

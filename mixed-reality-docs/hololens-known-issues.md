@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/10/2019
 ms.topic: article
 keywords: 故障排除、已知问题、帮助
-ms.openlocfilehash: 9ec15957b75ca3ec51dd01f5b9b4bc7371912c5a
-ms.sourcegitcommit: a11999e92e4e87516a6dcceabc2c5ed7642f1fd9
+ms.openlocfilehash: f043164f21f20925a78b59057e14ac4607d0d3f1
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68887268"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896548"
 ---
 # <a name="hololens-known-issues"></a>HoloLens 已知问题
 
@@ -127,6 +127,9 @@ Visual Studio 发布了 VS 2019 版本 16.2, 其中包括对此问题的修复�
 在 OOBE & 设置期间, 凭据超时为2分钟。 用户名/密码需要在2分钟内输入, 否则 "用户名" 字段会自动清除。
 
 建议使用蓝牙键盘输入长密码。
+
+>[!NOTE]
+> 如果在 OOBE 期间选择了错误的网络, 则需要完全重置设备。 可在此处找到相关说明[。](https://docs.microsoft.com/en-us/windows/mixed-reality/reset-or-recover-your-hololens#perform-a-full-device-recovery) 
 
 ## <a name="device-update"></a>设备更新
 * 30秒后, shell 可能会消失一次。 请执行**布隆**手势以恢复会话。
