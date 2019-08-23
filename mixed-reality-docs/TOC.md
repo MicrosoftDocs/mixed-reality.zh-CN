@@ -31,6 +31,7 @@
 #### [爱好者指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [硬件配件](hardware-accessories.md)
 ### [HoloLens 演示调整和清理指南](hololens-demo-guide.md)
+### [使用 Windows Mixed Reality 实现基于位置的娱乐](location-based-experiences.md)
 ## 核心构建基块
 ### [凝视](gaze.md)
 ### [手势](gestures.md)
