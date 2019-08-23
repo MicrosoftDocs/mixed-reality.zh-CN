@@ -6,17 +6,58 @@ ms.author: xerxesb
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 校准, 舒适, 视觉对象, 质量, ipd
-ms.openlocfilehash: 5f8e6aef1df0efe4c64c807e627f69c7949363f2
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: 354d7eb74666471f24a6b5774e5772260b1e3570
+ms.sourcegitcommit: 5d3be2d7569d912011ea114c0a283bc3c635d5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974805"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979484"
 ---
 # <a name="improve-visual-quality-and-comfort"></a>改善视觉质量和舒适
 HoloLens、HoloLens 2 和 Windows Mixed Reality 沉浸式耳机提供不同的方法来改善视觉体验的质量。 
 
-## <a name="hololens"></a>HoloLens
+## <a name="hololens-2"></a>Hololens 2
+
+### <a name="calibration"></a>校准
+
+Hololens 2 旨在为客户提供最高质量的视觉图像和舒适。 使用目视跟踪技术来改善查看和与虚拟环境交互的用户体验。  
+在 HoloLens 2 上, 系统会提示你在设备安装过程中校准你的视觉对象。 要求用户查看固定目标集。 这允许设备为用户调整全息影像渲染, 以确保准确定位全息影像、舒适的3D 查看体验和改进的显示质量。 所有调整都是动态发生的, 无需手动优化。 通过使用眼睛作为特征点, 可调整设备, 使每个用户和视觉对象经过调整, 因为耳机会略微使用。 目视跟踪由系统在内部使用, 开发人员无需执行任何操作即可利用此功能。 此信息不适用于开发人员。 在 Hololens 2 上, 执行校准还可以确保为每个用户准确地目视跟踪。 眼动跟踪可让应用程序实时跟踪用户正在注视的位置。 这是开发人员可利用的主要功能, 实现全新级别的上下文、人工理解和智能体验中的交互。  
+校准以本地方式存储在设备上, 并且不与任何帐户信息关联。 没有已使用该设备的用户没有校准的记录。 这意味着新用户首次使用设备时, 系统将提示用户校准视觉对象, 以及以前选择退出校准的用户或校准未成功的用户。 在**设置** > 隐私保护跟踪 > 程序中, 始终可以从设备中删除校准。 
+
+### <a name="calibration-failures"></a>校准失败
+
+校准应该适用于大多数用户, 但在某些情况下, 用户可能无法成功校准。  
+校准失败的一些示例如下:
+- 在校准体验过程中, 用户发生了注意力, 未关注校准目标
+- 脏或有划痕的设备面板或设备面板未正确定位 
+- 有脏或有划痕
+- 某些类型的 contact 重用功能区和眼镜 (彩色触点重用功能区、toric contact 重用功能区、红外阻挡眼镜、和等)
+- 更明显的组成部分, 一些 eyelash 扩展
+- 眼睛和/或设备面板的 Occlusions (眼镜)
+- 眼睛 physiology, 某些眼睛情况和/或目视外科 (一些狭窄的眼睛、长 eyelashes、amblyopia、nystagmus、LASIK 或其他眼睛 surgeries 等的一些情况)
+
+如果校准失败, 请尝试以下修复之一: 
+- 清理设备面板
+- 清理眼镜
+- 将设备面板一直推送到
+- 确保没有阻碍传感器或眼睛 (例如头发) 
+- 请确保房间内有足够的光线, 并且不受直射直射
+- 请确保在校准过程中仔细关注目标
+
+如果你遵循了所有准则, 并且校准仍失败, 则可以在 "**设置** > " "**系统** > **校准**" 中禁用校准提示。 ' 当新用户使用此 Hololens 时, 会自动要求运行 "目视校准"。 请注意, 这可能会导致更糟的全息图呈现质量和 discomfort。
+
+### <a name="launching-the-calibration-app-from-settings"></a>从设置启动校准应用
+1. 使用 "开始手势" 转到 "[开始" 菜单](navigating-the-windows-mixed-reality-home.md#start-menu)。
+2. 如果未固定**设置**, 请选择 "**所有应用**" 以查看所有应用。
+3. 启动**设置**。
+4. 导航到**系统** > 校准 > **目视校准**, 并选择 "**运行目视校准**"。
+
+### <a name="calibration-when-sharing-a-device--session"></a>共享设备/会话时的校准
+
+Hololens 2 可以在人员之间共享, 无需每个人进行设备设置。 如果用户是设备的新用户, 则在将设备放在 head 上时, Hololens 2 将提示用户校准视觉对象。 如果用户之前在设备上校准了视觉对象, 则在用户将设备放在打印头上时, 显示器将无缝调整以获得质量和舒适的观看体验。 
+
+
+## <a name="hololens"></a>Hololens
 
 校准 IPD (interpupillary 距离) 可以提高视觉对象的质量。
 
@@ -53,21 +94,6 @@ Cortana 引入后, 第一个安装步骤是校准。 建议你在此设置阶段
 
 ![从 "设置" 应用启动校准应用](images/calibration-settings-500px.jpg)
 
-## <a name="hololens-2"></a>HoloLens 2
-
-### <a name="calibration"></a>校准 
-
-在 HoloLens 2 上, 系统会提示你在设备安装过程中校准你的视觉对象。 要求用户查看固定目标集。 这允许设备调整全息图呈现, 使用户能够准确定位全息影像、更舒适的3D 查看体验和改进的显示质量。 所有调整都是动态发生的, 无需手动优化。 
-
-### <a name="calibration-when-sharing-a-device"></a>共享设备时的校准 
-
-Hololens 2 设备可以在不同人员之间共享, 无需每个人进行设备设置。 如果用户是设备的新用户, 则在将设备放在 head 上时, Hololens 2 将提示用户校准视觉对象。 如果用户已在设备上校准视觉对象, 则在用户将设备放在打印头上时, 将无缝调整显示器的质量和舒适的观看体验。  
-
-### <a name="launching-the-calibration-app-from-settings"></a>从设置启动校准应用
-1. 使用 "开始手势" 转到 "开始" 菜单。
-2. 选择 **+** 若要查看所有应用，如果**设置**不固定到开始。
-3. 启动**设置**。
-4. 导航到 "**系统** > **实用程序**" 并选择 "**打开校准**"。
 
 ## <a name="immersive-headsets"></a>沉浸式头戴显示设备
 
