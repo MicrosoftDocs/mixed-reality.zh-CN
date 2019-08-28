@@ -6,12 +6,12 @@ ms.author: dobrown
 ms.date: 05/15/2019
 ms.topic: article
 keywords: vr, lbe, 基于位置的娱乐, vr 拱廊类, 拱廊类, 沉浸, qr, qr 码, hololens2
-ms.openlocfilehash: d51da88aa7bff1dc5c6d3068cb31793891c71e61
-ms.sourcegitcommit: 60f73ca23023c17c1da833c83d2a02f4dcc4d17b
+ms.openlocfilehash: 736ab265db2145dd784c435e525059ed3a2fcbbb
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565999"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047159"
 ---
 # <a name="qr-code-tracking"></a>QR 代码跟踪
 
@@ -248,6 +248,9 @@ QR 检测适用于一系列角度 + = 45deg。 这是为了确保我们有合适
 Windows Mixed Reality 设备检测驱动程序的系统级别的 QR 码。 设备重新启动后, 检测到的 QR 码已消失, 并将在下次重新检测为新对象。
 
 建议将应用程序配置为忽略特定时间戳之前的 QR 码。 目前, API 不支持清除 QR 码历史记录。
+
+### <a name="qr-code-placement-in-a-space"></a>空格中的 QR 码位置
+有关在何处以及如何放置 QR 码的建议, 请参阅[HoloLens 环境注意事项](environment-considerations-for-hololens.md)。
 
 ## <a name="qr-api-reference"></a>QR API 参考
 

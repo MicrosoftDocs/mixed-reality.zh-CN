@@ -6,12 +6,12 @@ ms.author: dobrown
 ms.date: 04/22/2019
 ms.topic: article
 keywords: 全息框架, 视图字段, fov, 校准, 空间, 环境, 操作方法
-ms.openlocfilehash: fd5c5020916b3fde6f91663135c3bc2b6c334b44
-ms.sourcegitcommit: 60f73ca23023c17c1da833c83d2a02f4dcc4d17b
+ms.openlocfilehash: cc856c42aaf4ddfca8365f63ab0c7df1a1a3b248
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565986"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047080"
 ---
 # <a name="environment-considerations-for-hololens"></a>HoloLens 环境注意事项
 
@@ -37,7 +37,7 @@ Windows Mixed Reality 使用视觉光源来跟踪用户的位置。 当环境太
 #### <a name="types-of-lighting"></a>照明类型
 空间中的不同类型的灯光还会影响跟踪。 灯泡脉冲: 通过其运行的 AC 电-如果 AC 频率为 50Hz, 则光在50Hz 时脉冲。 对于人力, 此闪烁不会注意到。 不过, HoloLens 的30fps 照相机会发现这些变化-某些帧将会很好地发亮, 有些帧会发亮, 有些则会过度曝光, 因为照相机会尝试弥补灯光脉冲。
 
-在美国, 电力频率标准是 60Hz, 因此灯泡脉冲与 HoloLens "帧速率-60Hz- 但是, 许多国家/地区的 AC frequency 标准为 50Hz, 这意味着在脉冲期间将会拍摄一些 Hololens 帧, 而其他国家/地区则不会。 特别是, 欧洲的荧光灯会导致问题。 
+在美国, 电力频率标准是 60Hz, 因此灯泡脉冲与 HoloLens "帧速率-60Hz- 但是, 许多国家/地区的 AC frequency 标准为 50Hz, 这意味着在脉冲期间将会拍摄一些 HoloLens 帧, 而其他国家/地区则不会。 特别是, 欧洲的荧光灯会导致问题。 
 
 您可以尝试解决闪烁的问题。 温度、灯泡期限和预热周期是荧光灯闪烁并替换电灯泡的常见原因。 加强电灯泡并确保当前绘图也是固定的。 
 
@@ -46,7 +46,7 @@ HoloLens 使用唯一的环境特征点 (也称为*功能*) 在空间中找到�
 
 设备几乎无法在功能不佳的区域中进行跟踪, 因为设备无法了解空间的位置。 将功能添加到空间的墙壁通常是改善跟踪的好办法。 海报, 将贴为墙壁、植物、unique 对象或其他类似项目的符号。 杂乱的桌面是导致良好跟踪的环境的一个很好的示例-单个区域中有大量不同的功能。 
 
-此外, 在同一空间中使用唯一功能。 例如, 在一堵墙上重复多次的同一海报会导致设备混乱, 因为 HoloLens 不知道它正在寻找哪个重复性海报。 添加独特功能的一种常用方法是使用屏蔽磁带来沿空间的墙壁和地面创建独特的 nonrepetitve 模式。 
+此外, 在同一空间中使用唯一功能。 例如, 在一堵墙上重复多次的同一海报会导致设备混乱, 因为 HoloLens 不知道它正在寻找哪个重复性海报。 添加独特功能的一种常用方法是使用屏蔽磁带来创建在空间的墙壁和地面上的独特、非重复的模式。 
 
 问问自己的一个不错的问题是-如果你只看到一小部分场景, 你是否可以在空间中唯一找到自己？ 如果不是, 则设备可能也会出现问题跟踪。
 
@@ -54,6 +54,15 @@ HoloLens 使用唯一的环境特征点 (也称为*功能*) 在空间中找到�
 如果有两个外观相同的区域或区域, 则跟踪器可能会认为它们是相同的。 这会使设备引诱自己认为它是其他地方。 我们称之为*wormholes*的重复区域。 
 
 若要防止 wormholes, 请尝试阻止相同空间中的相同区域。 相同区域有时可以包括工厂工作站、构建、服务器机架或工作工作站上的 windows。 标签区域或向每个相似区域添加独特的功能可帮助减轻 wormholes。
+
+### <a name="qr-codes-in-environments"></a>环境中的 QR 代码。
+HoloLens 可能会出于多种原因 (例如, 对对象进行标记或为环境提供附加上下文) 使用[QR 码](qr-code-tracking.md), 但也可用于提高跟踪质量。 即使不使用嵌入到代码中的数据, 也会自动使用 QR 代码来帮助生成映射。
+
+如果使用 QR 码来帮助跟踪, 则需要在任何给定的视图字段内使用两个到三个代码。 在许多情况下, 这会转换为每隔2-3 米或6-9 英尺放置 QR 码。
+
+确保 QR 码为平面, 并牢固地连接到墙壁或其他表面。
+
+有关如何生成和打印 QR 码的最佳实践, 请参阅[qr 码检测的最佳实践](qr-code-tracking.md#best-practices-for-qr-code-detection)。
  
 ### <a name="movement-in-a-space"></a>在空间中移动
 如果你的环境不断变化和变化, 则设备没有要查找的稳定功能。 
@@ -110,4 +119,4 @@ HoloLens 使用唯一的环境特征点 (也称为*功能*) 在空间中找到�
 * [空间映射设计](spatial-mapping-design.md)
 * [影像](hologram.md)
 * [校准](calibration.md)
-* [在新空间中使用 Hololens](use-hololens-in-new-spaces.md)
+* [在新空间中使用 HoloLens](use-hololens-in-new-spaces.md)

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, 混合现实, 学院, unity, 教程, api, 计算机视觉, hololens, 沉浸, vr, microsoft bot framework v4, web 应用机器人, bot framework, microsoft 机器人
-ms.openlocfilehash: b828aa4415103d280459bd2c666004c994b3e59d
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 481693b5af8c946e1cb45dda5144e78a175fa771
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63542860"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047233"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -66,7 +66,7 @@ ms.locfileid: "63542860"
 2.  设置并测试你的 HoloLens。 如果需要支持设置 HoloLens, 请[确保访问 hololens 设置一文](https://docs.microsoft.com/hololens/hololens-setup)。 
 3.  在开始开发新的 HoloLens 应用程序时, 最好执行校准和传感器调整 (有时它可以帮助为每个用户执行这些任务)。 
 
-有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens)。
+有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens-2)。
 
 有关传感器优化的帮助, 请单击["HoloLens 传感器优化" 一文](sensor-tuning.md)。
 
@@ -249,7 +249,7 @@ ms.locfileid: "63542860"
     }
     ```
 
-14. 记住要保存所做的更改, 若要执行此操作, 请从 Visual Studio 顶部的工具栏**中转到** > "**全部保存**"。
+14. 记住要保存所做的更改, 若要执行此 > 操作, 请从 Visual Studio 顶部的工具栏中转到 "**全部保存**"。
 
 ## <a name="chapter-2---create-the-azure-bot-service"></a>第2章-创建 Azure Bot 服务
 
@@ -378,7 +378,7 @@ ms.locfileid: "63542860"
 
              ![设置 Unity 项目](images/AzureLabs-Lab312-25.png)
 
-        3. 打开新创建的**场景**文件夹, 然后*在 "文件名*: 文本" 字段中, 键入**BotScene**, 然后单击 "**保存**"。
+        3. 打开新创建的**场景**文件夹, 然后在 "文件名: 文本" 字段中, 键入**BotScene**, 然后单击 "**保存**"。
 
             ![设置 Unity 项目](images/AzureLabs-Lab312-26.png)
 
@@ -417,7 +417,7 @@ ms.locfileid: "63542860"
 ## <a name="chapter-5--camera-setup"></a>第5章–照相机设置
 
 > [!IMPORTANT]
-> 如果要跳过本课程的*Unity 设置*组件, 并继续直接进入代码, 请随时下载[312 此 unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), 将其作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)导入项目, 然后继续从[第7章](#chapter-7-–-create-the-botobjects-class):
+> 如果要跳过本课程的*Unity 设置*组件, 并继续直接进入代码, 请随时下载[312 此 unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage), 将其作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)导入项目, 然后继续从[第7章](#chapter-8--create-the-botobjects-class):
 
 1.  在 "*层次结构" 面板*中, 选择 "**摄像机**"。 
 2.  选择后, 你将能够在 "*检查器" 面板*中看到**主相机**的所有组件。
@@ -1229,7 +1229,7 @@ ms.locfileid: "63542860"
 若要对应用程序进行全面测试, 需要将其旁加载到 HoloLens。
 在执行此操作之前, 请确保:
 
--   [**第4章**](#Chapter-4-–-Set-up-the-unity-project)中提到的所有设置都已正确设置。 
+-   [**第4章**](#chapter-4--set-up-the-unity-project)中提到的所有设置都已正确设置。 
 -   脚本**SceneOrganiser**已附加到**摄像机主**对象。 
 -   在**机器人**类中, 请确保已将**机器人机密密钥**插入到**botSecret**变量。
 
@@ -1243,7 +1243,7 @@ ms.locfileid: "63542860"
     ![从 Unity 生成应用](images/AzureLabs-Lab312-38.png)
 
 3.  如果尚未这样做, 请勾选**Unity C#项目**。
-4.  单击“生成” 。 Unity 将启动**文件资源管理器**窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为**应用**。 选择**应用**文件夹后, 单击 "**选择文件夹**"。 
+4.  单击“生成”。 Unity 将启动**文件资源管理器**窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为**应用**。 选择**应用**文件夹后, 单击 "**选择文件夹**"。 
 5.  Unity 将开始向**应用**文件夹生成项目。 
 6.  Unity 完成生成 (可能需要一些时间) 后, 它会在生成的位置打开 "**文件资源管理器**" 窗口 (检查任务栏, 因为它可能不会始终出现在窗口之上, 但会通知你添加了一个新窗口)。
 
@@ -1251,7 +1251,7 @@ ms.locfileid: "63542860"
 
 在 HoloLens 上部署:
 
-1.  你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式**。 要实现此目的，请执行以下操作：
+1.  你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式**。 为此，请执行以下操作:
 
     1. 在戴上 HoloLens 的同时, 请打开**设置**。
     2. 中转到**网络 & Internet > wi-fi > 高级选项**

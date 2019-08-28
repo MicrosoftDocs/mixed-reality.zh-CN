@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, 混合现实, 学院, unity, 教程, api, microsoft graph, hololens, 沉浸, vr
-ms.openlocfilehash: 04c72a7ef7724cfcc27867f7f003c171a6f7851f
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 775971c4e4289d2dc963dfa2bf033192d9f3489e
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694529"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047207"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -43,7 +43,7 @@ ms.locfileid: "67694529"
 </tr>
 </table>
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 > [!NOTE]
 > 本教程面向具有 Unity 和C#的基本经验的开发人员。 另外, 请注意, 本文档中的先决条件和书面说明表明了撰写时经过测试和验证的内容 (2018 年7月)。 你可以随意使用最新的软件 (如[安装工具](install-the-tools.md)一文中所述), 但不应假定本课程中的信息将与下面列出的内容完全匹配。
@@ -66,7 +66,7 @@ ms.locfileid: "67694529"
 2.  设置并测试你的 HoloLens。 如果需要支持设置 HoloLens, 请[确保访问 hololens 设置一文](https://docs.microsoft.com/hololens/hololens-setup)。 
 3.  在开始开发新的 HoloLens 应用程序时, 最好执行校准和传感器调整 (有时它可以帮助为每个用户执行这些任务)。 
 
-有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens)。
+有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens-2)。
 
 有关传感器优化的帮助, 请单击["HoloLens 传感器优化" 一文](sensor-tuning.md)。
 
@@ -101,7 +101,7 @@ ms.locfileid: "67694529"
 
     ![](images/AzureLabs-Lab311-06.png)
 
-7.  由于你希望你的应用程序访问用户的日历, 因此**选中名为**Calendar 的框, 然后单击 **"确定"** 。
+7.  由于你希望你的应用程序访问用户的日历, 因此选中名为 Calendar 的框, 然后单击 **"确定"** 。
 
     ![](images/AzureLabs-Lab311-07.png)
 
@@ -148,7 +148,7 @@ ms.locfileid: "67694529"
 
             ![](images/AzureLabs-Lab311-14.png)
 
-        3. 打开新创建的**场景**文件夹, 然后在 "文件名 *: 文本*" 字段中, 键入**MR_ComputerVisionScene**, 然后单击 "**保存**"。
+        3. 打开新创建的**场景**文件夹, 然后在 "文件名: 文本" 字段中, 键入**MR_ComputerVisionScene**, 然后单击 "**保存**"。
 
             ![](images/AzureLabs-Lab311-15.png)
 
@@ -194,7 +194,7 @@ ms.locfileid: "67694529"
 > [!IMPORTANT]
 > 如果要跳过本课程的*Unity 设置*组件, 并继续直接进入代码, 请随时下载此[unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20311%20-%20Microsoft%20Graph/Azure-MR-311.unitypackage), 将其作为[**自定义包**](https://docs.unity3d.com/Manual/AssetPackages.html)导入项目, 然后从[第5章继续](#chapter-5---create-meetingsui-class).
 
-若要在 Unity 内使用*Microsoft Graph* , 需要**使用 "** 但是, 可以使用 Microsoft Graph SDK, 但在生成 Unity 项目后, 它将要求添加 NuGet 包 (这意味着编辑项目后期生成)。 将所需的 Dll 直接导入到 Unity 中是更简单的方法。
+若要在 Unity 内使用*Microsoft Graph* , 需要使用 " 但是, 可以使用 Microsoft Graph SDK, 但在生成 Unity 项目后, 它将要求添加 NuGet 包 (这意味着编辑项目后期生成)。 将所需的 Dll 直接导入到 Unity 中是更简单的方法。
 
 > [!NOTE]
 > 当前 Unity 中存在一个已知问题, 需要在导入后重新配置插件。 解决 bug 后, 将不再需要这些步骤 (本部分中的 4-7)。
@@ -213,7 +213,7 @@ ms.locfileid: "67694529"
 
 3.  单击 "**导入**" 按钮, 将项添加到项目。
 
-4.  在 "*项目" 面板*中的 "**插件**" 下, 单击 " **MSGraph** " 文件夹, 然后**选择名为**"" 的插件。
+4.  在 "*项目" 面板*中的 "**插件**" 下, 单击 " **MSGraph** "文件夹, 然后选择名为 "" 的插件。
 
     ![](images/AzureLabs-Lab311-21.png)
 
@@ -628,7 +628,7 @@ ms.locfileid: "67694529"
 
 3.  双击脚本以通过 Visual Studio 打开它。
 
-4.  更改命名空间代码以匹配下面的代码, 并 **\[将 "\]** GazeInput" 标记添加到你的类的上方, 以便能够对其进行序列化:
+4.  更改命名空间代码以匹配下面的代码, 并将 " **\[\]** GazeInput" 标记添加到你的类的上方, 以便能够对其进行序列化:
 
     ```csharp
     using UnityEngine;
@@ -945,7 +945,7 @@ ms.locfileid: "67694529"
 
 2.  如果尚未这样做, 请勾选 **\# Unity C 项目**。
 
-3.  单击“生成” 。 Unity 将启动**文件资源管理器**窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为**应用**。 选择**应用**文件夹后, 单击 "**选择文件夹**"。
+3.  单击“生成”。 Unity 将启动**文件资源管理器**窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为**应用**。 选择**应用**文件夹后, 单击 "**选择文件夹**"。
 
 4.  Unity 将开始向**应用**文件夹生成项目。
 
@@ -955,7 +955,7 @@ ms.locfileid: "67694529"
 
 在 HoloLens 上部署:
 
-1.  你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式。** 要实现此目的，请执行以下操作：
+1.  你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式。** 为此，请执行以下操作:
 
     1.  在戴上 HoloLens 的同时, 请打开**设置**。
 

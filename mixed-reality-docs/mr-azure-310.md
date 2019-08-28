@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, 自定义视觉, 对象检测, 混合现实, 学院, unity, 教程, api, hololens
-ms.openlocfilehash: 89ee79943a88de8a34c679ae33621db5770908b0
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 71370db84a9b90b017e8d5fac0799a862883d046
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63544419"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047218"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -75,7 +75,7 @@ ms.locfileid: "63544419"
 2.  设置并测试你的 HoloLens。 如果需要支持设置 HoloLens, 请[确保访问 hololens 设置一文](https://docs.microsoft.com/hololens/hololens-setup)。 
 3.  在开始开发新的 HoloLens 应用程序时, 最好执行校准和传感器调整 (有时它可以帮助为每个用户执行这些任务)。 
 
-有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens)。
+有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens-2)。
 
 有关传感器优化的帮助, 请单击["HoloLens 传感器优化" 一文](sensor-tuning.md)。
 
@@ -1280,13 +1280,13 @@ ms.locfileid: "63544419"
 
     ![](images/AzureLabs-Lab310-42.png)
 
-4.  单击“生成” 。 Unity 将启动*文件资源管理器*窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为**应用**。 选择**应用**文件夹后, 单击 "**选择文件夹**"。
+4.  单击“生成”。 Unity 将启动*文件资源管理器*窗口, 在该窗口中, 需要创建一个文件夹, 然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为**应用**。 选择**应用**文件夹后, 单击 "**选择文件夹**"。
 
 5.  Unity 将开始向**应用**文件夹生成项目。
 
 6.  Unity 完成生成 (可能需要一些时间) 后, 它会在生成的位置打开 "**文件资源管理器**" 窗口 (检查任务栏, 因为它可能不会始终出现在窗口之上, 但会通知你添加了一个新窗口)。
 
-7.  若要部署到 Microsoft HoloLens, 你将需要该设备的 IP 地址 (用于远程部署), 并确保它还设置了**开发人员模式**。 要实现此目的，请执行以下操作：
+7.  若要部署到 Microsoft HoloLens, 你将需要该设备的 IP 地址 (用于远程部署), 并确保它还设置了**开发人员模式**。 为此，请执行以下操作:
 
     1.  在戴上 HoloLens 的同时, 请打开**设置**。
 

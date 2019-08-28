@@ -6,12 +6,12 @@ ms.author: xerxesb
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 校准, 舒适, 视觉对象, 质量, ipd
-ms.openlocfilehash: 354d7eb74666471f24a6b5774e5772260b1e3570
-ms.sourcegitcommit: 5d3be2d7569d912011ea114c0a283bc3c635d5df
+ms.openlocfilehash: 1fc3904f4b3e441a967616f20e4287dbc7f08835
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979484"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047055"
 ---
 # <a name="improve-visual-quality-and-comfort"></a>改善视觉质量和舒适
 HoloLens、HoloLens 2 和 Windows Mixed Reality 沉浸式耳机提供不同的方法来改善视觉体验的质量。 
@@ -52,12 +52,12 @@ Hololens 2 旨在为客户提供最高质量的视觉图像和舒适。 使用�
 3. 启动**设置**。
 4. 导航到**系统** > 校准 > **目视校准**, 并选择 "**运行目视校准**"。
 
-### <a name="calibration-when-sharing-a-device--session"></a>共享设备/会话时的校准
+### <a name="calibration-when-sharing-a-devicesession"></a>共享设备/会话时的校准
 
 Hololens 2 可以在人员之间共享, 无需每个人进行设备设置。 如果用户是设备的新用户, 则在将设备放在 head 上时, Hololens 2 将提示用户校准视觉对象。 如果用户之前在设备上校准了视觉对象, 则在用户将设备放在打印头上时, 显示器将无缝调整以获得质量和舒适的观看体验。 
 
 
-## <a name="hololens"></a>Hololens
+## <a name="hololens-v1"></a>Hololens (v1)
 
 校准 IPD (interpupillary 距离) 可以提高视觉对象的质量。
 

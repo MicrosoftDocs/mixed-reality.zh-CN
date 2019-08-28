@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure, 混合现实, 学院, 边缘, iot edge, 教程, api, 通知, 函数, 表, hololens, 沉浸, vr, iot, 虚拟机, ubuntu, python
-ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: ec669b799e7c46a9a4ed87674ed78e50f816c9e9
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694592"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047244"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -55,7 +55,7 @@ ms.locfileid: "67694592"
 </tr>
 </table>
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 有关利用混合现实进行开发的最新先决条件, 包括 Microsoft HoloLens, 请访问[安装工具](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)一文。
 
@@ -84,7 +84,7 @@ ms.locfileid: "67694592"
 1. 设置并测试你的 HoloLens。 如果需要支持设置 HoloLens, 请[确保访问 hololens 设置一文](https://docs.microsoft.com/hololens/hololens-setup)。
 2. 在开始开发新的 HoloLens 应用程序时, 最好执行**校准**和**传感器调整**(有时它可以帮助为每个用户执行这些任务)。
 
-有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens)。
+有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens-2)。
 
 有关传感器优化的帮助, 请单击["HoloLens 传感器优化" 一文](sensor-tuning.md)。
 
@@ -425,7 +425,7 @@ ms.locfileid: "67694592"
 - *deployment*。
 - *Dockerfile amd64*
 
-然后, 将创建用于 python 脚本的*images 文件夹,* 以检查图像是否与*自定义视觉模型*匹配。 最后, 您将添加*标签 .txt*文件, 以帮助读取您的模型, 以及*模型文件。*
+然后, 将创建用于 python 脚本的 images 文件夹, 以检查图像是否与*自定义视觉模型*匹配。 最后, 您将添加*标签 .txt*文件, 以帮助读取您的模型, 以及模型文件 。
 
 1. 打开 VS Code, 导航到模块文件夹, 然后查找名 **<span></span>为 py**的脚本。 双击以打开它。
 

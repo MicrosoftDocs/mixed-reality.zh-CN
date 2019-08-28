@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, 混合现实, 学院, unity, 教程, api, 人脸识别, hololens, 沉浸, vr
-ms.openlocfilehash: 6330d3e5c51d6b2cbc43ea795a3f953a5b14d6f1
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 7cd2a6683c80279129934c619a9b9cb857badf67
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63554707"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047186"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens (第一代) 和混合现实沉浸式耳机。  因此, 对于那些仍在寻找为这些设备进行开发的指导的开发人员来说, 我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程, 这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -50,7 +50,7 @@ ms.locfileid: "63554707"
 > [!NOTE]
 > 尽管本课程主要侧重于 HoloLens, 但你也可以将本课程中学习的内容应用于 Windows Mixed Reality 沉浸 (VR) 耳机。 由于沉浸式 (VR) 耳机没有可访问的摄像机, 因此需要连接到电脑的外部照相机。 在本课程中, 您将看到有关支持沉浸式 (VR) 耳机时可能需要执行的任何更改的说明。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 > [!NOTE]
 > 本教程面向具有 Unity 和C#的基本经验的开发人员。 另外请注意, 本文档中的先决条件和书面说明表明了在编写时已测试和验证的内容 (5 月 2018)。 您可以随意使用最新的软件 (如[安装工具](install-the-tools.md)一文中所述), 但不应假定本课程中的信息将与下面列出的内容完全匹配。
@@ -72,7 +72,7 @@ ms.locfileid: "63554707"
 2.  设置并测试你的 HoloLens。 如果需要支持设置 HoloLens, 请[确保访问 hololens 设置一文](https://docs.microsoft.com/hololens/hololens-setup)。 
 3.  在开始开发新的 HoloLens 应用程序时, 最好执行校准和传感器调整 (有时它可以帮助为每个用户执行这些任务)。 
 
-有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens)。
+有关校准的帮助信息, 请单击此链接, 了解[到 HoloLens 校准文章](calibration.md#hololens-2)。
 
 有关传感器优化的帮助, 请单击["HoloLens 传感器优化" 一文](sensor-tuning.md)。
 
@@ -255,7 +255,7 @@ ms.locfileid: "63554707"
 
             !["创建新脚本" 文件夹](images/AzureLabs-Lab4-13.png)
 
-        3. 打开新创建的**场景**文件夹, 然后**在 "文件名**: 文本" 字段中, 键入**FaceRecScene**, 然后按 "**保存**"。
+        3. 打开新创建的**场景**文件夹, 然后在 "文件名: 文本" 字段中, 键入**FaceRecScene**, 然后按 "**保存**"。
 
             ![为新场景指定名称。](images/AzureLabs-Lab4-14.png)
 
@@ -293,7 +293,7 @@ ms.locfileid: "63554707"
 ## <a name="chapter-4---main-camera-setup"></a>第4章-照相机设置
 
 > [!IMPORTANT]
-> 如果希望跳过本课程的*Unity 设置*组件, 并继续直接进入代码, 可以[下载 unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20304%20-%20Face%20recognition/Azure-MR-304.unitypackage), 并将其作为[自定义包](https://docs.unity3d.com/Manual/AssetPackages.html)导入到项目中。 请注意, 此包还包含[第5章](#chapter-5--import-the-newtonsoft.json-library)中介绍的*newtonsoft.json DLL*的导入。 导入后, 你可以继续[第6章](#chapter-6-create-the-faceanalysis-class)。
+> 如果希望跳过本课程的*Unity 设置*组件, 并继续直接进入代码, 可以[下载 unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20304%20-%20Face%20recognition/Azure-MR-304.unitypackage), 并将其作为[自定义包](https://docs.unity3d.com/Manual/AssetPackages.html)导入到项目中。 请注意, 此包还包含[第5章](#chapter-5--import-the-newtonsoftjson-library)中介绍的*newtonsoft.json DLL*的导入。 导入后, 你可以继续[第6章](#chapter-6---create-the-faceanalysis-class)。
 
 1.  在 "*层次结构*" 面板中, 选择 "**摄像机**"。
 
@@ -314,7 +314,7 @@ ms.locfileid: "63554707"
 ## <a name="chapter-5--import-the-newtonsoftjson-library"></a>第5章–导入 Newtonsoft.json 库
 
 > [!IMPORTANT]
-> 如果在[上一章](#chapter-4--main-camera-setup)中导入了 "unitypackage", 则可以跳过本章。
+> 如果在[上一章](#chapter-4---main-camera-setup)中导入了 "unitypackage", 则可以跳过本章。
 
 若要帮助您反序列化和序列化接收并发送到机器人服务的对象, 您需要下载*newtonsoft.json*库。 你将发现已使用此[unity 包文件](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20304%20-%20Face%20recognition/newtonsoftDLL.unitypackage)中的正确 Unity 文件夹结构组织的兼容版本。 
 
@@ -816,7 +816,7 @@ FaceAnalysis 类的目的是托管与 Azure 面部识别服务进行通信所需
 
 在 HoloLens 上部署:
 
-1.  你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式**。 要实现此目的，请执行以下操作：
+1.  你将需要 HoloLens 的 IP 地址 (用于远程部署), 并确保你的 HoloLens 处于**开发人员模式**。 为此，请执行以下操作:
 
     1. 在戴上 HoloLens 的同时, 请打开**设置**。
     2. 中转到**网络 & Internet > wi-fi > 高级选项**
