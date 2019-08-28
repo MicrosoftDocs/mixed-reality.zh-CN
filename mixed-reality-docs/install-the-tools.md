@@ -7,12 +7,12 @@ ms.date: 2/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新, 工具, 入门, 基础, Unity, Visual Studio, 工具包
-ms.openlocfilehash: bf1c7090a3de6265ce0d31cd8f3316c2e077c7a5
-ms.sourcegitcommit: 06c27acdac24c845952f9c1d3611770756f25820
+ms.openlocfilehash: 180520bae954c5b3b96f14ce844d65cce04a4592
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69030159"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896563"
 ---
 # <a name="install-the-tools"></a>安装工具
 
@@ -39,7 +39,7 @@ ms.locfileid: "69030159"
 | ![Windows 徽标](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)**<br>（手动安装链接）</a> | 提供用于在 HoloLens 2 上生成 Windows 10 应用的最新标头、库、元数据和工具。 | 若要生成 HoloLens 2 应用，必须安装 Windows SDK、内部版本 18362 或更高版本。<br> <br> 如果仅针对桌面 Windows Mixed Reality 头戴显示设备或 HoloLens（第 1 代）开发应用程序，则可以使用 Visual Studio 2017 安装的 Windows SDK。 |
 | ![Visual Studio 徽标](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2101019" target="_blank">**HoloLens 2 仿真器**<br>（安装链接：10.0.18362.1028）</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens（第 1 代）仿真器**<br>（安装链接：10.0.17763.253)</a> | 使用仿真器可在没有 HoloLens 的情况下在 HoloLens 虚拟机映像上运行应用程序。<br> <br> | 有关如何开始使用仿真器的详细信息，请参阅[使用 HoloLens 仿真器](using-the-hololens-emulator.md)。<br> <br> 系统必须支持 Hyper-V 才能成功安装仿真器  。 有关详细信息，请参阅下面的“系统要求”部分。 <br>|
 | ![Unity 徽标](images/unity_logo.png)<br><br><a href="https://unity3d.com/unity/qa/lts-releases?version=2018.4" target="_blank">**Unity 2018.4**<br>（安装链接）</a> | 使用 Unity 游戏引擎是创建混合现实体验的最简单方法，它本身即支持 Windows Mixed Reality 功能。 | 通常建议使用 Unity LTS（长期支持）流，它是启动新项目的最佳版本，更新到其最新版本可获取最新的稳定修补程序。<br> <br>目前的建议是使用“Unity 2018.4.x”，这是下文的 MRTK v2 所需的 LTS 版本  。<br> <br>出于具体的原因，一些开发人员可能需要使用不同版本的 Unity。 对于这些情况，Unity 支持并行安装不同版本。 |
-| ![MRTK 徽标](images/MRTKIcon.jpg)<br><br><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">**适用于 Unity 的混合现实工具包 (MRTK v2)** </a> | 适用于 Unity 的 MRTK v2 是一款面向混合现实应用程序的开源跨平台开发套件。<br><br> MRTK v2 旨在加快面向 Microsoft HoloLens、Windows Mixed Reality 沉浸式 (VR) 头戴显示设备和 OpenVR 平台的应用程序的开发。 该项目旨在降低创建混合现实应用程序的门槛，并在我们成长的过程中回馈社区。 | 我们正在努力推出第一个官方版 MRTK v2。 同时，我们建议下载最新版本的 MRTK (RC2.1)，其中包含所有最新的 bug 修复。 有关 MRTK v2 的详细信息，请访问项目的 <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/wiki" target="_blank">GitHub wiki</a>。 |
+| ![MRTK 徽标](images/MRTKIcon.jpg)<br><br><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">**适用于 Unity 的混合现实工具包 (MRTK v2)** </a> | 适用于 Unity 的 MRTK v2 是一款面向混合现实应用程序的开源跨平台开发套件。<br><br> MRTK v2 旨在加快面向 Microsoft HoloLens、Windows Mixed Reality 沉浸式 (VR) 头戴显示设备和 OpenVR 平台的应用程序的开发。 该项目旨在降低创建混合现实应用程序的门槛，并在我们成长的过程中回馈社区。 | 我们建议下载最新版本的 MRTK (2.0.0)，其中包含所有最新的 bug 修复。 有关 MRTK v2 的详细信息，请访问项目的 <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/wiki" target="_blank">GitHub wiki</a>。 |
 
 
 ## <a name="mixed-reality-toolkit"></a>混合现实工具包
