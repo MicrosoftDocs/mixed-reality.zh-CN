@@ -6,17 +6,17 @@ ms.author: jlyons
 ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: fe26092ec8f5895652d17f88bf3be15cb116e482
-ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
+ms.openlocfilehash: c3e31cdb5acf35ecc3101d3cf359e40771cc8cbd
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712682"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122079"
 ---
 # <a name="holographic-remoting-player"></a>全息远程处理播放器
 
 >[!IMPORTANT]
->HoloLens 2 的全息远程处理是一种主要版本更改。 [适用于**hololens 1**的主机应用程序](add-holographic-remoting.md)必须使用 NuGet 包版本1.x 和[用于**hololens 2**的主机应用程序](holographic-remoting-create-host.md)必须使用1.x。 这意味着, 为 HoloLens 2 编写的主机应用程序与 HoloLens 1 不兼容, 反之亦然。
+>HoloLens 2 的全息远程处理是一种主要版本更改。 [用于 hololens 的主机应用程序 **(第一代)** ](add-holographic-remoting.md)必须使用 NuGet 包版本1.x 和[适用于**hololens 2**的主机应用程序](holographic-remoting-create-host.md)必须使用1.x。 这意味着, 为 HoloLens 2 编写的主机应用程序与 HoloLens 1 不兼容, 反之亦然。
 
 全息远程处理播放器是一种附属应用, 用于连接到支持全息远程处理的 PC 应用和游戏。 使用 Wi-fi 连接, 全息远程处理会实时地将 PC 中的全息内容流式处理到你的 Microsoft HoloLens。
 
@@ -43,7 +43,7 @@ ms.locfileid: "68712682"
 
 ## <a name="diagnostics"></a>诊断
 
-若要测量连接的质量, 请在全息远程处理播放机的主屏幕上说 **"启用诊断"** 。 启用诊断后, 应用会显示在**HoloLens 1**上:
+若要测量连接的质量, 请在全息远程处理播放机的主屏幕上说 **"启用诊断"** 。 启用诊断后, 应用会显示在**HoloLens (第一代)** 上:
 
 * **FPS** -远程处理播放机每秒接收和呈现的呈现帧的平均数目。 理想为 60 FPS。
 * **滞后**时间-帧从电脑进入 HoloLens 所需的平均时间量。 越低越好。 这在很大程度上依赖于 Wi-fi 网络。
@@ -76,7 +76,7 @@ ms.locfileid: "68712682"
 * 建议你通过以太网将电脑连接到网络, 以减少无线跃点的数量。
 
 ## <a name="see-also"></a>请参阅
-* [HoloLens 1:添加全息远程处理](add-holographic-remoting.md)
+* [HoloLens (第一代):添加全息远程处理](add-holographic-remoting.md)
 * [HoloLens 2:编写全息远程处理主机应用](holographic-remoting-create-host.md)
 * [全息远程处理软件许可条款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft 隐私声明](https://go.microsoft.com/fwlink/?LinkId=521839)

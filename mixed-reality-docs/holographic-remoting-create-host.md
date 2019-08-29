@@ -6,17 +6,17 @@ ms.author: bethau
 ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 95cf98504f26e2362b3c4fd38e7d9228350798f3
-ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
+ms.openlocfilehash: 6b0f92fce1099ec98d87100e015de9442bff6bd2
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68718061"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122024"
 ---
 # <a name="writing-a-holographic-remoting-host-app"></a>编写全息远程处理主机应用
 
 >[!IMPORTANT]
->本文档介绍了如何为 HoloLens 2 创建主机应用程序。 适用于**HoloLens 1**的主机应用程序必须使用NuGet 包版本1.x。 这意味着, 为 HoloLens 2 编写的主机应用程序与 HoloLens 1 不兼容, 反之亦然。 可在[此处](add-holographic-remoting.md)找到 HoloLens 1 的文档。
+>本文档介绍了如何为 HoloLens 2 创建主机应用程序。 适用于 HoloLens 的主机应用程序 **(第一代)** 必须使用 NuGet 包版本1.x。 这意味着, 为 HoloLens 2 编写的主机应用程序与 HoloLens 1 不兼容, 反之亦然。 可在[此处](add-holographic-remoting.md)找到 HoloLens 1 的文档。
 
 通过创建全息远程处理主机应用, 可将在远程计算机上呈现的远程内容流式传输到 HoloLens 2。 本文介绍如何实现此目的。 此页面上的所有代码和工作项目都可以在 "[全息远程处理示例 github 存储库](https://github.com/microsoft/MixedReality-HolographicRemoting-Samples)" 中找到。
 
@@ -44,7 +44,7 @@ ms.locfileid: "68718061"
 6. 显示的下一个对话框是许可协议。 单击 "**我接受**" 接受许可协议。
 
 >[!NOTE]
->NuGet包的版本1.x 仍适用于想要面向 HoloLens 1 的开发人员。 有关详细信息, 请参阅[添加全息远程处理 (HoloLens 1)](add-holographic-remoting.md)。
+>NuGet包的版本1.x 仍适用于想要面向 HoloLens 1 的开发人员。 有关详细信息, 请参阅[添加全息远程处理 (HoloLens (第一代))](add-holographic-remoting.md)。
 
 ## <a name="create-the-remote-context"></a>创建远程上下文
 

@@ -6,17 +6,17 @@ ms.author: mriches
 ms.date: 05/24/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 全息影像, 全息远程处理, 远程渲染, 网络渲染, HoloLens, 远程全息影像
-ms.openlocfilehash: 71a763b0660867bf910c0dcecb5fba921f19d068
-ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
+ms.openlocfilehash: 523486c26c03bd4b3d5ed8e8cafd994f12678e3b
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712431"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122049"
 ---
-# <a name="add-holographic-remoting-hololens-1"></a>添加全息远程处理 (HoloLens 1)
+# <a name="add-holographic-remoting-hololens-1st-gen"></a>添加全息远程处理 (HoloLens (第一代))
 
 >[!IMPORTANT]
->本文档介绍了如何为 HoloLens 1 创建主机应用程序。 适用于**HoloLens 1**的主机应用程序必须使用NuGet 包版本1.x。 这意味着, 为 HoloLens 1 编写的主机应用程序与 HoloLens 2 不兼容, 反之亦然。
+>本文档介绍了如何为 HoloLens 1 创建主机应用程序。 适用于 HoloLens 的主机应用程序 **(第一代)** 必须使用 NuGet 包版本1.x。 这意味着, 为 HoloLens 1 编写的主机应用程序与 HoloLens 2 不兼容, 反之亦然。
 
 ## <a name="hololens-2"></a>HoloLens 2
 
