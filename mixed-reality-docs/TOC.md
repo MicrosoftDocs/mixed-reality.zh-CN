@@ -104,8 +104,7 @@
 #### [语音命令](Voice-design.md)
 #### [头部凝视和停留](Gaze-and-dwell.md)
 ### [头部凝视并提交](gaze-and-commit.md)
-### 补充交互
-#### [眼部凝视](eye-tracking.md)
+### [眼部凝视](eye-tracking.md)
 ## 样式
 ### [颜色、光线和材料](color,-light-and-materials.md)
 ### [空间音效设计](spatial-sound-design.md)
@@ -296,8 +295,8 @@
 ### [使用全息远程处理时建立安全连接](holographic-remoting-secure-connection.md)
 ### [故障排除和限制](holographic-remoting-troubleshooting.md)
 ### [全息远程处理软件许可条款](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
-### HoloLens 1 的全息远程处理
-#### [添加全息远程处理](add-holographic-remoting.md)
+### HoloLens（第 1 代）的全息远程处理
+#### [添加全息远程功能](add-holographic-remoting.md)
 ## 其他
 ### [QR 码跟踪](qr-code-tracking.md)
 ### [混合现实中的共享体验](shared-experiences-in-mixed-reality.md)
