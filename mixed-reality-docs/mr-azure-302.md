@@ -6,15 +6,15 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure，混合现实，学院，unity，教程，api，计算机视觉，hololens，沉浸，vr
-ms.openlocfilehash: 9cc526afdc36b8056afd61948fea5cf98015bb35
-ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
+ms.openlocfilehash: d6f792a67adfd1038ca4cdbc44b2ef1bf12a1173
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047197"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437943"
 ---
 >[!NOTE]
->混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程，这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
+>混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 会使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程，这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
 
 <br>
 
@@ -49,7 +49,7 @@ Microsoft 计算机视觉是一组 Api，旨在向开发人员提供使用高级
 > [!NOTE]
 > 尽管本课程主要侧重于 HoloLens，但你也可以将本课程中学习的内容应用于 Windows Mixed Reality 沉浸（VR）耳机。 由于沉浸式（VR）耳机没有可访问的摄像机，因此需要连接到电脑的外部照相机。 在本课程中，您将看到有关支持沉浸式（VR）耳机时可能需要执行的任何更改的说明。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 > [!NOTE]
 > 本教程面向具有 Unity 和C#的基本经验的开发人员。 另外请注意，本文档中的先决条件和书面说明表明了在编写时已测试和验证的内容（5月2018）。 您可以随意使用最新的软件（如[安装工具](install-the-tools.md)一文中所述），但不应假定本课程中的信息将与下面列出的内容完全匹配。
@@ -361,7 +361,7 @@ Microsoft 计算机视觉是一组 Api，旨在向开发人员提供使用高级
 7.  返回*Unity 编辑器*，单击 "**脚本**" 文件夹中的*ResultsLabel*类并将其拖到 "*层次结构" 面板*中的**主相机**对象。
 8.  单击**主摄像机**，查看*检查器面板*。
 
-你会注意到，从刚才拖到摄像机的脚本中，有两个字段：**光标**和**标签 Prefab**。
+你会注意到，从刚才拖到摄像机的脚本中，有两个字段： **Cursor**和**Label Prefab**。
 
 9.  将名为**cursor**的对象从 "*层次结构" 面板*拖动到名为 " **cursor**" 的槽中，如下图所示。
 10. 将名为**LabelText**的对象从 "*项目" 面板*中的 "*资产" 文件夹*拖到名为**Label Prefab**的槽中，如下图所示。 
@@ -413,7 +413,7 @@ Microsoft 计算机视觉是一组 Api，旨在向开发人员提供使用高级
 
         void Start()
         {
-            // subscribing to the Hololens API gesture recognizer to track user gestures
+            // subscribing to the HoloLens API gesture recognizer to track user gestures
             recognizer = new GestureRecognizer();
             recognizer.SetRecognizableGestures(GestureSettings.Tap);
             recognizer.Tapped += TapHandler;
@@ -586,9 +586,9 @@ Microsoft 计算机视觉是一组 Api，旨在向开发人员提供使用高级
 
     > [!WARNING] 
     > **VisionAnalysisEndpoint**变量可能不同于在此示例中指定的变量。 "**美国西部**" 严格指为 "美国西部" 区域创建的服务实例。 用[终结点 URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)更新此值;下面是一些可能的示例：
-    > - 西欧：`https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
-    > - 东南亚：`https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
-    > - 澳大利亚东部：`https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
+    > - 西欧： `https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
+    > - 东南亚： `https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
+    > - 澳大利亚东部： `https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
 
 7.  现在需要添加用于唤醒的代码。 
 
@@ -693,13 +693,13 @@ Microsoft 计算机视觉是一组 Api，旨在向开发人员提供使用高级
 ## <a name="chapter-9--build-the-uwp-solution-and-sideload-the-application"></a>第9章–构建 UWP 解决方案并旁加载应用程序
 此项目的 Unity 部分所需的所有内容现在均已完成，因此可以从 Unity 构建它。
 
-1.  导航到 "*生成设置* - "**文件 > 生成设置 ...**
+1.  导航到 "*生成设置*" - **文件 > 生成设置 ...** "
 2.  在*生成设置*窗口中，单击 "**生成**"。
 
     ![从 Unity 生成应用](images/AzureLabs-Lab2-26.png)
 
 3.  如果尚未这样做，请勾选**Unity C#项目**。
-4.  单击“生成”。 Unity 将启动*文件资源管理器*窗口，在该窗口中，需要创建一个文件夹，然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为*应用*。 选择*应用*文件夹后，按 "**选择文件夹**"。 
+4.  单击**生成**。 Unity 将启动*文件资源管理器*窗口，在该窗口中，需要创建一个文件夹，然后选择要在其中生成应用的文件夹。 立即创建该文件夹并将其命名为*应用*。 选择*应用*文件夹后，按 "**选择文件夹**"。 
 5.  Unity 将开始向*应用*文件夹生成项目。 
 6.  Unity 完成生成（可能需要一些时间）后，它会在生成的位置打开 "*文件资源管理器*" 窗口（检查任务栏，因为它可能不会始终出现在窗口之上，但会通知你添加了一个新窗口）。
 
@@ -707,7 +707,7 @@ Microsoft 计算机视觉是一组 Api，旨在向开发人员提供使用高级
 
 在 HoloLens 上部署：
 
-1.  你将需要 HoloLens 的 IP 地址（用于远程部署），并确保你的 HoloLens 处于**开发人员模式**。 为此，请执行以下操作:
+1.  你将需要 HoloLens 的 IP 地址（用于远程部署），并确保你的 HoloLens 处于**开发人员模式**。 要实现此目的，请执行以下操作：
 
     1. 在戴上 HoloLens 的同时，请打开**设置**。
     2. 中转到**网络 & Internet > wi-fi > 高级选项**

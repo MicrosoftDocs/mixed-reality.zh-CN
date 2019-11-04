@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合现实、手势、交互、设计
-ms.openlocfilehash: 70b03c6fa327bd987a681bba59abb725c3ddc6b4
-ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
+ms.openlocfilehash: ae8af8fdb0bd224d127092c6636d473f383ab6f9
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020213"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73435207"
 ---
 # <a name="gestures"></a>笔势
 
@@ -31,9 +31,9 @@ ms.locfileid: "69020213"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>功能</strong></td>
+        <td><strong>具有</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
-        <td><strong>HoloLens 2</strong></td>
+        <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
     </tr>
      <tr>
@@ -51,11 +51,11 @@ ms.locfileid: "69020213"
 </table>
 
 > [!NOTE]
-> 即将[推出](index.md#news-and-notes)特定于 HoloLens 2 的更多指导。
+> 即将[推出](news.md)特定于 HoloLens 2 的更多指导。
 
 ## <a name="gaze-and-commit"></a>注视并提交
 
-若要执行操作，[请使用手型](gaze.md)作为目标机制。 "**注视**" 和 " **Air** " 手势的组合会导致 "**注视并提交**" 交互。 可通过[运动控制器](motion-controllers.md)启用**点到提交**功能，这是一种用于确认的替代方法。 在 HoloLens 上运行的应用程序只需支持 "注视并提交"，因为 HoloLens 不支持运动控制器。 在 HoloLens 和沉浸式耳机上运行的应用程序应同时支持注视驱动和指向驱动的交互，使用户能够选择他们使用的输入设备。
+若要执行操作，[请使用手型](gaze-and-commit.md)作为目标机制。 "**注视**" 和 " **Air** " 手势的组合会导致 "**注视并提交**" 交互。 可通过[运动控制器](motion-controllers.md)启用**点到提交**功能，这是一种用于确认的替代方法。 在 HoloLens 上运行的应用程序只需支持 "注视并提交"，因为 HoloLens 不支持运动控制器。 在 HoloLens 和沉浸式耳机上运行的应用程序应同时支持注视驱动和指向驱动的交互，使用户能够选择他们使用的输入设备。
 
 ## <a name="the-two-core-gestures-of-hololens"></a>HoloLens 的两个核心手势
 
@@ -63,15 +63,15 @@ HoloLens 目前识别了两个核心组件手势-**空中分流**和**布隆**�
 
 ### <a name="air-tap"></a>隔空敲击
 
-空中点击是指手直立的攻指，类似于鼠标单击或选择。 这适用于最[常使用的](gaze.md)一种在 UI 元素上 "单击" 的 这是一种通用操作，你只需要了解一次，然后应用于所有应用。 执行 select 的其他方法是按下一次使用[HoloLens Clicker](hardware-accessories.md#hololens-clicker)上的按钮，或者通过语音命令 "select"。
+空中点击是指手直立的攻指，类似于鼠标单击或选择。 这适用于最[常使用的](gaze-and-commit.md)一种在 UI 元素上 "单击" 的 这是一种通用操作，你只需要了解一次，然后应用于所有应用。 执行 select 的其他方法是按下一次使用[HoloLens Clicker](hardware-accessories.md#hololens-clicker)上的按钮，或者通过语音命令 "select"。
 
-![HoloLens 上手写笔势的就绪状态](images/image9.png)<br>
+HoloLens](images/image9.png) 上的手势 ![就绪状态<br>
 *HoloLens 的空中点击的就绪状态。*
 
 Air 是一种离散的手势。 选择是 "已完成" 或 "不是"，并且不会在经验中执行操作。 尽管不建议这样做，但不建议这样做，而是通过主要组件组合（例如，双击笔势来表示与单点不同的内容）来创建其他离散手势。
 
-![手指置于 "就绪" 位置，然后点击或点击 "运动"](images/readyandpress.jpg)<br>
-*如何执行分流：将您的食指向下移动到 "就绪" 位置，按下手指以点击或选择，然后备份到发布。*
+![手指进入 "就绪" 位置，然后点击或点击 "运动](images/readyandpress.jpg)<br>
+*如何执行分流操作：将食指向下移动，按下手指点击或选择，然后备份到发布。*
 
 ### <a name="bloom"></a>布隆
 
@@ -94,11 +94,11 @@ Air 是一种离散的手势。 选择是 "已完成" 或 "不是"，并且不�
 </tr><tr>
 <td>隔空敲击</td><td>隔空敲击手势（以及下面的其他手势）只对特定的点击做出反应。 若要检测其他点击，例如菜单或抓取，应用必须直接使用上面两个关键成分手势部分中描述的较低级别的互动。</td>
 </tr><tr>
-<td>Tap and hold</td><td><p>按住是指保持隔空敲击手指向下的位置。 通过点击和保持的组合，可以在与 arm 移动（如&quot;选取对象，&quot;而不是激活对象或&quot;mousedown&quot; ）结合使用时，使用各种更复杂的单击和拖动交互辅助交互，如显示上下文菜单。</p><p>但在设计此手势时请务必小心，因为用户在做出任何扩展手势的过程都很可能放松手部姿势。</p></td>
+<td>Tap and hold</td><td><p>按住是指保持隔空敲击手指向下的位置。 点击和保持的组合允许各种更复杂的 &quot;单击并拖动&quot; 交互，同时与 arm 移动（如选取对象，而不是激活对象或 &quot;mousedown&quot; 辅助交互）结合使用如显示上下文菜单。</p><p>但在设计此手势时请务必小心，因为用户在做出任何扩展手势的过程都很可能放松手部姿势。</p></td>
 </tr><tr>
 <td>操作</td><td><p>如果想让全息图对用户&#39;的手移动做出1:1 反应，可以使用操作手势移动、调整或旋转全息图。 此类 1:1 运动可让用户进行实际绘制或绘画。</p><p>操作手势的初始定位应通过凝视或指向来完成。 开始点击并按住后，对象的任何操作都将通过手部运动来处理，从而使用户可以在操作时环顾四周。</p></td>
 </tr><tr>
-<td>导航</td><td><p>导航手势就像一个虚拟游戏杆，可用于导航 UI 小组件（如径向菜单）。 点击并按住以开始手势，然后在标准化 3D 立方体中以初始按压位置为中心移动手部。 可以沿 X、Y 或 Z 轴移动，起点为 0，移动范围为 -1 到 1。</p><p>导航可用于生成基于速度的连续滚动或缩放手势，类似于通过单击鼠标按钮然后上下移动鼠标来滚动 2D UI。</p><p>轨道导航是指识别某个轴上的运动，直到达到该轴的特定阈值。 只有当开发人员在应用程序中启用多个轴中的移动时，轨道导航才有用，例如，如果应用程序被配置为能够识别 X 轴、Y 轴上的导航手势，并指定 X 轴包含轨道。 在这种情况下，如果 X 轴和 Y 轴上都出现了手部运动，则只要手部运动保持在 X 轴上的假想轨道（导轨）内，系统就可识别 X 轴上的手部运动。</p><p>在 2D 应用中，用户可以使用垂直导航手势在应用内进行滚动、缩放或拖动。 这会向应用注入虚拟手指触摸，以模拟相同类型的触摸手势。 用户可以通过选择按钮&#39; &lt;或口述 "滚动/拖/缩放&gt; " 工具&#39;，在应用上方的工具栏上通过切换来选择要执行的操作。</p></td>
+<td>导航</td><td><p>导航手势就像一个虚拟游戏杆，可用于导航 UI 小组件（如径向菜单）。 点击并按住以开始手势，然后在标准化 3D 立方体中以初始按压位置为中心移动手部。 可以沿 X、Y 或 Z 轴移动，起点为 0，移动范围为 -1 到 1。</p><p>导航可用于生成基于速度的连续滚动或缩放手势，类似于通过单击鼠标按钮然后上下移动鼠标来滚动 2D UI。</p><p>轨道导航是指识别某个轴上的运动，直到达到该轴的特定阈值。 只有当开发人员在应用程序中启用多个轴中的移动时，轨道导航才有用，例如，如果应用程序被配置为能够识别 X 轴、Y 轴上的导航手势，并指定 X 轴包含轨道。 在这种情况下，如果 X 轴和 Y 轴上都出现了手部运动，则只要手部运动保持在 X 轴上的假想轨道（导轨）内，系统就可识别 X 轴上的手部运动。</p><p>在 2D 应用中，用户可以使用垂直导航手势在应用内进行滚动、缩放或拖动。 这会向应用注入虚拟手指触摸，以模拟相同类型的触摸手势。 用户可以通过以下方式选择要执行的操作：通过在应用上方的工具之间切换，选择按钮或口述&#39;&lt;滚动/拖动/缩放&gt; 工具。&#39;</p></td>
 </tr>
 </table>
 
@@ -125,10 +125,10 @@ HoloLens 通过跟踪设备可识别的一只手或双手的位置来识别手�
 * 在用户的手势接近/穿过应用程序的手势范围边界时通知用户，避免因丢失手势导致无法获得预期结果。 研究表明了此类通知系统的关键能力，而 HoloLens shell 提供了此类通知的一个良好示例（显示在中央光标处，指示超出边界的方向）。
 * 应尽可能避免穿过手势范围的边界。 一般而言，这意味着手势应在边界处停止，而不是反转。 例如，如果用户在房间内移动某个全息对象，则在该笔势帧被破坏后，移动应停止，但**不**会返回到开始点。 用户可能会遇到一些挫折，但可能更快理解边界，而不必每次都重新开始其完整的预期操作。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 * [头部凝视和停留](gaze-and-dwell.md)
 * [语音设计](voice-design.md)
-* [MR 输入 211：手势](holograms-211.md)
+* [MR 输入211：手势](holograms-211.md)
 * [Unity 中的手势和运动控制器](gestures-and-motion-controllers-in-unity.md)
 * [DirectX 中的手和运动控制器](hands-and-motion-controllers-in-directx.md)
 * [运动控制器](motion-controllers.md)

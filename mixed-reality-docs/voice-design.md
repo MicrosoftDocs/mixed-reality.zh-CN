@@ -1,17 +1,17 @@
 ---
 title: 语音命令
 description: 凝视、手势和语音 (GGV) 是 HoloLens 交互的主要方式。 本文提供有关语音设计的详细指南。
-author: shentan
+author: shengkait
 ms.author: shentan
 ms.date: 04/21/2019
 ms.topic: article
 keywords: Windows Mixed Reality、设计、交互、语音
-ms.openlocfilehash: 724ef87dae1c731289af51504a518193c20b7d96
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: bfcaef787b22f17da9627a53c92c43f5cb1e1d9b
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387652"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437213"
 ---
 # <a name="voice-commanding"></a>语音命令
 
@@ -28,9 +28,9 @@ ms.locfileid: "68387652"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>功能</strong></td>
+        <td><strong>具有</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
-        <td><strong>HoloLens 2</strong></td>
+        <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
     </tr>
      <tr>
@@ -47,13 +47,13 @@ ms.locfileid: "68387652"
 
 考虑为生成的任何体验添加语音命令。 语音是一种功能强大、方便的控制系统和应用的方式。 由于用户使用各种方言和口音说话，恰当选择语音关键字将确保用户的命令得到清晰的解释。
 
-### <a name="best-practices"></a>最佳实践
+### <a name="best-practices"></a>最佳做法
 
 以下是一些有助于流畅语音识别的做法。
-* **使用简明命令** - 如果可能的话，选择两个或更多音节的关键词。 不同口音的人说单音节词时倾向于使用不同的元音。 例如：“播放视频”优于“播放当前所选视频”
-* **使用简单词汇** - 示例：“显示通知”优于“显示标语牌”
+* **使用简明命令** - 如果可能的话，选择两个或更多音节的关键词。 不同口音的人说单音节词时倾向于使用不同的元音。 示例： "播放视频" 优于 "播放当前选定的视频"
+* **使用简单词汇**-示例： "show note" 优于 "show placard"
 * **确保命令是非破坏性的** - 确保语音命令可以执行的任何操作都是非破坏性的，并且可以很容易地撤消，以防在用户附近说话的另一个人意外触发命令。
-* **避免使用类似的语音命令** - 避免注册多个听起来非常相似的语音命令。 例如：“显示更多”和“显示商店”就非常相似。
+* **避免使用类似的语音命令** - 避免注册多个听起来非常相似的语音命令。 示例： "显示更多" 和 "显示存储" 的发音可能非常相似。
 * **不使用应用时请取消注册应用** - 当应用没有处于特定语音命令有效的状态时，请考虑取消注册应用，使其他命令不会与该命令混淆。
 * **使用不同的口音进行测试** - 由具有不同口音的用户测试应用。
 * **保持语音命令一致性** - 如果“返回”可转到上一页，请在应用程序中保持此行为。
@@ -65,7 +65,7 @@ ms.locfileid: "68387652"
 
 在任何时候说"选择"将激活凝视光标指向的任何内容。 
 
->注意:在 HoloLens 2 中，首先需要通过说出“选择”调用凝视光标。 再说一次“选择”以激活。 要隐藏凝视光标，只需用手隔空敲击或触摸对象。 
+>注意：在 HoloLens 2 中，需要首先通过说 "select" 一词来调用注视光标。 再说一次“选择”以激活。 要隐藏凝视光标，只需用手隔空敲击或触摸对象。 
 
 ### <a name="see-it-say-it"></a>看到它，说出来
 
@@ -96,7 +96,7 @@ Windows Mixed Reality 采用了“看到它，说出来”的语音模型，在�
 
 当语音应用正确时，用户了解他们能说什么，并得到清晰的反馈 - 系统正确地听到了用户说的话。 这两个信号使用户在使用语音作为主要输入方法时充满自信。 下面的图表显示了识别语音输入时光标发生的情况以及它是如何将信息传达给用户的。
 
-![光标的语音反馈状态](images/voicefeedbackstates.png)<br>
+光标的语音反馈状态![](images/voicefeedbackstates.png)<br>
 光标的语音反馈状态
 
 ## <a name="top-things-users-should-know-about-speech-in-mixed-reality"></a>在混合现实中，用户应该知道的关于“语音”的重要事项
@@ -113,6 +113,6 @@ Windows Mixed Reality 采用了“看到它，说出来”的语音模型，在�
 * 我如何将我的语音定向到一个特定的应用或应用命令？
 * 我可以使用语音来对 HoloLens 上的全息帧执行命令吗？
 
-## <a name="see-also"></a>请参阅
-* [手势](gestures.md)
+## <a name="see-also"></a>另请参阅
+* [手势](gaze-and-commit.md#composite-gestures)
 * [头部凝视和停留](gaze-and-dwell.md)
