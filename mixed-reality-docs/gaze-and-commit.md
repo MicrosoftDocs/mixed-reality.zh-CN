@@ -1,22 +1,39 @@
 ---
-title: 头部凝视和提交
-description: 头部凝视和提交输入模型概述
-author: caseymeekhof
-ms.author: cmeekhof
-ms.date: 03/31/2019
+title: 注视并提交
+description: "\"注视并提交\" 输入模型的一般概述-使用目视或头输入。"
+author: sostel
+ms.author: sostel
+ms.date: 10/31/2019
 ms.topic: article
-keywords: 混合现实, 凝视, 设定凝视目标, 交互, 设计
-ms.openlocfilehash: aeca5ceacf5ae350aa06cb58cc68162f885f6d78
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+keywords: 混合现实，注视，注视目标，交互，设计，眼睛跟踪，头跟踪
+ms.openlocfilehash: df152f6a3a6e4ae2d6c32a0c56fbb615bcfa7aa8
+ms.sourcegitcommit: a5dc182da237f63f0487d40a2e11894027208b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387679"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73441123"
 ---
-# <a name="head-gaze-and-commit"></a><span data-ttu-id="ee9df-104">头部凝视和提交</span><span class="sxs-lookup"><span data-stu-id="ee9df-104">Head-gaze and commit</span></span>
-<span data-ttu-id="ee9df-105">"头盔" 和 "提交" 是一种输入模型, 它涉及到对象的方向为 "前进" (head 方向), 然后使用辅助输入 (例如, 手型按键或语音命令选择) 对对象进行操作。</span><span class="sxs-lookup"><span data-stu-id="ee9df-105">Head-gaze and commit is an input model that involves targeting an object with the direction of your head pointing forward (head-direction), and then acting on it with a secondary input, such as the hand gesture air tap or the voice command Select.</span></span> <span data-ttu-id="ee9df-106">它被视为带有间接操作的最大输入模型, 这意味着它最适用于与超出扶手的内容进行交互。</span><span class="sxs-lookup"><span data-stu-id="ee9df-106">It is considered a far input model with indirect manipulation, meaning it is best used for interacting with content that is beyond arms reach.</span></span>
+# <a name="gaze-and-commit"></a><span data-ttu-id="e89f1-104">注视并提交</span><span class="sxs-lookup"><span data-stu-id="e89f1-104">Gaze and commit</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="ee9df-107">设备支持</span><span class="sxs-lookup"><span data-stu-id="ee9df-107">Device support</span></span>
+<span data-ttu-id="e89f1-105">"_注视" 和 "提交_" 是一种基本的输入模型，它与使用鼠标的计算机进行交互的方式密切相关：_点 & 单击_。</span><span class="sxs-lookup"><span data-stu-id="e89f1-105">_Gaze and commit_ is a fundamental input model that is closely related with the way we're interacting with our computers using the mouse: _Point & click_.</span></span>
+<span data-ttu-id="e89f1-106">在此页上，我们将介绍两种类型的目视输入（打印头和眼睛眼睛）以及不同类型的提交操作。</span><span class="sxs-lookup"><span data-stu-id="e89f1-106">On this page, we introduce two types of gaze input (head- and eye-gaze) and different types of commit actions.</span></span> 
+<span data-ttu-id="e89f1-107">_注视和提交_被视为具有间接操作的最大输入模型。</span><span class="sxs-lookup"><span data-stu-id="e89f1-107">_Gaze and commit_ is considered a far input model with indirect manipulation.</span></span>
+<span data-ttu-id="e89f1-108">这意味着它最适用于与不在一起的全息内容交互。</span><span class="sxs-lookup"><span data-stu-id="e89f1-108">This means it is best used for interacting with holographic content that is out of reach.</span></span>
+
+<span data-ttu-id="e89f1-109">混合现实耳机可以使用用户头部的位置和方向来确定其头向量。</span><span class="sxs-lookup"><span data-stu-id="e89f1-109">Mixed reality headsets can use the position and orientation of the user's head to determine their head direction vector.</span></span> <span data-ttu-id="e89f1-110">你可以将其视为从用户两眼之间直指前方的激光。</span><span class="sxs-lookup"><span data-stu-id="e89f1-110">You can think of this as a laser that points straight ahead from directly between the user's eyes.</span></span> <span data-ttu-id="e89f1-111">这可粗略呈现出用户正查看的位置。</span><span class="sxs-lookup"><span data-stu-id="e89f1-111">This is a fairly coarse approximation of where the user is looking.</span></span> <span data-ttu-id="e89f1-112">您的应用程序可以将此射线与虚拟或现实对象交叉，并在该位置绘制光标，以使用户了解当前的目标。</span><span class="sxs-lookup"><span data-stu-id="e89f1-112">Your application can intersect this ray with virtual or real-world objects, and draw a cursor at that location to let the user know what they are currently targeting.</span></span>
+
+<span data-ttu-id="e89f1-113">除了注视眼睛外，某些混合现实耳机（如 HoloLens 2）还包括可生成眼睛良好矢量的眼睛跟踪系统。</span><span class="sxs-lookup"><span data-stu-id="e89f1-113">In addition to head gaze, some mixed reality headsets, such as HoloLens 2, include eye tracking systems that produce an eye-gaze vector.</span></span> <span data-ttu-id="e89f1-114">这可精细测量用户正在查看的位置。</span><span class="sxs-lookup"><span data-stu-id="e89f1-114">This provides a fine-grained measurement of where the user is looking.</span></span> <span data-ttu-id="e89f1-115">在这两种情况下，注视都表示用户意向的重要信号。</span><span class="sxs-lookup"><span data-stu-id="e89f1-115">In both cases, the gaze represents an important signal for the user's intent.</span></span> <span data-ttu-id="e89f1-116">系统更好地解释并预测用户的预期操作，提高用户满意度，提高性能。</span><span class="sxs-lookup"><span data-stu-id="e89f1-116">The better the system can interpret and predict the user's intended actions, user satisfaction increases and performance improves.</span></span>
+
+<span data-ttu-id="e89f1-117">下面是一些示例，说明混合现实开发人员如何从打印头或眼睛中获益：</span><span class="sxs-lookup"><span data-stu-id="e89f1-117">Below are a few examples for how you as a mixed reality developer can benefit from head- or eye-gaze:</span></span>
+* <span data-ttu-id="e89f1-118">您的应用程序可以在场景中与全息影像交叉，以确定用户注意的位置（更准确地说看注视）。</span><span class="sxs-lookup"><span data-stu-id="e89f1-118">Your app can intersect gaze with the holograms in your scene to determine where the user's attention is (more precise with eye-gaze).</span></span>
+* <span data-ttu-id="e89f1-119">您的应用程序可以根据用户的 "注视" 通道手势和控制器按下，使用户能够无缝选择、激活、抓取、滚动或与全息影像交互。</span><span class="sxs-lookup"><span data-stu-id="e89f1-119">Your app can channel gestures and controller presses based on the user's gaze, letting the user seamlessly select, activate, grab, scroll, or otherwise interact with their holograms.</span></span>
+* <span data-ttu-id="e89f1-120">您的应用程序可让用户在实际的表面上放置全息影像，方法是将其表面与空间映射网格进行交叉处理。</span><span class="sxs-lookup"><span data-stu-id="e89f1-120">Your app can let the user place holograms on real-world surfaces by intersecting their gaze ray with the spatial mapping mesh.</span></span>
+* <span data-ttu-id="e89f1-121">您的应用程序可以知道用户*不*在查找重要对象的方向时，这可能会导致您的应用程序将视觉和音频提示转换为该对象。</span><span class="sxs-lookup"><span data-stu-id="e89f1-121">Your app can know when the user is *not* looking in the direction of an important object, which can lead your app to give visual and audio cues to turn towards that object.</span></span>
+
+<br>
+
+
+## <a name="device-support"></a><span data-ttu-id="e89f1-122">设备支持</span><span class="sxs-lookup"><span data-stu-id="e89f1-122">Device support</span></span>
 
 <table>
     <colgroup>
@@ -26,189 +43,260 @@ ms.locfileid: "68387679"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><span data-ttu-id="ee9df-108"><strong>输入模型</strong></span><span class="sxs-lookup"><span data-stu-id="ee9df-108"><strong>Input model</strong></span></span></td>
-        <td><span data-ttu-id="ee9df-109"><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></span><span class="sxs-lookup"><span data-stu-id="ee9df-109"><a href="hololens-hardware-details.md"><strong>HoloLens (1st gen)</strong></a></span></span></td>
-        <td><span data-ttu-id="ee9df-110"><strong>HoloLens 2</strong></span><span class="sxs-lookup"><span data-stu-id="ee9df-110"><strong>HoloLens 2</strong></span></span></td>
-        <td><span data-ttu-id="ee9df-111"><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></span><span class="sxs-lookup"><span data-stu-id="ee9df-111"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
+        <td><span data-ttu-id="e89f1-123"><strong>输入模型</strong></span><span class="sxs-lookup"><span data-stu-id="e89f1-123"><strong>Input model</strong></span></span></td>
+        <td><span data-ttu-id="e89f1-124"><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></span><span class="sxs-lookup"><span data-stu-id="e89f1-124"><a href="hololens-hardware-details.md"><strong>HoloLens (1st gen)</strong></a></span></span></td>
+        <td><span data-ttu-id="e89f1-125"><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></span><span class="sxs-lookup"><span data-stu-id="e89f1-125"><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></span></span></td>
+        <td><span data-ttu-id="e89f1-126"><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></span><span class="sxs-lookup"><span data-stu-id="e89f1-126"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
     </tr>
      <tr>
-        <td><span data-ttu-id="ee9df-112">头部凝视和提交</span><span class="sxs-lookup"><span data-stu-id="ee9df-112">Head-gaze and commit</span></span></td>
-        <td><span data-ttu-id="ee9df-113">✔️ 推荐</span><span class="sxs-lookup"><span data-stu-id="ee9df-113">✔️ Recommended</span></span></td>
-        <td><span data-ttu-id="ee9df-114">✔️推荐（第三个选择 - <a href="interaction-fundamentals.md">查看其他选项</a>）</span><span class="sxs-lookup"><span data-stu-id="ee9df-114">✔️ Recommended (third choice - <a href="interaction-fundamentals.md">See the other options</a>)</span></span></td>
-        <td><span data-ttu-id="ee9df-115">➕ 备用选项</span><span class="sxs-lookup"><span data-stu-id="ee9df-115">➕ Alternate option</span></span></td>
+        <td><span data-ttu-id="e89f1-127">头部凝视和提交</span><span class="sxs-lookup"><span data-stu-id="e89f1-127">Head-gaze and commit</span></span></td>
+        <td><span data-ttu-id="e89f1-128">✔️ 推荐</span><span class="sxs-lookup"><span data-stu-id="e89f1-128">✔️ Recommended</span></span></td>
+        <td><span data-ttu-id="e89f1-129">✔️推荐（第三个选择 - <a href="interaction-fundamentals.md">查看其他选项</a>）</span><span class="sxs-lookup"><span data-stu-id="e89f1-129">✔️ Recommended (third choice - <a href="interaction-fundamentals.md">See the other options</a>)</span></span></td>
+        <td><span data-ttu-id="e89f1-130">➕ 备用选项</span><span class="sxs-lookup"><span data-stu-id="e89f1-130">➕ Alternate option</span></span></td>
+    </tr>
+         <tr>
+        <td><span data-ttu-id="e89f1-131">眼睛凝视和提交</span><span class="sxs-lookup"><span data-stu-id="e89f1-131">Eye-gaze and commit</span></span></td>
+        <td><span data-ttu-id="e89f1-132">❌ 不可用</span><span class="sxs-lookup"><span data-stu-id="e89f1-132">❌ Not available</span></span></td>
+        <td><span data-ttu-id="e89f1-133">✔️推荐（第三个选择 - <a href="interaction-fundamentals.md">查看其他选项</a>）</span><span class="sxs-lookup"><span data-stu-id="e89f1-133">✔️ Recommended (third choice - <a href="interaction-fundamentals.md">See the other options</a>)</span></span></td>
+        <td><span data-ttu-id="e89f1-134">❌ 不可用</span><span class="sxs-lookup"><span data-stu-id="e89f1-134">❌ Not available</span></span></td>
     </tr>
 </table>
 
-## <a name="head-gaze"></a><span data-ttu-id="ee9df-116">头部凝视</span><span class="sxs-lookup"><span data-stu-id="ee9df-116">Head-gaze</span></span>
-<span data-ttu-id="ee9df-117">混合现实头戴显示设备根据用户头部的位置和方向来确定他们的头部方向向量。</span><span class="sxs-lookup"><span data-stu-id="ee9df-117">Mixed reality headsets use the position and orientation of the user's head to determine their head direction vector.</span></span> <span data-ttu-id="ee9df-118">你可以将其视为从用户两眼之间直指前方的激光。</span><span class="sxs-lookup"><span data-stu-id="ee9df-118">You can think of this as a laser that points straight ahead from directly between the user's eyes.</span></span> <span data-ttu-id="ee9df-119">这可粗略呈现出用户正查看的位置。</span><span class="sxs-lookup"><span data-stu-id="ee9df-119">This is a fairly coarse approximation of where the user is looking.</span></span> <span data-ttu-id="ee9df-120">您的应用程序可以将此射线与虚拟或现实对象交叉, 并在该位置绘制光标, 以使用户了解当前的目标。</span><span class="sxs-lookup"><span data-stu-id="ee9df-120">Your application can intersect this ray with virtual or real-world objects, and draw a cursor at that location to let the user know what they are currently targeting.</span></span>
 
-<span data-ttu-id="ee9df-121">除了注视眼睛外, 某些混合现实耳机 (如 HoloLens 2) 还包括可生成眼睛良好矢量的眼睛跟踪系统。</span><span class="sxs-lookup"><span data-stu-id="ee9df-121">In addition to head gaze, some mixed reality headsets, like HoloLens 2, include eye tracking systems that produce an eye-gaze vector.</span></span> <span data-ttu-id="ee9df-122">这可精细测量用户正在查看的位置。</span><span class="sxs-lookup"><span data-stu-id="ee9df-122">This provides a fine-grained measurement of where the user is looking.</span></span> <span data-ttu-id="ee9df-123">可以使用眼睛来构建注视和提交交互。</span><span class="sxs-lookup"><span data-stu-id="ee9df-123">It is possible to build gaze and commit interactions using eye gaze.</span></span> <span data-ttu-id="ee9df-124">但这是一组截然不同的设计约束, 将在[目视的文章](eye-tracking.md)中单独介绍。</span><span class="sxs-lookup"><span data-stu-id="ee9df-124">But this comes with a very different set of design constraints, which will be covered separately in the [eye-gaze article](eye-tracking.md).</span></span>
+## <a name="gaze"></a><span data-ttu-id="e89f1-135">凝视</span><span class="sxs-lookup"><span data-stu-id="e89f1-135">Gaze</span></span>
+
+### <a name="eye--or-head-gaze"></a><span data-ttu-id="e89f1-136">眼后看好了吗？</span><span class="sxs-lookup"><span data-stu-id="e89f1-136">Eye- or head-gaze?</span></span>
+<span data-ttu-id="e89f1-137">当面对问题时，需要考虑几个注意事项，无论你使用的是 "眼睛和提交" 还是 "良好和提交" 输入模型。</span><span class="sxs-lookup"><span data-stu-id="e89f1-137">There are several considerations to take into account when faced with the question whether you should use the "eye-gaze and commit" or "head-gaze and commit" input model.</span></span> <span data-ttu-id="e89f1-138">如果要开发沉浸式头戴式耳机或 HoloLens （第一代），则选择简单：打印头和提交。</span><span class="sxs-lookup"><span data-stu-id="e89f1-138">If you're developing for an immersive headset or for HoloLens (1st gen) then the choice is simple: Head-gaze and commit.</span></span> <span data-ttu-id="e89f1-139">如果你正在开发 HoloLens 2，则所做的选择会更难，因为了解其中每个选项的优点和难题非常重要。</span><span class="sxs-lookup"><span data-stu-id="e89f1-139">If you're developing for HoloLens 2, the choice becomes a little harder which is why it's important to understand the advantages and challenges that come with each of them.</span></span>
+<span data-ttu-id="e89f1-140">在下表中，我们编译了一些广泛的专业人员和职业，以对比眼睛和眼睛的目标。</span><span class="sxs-lookup"><span data-stu-id="e89f1-140">We compiled some broad pro's and con's in the table below to contrast head- vs. eye-gaze targeting.</span></span> <span data-ttu-id="e89f1-141">这从很大程度上来看，我们建议在此处了解各种混合现实中的眼睛目标：</span><span class="sxs-lookup"><span data-stu-id="e89f1-141">This is far from complete and we suggest learning more about eye-gaze targeting in mixed reality here:</span></span>
+* <span data-ttu-id="e89f1-142">[Hololens 2 上的目视跟踪](eye-tracking.md)：在 hololens 2 上提供新的目视跟踪功能（包括一些开发人员指南）。</span><span class="sxs-lookup"><span data-stu-id="e89f1-142">[Eye tracking on HoloLens 2](eye-tracking.md): General introduction of our new eye tracking capability on HoloLens 2 including some developer guidance.</span></span> 
+* <span data-ttu-id="e89f1-143">[目视的交互](eye-gaze-interaction.md)：计划使用目视跟踪作为输入时的设计注意事项和建议。</span><span class="sxs-lookup"><span data-stu-id="e89f1-143">[Eye-gaze interaction](eye-gaze-interaction.md): Design considerations and recommendations when planning to use eye tracking as an input.</span></span>
+
+<table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+   <tr>
+        <td><span data-ttu-id="e89f1-144"><strong>目视瞄准目标</strong></span><span class="sxs-lookup"><span data-stu-id="e89f1-144"><strong>Eye-gaze targeting</strong></span></span></td>
+        <td><span data-ttu-id="e89f1-145"><strong>头-注视目标</strong></span><span class="sxs-lookup"><span data-stu-id="e89f1-145"><strong>Head-gaze targeting</strong></span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="e89f1-146">Fast!</span><span class="sxs-lookup"><span data-stu-id="e89f1-146">Fast!</span></span></td>
+        <td><span data-ttu-id="e89f1-147">比较</span><span class="sxs-lookup"><span data-stu-id="e89f1-147">Slower</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="e89f1-148">低工作量（几乎所有必要的主体移动）</span><span class="sxs-lookup"><span data-stu-id="e89f1-148">Low effort (barely any body movements necessary)</span></span></td>
+        <td><span data-ttu-id="e89f1-149">可能是 fatiguing 的 discomfort （例如，颈部紧张）</span><span class="sxs-lookup"><span data-stu-id="e89f1-149">Can be fatiguing - Possible discomfort (e.g., neck strain)</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="e89f1-150">不需要游标，但建议使用微妙的反馈</span><span class="sxs-lookup"><span data-stu-id="e89f1-150">Does not require a cursor, but subtle feedback is recommended</span></span></td>
+        <td><span data-ttu-id="e89f1-151">需要显示游标</span><span class="sxs-lookup"><span data-stu-id="e89f1-151">Requires to show a cursor</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="e89f1-152">无平滑的眼睛运动-例如，不适用于绘图</span><span class="sxs-lookup"><span data-stu-id="e89f1-152">No smooth eye movements – e.g., not good for drawing</span></span></td>
+        <td><span data-ttu-id="e89f1-153">更多受控和显式</span><span class="sxs-lookup"><span data-stu-id="e89f1-153">More controlled and explicit</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="e89f1-154">对于非常小的目标（例如，小按钮或 weblinks）很难</span><span class="sxs-lookup"><span data-stu-id="e89f1-154">Difficult for very small targets (e.g., tiny buttons or weblinks)</span></span></td>
+        <td><span data-ttu-id="e89f1-155">非常!</span><span class="sxs-lookup"><span data-stu-id="e89f1-155">Reliable!</span></span> <span data-ttu-id="e89f1-156">好的回退！</span><span class="sxs-lookup"><span data-stu-id="e89f1-156">Great fallback!</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="e89f1-157">...</span><span class="sxs-lookup"><span data-stu-id="e89f1-157">...</span></span></td>
+        <td><span data-ttu-id="e89f1-158">...</span><span class="sxs-lookup"><span data-stu-id="e89f1-158">...</span></span></td>
+    </tr>
+</table>
+
+<span data-ttu-id="e89f1-159">无论你使用的是眼睛还是目视，你的眼睛和提交输入模型都附带了不同的设计约束集，这将在[眼睛眼睛和提交](gaze-and-commit-eyes.md)和[提交](gaze-and-commit-head.md)文章中单独介绍。</span><span class="sxs-lookup"><span data-stu-id="e89f1-159">Whether you use head-gaze or eye-gaze for your gaze-and-commit input model comes with different sets of design constraints, which will be covered separately in the [eye-gaze and commit](gaze-and-commit-eyes.md) and [head-gaze and commit](gaze-and-commit-head.md) articles.</span></span>
+
+<br>
+
+---
+
+### <a name="cursor"></a><span data-ttu-id="e89f1-160">Cursor</span><span class="sxs-lookup"><span data-stu-id="e89f1-160">Cursor</span></span>
+
+:::row:::
+    :::column:::
+        <span data-ttu-id="e89f1-161">对于 "注视"，大多数应用程序都应使用[游标](cursors.md)（或其他听觉/视觉指示）来让用户信任他们要与之交互的内容。</span><span class="sxs-lookup"><span data-stu-id="e89f1-161">For head gaze, most apps should use a [cursor](cursors.md) (or other auditory/visual indication) to give the user confidence in what they're about to interact with.</span></span> <span data-ttu-id="e89f1-162">通常将此光标置于世界上，其中其打印头看起来先与一个对象（可能是全息图或真实表面）相交。</span><span class="sxs-lookup"><span data-stu-id="e89f1-162">You typically position this cursor in the world where their head gaze ray first intersects an object, which may be a hologram or a real-world surface.</span></span><br>
+        <br>
+        <span data-ttu-id="e89f1-163">对于眼睛，我们通常建议*不要*显示游标，因为这可能会使用户迅速变得杂乱。</span><span class="sxs-lookup"><span data-stu-id="e89f1-163">For eye gaze, we generally recommend *not* to show a cursor, as this can quickly become distracting and annoying for the user.</span></span> <span data-ttu-id="e89f1-164">相反，突出强调视觉对象目标或使用非常模糊的光标，以使用户与之交互的对象更有把握。</span><span class="sxs-lookup"><span data-stu-id="e89f1-164">Instead subtly highlight visual targets or use a very faint eye cursor to provide confidence about what the user is about to interact with.</span></span> <span data-ttu-id="e89f1-165">有关详细信息，请查看有关 HoloLens 2 上[基于目视的输入的设计指南](eye-tracking.md)。</span><span class="sxs-lookup"><span data-stu-id="e89f1-165">For more information, please check out our [design guidance for eye-based input](eye-tracking.md) on HoloLens 2.</span></span>
+    :::column-end:::
+        :::column:::
+       <span data-ttu-id="e89f1-166">![直观光标的示例以显示注视](images/cursor.jpg)</span><span class="sxs-lookup"><span data-stu-id="e89f1-166">![An example visual cursor to show gaze](images/cursor.jpg)</span></span><br>
+       <span data-ttu-id="e89f1-167">*图像：显示注视的视觉对象光标示例*</span><span class="sxs-lookup"><span data-stu-id="e89f1-167">*Image: An example visual cursor to show gaze*</span></span>
+    :::column-end:::
+:::row-end:::
+
+<br>
+
+---
+
+## <a name="commit"></a><span data-ttu-id="e89f1-168">提交</span><span class="sxs-lookup"><span data-stu-id="e89f1-168">Commit</span></span>
+<span data-ttu-id="e89f1-169">_在谈论看一看目标_的不同方法之后，让我们更深入地谈谈 "注视" 和 "_提交_" 中的_提交_部分。</span><span class="sxs-lookup"><span data-stu-id="e89f1-169">After talking about different ways to _gaze_ at a target, let's talk a bit more about the _commit_ part in _gaze and commit_.</span></span>
+<span data-ttu-id="e89f1-170">以对象或 UI 元素为目标后，用户可以使用辅助输入交互或单击此元素。</span><span class="sxs-lookup"><span data-stu-id="e89f1-170">After targeting an object or UI element, the user can interact or click on it using a secondary input.</span></span> <span data-ttu-id="e89f1-171">这称为输入模型的提交步骤。</span><span class="sxs-lookup"><span data-stu-id="e89f1-171">This is known as the commit step of the input model.</span></span> 
+
+<span data-ttu-id="e89f1-172">支持以下提交方法：</span><span class="sxs-lookup"><span data-stu-id="e89f1-172">The following commit methods are supported:</span></span>
+- <span data-ttu-id="e89f1-173">空中攻攻形手势（即，在您自己的前方抬起，并将您的食指和拇指结合在一起）</span><span class="sxs-lookup"><span data-stu-id="e89f1-173">Air tap hand gesture (i.e., raise your hand in front of you and bring together your index finger and thumb)</span></span>
+- <span data-ttu-id="e89f1-174">说 _"选择"_ 或一个目标语音命令</span><span class="sxs-lookup"><span data-stu-id="e89f1-174">Say _"select"_ or one of the targeted voice commands</span></span>
+- <span data-ttu-id="e89f1-175">在[HoloLens Clicker](hardware-accessories.md#hololens-clicker)上按单个按钮</span><span class="sxs-lookup"><span data-stu-id="e89f1-175">Press a single button on a [HoloLens Clicker](hardware-accessories.md#hololens-clicker)</span></span>
+- <span data-ttu-id="e89f1-176">按下 Xbox 游戏板上的 "A" 按钮</span><span class="sxs-lookup"><span data-stu-id="e89f1-176">Press the 'A' button on an Xbox gamepad</span></span>
+- <span data-ttu-id="e89f1-177">按 Xbox 自适应控制器上的 "A" 按钮</span><span class="sxs-lookup"><span data-stu-id="e89f1-177">Press the 'A' button on an Xbox adaptive controller</span></span>
 
-## <a name="commit"></a><span data-ttu-id="ee9df-125">提交</span><span class="sxs-lookup"><span data-stu-id="ee9df-125">Commit</span></span>
-<span data-ttu-id="ee9df-126">以对象或 UI 元素为目标后, 用户可以使用辅助输入交互或单击此元素。</span><span class="sxs-lookup"><span data-stu-id="ee9df-126">After targeting an object or UI element, the user can interact or click on it using a secondary input.</span></span> <span data-ttu-id="ee9df-127">这称为模型的提交步骤。</span><span class="sxs-lookup"><span data-stu-id="ee9df-127">This is known as the commit step of the model.</span></span> <span data-ttu-id="ee9df-128">支持以下提交方法：</span><span class="sxs-lookup"><span data-stu-id="ee9df-128">The following commit methods are supported:</span></span>
+### <a name="gaze-and-air-tap-gesture"></a><span data-ttu-id="e89f1-178">注视和气攻敲击手势</span><span class="sxs-lookup"><span data-stu-id="e89f1-178">Gaze and air tap gesture</span></span>
+<span data-ttu-id="e89f1-179">隔空敲击是一种手部直立的点击手势。</span><span class="sxs-lookup"><span data-stu-id="e89f1-179">Air tap is a tapping gesture with the hand held upright.</span></span> <span data-ttu-id="e89f1-180">若要执行分流，请将索引向下移动到准备好的位置，然后使用拇指来凸出，并使索引抓手指返回到释放状态。</span><span class="sxs-lookup"><span data-stu-id="e89f1-180">To perform an air tap, raise your index finger to the ready position, then pinch with your thumb, and raise your index finger back up to release.</span></span> <span data-ttu-id="e89f1-181">在 HoloLens （第一代）上，分流是最常见的辅助输入。</span><span class="sxs-lookup"><span data-stu-id="e89f1-181">On HoloLens (1st gen), air tap is the most common secondary input.</span></span>
 
-- <span data-ttu-id="ee9df-129">Air 攻攻</span><span class="sxs-lookup"><span data-stu-id="ee9df-129">Air tap gesture</span></span>
-- <span data-ttu-id="ee9df-130">说语音命令、选择或目标语音命令之一</span><span class="sxs-lookup"><span data-stu-id="ee9df-130">Speak the voice command, Select, or one of the targeted voice commands</span></span>
-- <span data-ttu-id="ee9df-131">在[HoloLens Clicker](hardware-accessories.md#hololens-clicker)上按单个按钮</span><span class="sxs-lookup"><span data-stu-id="ee9df-131">Press a single button on a [HoloLens Clicker](hardware-accessories.md#hololens-clicker)</span></span>
-- <span data-ttu-id="ee9df-132">按下 Xbox 游戏板上的 "A" 按钮</span><span class="sxs-lookup"><span data-stu-id="ee9df-132">Press the 'A' button on an Xbox gamepad</span></span>
-- <span data-ttu-id="ee9df-133">按 Xbox 自适应控制器上的 "A" 按钮</span><span class="sxs-lookup"><span data-stu-id="ee9df-133">Press the 'A' button on an Xbox adaptive controller</span></span>
 
-### <a name="head-gaze-and-air-tap-gesture"></a><span data-ttu-id="ee9df-134">头部凝视和隔空敲击手势</span><span class="sxs-lookup"><span data-stu-id="ee9df-134">Head-gaze and air tap gesture</span></span>
-<span data-ttu-id="ee9df-135">隔空敲击是一种手部直立的点击手势。</span><span class="sxs-lookup"><span data-stu-id="ee9df-135">Air tap is a tapping gesture with the hand held upright.</span></span> <span data-ttu-id="ee9df-136">若要执行分流, 请将索引向下移动到准备好的位置, 然后使用拇指来凸出, 并使索引抓手指返回到释放状态。</span><span class="sxs-lookup"><span data-stu-id="ee9df-136">To perform an air tap, raise your index finger to the ready position, then pinch with your thumb, and raise your index finger back up to release.</span></span> <span data-ttu-id="ee9df-137">在 HoloLens (第一代) 上, 分流是最常见的辅助输入。</span><span class="sxs-lookup"><span data-stu-id="ee9df-137">On HoloLens (1st Gen), air tap is the most common secondary input.</span></span>
+:::row:::
+    :::column:::
+       <span data-ttu-id="e89f1-182">在就绪位置 ![手指](images/readyandpress-ready.jpg)</span><span class="sxs-lookup"><span data-stu-id="e89f1-182">![Finger in the ready position](images/readyandpress-ready.jpg)</span></span><br>
+       <span data-ttu-id="e89f1-183">**手指处于就绪位置**</span><span class="sxs-lookup"><span data-stu-id="e89f1-183">**Finger in the ready position**</span></span><br>
+    :::column-end:::
+    :::column:::
+       <span data-ttu-id="e89f1-184">![按下手指以点击或单击](images/readyandpress-press.jpg)</span><span class="sxs-lookup"><span data-stu-id="e89f1-184">![Press finger down to tap or click](images/readyandpress-press.jpg)</span></span><br>
+        <span data-ttu-id="e89f1-185">**按下手指点击或单击**</span><span class="sxs-lookup"><span data-stu-id="e89f1-185">**Press finger down to tap or click**</span></span><br>
+    :::column-end:::
+:::row-end:::
 
-![将手指放在预备位置，然后点击或单击](images/readyandpress.jpg)<br>
 
-<span data-ttu-id="ee9df-139">HoloLens 2 上也提供了空中点击。</span><span class="sxs-lookup"><span data-stu-id="ee9df-139">Air tap is also available on HoloLens 2.</span></span> <span data-ttu-id="ee9df-140">它已从原始版本中宽松。</span><span class="sxs-lookup"><span data-stu-id="ee9df-140">It has been relaxed from the original version.</span></span> <span data-ttu-id="ee9df-141">几乎所有类型的 pinches 现在都受支持, 只要手直立并且仍保持。</span><span class="sxs-lookup"><span data-stu-id="ee9df-141">Nearly all types of pinches are now supported as long as the hand is upright and holding still.</span></span> <span data-ttu-id="ee9df-142">这使用户更容易学习和执行手势。</span><span class="sxs-lookup"><span data-stu-id="ee9df-142">This makes it much easier for users to learn and perform the gesture.</span></span> <span data-ttu-id="ee9df-143">这种新的 "air" 将通过相同的 API 替换旧的, 因此, 在重新编译 HoloLens 2 后, 现有应用程序将自动具有新行为。</span><span class="sxs-lookup"><span data-stu-id="ee9df-143">This new air tap replaces the old one through the same API, so existing applications will have the new behavior automatically after recompiling for HoloLens 2.</span></span>
+<span data-ttu-id="e89f1-186">HoloLens 2 上也提供了空中点击。</span><span class="sxs-lookup"><span data-stu-id="e89f1-186">Air tap is also available on HoloLens 2.</span></span> <span data-ttu-id="e89f1-187">它已从原始版本中宽松。</span><span class="sxs-lookup"><span data-stu-id="e89f1-187">It has been relaxed from the original version.</span></span> <span data-ttu-id="e89f1-188">几乎所有类型的 pinches 现在都受支持，只要手直立并且仍保持。</span><span class="sxs-lookup"><span data-stu-id="e89f1-188">Nearly all types of pinches are now supported as long as the hand is upright and holding still.</span></span> <span data-ttu-id="e89f1-189">这使用户更容易学习和执行手势。</span><span class="sxs-lookup"><span data-stu-id="e89f1-189">This makes it much easier for users to learn and perform the gesture.</span></span> <span data-ttu-id="e89f1-190">这种新的 "air" 将通过相同的 API 替换旧的，因此，在重新编译 HoloLens 2 后，现有应用程序将自动具有新行为。</span><span class="sxs-lookup"><span data-stu-id="e89f1-190">This new air tap replaces the old one through the same API, so existing applications will have the new behavior automatically after recompiling for HoloLens 2.</span></span>
 
-### <a name="head-gaze-and-select-voice-command"></a><span data-ttu-id="ee9df-144">头部凝视和“选择”语音命令</span><span class="sxs-lookup"><span data-stu-id="ee9df-144">Head-gaze and "Select" voice command</span></span>
-<span data-ttu-id="ee9df-145">语音命令是混合现实中的主要交互方法之一。</span><span class="sxs-lookup"><span data-stu-id="ee9df-145">Voice commanding is one of the primary interaction methods in mixed reality.</span></span> <span data-ttu-id="ee9df-146">它提供一种非常强大的无人参与机制来控制系统。</span><span class="sxs-lookup"><span data-stu-id="ee9df-146">It provides a very powerful hands-free mechanism to control the system.</span></span> <span data-ttu-id="ee9df-147">可使用不同类型的语音交互模型：</span><span class="sxs-lookup"><span data-stu-id="ee9df-147">There are diferent types of voice interaction models:</span></span>
+<br>
 
-- <span data-ttu-id="ee9df-148">执行单击传动或提交作为辅助输入的通用命令选择。</span><span class="sxs-lookup"><span data-stu-id="ee9df-148">The generic command Select that performs a click actuation or commit as a secondary input.</span></span>
-- <span data-ttu-id="ee9df-149">诸如关闭或使其变得更大的对象命令会执行, 并提交给操作作为辅助输入。</span><span class="sxs-lookup"><span data-stu-id="ee9df-149">Object commands like Close or Make it bigger performs and commits to an action as a secondary input.</span></span>
-- <span data-ttu-id="ee9df-150">全局 commnads (如 "开始") 不需要目标。</span><span class="sxs-lookup"><span data-stu-id="ee9df-150">Global commnads like Go to start don't require a target.</span></span>
-- <span data-ttu-id="ee9df-151">像 Cortana 这样的对话用户界面或实体具有 AI 自然语言功能。</span><span class="sxs-lookup"><span data-stu-id="ee9df-151">Conversation user interfaces or entities like Cortana have an AI natural language capability.</span></span>
-- <span data-ttu-id="ee9df-152">自定义命令</span><span class="sxs-lookup"><span data-stu-id="ee9df-152">Custom commnads</span></span>
+---
 
-<span data-ttu-id="ee9df-153">若要查找更多详细信息以及可用命令的 comprenhesive 列表以及如何使用它们, 请查看我们的[语音命令](voice-design.md)指南。</span><span class="sxs-lookup"><span data-stu-id="ee9df-153">To find more details as well as a comprenhesive list of available commands and how to use them, check out our [voice commanding](voice-design.md) guidance.</span></span>
+### <a name="gaze-and-select-voice-command"></a><span data-ttu-id="e89f1-191">注视并单击 "选择" 语音命令</span><span class="sxs-lookup"><span data-stu-id="e89f1-191">Gaze and "Select" voice command</span></span>
+<span data-ttu-id="e89f1-192">语音命令是混合现实中的主要交互方法之一。</span><span class="sxs-lookup"><span data-stu-id="e89f1-192">Voice commanding is one of the primary interaction methods in mixed reality.</span></span> <span data-ttu-id="e89f1-193">它提供一种非常强大的无人参与机制来控制系统。</span><span class="sxs-lookup"><span data-stu-id="e89f1-193">It provides a very powerful hands-free mechanism to control the system.</span></span> <span data-ttu-id="e89f1-194">有不同类型的语音交互模型：</span><span class="sxs-lookup"><span data-stu-id="e89f1-194">There are different types of voice interaction models:</span></span>
 
+- <span data-ttu-id="e89f1-195">执行单击传动或提交作为辅助输入的一般 "Select" 命令。</span><span class="sxs-lookup"><span data-stu-id="e89f1-195">The generic "Select" command that performs a click actuation or commit as a secondary input.</span></span>
+- <span data-ttu-id="e89f1-196">对象命令（例如，"关闭" 或 "使其变大"）作为辅助输入执行并提交到操作。</span><span class="sxs-lookup"><span data-stu-id="e89f1-196">Object commands (e.g., "Close" or "Make it bigger") perform and commit to an action as a secondary input.</span></span>
+- <span data-ttu-id="e89f1-197">全局命令（例如，"中转到开始"）不需要目标。</span><span class="sxs-lookup"><span data-stu-id="e89f1-197">Global commands (e.g., "Go to start") don't require a target.</span></span>
+- <span data-ttu-id="e89f1-198">像 Cortana 这样的对话用户界面或实体具有 AI 自然语言功能。</span><span class="sxs-lookup"><span data-stu-id="e89f1-198">Conversation user interfaces or entities like Cortana have an AI natural language capability.</span></span>
+- <span data-ttu-id="e89f1-199">自定义语音命令</span><span class="sxs-lookup"><span data-stu-id="e89f1-199">Custom voice commands</span></span>
 
-### <a name="head-gaze-and-hololens-clicker"></a><span data-ttu-id="ee9df-154">头部凝视和 HoloLens 遥控器</span><span class="sxs-lookup"><span data-stu-id="ee9df-154">Head-gaze and HoloLens Clicker</span></span>
-<span data-ttu-id="ee9df-155">HoloLens Clicker 是专门为 HoloLens 构建的第一个外围设备。</span><span class="sxs-lookup"><span data-stu-id="ee9df-155">The HoloLens Clicker is the first peripheral device built specifically for HoloLens.</span></span> <span data-ttu-id="ee9df-156">它随附于 HoloLens (第一代) 开发版本。</span><span class="sxs-lookup"><span data-stu-id="ee9df-156">It is included with HoloLens (1st Gen) Development Edition.</span></span> <span data-ttu-id="ee9df-157">通过 HoloLens Clicker, 用户可单击最小手动运动, 并提交为辅助输入。</span><span class="sxs-lookup"><span data-stu-id="ee9df-157">The HoloLens Clicker lets a user click with minimal hand motion, and commit as a secondary input.</span></span> <span data-ttu-id="ee9df-158">HoloLens Clicker 使用蓝牙低功耗 (BTLE) 连接到 HoloLens (第一代) 或 HoloLens 2。</span><span class="sxs-lookup"><span data-stu-id="ee9df-158">The HoloLens Clicker connects to HoloLens (1st Gen) or HoloLens 2 using Bluetooth Low Energy (BTLE).</span></span>
+<span data-ttu-id="e89f1-200">若要了解更多详细信息以及可用语音命令的完整列表以及如何使用这些命令，请查看我们的[语音](voice-design.md)命令指南。</span><span class="sxs-lookup"><span data-stu-id="e89f1-200">To find out more details as well as a comprehensive list of available voice commands and how to use them, check out our [voice commanding](voice-design.md) guidance.</span></span>
 
-<span data-ttu-id="ee9df-159">![HoloLens 遥控器](images/hololens-clicker-500px.jpg)</span><span class="sxs-lookup"><span data-stu-id="ee9df-159">![HoloLens Clicker](images/hololens-clicker-500px.jpg)</span></span><br>
-<span data-ttu-id="ee9df-160">*HoloLens 遥控器*</span><span class="sxs-lookup"><span data-stu-id="ee9df-160">*HoloLens Clicker*</span></span>
+<br>
 
-<span data-ttu-id="ee9df-161">有关设备配对的详细信息和说明，请参阅[此处](hardware-accessories.md#pairing-bluetooth-accessories)</span><span class="sxs-lookup"><span data-stu-id="ee9df-161">More information and instructions to pair the device can be found [here](hardware-accessories.md#pairing-bluetooth-accessories)</span></span>
+---
 
 
+### <a name="gaze-and-hololens-clicker"></a><span data-ttu-id="e89f1-201">注视和 HoloLens Clicker</span><span class="sxs-lookup"><span data-stu-id="e89f1-201">Gaze and HoloLens Clicker</span></span>
 
+:::row:::
+    :::column:::
+        <span data-ttu-id="e89f1-202">HoloLens Clicker 是专门为 HoloLens 构建的第一个外围设备。</span><span class="sxs-lookup"><span data-stu-id="e89f1-202">The HoloLens Clicker is the first peripheral device built specifically for HoloLens.</span></span> <span data-ttu-id="e89f1-203">它随附于 HoloLens （第一代）开发版本。</span><span class="sxs-lookup"><span data-stu-id="e89f1-203">It is included with HoloLens (1st gen) Development Edition.</span></span> <span data-ttu-id="e89f1-204">通过 HoloLens Clicker，用户可单击最小手动运动，并提交为辅助输入。</span><span class="sxs-lookup"><span data-stu-id="e89f1-204">The HoloLens Clicker lets a user click with minimal hand motion, and commit as a secondary input.</span></span> <span data-ttu-id="e89f1-205">HoloLens Clicker 使用蓝牙低功耗（BTLE）连接到 HoloLens （第一代）或 HoloLens 2。</span><span class="sxs-lookup"><span data-stu-id="e89f1-205">The HoloLens Clicker connects to HoloLens (1st gen) or HoloLens 2 using Bluetooth Low Energy (BTLE).</span></span><br>
+        <br>
+        [<span data-ttu-id="e89f1-206">有关将设备配对的详细信息和说明</span><span class="sxs-lookup"><span data-stu-id="e89f1-206">More information and instructions to pair the device</span></span>](hardware-accessories.md#pairing-bluetooth-accessories)<br>
+        <br>
+        <span data-ttu-id="e89f1-207">*映像： HoloLens Clicker*</span><span class="sxs-lookup"><span data-stu-id="e89f1-207">*Image: HoloLens Clicker*</span></span>
+    :::column-end:::
+        :::column:::
+       ![HoloLens Clicker](images/hololens-clicker-500px.jpg)<br>
+    :::column-end:::
+:::row-end:::
 
-### <a name="head-gaze-and-xbox-wireless-controller"></a><span data-ttu-id="ee9df-162">头部凝视和 Xbox 无线控制器</span><span class="sxs-lookup"><span data-stu-id="ee9df-162">Head-gaze and Xbox Wireless Controller</span></span>
-<span data-ttu-id="ee9df-163">Xbox 无线控制器使用 "A" 按钮执行单击传动作为辅助输入。</span><span class="sxs-lookup"><span data-stu-id="ee9df-163">The Xbox Wireless Controller performs a click actuation as a secondary input by using the 'A' button.</span></span> <span data-ttu-id="ee9df-164">设备映射到一组默认操作，以帮助导航和控制系统。</span><span class="sxs-lookup"><span data-stu-id="ee9df-164">The device is mapped to a default set of actions that help navigate and controll the system.</span></span> <span data-ttu-id="ee9df-165">如果要自定义控制器, 请使用 Xbox Accesories 应用程序配置 Xbox 无线控制器。</span><span class="sxs-lookup"><span data-stu-id="ee9df-165">If you want to customize the controller, use the Xbox Accesories application to configure your Xbox Wireless Controller.</span></span>
+<br>
 
-<span data-ttu-id="ee9df-166">![Xbox 无线控制器](images/xboxcontroller.jpg)</span><span class="sxs-lookup"><span data-stu-id="ee9df-166">![Xbox Wireless Controller](images/xboxcontroller.jpg)</span></span><br>
-<span data-ttu-id="ee9df-167">*Xbox 无线控制器*</span><span class="sxs-lookup"><span data-stu-id="ee9df-167">*Xbox Wireless Controller*</span></span>
+---
 
-[<span data-ttu-id="ee9df-168">将 Xbox 控制器与电脑配对</span><span class="sxs-lookup"><span data-stu-id="ee9df-168">Pairing an Xbox controller with your PC</span></span>](hardware-accessories.md#pairing-bluetooth-accessories)
 
+### <a name="gaze-and-xbox-wireless-controller"></a><span data-ttu-id="e89f1-209">注视和 Xbox 无线控制器</span><span class="sxs-lookup"><span data-stu-id="e89f1-209">Gaze and Xbox Wireless Controller</span></span>
 
-### <a name="head-gaze-and-xbox-adaptive-controller"></a><span data-ttu-id="ee9df-169">头部凝视和 Xbox 自适应控制器</span><span class="sxs-lookup"><span data-stu-id="ee9df-169">Head-gaze and Xbox Adaptive Controller</span></span>
-<span data-ttu-id="ee9df-170">Xbox 自适应控制器主要用于满足移动性有限的游戏玩家的需求, 是一种统一的设备, 有助于使混合现实更易于访问。</span><span class="sxs-lookup"><span data-stu-id="ee9df-170">Designed primarily to meet the needs of gamers with limited mobility, the Xbox Adaptive Controller is a unified hub for devices that helps make mixed reality more accessible.</span></span>
+:::row:::
+    :::column:::
+        <span data-ttu-id="e89f1-210">Xbox 无线控制器使用 "A" 按钮执行单击传动作为辅助输入。</span><span class="sxs-lookup"><span data-stu-id="e89f1-210">The Xbox Wireless Controller performs a click actuation as a secondary input by using the 'A' button.</span></span> <span data-ttu-id="e89f1-211">设备映射到一组可帮助导航和控制系统的默认操作。</span><span class="sxs-lookup"><span data-stu-id="e89f1-211">The device is mapped to a default set of actions that help navigate and control the system.</span></span> <span data-ttu-id="e89f1-212">如果要自定义控制器，请使用 Xbox 附件应用程序来配置 Xbox 无线控制器。</span><span class="sxs-lookup"><span data-stu-id="e89f1-212">If you want to customize the controller, use the Xbox Accessories application to configure your Xbox Wireless Controller.</span></span><br>
+        <br>
+        [<span data-ttu-id="e89f1-213">如何将 Xbox 控制器与电脑配对</span><span class="sxs-lookup"><span data-stu-id="e89f1-213">How to pair an Xbox controller with your PC</span></span>](hardware-accessories.md#pairing-bluetooth-accessories)<br>
+        <br>
+        <span data-ttu-id="e89f1-214">*映像： Xbox 无线控制器*</span><span class="sxs-lookup"><span data-stu-id="e89f1-214">*Image: Xbox Wireless Controller*</span></span>
+    :::column-end:::
+        :::column:::
+       ![Xbox 无线控制器](images/xboxcontroller.jpg)<br>
+    :::column-end:::
+:::row-end:::
 
-<span data-ttu-id="ee9df-171">Xbox 自适应控制器使用 "A" 按钮执行单击传动作为辅助输入。</span><span class="sxs-lookup"><span data-stu-id="ee9df-171">The Xbox Adaptive Controller performs a click actuation as a secondary input by using the 'A' button.</span></span> <span data-ttu-id="ee9df-172">设备映射到一组可帮助导航和控制系统的默认操作。</span><span class="sxs-lookup"><span data-stu-id="ee9df-172">The device is mapped to a default set of actions that help navigate and control the system.</span></span> <span data-ttu-id="ee9df-173">如果要自定义控制器, 请使用 Xbox Accesories 应用程序配置 Xbox 自适应控制器。</span><span class="sxs-lookup"><span data-stu-id="ee9df-173">If you want to customize the controller, use the Xbox Accesories application to configure your Xbox Adaptive Controller.</span></span>
 
-<span data-ttu-id="ee9df-174">![Xbox 自适应控制器](images/xbox-adaptive-controller-devices.jpg)</span><span class="sxs-lookup"><span data-stu-id="ee9df-174">![Xbox Adaptive Controller](images/xbox-adaptive-controller-devices.jpg)</span></span><br>
-<span data-ttu-id="ee9df-175">*Xbox 自适应控制器*</span><span class="sxs-lookup"><span data-stu-id="ee9df-175">*Xbox Adaptive Controller*</span></span>
 
-<span data-ttu-id="ee9df-176">连接外部设备, 如交换机、按钮、装入和操纵杆, 以创建唯一的自定义控制器体验。</span><span class="sxs-lookup"><span data-stu-id="ee9df-176">Connect external devices such as switches, buttons, mounts, and joysticks to create a custom controller experience that is uniquely yours.</span></span> <span data-ttu-id="ee9df-177">按钮、操纵杆和触发器输入由通过 3.5 mm 插座和 USB 端口连接的辅助设备控制。</span><span class="sxs-lookup"><span data-stu-id="ee9df-177">Button, thumbstick, and trigger inputs are controlled with assistive devices connected through 3.5mm jacks and USB ports.</span></span>
+<br>
 
-<span data-ttu-id="ee9df-178">![Xbox 自适应控制器端口](images/xbox-adaptive-controller-ports.jpg)</span><span class="sxs-lookup"><span data-stu-id="ee9df-178">![Xbox Adaptive Controller ports](images/xbox-adaptive-controller-ports.jpg)</span></span><br>
-<span data-ttu-id="ee9df-179">*Xbox 自适应控制器端口*</span><span class="sxs-lookup"><span data-stu-id="ee9df-179">*Xbox Adaptive Controller ports*</span></span>
+---
 
-[<span data-ttu-id="ee9df-180">设备配对说明</span><span class="sxs-lookup"><span data-stu-id="ee9df-180">Instructions to pair the device</span></span>](hardware-accessories.md#pairing-bluetooth-accessories)
 
-<span data-ttu-id="ee9df-181"><a href=https://www.xbox.com/en-US/xbox-one/accessories/controllers/xbox-adaptive-controller>Xbox 网站上提供了更多信息</a></span><span class="sxs-lookup"><span data-stu-id="ee9df-181"><a href=https://www.xbox.com/en-US/xbox-one/accessories/controllers/xbox-adaptive-controller>More info available on the Xbox site</a></span></span>
+### <a name="gaze-and-xbox-adaptive-controller"></a><span data-ttu-id="e89f1-216">注视和 Xbox 自适应控制器</span><span class="sxs-lookup"><span data-stu-id="e89f1-216">Gaze and Xbox Adaptive Controller</span></span>
+<span data-ttu-id="e89f1-217">Xbox 自适应控制器主要用于满足移动性有限的游戏玩家的需求，是一种统一的设备，有助于使混合现实更易于访问。</span><span class="sxs-lookup"><span data-stu-id="e89f1-217">Designed primarily to meet the needs of gamers with limited mobility, the Xbox Adaptive Controller is a unified hub for devices that helps make mixed reality more accessible.</span></span>
 
+<span data-ttu-id="e89f1-218">Xbox 自适应控制器使用 "A" 按钮执行单击传动作为辅助输入。</span><span class="sxs-lookup"><span data-stu-id="e89f1-218">The Xbox Adaptive Controller performs a click actuation as a secondary input by using the 'A' button.</span></span> <span data-ttu-id="e89f1-219">设备映射到一组可帮助导航和控制系统的默认操作。</span><span class="sxs-lookup"><span data-stu-id="e89f1-219">The device is mapped to a default set of actions that help navigate and control the system.</span></span> <span data-ttu-id="e89f1-220">如果要自定义控制器，请使用 Xbox 附件应用程序来配置 Xbox 自适应控制器。</span><span class="sxs-lookup"><span data-stu-id="e89f1-220">If you want to customize the controller, use the Xbox Accessories application to configure your Xbox Adaptive Controller.</span></span>
 
-## <a name="design-guidelines"></a><span data-ttu-id="ee9df-182">设计指南</span><span class="sxs-lookup"><span data-stu-id="ee9df-182">Design guidelines</span></span>
-> [!NOTE]
-> <span data-ttu-id="ee9df-183">[即将推出](index.md)有关凝视设计的更多指南。</span><span class="sxs-lookup"><span data-stu-id="ee9df-183">More guidance specific to gaze design [coming soon](index.md).</span></span>
+<span data-ttu-id="e89f1-221">![Xbox 自适应控制器](images/xbox-adaptive-controller-devices.jpg)</span><span class="sxs-lookup"><span data-stu-id="e89f1-221">![Xbox Adaptive Controller](images/xbox-adaptive-controller-devices.jpg)</span></span><br>
+<span data-ttu-id="e89f1-222">*Xbox 自适应控制器*</span><span class="sxs-lookup"><span data-stu-id="e89f1-222">*Xbox Adaptive Controller*</span></span>
 
-## <a name="head-gaze-targeting"></a><span data-ttu-id="ee9df-184">头部凝视目标设定</span><span class="sxs-lookup"><span data-stu-id="ee9df-184">Head-gaze targeting</span></span>
-<span data-ttu-id="ee9df-185">所有交互的基础都是用户能够将想要与之交互的元素设定为目标，而无论使用何种输入模态。</span><span class="sxs-lookup"><span data-stu-id="ee9df-185">All interactions are built upon the ability of a user to target the element they want to interact with, regardless of the input modality.</span></span> <span data-ttu-id="ee9df-186">在 Windows Mixed Reality 中，通常通过用户凝视来完成此操作。</span><span class="sxs-lookup"><span data-stu-id="ee9df-186">In Windows Mixed Reality, this is generally done using the user's gaze.</span></span>
-<span data-ttu-id="ee9df-187">为了使用户能够成功使用体验, 系统计算对用户意图的理解以及用户的实际意图必须尽可能接近。</span><span class="sxs-lookup"><span data-stu-id="ee9df-187">To enable a user to work with an experience successfully, the system's calculated understanding of a user's intent and the user's actual intent must align as closely as possible.</span></span> <span data-ttu-id="ee9df-188">按照系统正确解释用户目标操作的程度，满意度提高，性能提高。</span><span class="sxs-lookup"><span data-stu-id="ee9df-188">To the degree that the system interprets the user's intended actions correctly, satisfaction increases and performance improves.</span></span>
+<span data-ttu-id="e89f1-223">连接外部设备，如交换机、按钮、装入和操纵杆，以创建唯一的自定义控制器体验。</span><span class="sxs-lookup"><span data-stu-id="e89f1-223">Connect external devices such as switches, buttons, mounts, and joysticks to create a custom controller experience that is uniquely yours.</span></span> <span data-ttu-id="e89f1-224">按钮、操纵杆和触发器输入由通过 3.5 mm 插座和 USB 端口连接的辅助设备控制。</span><span class="sxs-lookup"><span data-stu-id="e89f1-224">Button, thumbstick, and trigger inputs are controlled with assistive devices connected through 3.5mm jacks and USB ports.</span></span>
 
+<span data-ttu-id="e89f1-225">![Xbox 自适应控制器端口](images/xbox-adaptive-controller-ports.jpg)</span><span class="sxs-lookup"><span data-stu-id="e89f1-225">![Xbox Adaptive Controller ports](images/xbox-adaptive-controller-ports.jpg)</span></span><br>
+<span data-ttu-id="e89f1-226">*Xbox 自适应控制器端口*</span><span class="sxs-lookup"><span data-stu-id="e89f1-226">*Xbox Adaptive Controller ports*</span></span>
 
-## <a name="target-sizing-and-feedback"></a><span data-ttu-id="ee9df-189">目标大小调整和反馈</span><span class="sxs-lookup"><span data-stu-id="ee9df-189">Target sizing and feedback</span></span>
-<span data-ttu-id="ee9df-190">看起来矢量已经重复显示, 可用于精细定位, 但通常最适用于毛目标-获取稍大的目标。</span><span class="sxs-lookup"><span data-stu-id="ee9df-190">The gaze vector has been shown repeatedly to be usable for fine targeting, but often works best for gross targeting--acquiring somewhat larger targets.</span></span> <span data-ttu-id="ee9df-191">在大多数情况下, 最小目标大小为1到1.5 度允许成功的用户操作, 尽管目标为3度, 但通常允许更快。</span><span class="sxs-lookup"><span data-stu-id="ee9df-191">Minimum target sizes of 1 to 1.5 degrees allows successful user actions in most scenarios, though targets of 3 degrees often allow for greater speed.</span></span> <span data-ttu-id="ee9df-192">请注意，即使对于 3D 元素，用户设定为目标的尺寸实际上也是 2D 区域，3D 元素的投影即是可设定为目标的区域。</span><span class="sxs-lookup"><span data-stu-id="ee9df-192">Note that the size that the user targets is effectively a 2D area even for 3D elements--whichever projection is facing them should be the targetable area.</span></span> <span data-ttu-id="ee9df-193">提供一些突出的提示, 指出某个元素处于 "活动" 状态 (用户以其为目标) 非常有帮助。</span><span class="sxs-lookup"><span data-stu-id="ee9df-193">Providing some salient cue that an element is "active" (that the user is targeting it) is extremely helpful.</span></span> <span data-ttu-id="ee9df-194">这可能包括处理方式 (如可见的 "悬停" 效果、音频突出显示或单击), 或通过元素清晰显示光标。</span><span class="sxs-lookup"><span data-stu-id="ee9df-194">This can include treatments like visible "hover" effects, audio highlights or clicks, or clear alignment of a cursor with an element.</span></span>
+[<span data-ttu-id="e89f1-227">设备配对说明</span><span class="sxs-lookup"><span data-stu-id="e89f1-227">Instructions to pair the device</span></span>](hardware-accessories.md#pairing-bluetooth-accessories)
 
-<span data-ttu-id="ee9df-195">![2 米远处的最佳目标大小](images/gazetargeting-size-1000px.jpg)</span><span class="sxs-lookup"><span data-stu-id="ee9df-195">![Optimal target size at 2 meter distance](images/gazetargeting-size-1000px.jpg)</span></span><br>
-<span data-ttu-id="ee9df-196">*2 米远处的最佳目标大小*</span><span class="sxs-lookup"><span data-stu-id="ee9df-196">*Optimal target size at 2 meter distance*</span></span>
+<span data-ttu-id="e89f1-228"><a href=https://www.xbox.com/xbox-one/accessories/controllers/xbox-adaptive-controller>Xbox 网站上提供了更多信息</a></span><span class="sxs-lookup"><span data-stu-id="e89f1-228"><a href=https://www.xbox.com/xbox-one/accessories/controllers/xbox-adaptive-controller>More info available on the Xbox site</a></span></span>
 
-<span data-ttu-id="ee9df-197">![突出显示凝视目标对象的示例](images/gazetargeting-highlighting-640px.jpg)</span><span class="sxs-lookup"><span data-stu-id="ee9df-197">![An example of highlighting a gaze targeted object](images/gazetargeting-highlighting-640px.jpg)</span></span><br>
-<span data-ttu-id="ee9df-198">*突出显示凝视目标对象的示例*</span><span class="sxs-lookup"><span data-stu-id="ee9df-198">*An example of highlighting a gaze targeted object*</span></span>
+<br>
 
-## <a name="target-placement"></a><span data-ttu-id="ee9df-199">目标位置</span><span class="sxs-lookup"><span data-stu-id="ee9df-199">Target placement</span></span>
-<span data-ttu-id="ee9df-200">用户经常找不到在其视图字段中定位很高或极低的 UI 元素, 这就是他们对其主要关注点的关注点 (大约在眼睛上)。</span><span class="sxs-lookup"><span data-stu-id="ee9df-200">Users often fail to find UI elements that are positioned very high or very low in their field of view, focusing most of their attention on areas around their main focus, which is approximately at eye level.</span></span> <span data-ttu-id="ee9df-201">将大多数目标放在视平线位置附近的某个合理范围内可能有所帮助。</span><span class="sxs-lookup"><span data-stu-id="ee9df-201">Placing most targets in some reasonable band around eye level can help.</span></span> <span data-ttu-id="ee9df-202">考虑到用户在任何时候都倾向于关注一个相对较小的可视区域（注意力视锥大约为 10 度），通过将 UI 元素分组到在概念上相关的位置，可以在用户的视线通过某个区域时利用各项目之间的注意力链锁作用。</span><span class="sxs-lookup"><span data-stu-id="ee9df-202">Given the tendency for users to focus on a relatively small visual area at any time (the attentional cone of vision is roughly 10 degrees), grouping UI elements together to the degree that they're related conceptually can leverage attention-chaining behaviors from item to item as a user moves their gaze through an area.</span></span> <span data-ttu-id="ee9df-203">在设计 UI 时，请注意 HoloLens 和沉浸式头戴显示设备之间视野的巨大差异。</span><span class="sxs-lookup"><span data-stu-id="ee9df-203">When designing UI, keep in mind the potential large variation in field of view between HoloLens and immersive headsets.</span></span>
+---
 
-<span data-ttu-id="ee9df-204">![在 Galaxy Explorer 中使用分组 UI 元素简化凝视目标设定的示例](images/gazetargeting-grouping-1000px.jpg)</span><span class="sxs-lookup"><span data-stu-id="ee9df-204">![An example of grouped UI elements for easier gaze targeting in Galaxy Explorer](images/gazetargeting-grouping-1000px.jpg)</span></span><br>
-<span data-ttu-id="ee9df-205">*在 Galaxy Explorer 中使用分组 UI 元素简化凝视目标设定的示例*</span><span class="sxs-lookup"><span data-stu-id="ee9df-205">*An example of grouped UI elements for easier gaze targeting in Galaxy Explorer*</span></span>
+## <a name="composite-gestures"></a><span data-ttu-id="e89f1-229">复合手势</span><span class="sxs-lookup"><span data-stu-id="e89f1-229">Composite gestures</span></span>
 
-## <a name="improving-targeting-behaviors"></a><span data-ttu-id="ee9df-206">改进目标设定行为</span><span class="sxs-lookup"><span data-stu-id="ee9df-206">Improving targeting behaviors</span></span>
-<span data-ttu-id="ee9df-207">如果可以确定 (或大致了解) 针对某个内容的用户意向, 则在交互时接受接近的未命中尝试就是非常有帮助的。</span><span class="sxs-lookup"><span data-stu-id="ee9df-207">If user intent to target something can be determined (or approximated closely), it can be very helpful to accept near miss attempts at interaction as though they were targeted correctly.</span></span> <span data-ttu-id="ee9df-208">下面是一些可在混合现实体验中结合使用的成功方法:</span><span class="sxs-lookup"><span data-stu-id="ee9df-208">Here are a handful of successful methods that can be incorporated in mixed reality experiences:</span></span>
+### <a name="air-tap"></a><span data-ttu-id="e89f1-230">隔空敲击</span><span class="sxs-lookup"><span data-stu-id="e89f1-230">Air tap</span></span>
+<span data-ttu-id="e89f1-231">Air 攻攻敲击手势（以及下面的其他手势）仅对特定攻丝做出反应。</span><span class="sxs-lookup"><span data-stu-id="e89f1-231">The air tap gesture (as well as the other gestures below) reacts only to a specific tap.</span></span> <span data-ttu-id="e89f1-232">若要检测其他点击，如菜单或抓住，你的应用程序必须直接使用上面两个关键组件手势部分中所述的低级交互。</span><span class="sxs-lookup"><span data-stu-id="e89f1-232">To detect other taps, such as Menu or Grasp, your application must directly use the lower-level interactions described in the two key component gestures section above.</span></span>
 
-### <a name="head-gaze-stabilization-gravity-wells"></a><span data-ttu-id="ee9df-209">头部凝视防抖动（“重力井”）</span><span class="sxs-lookup"><span data-stu-id="ee9df-209">Head-gaze stabilization ("gravity wells")</span></span>
-<span data-ttu-id="ee9df-210">这应该是最多或全部开启。</span><span class="sxs-lookup"><span data-stu-id="ee9df-210">This should be turned on most or all of the time.</span></span> <span data-ttu-id="ee9df-211">此方法可删除用户在查找和讲话行为上可能具有的移动的自然头和抖动。</span><span class="sxs-lookup"><span data-stu-id="ee9df-211">This technique removes the natural head and neck jitters that users might have as well movement due to looking and speaking behaviors.</span></span>
+### <a name="tap-and-hold"></a><span data-ttu-id="e89f1-233">Tap and hold</span><span class="sxs-lookup"><span data-stu-id="e89f1-233">Tap and hold</span></span>
+<span data-ttu-id="e89f1-234">按住是指保持隔空敲击手指向下的位置。</span><span class="sxs-lookup"><span data-stu-id="e89f1-234">Hold is simply maintaining the downward finger position of the air tap.</span></span> <span data-ttu-id="e89f1-235">与 arm 移动（如选取对象，而不是激活对象或 mousedown 辅助交互，如显示上下文菜单）结合使用时，点击和保持的组合允许使用各种更复杂的 "单击并拖动" 交互。</span><span class="sxs-lookup"><span data-stu-id="e89f1-235">The combination of air tap and hold allows for a variety of more complex "click and drag" interactions when combined with arm movement such as picking up an object instead of activating it or mousedown secondary interactions such as showing a context menu.</span></span>
+<span data-ttu-id="e89f1-236">但在设计此手势时请务必小心，因为用户在做出任何扩展手势的过程都很可能放松手部姿势。</span><span class="sxs-lookup"><span data-stu-id="e89f1-236">Caution should be used when designing for this gesture however, as users can be prone to relaxing their hand postures during the course of any extended gesture.</span></span>
 
-### <a name="closest-link-algorithms"></a><span data-ttu-id="ee9df-212">最邻近链接算法</span><span class="sxs-lookup"><span data-stu-id="ee9df-212">Closest link algorithms</span></span>
-<span data-ttu-id="ee9df-213">这些方法在交互内容稀少的区域效果最好。</span><span class="sxs-lookup"><span data-stu-id="ee9df-213">These work best in areas with sparse interactive content.</span></span> <span data-ttu-id="ee9df-214">如果很有可能确定用户尝试与之交互的概率很高, 则可以通过假定某些级别来补充其目标功能。</span><span class="sxs-lookup"><span data-stu-id="ee9df-214">If there is a high probability that you can determine what a user was attempting to interact with, you can supplement their targeting abilities by assuming some level of intent.</span></span>
+### <a name="manipulation"></a><span data-ttu-id="e89f1-237">操作</span><span class="sxs-lookup"><span data-stu-id="e89f1-237">Manipulation</span></span>
+<span data-ttu-id="e89f1-238">当您想让全息图对用户的手的变动做出回应1:1 时，可以使用操作手势移动、调整或旋转全息图。</span><span class="sxs-lookup"><span data-stu-id="e89f1-238">Manipulation gestures can be used to move, resize, or rotate a hologram when you want the hologram to react 1:1 to the user's hand movements.</span></span> <span data-ttu-id="e89f1-239">此类 1:1 运动可让用户进行实际绘制或绘画。</span><span class="sxs-lookup"><span data-stu-id="e89f1-239">One use for such 1:1 movements is to let the user draw or paint in the world.</span></span>
+<span data-ttu-id="e89f1-240">操作手势的初始定位应通过凝视或指向来完成。</span><span class="sxs-lookup"><span data-stu-id="e89f1-240">The initial targeting for a manipulation gesture should be done by gaze or pointing.</span></span> <span data-ttu-id="e89f1-241">点击并保持开始后，对象的任何操作都将由手动移动处理，使用户能够在操作时进行浏览。</span><span class="sxs-lookup"><span data-stu-id="e89f1-241">Once the tap and hold starts, any manipulation of the object is handled by hand movements, freeing the user to look around while they manipulate.</span></span>
 
-### <a name="backdating-and-postdating-actions"></a><span data-ttu-id="ee9df-215">Backdating 和 postdating 操作</span><span class="sxs-lookup"><span data-stu-id="ee9df-215">Backdating and postdating actions</span></span>
-<span data-ttu-id="ee9df-216">此机制非常适合需要快速完成的任务。</span><span class="sxs-lookup"><span data-stu-id="ee9df-216">This mechanism is useful in tasks requiring speed.</span></span> <span data-ttu-id="ee9df-217">当用户通过一系列的目标和激活设法使其进行迁移时, 有必要采取一些意向, 并允许错过的步骤来处理用户在点击点之前或之后稍微有针对性的目标 (50 毫秒之前/之后)rly 测试)。</span><span class="sxs-lookup"><span data-stu-id="ee9df-217">When a user is moving through a series of targeting and activation maneuvers at speed, it is useful to assume some intent, and allow missed steps to act upon targets that the user had in focus slightly before or slightly after the tap (50 ms before/after was effective in early testing).</span></span>
+### <a name="navigation"></a><span data-ttu-id="e89f1-242">导航</span><span class="sxs-lookup"><span data-stu-id="e89f1-242">Navigation</span></span>
+<span data-ttu-id="e89f1-243">导航手势就像一个虚拟游戏杆，可用于导航 UI 小组件（如径向菜单）。</span><span class="sxs-lookup"><span data-stu-id="e89f1-243">Navigation gestures operate like a virtual joystick, and can be used to navigate UI widgets, such as radial menus.</span></span> <span data-ttu-id="e89f1-244">点击并按住以开始手势，然后在标准化 3D 立方体中以初始按压位置为中心移动手部。</span><span class="sxs-lookup"><span data-stu-id="e89f1-244">You tap and hold to start the gesture and then move your hand within a normalized 3D cube, centered around the initial press.</span></span> <span data-ttu-id="e89f1-245">可以沿 X、Y 或 Z 轴移动，起点为 0，移动范围为 -1 到 1。</span><span class="sxs-lookup"><span data-stu-id="e89f1-245">You can move your hand along the X, Y or Z axis from a value of -1 to 1, with 0 being the starting point.</span></span>
+<span data-ttu-id="e89f1-246">导航可用于生成基于速度的连续滚动或缩放手势，类似于通过单击鼠标按钮然后上下移动鼠标来滚动 2D UI。</span><span class="sxs-lookup"><span data-stu-id="e89f1-246">Navigation can be used to build velocity-based continuous scrolling or zooming gestures, similar to scrolling a 2D UI by clicking the middle mouse button and then moving the mouse up and down.</span></span>
 
-### <a name="smoothing"></a><span data-ttu-id="ee9df-218">平滑处理</span><span class="sxs-lookup"><span data-stu-id="ee9df-218">Smoothing</span></span>
-<span data-ttu-id="ee9df-219">此机制对于路径移动非常有用, 因为自然移动特征会降低轻微的抖动和 wobble。</span><span class="sxs-lookup"><span data-stu-id="ee9df-219">This mechanism is useful for pathing movements, reducing the slight jitter and wobble due to natural head movement characteristics.</span></span> <span data-ttu-id="ee9df-220">对路径运动进行平滑处理时, 按移动的大小和距离而不是一段时间来平滑。</span><span class="sxs-lookup"><span data-stu-id="ee9df-220">When smoothing over pathing motions, smooth by the size and distance of movements rather than over time.</span></span>
+<span data-ttu-id="e89f1-247">使用 rails 导航，是指在该轴上达到特定阈值之前识别特定轴中的运动的能力。</span><span class="sxs-lookup"><span data-stu-id="e89f1-247">Navigation with rails refers to the ability of recognizing movements in certain axis until a certain threshold is reached on that axis.</span></span> <span data-ttu-id="e89f1-248">当开发人员在应用程序中启用多个轴的移动时，这种方法非常有用，例如，如果将应用程序配置为识别 X、Y 轴上的导航笔势，同时还指定了具有 rails 的 X 轴。</span><span class="sxs-lookup"><span data-stu-id="e89f1-248">This is only useful when movement in more than one axis is enabled in an application by the developer, such as if an application is configured to recognize navigation gestures across X, Y axis but also specified X axis with rails.</span></span> <span data-ttu-id="e89f1-249">在这种情况下，系统将识别 x 轴上的手动运动，只要它们保留在 X 轴上的假想导轨（引导）内，也会在 Y 轴上进行手动移动。</span><span class="sxs-lookup"><span data-stu-id="e89f1-249">In this case the system will recognize hand movements across X axis as long as they remain within an imaginary rails (guide) on the X axis, if hand movement also occurs on the Y axis.</span></span>
 
-### <a name="magnetism"></a><span data-ttu-id="ee9df-221">磁吸</span><span class="sxs-lookup"><span data-stu-id="ee9df-221">Magnetism</span></span>
-<span data-ttu-id="ee9df-222">此机制可被视为最近的链接算法的更通用版本, 即在目标位置绘制光标, 或者只是明显增加 hitboxes, 因为用户可以通过使用某些交互式布局知识来更好地利用这些目标方法用户意向。</span><span class="sxs-lookup"><span data-stu-id="ee9df-222">This mechanism can be thought of as a more general version of closest link algorithms--drawing a cursor toward a target or simply increasing hitboxes, whether visibly or not, as users approach likely targets by using some knowledge of the interactive layout to better approach user intent.</span></span> <span data-ttu-id="ee9df-223">这对于小型目标尤其有用。</span><span class="sxs-lookup"><span data-stu-id="ee9df-223">This can be particularly powerful for small targets.</span></span>
+<span data-ttu-id="e89f1-250">在 2D 应用中，用户可以使用垂直导航手势在应用内进行滚动、缩放或拖动。</span><span class="sxs-lookup"><span data-stu-id="e89f1-250">Within 2D apps, users can use vertical navigation gestures to scroll, zoom, or drag inside the app.</span></span> <span data-ttu-id="e89f1-251">这会向应用注入虚拟手指触摸，以模拟相同类型的触摸手势。</span><span class="sxs-lookup"><span data-stu-id="e89f1-251">This injects virtual finger touches to the app to simulate touch gestures of the same type.</span></span> <span data-ttu-id="e89f1-252">用户可以通过选择按钮或口述 "< 滚动/拖动/缩放 > 工具"，来选择要执行的操作，方法是在应用程序上方的工具间切换。</span><span class="sxs-lookup"><span data-stu-id="e89f1-252">Users can select which of these actions take place by toggling between the tools on the bar above the application, either by selecting the button or saying '<Scroll/Drag/Zoom> Tool'.</span></span>
 
-### <a name="focus-stickiness"></a><span data-ttu-id="ee9df-224">焦点粘性</span><span class="sxs-lookup"><span data-stu-id="ee9df-224">Focus stickiness</span></span>
-<span data-ttu-id="ee9df-225">在确定要将焦点放到哪些附近的交互式元素时, 焦点将为当前聚焦的元素提供偏移。</span><span class="sxs-lookup"><span data-stu-id="ee9df-225">When determining which nearby interactive elements to give focus to, focus stickiness provides a bias to the element that is currently focused.</span></span> <span data-ttu-id="ee9df-226">当在两个元素之间的中间点处浮动时, 这有助于减少不稳定的焦点切换行为。</span><span class="sxs-lookup"><span data-stu-id="ee9df-226">This helps reduce erratic focus switching behaviours when floating at a midpoint between two elements with natural noise.</span></span>
+[<span data-ttu-id="e89f1-253">有关复合手势的详细信息</span><span class="sxs-lookup"><span data-stu-id="e89f1-253">More info on composite gestures</span></span>](gaze-and-commit.md#composite-gestures)
 
+## <a name="gesture-recognizers"></a><span data-ttu-id="e89f1-254">手势识别器</span><span class="sxs-lookup"><span data-stu-id="e89f1-254">Gesture recognizers</span></span>
 
-## <a name="composite-gestures"></a><span data-ttu-id="ee9df-227">复合手势</span><span class="sxs-lookup"><span data-stu-id="ee9df-227">Composite gestures</span></span>
+<span data-ttu-id="e89f1-255">使用手势识别的一个优点是，只能为当前目标全息图可以接受的手势配置笔势识别器。</span><span class="sxs-lookup"><span data-stu-id="e89f1-255">One benefit of using gesture recognition is that you can configure a gesture recognizer only for the gestures the currently targeted hologram can accept.</span></span> <span data-ttu-id="e89f1-256">平台仅根据需要消除歧义以区分这些特定支持的手势。</span><span class="sxs-lookup"><span data-stu-id="e89f1-256">The platform only does disambiguation as necessary to distinguish those particular supported gestures.</span></span> <span data-ttu-id="e89f1-257">通过这种方式，仅支持 "分流" 的全息图可以接受按下和释放之间的任何时间长度，而同时支持点击和按住的全息影像可以在保持时间阈值后将点击提升为保留。</span><span class="sxs-lookup"><span data-stu-id="e89f1-257">In this way, a hologram that just supports air tap can accept any length of time between press and release, while a hologram that supports both tap and hold can promote the tap to a hold after the hold time threshold.</span></span>
 
-### <a name="air-tap"></a><span data-ttu-id="ee9df-228">隔空敲击</span><span class="sxs-lookup"><span data-stu-id="ee9df-228">Air tap</span></span>
-<span data-ttu-id="ee9df-229">Air 攻攻敲击手势 (以及下面的其他手势) 仅对特定攻丝做出反应。</span><span class="sxs-lookup"><span data-stu-id="ee9df-229">The air tap gesture (as well as the other gestures below) reacts only to a specific tap.</span></span> <span data-ttu-id="ee9df-230">若要检测其他点击, 如菜单或抓住, 你的应用程序必须直接使用上面两个关键组件手势部分中所述的低级交互。</span><span class="sxs-lookup"><span data-stu-id="ee9df-230">To detect other taps, such as Menu or Grasp, your application must directly use the lower-level interactions described in the two key component gestures section above.</span></span>
+## <a name="hand-recognition"></a><span data-ttu-id="e89f1-258">手部识别</span><span class="sxs-lookup"><span data-stu-id="e89f1-258">Hand recognition</span></span>
+<span data-ttu-id="e89f1-259">HoloLens 通过跟踪设备可识别的一只手或双手的位置来识别手势。</span><span class="sxs-lookup"><span data-stu-id="e89f1-259">HoloLens recognizes hand gestures by tracking the position of either or both hands that are visible to the device.</span></span> <span data-ttu-id="e89f1-260">当手处于就绪状态（手背朝向自己，食指向上）或按下状态（手背朝向自己，食指向下）时，HoloLens 可检测到手部。</span><span class="sxs-lookup"><span data-stu-id="e89f1-260">HoloLens sees hands when they are in either the ready state (back of the hand facing you with index finger up) or the pressed state (back of the hand facing you with the index finger down).</span></span> <span data-ttu-id="e89f1-261">当双手处于其他姿势时，HoloLens 会将其忽略。</span><span class="sxs-lookup"><span data-stu-id="e89f1-261">When hands are in other poses, HoloLens ignores them.</span></span>
+<span data-ttu-id="e89f1-262">对于 HoloLens 检测到的每一种情况，你可以访问其位置而无需方向和按下状态。</span><span class="sxs-lookup"><span data-stu-id="e89f1-262">For each hand that HoloLens detects, you can access its position without orientation and its pressed state.</span></span> <span data-ttu-id="e89f1-263">当手接近手势范围的边缘时，可看到一个方向向量，可向用户显示该方向向量，以便他们知道如何将手移回 HoloLens 可检测的范围。</span><span class="sxs-lookup"><span data-stu-id="e89f1-263">As the hand nears the edge of the gesture frame, you're also provided with a direction vector, which you can show to the user so they know how to move their hand to get it back where HoloLens can see it.</span></span>
 
-### <a name="tap-and-hold"></a><span data-ttu-id="ee9df-231">Tap and hold</span><span class="sxs-lookup"><span data-stu-id="ee9df-231">Tap and hold</span></span>
-<span data-ttu-id="ee9df-232">按住是指保持隔空敲击手指向下的位置。</span><span class="sxs-lookup"><span data-stu-id="ee9df-232">Hold is simply maintaining the downward finger position of the air tap.</span></span> <span data-ttu-id="ee9df-233">与 arm 移动 (如选取对象, 而不是激活对象或 mousedown 辅助交互, 如显示上下文菜单) 结合使用时, 点击和保持的组合允许使用各种更复杂的 "单击并拖动" 交互。</span><span class="sxs-lookup"><span data-stu-id="ee9df-233">The combination of air tap and hold allows for a variety of more complex "click and drag" interactions when combined with arm movement such as picking up an object instead of activating it or mousedown secondary interactions such as showing a context menu.</span></span>
-<span data-ttu-id="ee9df-234">但在设计此手势时请务必小心，因为用户在做出任何扩展手势的过程都很可能放松手部姿势。</span><span class="sxs-lookup"><span data-stu-id="ee9df-234">Caution should be used when designing for this gesture however, as users can be prone to relaxing their hand postures during the course of any extended gesture.</span></span>
+## <a name="gesture-frame"></a><span data-ttu-id="e89f1-264">手势范围</span><span class="sxs-lookup"><span data-stu-id="e89f1-264">Gesture frame</span></span>
+<span data-ttu-id="e89f1-265">对于 HoloLens 上的手势，手型必须在笔势框架内，范围是笔势感应摄像机可以正确查看的范围，从鼻子到 waist，以及需要肩负之间。</span><span class="sxs-lookup"><span data-stu-id="e89f1-265">For gestures on HoloLens, the hand must be within a gesture frame, in a range that the gesture-sensing cameras can see appropriately,  from nose to waist and between the shoulders.</span></span> <span data-ttu-id="e89f1-266">用户需要在这一认知领域进行培训，以实现操作的成功，并为他们提供便利。</span><span class="sxs-lookup"><span data-stu-id="e89f1-266">Users need to be trained on this area of recognition both for success of action and for their own comfort.</span></span> <span data-ttu-id="e89f1-267">许多用户最初会假设该笔势帧必须在其视图中通过 HoloLens 显示，并将其 uncomfortably，以便进行交互。</span><span class="sxs-lookup"><span data-stu-id="e89f1-267">Many users will initially assume that the gesture frame must be within their view through HoloLens, and hold their arms up uncomfortably in order to interact.</span></span> <span data-ttu-id="e89f1-268">使用 HoloLens Clicker 时，不一定要将指针放在手势帧中。</span><span class="sxs-lookup"><span data-stu-id="e89f1-268">When using the HoloLens Clicker, it's not necessary for hands to be within the gesture frame.</span></span>
 
-### <a name="manipulation"></a><span data-ttu-id="ee9df-235">操作</span><span class="sxs-lookup"><span data-stu-id="ee9df-235">Manipulation</span></span>
-<span data-ttu-id="ee9df-236">当您想让全息图对用户的手的变动做出回应1:1 时, 可以使用操作手势移动、调整或旋转全息图。</span><span class="sxs-lookup"><span data-stu-id="ee9df-236">Manipulation gestures can be used to move, resize, or rotate a hologram when you want the hologram to react 1:1 to the user's hand movements.</span></span> <span data-ttu-id="ee9df-237">此类 1:1 运动可让用户进行实际绘制或绘画。</span><span class="sxs-lookup"><span data-stu-id="ee9df-237">One use for such 1:1 movements is to let the user draw or paint in the world.</span></span>
-<span data-ttu-id="ee9df-238">操作手势的初始定位应通过凝视或指向来完成。</span><span class="sxs-lookup"><span data-stu-id="ee9df-238">The initial targeting for a manipulation gesture should be done by gaze or pointing.</span></span> <span data-ttu-id="ee9df-239">点击并保持开始后, 对象的任何操作都将由手动移动处理, 使用户能够在操作时进行浏览。</span><span class="sxs-lookup"><span data-stu-id="ee9df-239">Once the tap and hold starts, any manipulation of the object is handled by hand movements, freeing the user to look around while they manipulate.</span></span>
+<span data-ttu-id="e89f1-269">特别是连续的手势时，用户在移动全息对象时，可能会有这样的风险：将其指针移到手势帧外，而在移动全息对象时，还会失去预期结果。</span><span class="sxs-lookup"><span data-stu-id="e89f1-269">In the case of continuous gestures in particular, there is some risk of users moving their hands outside of the gesture frame while in mid-gesture when moving a holographic object, for example, and losing their intended outcome.</span></span>
 
-### <a name="navigation"></a><span data-ttu-id="ee9df-240">导航</span><span class="sxs-lookup"><span data-stu-id="ee9df-240">Navigation</span></span>
-<span data-ttu-id="ee9df-241">导航手势就像一个虚拟游戏杆，可用于导航 UI 小组件（如径向菜单）。</span><span class="sxs-lookup"><span data-stu-id="ee9df-241">Navigation gestures operate like a virtual joystick, and can be used to navigate UI widgets, such as radial menus.</span></span> <span data-ttu-id="ee9df-242">点击并按住以开始手势，然后在标准化 3D 立方体中以初始按压位置为中心移动手部。</span><span class="sxs-lookup"><span data-stu-id="ee9df-242">You tap and hold to start the gesture and then move your hand within a normalized 3D cube, centered around the initial press.</span></span> <span data-ttu-id="ee9df-243">可以沿 X、Y 或 Z 轴移动，起点为 0，移动范围为 -1 到 1。</span><span class="sxs-lookup"><span data-stu-id="ee9df-243">You can move your hand along the X, Y or Z axis from a value of -1 to 1, with 0 being the starting point.</span></span>
-<span data-ttu-id="ee9df-244">导航可用于生成基于速度的连续滚动或缩放手势，类似于通过单击鼠标按钮然后上下移动鼠标来滚动 2D UI。</span><span class="sxs-lookup"><span data-stu-id="ee9df-244">Navigation can be used to build velocity-based continuous scrolling or zooming gestures, similar to scrolling a 2D UI by clicking the middle mouse button and then moving the mouse up and down.</span></span>
+<span data-ttu-id="e89f1-270">应考虑以下三个事项：</span><span class="sxs-lookup"><span data-stu-id="e89f1-270">There are three things that you should consider:</span></span>
 
-<span data-ttu-id="ee9df-245">使用 rails 导航, 是指在该轴上达到特定阈值之前识别特定轴中的运动的能力。</span><span class="sxs-lookup"><span data-stu-id="ee9df-245">Navigation with rails refers to the ability of recognizing movements in certain axis until a certain threshold is reached on that axis.</span></span> <span data-ttu-id="ee9df-246">当开发人员在应用程序中启用多个轴的移动时, 这种方法非常有用, 例如, 如果将应用程序配置为识别 X、Y 轴上的导航笔势, 同时还指定了具有 rails 的 X 轴。</span><span class="sxs-lookup"><span data-stu-id="ee9df-246">This is only useful when movement in more than one axis is enabled in an application by the developer, such as if an application is configured to recognize navigation gestures across X, Y axis but also specified X axis with rails.</span></span> <span data-ttu-id="ee9df-247">在这种情况下, 系统将识别 x 轴上的手动运动, 只要它们保留在 X 轴上的假想导轨 (引导) 内, 也会在 Y 轴上进行手动移动。</span><span class="sxs-lookup"><span data-stu-id="ee9df-247">In this case the system will recognize hand movements across X axis as long as they remain within an imaginary rails (guide) on the X axis, if hand movement also occurs on the Y axis.</span></span>
+- <span data-ttu-id="e89f1-271">手势帧存在和大致边界的用户教育。</span><span class="sxs-lookup"><span data-stu-id="e89f1-271">User education on the gesture frame's existence and approximate boundaries.</span></span> <span data-ttu-id="e89f1-272">这会在安装 HoloLens 期间进行。</span><span class="sxs-lookup"><span data-stu-id="e89f1-272">This is taught during HoloLens setup.</span></span>
 
-<span data-ttu-id="ee9df-248">在 2D 应用中，用户可以使用垂直导航手势在应用内进行滚动、缩放或拖动。</span><span class="sxs-lookup"><span data-stu-id="ee9df-248">Within 2D apps, users can use vertical navigation gestures to scroll, zoom, or drag inside the app.</span></span> <span data-ttu-id="ee9df-249">这会向应用注入虚拟手指触摸，以模拟相同类型的触摸手势。</span><span class="sxs-lookup"><span data-stu-id="ee9df-249">This injects virtual finger touches to the app to simulate touch gestures of the same type.</span></span> <span data-ttu-id="ee9df-250">用户可以通过选择按钮或口述 "< 滚动/拖动/缩放 > 工具", 来选择要执行的操作, 方法是在应用程序上方的工具间切换。</span><span class="sxs-lookup"><span data-stu-id="ee9df-250">Users can select which of these actions take place by toggling between the tools on the bar above the application, either by selecting the button or saying '<Scroll/Drag/Zoom> Tool'.</span></span>
+- <span data-ttu-id="e89f1-273">当用户的手势接近或中断应用程序内的手势帧边界时，通知用户，使丢失的手势导致意外的结果。</span><span class="sxs-lookup"><span data-stu-id="e89f1-273">Notifying users when their gestures are nearing or breaking the gesture frame boundaries within an application to the degree that a lost gesture leads to undesired outcomes.</span></span> <span data-ttu-id="e89f1-274">研究显示了此类通知系统的重要质量。</span><span class="sxs-lookup"><span data-stu-id="e89f1-274">Research has shown the key qualities of such a notification system.</span></span> <span data-ttu-id="e89f1-275">在中心游标上，HoloLens shell 提供此类通知的很好的示例，指示边界交叉的发生方向。</span><span class="sxs-lookup"><span data-stu-id="e89f1-275">The HoloLens shell provides a good example of this type of notification--visual, on the central cursor, indicating the direction in which boundary crossing is taking place.</span></span>
 
-[<span data-ttu-id="ee9df-251">有关复合手势的详细信息</span><span class="sxs-lookup"><span data-stu-id="ee9df-251">More info on composite gestures</span></span>](gestures.md#composite-gestures)
+- <span data-ttu-id="e89f1-276">应尽可能避免穿过手势范围的边界。</span><span class="sxs-lookup"><span data-stu-id="e89f1-276">Consequences of breaking the gesture frame boundaries should be minimized.</span></span> <span data-ttu-id="e89f1-277">通常，这意味着应在边界停止笔势的结果，而不是反转。</span><span class="sxs-lookup"><span data-stu-id="e89f1-277">In general, this means that the outcome of a gesture should be stopped at the boundary, and not reversed.</span></span> <span data-ttu-id="e89f1-278">例如，如果用户在房间内移动某个全息对象，则在该笔势帧被破坏时，移动应停止，并且不会返回到开始点。</span><span class="sxs-lookup"><span data-stu-id="e89f1-278">For example, if a user is moving some holographic object across a room, the movement should stop when the gesture frame is breached, and not returned to the starting point.</span></span> <span data-ttu-id="e89f1-279">用户可能会遇到一些挫折，但可能会更快地了解边界，无需每次都重新启动其全部预期操作。</span><span class="sxs-lookup"><span data-stu-id="e89f1-279">The user might experience some frustration, but might more quickly understand the boundaries, and not have to restart their full intended actions each time.</span></span>
 
-## <a name="gesture-recognizers"></a><span data-ttu-id="ee9df-252">手势识别器</span><span class="sxs-lookup"><span data-stu-id="ee9df-252">Gesture recognizers</span></span>
 
-<span data-ttu-id="ee9df-253">使用手势识别的一个优点是, 只能为当前目标全息图可以接受的手势配置笔势识别器。</span><span class="sxs-lookup"><span data-stu-id="ee9df-253">One benefit of using gesture recognition is that you can configure a gesture recognizer only for the gestures the currently targeted hologram can accept.</span></span> <span data-ttu-id="ee9df-254">平台仅根据需要消除歧义以区分这些特定支持的手势。</span><span class="sxs-lookup"><span data-stu-id="ee9df-254">The platform only does disambiguation as necessary to distinguish those particular supported gestures.</span></span> <span data-ttu-id="ee9df-255">通过这种方式, 仅支持 "分流" 的全息图可以接受按下和释放之间的任何时间长度, 而同时支持点击和按住的全息影像可以在保持时间阈值后将点击提升为保留。</span><span class="sxs-lookup"><span data-stu-id="ee9df-255">In this way, a hologram that just supports air tap can accept any length of time between press and release, while a hologram that supports both tap and hold can promote the tap to a hold after the hold time threshold.</span></span>
 
-## <a name="hand-recognition"></a><span data-ttu-id="ee9df-256">手部识别</span><span class="sxs-lookup"><span data-stu-id="ee9df-256">Hand recognition</span></span>
-<span data-ttu-id="ee9df-257">HoloLens 通过跟踪设备可识别的一只手或双手的位置来识别手势。</span><span class="sxs-lookup"><span data-stu-id="ee9df-257">HoloLens recognizes hand gestures by tracking the position of either or both hands that are visible to the device.</span></span> <span data-ttu-id="ee9df-258">当手处于就绪状态（手背朝向自己，食指向上）或按下状态（手背朝向自己，食指向下）时，HoloLens 可检测到手部。</span><span class="sxs-lookup"><span data-stu-id="ee9df-258">HoloLens sees hands when they are in either the ready state (back of the hand facing you with index finger up) or the pressed state (back of the hand facing you with the index finger down).</span></span> <span data-ttu-id="ee9df-259">当双手处于其他姿势时, HoloLens 将忽略 themz。</span><span class="sxs-lookup"><span data-stu-id="ee9df-259">When hands are in other poses, HoloLens ignore themz.</span></span>
-<span data-ttu-id="ee9df-260">对于 HoloLens 检测到的每一种情况, 你可以访问其位置而无需方向和按下状态。</span><span class="sxs-lookup"><span data-stu-id="ee9df-260">For each hand that HoloLens detects, you can access its position without orientation and its pressed state.</span></span> <span data-ttu-id="ee9df-261">当手接近手势范围的边缘时，可看到一个方向向量，可向用户显示该方向向量，以便他们知道如何将手移回 HoloLens 可检测的范围。</span><span class="sxs-lookup"><span data-stu-id="ee9df-261">As the hand nears the edge of the gesture frame, you're also provided with a direction vector, which you can show to the user so they know how to move their hand to get it back where HoloLens can see it.</span></span>
-
-## <a name="gesture-frame"></a><span data-ttu-id="ee9df-262">手势范围</span><span class="sxs-lookup"><span data-stu-id="ee9df-262">Gesture frame</span></span>
-<span data-ttu-id="ee9df-263">对于 HoloLens 上的手势, 手型必须在笔势框架内, 范围是笔势感应摄像机可以正确查看的范围, 从鼻子到 waist, 以及需要肩负之间。</span><span class="sxs-lookup"><span data-stu-id="ee9df-263">For gestures on HoloLens, the hand must be within a gesture frame, in a range that the gesture-sensing cameras can see appropriately,  from nose to waist and between the shoulders.</span></span> <span data-ttu-id="ee9df-264">用户需要在这一认知领域进行培训, 以实现操作的成功, 并为他们提供便利。</span><span class="sxs-lookup"><span data-stu-id="ee9df-264">Users need to be trained on this area of recognition both for success of action and for their own comfort.</span></span> <span data-ttu-id="ee9df-265">许多用户最初会假设该笔势帧必须在其视图中通过 HoloLens 显示, 并将其 uncomfortably, 以便进行交互。</span><span class="sxs-lookup"><span data-stu-id="ee9df-265">Many users will initially assume that the gesture frame must be within their view through HoloLens, and hold their arms up uncomfortably in order to interact.</span></span> <span data-ttu-id="ee9df-266">使用 HoloLens Clicker 时, 不一定要将指针放在手势帧中。</span><span class="sxs-lookup"><span data-stu-id="ee9df-266">When using the HoloLens Clicker, it's not necessary for hands to be within the gesture frame.</span></span>
-
-<span data-ttu-id="ee9df-267">特别是连续的手势时, 用户在移动全息对象时, 可能会有这样的风险: 将其指针移到手势帧外, 而在移动全息对象时, 还会失去预期结果。</span><span class="sxs-lookup"><span data-stu-id="ee9df-267">In the case of continuous gestures in particular, there is some risk of users moving their hands outside of the gesture frame while in mid-gesture when moving a holographic object, for example, and losing their intended outcome.</span></span>
-
-<span data-ttu-id="ee9df-268">应考虑以下三个事项：</span><span class="sxs-lookup"><span data-stu-id="ee9df-268">There are three things that you should consider:</span></span>
-
-- <span data-ttu-id="ee9df-269">手势帧存在和大致边界的用户教育。</span><span class="sxs-lookup"><span data-stu-id="ee9df-269">User education on the gesture frame's existence and approximate boundaries.</span></span> <span data-ttu-id="ee9df-270">这会在安装 HoloLens 期间进行。</span><span class="sxs-lookup"><span data-stu-id="ee9df-270">This is taught during HoloLens setup.</span></span>
-
-- <span data-ttu-id="ee9df-271">当用户的手势接近或中断应用程序内的手势帧边界时, 通知用户, 使丢失的手势导致意外的结果。</span><span class="sxs-lookup"><span data-stu-id="ee9df-271">Notifying users when their gestures are nearing or breaking the gesture frame boundaries within an application to the degree that a lost gesture leads to undesired outcomes.</span></span> <span data-ttu-id="ee9df-272">研究显示了此类通知系统的重要质量。</span><span class="sxs-lookup"><span data-stu-id="ee9df-272">Research has shown the key qualities of such a notification system.</span></span> <span data-ttu-id="ee9df-273">在中心游标上, HoloLens shell 提供此类通知的很好的示例, 指示边界交叉的发生方向。</span><span class="sxs-lookup"><span data-stu-id="ee9df-273">The HoloLens shell provides a good example of this type of notification--visual, on the central cursor, indicating the direction in which boundary crossing is taking place.</span></span>
-
-- <span data-ttu-id="ee9df-274">应尽可能避免穿过手势范围的边界。</span><span class="sxs-lookup"><span data-stu-id="ee9df-274">Consequences of breaking the gesture frame boundaries should be minimized.</span></span> <span data-ttu-id="ee9df-275">通常, 这意味着应在边界停止笔势的结果, 而不是反转。</span><span class="sxs-lookup"><span data-stu-id="ee9df-275">In general, this means that the outcome of a gesture should be stopped at the boundary, and not reversed.</span></span> <span data-ttu-id="ee9df-276">例如, 如果用户在房间内移动某个全息对象, 则在该笔势帧被破坏时, 移动应停止, 并且不会返回到开始点。</span><span class="sxs-lookup"><span data-stu-id="ee9df-276">For example, if a user is moving some holographic object across a room, the movement should stop when the gesture frame is breached, and not returned to the starting point.</span></span> <span data-ttu-id="ee9df-277">用户可能会遇到一些挫折, 但可能会更快地了解边界, 无需每次都重新启动其全部预期操作。</span><span class="sxs-lookup"><span data-stu-id="ee9df-277">The user might experience some frustration, but might more quickly understand the boundaries, and not have to restart their full intended actions each time.</span></span>
-
-
-## <a name="see-also"></a><span data-ttu-id="ee9df-278">请参阅</span><span class="sxs-lookup"><span data-stu-id="ee9df-278">See also</span></span>
-* [<span data-ttu-id="ee9df-279">使用手直接操作</span><span class="sxs-lookup"><span data-stu-id="ee9df-279">Direct manipulation with hands</span></span>](direct-manipulation.md)
-* [<span data-ttu-id="ee9df-280">使用手指向和提交</span><span class="sxs-lookup"><span data-stu-id="ee9df-280">Point and commit with hands</span></span>](point-and-commit.md)
-* [<span data-ttu-id="ee9df-281">本能交互</span><span class="sxs-lookup"><span data-stu-id="ee9df-281">Instinctual interactions</span></span>](interaction-fundamentals.md)
-* [<span data-ttu-id="ee9df-282">头部凝视和停留</span><span class="sxs-lookup"><span data-stu-id="ee9df-282">Head-gaze and dwell</span></span>](gaze-and-dwell.md)
-* [<span data-ttu-id="ee9df-283">语音命令</span><span class="sxs-lookup"><span data-stu-id="ee9df-283">Voice commanding</span></span>](voice-design.md)
-
-
-
-
+## <a name="see-also"></a><span data-ttu-id="e89f1-280">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e89f1-280">See also</span></span>
+* [<span data-ttu-id="e89f1-281">基于目视的交互</span><span class="sxs-lookup"><span data-stu-id="e89f1-281">Eye-based interaction</span></span>](eye-gaze-interaction.md)
+* [<span data-ttu-id="e89f1-282">HoloLens 2 上的目视跟踪</span><span class="sxs-lookup"><span data-stu-id="e89f1-282">Eye tracking on HoloLens 2</span></span>](eye-tracking.md)
+* [<span data-ttu-id="e89f1-283">凝视和停留</span><span class="sxs-lookup"><span data-stu-id="e89f1-283">Gaze and dwell</span></span>](gaze-and-dwell.md)
+* [<span data-ttu-id="e89f1-284">直接操作</span><span class="sxs-lookup"><span data-stu-id="e89f1-284">Hands - Direct manipulation</span></span>](direct-manipulation.md)
+* [<span data-ttu-id="e89f1-285">动手手势</span><span class="sxs-lookup"><span data-stu-id="e89f1-285">Hands - Gestures</span></span>](gaze-and-commit.md#composite-gestures)
+* [<span data-ttu-id="e89f1-286">动手并提交</span><span class="sxs-lookup"><span data-stu-id="e89f1-286">Hands - Point and commit</span></span>](point-and-commit.md)
+* [<span data-ttu-id="e89f1-287">本能交互</span><span class="sxs-lookup"><span data-stu-id="e89f1-287">Instinctual interactions</span></span>](interaction-fundamentals.md)
+* [<span data-ttu-id="e89f1-288">语音输入</span><span class="sxs-lookup"><span data-stu-id="e89f1-288">Voice input</span></span>](voice-input.md)
 
