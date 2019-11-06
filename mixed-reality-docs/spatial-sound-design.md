@@ -1,111 +1,118 @@
 ---
-title: 空间音效设计
+title: 在混合现实应用程序中使用声音
 description: 空间音效是用于混合现实应用程序中的浸入式、可访问性和 UX 设计的强大工具。
-author: joekellyms
-ms.author: joekelly
-ms.date: 03/21/2018
+author: kegodin
+ms.author: kegodin
+ms.date: 11/02/2019
 ms.topic: article
 keywords: Windows Mixed Reality，空间音质，设计，样式
-ms.openlocfilehash: acc568eeb08d2a27574dcfbc9f132519e1e31843
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: c069095808eaa9d31b1ffa41dbaa29c9f635837b
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438287"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641067"
 ---
-# <a name="spatial-sound-design"></a>空间音效设计
+# <a name="using-sound-in-mixed-reality-applications"></a>在混合现实应用程序中使用声音
 
-空间音效是用于混合现实应用程序中的浸入式、可访问性和 UX 设计的强大工具。
-
-如果您曾玩过[Marco 水球](https://en.wikipedia.org/wiki/Marco_Polo_(game))，或者有人打电话打电话来帮助您找到它，您已经熟悉了空间音效的重要性。 我们会在日常生活中使用声音提示来查找对象、了解用户的注意力，或更好地了解我们的环境。 应用的声音行为与现实世界中的行为更加接近，虚拟世界的说服力就越多。
+使用声音通知并强化用户的应用程序状态的心理模型。 如果合适，请使用 spatialization 将声音置于混合世界。 以这种方式连接听觉和视觉对象可使许多交互的直观特性，从而提高用户信心。
 
 <br>
 
 <iframe width="940" height="530" src="https://www.youtube.com/embed/aB3TDjYklmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## <a name="device-support"></a>设备支持
+## <a name="when-should-i-add-sounds"></a>我应何时添加声音？
+由于缺少物理接口，混合现实应用程序通常比二维屏幕上的应用程序需要更高的声音。 应在通知用户或强化交互时添加声音。
 
-<table>
-    <colgroup>
-    <col width="33%" />
-    <col width="33%" />
-    <col width="33%" />
-    </colgroup>
-    <tr>
-        <td><strong>具有</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
-    </tr>
-     <tr>
-        <td>空间音效设计</td>
-        <td>✔️</td>
-        <td>✔️</td>
-    </tr>
-</table>
+### <a name="inform-and-reinforce"></a>通知和强化
+* 对于不是由用户启动的事件（例如通知），请考虑添加声音，以通知用户发生了更改。
+* 交互可能有多个阶段。 请考虑使用声音来强化阶段转换。
+
+请参阅下面有关交互、事件和建议的声音特征的示例。
+
+### <a name="exercise-restraint"></a>运动挡板
+用户无限制音频信息的容量：
+* 每个声音应该传递一条特定、有价值的信息，
+* 当播放声音以通知用户时，请暂时减少其他声音的音量
+* 对于按钮悬停声音（见下文），请添加一个时间延迟，以防止过多的声音触发
+
+### <a name="dont-rely-solely-on-sounds"></a>不要完全依赖于声音
+如果用户可以听到声音，则很有价值，但请确保应用程序在声音可用时仍可用。
+* 用户可能听力障碍
+* 您的应用程序可能会在更高的环境中使用
+* 用户可能出于禁用设备音频的隐私或其他原因
+
+## <a name="how-should-i-sonify-interactions"></a>应该如何 sonify 交互？
+混合现实中的交互类型包括手势、直接操作和语音。 使用以下建议特征为这些交互选择或设计声音。
+
+### <a name="gesture-interactions"></a>手势交互
+在混合现实中，用户可以使用光标与按钮交互。 按钮操作通常在用户已释放按钮而不是按下该按钮时执行，以允许用户有机会取消交互。 使用声音来强化这些阶段。 此外，若要协助用户以较远的按钮为目标，请考虑使用光标悬停声音。
+* 按下 "声音" 应具有一个简短的 tactile 单击。 示例： [MRTK_ButtonPress](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
+* 按钮 unpress 的声音应具有类似的 tactile 感觉。 升高的音调与按下的声音，强调完成的意义。 示例： [MRTK_ButtonUnpress](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
+* 对于 "悬停声音"，请考虑使用细小的和非威胁的声音，如低频率 thud 或凹凸。
 
 
-## <a name="four-key-things-spatial-sound-does-for-mixed-reality-development"></a>对于混合现实开发，空间音效的四个关键因素
+### <a name="direct-manipulation"></a>直接操作
+在 HoloLens 2 上，已表述的手动跟踪支持直接操作用户界面元素。 声音对于缺少物理反馈很重要。
 
-默认情况下，将以立体声播放声音。 这意味着声音无空间位置就会播放，因此用户不知道声音来自何处。 空间音效对于混合现实开发有四个关键因素：
+**按钮按下**声音对于直接操作非常重要，因为用户在到达密钥行进的底部时不需要实际的指示。 关键旅行的直观指示器可以是小型、微妙和封闭像素。 与手势交互一样，按下按钮时，按钮应具有短暂、tactile 的声音（如单击），而 unpresses 应具有类似的单击带有凸起间距。
+* 示例： [MRTK_ButtonPress](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
+* 示例： [MRTK_ButtonUnpress](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonUnpress)
 
-**舌**
+确认直接操作中的**抓取**或**发布**很难以直观的方式进行通信。 用户的手常常会受到任何视觉效果的影响，而 expression-bodied 对象却缺乏现实的视觉对象。 与此相反，声音可以有效地传达成功的获取和释放交互。
+* 抓取操作应该具有短暂的 muffled tactile 声音，可唤起围绕对象的抓手指。 有时会出现 "whoosh" 声音，这会导致声音在抓取时传达手的运动。 示例： [MRTK_Move_Start](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_Move_Start.wav)
+* Release 操作应该具有类似的短暂和 tactile 的声音，通常是从抓住声音倒向下并按相反的顺序进行的，这会产生影响，然后使用 "whoosh" 将对象的状态传达到适当位置。 示例： [MRTK_Move_End](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_Move_End.wav)
 
-如果没有声音，则当我们使我们失去了这些对象时，虚拟对象会有效地停止存在。 就像真实的对象一样，即使您看不到这些对象，而且您希望能够在您的任何位置找到这些对象，也是如此。 正如需要以直观方式将虚拟对象与您的真实世界混合起来一样，它们也需要呼叫时。 空间音效将您的真实世界音频环境与数字音频环境无缝混合。
+**绘图**交互应有一个循环、持久的声音，该声音的音量由用户的手控件控制，当用户的手仍在使用时完全无提示，并且在用户的手中快速移动时，它是完全无提示的。
 
-**用户注意**
 
-在混合现实体验中，你不能想象你的用户在哪里寻找，并希望他们看到你在世界上出现的内容。 但即使播放声音的对象位于声音上，用户也始终会听到声音播放。 人们用声音来吸引他们的注意力-我们 instinctually 于我们听到的对象。 当您想要将用户的注视定向到某个特定位置时，而不是使用箭头将其指向特定位置时，将声音置于该位置就是一种很自然的方式来指导他们。
 
-**浸入式**
+### <a name="voice-interactions"></a>语音交互
+语音交互通常具有微妙的视觉元素。 使用声音强化交互阶段。 请考虑选择更多色调声音，将它们与手势区分开来，并直接操作声音。
 
-当对象移动或冲突时，我们通常会听到材料之间的交互。 因此，当您的对象不能与现实世界中的声音完全相同时，就会丢失一浸入式，比如观看大量电影，使其一直向下移动。 现实世界中的所有声音都来自空间中的某个特定点-当我们转向我们的头时，我们会听到这些声音相对于我们的耳的变化，我们可以以这种方式跟踪任何声音的位置。 Spatialized 听起来就是我们所能看到的内容的 "感觉"。
+* 语音命令**确认**使用有正负音。 增加的声音和最大的音乐间隔在此都有效。
+* 使用较短的、不太正值的**语音命令。** 避免否定声音;相反，请使用更 percussive 的中性声音与应用程序进行通信，以进行交互。
+* 如果你的应用程序使用唤醒字词，请在设备**开始侦听**时使用一小段短暂的声音，并在应用程序侦听时使用细小的循环声音。 
 
-**交互设计**
+### <a name="notifications"></a>通知
+通知会传达应用程序状态更改和用户不启动的其他事件，如进程完成、消息和调用。
 
-在大多数传统的交互式体验中，会以标准 mono 或立体声播放诸如 UI 声音效果之类的交互音。 但由于在三维空间中存在混合现实中的所有内容-包括 UI，因此这些对象从 spatialized 的声音中获益。 当我们在现实世界中按下某个按钮时，听到的声音来自该按钮。 通过 spatializing 的互动声音，我们再次提供了更自然、真实的用户体验。
+在混合现实中，移动的对象可以移出用户的视图字段。 带有 spatialized 声音的**动画对象**，这些对象依赖于对象和运动速度。
+* 它还有助于在动画结束时播放 spatialized 声音，以通知用户新位置
+* 对于逐步运动，移动过程中的 "whoosh" 声音将帮助用户跟踪对象
 
-## <a name="best-practices-when-using-spatial-sound"></a>使用空间音效时的最佳做法
+**消息通知**最有可能被听到多次，有时很快就会出现。 这一点很重要，因为它不会显得有些问题。 Mid 正面的声音声音在此处有效。
 
-**真实声音比合成或非自然的声音更好**
+* 对于手机铃声，调用应具有相似的质量。 它们通常会循环播放音乐短语，直到用户应答呼叫。
+* 语音通信连接和断开连接应具有短暂的色调声音。 连接声音应具有一个正负音，指示连接成功，而断开连接声音应为指示调用完成的非特定声音。
 
-您的用户使用某种类型的声音就越熟悉，感觉就越真实，而且他们在环境中的定位就越容易。 例如，人为声音，就是一种非常常见的声音，用户将找到它，就像聊天室中的真实人员一样。
+## <a name="spatialization"></a>Spatialization
+Spatialization 使用立体声耳机或扬声器将声音置于混合世界。
 
-**预期胜过模拟**
+### <a name="which-sounds-should-i-spatialize"></a>我应该 spatialize 哪些声音？
+当声音与具有空间位置的事件关联时，应 spatialized。 这包括 UI、包含的 AI 声音和视觉指示器。
 
-如果你使用的是来自特定方向的声音，则会在该方向上引导你注意，而不考虑空间提示。例如，在大多数情况下，我们听到了鸟，就在这里。 播放 "鸟" 的声音很可能会导致用户进行查找，即使您将声音置于其下面也是如此。 这通常会造成混淆，建议你使用这些预期，而不是为了获得更自然的体验。
+Spatializing**用户界面**元素可帮助整理用户的 sonic "space"，方法是将已锁定的立体声声音的数目限制为其打印头。 特别是在直接操作交互中，在 spatialized 音频反馈时，接触、抓取和释放感觉更自然。 但请参阅下面有关这些元素的距离衰减情况。
 
-**大多数声音应为 spatialized**
+Spatializing**视觉对象指示器**和所介绍的 **AI 声音**直观地通知用户在视图外的情况。
+    
+与此相反，应避免 spatialization 用于 **_faceless_ AI 声音**，并避免使用未定义好的空间位置的其他元素。 如果没有相关的视觉元素，Spatialization 可能会分散用户认为有一个视觉元素无法找到。
 
-如上所述，混合现实中的所有内容都位于3D 空间中-你的声音也应该也是。 甚至音乐有时可以从 spatialization 中获益，特别是当它绑定到某个菜单或其他一些 UI 时。
+添加 spatialization 将产生一定的 CPU 开销。 许多应用程序最多可以同时播放两个声音。 在这种情况下，spatialization 的成本可能会忽略不计。 可以使用 MRTK 帧速率监视器来判断添加 spatialization 的影响。 
 
-**避免不可见的发射器**
+### <a name="when-and-how-should-i-apply-distance-based-attenuation"></a>何时以及如何应用基于距离的衰减？
+在现实生活中，远离远处的声音会更安静。 音频引擎可以根据源距离对此衰减建模。 在传达相关信息时，请使用基于距离的衰减。
 
-由于我们已经过检测到我们听到的声音，因此，它可能是一个非自然甚至 unnerving 的体验来寻找没有视觉对象的声音。 现实生活中的声音不是空白空间，因此，如果音频发射器在用户的即时环境内，还可以查看它。
+与**视觉对象指示器**、**动画影像**和其他信息性声音的距离通常与用户相关。 使用基于距离的衰减直观地提供此提示。
+* 调整每个源的衰减曲线，使其适应混合世界空间的大小。 音频引擎的默认曲线通常适用于非常大（最多为半 kilometer）空间。
 
-**避免空间屏蔽**
+强调按钮和其他交互的**渐进式阶段**的声音不应应用衰减。 这些声音的加强效果通常比与按钮通信的重要性更重要。 变体可能会让人分散注意力，尤其是在键盘上，很多按钮单击将会连续听到。
 
-空间音效依赖于非常微妙的声音提示，这些提示可以通过其他声音 overpowered。 如果你有立体声音乐或环境声音，请确保它们在组合中足够低，以便为你的 spatialized 声音的详细信息提供空间，使用户能够轻松找到这些声音，并使其听起来真实和自然。
+### <a name="which-spatialization-technology-should-i-use"></a>我应该使用哪种 spatialization 技术？
+使用耳机或 HoloLens 扬声器时，请使用基于 HRTF （head 相关传输函数）的 spatialization 技术。 它们对现实世界内的声音传播建模。 即使在一侧的一侧有一个声音源，也会出现一些衰减和延迟的情况。 相反，发言人摇摄仅依赖于衰减，在右侧的声音（反之亦然）时，它会在左侧的耳中应用总衰减。 对于正常听觉的侦听器，这种情况可能会令人感到不安，对于在一个 ear 中具有听力障碍的侦听器，此情况可能不
 
-## <a name="general-concepts-to-keep-in-mind-when-using-spatial-sound"></a>使用空间音效时要记住的一般概念
+## <a name="next-steps"></a>后续步骤
+* [在 Unity 中使用空间音效](spatial-sound-in-unity.md)
+* [Roboraid 的案例研究](case-study-using-spatial-sound-in-roboraid.md)
+* [HoloTour 的案例研究](case-study-spatial-sound-design-for-holotour.md)
 
-**空间音效是一种模拟**
-
-空间音质最常使用的是与世界上的真实或虚拟对象 emanating 的声音。 因此，spatialized 声音可能会从这类对象中获得最大意义。
-
-请注意，空间音质的感知准确性意味着声音不一定会从对象的中心发出，因为这种差别会根据对象大小和用户之间的距离而明显。 对于小对象，对象的中心点通常已足够。 对于较大的对象，可能希望对象内特定位置的声音发射器或多个发射器产生声音。
-
-**规范化所有声音**
-
-距离衰减在用户的第一次计量内快速发生，就像在现实世界中一样。 应将所有音频文件标准化，以确保物理准确的距离衰减，并确保在几个时间计量（适用时）可以听到声音。 空间音频引擎将处理声音所需的衰减，使其看起来像是某个距离（结合衰减和 "距离提示"），并在最上面应用任何衰减，这可能会减少影响。 在模拟实际对象之外，*空间音效*衰减的初始距离可能会超出适当的音频混合量。
-
-**对象发现和用户界面**
-
-当使用音频提示使用户注意到超出其当前视图的效果时，声音应声音并突出显示在混合范围内、任何立体声声音上，以及可能会打乱方向音频提示的任何其他 spatialized 声音。 对于与用户界面的元素（例如菜单）关联的声音和音乐，声音发射器应附加到该对象。 立体声和其他非位置音频播放可能会使用户难以查找 spatialized 元素（请参阅上面的内容：避免空间屏蔽）。
-
-**尽可能多地使用标准三维声音上的空间音效**
-
-在混合现实中，为获得最佳用户体验，应使用空间音效而不是传统的3D 音频技术来实现3D 音频。 通常，改进后的 spatialization 值得一提的是标准三维声音的小型 CPU 成本。 标准3D 音频可用于低优先级声音、spatialized 但不一定与物理或虚拟对象相关的声音，以及用户从不需要找到以与应用交互的对象。
-
-## <a name="see-also"></a>另请参阅
-* [空间音效](spatial-sound.md)
-* [空间映射](spatial-mapping.md)
