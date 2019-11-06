@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: DirectX，全息呈现，本机，本机应用，WinRT，WinRT 应用，平台 Api，自定义引擎，中间件
-ms.openlocfilehash: 698ccb57a39189b9c0634c47ad6cbd6325c06caa
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e77ee5053e69aef502481d18618e604c6bfb5939
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435589"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641095"
 ---
 # <a name="directx-development-overview"></a>DirectX 开发概述
 
@@ -49,7 +49,7 @@ Windows Mixed Reality 支持[两种类型的应用](app-views.md)：
 * [DirectX 中的头部和眼部凝视](gaze-in-directx.md)
 * [DirectX 中的手和运动控制器](hands-and-motion-controllers-in-directx.md)
 * [DirectX 中的语音输入](voice-input-in-directx.md)
-* [DirectX 中的空间音效](spatial-sound-in-directx.md)
+* [空间音效](https://docs.microsoft.com/windows/win32/coreaudio/spatial-sound)
 * [DirectX 中的空间映射](spatial-mapping-in-directx.md)
 
 

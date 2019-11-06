@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
 keywords: 眼睛，头盔，打印头跟踪，眼睛跟踪，directx，输入，全息影像
-ms.openlocfilehash: 78a6190c18c8b92dd1d6f3d7a340b54d07b7feea
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 48188cc8c886b371847357701b42249f486bceac
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435338"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641122"
 ---
 # <a name="head-gaze-and-eye-gaze-input-in-directx"></a>DirectX 中的头盔和眼睛眼睛输入
 
@@ -22,6 +22,34 @@ ms.locfileid: "73435338"
 **眼睛**表示用户眼睛正在寻找的方向。 原点位于用户的眼睛之间。  它在包含目视跟踪系统的混合现实设备上可用。
 
 打印头和眼睛都可通过[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API 进行访问。 只需调用[SpatialPointerPose：： TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)即可在指定的时间戳和[坐标系统](coordinate-systems-in-directx.md)接收新的 SpatialPointerPose 对象。 此 SpatialPointerPose 包含一个头部和方向。 它还包含目视的原点和方向（如果眼睛跟踪可用）。
+
+### <a name="device-support"></a>设备支持
+<table>
+<colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+</colgroup>
+<tr>
+     <td><strong>具有</strong></td>
+     <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
+     <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
+     <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
+</tr>
+<tr>
+     <td>头部凝视</td>
+     <td>✔️</td>
+     <td>✔️</td>
+     <td>✔️</td>
+</tr>
+<tr>
+     <td>眼睛-注视</td>
+     <td>❌</td>
+     <td>✔️</td>
+     <td>❌</td>
+</tr>
+</table>
 
 ## <a name="using-head-gaze"></a>使用打印头
 
@@ -47,7 +75,8 @@ if (pointerPose)
 
 ## <a name="using-eye-gaze"></a>使用红眼
 
-眼睛良好的 API 非常类似于打印头。  它使用相同的[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API，该 API 提供了一个射线原点和方向，你可以根据场景进行 raycast。  唯一的区别是，在使用之前，需要显式启用目视跟踪。 为此，需要执行两个步骤：
+请注意，为了让用户使用目视输入，每个用户首次使用设备时必须进行[跟踪跟踪用户校准](calibration.md)。 眼睛良好的 API 非常类似于打印头。
+它使用相同的[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API，该 API 提供了一个射线原点和方向，你可以根据场景进行 raycast。  唯一的区别是，在使用之前，需要显式启用目视跟踪。 为此，需要执行两个步骤：
 1. 请求用户在应用中使用目视跟踪的权限。
 2. 启用包清单中的 "注视输入" 功能。
 
@@ -71,7 +100,7 @@ std::thread requestAccessThread([this]()
 requestAccessThread.detach();
 
 ```
-启动分离的线程只是一种用于处理异步调用的选项。  或者，可以使用C++/WinRT. 支持的新的[co_await](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/concurrency)功能
+启动分离的线程只是一种用于处理异步调用的选项。 或者，可以使用C++/WinRT. 支持的新的[co_await](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/concurrency)功能
 下面是要求用户提供权限的另一个示例：
 -   仅当存在目视跟踪器时，EyesPose：： IsSupported （）允许应用程序触发权限对话框。
 -   GazeInputAccessStatus m_gazeInputAccessStatus;这是为了防止反复弹出权限提示。
@@ -99,7 +128,6 @@ if (Windows::Perception::People::EyesPose::IsSupported() &&
 }
 
 ```
-
 
 ### <a name="declaring-the-gaze-input-capability"></a>声明*注视输入*功能
 
@@ -142,16 +170,39 @@ if (pointerPose)
 
 ```
 
-## <a name="correlating-gaze-with-other-inputs"></a>将注视与其他输入关联
+## <a name="fallback-when-eye-tracking-is-not-available"></a>当目视跟踪不可用时回退
+如我们的[眼睛跟踪设计文档](eye-tracking.md#fallback-solutions-when-eye-tracking-is-not-available)中所述，设计人员和开发人员都应注意到，可能存在一些可能无法用于应用程序的目视跟踪数据的实例。
+这种情况的原因有很多，包括用户不进行校准，用户拒绝了应用程序访问其眼睛跟踪数据或临时 interferences （例如，在 HoloLens 面板上出现污迹或用户眼睛 occluding）。 虽然本文档中已提到了某些 Api，但在下面的部分中，我们提供了有关如何检测目视跟踪是否可用作快速参考的摘要： 
 
+* 检查系统是否完全支持目视跟踪。 调用以下*方法*： [EyesPose. IsSupported （）](https://docs.microsoft.com/uwp/api/windows.perception.people.eyespose.issupported#Windows_Perception_People_EyesPose_IsSupported)
+
+* 检查是否校准了用户。 调用以下*属性*： [EyesPose. IsCalibrationValid](https://docs.microsoft.com/uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid) 
+
+* 检查用户是否已授予你的应用程序权限以使用其目视跟踪数据：检索当前的 _"GazeInputAccessStatus"_ 。 有关如何执行此操作的示例，请参阅[请求访问注视输入](https://docs.microsoft.com/windows/mixed-reality/gaze-in-directX#requesting-access-to-gaze-input)。   
+
+此外，你可能需要通过在收到的目视跟踪数据更新之间添加超时，并以其他方式回退到下面所述的打印头来检查眼睛跟踪数据是否过时。  
+有关详细信息，请访问我们的[回退设计注意事项](eye-tracking.md#fallback-solutions-when-eye-tracking-is-not-available)。
+
+<br>
+
+## <a name="correlating-gaze-with-other-inputs"></a>将注视与其他输入关联
 有时，你可能会发现需要与过去的事件对应的[SpatialPointerPose](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose) 。 例如，如果用户执行点击，你的应用可能需要知道他们正在查看的内容。 出于此目的，只需将[SpatialPointerPose：： TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)与预测帧时间结合使用，因为系统输入处理和显示时间之间存在延迟。 此外，如果使用目视目视定位，则即使在完成提交操作之前，我们也可能会继续。 这不是简单地点击的问题，而是将长的语音命令与快速的目视运动组合在一起，这一点更重要。 处理这种情况的一种方法是，使用对应于输入事件的历史时间戳对[SpatialPointerPose：： TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)进行其他调用。  
 
 但对于通过 SpatialInteractionManager 进行路由的输入，有一种更简单的方法。 [SpatialInteractionSourceState](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate)具有其自己的[TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate.trygetpointerpose)函数。 调用将提供完全相关的[SpatialPointerPose](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose) ，而无需猜测。 有关使用 SpatialInteractionSourceStates 的详细信息，请参阅 DirectX 文档中的[双手和运动控制器](hands-and-motion-controllers-in-directx.md)。
 
+<br>
+
+## <a name="calibration"></a>校准
+为了使目视跟踪能准确地工作，每个用户都需要经历[跟踪用户校准](calibration.md)。 这允许设备调整系统，以便为用户提供更舒适和更高的质量查看体验，并确保同时进行准确的目视跟踪。 开发人员无需执行任何操作即可管理用户校准。 系统将在以下情况下确保系统提示用户校准设备： * 用户第一次使用设备 * * 用户以前选择退出校准过程 * 校准过程未成功完成最后一次用户使用设备的时间
+
+开发人员应确保为可能无法提供目视跟踪数据的用户提供足够的支持。 详细了解[Hololens 2 上的目视跟踪](eye-tracking.md)中的备用解决方案注意事项。
+
+<br>
+
 ## <a name="see-also"></a>另请参阅
-* [打印头和提交输入模型](gaze-and-commit.md)
-* [目视-注视 HoloLens 2](eye-tracking.md)
 * [校准](calibration.md)
 * [DirectX 中的坐标系统](coordinate-systems-in-directx.md)
-* [DirectX 中的语音输入](voice-input-in-directx.md)
+* [目视-注视 HoloLens 2](eye-tracking.md)
+* [注视并提交输入模型](gaze-and-commit.md)
 * [DirectX 中的手和运动控制器](hands-and-motion-controllers-in-directx.md)
+* [DirectX 中的语音输入](voice-input-in-directx.md)

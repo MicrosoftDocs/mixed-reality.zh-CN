@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，Mixed Reality OpenXR 开发人员门户，DirectX，本机，本机应用自定义引擎，中间件
-ms.openlocfilehash: cf8795e6fed7db9fd0743d0902ce1585d56fa5e0
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d29b59d7dec19e5423c83ea6e61bb5625c8981dd
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438139"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641133"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -90,7 +90,7 @@ OpenXR 规范定义了一种扩展机制，它使运行时实现程序能够公�
 * [手型 articulation + 手写网格](hands-and-tools.md)
 * [眼睛凝视](eye-tracking.md)
 * [辅助视图配置（混合现实捕获）](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)
-* [空间映射](spatial-mapping.md)
+* [场景理解](scene-understanding.md)
 * 与 Windows SDK Api 互操作
 
 尽管其中一些扩展可能会作为特定于供应商的 MSFT 扩展而开始，但 Microsoft 和其他 OpenXR 运行时供应商正在协同工作，为许多这些功能领域设计跨供应商 EXT 或 KHR 扩展。  这将使你为这些功能编写的代码可在运行时供应商之间移植，就像核心规范一样。
