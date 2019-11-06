@@ -39,6 +39,7 @@
 ### [房间扫描可视化](room-scan-visualization.md)
 ### [场景理解](scene-understanding.md)
 ### [空间定位点](spatial-anchors.md)
+### [声音](spatial-sound.md)
 ### [空间映射](spatial-mapping.md)
 ### [系统手势](system-gesture.md)
 ### [混合现实应用的类型](types-of-mixed-reality-apps.md)
@@ -65,7 +66,6 @@
 ### 样式
 #### [颜色、光线和材料](color,-light-and-materials.md)
 #### [缩放](scale.md)
-#### [空间音效](spatial-sound.md)
 #### [空间音效设计](spatial-sound-design.md)
 #### [版式](typography.md)
 ### 控件和行为
@@ -193,7 +193,6 @@
 #### [头部和眼部凝视](gaze-in-directx.md)
 #### [手和运动控制器](hands-and-motion-controllers-in-directx.md)
 #### [语音输入](voice-input-in-directx.md)
-#### [空间音效](spatial-sound-in-directx.md)
 #### [空间映射](spatial-mapping-in-directx.md)
 #### [场景理解](scene-understanding-sdk.md)
 #### [共享空间定位点](shared-spatial-anchors-in-directx.md)
