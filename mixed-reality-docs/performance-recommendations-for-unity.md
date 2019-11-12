@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: 图形，cpu，gpu，呈现，垃圾回收，hololens
-ms.openlocfilehash: 724ec24408e70360fda07c59a4ca2ffc30b49c1f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f3fdda94c417d9f8e8980a90e8928282789e3d0f
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438126"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926872"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity 性能建议
 
@@ -273,7 +273,7 @@ Unity 能够批处理多个静态对象，以减少对 GPU 的调用。 静态�
 
 ### <a name="optimal-lighting-settings"></a>最佳照明设置
 
-Unity 中的[实时全局照明](https://docs.unity3d.com/Manual/GIIntro.html)可提供数量的视觉效果，但涉及到非常昂贵的照明计算。 建议通过**窗口** > **呈现**为每个 Unity 场景文件禁用实时全局照明 > **照明设置**> 取消选中 "**实时全局照明**"。
+Unity 中的[实时全局照明](https://docs.unity3d.com/Manual/GIIntro.html)可提供出色的视觉效果，但涉及到非常昂贵的照明计算。 建议通过**窗口** > **呈现**为每个 Unity 场景文件禁用实时全局照明 > **照明设置**> 取消选中 "**实时全局照明**"。
 
 此外，建议禁用所有阴影转换，因为这也会将昂贵的 GPU 传递添加到 Unity 场景。 可以按光禁用阴影，但也可以通过质量设置对其进行控制整体。
 
@@ -301,7 +301,7 @@ Unity 中的[实时全局照明](https://docs.unity3d.com/Manual/GIIntro.html)�
 
     ![Unity 标准着色器操作](images/unity-standard-shader-compilation.png)
 
-#### <a name="optmize-pixel-shaders"></a>优化像素着色器
+#### <a name="optimize-pixel-shaders"></a>优化像素着色器
 
 使用上述方法查看编译的统计信息结果，[片段着色器](https://en.wikipedia.org/wiki/Shader#Pixel_shaders)通常执行的操作比平均[顶点着色器](https://en.wikipedia.org/wiki/Shader#Vertex_shaders)要多。 片段着色器（也称为像素着色器）在屏幕输出上按像素执行，而顶点着色器仅对绘制到屏幕的所有网格的每个顶点执行。 
 

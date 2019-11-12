@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: 7ee0cf3af8012a053733896a8bf92192306b7f8b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: fdfe40571ac8893dcb3a3ba8fe3bb12707c800e4
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437494"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926920"
 ---
 # <a name="scene-understanding"></a>场景理解
 
@@ -95,7 +95,7 @@ ms.locfileid: "73437494"
 
 ### <a name="visualization"></a>视觉
 
-虽然[空间映射可视化](spatial-mapping.md#visualization)可用于环境的实时反馈，但在很多情况下，平面和 watertight 对象的简单性提供了更高的性能或视觉质量。 如果在四边形或平面 watertight 网格提供的平面表面上投影，则使用空间映射描述的阴影投影和接地技术可能更好。 这对于环境/方案特别适用，因为在这种情况下，通过预扫描并不是最佳的，因为场景将推断，而完整环境和平面假设将最小化项目。
+虽然[空间映射可视化](spatial-mapping.md#visualization)可用于环境的实时反馈，但在很多情况下，平面和 watertight 对象的简单性提供了更高的性能或视觉质量。 如果在四边形或平面 watertight 网格提供的平面表面上投影，则使用空间映射描述的阴影投影和接地技术可能更好。 这对于这样的环境/方案特别适用：由于场景将推断这一事实，完全预扫描并非最佳，而完整的环境和平面假设将最小化项目。
 
 此外，空间映射返回的图面总数受内部空间缓存的限制，而场景理解的空间映射网格版本可以访问未缓存的空间映射数据。 因此，场景理解更适合捕获更大空间的网格表示形式（例如，大于单个房间）以用于可视化或进一步的网格处理。 使用 EnableWorldMesh 返回的世界网格在整个中具有一致的详细级别，这可能会产生更好的可视化效果（如果以线框形式呈现）。
 
