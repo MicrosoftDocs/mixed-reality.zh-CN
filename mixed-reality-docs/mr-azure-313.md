@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure，混合现实，学院，边缘，iot edge，教程，api，通知，函数，表，hololens，沉浸，vr，iot，虚拟机，ubuntu，python
-ms.openlocfilehash: 7f56c7931bb036d14ab3aa9156706b1f6247195c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: bfb1518869892ed4899019d7b9c504a960e7db3f
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437962"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926838"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 会使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程，这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -1241,7 +1241,7 @@ ms.locfileid: "73437962"
     ![Power BI](images/AzureLabs-Lab313-86.png)
 
 > [!WARNING]
-> 下面是特定于 HoloLens 的章节。 Power BI 当前不可用作沉浸式应用程序，但你可以通过桌面应用在 Windows Mixed Reality 门户（也称为 Cliff 房子）中运行桌面版本。
+> 下面是特定于 HoloLens 的章节。 Power BI 当前不适用于沉浸式应用程序，但你可以通过桌面应用在 Windows Mixed Reality 门户（也称为 Cliff 房子）中运行桌面版本。
 
 ## <a name="chapter-16---display-power-bi-data-on-hololens"></a>第16章-显示 Power BI HoloLens 上的数据
 

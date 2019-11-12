@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 982a3f42014d8f5eb9ba181247fee9825fb78371
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 1f8a0cbe0f6da88c0c5e5a695737d8694020635c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434319"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926658"
 ---
 # <a name="writing-a-custom-holographic-remoting-player-app"></a>编写自定义全息远程处理播放器应用程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "73434319"
 很好的起点是基于 DirectX 的基于 DirectX 的 UWP 应用，已经以 Windows Mixed Reality API 为目标。 有关详细信息，请参阅[DirectX 开发概述](directx-development-overview.md)。 如果你没有现有应用，并且想要从头开始，则可以使用[ C++全息版项目模板](creating-a-holographic-directx-project.md)。
 
 >[!IMPORTANT]
->使用全息远程处理的任何应用都应该编写为使用[多线程单元](https://docs.microsoft.com//windows/win32/com/multithreaded-apartments)。 支持使用[单线程单元](https://docs.microsoft.com//windows/win32/com/single-threaded-apartments)，但在播放过程中可能会导致性能不佳，并且可能会断断续续。 使用C++/WinRT [WinRT：： init_apartment](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/get-started)时，多线程单元是默认值。
+>使用全息远程处理的任何应用都应该编写为使用[多线程单元](https://docs.microsoft.com//windows/win32/com/multithreaded-apartments)。 支持使用[单线程单元](https://docs.microsoft.com//windows/win32/com/single-threaded-apartments)，但在播放过程中可能会导致性能不佳，并且可能会断断续续。 使用C++/WinRT [WinRT：： init_apartment](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/get-started)多线程单元是默认值。
 
 ## <a name="get-the-holographic-remoting-nuget-package"></a>获取全息远程处理 NuGet 包
 
@@ -200,7 +200,7 @@ winrt::Microsoft::Holographic::AppRemoting::BlitResult result = m_playerContext.
 
 ## 可选：设置 BlitRemoteFrameTimeout<a name="BlitRemoteFrameTimeout"></a>
 >[!IMPORTANT]
-> 从版本[2.0.9](holographic-remoting-version-history.md#v2.0.9)开始支持 ```PlayerContext::BlitRemoteFrameTimout```。 
+> 从版本[2.0.9](holographic-remoting-version-history.md#v2.0.9)开始支持 ```PlayerContext::BlitRemoteFrameTimeout```。 
 
 如果未接收到新的远程帧，则 ```PlayerContext::BlitRemoteFrameTimeout``` 属性指定重复使用远程帧的时间长度。 
 

@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: DirectX，全息呈现，本机，本机应用，WinRT，WinRT 应用，平台 Api，自定义引擎，中间件
-ms.openlocfilehash: e77ee5053e69aef502481d18618e604c6bfb5939
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 0af73314c3c93d230ef87ed468f718f5b3e1813c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641095"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926630"
 ---
 # <a name="directx-development-overview"></a>DirectX 开发概述
 
@@ -44,7 +44,7 @@ Windows Mixed Reality 支持[两种类型的应用](app-views.md)：
 
 ## <a name="adding-mixed-reality-capabilities-and-inputs"></a>添加混合现实功能和输入
 
-若要为沉浸式 appslication 的用户提供最佳体验，需要支持以下关键构建基块：
+若要为沉浸式应用程序的用户提供可能的最佳体验，你需要支持以下关键构建基块：
 
 * [DirectX 中的头部和眼部凝视](gaze-in-directx.md)
 * [DirectX 中的手和运动控制器](hands-and-motion-controllers-in-directx.md)

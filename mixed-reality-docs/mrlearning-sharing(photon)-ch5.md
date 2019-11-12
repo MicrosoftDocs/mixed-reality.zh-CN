@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: b83c7ac39d522fc2b799591fa02608d5fc5cc930
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9d76d5323705c001dbafe4411a9334dd3403d0ca
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437566"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926242"
 ---
 # <a name="5-integrating-azure-spatial-anchors-into-a-shared-experience"></a>5. 将 Azure 空间锚点集成到共享体验中
 
-在本课程中，我们将了解如何将 Azure 空间锚点（ASA）集成到我们的共享体验中。 如果其物理环境要锚定虚拟体验，使多个归置的设备在其物理环境中能够看到相同的物理位置中的对象，则可以使用这些设备。
+在本课程中，你将了解如何将 Azure 空间锚点（ASA）集成到我们的共享体验中。 如果其物理环境要锚定虚拟体验，使多个归置的设备在其物理环境中能够看到相同的物理位置中的对象，则可以使用这些设备。
 
-在继续学习本课程之前，我们需要完成 ASA 学习模块，该模块将涵盖 ASA 基础知识、Azure 帐户和资源创建，以及在我们可以将 ASA 集成到我们的共享体验之前所需的其他基本建筑物块。
+在继续学习本课程之前，需要完成 ASA 学习模块，该模块将涵盖 ASA 基础知识、Azure 帐户和资源创建，以及将 ASA 集成到我们的共享体验之前所需的其他基本构建基块。
 
 目标
 
@@ -37,11 +37,11 @@ ms.locfileid: "73437566"
 
 ![Module3hapter5step5im](images/module3chapter5step5im.PNG)
 
-4. 现在，在层次结构中，选择 "ShareAzureAnchorButton"，并将注意力移动到 "Inaspector" 面板。 向下滚动到下图所示的下拉菜单中，选择 "AnchorModuleScript"，然后单击 "ShareAnchorNetework" （）。
+4. 现在，在层次结构中，选择 "ShareAzureAnchorButton"，并将注意力移动到检查器面板。 向下滚动到下图所示的下拉菜单中，选择 "AnchorModuleScript"，然后单击 "ShareAnchorNetwork" （）。
 
 ![Module3hapter5step6im](images/module3chapter5step6im.PNG)
 
-5. 选择 GetAzureAnchorButton （请参阅步骤4），并将你的注意力移回到检查器面板。 向下滚动到下图所示的下拉菜单中，选择 "AnchorModuleScript"，并单击 "GetSharedAnchorNetwork" （），然后单击 "保存"。
+5. 选择 GetAzureAnchorButton （请参阅步骤4），并将你的注意力移回到检查器面板。 向下滚动到下图所示的下拉菜单中，选择 "AnchorModuleScript"，单击 "GetSharedAnchorNetwork" （），然后单击 "保存"。
 
 ![Module3hapter5step7im](images/module3chapter5step7im.PNG)
 

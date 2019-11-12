@@ -1,24 +1,24 @@
 ---
 title: 使用 Visual Studio 部署和调试
-description: 如何使用 Visual Studio 为 HoloLens 和 Windows Mixed Reality 构建、调试和部署应用。
+description: 了解如何使用 Visual Studio 为 HoloLens 和 Windows Mixed Reality 构建、调试和部署应用。
 author: pbarnettms
 ms.author: pbarnett
 ms.date: 10/24/2019
 ms.topic: article
 keywords: Visual Studio，HoloLens，混合现实，调试，部署
-ms.openlocfilehash: 2b84183417a1bd4eaa90eef58bebe2b65966b933
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 07854c800008658835b169607d85d562682cf194
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437291"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914125"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>使用 Visual Studio 部署和调试
 
-无论是要使用 DirectX 还是 Unity 开发混合现实应用，都需要使用 Visual Studio 进行调试和部署。 在本部分中，你将学习：
-* 如何通过 Visual Studio 将应用程序部署到 HoloLens 或 Windows Mixed Reality 沉浸式耳机。
-* 如何使用内置于 Visual Studio 中的 HoloLens 仿真器。
-* 如何调试混合现实应用。
+无论是要使用 DirectX 还是 Unity 开发混合现实应用，都需要使用 Visual Studio 进行调试和部署。 在本节中，你将学习如何：
+* 通过 Visual Studio 将应用程序部署到 HoloLens 或 Windows Mixed Reality 沉浸式耳机。
+* 使用内置于 Visual Studio 的 HoloLens 仿真器。
+* 调试混合现实应用。
 
 ## <a name="prerequisites"></a>必备条件
 1. 有关安装说明，请参阅[安装工具](install-the-tools.md)。
@@ -26,7 +26,7 @@ ms.locfileid: "73437291"
 
 ## <a name="enabling-developer-mode"></a>启用开发人员模式
 
-首先在你的设备上启用**开发人员模式**，以便 Visual Studio 能够连接到它。
+首先在你的设备上启用**开发人员模式**，以便 Visual Studio 可以连接到它。
 
 ### <a name="hololens"></a>HoloLens
 1. 打开 HoloLens 并将其放在设备上。
@@ -48,7 +48,7 @@ ms.locfileid: "73437291"
 ## <a name="deploying-an-app-over-wi-fi---hololens-1st-gen"></a>通过 Wi-fi （第一代）部署应用
 1. 在 Visual Studio 中为应用 ![x86 生成配置选择**x86**生成配置](images/x86setting.png)
 2. 在 Visual Studio 中的 "部署目标" 下拉菜单中选择 "**远程计算机**" ![远程计算机部署目标](images/remotemachinesetting.png)
-3. 对于C++和 JavaScript 项目，请在 " **> 配置属性" > 调试**中，参阅 "项目 > 属性"。 对于C#项目，会自动弹出一个对话框来配置连接。
+3. 对于C++和 JavaScript 项目，请在 " **> 配置属性" > 调试**中，参阅 "项目 > 属性"。 对于C#项目，会自动显示一个对话框来配置连接。
   a. 在 "**地址**" 或 "**计算机名**" 字段中输入设备的 IP 地址。 在 "**设置" > 网络 & Internet > 高级选项**"下的" 设置 "下查找你的 HoloLens 上的 ip 地址，或者你可以询问 Cortana" 我的 IP 地址是什么？ "
   b. 在 Visual Studio 中将身份验证模式设置为**通用（未加密的协议）** ![远程连接对话框](images/remotedeploy.png)
 4. 选择 "**调试" > "开始调试**" 以部署应用并启动调试![在 Visual Studio 中启动但不调试](images/deploywithdebugging.png)
@@ -57,9 +57,9 @@ ms.locfileid: "73437291"
 ## <a name="deploying-an-app-over-wi-fi---hololens-2"></a>通过 Wi-fi 部署应用-HoloLens 2
 1. 在 Visual Studio 中为应用 ![ARM64 生成配置选择**ARM**或**ARM64**生成配置](images/arm64setting.png)
 2. 在 Visual Studio 中的 "部署目标" 下拉菜单中选择 "**远程计算机**" ![远程计算机部署目标](images/remotemachinesetting_arm64.png)
-3. 对于C++和 JavaScript 项目，请在 " **> 配置属性" > 调试**中，参阅 "项目 > 属性"。 对于C#项目，会自动弹出一个对话框来配置连接。
+3. 对于C++和 JavaScript 项目，请在 " **> 配置属性" > 调试**中，参阅 "项目 > 属性"。 对于C#项目，会自动显示一个对话框来配置连接。
   a. 在 "**地址**" 或 "**计算机名**" 字段中输入设备的 IP 地址。 在 "**设置" > 网络 & Internet > 高级选项**"下的" 设置 "下查找你的 HoloLens 上的 ip 地址，或者你可以询问 Cortana" 我的 IP 地址是什么？ "
-  b. 在 Visual Studio 中将身份验证模式设置为**通用（未加密的协议）** ![远程连接对话框](images/remotedeploy.png)
+  b. 在 Visual Studio 中将 "身份验证模式" 设置为 "**通用（未加密的协议）** ![远程连接" 对话框](images/remotedeploy.png)
 4. 选择 "**调试" > "开始调试**" 以部署应用并启动调试![在 Visual Studio 中启动但不调试](images/deploywithdebugging.png)
 5. 首次将应用程序从电脑部署到 HoloLens 时，系统将提示你输入 PIN。 按照以下步骤**配对设备**说明。
 

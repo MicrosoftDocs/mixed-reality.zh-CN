@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 04/26/2019
 ms.topic: article
 keywords: HoloLens，模拟器，模拟，Windows Mixed Reality
-ms.openlocfilehash: 01277e4b00dafaecdfd4e5205feccbf055e0caf5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: c5601ae2caf235cb22248ce7c6bf7e29225ade2c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437070"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926598"
 ---
 # <a name="advanced-hololens-emulator-and-mixed-reality-simulator-input"></a>高级 HoloLens 模拟器和混合现实模拟器输入
 
@@ -34,7 +34,7 @@ ms.locfileid: "73437070"
 * **操作**：此操作模拟按下食指捏到拇指的操作，或在控制器上拉取操作按钮。 例如，操作输入可用于模拟攻攻敲击手势，滚动查看内容，以及按下并保持。
 * **[布隆](system-gesture.md#bloom)/System 手势或 home**： HoloLens 布隆/系统手势或控制器的 "主页" 按钮用于返回到 shell 并执行系统操作。
 
-在 HoloLens 2 中，手具有丰富的 reprresentation。  除了进行跟踪/未跟踪以及可用于驾驶手势的情况外，我们现在有一个可供用户使用的有表述的主干模型，并向开发人员公开。  这会在每个局上引入26个跟踪点。  
+在 HoloLens 2 中，双手具有丰富的表示形式。  除了进行跟踪/未跟踪以及可用于驾驶手势的情况外，我们现在有一个可供用户使用的有表述的主干模型，并向开发人员公开。  这会在每个局上引入26个跟踪点。  
 * **接点**：给定被跟踪的每个位置的20个位置。 这会有一个与之关联的3d 空间。
 * **姿势**：所跟踪的所有接头的完整集合。 目前，这是一个26个联接的集合。 
 
@@ -76,11 +76,11 @@ ms.locfileid: "73437070"
 |  字距 |  T 或 F3 |  |  X 按钮 | 
 
 
-注意：控制器按钮可以已定位到 one 或使用手形目标修饰符。
+注意：控制器按钮可以针对一个手型/控制器或使用手形目标修饰符。
 
 ## <a name="targeting"></a>定位 
 
-以上一些输入概念彼此独立。  "操作"、"布隆"/"系统"、"重置" 和 "跟踪" 是完整的概念、不需要和不受的任何其他修饰符的影响。  但是，其余概念可应用于多个目标之一。 我们引入了一些方法，用于指定应将命令应用于哪个目标目标。  在所有情况下，都可以通过 UI 或通过键盘按的方法进行指定，targtet。  在某些情况下，也可以直接与 xbox 控制器一起指定。 
+以上一些输入概念彼此独立。  "操作"、"布隆"/"系统"、"重置" 和 "跟踪" 是完整的概念、不需要和不受的任何其他修饰符的影响。  但是，其余概念可应用于多个目标之一。 我们引入了一些方法，用于指定应将命令应用于哪个目标目标。  在所有情况下，都可以通过 UI 或通过键盘按指定的对象来指定。  在某些情况下，也可以直接与 xbox 控制器一起指定。 
 
 下表描述了用于设定目标的选项，以及每个选项的激活方式。
 

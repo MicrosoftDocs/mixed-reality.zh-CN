@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
 keywords: 眼睛，头盔，打印头跟踪，眼睛跟踪，directx，输入，全息影像
-ms.openlocfilehash: 48188cc8c886b371847357701b42249f486bceac
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 664657b9ab01530a608e31091823e828cc99d0cd
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641122"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926559"
 ---
 # <a name="head-gaze-and-eye-gaze-input-in-directx"></a>DirectX 中的头盔和眼睛眼睛输入
 
@@ -100,7 +100,7 @@ std::thread requestAccessThread([this]()
 requestAccessThread.detach();
 
 ```
-启动分离的线程只是一种用于处理异步调用的选项。 或者，可以使用C++/WinRT. 支持的新的[co_await](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/concurrency)功能
+启动分离的线程只是一种用于处理异步调用的选项。 或者，可以使用C++/WinRT. 支持的新[co_await](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/concurrency)功能
 下面是要求用户提供权限的另一个示例：
 -   仅当存在目视跟踪器时，EyesPose：： IsSupported （）允许应用程序触发权限对话框。
 -   GazeInputAccessStatus m_gazeInputAccessStatus;这是为了防止反复弹出权限提示。
@@ -144,7 +144,7 @@ if (Windows::Perception::People::EyesPose::IsSupported() &&
 
 ### <a name="getting-the-eye-gaze-ray"></a>获取眼睛眼睛
 接收到 ET 的访问权限后，即可自由地抓住每个帧的眼睛。
-正如在打印头上一样，通过使用所需的时间戳和坐标系统调用[SpatialPointerPose：： TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)来获取[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) 。 SpatialPointerPose 包含通过[眼睛](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)属性的[EyesPose](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose)对象。 只有启用了目视跟踪，此值才为非 null。 在该处，可以通过调用[EyesPose：： IsCalibrationValid](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)检查设备中的用户是否具有目视跟踪校准。  接下来，使用 "[注视](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)" 属性来获取眼睛眼睛和方向的[SpatialRay](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialray) contianing。 "注视" 属性有时可以为 null，因此请务必检查此值。 如果校准的用户暂时关闭了眼睛，就会发生这种情况。
+正如在打印头上一样，通过使用所需的时间戳和坐标系统调用[SpatialPointerPose：： TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)来获取[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) 。 SpatialPointerPose 包含通过[眼睛](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)属性的[EyesPose](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose)对象。 只有启用了目视跟踪，此值才为非 null。 在该处，可以通过调用[EyesPose：： IsCalibrationValid](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)检查设备中的用户是否具有目视跟踪校准。  接下来，使用 "[注视](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)" 属性获取包含眼睛位置和方向的[SpatialRay](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialray) 。 "注视" 属性有时可以为 null，因此请务必检查此值。 如果校准的用户暂时关闭了眼睛，就会发生这种情况。
 
 下面的代码演示如何访问眼睛眼睛。
 
@@ -193,7 +193,10 @@ if (pointerPose)
 <br>
 
 ## <a name="calibration"></a>校准
-为了使目视跟踪能准确地工作，每个用户都需要经历[跟踪用户校准](calibration.md)。 这允许设备调整系统，以便为用户提供更舒适和更高的质量查看体验，并确保同时进行准确的目视跟踪。 开发人员无需执行任何操作即可管理用户校准。 系统将在以下情况下确保系统提示用户校准设备： * 用户第一次使用设备 * * 用户以前选择退出校准过程 * 校准过程未成功完成最后一次用户使用设备的时间
+为了使目视跟踪能准确地工作，每个用户都需要经历[跟踪用户校准](calibration.md)。 这允许设备调整系统，以便为用户提供更舒适和更高的质量查看体验，并确保同时进行准确的目视跟踪。 开发人员无需执行任何操作即可管理用户校准。 系统将确保在以下情况下提示用户校准设备：
+* 用户第一次使用设备
+* 用户以前选择退出校准过程
+* 上次用户使用该设备时，校准过程未成功
 
 开发人员应确保为可能无法提供目视跟踪数据的用户提供足够的支持。 详细了解[Hololens 2 上的目视跟踪](eye-tracking.md)中的备用解决方案注意事项。
 

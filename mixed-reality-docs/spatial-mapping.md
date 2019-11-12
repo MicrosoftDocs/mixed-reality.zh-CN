@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空间映射，HoloLens，混合现实，表面重建，网格
-ms.openlocfilehash: 2988056b5caf50a4428d39c725bfe5432867a9c0
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: c4e2f9e49cfe4df9cf875d18b19d62e25c200d76
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437454"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926738"
 ---
 # <a name="spatial-mapping"></a>空间映射
 
@@ -64,13 +64,13 @@ ms.locfileid: "73437454"
 
 当 HoloLens 收集有关环境的新数据时，如果对环境进行了更改，空间图面将显示、消失和变化。
 
-## <a name="spatial-mapping-vs-scene-undesranding-worldmesh"></a>空间映射与场景 Undesranding WorldMesh
+## <a name="spatial-mapping-vs-scene-understanding-worldmesh"></a>空间映射与场景理解 WorldMesh
 对于 HoloLens 2，可以使用[场景理解 SDK](scene-understanding-SDK.md) （EnableWorldMesh 设置）查询静态版本的空间映射数据。 下面是访问空间映射数据的两种方法之间的差异：
 * 空间映射 API：
    * 有限范围：用户可使用大小受限的应用程序的空间映射数据。
    * 通过 SurfacesChanged 事件提供更改的网格区域的低延迟更新。
    * 每个立方计量参数的三角形控制的详细信息级别。
-* 场景 undestanding SDK：
+* 场景理解 SDK：
    * 无限制范围-提供查询半径内所有扫描的空间映射数据。
    * 提供空间映射数据的静态快照。 获取更新的空间映射数据需要对整个网格运行新的查询。
    * RequestedMeshLevelOfDetail 设置控制的详细级别的详细信息。
@@ -366,7 +366,7 @@ ms.locfileid: "73437454"
 * 很好的做法是，使用真实（和理想的夺得）用户执行测试，因为它们不能使用 HoloLens 或您的应用程序，其方式与使用方式完全相同。 事实上，这可能会让您感到他人的行为、知识和假设是多么的呢？
 
 ## <a name="troubleshooting"></a>“疑难解答”
-* 为了使 surface 网格正确面向，每个 GameObject 都需要处于活动状态，然后才能将其发送到 SurfaceObeserver 来构造其网格。 否则，网格将显示在您的空间中，但会旋转为古怪度。
+* 为了使 surface 网格正确面向，每个 GameObject 都需要处于活动状态，然后才能将其发送到 SurfaceObserver 来构造其网格。 否则，网格将显示在您的空间中，但会旋转为古怪度。
 * 需要将运行与 SurfaceObserver 通信的脚本的 GameObject 设置为源。 否则，你创建并发送到 SurfaceObserver 的所有 Gameobject 都具有与父游戏对象的偏移量相等的偏移量。 这会使你的网格显示多个计量仪，这使得调试正在进行的操作非常困难。
 
 ## <a name="see-also"></a>另请参阅

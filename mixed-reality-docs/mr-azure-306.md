@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure，混合现实，学院，unity，教程，api，媒体服务，流视频，360，沉浸，vr
-ms.openlocfilehash: 6585aa731ff7ebb89beae67ab0b61ac5ef026e47
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e0350d69eed9b922e174bc521107beac7d11b1bc
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438563"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926831"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 会使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程，这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -619,7 +619,7 @@ ms.locfileid: "73438563"
 
 ## <a name="chapter-6---create-the-gaze-class"></a>第6章-创建注视类
 
-此类负责创建**Raycast** ，Beprojected 从**主相机**转发，检测用户正在查看的对象。 在这种情况下， **Raycast**需要确定用户是否正在查看场景中的**GazeButton**对象并触发行为。
+此类负责创建将从**主相机**向前投影的**Raycast** ，以检测用户正在查看的对象。 在这种情况下， **Raycast**需要确定用户是否正在查看场景中的**GazeButton**对象并触发行为。
 
 若要创建此类：
 
@@ -828,7 +828,7 @@ ms.locfileid: "73438563"
 
 3.  请参阅**文件 > 生成设置**，单击 "**生成**"。
 
-4.  系统将提示你选择要 buildthe 解决方案的文件夹。
+4.  系统将提示您选择要在其中生成解决方案的文件夹。
 
 5.  创建一个**生成**文件夹，在该文件夹中创建另一个文件夹，其中包含所选的适当名称。
 

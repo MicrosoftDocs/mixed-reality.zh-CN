@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
 keywords: 3D，徽标，图标，建模，启动器，3D 启动器，磁贴，动态立方体，深层链接，secondarytile，辅助磁贴，UWP
-ms.openlocfilehash: be47b590e4fd1a847ac47d9cfbcbe824c544dd59
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 5d18f699792760c39df4f814bde470fb9f889db7
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438015"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926772"
 ---
 # <a name="implement-3d-app-launchers-uwp-apps"></a>实现三维应用启动器（UWP 应用）
 
@@ -164,7 +164,7 @@ await tile.RequestCreateAsync();
 > [!NOTE]
 > Windows RS4 更新将支持此功能。 如果计划使用此功能，请确保应用程序面向的 Windows SDK 版本大于或等于10.0.17125
 
-您可以定义三维 secondaryTile 的激活行为，以控制用户选择它时其反应方式。 这可用于将三维对象放置在混合现实主页中，这些对象 purley 信息性或装饰性。 支持以下激活行为类型：
+您可以定义三维 secondaryTile 的激活行为，以控制用户选择它时其反应方式。 这可用于将三维对象置于纯信息性或装饰性的混合现实主页中。 支持以下激活行为类型：
 1. 默认值：用户选择 3D secondaryTile 时，会激活应用
 2. 无：当用户选择 3D secondaryTile 时，不会执行任何操作，也不会激活应用。
 

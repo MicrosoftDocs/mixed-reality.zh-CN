@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure，混合现实，学院，unity，教程，api，机器学习，ml，机器学习工作室，hololens，沉浸，vr
-ms.openlocfilehash: c86c592573dd39d926869d8cce6025fa264cc90f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e302e287049cd746a436904c2af2bcc2b0835796
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437931"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926619"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 会使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程，这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -410,7 +410,7 @@ ms.locfileid: "73437931"
 
     ![导入 MLProducts Unity 包](images/AzureLabs-Lab7-41.png)
 
-5.  在 "**项目面板**" 文件夹中，单击 "**场景**" 文件夹，然后双击（称为**MR_MachineLearningScene**）内的场景。 屏幕将打开（请参阅下图）。 如果缺少红色菱形，只需单击**游戏面板**右上角的 " **Gizmos** " 按钮。
+5.  在 "**项目面板**" 文件夹中，单击 "**场景**" 文件夹，然后双击（称为**MR_MachineLearningScene**）中的场景。 屏幕将打开（请参阅下图）。 如果缺少红色菱形，只需单击**游戏面板**右上角的 " **Gizmos** " 按钮。
 
     ![导入 MLProducts Unity 包](images/AzureLabs-Lab7-44.png)
 
@@ -731,7 +731,7 @@ ms.locfileid: "73437931"
 
             Debug.LogFormat("Score request built");
 
-            // Serialise the request
+            // Serialize the request
             string json = JsonConvert.SerializeObject(ro);
 
             using (UnityWebRequest www = UnityWebRequest.Post(serviceEndpoint, "POST"))
@@ -849,7 +849,7 @@ ms.locfileid: "73437931"
 
 1.  导航到新的 Unity 生成（**应用**文件夹），并在**Visual Studio**中打开解决方案文件。
 
-2.  在 Visual Studio 打开的情况下，你需要还原 NuGet 包，可以通过以下方式完成：右键单击 MachineLearningLab_Build 解决方案，从 "解决方案资源管理器" （位于 Visual Studio 的右侧），然后单击 "还原 NuGet 包"：
+2.  在 Visual Studio 打开的情况下，你需要还原 NuGet 包，可以通过右键单击 MachineLearningLab_Build 解决方案来完成此操作，方法是在解决方案资源管理器（位于 Visual Studio 的右侧），然后单击 "还原 NuGet 包"：
 
     ![添加 NuGet 包](images/AzureLabs-Lab7-57.png)
 

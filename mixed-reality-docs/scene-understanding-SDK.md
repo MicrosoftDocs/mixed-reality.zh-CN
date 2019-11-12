@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: e31c0b1c954516db2dbb025d849dba3e3203a04b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: b7d4103697d94f5e59c77237b4948f62e4e4b621
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438296"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926907"
 ---
 # <a name="scene-understanding-sdk-overview"></a>场景理解 SDK 概述
 
@@ -23,7 +23,7 @@ SceneUnderstanding SDK 可通过 NuGet 下载。
 
 [SceneUnderstanding SDK](https://www.nuget.org/packages/Microsoft.MixedReality.SceneUnderstanding/)
 
-**注意：** 最新版本依赖于预览版包，你将需要启用预发布包才能查看。
+**注意：** 最新版本依赖于预览包，你将需要启用预发布包才能查看。
 
 从版本 0.5.2022-rc，场景理解支持的C#语言投影，并C++允许应用程序开发 Win32 或 UWP 平台的应用程序。 在此版本中，SceneUnderstanding 支持 unity 内编辑器支持，禁止使用专用于与 HoloLens2 通信的 SceneObserver。 
 
@@ -35,7 +35,7 @@ SceneUnderstanding 需要 Windows SDK 版本18362或更高版本。
 
 ### <a name="the-scene"></a>场景
 
-混合现实设备会不断集成有关它在你的环境中看到的内容的信息。 场景了解漏斗图所有这些数据源，并生成一个统一的抽象抽象。 场景理解会生成场景，这些场景是[SceneObjects](scene-understanding-SDK.md#sceneobjects)的组成部分，表示单个事物的实例（例如墙壁/天花板/楼层。）场景对象本身是[SceneComponents](scene-understanding-SDK.md#scenecomponents)的组成部分，表示构成此 SceneObject 的更精细的部分。 组件的示例包括四边形和网格，但将来可能表示边界框、冲突 mehses、元数据等。
+混合现实设备会不断集成有关它在你的环境中看到的内容的信息。 场景了解漏斗图所有这些数据源，并生成一个统一的抽象抽象。 场景理解会生成场景，这些场景是[SceneObjects](scene-understanding-SDK.md#sceneobjects)的组成部分，表示单个事物的实例（例如墙壁/天花板/楼层。）场景对象本身是[SceneComponents](scene-understanding-SDK.md#scenecomponents)的组成部分，表示构成此 SceneObject 的更精细的部分。 组件的示例包括四边形和网格，但将来可能表示边界框、冲突网格、元数据等。
 
 将原始传感器数据转换为场景的过程是一项潜在的成本高昂的操作，可能需要几秒钟的时间（约10x10m）到非常大的空间（~ 50x50m）应用程序请求。 相反，应用程序会按需触发场景生成。 SceneObserver 类具有可计算或反序列化场景的静态方法，然后可以使用该场景进行枚举/交互。 "计算" 操作按需执行，在 CPU 上执行，但在单独的进程中执行（混合现实驱动程序）。 但是，虽然我们在另一个进程中进行计算，但生成的场景数据会存储在应用程序的场景对象中并进行维护。 
 
@@ -43,7 +43,7 @@ SceneUnderstanding 需要 Windows SDK 版本18362或更高版本。
 
 ![流程图](images/SU-ProcessFlow.png)
 
-左侧是混合现实运行时的关系图，它在自己的进程中始终处于打开和运行状态。 此运行时负责执行设备跟踪、空间映射和其他操作，场景了解使用它来理解和解决世界的相关原因。 在关系图的右侧，我们将显示两个使用场景理解的理论应用程序。 使用 MRTK 的第一个应用程序接口在内部使用场景理解 SDK，第二个应用计算并使用两个 sepereate 场景实例。 此关系图中的所有3个场景都生成了不同场景的不同实例，驱动程序不跟踪在一个场景中的应用程序和场景对象之间共享的全局状态。 场景理解提供一种机制来跟踪一段时间，但使用 SDK 和代码执行此跟踪的代码将在应用程序的进程中的 SDK 中运行。
+左侧是混合现实运行时的关系图，它在自己的进程中始终处于打开和运行状态。 此运行时负责执行设备跟踪、空间映射和其他操作，场景了解使用它来理解和解决世界的相关原因。 在关系图的右侧，我们将显示两个使用场景理解的理论应用程序。 使用 MRTK 的第一个应用程序接口在内部使用场景理解 SDK，第二个应用计算并使用两个单独的场景实例。 此关系图中的所有3个场景都生成了不同场景的不同实例，驱动程序不跟踪在一个场景中的应用程序和场景对象之间共享的全局状态。 场景理解提供一种机制来跟踪时间，但这是使用 SDK 完成的，执行此跟踪的代码将在应用程序的进程中的 SDK 中运行。
 
 由于每个场景会将其数据存储在应用程序的内存空间中，因此，你可以假定场景对象的所有功能或它的内部数据始终在应用程序的进程中执行。
 
@@ -95,7 +95,7 @@ SceneUnderstanding 需要 Windows SDK 版本18362或更高版本。
 </tr>
 </table>
 
-此图重点介绍场景的物理布局和逻辑布局之间的差异。 在右侧，我们将看到你的应用程序在枚举场景时看到的数据的分层布局。 在左侧，我们看到场景实际包含12个不同的组件，这些组件可在必要时单独访问。 处理新场景时，我们希望应用程序以逻辑方式对此层次结构进行遍历，但当在场景更新之间进行跟踪时，某些应用程序可能只对在两个场景之间共享的特定组件感兴趣。
+此图重点介绍场景的物理布局和逻辑布局之间的差异。 在左侧，我们将看到你的应用程序在枚举场景时看到的数据的分层布局。 在右侧，我们看到场景实际包含12个不同的组件，这些组件可在必要时单独访问。 处理新场景时，我们希望应用程序以逻辑方式对此层次结构进行遍历，但当在场景更新之间进行跟踪时，某些应用程序可能只对在两个场景之间共享的特定组件感兴趣。
 
 ## <a name="api-overview"></a>API 概述
 
@@ -223,7 +223,7 @@ firstFloor = (SceneObject)myNextScene.FindComponent(firstFloor.Id);
 
 if (firstFloor != null)
 {
-    // We found it again, we can now update the transforms of all objects we attatched to this floor transform
+    // We found it again, we can now update the transforms of all objects we attached to this floor transform
 }
 ```
 
@@ -249,7 +249,7 @@ foreach (var mesh in firstFloor.Meshes)
 }
 ```
 
-请注意，它是相对于场景原点的转换的 SceneObject。 这是因为 SceneObject 表示 "事物" 的实例，在空间中可定位，四边形和网格表示相对于其父级转换的几何图形。 单独的 SceneObjects 可以引用相同的 SceneMesh/SceneQuad SceneComponewnts，也可能是 SceneObject 有多个 SceneMesh/SceneQuad。
+请注意，它是相对于场景原点的转换的 SceneObject。 这是因为 SceneObject 表示 "事物" 的实例，在空间中可定位，四边形和网格表示相对于其父级转换的几何图形。 单独的 SceneObjects 可以引用相同的 SceneMesh/SceneQuad SceneComponents，也可能是 SceneObject 有多个 SceneMesh/SceneQuad。
 
 ### <a name="dealing-with-transforms"></a>处理转换
 
@@ -285,7 +285,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-每个 `SceneObject` 都有一个 `Position` 和 `Orientation` 属性，该属性可用于相对于包含 `Scene`的原点定位相应的内容。 例如，下列示例假定游戏是场景根的子元素，并分配其本地位置和旋转，使其与给定 `SceneObject`对齐：
+每个 `SceneObject` 都有一个 `Position` 和 `Orientation` 属性，该属性可用于相对于包含 `Scene`的原点定位相应的内容。 例如，下面的示例假定游戏是场景根的子元素，并分配其本地位置和旋转，使其与给定 `SceneObject`对齐：
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -324,14 +324,14 @@ foreach (var sceneObject in myScene.SceneObjects)
                 // Step 1: Create a new game object for the quad itself as a child of the scene root
                 // Step 2: Set the local transform from quads[0].Position and quads[0].Orientation
                 // Step 3: Create your hologram and set it as a child of the quad's game object
-                // Step 4: Set the hologram's local tranform to a translation (location.x, location.y, 0)
+                // Step 4: Set the hologram's local transform to a translation (location.x, location.y, 0)
             }
         }
     }
 }
 ```
 
-步骤1-4 依赖于特定的框架/实现，但主题应类似。 请注意，四个部分只表示在空间中进行了本地化的界限2D 平面。 通过使引擎/框架知道四个部分，并使对象相对于四个部分进行定位，你的全息影像会正确地定位到现实世界中的 repect。 有关更多详细信息，请参阅四边形上的示例，这些示例显示特定实现。
+步骤1-4 依赖于特定的框架/实现，但主题应类似。 请注意，四个部分只表示在空间中进行了本地化的界限2D 平面。 通过让引擎/框架知道四个部分，并相对于四个部分定位对象，您的全息影像会正确地定位到现实世界。 有关更多详细信息，请参阅四边形上的示例，这些示例显示特定实现。
 
 ### <a name="mesh"></a>交错
 

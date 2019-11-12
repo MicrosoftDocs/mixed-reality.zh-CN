@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，Mixed Reality OpenXR 开发人员门户，DirectX，本机，本机应用自定义引擎，中间件
-ms.openlocfilehash: d29b59d7dec19e5423c83ea6e61bb5625c8981dd
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 67d2ab42a40aa04eb9dcd6881a4392a81c0f3b8f
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641133"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914393"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -74,6 +74,100 @@ Core OpenXR 1.0 API 提供生成引擎的基本功能，你可以将其作为一
 <a href="https://github.com/Microsoft/OpenXR-SDK-VisualStudio/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>项目演示了一个简单的 OpenXR 示例，其中包含两个 Visual Studio 项目文件，一个用于 Win32 桌面应用，另一个用于 UWP HoloLens 2 应用。  由于解决方案包含一个 HoloLens UWP 项目，因此需要在 Visual Studio 中安装[通用 Windows 平台开发工作负载](install-the-tools.md#installation-checklist)才能完全打开它。
 
 请注意，虽然 Win32 和 UWP 项目文件是独立的，但由于打包和部署的不同，每个项目中的应用代码都是100%。
+
+## <a name="openxr-app-best-practices-for-hololens-2"></a>针对 HoloLens 2 的 OpenXR 应用最佳实践
+
+可在 BasicXrApp 的[OpenXRProgram](https://github.com/microsoft/OpenXR-SDK-VisualStudio/blob/master/samples/BasicXrApp/OpenXrProgram.cpp)文件中查看以下最佳实践的示例。 开始时，Run （）函数从初始化到事件和呈现循环捕获典型的 OpenXR 应用代码流。
+
+### <a name="select-a-pixel-format"></a>选择像素格式
+
+始终使用 `xrEnumerateSwapchainFormats`枚举受支持的像素格式，并从应用程序支持的运行时选择第一种颜色和深度像素格式，因为这是运行时首选的。 请注意，在 HoloLens 2 上，`DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` 和 `DXGI_FORMAT_D16_UNORM` 通常是实现更好的呈现性能的第一选择。 在台式计算机上运行的 VR 耳机上，此首选项可能有所不同。  
+  
+**性能警告：** 使用不是主存在颜色格式的格式将导致运行时后处理，这会产生严重的性能损失。
+
+### <a name="gamma-correct-rendering"></a>伽玛正确的呈现
+
+尽管这适用于所有 OpenXR 运行时，但必须注意确保呈现管道是伽玛正确的。 在呈现到存在时，呈现目标视图格式应与存在格式（例如，存在格式和呈现目标视图 DXGI_FORMAT_B8G8R8A8_UNORM_SRGB）匹配。
+例外情况是，应用程序的呈现管道在着色器代码中执行手动的 sRGB 转换，在这种情况下，应用程序应请求 sRGB 存在格式，但使用线性格式作为呈现目标视图（例如，request DXGI_FORMAT_B8G8R8A8_UNORM_SRGB存在格式，但使用 DXGI_FORMAT_B8G8R8A8_UNORM 作为呈现目标视图）以防止内容被更正为双精度。
+
+### <a name="use-a-single-projection-layer"></a>使用单个投影层
+
+HoloLens 2 为应用程序提供了有限的 GPU 能力，可让应用程序呈现内容和针对单个投影层优化的硬件组合器。
+始终使用单个投影层可帮助应用程序的帧速率、全息图稳定性和视觉质量。  
+  
+**性能警告：** 提交任何内容，但只有一个保护层会导致运行时后处理，这会产生严重的性能损失。
+
+### <a name="render-with-texture-array-and-vprt"></a>用纹理数组和 VPRT 进行呈现
+
+使用 `arraySize=2` 颜色存在和深度，为左右眼睛创建一个 `xrSwapchain`。
+将视觉眼睛渲染为切片0，将视觉眼睛转换为切片1。
+使用带有 VPRT 的着色器并使用实例化绘图调用 stereoscopic 渲染来最大程度地减少 GPU 负载。
+这还使运行时的优化能够在 HoloLens 2 上获得最佳性能。
+使用纹理数组的替代方法（如双重渲染或每个眼睛单独的存在）将导致运行时后处理，这会产生严重的性能损失。
+
+### <a name="render-with-recommended-rendering-parameters-and-frame-timing"></a>使用建议的呈现参数和帧计时进行呈现
+
+始终使用推荐的视图配置宽度/高度（`recommendedImageRectWidth` 和 `recommendedImageRectHeight` `XrViewConfigurationView`）进行呈现，并且始终使用 `xrLocateViews` API 在呈现之前查询建议的视图 fov、和其他呈现参数。
+查询姿势和视图时，请始终使用最新 `xrWaitFrame` 调用中的 `XrFrameEndInfo.predictedDisplayTime`。
+这允许 HoloLens 为正在戴上的 HoloLens 的人员调整呈现和优化视觉质量。
+
+### <a name="submit-depth-buffer-for-projection-layers"></a>提交用于投影层的深度缓冲区
+
+提交帧到 `xrEndFrame`时，请始终使用 `XR_KHR_composition_layer_depth` 扩展，并随投影层一起提交深度缓冲区。
+这可以通过在 HoloLens 2 上启用硬件深度 reprojection 来改善全息影像的稳定性。
+
+### <a name="choose-a-reasonable-depth-range"></a>选择合理的深度范围
+
+首选较窄的深度范围来确定虚拟内容的作用域，以帮助在 HoloLens 上对虚拟目录进行稳定性。
+例如，OpenXrProgram 示例使用0.1 到20米。
+使用[反向-Z](https://developer.nvidia.com/content/depth-precision-visualized)以获得更统一的深度解析。
+请注意，在 HoloLens 2 上，使用首选 `DXGI_FORMAT_D16_UNORM` 深度格式将有助于获得更好的帧速率和性能，不过，16位深度缓冲区提供的分辨率低于24位深度缓冲区。
+因此，遵循这些最佳做法，充分利用深度解析变得更加重要。
+
+### <a name="prepare-for-different-environment-blend-modes"></a>针对不同的环境混合模式做好准备
+
+如果你的应用程序也将在完全堵塞世界的沉浸式耳机上运行，请确保使用 `xrEnumerateEnvironmentBlendModes` API 枚举支持的环境混合模式，并相应地准备呈现内容。
+例如，对于具有 `XR_ENVIRONMENT_BLEND_MODE_ADDITIVE` 的系统（如 HoloLens），应用应使用透明的颜色作为清晰的颜色，而对于具有 `XR_ENVIRONMENT_BLEND_MODE_OPAQUE`的系统，应用应在后台呈现一些不透明颜色或某些虚拟空间。
+
+### <a name="choose-unbounded-reference-space-as-applications-root-space"></a>选择未绑定的引用空间作为应用程序的根空间
+
+应用程序通常会建立一些根世界坐标空间，以便将视图、操作和全息连接在一起。
+当支持扩展以建立[全球范围的坐标系统](coordinate-systems.md#building-a-world-scale-experience)时，可使用 `XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT`，使应用能够避免在用户从应用启动的位置移到远处（如5米以外）时出现意外的全息影像偏移。
+如果未绑定的空间扩展不存在，请使用 `XR_REFERENCE_SPACE_TYPE_LOCAL` 作为回退。
+
+### <a name="associate-hologram-with-spatial-anchor"></a>将全息图与空间定位关联
+
+使用未绑定的引用空间时，在该引用空间中直接放置的全息影像[可能会在用户进入远处房间后进入远处，并返回](coordinate-systems.md#building-a-world-scale-experience)。
+对于全息图用户在世界各地的不同位置，请使用 `xrCreateSpatialAnchorSpaceMSFT` extension 函数[创建空间锚](spatial-anchors.md#best-practices)，并将全息影像置于其原点。
+这会使全息图在一段时间内独立稳定。
+
+### <a name="support-mixed-reality-capture"></a>支持混合现实捕获
+
+尽管 HoloLens 2 的主显示器使用加法环境混合，但当用户启动[混合现实捕获](mixed-reality-capture-for-developers.md)时，应用的呈现内容将与环境视频流进行 alpha 混合。
+若要在混合现实中获得最佳视觉质量捕获视频，最好将 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` 设置在投影层的 `layerFlags`中。  
+
+**性能警告：** 省略单个投影层上的 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` 标志将导致运行时后处理，这会产生严重的性能损失。
+
+### <a name="avoid-quad-layers"></a>避免出现四个层
+
+无需将四个层作为组合层提交 `XrCompositionLayerQuad`，而是直接将四个存在的内容呈现到投影中。
+
+**性能警告：** 除了多个层以外，提供其他层（如四层）将导致运行时后处理，这会产生严重的性能损失。
+
+## <a name="openxr-app-performance-on-hololens-2"></a>HoloLens 2 上的 OpenXR 应用程序性能
+
+在 HoloLens 2 上，有多种方法可通过 `xrEndFrame` 提交组合数据，这会导致后期处理，这将导致性能显著下降。
+若要避免性能 penalities，请提交具有以下特征的[单个 `XrCompositionProjectionLayer`](#use-a-single-projection-layer) ：
+* [使用纹理数组存在](#render-with-texture-array-and-vprt)
+* [使用主要颜色存在格式](#select-a-pixel-format)
+* [设置纹理源-alpha 混合标志](#support-mixed-reality-capture)
+* [使用建议的视图维度](#render-with-recommended-rendering-parameters-and-frame-timing)
+* 不设置 `XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT` 标志
+* 将 `XrCompositionLayerDepthInfoKHR` `minDepth` 设置为 0.0 f，并 `maxDepth` 设置为 1.0 f
+
+其他注意事项将导致更好的性能：
+* [使用16位深度格式](#choose-a-reasonable-depth-range)
+* [进行实例化绘图调用](#render-with-texture-array-and-vprt)
 
 ## <a name="roadmap"></a>路线图
 

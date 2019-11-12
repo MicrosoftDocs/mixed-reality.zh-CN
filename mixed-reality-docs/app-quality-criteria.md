@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 应用质量标准，混合现实，混合现实应用
-ms.openlocfilehash: f98111ebe9aacc30778e86501be41e6ac5f6d165
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d167e141b536f9247d22e40afefa718ecc399f5a
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437046"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926590"
 ---
 # <a name="app-quality-criteria"></a>应用质量标准
 
@@ -124,7 +124,7 @@ ms.locfileid: "73437046"
 * 四处移动影像和环境，查找泳道和 jumpiness 等行为。 此类动作可能由设备不跟踪环境或到空间锚点的距离引起。
 * 如果帧中有大的或多个全息影像，请在不同的深度观察全息影像行为，同时从一侧到另一侧，如果出现抖动，这可能是由稳定平面导致的。
 
-### <a name="recomendations"></a>建议
+### <a name="recommendations"></a>建议
 
 * 在开发工作开始时添加帧速率计数器。
 * 使用 "稳定" 平面。
@@ -188,7 +188,7 @@ ms.locfileid: "73437046"
 * 空间映射适用于在不需要精度时将对象放置在图面上。
 * 为了获得最佳的精度，请使用标记或海报来设置全息影像，并使用 Xbox 控制器（或某种手动对齐机制）来进行最终校准。
 * 考虑将超大型全息图分解为逻辑部件，并将每个部件与图面对齐。
-* 错误设置的 interpupilary 距离（IPD）还会影响全息图对齐。 始终将 HoloLens 配置为用户的 IPD。
+* 错误设置的 interpupillary 距离（IPD）还会影响全息图对齐。 始终将 HoloLens 配置为用户的 IPD。
 
 ### <a name="resources"></a>资源
 
@@ -523,7 +523,7 @@ ms.locfileid: "73437046"
 ### <a name="how-to-measure"></a>如何度量
 
 * 应用使用一致[的标准输入法。](interaction-fundamentals.md)
-* 如果应用有时候输入，则会通过以下方法清楚地传达此内容：
+* 如果应用具有自定义输入，则会通过以下方法进行清晰的通信：
 * 首次运行体验
 * 介绍屏幕
 * 工具提示

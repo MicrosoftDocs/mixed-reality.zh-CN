@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure，混合现实，学院，unity，教程，api，人脸识别，hololens，沉浸，vr
-ms.openlocfilehash: ef75be5485f85538eb8b3db3eebec63b166f7aa3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 23676684c2ec325f9d6f1924e7a0bad14d41f13e
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438492"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926785"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 会使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程，这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
@@ -575,7 +575,7 @@ FaceAnalysis 类的目的是托管与 Azure 面部识别服务进行通信所需
             facesToIdentify.maxNumOfCandidatesReturned = 1;
             facesToIdentify.confidenceThreshold = 0.5;
 
-            // Serialise to Json format
+            // Serialize to Json format
             string facesToIdentifyJson = JsonConvert.SerializeObject(facesToIdentify);
             // Change the object into a bytes array
             byte[] facesData = Encoding.UTF8.GetBytes(facesToIdentifyJson);
@@ -769,7 +769,7 @@ FaceAnalysis 类的目的是托管与 Azure 面部识别服务进行通信所需
         }
 
         /// <summary>
-        /// Register the full execution of the Photo Capture. If successfull, it will begin the Image Analysis process.
+        /// Register the full execution of the Photo Capture. If successful, it will begin the Image Analysis process.
         /// </summary>
         void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
         {
@@ -809,7 +809,7 @@ FaceAnalysis 类的目的是托管与 Azure 面部识别服务进行通信所需
 
     ![从 Visual Studio 部署解决方案。](images/AzureLabs-Lab4-25.png)
 
-7.  打开应用文件夹，然后打开新的项目解决方案（如上所示，MR_FaceRecognition）。
+7.  打开应用文件夹，然后打开新的项目解决方案（如上所示，MR_FaceRecognition .sln）。
 
 
 ## <a name="chapter-9---deploying-your-application"></a>第9章-部署应用程序

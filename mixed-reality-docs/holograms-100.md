@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合现实，Windows Mixed Reality，HoloLens，沉浸，，vr，先生，入门，全息影像，学院，教程
-ms.openlocfilehash: 5e9a90af6b80333addbde2a2e11086372483b7c3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 0600383b3cca3f580f014597217afc6ae78836dd
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434774"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926633"
 ---
 >[!NOTE]
 >混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 会使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
@@ -156,7 +156,7 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 ### <a name="initial-setup"></a>初始设置
 
 1. 在开发 PC 的 Unity 中，打开 "**文件 > 生成设置**" 窗口。
-2. 将**平台**更改为 "**通用 Windows 平台**"，然后单击 "**切换 platfrom.details.heap.alignedallocate** "
+2. 将**平台**更改为 "**通用 Windows 平台**"，然后单击 "**切换平台**"
 
 ### <a name="for-hololens-use-unity-remoting"></a>对于 HoloLens，使用 Unity 远程处理
 

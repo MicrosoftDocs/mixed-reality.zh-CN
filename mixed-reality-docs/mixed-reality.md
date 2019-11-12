@@ -6,12 +6,12 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality，全息，ar，vr，先生，xr，扩充现实，虚拟现实，说明
-ms.openlocfilehash: 83beca8b6abad56fc37800ddfc9faad0d21859bf
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 601e42c03e827f0f531f9dcf937a0dd34b008dc3
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437917"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926776"
 ---
 # <a name="what-is-mixed-reality"></a>什么是混合现实？
 
@@ -71,7 +71,7 @@ ms.locfileid: "73437917"
 <br>
 
 ![混合现实频谱](images/MixedRealitySpectrum.jpg)<br>
-*混合现实 specturm*
+*混合现实范围*
 
 <br>
 

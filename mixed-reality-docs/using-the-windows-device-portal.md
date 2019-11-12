@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 设备门户、HoloLens
-ms.openlocfilehash: cc83a4e987d77be53222b8e9537eeec359446465
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 972fe2e828a0a054925a45b4f6965c668f6da078
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438213"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926743"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 设备门户
 
@@ -45,7 +45,7 @@ ms.locfileid: "73438213"
 1. [将 HoloLens 连接到 wi-fi](connecting-to-wi-fi-on-hololens.md)。
 2. 查找设备的 IP 地址。
    * 在 "**设置" > Network & > > Internet**"下的" 设置 "中找到设备的 IP 地址。
-3. 在电脑上的 web 浏览器中转到 https：//< YOUR_HOLOLENS_IP_ADDRESS >
+3. 从电脑上的 web 浏览器中转到 https：//< YOUR_HOLOLENS_IP_ADDRESS >
    * 浏览器将显示以下消息： "此网站的安全证书有问题"。 由于颁发给设备门户的证书是测试证书，因此会显示上述消息。 你可以暂时忽略此证书错误并继续。
 
 ## <a name="connecting-over-usb"></a>通过 USB 连接
@@ -160,7 +160,7 @@ Microsoft HoloLens 上 Windows 设备门户中 ![Mixed Reality 捕获页面](ima
 > [!NOTE]
 > 同时提供了一些[限制](mixed-reality-capture-for-developers.md#simultaneous-mrc-limitations)：
 > * 如果应用在 Windows 设备门户录制视频时尝试访问 photo/视频摄像机，视频录制将停止。
->   * 如果应用在 SharedReadOnly 模式下 acesses 照片/视频相机，则 HoloLens 2 不会停止录制视频。
+>   * 如果应用访问带有 SharedReadOnly 模式的照片/视频摄像机，则 HoloLens 2 不会停止录制视频。
 > * 如果应用正在使用照片/视频摄像机，Windows 设备门户可以拍摄照片或录制视频。
 > * 实时流式处理：
 >   * HoloLens （第一代）会阻止应用从 Windows 设备门户实时传送视频时访问照片/视频摄像机。

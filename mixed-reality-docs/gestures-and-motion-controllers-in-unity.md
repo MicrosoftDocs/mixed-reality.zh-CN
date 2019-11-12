@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 手势，运动控制器，unity，注视，输入
-ms.openlocfilehash: a7ca5a895015ba0458f0f64f1422612e797f5067
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: a85797bfb443f33147c116e90a02c88abda63c67
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435225"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926565"
 ---
 # <a name="gestures-and-motion-controllers-in-unity"></a>Unity 中的手势和运动控制器
 
@@ -145,7 +145,7 @@ Unity 目前使用其常规*输入. GetButton/GetAxis* Api 公开[Oculus SDK](ht
 
 若要使用一般 Unity 输入 Api，通常先将按钮和轴向上滑到[Unity 输入管理器](https://docs.unity3d.com/Manual/ConventionalGameInput.html)中的逻辑名称，然后将按钮或轴 id 绑定到每个名称。 然后，你可以编写引用该逻辑按钮/轴名称的代码。
 
-例如，若要将左运动控制器的触发器按钮映射到 "提交" 操作，请在 Unity 内执行 "**编辑 > 项目设置" > 输入**，然后展开 "轴" 下 "提交" 部分的属性。 更改 "**正整数" 按钮**或 " **Alt 正向按钮**" 属性以阅读**游戏杆按钮 14**，如下所示：
+例如，若要将左运动控制器的触发器按钮映射到 "提交" 操作，请在 Unity 内执行 "**编辑 > 项目设置" > 输入**，然后展开 "轴" 下 "提交" 部分的属性。 更改 "**正按钮**" 或 " **Alt 正**向按钮" 属性以阅读**游戏杆按钮 14**，如下所示：
 
 ![Unity 的 InputManager](images/unity-input-manager.png)<br>
 *Unity InputManager*
@@ -446,7 +446,7 @@ void Start()
 
 ### <a name="start-capturing-gestures"></a>开始捕获手势
 
-默认情况下，在调用*StartCapturingGestures （）* 之前， *GestureRecognizer*不监视输入。 如果在处理*StopCapturingGestures （）* 的帧之前执行了输入，则可能会在调用*StopCapturingGestures （）* 后生成笔势事件。 *GestureRecognizer*将记得在实际发生该笔势的 previou 帧期间，它是处于打开还是关闭状态，因此，根据此帧的注视目标启动和停止手势监视是可靠的。
+默认情况下，在调用*StartCapturingGestures （）* 之前， *GestureRecognizer*不监视输入。 如果在处理*StopCapturingGestures （）* 的帧之前执行了输入，则可能会在调用*StopCapturingGestures （）* 后生成笔势事件。 *GestureRecognizer*将记得在上一帧实际发生的情况下，它是处于打开还是关闭状态，因此，根据此帧的注视目标启动和停止手势监视是可靠的。
 
 ```cs
 recognizer.StartCapturingGestures();

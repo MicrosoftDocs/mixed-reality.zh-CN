@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: a862fa52695c7bfb94b58c6c0b85606a112835da
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 2861c780c5d7e516d5b7ddc757bbcba6da7e6559
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434273"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926672"
 ---
 # <a name="custom-holographic-remoting-data-channels"></a>自定义全息远程处理数据通道
 
@@ -38,7 +38,7 @@ winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnDataReceived_revoker
 winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnClosed_revoker m_customChannelClosedEventRevoker;
 ```
 
-成功建立连接后，可以从主机端和/或播放机端开始创建新的数据通道。 RemoteContext 和 PlayerContext 都提供 ```CreateDataChannel()``` 方法来执行此操作。 第一个参数是用于标识 susequent 操作中的数据通道的通道 ID。 第二个参数是优先级，它指定此通道的数据被传输到另一方的优先级。 通道 Id 的有效范围为0（最多为0），其中包括主机端的63和64（最高为，包括播放机端的127）。 有效优先级为 ```Low```、```Medium``` 或 ```High``` （两端）。
+成功建立连接后，可以从主机端和/或播放机端开始创建新的数据通道。 RemoteContext 和 PlayerContext 都提供 ```CreateDataChannel()``` 方法来执行此操作。 第一个参数是用于在后续操作中标识数据通道的通道 ID。 第二个参数是优先级，它指定此通道的数据被传输到另一方的优先级。 通道 Id 的有效范围为0（最多为0），其中包括主机端的63和64（最高为，包括播放机端的127）。 有效优先级为 ```Low```、```Medium``` 或 ```High``` （两端）。
 
 若要在**主机**端启动数据通道的创建，请执行以下操作：
 ```cpp
@@ -95,7 +95,7 @@ m_customChannelClosedEventRevoker = m_customDataChannel.OnClosed(winrt::auto_rev
 
 ## <a name="sending-data"></a>发送数据
 
-若要通过自定义数据通道发送数据，请使用 ```IDataChannel::SendData()``` 方法。 第一个参数是要发送的数据的 ```winrt::array_view<const uint8_t>```。 第二个参数指定应重新发送数据的是否，直到另一方确认接收。 
+若要通过自定义数据通道发送数据，请使用 ```IDataChannel::SendData()``` 方法。 第一个参数是要发送的数据的 ```winrt::array_view<const uint8_t>```。 第二个参数指定应重新发送数据的位置，直到另一方确认接收。 
 
 >[!IMPORTANT]
 >如果网络条件不正确，则相同的数据包可能会到达一次以上。 接收代码必须能够处理这种情况。

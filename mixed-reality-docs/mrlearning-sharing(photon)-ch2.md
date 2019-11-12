@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 5d8194e9a51bdb0ce32f345b4adfbfaf408c5396
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 91935cb5b465e51d3948f68b818f93ba52b215f1
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438390"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914436"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. 获取 Unity 以便开发 
 
@@ -28,7 +28,7 @@ ms.locfileid: "73438390"
 
 ## <a name="instructions"></a>说明
 
-1. 单击此处下载并保存混合现实工具包 unity 包[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)
+1. 单击此处下载并保存混合现实工具包 Foundation unity 包[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)
 
 2. 在 Unity 中，单击 "资产" 菜单并选择 "导入包"，然后单击 "自定义包"。
 
@@ -50,13 +50,15 @@ ms.locfileid: "73438390"
 
 ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
 
-6. 完成后，将显示一个新的配置文件，让你选择自定义配置文件。 单击 "复制和自定义"。
+6. 完成后，将显示一个新的配置文件，让你选择自定义配置文件。 
 
-![Module3Chapter2step6ima](images/module3chapter2step6ima.PNG)
+![Module2Chapter1step4im](images/Module2Chapter1step4im.PNG)
 
-![Module3Chapter2step6imb](images/module3chapter2step6imb.PNG)
+7. 从层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，查找混合现实工具包脚本并按下图所示的 "复制 & 自定义" 按钮。  此时将显示一个 pop，并在弹出菜单中选择 "克隆" 选项。
 
 ![Module3Chapter2step6imc](images/module3chapter2step6imc.PNG)
+
+![Module3Chapter2step6imd](images/module3chapter2step6imd.PNG)
 
 7. 如果要隐藏诊断窗口，请向下滚动并取消选中 "启用诊断系统"。 建议在应用程序开发过程中保持诊断窗口处于启用状态，以监视性能，然后在生产或应用程序演示过程中禁用它。 
 

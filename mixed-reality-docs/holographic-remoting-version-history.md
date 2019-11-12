@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 75e7c276560b4efbbdcbf2ea7579ed5ad7aadb4d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9ff6a5f7594eb67dd4c1c8690812ab724cac9012
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439228"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926652"
 ---
 # <a name="holographic-remoting-version-history"></a>全息远程处理版本历史记录
 
@@ -21,7 +21,7 @@ ms.locfileid: "73439228"
 ## 版本2.0.14 （2019年10月26日）<a name="v2.0.14"></a>
 * 支持新的 PerceptionDevice Api （Windows 10 11 月2019更新）。
 * 修复了阻止 SpatialGestureRecognizer 触发暂停手势事件的问题。
-* 修复了使用 SpatialSurfaceObserver 时的 theading 问题。
+* 修复了使用 SpatialSurfaceObserver 时的线程处理问题。
 
 ## 版本2.0.12 （2019年10月18日）<a name="v2.0.12"></a>
 * 修复了使用 NavigationRail （X/Y/Z）时 SpatialGestureRecognizer 中的崩溃。

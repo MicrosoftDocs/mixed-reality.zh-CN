@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: bb6aa620cebfda74b0b6b5f6ca04e1eeb68d9c7b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 5599fe48f62a35d1dc02ce30fb7858fd74e87685
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438459"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926537"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 浏览高级输入选项
 
@@ -27,180 +27,200 @@ ms.locfileid: "73438459"
 
 ### <a name="enabling-voice-commands"></a>启用语音命令
 
-本部分实现了两个语音命令。 首先，通过显示 "切换诊断"，可以切换帧速率诊断面板。 其次，可以通过语音命令播放声音。 首先查看负责配置语音命令的 MRTK 配置文件和设置。 
+本部分实现了两个语音命令。 首先，通过显示 "切换诊断"，可以切换帧速率诊断面板。 其次，可以通过语音命令播放声音。 首先查看负责配置语音命令的 MRTK 配置文件和设置。
 
-1. 在 "基本场景层次结构" 中，选择 "MixedRealityToolkit"。 在 "检查器" 面板中，向下滚动到 "输入系统设置"。 双击以打开输入系统配置文件。 克隆输入系统配置文件以使其可编辑，如我们在[第1课](mrlearning-base-ch1.md)中所学到的那样 
+1. 在 BaseScene 层次结构中，选择 MixedRealityToolkit。 然后，在 "检查器" 面板中，选择 "输入"，然后单击 "DefaultMixedRealityInputSystemProfile" 左侧的 "小克隆" 按钮，以打开 "克隆配置文件" 弹出窗口。 在弹出窗口中，单击 "克隆" 以创建新的配置文件 MixedRealityInputSystemProfile。
 
-在输入系统配置文件中，有各种设置。 对于语音命令，请选择 "语音命令设置"。 
+    ![mrlearning-base-ch5-1-step1a .png](images/mrlearning-base-ch5-1-step1a.png)
 
-![Lesson5 Chapter1 Step2im](images/Lesson5_Chapter1_step2im.PNG)
+    这也会自动填充 MixedRealityToolkitConfigurationProfile 和新创建的 MixedRealityInputSystemProfile。
 
-2. 克隆语音命令配置文件，使其可在[第1课](mrlearning-base-ch1.md)中了解。 双击语音命令配置文件，可在其中看到一系列设置。 有关这些设置的完整说明，请参阅[MRTK speech 文档](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html>)。 
+    ![mrlearning-base-ch5-1-step1b .png](images/mrlearning-base-ch5-1-step1b.png)
 
->注意：默认情况下，常规行为是自动启动的。 如果需要，可以将其更改为手动-启动。 但在此示例中，请将其保留为自动启动。 MRTK 附带了几个默认的语音命令，如菜单、切换诊断和切换探查器。 我们将使用关键字 "切换诊断" 来打开和关闭 "诊断帧速率" 计数器。 在以下步骤中，我们还将添加一个新的语音命令。
->
-> ![Lesson5 Chapter1 Noteim](images/Lesson5_chapter1_noteim.PNG)
+2. 在输入系统配置文件中，有各种设置。 对于语音命令，展开 "语音" 部分并按照上一步骤中所述的过程进行操作，以克隆 DefaultMixedRealitySpeechCommandsProfile 并将其替换为你自己的可编辑副本。
+
+    ![mrlearning-base-ch5-1-step2 .png](images/mrlearning-base-ch5-1-step2.png)
+
+    在语音命令配置文件中，你会注意到一系列设置。 有关这些设置的完整说明，请参阅[MRTK speech 文档](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html>)。
+
+    默认情况下，一般行为是自动启动。 如果需要，可以将其更改为手动-启动。 但在此示例中，请将其保留为自动启动。 MRTK 附带了几个默认的语音命令，如菜单、切换诊断和切换探查器。 我们将使用关键字 "切换诊断" 来打开和关闭 "诊断帧速率" 计数器。 在以下步骤中，我们还将添加一个新的语音命令。
 
 3. 添加新的语音命令。 为此，请单击 "+ 添加新的语音命令" 按钮。 你将看到一个新行，出现在现有语音命令列表下。 键入要使用的语音命令。 在此示例中，使用命令 "播放音乐"。
 
->提示：还可以设置 keycode for speech 命令。 这允许语音命令在按键时触发事件。    
+    ![mrlearning-base-ch5-1-step3 .png](images/mrlearning-base-ch5-1-step3.png)
 
-4. 添加响应语音命令的功能。 选择未附加任何其他输入脚本的基本场景层次结构中的任何对象（例如，无操作处理程序）。 在检查器面板中，单击 "添加组件"。 键入 "语音输入处理程序" 并选择它。
+    >[!NOTE]
+    >还可为语音命令设置键码。 这允许语音命令在按键时触发事件。
 
-   ![Lesson5 Chapter1.txt Step4im](images/Lesson5_chapter1_step4im.PNG)
+4. 添加响应语音命令的功能。 选择 BaseScene 层次结构中未附加任何其他输入脚本的任何对象，例如 MixedRealityPlayspace 游戏对象。 在检查器面板中，单击 "添加组件"，搜索 "语音"，然后选择语音输入处理程序脚本。
 
-   
+    ![mrlearning-base-ch5-1-step4 .png](images/mrlearning-base-ch5-1-step4.png)
 
-默认情况下，你将看到两个复选框。 其中一个是 "是否需要焦点" 复选框。 因此，只要您将鼠标指针指向具有眼睛眼睛、看好、看看或手工看的对象，就会触发语音命令。 取消选中此复选框，以便用户不必查看对象即可使用语音命令。
+    默认情况下，你将看到两个复选框。 其中一个是 "是否需要焦点" 复选框。 因此，只要您将鼠标指针指向具有眼睛眼睛、看好、看看或手工看的对象，就会触发语音命令。 取消选中此复选框，以便用户不必查看对象即可使用语音命令。
 
-5. 添加响应语音命令的功能。 为此，请单击语音输入处理程序中的 "+" 按钮，然后选择要响应的关键字。
+5. 添加响应语音命令的功能。 为此，请单击语音输入处理程序中的 "+" 按钮。
 
-   > 注意：将根据上一步中编辑的配置文件填充这些关键字。
-
-![Lesson5 Chapter1 Step5im](images/Lesson5_chapter1_step5im.PNG)
+    ![mrlearning-base-ch5-1-step5 .png](images/mrlearning-base-ch5-1-step5.png)
 
 6. 在关键字旁边，可以看到一个下拉菜单。 选择 "切换诊断"，以便每当用户显示短语 "切换诊断" 时，都会触发一个操作。 请注意，您可能需要通过按下箭头旁边的箭头来展开元素0。
 
-![Lesson5 Chapter1 Step6im](images/Lesson5_chapter1_step6im.PNG)
+    ![mrlearning-base-ch5-1-step6 .png](images/mrlearning-base-ch5-1-step6.png)
 
-7. 添加 "诊断演示控制" 脚本，以打开和关闭计数器计数器诊断。 为此，请按 "添加组件"，搜索 "诊断演示控件脚本"，然后从菜单添加它。 此脚本可以添加到任何对象。 但为了简单起见，我们会将其添加到与语音输入处理程序相同的对象。 
+    >[!NOTE]
+    >根据你在步骤3中编辑的配置文件填充这些关键字。
 
-   > 注意：此脚本仅包含在这些模块中，而不是与原始 MRTK 一起提供。
+7. 添加 "诊断系统" 语音控件脚本，以打开和关闭计数器计数器诊断。 为此，请按 "添加组件"，搜索 "诊断系统语音控制脚本"，然后从菜单添加它。 此脚本可添加到任何对象，但为了简单起见，我们将其添加到语音输入处理程序所在的同一对象。
 
-![Lesson5 Chapter1 Step7im](images/Lesson5_chapter1_step7im.PNG)
+    ![mrlearning-base-ch5-1-step7 .png](images/mrlearning-base-ch5-1-step7.png)
 
-8. 在语音输入处理程序中添加新的响应。 若要执行此操作，请单击下方显示 "响应（）" 的 "+" 按钮（在上图中，标记为绿色箭头）。
+8. 在语音输入处理程序中添加新的响应。 为此，请单击 "+" 图标，将新响应添加到响应列表。
 
-![Lesson5 Chapter1 Step7im](images/Lesson5_chapter1_step8.PNG)
+    ![mrlearning-base-ch5-1-step8 .png](images/mrlearning-base-ch5-1-step8.png)
 
-9. 将包含诊断演示的对象控制脚本到您刚刚在步骤8中创建的新响应。
-    ![Lesson5 Chapter1 Step9im](images/Lesson5_chapter1_step9im.PNG)
+9. 将具有诊断系统语音控制脚本的对象拖到您在上一步中刚创建的新响应。
 
-10. 选择 "无函数" 下拉列表，然后选择 "诊断演示控件"。 然后选择 "开启切换诊断（）" 功能，这将打开和关闭诊断。  ![Lesson5 Chapter1 Step10im](images/Lesson5_chapter1_step10im.PNG)
-    
-> 请注意，在生成到设备之前，你需要启用 mic 设置。 为此，请单击 "文件"，然后依次单击 "生成设置" 和 "播放机设置"，并确保已设置麦克风功能。
+    ![mrlearning-base-ch5-1-step9 .png](images/mrlearning-base-ch5-1-step9.png)
 
-接下来，使用八对象添加从语音命令播放音频文件的功能。 从[第4课](mrlearning-base-ch4.md)中回忆，已添加了从触摸八对象播放音频剪辑的能力。 我们会将此音频源同样用于音乐语音命令。
+10. 单击 "函数" 下拉列表（其中不显示 "函数"），然后选择 "诊断系统语音控制"，然后选择 ToggleDiagnostics （）函数，以打开和关闭诊断。
 
-11. 选择 "基本场景" 层次结构中的八对象。
+    ![mrlearning-base-ch5-1-step10 .png](images/mrlearning-base-ch5-1-step10.png)
 
-12. 添加另一个语音输入处理程序（重复步骤4和5），但包含八对象。 
+    >[!IMPORTANT]
+    > 在生成到设备之前，你需要启用 mic 设置。 为此，请单击 "文件"，然后依次单击 "生成设置" 和 "播放机设置"，并确保已设置麦克风功能。
+
+    接下来，使用八对象添加从语音命令播放音频文件的功能。 从[第4课](mrlearning-base-ch4.md)中回忆，已添加了从触摸八对象播放音频剪辑的能力。 我们会将此音频源同样用于音乐语音命令。
+
+11. 选择 BaseScene 层次结构中的八对象。
+
+12. 添加另一个语音输入处理程序（重复步骤4和5），但包含八对象。
 
 13. 添加 "播放音乐" 语音命令，而不是从步骤6添加 "切换诊断语音" 命令，如下图所示。
-    
-     ![Lesson5 Chapter1 Step13im](images/Lesson5_chapter1_step13im.PNG)
-    
-    
-    
-14. 对于步骤8和9，添加一个新的响应，并将八对象拖到空的响应槽。
+
+    ![mrlearning-base-ch5-1-step13 .png](images/mrlearning-base-ch5-1-step13.png)
+
+14. 对于步骤8和9，添加一个新的响应，并将八对象（具有诊断系统语音控制脚本的对象）添加到空的响应槽。
 
 15. 选择不显示函数的下拉菜单。 然后选择 "音频源"，然后选择 "PlayOneShot" （AudioClip）。
 
-![Lesson5 Chapter1 Step15im](images/Lesson5_chapter1_step15im.PNG)
+    ![Lesson5 Chapter1 Step15im](images/Lesson5_chapter1_step15im.PNG)
 
-16. 在此示例中，我们将使用[第4课](mrlearning-base-ch4.md)中的相同音频剪辑。 进入你的项目面板，搜索 "MRTK_Gem" 音频剪辑，并将其拖动到 "音频源" 槽中，如下图所示。 现在，你的应用程序将响应语音命令 "切换诊断" 以切换 "帧速率" 计数器面板，并播放音乐来播放 MRTK_Gem 歌曲。
-     ![Lesson5 Chapter1 Step16im](images/Lesson5_chapter1_step16im.PNG)
+16. 在此示例中，我们将使用[第4课](mrlearning-base-ch4.md)中的相同音频剪辑。 进入项目面板，搜索 "MRTK_Gem" 音频剪辑，并将其拖动到音频源槽，如下图所示。 现在，你的应用程序将响应语音命令 "切换诊断" 以切换 "帧速率" 计数器面板，并播放音乐来播放 MRTK_Gem 的歌曲。
 
+    ![Lesson5 Chapter1.txt Step16im](images/Lesson5_chapter1_step16im.PNG)
 
-### <a name="the-pan-gesture"></a>平移手势 
+### <a name="the-pan-gesture"></a>平移手势
 
-在本部分中，你将学习如何使用平移手势。 这适用于使用手指或手滚动内容滚动。 你还可以使用平移手势来旋转对象、循环浏览三维对象的集合，甚至滚动 2D UI。 我们还将了解如何使用平移手势来弯曲纹理，以及如何移动3D 对象的集合。
+在本部分中，你将学习如何使用平移手势。 这适用于使用手指或手滚动内容滚动。 你还可以使用平移手势来旋转对象、循环浏览三维对象的集合，甚至滚动 2D UI。 <!--TMP You will also learn how to use the pan gesture to warp a texture, and how to move a collection of 3D objects.-->
 
-1. 创建一个四面体。 在 "基本场景层次结构" 中，右键单击，然后依次选择 "3D 对象" 和 "四个"。
+1. 创建一个四面体。 在 BaseScene 层次结构中，右键单击，选择 "3D 对象"，然后选择 "四个"。
 
-![Lesson5 Chapter2 Step2im](images/Lesson5_chapter2_step2im.PNG)
+    ![Lesson5 Chapter2 Step2im](images/Lesson5_chapter2_step2im.PNG)
 
 2. 根据需要重定位四部分。 对于我们的示例，我们将 x = 0、y = 0 和 z = 1.5 远离相机，以实现从 HoloLens 2 获得的舒适位置。
 
-   > 注意：如果四个块或位于前一课中的任何内容之前，请务必将其移动，使其不会阻止其他任何对象。
+    >[!NOTE]
+    >如果故障诊断块或位于前一课中的任何内容之前，请务必将其移动，使其不会阻止其他任何对象。
 
-3. 将材料应用到四面体。 此材料将是使用平移手势滚动的内容。 
+3. 将材料应用到四面体。 此材料将是使用平移手势滚动的内容。
 
-![Lesson5 Chapter2 Step3im](images/Lesson5_chapter2_step3im.PNG)
+    ![Lesson5 Chapter2 Step3im](images/Lesson5_chapter2_step3im.PNG)
 
-4. 在 "项目" 面板的 "搜索" 框中键入 "平移内容"。 将该材料拖到场景中的四个部分。 
+4. 在 "项目" 面板的 "搜索" 框中键入 "平移内容"。 将该材料拖到场景中的四个部分。
 
-> 注意：平移内容材料不包括在 MRTK 中，而是在上一课中导入的此模块的资产包中的资产。 
+    >[!NOTE]
+    >平移内容材料不包括在 MRTK 中，而是在上一课中导入的此模块的资产包中的资产。
 
-> 注意：添加全景内容时，它可能会被拉伸。 若要修正，可以调整四面体大小的 x、y 和 z 值，直到其外观让你满意。
+    >[!NOTE]
+    >添加平移内容时，其外观可能像是已拉伸过。 若要修正，可以调整四面体大小的 x、y 和 z 值，直到其外观让你满意。
 
-若要使用平移手势，需要在对象中添加一个碰撞体。 你可能会看到，四面体已有一个网格碰撞体。 但是，该网格碰撞体并不理想，因为它非常小，很难将其选中。 我们建议将网格碰撞体替换为盒碰撞体。
+    若要使用平移手势，需要在对象中添加一个碰撞体。 你可能会看到，四面体已有一个网格碰撞体。 但是，该网格碰撞体并不理想，因为它非常小，很难将其选中。 我们建议将网格碰撞体替换为盒碰撞体。
 
 5. 右键单击 "检查器" 面板上的 "故障诊断" 中的网格碰撞器。 然后单击 "删除组件" 将其删除。
+
     ![Lesson5 Chapter2 Step5im](images/Lesson5_chapter2_step5im.PNG)
-6. 现在，通过单击 "添加组件" 并搜索 "box 碰撞器" 来添加框碰撞器。 默认添加的框碰撞器仍然太小，因此请单击 "编辑碰撞器" 按钮进行编辑。 按下该对象后，可以使用 x、y 和 z 值或场景编辑器中的元素来调整其大小。 对于本示例，我们希望盒碰撞体稍微靠在四面体的后面。 在场景编辑器中，将盒碰撞体往后朝外拖动（参考下图）。 这样，用户不仅可以使用手指，而且能滚动整个手。 
+
+6. 现在，通过单击 "添加组件" 并搜索 "box 碰撞器" 来添加框碰撞器。 默认添加的框碰撞器仍然太小，因此请单击 "编辑碰撞器" 按钮进行编辑。 按下该对象后，可以使用 x、y 和 z 值或场景编辑器中的元素来调整其大小。 对于本示例，我们希望盒碰撞体稍微靠在四面体的后面。 在场景编辑器中，将盒碰撞体往后朝外拖动（参考下图）。 这样，用户不仅可以使用手指，而且能滚动整个手。
+
     ![Lesson5 Chapter2 Step6im](images/Lesson5_chapter2_step6im.PNG)
-7. 使对象具有交互能力。 由于我们希望直接与四个部分交互，我们想要使用在第4课中使用的近乎交互可触摸组件来播放八对象中的音乐。 单击 "添加组件"，搜索 "near 交互可触摸" 并将其选中，如下图所示。 
 
-8. 添加识别平移手势的功能。 单击 "添加组件"，然后键入 "手型交互平移"。 可以选择手部跟踪光线（可从远处平移）或食指。 本示例将其保留为食指。 
-    ![Lesson5 Chapter2 Step7 8Im](images/Lesson5_chapter2_step7-8im.PNG)
+7. 使对象具有交互能力。 由于我们希望直接与四个部分交互，我们想要使用在第4课中使用的近乎交互可触摸组件来播放八对象中的音乐。 单击 "添加组件"，搜索 "near 交互可触摸" 并将其选中，如下图所示。
 
-![Lesson5 Chapter2 Step8im](images/Lesson5_chapter2_step8im.PNG)
+    ![mrlearning-base-ch5-2-step7a .png](images/mrlearning-base-ch5-2-step7a.png)
 
-9. 在手型交互平移脚本中，"锁定水平" 和 "锁定垂直" 复选框分别锁定移动。 "换行纹理" 设置使纹理（纹理映射）跟随用户的平移移动。 对于本示例，您将选中该复选框。 还有速度活动，如果未选中，则平移手势将不起作用。 同样请选中此框。 现在，您将拥有一个启用了平移的四个部分。
+    如果你看到有关边界和/或中心与 BoxCollider 大小和/或中心不匹配的黄色警告，请单击 "修复边界" 和/或 "修复中心" 按钮，更新中心和边界值。
 
-   
+    ![mrlearning-base-ch5-2-step7b .png](images/mrlearning-base-ch5-2-step7b.png)
 
-   接下来，我们了解如何平移 3D 对象。 
+8. 添加识别平移手势的功能。 单击 "添加组件"，在搜索字段中键入 "手工交互"，然后添加 "手写交互平移缩放脚本" 组件。
 
-10. 右键单击 "四个对象"，选择 "3D 对象"，然后单击 "多维数据集"。 缩放该立方体，使其维度大致为 x = 0.1，y = 0.1 和 z = 0.1。 右键单击多维数据集，并按 "重复" 或按 ctrl/command D 将其复制三次。 场景应类似于下图。
+    ![mrlearning-base-ch5-2-step8a .png](images/mrlearning-base-ch5-2-step8a.png)
+
+    这样就可以使用启用了平移的四核。
+
+    正如您所看到的，手动交互平移缩放组件具有不同的设置，作为可选的练习，您可以随意地使用它们。
+
+    ![mrlearning-base-ch5-2-step8b .png](images/mrlearning-base-ch5-2-step8b.png)
+
+<!--TMP
+   Next, we will learn how to pan 3D objects. 
+
+10. Right-click the quad object, select 3D object and click Cube. Scale the cube so that it’s roughly x = 0.1, y = 0.1 and z = 0.1. Copy that cube three times by right-clicking the cube and pressing duplicate, or by pressing control/command D. Space them out evenly. Your scene should look similar to the image below.
 
 ![Lesson5 Chapter2 Step10im](images/Lesson5_chapter2_step10im.PNG)
 
-
-
-
-
-
-
-11. 再次选择 "故障恢复"，然后在 "手工交互平移" 脚本下，将 "平移操作" 设置为每个多维数据集。 在 "平移事件接收方" 下，我们希望指定接收事件的对象数。 由于有四个多维数据集，请键入 "4"，然后按 Enter。 应显示四个空字段。
-
+11. Select the quad again and under the hand interaction pan script, set the pan actions to each of the cubes. Under Pan Event Receivers, we want to specify the number of objects receiving the event. Since there are four cubes, type “4” and press Enter. Four empty fields should appear.
 
 ![Lesson5 Chapter2 Step11im](images/Lesson5_chapter2_step11im.PNG)
 
-
-
-12. 将每个多维数据集拖放到每个空元素槽。
+12. Drag each of the cubes into each of the empty element slots.
      ![Lesson5 Chapter2 Step12im](images/Lesson5_chapter2_step12im.PNG)
     
-13. 通过按住 control/command 并选择每个对象，将 "使用平移脚本移动到所有多维数据集"。 从检查器面板中，单击 "添加组件"，然后搜索 "移动时移动"。 单击该脚本，然后将其添加到每个多维数据集。 现在，3D 对象会随平移手势一起移动。 如果删除了四面体上的网格渲染器，则四面体会随即不可见，只能通过 3D 对象列表来平移它。
+13. Add the Move with Pan script to all of the cubes by pressing and holding control/command and select each object. From the Inspector panel, click Add Component and search for “move with pan.” Click the script and it is added to each cube. Now the 3D objects will move with your pan gesture. If you remove the mesh render on your quad, you should now have an invisible quad where you can pan through a list of 3D objects.
+-->
 
 ### <a name="eye-tracking"></a>眼动跟踪
 
 在本部分中，我们将探讨如何在演示中启用目视跟踪。 当您的3D 菜单项 gazed 时，我们将慢慢旋转它们。 此外，在选择所凝视的项时，我们还会触发一种有趣的效果。
 
-1. 确保已正确配置 MRTK 配置文件。 在撰写本文时，混合现实工具包配置文件配置默认并不包括眼动跟踪功能。 若要添加目视跟踪功能，请按照[混合现实工具包文档](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#setting-up-the-mrtk-profiles-required-for-eye-tracking  )中所述的 "设置目视跟踪所需的 MRTK 配置文件" 部分中的说明进行操作。 请确保按上述文档链接中的任何剩余步骤正确配置目视跟踪，包括在 GazeProvider 中启用目视跟踪（附加到相机的组件），并在 Unity 编辑器中启用目视跟踪。 请注意，默认情况下，MRTK 的未来版本可能包括目视跟踪。
+1. 确保为目视跟踪正确配置 MRTK 配置文件。 若要执行此操作，请转到[MRTK 说明中的目视跟踪](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html)入门，并通过查看[设置目视跟踪分步](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#setting-up-eye-tracking-step-by-step)部分中的步骤来验证是否正确配置了目视跟踪。 完成文档中的所有剩余步骤。
+
+    >[!NOTE]
+    >如果使用 DefaultHoloLens2InputSystemProfile （如[配置混合现实工具包](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1#configure-the-mixed-reality-toolkit)课程中所述）来克隆自定义 MRTK 配置文件，则默认情况下会在 unity 项目中启用目视跟踪，但仍需为 unity 编辑器设置目视跟踪模拟，并将 Visual Studio 配置为允许对生成进行目视跟踪。
 
     上述链接提供了有关以下操作的简要说明：
 
-    - 创建眼睛数据提供程序以在 MRTK 配置文件中使用
-    - 在视线提供程序中启用眼动跟踪
-    - 在编辑器中设置目视跟踪模拟
+    - 创建 Windows Mixed Reality 眼睛数据提供程序以在 MRTK 配置文件中使用
+    - 在连接到相机的目视提供者中启用目视跟踪
+    - 在 Unity 编辑器中设置目视跟踪模拟
     - 编辑 Visual Studio 解决方案的功能，以便在生成的应用程序中进行眼动跟踪
 
-2. 将眼动跟踪目标组件添加到目标对象。 若要允许对象响应眼睛眼睛事件，我们需要使用目视注视将 EyeTrackingTarget 组件添加到要与之交互的每个对象上。 将此组件添加到网格集合中的每个（共九个）3D 对象。 提示：在层次结构中选择多个项，以批量添加 EyeTrackingTarget 组件。
-    ![Lesson5 Chapter3 Step2](images/Lesson5Chapter3Step2.JPG)
+2. 将眼动跟踪目标组件添加到目标对象。 若要允许对象响应眼睛眼睛事件，我们需要使用目视注视将 EyeTrackingTarget 组件添加到要与之交互的每个对象上。 将此组件添加到网格集合中的每个（共九个）3D 对象。
+
+    >[!TIP]
+    >你可以使用 shift 和/或 ctrl 键在场景层次结构中选择多个项，然后大容量添加 EyeTrackingTarget 组件。
+
+    ![Lesson5 Chapter3 步骤2](images/Lesson5Chapter3Step2.JPG)
 
 3. 接下来，我们将为一些激动人心的交互添加 EyeTrackingTutorialDemo 脚本。 本教程系列存储库中包含了 EyeTrackingTutorialDemo 脚本。 默认情况下，它不包含在混合现实工具包中。 对于网格集合中的每个三维对象，通过在 "添加组件" 菜单中搜索组件来添加 EyeTrackingTutorialDemo 脚本。
-   ![Lesson5 Chapter3 Step3](images/Lesson5Chapter3Step3.JPG)
 
-4. 在注视目标的同时旋转对象。 我们想要在查看三维对象时将其配置为旋转。 为此，请在 "EyeTrackingTarget" 组件的 "查看目标" 部分中插入一个新字段，如下图所示。 
+   ![Lesson5 Chapter3 步骤3](images/Lesson5Chapter3Step3.JPG)
 
-![Lesson5 Chapter3 Step4a](images/Lesson5Chapter3Step4a.JPG)
-![Lesson5 Chapter3 Step4b](images/Lesson5Chapter3Step4b.JPG)
+4. 在注视目标的同时旋转对象。 我们想要在查看三维对象时将其配置为旋转。 为此，请在 "EyeTrackingTarget" 组件的 "查看目标" 部分中插入一个新字段，如下图所示。
 
+    ![Lesson5 Chapter3 Step4a](images/Lesson5Chapter3Step4a.JPG)
 
+    在新创建的字段中，将当前游戏对象添加到空字段，然后选择 EyeTrackingTutorialDemo > RotateTarget （），如下图所示。 现在，该 3D 对象已配置为在使用眼动跟踪凝视它时会自动旋转。
 
-在新创建的字段中，将当前游戏对象添加到空字段，然后选择 EyeTrackingTutorialDemo > RotateTarget （），如下图所示。 现在，该 3D 对象已配置为在使用眼动跟踪凝视它时会自动旋转。 
+    ![Lesson5 Chapter3 Step4b](images/Lesson5Chapter3Step4b.JPG)
 
-5. 添加 "故障目标" 的功能，即通过使用 "gazed" 选择的 "选择"。 与步骤4类似，我们想要通过将 EyeTrackingTutorialDemo 分配给 EyeTrackingTarget 组件的游戏对象的 Select （）字段来触发 > BlipTarget （），如下图所示。 现在已配置此配置，每当触发选择操作（例如，分流或语音命令 "select"）时，就会注意到游戏对象中的故障。 
-    ![Lesson5 Chapter3 Step5](images/Lesson5Chapter3Step5.JPG)
-6. 在 HoloLens 2 中生成之前，请确保已正确配置眼动跟踪功能。 在撰写本文时，Unity 尚不能为眼睛跟踪功能设置注视输入。 若要在 HoloLens 2 中使用目视跟踪，需要设置此功能。 请遵照混合现实工具包文档中的以下说明启用视线输入功能： https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2 
+5. 添加 "故障目标" 的功能，即通过使用 "gazed" 选择的 "选择"。 与步骤4类似，我们想要通过将 EyeTrackingTutorialDemo 分配给 EyeTrackingTarget 组件的游戏对象的 Select （）字段来触发 > BlipTarget （），如下图所示。 现在已配置此配置，每当触发选择操作（例如，分流或语音命令 "select"）时，就会注意到游戏对象中的故障。
 
+    ![Lesson5 Chapter3 步骤5](images/Lesson5Chapter3Step5.JPG)
+
+6. 在 HoloLens 2 中生成之前，请确保已正确配置眼动跟踪功能。 在撰写本文时，Unity 尚不能为眼睛跟踪功能设置注视输入。 若要在 HoloLens 2 中使用目视跟踪，需要设置此功能。 按照[HoloLens 2 说明测试 Unity 应用](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2)，以启用 "注视输入" 功能。
 
 ## <a name="congratulations"></a>祝贺
 
-已成功将基本的目视跟踪功能添加到应用程序。 这些操作仅为眼动跟踪实现的探索领域开了一个头。 本章还结束第5课，其中介绍了高级输入功能，如语音命令、平移手势和目视跟踪。 
+已成功将基本的目视跟踪功能添加到应用程序。 这些操作仅为眼动跟踪实现的探索领域开了一个头。 本章还结束第5课，其中介绍了高级输入功能，如语音命令、平移手势和目视跟踪。
 
 [下一课： 7. 创建农历模块示例应用程序](mrlearning-base-ch6.md)
-

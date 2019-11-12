@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 77d639a88d8b4c71dc5fbe1c78565c4c3f91d36c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9f57cb9874aade2d6b19d0c061fd83eb04b9ef11
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438413"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914381"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3. 显示 Azure 空间锚点反馈
 
@@ -45,28 +45,11 @@ ms.locfileid: "73438413"
 
 ![module2chapter3step4im](images/module2chapter3step4im.PNG)
 
-5. 在 "项目" 面板中，选择 "资产" 并右键单击，然后选择 "在资源管理器中显示"。
-   
-
-![module2chapter3step4im](images/module2chapter3step5im.PNG)
-
-单击[此处](https://onedrive.live.com/?authkey=%21ABXEC8PvyQu8Qd8&id=5B7335C4342BCB0E%21395636&cid=5B7335C4342BCB0E)下载接下来的几个步骤中所需的文件。
-
-6. 资源管理器打开后，选择 "资产" 文件夹，然后选择 "ASAmodulesAssets" 文件夹，并将定位点反馈脚本和定位点模块脚本文件复制到该文件夹中。 
-
-![module2chapter3step5im](images/module2chapter3step6im.PNG)
-
-> 注意：如果您收到一条弹出消息，询问您是覆盖旧的还是保留旧的，请选择 "覆盖"。
-
-7. 返回到 "资产" 文件夹。 然后，进入 "AzureSpatialAnchorsPlugin" 文件夹，后跟示例文件夹和脚本文件夹。 然后将 Azure 空间锚定包装器复制到该文件夹中。 
-
-![module2chapter3step8im](images/module2chapter3step7im.PNG)
-
-8. 现在已上传文件，请确保在 ASA_feedback 层次结构中选择了 "feedbackpanel" 文本，单击 "添加组件"，并通过搜索和选择定位反馈脚本来添加它。 
+5. 确保在 ASA_feedback 层次结构中选择 "feedbackpanel" 文本，单击 "添加组件"，并通过搜索和选择定位反馈脚本来添加它。 
 
 ![module2chapter3step8im](images/module2chapter3step8im.PNG)
 
-9. 将 "feedbackPanel" 文本对象从 ASA_Feedback 层次结构拖动到脚本下的空槽中，如下图所示。 
+6. 将 "feedbackPanel" 文本对象从 ASA_Feedback 层次结构拖到脚本下的空槽中，如下图所示。 
 
 ![module2chapter3step9im](images/module2chapter3step9im.PNG)
 

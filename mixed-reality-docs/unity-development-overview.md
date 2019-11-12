@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 10/25/2018
 ms.topic: article
 keywords: Unity，混合现实，开发，入门，新项目，移植，功能，照相机，模拟，仿真，文档
-ms.openlocfilehash: b78afb0cf6557ec9b61a029e2d557debbd0b6b46
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f9b314bfc7c58e72b11ecfd76fe7293ef2f6c11e
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437377"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926698"
 ---
 # <a name="unity-development-overview"></a>Unity 开发概述
 
@@ -37,7 +37,7 @@ ms.locfileid: "73437377"
 
 添加对 Windows Mixed Reality 功能的支持，例如[空间阶段](coordinate-systems.md#spatial-coordinate-systems)、[手势、动作控制器](gestures-and-motion-controllers-in-unity.md)或[语音输入](voice-input-in-unity.md)，使用直接内置于 Unity 的 api 实现。 
 
-首先，请查看 applicatioin 可面向的[体验规模](coordinate-systems.md)：
+首先，请查看应用程序可以面向的[体验规模](coordinate-systems.md)：
 * 如果希望构建**仅限方向**或**固定规模的体验**，则需要将 Unity 的跟踪空间类型设置为 "[静态](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)"。
 * 如果希望构建**大规模**或**房间规模的体验**，则需要确保 Unity 的跟踪空间类型已成功设置为[RoomScale](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)。
 * 如果你希望在 HoloLens 上构建可让用户漫游超过5米的**全球规模**体验，则需要使用[WorldAnchor](coordinate-systems-in-unity.md#building-a-world-scale-experience)组件。
