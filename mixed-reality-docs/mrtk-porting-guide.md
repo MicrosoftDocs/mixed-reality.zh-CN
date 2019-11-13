@@ -3,16 +3,16 @@ title: 让现有应用准备好使用 HoloLens 2
 description: 本文适用于在 HoloLens（第 1 代）和/或早期 MRTK 上已有现有的应用，并寻求移植到 MRTK 版本 2 和 HoloLens 2 的开发人员。
 author: grbury
 ms.author: grbury
-ms.date: 10/14/19
+ms.date: 10/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 测试, MRTK, MRTK 版本 2, HoloLens 2
-ms.openlocfilehash: e1256cfaf9253a31161a836f75a90c64d17cf093
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 41e6f8b3632a53663f237deb54a3144fb8ad79e8
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438356"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926203"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>让现有应用准备好使用 HoloLens 2
 
