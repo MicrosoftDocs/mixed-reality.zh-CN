@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 5599fe48f62a35d1dc02ce30fb7858fd74e87685
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: b740c463e3d73d5df9b996562e9ff0a1952703f0
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926537"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064318"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 浏览高级输入选项
 
@@ -110,7 +110,7 @@ ms.locfileid: "73926537"
 
 ### <a name="the-pan-gesture"></a>平移手势
 
-在本部分中，你将学习如何使用平移手势。 这适用于使用手指或手滚动内容滚动。 你还可以使用平移手势来旋转对象、循环浏览三维对象的集合，甚至滚动 2D UI。 <!--TMP You will also learn how to use the pan gesture to warp a texture, and how to move a collection of 3D objects.-->
+在本部分中，你将学习如何使用平移手势。 这适用于使用手指或手滚动内容滚动。 你还可以使用平移手势来旋转对象、循环浏览三维对象的集合，甚至滚动 2D UI。
 
 1. 创建一个四面体。 在 BaseScene 层次结构中，右键单击，选择 "3D 对象"，然后选择 "四个"。
 
@@ -128,10 +128,7 @@ ms.locfileid: "73926537"
 4. 在 "项目" 面板的 "搜索" 框中键入 "平移内容"。 将该材料拖到场景中的四个部分。
 
     >[!NOTE]
-    >平移内容材料不包括在 MRTK 中，而是在上一课中导入的此模块的资产包中的资产。
-
-    >[!NOTE]
-    >添加平移内容时，其外观可能像是已拉伸过。 若要修正，可以调整四面体大小的 x、y 和 z 值，直到其外观让你满意。
+    >PanContent 资料不是 MRTK 的一部分，而是在上一课中导入的 BaseModuleAssets 资产中包含。
 
     若要使用平移手势，需要在对象中添加一个碰撞体。 你可能会看到，四面体已有一个网格碰撞体。 但是，该网格碰撞体并不理想，因为它非常小，很难将其选中。 我们建议将网格碰撞体替换为盒碰撞体。
 
@@ -157,26 +154,45 @@ ms.locfileid: "73926537"
 
     这样就可以使用启用了平移的四核。
 
-    正如您所看到的，手动交互平移缩放组件具有不同的设置，作为可选的练习，您可以随意地使用它们。
+    正如您所看到的，手动交互平移缩放脚本组件具有各种设置，作为可选的练习，您可以自由地使用它们。
 
     ![mrlearning-base-ch5-2-step8b .png](images/mrlearning-base-ch5-2-step8b.png)
 
-<!--TMP
-   Next, we will learn how to pan 3D objects. 
+9. 接下来，我们了解如何平移 3D 对象。
 
-10. Right-click the quad object, select 3D object and click Cube. Scale the cube so that it’s roughly x = 0.1, y = 0.1 and z = 0.1. Copy that cube three times by right-clicking the cube and pressing duplicate, or by pressing control/command D. Space them out evenly. Your scene should look similar to the image below.
+    在层次结构中，右键单击 "四个对象"，打开上下文弹出菜单，然后选择 "**三维对象** > **多维数据集**" 将多维数据集添加到场景中。
 
-![Lesson5 Chapter2 Step10im](images/Lesson5_chapter2_step10im.PNG)
+    确保将多维数据集的**位置**设置为_0，0，0，_ 使其在四部分中整齐放置。 将多维数据集缩小为_0.1、0.1、0.1_的**小数位数**。
 
-11. Select the quad again and under the hand interaction pan script, set the pan actions to each of the cubes. Under Pan Event Receivers, we want to specify the number of objects receiving the event. Since there are four cubes, type “4” and press Enter. Four empty fields should appear.
+    ![mrlearning-base-ch5-2-step9 .png](images/mrlearning-base-ch5-2-step9.png)
 
-![Lesson5 Chapter2 Step11im](images/Lesson5_chapter2_step11im.PNG)
+    右键单击多维数据集，打开上下文快捷菜单并选择 "**复制**"，从而将多维数据集重复三次。
 
-12. Drag each of the cubes into each of the empty element slots.
-     ![Lesson5 Chapter2 Step12im](images/Lesson5_chapter2_step12im.PNG)
-    
-13. Add the Move with Pan script to all of the cubes by pressing and holding control/command and select each object. From the Inspector panel, click Add Component and search for “move with pan.” Click the script and it is added to each cube. Now the 3D objects will move with your pan gesture. If you remove the mesh render on your quad, you should now have an invisible quad where you can pan through a list of 3D objects.
--->
+    将多维数据集均匀隔开。 场景应类似于下图。
+
+10. 按住 CTRL 键的同时选择 "层次结构" 面板中的每个**多维数据集**对象，将 MoveWithPan 脚本添加到所有多维数据集。 在 "检查器" 面板中，单击 "添加组件"，然后搜索并选择 "**移动以平移**脚本"，将其添加到所有多维数据集。
+
+    ![mrlearning-base-ch5-2-step10a .png](images/mrlearning-base-ch5-2-step10a.png)
+
+    >[!NOTE]
+    >MoveWithPan 脚本不是 MRTK 的一部分，而是在上一课中导入的 BaseModuleAssets 资产中包含。
+
+    在仍选中多维数据集的情况下，将 "层次结构" 面板中的 "**四**个对象" 拖到 "**带平移的移动**脚本" 组件的 "**平移输入源**" 字段
+
+    ![mrlearning-base-ch5-2-step10b .png](images/mrlearning-base-ch5-2-step10b.png)
+
+    现在，多维数据集将随平移手势一起移动。
+
+    >[!TIP]
+    >每个多维数据集上的 MoveWithPan 实例侦听从四个对象上的 HandInteractionPanZoom 实例发送的 PanUpdated 事件，这些事件已添加到每个多维数据集上的 "平移输入源" 字段中，并相应地更新相应的多维数据集对象的位置。
+
+    如果仍选中多维数据集，则将它们沿其 Z 轴向前移动，使每个多维数据集的网格位于**四**个**箱的碰撞**器中，方法是将其**位置 Z**值更改为_0.7_。
+
+    ![mrlearning-base-ch5-2-step10c .png](images/mrlearning-base-ch5-2-step10c.png)
+
+    现在，如果通过在 "检查器" 面板中取消选中并禁用**四**个 "**网格呈现**器" 组件，则会看到一个不可见的四个部分，可在其中平移3d 对象的列表。
+
+    ![mrlearning-base-ch5-2-step10d .png](images/mrlearning-base-ch5-2-step10d.png)
 
 ### <a name="eye-tracking"></a>眼动跟踪
 
@@ -197,13 +213,16 @@ ms.locfileid: "73926537"
 2. 将眼动跟踪目标组件添加到目标对象。 若要允许对象响应眼睛眼睛事件，我们需要使用目视注视将 EyeTrackingTarget 组件添加到要与之交互的每个对象上。 将此组件添加到网格集合中的每个（共九个）3D 对象。
 
     >[!TIP]
-    >你可以使用 shift 和/或 ctrl 键在场景层次结构中选择多个项，然后大容量添加 EyeTrackingTarget 组件。
+    >你可以使用 Shift 和/或 CRTL 键选择层次结构中的多个项，然后大容量添加 EyeTrackingTarget 组件。
 
     ![Lesson5 Chapter3 步骤2](images/Lesson5Chapter3Step2.JPG)
 
-3. 接下来，我们将为一些激动人心的交互添加 EyeTrackingTutorialDemo 脚本。 本教程系列存储库中包含了 EyeTrackingTutorialDemo 脚本。 默认情况下，它不包含在混合现实工具包中。 对于网格集合中的每个三维对象，通过在 "添加组件" 菜单中搜索组件来添加 EyeTrackingTutorialDemo 脚本。
+3. 接下来，我们将为一些激动人心的交互添加 EyeTrackingTutorialDemo 脚本。 对于网格集合中的每个三维对象，通过在 "添加组件" 菜单中搜索组件来添加 EyeTrackingTutorialDemo 脚本。
 
-   ![Lesson5 Chapter3 步骤3](images/Lesson5Chapter3Step3.JPG)
+    ![Lesson5 Chapter3 步骤3](images/Lesson5Chapter3Step3.JPG)
+
+    >[!NOTE]
+    >EyeTrackingTutorialDemo 脚本材料不是 MRTK 的一部分，而是在上一课中导入的 BaseModuleAssets 资产中包含。
 
 4. 在注视目标的同时旋转对象。 我们想要在查看三维对象时将其配置为旋转。 为此，请在 "EyeTrackingTarget" 组件的 "查看目标" 部分中插入一个新字段，如下图所示。
 

@@ -3,15 +3,15 @@ title: HoloLens 模拟器存档
 description: Microsoft HoloLens 模拟器的已发布版本的列表。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 9/11/2019
+ms.date: 11/11/2019
 ms.topic: article
 keywords: HoloLens、模拟器、版本、版本
-ms.openlocfilehash: c2d0c8d9e81bae906c786a32f08d0e701638535e
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f9ce72febfd07b7dc743b9ee202e8c4353f1de96
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434211"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064228"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模拟器存档
 
@@ -19,6 +19,7 @@ HoloLens 模拟器（第一代）和 HoloLens 2 模拟器会并行安装。 我�
 
 |  内部版本 |  发布日期 |  注释 | 
 |----------|----------|----------|
+|  [HoloLens 2 模拟器生成10.0.18362.1039](https://go.microsoft.com/fwlink/?linkid=2110553) | 2019年11月11日 | 2019年11月1日生成。 |
 |  [HoloLens 2 模拟器生成10.0.18362.1034](https://go.microsoft.com/fwlink/?linkid=2106649) | 2019年10月8日 | 10月2019版 HoloLens 2 生成。  当运行的版本低于最新的可用版本时，模拟器将提示更新为新版本。  在 Windows 10 上使用模拟器2019更新或更高版本时，新的 NAT 配置选项卡允许开发人员打开单独设备上运行的应用程序的端口以连接到模拟器，并且 "更新" 选项卡将显示可用的仿真程序版本。  有关更多详细信息，请参阅[HoloLens 模拟器文档](using-the-hololens-emulator.md)。 |
 |  [HoloLens 2 模拟器生成10.0.18362.1031](https://go.microsoft.com/fwlink/?linkid=2103724) | 2019年9月11日 | 2019年9月2日生成。  在 Windows 10 上运行模拟器2019更新或更高版本时，"网络" 选项卡将显示在 "模拟器工具" 窗口中。 |
 |  [HoloLens 2 模拟器生成10.0.18362.1028](https://go.microsoft.com/fwlink/?linkid=2101019) | 2019年8月14日 | 2019年8月2日生成。  不再包括全息应用程序模板，但 Visual Studio Marketplace 中提供了这些模板。  在将 Sdk 安装到自定义位置时，模拟器将起作用。 |

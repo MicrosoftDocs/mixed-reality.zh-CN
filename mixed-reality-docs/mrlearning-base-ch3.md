@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 32a77d6032335ab3ae769b85c5f947440658743f
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: ade7a839e03a306332bf18f1db49805f59c71429
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913532"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064259"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 放置动态内容并使用 solvers
 
@@ -72,7 +72,7 @@ ms.locfileid: "73913532"
 
     ![mrlearning-base-ch3-3-step2b .png](images/mrlearning-base-ch3-3-step2b.png)
 
-3. 将径向视图的最大和最小距离设置为0，以便使多维数据集不会在其与用户的手腕之间没有任何距离。 设置后，立方体将与手腕完全对齐。 您还可以调整 "引用方向" 字段以调整多维数据集的方向行为，例如，如果您想要允许对象通过将引用方向设置为与被跟踪对象一起旋转来旋转用户的手腕。
+3. 将径向视图的最大和最小距离设置为0，以便使多维数据集不会在其与用户的手腕之间没有任何距离。 设置后，立方体将与手腕完全对齐。 您还可以调整 "引用方向" 字段以调整多维数据集的方向，如您希望允许对象通过设置面向对象的引用方向来与用户的手腕一起旋转。
 
     ![mrlearning-base-ch3-3-step3 .png](images/mrlearning-base-ch3-3-step3.png)
 
