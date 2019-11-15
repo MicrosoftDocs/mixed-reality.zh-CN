@@ -6,19 +6,16 @@ ms.author: adlinv
 ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality，应用栏，边界框
-ms.openlocfilehash: f09187bc2a3969a8f844711052e15433f5449d6d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 97afc0df02fd8460547e955d4fcf3e33a4e9f566
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437054"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105767"
 ---
 # <a name="bounding-box-and-app-bar"></a>边界框和应用栏
-!["边界" 是用于在混合现实中进行对象操作的标准接口。](images/640px-boundingbox-hero.jpg)<br>
-
+![边界是在混合现实中用于对象操作的标准接口。](images/640px-boundingbox-hero.jpg)<br>
 <br>
-
----
 
 ## <a name="what-is-the-bounding-box"></a>什么是边界框？
 
@@ -95,15 +92,33 @@ ms.locfileid: "73437054"
 <br>
 
 
+## <a name="bounding-box-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 的 MRTK （混合现实工具包）中的边界框
+**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 为边界框和应用栏提供脚本和 prototyping。 只需将 BoundingBox.cs 脚本分配到任何对象即可添加边界框。
 
-**有关 Unity 应用开发，请参阅[混合现实工具包中的应用栏-Unity。](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_AppBar.html)**
+* [MRTK-边界框](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)
+
 
 <br>
 
 ---
 
+
 ## <a name="see-also"></a>另请参阅
+
+* [光标](cursors.md)
+* [手动 ray](point-and-commit.md)
+* [Button](button.md)
 * [可交互对象](interactable-object.md)
-* [Unity 中的文本](text-in-unity.md)
+* [边界框和应用栏](app-bar-and-bounding-box.md)
+* [起源](direct-manipulation.md)
+* [手动菜单](hand-menu.md)
+* [邻近菜单](near-menu.md)
 * [对象集合](object-collection.md)
+* [语音命令](voice-input.md)
+* [键盘](keyboard.md)
+* [提示](tooltip.md)
+* [盖板](slate.md)
+* [滑块](slider.md)
+* [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
+* [Surface 磁性](surface-magnetism.md)

@@ -6,16 +6,16 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，控件，设计
-ms.openlocfilehash: 8f3629c6d9465383efc901ed784a3719cd6fdfb2
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 98fec76558502658511faf3f18d623bfa5a49dc2
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438166"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106001"
 ---
 # <a name="object-collection"></a>对象集合
 
-![在元素应用的定期表中使用的对象集合](images/640px-objectcollection-hero-640px.jpg)<br>
+![在元素应用的定期表中使用的对象集合](images/UX/UX_Hero_ObjectCollection.jpg)<br>
 
 
 对象集合是一个布局控件，可帮助您在预定义的三维形状中布局对象数组。 它支持各种表面样式-**平面、圆柱、球面**和**放射状**。 您可以调整对象的半径和大小以及它们之间的空间。 对象集合支持从 Unity （二维和三维）的任何对象。 在 **[混合现实工具包](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)** 中，我们已创建了 Unity 脚本和示例，可帮助您创建对象集合。
@@ -44,7 +44,36 @@ ms.locfileid: "73438166"
 使用对象集合 ![2D 图像的示例](images/940px-layout-2dimages.jpg)<br>
 *将对象集合与2D 图像一起使用的示例*
 
+<br>
+
+---
+
+## <a name="object-collection-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 的 MRTK （混合现实工具包）中的对象集合
+
+* [MRTK-对象集合](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)
+
+
+<br>
+
+---
+
+
 ## <a name="see-also"></a>另请参阅
-* [GitHub 上混合现实工具包中对象集合的脚本和 prototyping](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_ObjectCollection.md)
+
+* [光标](cursors.md)
+* [手动 ray](point-and-commit.md)
+* [Button](button.md)
 * [可交互对象](interactable-object.md)
-* [边界框](app-bar-and-bounding-box.md)
+* [边界框和应用栏](app-bar-and-bounding-box.md)
+* [起源](direct-manipulation.md)
+* [手动菜单](hand-menu.md)
+* [邻近菜单](near-menu.md)
+* [对象集合](object-collection.md)
+* [语音命令](voice-input.md)
+* [键盘](keyboard.md)
+* [提示](tooltip.md)
+* [盖板](slate.md)
+* [滑块](slider.md)
+* [公告和尾随](billboarding-and-tag-along.md)
+* [显示进度](progress.md)
+* [Surface 磁性](surface-magnetism.md)

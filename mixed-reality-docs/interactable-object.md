@@ -6,16 +6,16 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合现实、控件、交互、ui、ux
-ms.openlocfilehash: 36ca1feeba0e3bf028c64fe7b559d263a8088b96
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 5305af97e9811134212fc6c730727962bb9e8353
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438650"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105791"
 ---
 # <a name="interactable-object"></a>种不可交互对象
 
-![Interactible 对象](images/InteractableExamples.png)
+![Interactible 对象](images/UX/UX_Hero_Interactable.jpg)
 
 "Button" 是一种用于在二维抽象环境中触发事件的比喻。 在这三维混合现实世界中，我们不必再局限于这种抽象领域。 任何内容都可以是触发事件的**种不可交互对象**。 种不可交互对象可表示为从桌子上的咖啡杯到悬浮的球标的任何内容。 在某些情况下（例如，在对话框 UI 中），我们仍要使用传统按钮。 按钮的可视化表示形式取决于上下文。
 
@@ -261,9 +261,9 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
 ---
 
 
-## <a name="creating-interactable-object-with-mixed-reality-toolkit-mrtk"></a>利用混合现实工具包创建种不可交互对象（MRTK）
+## <a name="interactable-object-in-mrtkmixed-reality-toolkit-for-unit"></a>单元的 MRTK （混合现实工具包）中的种不可交互对象
 
-在 **[混合现实工具包](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 中，可以找到可帮助你创建种不可交互对象的一系列 Unity 脚本和 prototyping。 您可以使用这些对象来对各种类型的输入交互状态进行响应。
+在 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 中，可以使用脚本[**种不可交互**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Scripts)使对象对各种类型的输入交互状态进行响应。 它支持各种类型的主题，这些主题允许您通过控制对象属性（如颜色、大小、材料和着色器）来定义可视状态。
 
 * [种不可交互](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
 * [Button](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
@@ -277,9 +277,23 @@ MixedRealityToolkit 的标准着色器提供了各种选项 **，例如，可**�
 
 ---
 
+
 ## <a name="see-also"></a>另请参阅
 
-* [边界框](app-bar-and-bounding-box.md)
+* [光标](cursors.md)
+* [手动 ray](point-and-commit.md)
+* [Button](button.md)
+* [可交互对象](interactable-object.md)
+* [边界框和应用栏](app-bar-and-bounding-box.md)
+* [起源](direct-manipulation.md)
+* [手动菜单](hand-menu.md)
+* [邻近菜单](near-menu.md)
 * [对象集合](object-collection.md)
+* [语音命令](voice-input.md)
+* [键盘](keyboard.md)
+* [提示](tooltip.md)
+* [盖板](slate.md)
+* [滑块](slider.md)
 * [公告和尾随](billboarding-and-tag-along.md)
-* [语音输入](voice-input.md)
+* [显示进度](progress.md)
+* [Surface 磁性](surface-magnetism.md)

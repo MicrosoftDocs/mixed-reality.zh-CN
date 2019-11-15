@@ -6,16 +6,18 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、语音、cortana、语音、输入
-ms.openlocfilehash: 1b0a57ad680b7f779201e99dea24bfe746820c44
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 7264b0b8882928f64860bc5a30b97683306cb19c
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437189"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105784"
 ---
 # <a name="voice-input"></a>语音输入
 
-Voice 是 HoloLens 输入的关键形式之一。 它使你可以直接在无需使用[手型手势](gaze-and-commit.md#composite-gestures)的情况下直接执行命令。 语音输入可以自然地传达意向。 语音在遍历复杂接口时特别有用，因为它允许用户通过一个命令剪切嵌套菜单。
+![语音输入](images/UX/UX_Hero_VoiceCommand.jpg)
+
+在 HoloLens 上，语音是重要输入形式之一。 它使你可以直接在无需使用[手型手势](gaze-and-commit.md#composite-gestures)的情况下直接执行命令。 可以将语音输入作为一种传达意图的自然方式。 语音在遍历复杂接口时特别有用，因为它允许用户通过一个命令剪切嵌套菜单。
 
 语音输入由支持所有其他_通用 Windows 应用_中的语音的[同一引擎](https://msdn.microsoft.com/library/windows/apps/mt185615.aspx)提供支持。 在 HoloLens 上，语音识别将始终在 "设置" 中配置的 Windows 显示语言中工作。 
 
@@ -274,7 +276,7 @@ Voice 是 HoloLens 输入的关键形式之一。 它使你可以直接在无需
 ## <a name="communication"></a>通信
 
 对于想要利用 HoloLens 提供的自定义音频输入处理选项的应用程序，请务必了解应用程序可使用的各种[音频流类别](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)。 Windows 10 支持多种不同的流类别，HoloLens 利用这三个类别来启用自定义处理，以优化为语音、通信和其他可用于环境环境音频的麦克风音频质量捕获（即 "摄像机"）方案。
-* AudioCategory_Communications 流类别自定义用于调用质量和旁白方案，并为客户端提供用户语音的 16kHz 24bit mono 音频流
+* 为呼叫质量和旁白方案自定义 AudioCategory_Communications 流类别，并为客户端提供用户语音的 16kHz 24bit mono 音频流
 * 为 HoloLens （Windows）语音引擎自定义 AudioCategory_Speech 流类别，并为其提供用户语音的 16kHz 24bit mono 流。 第三方语音引擎可以根据需要使用此类别。
 * 为环境环境录音录音自定义 AudioCategory_Other 流类别，并为客户端提供 48kHz 24 位立体声音频流。
 
@@ -290,8 +292,20 @@ HoloLens 2 还支持其他语言。 请记住，即使安装了多个键盘或�
 
 对于 Windows Mixed Reality Developer Edition 版本2017，音频终结点管理逻辑将在初始 HMD 连接后注销并重新登录到 PC 桌面后正常运行。 在第一次注销/登录到 WMR 时，用户可能会遇到各种音频功能问题，范围从无音频切换到无音频切换，具体取决于首次连接 HMD 前系统的设置方式。
 
+<br>
+
+---
+
+## <a name="voice-input-in-mrtkmixed-reality-toolkit-for-unity"></a>适用于 Unity 的 MRTK （混合现实工具包）中的语音输入
+借助 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，你可以轻松地为任何对象分配语音命令。 使用 MRTK 的**语音输入配置文件**定义关键字。 通过分配**SpeechInputHandler**脚本，你可以使任何对象响应语音输入配置文件中定义的关键字。 SpeechInputHandler 还提供了语音确认标签以提高用户信心。
+
+* [MRTK-语音命令](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html)
+
+
+---
+
 ## <a name="see-also"></a>另请参阅
-* [注视并提交](gaze-and-commit.md)
+* [凝视和提交](gaze-and-commit.md)
 * [本能交互](interaction-fundamentals.md)
 * [MR 输入212：语音](holograms-212.md)
 * [DirectX 中的语音输入](voice-input-in-directx.md)

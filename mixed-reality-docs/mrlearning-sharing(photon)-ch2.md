@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 91935cb5b465e51d3948f68b818f93ba52b215f1
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: 750161ff4c52a7ab71869b3cb0f97197d4ad09f2
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73914436"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106049"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. 获取 Unity 以便开发 
 
@@ -52,7 +52,7 @@ ms.locfileid: "73914436"
 
 6. 完成后，将显示一个新的配置文件，让你选择自定义配置文件。 
 
-![Module2Chapter1step4im](images/Module2Chapter1step4im.PNG)
+![Module2Chapter1step4ima](images/Module2Chapter1step4ima.PNG)
 
 7. 从层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，查找混合现实工具包脚本并按下图所示的 "复制 & 自定义" 按钮。  此时将显示一个 pop，并在弹出菜单中选择 "克隆" 选项。
 
@@ -76,7 +76,14 @@ ms.locfileid: "73914436"
 
 ![Module3Chapter2step9imb](images/module3chapter2step9imb.PNG)
 
-11. 导入名为 SharingAssetCollection 的自定义包，可在[此处下载。](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)
+11. 导入列出的自定义包：
+
+    a. [HoloLens2. GettingStarted. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
+
+    b. [HoloLens2. MultiUserCapabilities. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.0/Unity.HoloLens2.MultiUserCapabilities.Tutorials.Asset.2.1.0.0.unitypackage)
+
+    >[!TIP]
+    >如果你已完成[入门教程](mrlearning-base-ch1.md)，则你的计算机上可能会存储名为 HoloLens2 的 unity 包。 _2.1.0.0. unitypackage_ 。 如果是这样，则可以跳过下载上一步中列出的资产。
 
 ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 

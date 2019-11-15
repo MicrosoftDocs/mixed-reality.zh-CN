@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: da485f167ef3902dd75adf8da8181504fbc6c6df
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: cf51505cab2db765325c2e7b78a52e4b790845c9
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913163"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105953"
 ---
 # <a name="speech-sdk-learning-module---rocket-launcher-control-using-speech-commands"></a>Speech SDK 学习模块-使用语音命令的火箭启动器控件
 
@@ -24,7 +24,7 @@ ms.locfileid: "73913163"
 
 ## <a name="instructions"></a>说明
 
-1. 在本教程中，我们将使用 "BaseModule" 资源将火箭启动器与语音命令集成。 为此，我们需要将资产导入到项目中。 你可以使用此[链接](https://github.com/Developer-OI/MixedRealityLearning/releases/download/1.2.1/BaseModuleAssets-1.2.1.unitypackage)下载 "火箭启动器" 资产。
+1. 在本教程中，我们将使用 "BaseModule" 资源将火箭启动器与语音命令集成。 为此，我们需要将资产导入到项目中。 你可以使用此[链接](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)下载 "火箭启动器" 资产。
 
 2. 若要导入资产，请转到 "资产-> 导入包-> 自定义包" > 导航到下载的文件，然后单击 "导入"。
 

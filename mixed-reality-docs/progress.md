@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计，控件，ui，ux
-ms.openlocfilehash: 43b4802e7c821c98c847509ace950f381da12f95
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: aafcd8eebbabfc5b53d09348d513f62def909da6
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437536"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105983"
 ---
-# <a name="displaying-progress"></a>显示进度
+# <a name="progress-indicator"></a>进度指示器
 
 <br>
 
-<img src="images/HoloLens2_Loader.gif" alt="Progress ring example in HoloLens" width="940px">
+<img src="images/UX/MRTK_ProgressIndicator.gif" alt="Progress ring example in HoloLens" width="940px">
 
 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。 这意味着，在进度指示器可见，并且还可以根据所使用的指示器指示等待时长时，用户无法与该应用交互。
 
@@ -88,9 +88,32 @@ ms.locfileid: "73437536"
 
 ---
 
+## <a name="progress-indicator-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 的 MRTK （混合现实工具包）中的进度指示器
+
+* [MRTK-进度指示器 prototyping](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/ProgressIndicators)
+* [MRTK-场景转换服务](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html)
+
+
+<br>
+
+---
+
 ## <a name="see-also"></a>另请参阅
-* [混合现实工具包的进度脚本和 prototyping](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Loader)
-* [边界框](app-bar-and-bounding-box.md)
+
+* [光标](cursors.md)
+* [手动 ray](point-and-commit.md)
+* [Button](button.md)
 * [可交互对象](interactable-object.md)
+* [边界框和应用栏](app-bar-and-bounding-box.md)
+* [起源](direct-manipulation.md)
+* [手动菜单](hand-menu.md)
+* [邻近菜单](near-menu.md)
 * [对象集合](object-collection.md)
+* [语音命令](voice-input.md)
+* [键盘](keyboard.md)
+* [提示](tooltip.md)
+* [盖板](slate.md)
+* [滑块](slider.md)
 * [公告和尾随](billboarding-and-tag-along.md)
+* [显示进度](progress.md)
+* [Surface 磁性](surface-magnetism.md)

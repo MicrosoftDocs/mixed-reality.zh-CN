@@ -6,14 +6,16 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens （第一代），HoloLens 2，混合现实，光标，定位，注视，手势
-ms.openlocfilehash: ef011d8400de1e23db3d6fb4b0f2a853d787ae86
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 719e7a573e8c8bc682ec0f960d9f3c8f8c8e5a4a
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435808"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105755"
 ---
 # <a name="cursors"></a>光标
+
+![光标](images/UX/UX_Hero_Cursor.jpg)
 
 当前目标向量的光标或指示器可为用户提供持续的反馈，以了解头戴显示在该时间的位置。 光标允许用户了解其当前目标点，并作为反馈来指示哪个区域、全息图或点将响应输入。 它是设备理解用户注意的数字表示形式（尽管这可能不同于确定其意图的任何内容）。
 
@@ -154,6 +156,15 @@ Ray 光标连接到最靠近的光线的末尾，以允许对不是手接触的�
 
 ---
 
+## <a name="cursor-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 的 MRTK （混合现实工具包）的光标
+默认情况下， **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 提供了一个游标 Prefab （[DefaultCursor](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Cursors)），它具有与 shell 的系统光标相同的视觉状态。 它在 MRTK 的输入配置文件的 "指针" 下分配。 您可以根据自己的经验来替换/自定义此光标。 对于目视跟踪输入经验，MRTK 还提供了 EyeGazeCursor，它具有微妙的视觉对象来最大程度地减少干扰。
+
+* [MRTK-指针配置文件](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html#pointer-configuration)
+* [MRTK-输入系统](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)
+* [MRTK-指针](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Pointers.html)
+
+
+---
 
 ## <a name="see-also"></a>另请参阅
 * [手势](gaze-and-commit.md#composite-gestures)

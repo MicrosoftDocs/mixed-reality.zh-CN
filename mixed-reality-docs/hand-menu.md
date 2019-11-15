@@ -6,16 +6,16 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: 手型、菜单、按钮、快速访问、布局
-ms.openlocfilehash: ee958806ac462535b33164bb4faa4bf1aa29e709
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: b4ea7411be22633e82a88d1c91b6b2b1edbea735
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439248"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105629"
 ---
 # <a name="hand-menu"></a>手动菜单
 
-![Ulnar 端位置](images/MRTK_UX_HandMenu.png)
+![Ulnar 端位置](images/UX/UX_Hero_HandMenu.jpg)
 
 手动菜单允许用户快速为常用函数获取手动连接的 UI。 
 
@@ -127,9 +127,33 @@ ms.locfileid: "73439248"
 
 ---
 
+## <a name="hand-menu-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 中的 MRTK （混合现实工具包）的菜单
+**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 为手形菜单提供脚本和示例场景。 HandConstraintPalmUp 求解器脚本允许你轻松地将任何对象附加到各种可配置选项。
+
+* [MRTK HandConstraint 和 HandConstraintPalmUp 的菜单](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_Solver.md#hand-menu-with-handconstraint-and-handconstraintpalmup)
+
+
+<br>
+
+---
+
 
 ## <a name="see-also"></a>另请参阅
 
+* [光标](cursors.md)
+* [手动 ray](point-and-commit.md)
+* [Button](button.md)
 * [可交互对象](interactable-object.md)
-* [使用手直接操作](direct-manipulation.md)
-* [手和运动控制器](hands-and-tools.md)
+* [边界框和应用栏](app-bar-and-bounding-box.md)
+* [起源](direct-manipulation.md)
+* [手动菜单](hand-menu.md)
+* [邻近菜单](near-menu.md)
+* [对象集合](object-collection.md)
+* [语音命令](voice-input.md)
+* [键盘](keyboard.md)
+* [提示](tooltip.md)
+* [盖板](slate.md)
+* [滑块](slider.md)
+* [公告和尾随](billboarding-and-tag-along.md)
+* [显示进度](progress.md)
+* [Surface 磁性](surface-magnetism.md)

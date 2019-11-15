@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 07bcce2ab9ab3bda035f7f2b39a90753cf45358d
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: 8c60d8291ede123817c93458fff003891169840c
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913826"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105969"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 与三维对象交互
 
@@ -38,7 +38,7 @@ ms.locfileid: "73913826"
 
     ![mrlearning-base-ch4-1-step1 .png](images/mrlearning-base-ch4-1-step1.png)
 
-2. 下载 Unity 包[BaseModuleAssets 版本 1.2.1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/1.2.1/BaseModuleAssets-1.2.1.unitypackage) ，并使用与[学习](mrlearning-base-ch1.md)中所述的自定义包相同的说明导入它。 此包包括3D 模型以及在本教程中使用的其他有用资产。
+2. 下载 Unity 包[HoloLens2](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage) ，并使用与导入[学习](mrlearning-base-ch1.md)中所述的自定义包相同的说明导入它。 此包包括3D 模型以及在本教程中使用的其他有用资产。
 
 3. 在 "项目" 面板中，导航到 "资产" > BaseModuleAssets > 基本模块 "Prototyping"，然后搜索 "未完成"，我们将使用其中一些 prototyping。
 

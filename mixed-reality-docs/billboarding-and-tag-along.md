@@ -6,26 +6,32 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，billboarding，连同标记
-ms.openlocfilehash: 032e665d94a73b94b59f693e452874af0b45f021
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 06cd1c6f67f8aa2dd94173d4089adbdbd0765211
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436996"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105728"
 ---
 # <a name="billboarding-and-tag-along"></a>Billboarding 和标记
 
 <br>
 
-<img src="images/billboarding-fragments.gif" alt="HoloLens perspective of a menu system that always faces the user" width="940px">
+<img src="images/UX/MRTK_TagAlong.gif" alt="HoloLens perspective of a menu system that always faces the user" width="940px">
+<br>
+
+## <a name="what-is-billboarding"></a>什么是 billboarding？
 
 Billboarding 是一种可应用于混合现实中的对象的行为概念。 具有 billboarding 的对象始终向用户提供正面的定向。 这对于文本和 menuing 系统特别有用，在这种情况下，如果用户要四处移动，用户环境（全球锁定）中放置的静态对象将被掩盖或无法读取。
 
 启用了 billboarding 的对象可以在用户的环境中自由旋转。 它们还可以根据设计注意事项限制为单个轴。 请记住，如果 billboarded 对象置于其他对象之前太近，或在 HoloLens 中太接近扫描面，则它们可能会被剪裁或遮蔽。 为避免出现这种情况，请考虑在为 billboarding 启用轴旋转时对象可能产生的总空间。
 
+<br>
+
+---
 ## <a name="what-is-a-tag-along"></a>什么是标记？
 
-标记-一起是可以添加到影像的行为概念，包括 billboarded 对象。 这种交互是实现 head 锁定内容效果的更自然且友好的方式。 标记靠后的对象将不会离开用户的视图。 这样，用户就可以自由地与其前面的内容交互，同时还会看到其直接视图外的全息影像。
+标记-一起是可以添加到全息影像的行为概念。 标记靠后的对象试图停留在允许用户轻松交互的范围内。
 
 ![的 "HoloLens 引脚" 面板是有关标记的行为方式的很好示例](images/tagalong-1000px.jpg)<br>
 *HoloLens "开始" 菜单是一个更好的标记和行为示例*
@@ -36,7 +42,37 @@ Billboarding 是一种可应用于混合现实中的对象的行为概念。 具
 
 与真正的 head 锁定的内容一样，如果对象在用户的视图中变得很大或太过太多，则这些对象可能会 nauseating。 用户浏览并快速停止时，他们的感知告诉他们已停止。 它们的平衡通知他们打印头已停止转动，并使其视觉效果看起来很好。 但是，如果在用户停止时仍继续进行标记，则可能会混淆其感知。
 
+<br>
+
+---
+
+## <a name="billboarding-and-tag-along-in-mrtkmixed-reality-toolkit-for-unity"></a>用于 Unity 的 MRTK （混合现实工具包）中的 Billboarding 和标记
+**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 为 Billboarding 和标记的行为提供脚本。 只需将 Billboard.cs 脚本分配到任何对象即可添加 billboarding 行为，并使对象始终为你。 若要添加标记和行为，请使用 RadialView.cs 脚本。 可以调整各种选项，如 lerping 时间、距离和角度。
+
+* [MRTK-径向视图规划求解](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html#radialview)
+* [MRTK-布告栏脚本](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Scripts/Utilities/Billboard.cs)
+
+
+<br>
+
+---
+
 ## <a name="see-also"></a>另请参阅
+
 * [光标](cursors.md)
-* [本能交互](interaction-fundamentals.md)
-* [舒适](comfort.md)
+* [手动 ray](point-and-commit.md)
+* [Button](button.md)
+* [可交互对象](interactable-object.md)
+* [边界框和应用栏](app-bar-and-bounding-box.md)
+* [起源](direct-manipulation.md)
+* [手动菜单](hand-menu.md)
+* [邻近菜单](near-menu.md)
+* [对象集合](object-collection.md)
+* [语音命令](voice-input.md)
+* [键盘](keyboard.md)
+* [提示](tooltip.md)
+* [盖板](slate.md)
+* [滑块](slider.md)
+* [公告和尾随](billboarding-and-tag-along.md)
+* [显示进度](progress.md)
+* [Surface 磁性](surface-magnetism.md)
