@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合现实、控件、交互、ui、ux
-ms.openlocfilehash: 5305af97e9811134212fc6c730727962bb9e8353
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: 73c8a3ce9e01f580ecbae23f2178871642c4540e
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105791"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143265"
 ---
 # <a name="interactable-object"></a>种不可交互对象
 
@@ -294,6 +294,7 @@ MixedRealityToolkit 的标准着色器提供了各种选项 **，例如，可**�
 * [提示](tooltip.md)
 * [盖板](slate.md)
 * [滑块](slider.md)
+* [着色器](shader.md)
 * [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
 * [Surface 磁性](surface-magnetism.md)

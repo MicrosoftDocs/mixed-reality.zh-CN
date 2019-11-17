@@ -6,15 +6,15 @@ ms.author: adlinv
 ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality，应用栏，边界框
-ms.openlocfilehash: 97afc0df02fd8460547e955d4fcf3e33a4e9f566
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: e4f519cba459efac25f6c1370b07fcda4def30a1
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105767"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143170"
 ---
 # <a name="bounding-box-and-app-bar"></a>边界框和应用栏
-![边界是在混合现实中用于对象操作的标准接口。](images/640px-boundingbox-hero.jpg)<br>
+![边界是在混合现实中用于对象操作的标准接口。](images/UX/UX_Hero_BoundingBox.jpg)<br>
 <br>
 
 ## <a name="what-is-the-bounding-box"></a>什么是边界框？
@@ -119,6 +119,7 @@ ms.locfileid: "74105767"
 * [提示](tooltip.md)
 * [盖板](slate.md)
 * [滑块](slider.md)
+* [着色器](shader.md)
 * [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
 * [Surface 磁性](surface-magnetism.md)

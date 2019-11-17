@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计，控件，ui，ux
-ms.openlocfilehash: aafcd8eebbabfc5b53d09348d513f62def909da6
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: 4befaa6f55bff6a820c976db969fdad7b64a2214
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105983"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143250"
 ---
 # <a name="progress-indicator"></a>进度指示器
 
@@ -114,6 +114,7 @@ ms.locfileid: "74105983"
 * [提示](tooltip.md)
 * [盖板](slate.md)
 * [滑块](slider.md)
+* [着色器](shader.md)
 * [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
 * [Surface 磁性](surface-magnetism.md)
