@@ -7,14 +7,17 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 视线, 视线定位, 交互, 设计, 手动近距, HoloLens
-ms.openlocfilehash: ed3b25fe9a7dd404d07073b578b8da13e1984cab
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e0b0e6273917df071f49eb0108039ebe204bbc12
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435847"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105940"
 ---
 # <a name="direct-manipulation-with-hands"></a>用手直接操作
+
+![按钮](images/UX/UX_Hero_Manipulation.jpg)
+
 直接操作是一个输入模型，涉及到用手直接触摸全息影像。 此概念后面的理念是使对象的行为如同在现实世界中一样自然。 只需按下按钮就能将其激活，抓取对象可以拾取对象，2D 内容的行为与在虚拟触摸屏上类似。 因此，直接操作很容易学会，而且充满了乐趣。 它被视为一种“近距”输入模型，这意味着，它最好用于与手臂可触及范围内的内容进行交互。
 
 直接操作基于可见性，因此具备用户友好性。 没有任何符号手势可以向用户传授操作方法。 所有交互都是围绕一个可以触摸或抓取的可视元素构建的。
@@ -296,12 +299,6 @@ HoloLens 2 可让用户将边界框应用到每个 3D 对象，以便用手引�
 
 你可能已经注意到，我们可以在 AR 中的手部与 VR 中的运动控制器之间引入类似的交互方式。 使用这两种输入可在其各自的环境中触发直接操作。 在 HoloLens 2 中，用手近距抓取和拖放非常类似于在 WMR 运动控制器中抓取按钮。 因此，用户会熟悉这两个平台中的交互方式。如果你决定将应用程序从一个平台移植到另一个平台，这种类似性会很有帮助。
 
-
-<br>
-
----
-
-
 <br>
 
 ---
@@ -324,6 +321,18 @@ HoloLens 2 可让用户将边界框应用到每个 3D 对象，以便用手引�
 * **何处**：使用有关用户正在使用快速投射手势观看的内容的信息。 抓取一幅全息影像，然后大致将它投射到预期目标。  
 
     尽管有时可以正常进行此操作，但快速执行手势可能会导致目标极不准确。 但是，眼动跟踪可以提高手势的准确度。
+
+<br>
+
+---
+
+## <a name="manipulation-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 的 MRTK（混合现实工具包）中的操作
+有了 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，可以使用脚本 **ManipulationHandler** 轻松实现常见的操作行为。 借助 ManipulationHandler，可以直接使用手或手部射线抓取和移动对象。 它还支持使用双手操作来缩放和旋转对象。
+
+* [MRTK - 操作](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)
+
+
+---
 
 ## <a name="see-also"></a>另请参阅
 
