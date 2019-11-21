@@ -6,18 +6,18 @@ ms.author: cmeekhof
 ms.date: 04/30/2019
 ms.topic: article
 keywords: 双手、运动控制器、directx、输入、全息影像
-ms.openlocfilehash: 7b8222e5e539eb95b07cc24d6b49106bd174b490
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 54eaacc3f0dccf728b5438c020a5efd7e0788251
+ms.sourcegitcommit: 4081dc2356fec0ea3625f1d989689cfbbb3fcf5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435193"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74203329"
 ---
 # <a name="hands-and-motion-controllers-in-directx"></a>DirectX 中的双手和运动控制器
 
 在 Windows Mixed Reality 中，手动和[运动控制器](motion-controllers.md)输入都是通过空间输入 api 处理的，该空间输入 Api 位于[Windows. input](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial)命名空间中。 这使您能够轻松地处理常见的操作，例如在双手和运动控制器中**选择**"按相同方式"。
 
-## <a name="getting-started"></a>即刻体验
+## <a name="getting-started"></a>入门
 
 若要访问 Windows Mixed Reality 中的空间输入，请从 SpatialInteractionManager 接口开始。  可以通过调用[SpatialInteractionManager：： GetForCurrentView](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionmanager.getforcurrentview)访问此接口，通常在应用启动期间进行。
 
@@ -99,7 +99,7 @@ for (auto& sourceState : sourceStates)
 ## <a name="cross-device-input-properties"></a>跨设备输入属性
 SpatialInteractionSource API 支持使用各种功能的控制器和手动跟踪系统。 许多这些功能在设备类型之间是通用的。 例如，手动跟踪和运动控制器都提供 "选择" 操作和三维位置。 只要有可能，API 就会将这些常见功能映射到 SpatialInteractionSource 上的相同属性。  这使应用程序能够更轻松地支持各种输入类型。 下表介绍了支持的属性，以及它们如何跨输入类型进行比较。
 
-| 属性 | 描述 | HoloLens 手势 | 运动控制器 | 明确表述|
+| 属性 | 描述 | HoloLens （第一代）手势 | 运动控制器 | 明确表述|
 |--- |--- |--- |--- |--- |
 | [SpatialInteractionSource：：**左右手使用习惯**](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsource.handedness) | Right 或 left 右手/controller。 | 不支持 | 支持 | 支持 |
 | [SpatialInteractionSourceState：：**IsSelectPressed**](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate.isselectpressed) | 主要按钮的当前状态。 | Air | 界限 | 宽松分流点（直立的喷） |
@@ -122,7 +122,7 @@ Windows Mixed Reality 支持各种外形规格的运动控制器。  它还支�
 * **抓握方向的正向轴**：在部分合上（就像持有控制器一样），通过非拇指指的电子管来指向 "转发" 的射线。
 * **手柄方向的上轴**：向右和向后定义隐含的上轴。
 
-可以通过[SpatialInteractionSourceState：:P r)：： TryGetLocation （...）：： SourcePointerPose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcelocation#Windows_UI_Input_Spatial_SpatialInteractionSourceLocation_SourcePointerPose)或[SpatialInteractionSourceState：： TryGetPointerPose （...）：： TryGetInteractionSourcePose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerpose#Windows_UI_Input_Spatial_SpatialPointerPose_TryGetInteractionSourcePose_Windows_UI_Input_Spatial_SpatialInteractionSource_)访问**指针姿势**.
+可以通过[SpatialInteractionSourceState：:P r)：： TryGetLocation （...）：： SourcePointerPose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcelocation#Windows_UI_Input_Spatial_SpatialInteractionSourceLocation_SourcePointerPose)或[SpatialInteractionSourceState：： TryGetPointerPose （...）：： TryGetInteractionSourcePose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerpose#Windows_UI_Input_Spatial_SpatialPointerPose_TryGetInteractionSourcePose_Windows_UI_Input_Spatial_SpatialInteractionSource_)访问**指针姿势**。
 
 ## <a name="controller-specific-input-properties"></a>控制器特定的输入属性
 对于控制器，SpatialInteractionSource 具有具有其他功能的控制器属性。
@@ -195,7 +195,7 @@ std::thread createObserverThread([this, currentState]()
 });
 createObserverThread.detach();
 ```
-启动分离的线程只是一种用于处理异步调用的选项。  或者，可以使用C++/WinRT. 支持的新的[co_await](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/concurrency)功能
+启动分离的线程只是一种用于处理异步调用的选项。  或者，可以使用C++/WinRT. 支持的新[co_await](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/concurrency)功能
 
 获得 HandMeshObserver 对象后，应在其对应的 SpatialInteractionSource 处于活动状态的持续时间内保留该对象。  然后，每个帧都可以通过调用[GetVertexStateForPose](https://docs.microsoft.com//uwp/api/windows.perception.people.handmeshobserver.getvertexstateforpose)并传入表示想要使用顶点的[HandPose](https://docs.microsoft.com//uwp/api/windows.perception.people.handpose)实例的最新顶点缓冲区来请求该缓冲区。  缓冲区中的每个顶点都有一个位置和一个法线。  下面的示例演示如何获取手写网格的当前顶点集。  与前面一样， *currentState*变量表示[SpatialInteractionSourceState](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate)的实例。
 
