@@ -33,7 +33,7 @@ Unity 包含对空间映射的完全支持，可通过以下方式向开发人�
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>具有</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -352,7 +352,7 @@ shapeConstraints = new List<ShapeConstraint>()
 
 ### <a name="object-placement-solver"></a>对象放置规划求解
 
-对象放置规划求解可用于确定放置对象的物理空间中的理想位置。 在给定对象规则和约束的情况下，求解器将找到最适合的位置。 此外，对象查询会一直保留，直到删除了具有 "Solver_RemoveObject" 或 "Solver_RemoveAllObjects" 调用的对象，从而允许约束的多对象位置。 对象放置查询由三个部分组成：具有参数的放置类型、规则列表和约束列表。 若要运行查询，请使用以下 API。
+对象放置规划求解可用于确定放置对象的物理空间中的理想位置。 在给定对象规则和约束的情况下，求解器将找到最适合的位置。 此外，对象查询会一直保留，直到删除了带 "Solver_RemoveObject" 或 "Solver_RemoveAllObjects" 调用的对象，从而允许约束的多对象位置。 对象放置查询由三个部分组成：具有参数的放置类型、规则列表和约束列表。 若要运行查询，请使用以下 API。
 
 ```cpp
 public static int Solver_PlaceObject(
@@ -470,7 +470,7 @@ Import_UnderstandingMesh –
 ![生成的 voxel 卷生成的网格](images/su-custommesh.jpg)<br>
 *从 voxel 卷生成的生成的网格*
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>疑难解答
 * 确保已设置[SpatialPerception](#setting-the-spatialperception-capability)功能
 * 跟踪丢失时，下一个 OnSurfaceChanged 事件将删除所有网格。
 

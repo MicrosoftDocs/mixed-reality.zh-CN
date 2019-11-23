@@ -17,11 +17,11 @@ ms.locfileid: "73926565"
 
 您可以通过两种主要方式在您的[HMD 中进行](gaze-in-unity.md)操作，在 HoloLens 和沉浸式的中的[手势](gaze-and-commit.md#composite-gestures)和[运动控制器](motion-controllers.md)。 可以通过 Unity 中的相同 Api 访问空间输入的两个源的数据。
 
-Unity 提供了两种主要方法来访问 Windows Mixed Reality 的空间输入数据、跨多个 Unity XR Sdk 工作的*GetButton/GetAxis* *api，* 以及特定于公开一组可用空间输入数据的 Windows 混合现实。
+Unity 提供了两种主要方法来访问 Windows Mixed Reality 的空间输入数据，这是常见的*GetButton/GetAxis* api，可跨多个 Unity XR sdk 使用，后者是特定于 Windows mixed Reality 的*InteractionManager/GestureRecognizer* api，它公开了可用的空间输入数据的完整集。
 
 ## <a name="unity-buttonaxis-mapping-table"></a>Unity 按钮/轴映射表
 
-下表中的 button 和 axis Id 通过*GetButton/GetAxis* Api 在 Unity 的 "Windows Mixed Reality 运动控制器" 的输入管理器中受支持，而 "windows MR 特定" 列是指可用的属性*InteractionSourceState*类型。 以下各节将详细介绍其中的每个 Api。
+下表中的 button 和 axis Id 通过*GetButton/GetAxis* Api 在 Unity 的 "Windows Mixed Reality 运动控制器" 的 "输入管理器" 中受支持，而 "windows MR 特定" 列是指*InteractionSourceState*类型可用的属性。 以下各节将详细介绍其中的每个 Api。
 
 Windows Mixed Reality 的按钮/轴 ID 映射通常与 Oculus 按钮/轴 Id 匹配。
 
@@ -31,7 +31,7 @@ Windows Mixed Reality 的按钮/轴 ID 映射在以下两个方面不同于 Open
 
 <table>
 <tr>
-<th rowspan="2">Input </th><th colspan="2"><a href="gestures-and-motion-controllers-in-unity.md#common-unity-apis-inputgetbuttongetaxis">公共 Unity Api</a><br />（GetButton/GetAxis） </th><th rowspan="2"><a href="gestures-and-motion-controllers-in-unity.md#">Windows MR 专用输入 API</a><br />XR.WSA.送</th>
+<th rowspan="2">输入 </th><th colspan="2"><a href="gestures-and-motion-controllers-in-unity.md#common-unity-apis-inputgetbuttongetaxis">公共 Unity Api</a><br />（GetButton/GetAxis） </th><th rowspan="2"><a href="gestures-and-motion-controllers-in-unity.md#">Windows MR 专用输入 API</a><br />XR.WSA.送</th>
 </tr><tr>
 <th> 左手 </th><th> 右手</th>
 </tr><tr>
@@ -118,9 +118,9 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 <tr>
 <th> 跟踪状态 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高准确度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> “高” </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高准确度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精度（存在丢失的风险）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> “高” </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度（存在丢失的风险）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>准确度</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: orange"> 近似 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
@@ -131,7 +131,7 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 这些运动控制器跟踪状态的定义如下：
 * **高准确度：** 尽管运动控制器位于耳机的视图中，但它通常会根据视觉对象跟踪提供高准确性位置。 请注意，在暂时离开耳机传感器时，移动控制器（如用户的另一方面）将继续根据控制器的惯性跟踪来返回较短的长时间（例如，用户）自动.
 * **高精度（存在丢失的风险）：** 当用户将运动控制器移出耳机的视图边缘后，耳机不久就无法直观地跟踪控制器的位置。 此应用通过查看**SourceLossRisk**到1.0，来了解控制器何时到达此 FOV 边界。 此时，应用程序可以选择暂停需要稳定的高质量姿势流的控制器手势。
-* **近似准确性：** 如果控制器丢失了足够长时间的视觉跟踪，控制器的位置将降到近似准确性位置。 此时，系统会将控制器正文锁定到用户，在移动用户时跟踪用户的位置，同时仍然使用其内部方向传感器公开控制器的真正方向。 许多使用控制器指向和激活 UI 元素的应用程序可以正常运行，而无需用户注意。 输入要求更高的应用可通过检查**PositionAccuracy**属性，从**高**准确度到**接近**准确性，并为用户提供更宽松的 hitbox在此期间。
+* **近似准确性：** 如果控制器丢失了足够长时间的视觉跟踪，控制器的位置将降到近似准确性位置。 此时，系统会将控制器正文锁定到用户，在移动用户时跟踪用户的位置，同时仍然使用其内部方向传感器公开控制器的真正方向。 许多使用控制器指向和激活 UI 元素的应用程序可以正常运行，而无需用户注意。 对于输入要求较高的应用，可以通过检查**PositionAccuracy**属性，从**高**准确度到**接近**准确性，从而为用户提供更多的 hitbox。
 * **无位置：** 尽管控制器可以在很长时间内正常运行，但有时系统也知道，甚至在目前不会有任何意义。 例如，刚刚打开的控制器可能从未被直观观察，或者用户可能会关闭控制器，然后由其他人选取。 在这种情况下，系统不会提供应用程序的任何位置，并且*TryGetPosition*将返回 false。
 
 ## <a name="common-unity-apis-inputgetbuttongetaxis"></a>常见 Unity Api （GetButton/GetAxis）
@@ -490,7 +490,7 @@ void OnDestroy()
 
 可在[此处](https://github.com/keluecke/MixedRealityToolkit-Unity/blob/master/External/Unitypackages/ThrowingStarter.unitypackage)找到如何实现引发的示例。 此示例遵循以下四个准则：
 * **使用控制器的*速度*（而不是位置**）。 在11月的 Windows 更新中，我们引入了["近似" 位置跟踪状态](motion-controllers.md#controller-tracking-state)下的行为更改。 在此状态下，只要我们认为它是高准确度，就会继续报告关于控制器的速度信息，这通常比位置长。
-* **合并控制器的*角度速度*** 。 此逻辑全部包含在 `GetThrownObjectVelAngVel` 静态方法的 `throwing.cs` 文件中，位于上面链接的包中：
+* **合并控制器的 *角度速度* 。** 此逻辑全部包含在 `GetThrownObjectVelAngVel` 静态方法的 `throwing.cs` 文件中，位于上面链接的包中：
    1. 在角度速度为 conserved 的情况下，引发的对象必须保持与抛出时相同的角度速度： `objectAngularVelocity = throwingControllerAngularVelocity;`
    2. 由于引发的对象很大范围可能不会成为手柄姿势的中心，因此它可能具有不同的速度，而控制器在用户的引用框架中。 以这种方式提供的对象速度的部分是围绕控制器原点的已抛出对象的质量的瞬间相切速度。 此相切速度是控制器角度速度的叉积，向量表示控制器原点与所引发对象的质量中心之间的距离。
     

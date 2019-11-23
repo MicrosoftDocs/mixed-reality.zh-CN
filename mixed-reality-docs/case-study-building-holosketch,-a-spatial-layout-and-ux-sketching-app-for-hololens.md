@@ -49,7 +49,7 @@ HoloSketch 是一种设备上的空间布局和适用于 HoloLens 的 UX 草图�
 
 HoloSketch 支持蓝牙鼠标/键盘、笔势和语音命令。
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 
 ### <a name="importance-of-experiencing-your-design-in-the-device"></a>在设备中体验设计的重要性
 
@@ -77,7 +77,7 @@ HoloSketch 支持蓝牙鼠标/键盘、笔势和语音命令。
 
 我们认为，此工具可让设计人员在真正的三维空间中探索解决方案，而不是在2D 中。 他们无需考虑为 UI 创建三维背景，因为在这种情况下，在 HoloLens 情况下，背景是真实世界。 HoloSketch 打开了一种方法，使设计人员能够轻松地在 HoloLens 上浏览3D 设计。
 
-## <a name="get-started"></a>“入门”，
+## <a name="get-started"></a>入门
 
 ### <a name="how-to-import-2d-images-jpgpng-into-holosketch"></a>如何将二维图像（JPG/PNG）导入 HoloSketch
 

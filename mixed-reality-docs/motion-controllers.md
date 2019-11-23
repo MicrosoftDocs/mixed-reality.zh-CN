@@ -40,7 +40,7 @@ ms.locfileid: "73437856"
     <col width="25%" />
 </colgroup>
 <tr>
-     <td><strong>具有</strong></td>
+     <td><strong>功能</strong></td>
      <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
      <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
      <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -69,7 +69,7 @@ Windows Mixed Reality 动作控制器使用沉浸式耳机中的传感器提供�
 * 控制
 * 触摸板
 
-## <a name="setup"></a>“安装程序”
+## <a name="setup"></a>安装
 
 ### <a name="before-you-begin"></a>开始之前
 
@@ -203,9 +203,9 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 <tr>
 <th> 跟踪状态 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高准确度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> “高” </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高准确度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精度（存在丢失的风险）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> “高” </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度（存在丢失的风险）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>准确度</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: orange"> 近似 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
@@ -218,7 +218,7 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 这些运动控制器跟踪状态的定义如下：
 * **高准确度：** 尽管运动控制器位于耳机的视图中，但它通常会根据视觉对象跟踪提供高准确性位置。 请注意，在暂时离开耳机传感器时，移动控制器（如用户的另一方面）将继续根据控制器的惯性跟踪来返回较短的长时间（例如，用户）自动.
 * **高精度（存在丢失的风险）：** 当用户将运动控制器移出耳机的视图边缘后，耳机不久就无法直观地跟踪控制器的位置。 此应用通过查看**SourceLossRisk**到1.0，来了解控制器何时到达此 FOV 边界。 此时，应用程序可以选择暂停需要稳定的高质量姿势流的控制器手势。
-* **近似准确性：** 如果控制器丢失了足够长时间的视觉跟踪，控制器的位置将降到近似准确性位置。 此时，系统会将控制器正文锁定到用户，在移动用户时跟踪用户的位置，同时仍然使用其内部方向传感器公开控制器的真正方向。 许多使用控制器指向和激活 UI 元素的应用程序可以正常运行，而无需用户注意。 输入要求更高的应用可通过检查**PositionAccuracy**属性，从**高**准确度到**接近**准确性，并为用户提供更宽松的 hitbox在此期间。
+* **近似准确性：** 如果控制器丢失了足够长时间的视觉跟踪，控制器的位置将降到近似准确性位置。 此时，系统会将控制器正文锁定到用户，在移动用户时跟踪用户的位置，同时仍然使用其内部方向传感器公开控制器的真正方向。 许多使用控制器指向和激活 UI 元素的应用程序可以正常运行，而无需用户注意。 对于输入要求较高的应用，可以通过检查**PositionAccuracy**属性，从**高**准确度到**接近**准确性，从而为用户提供更多的 hitbox。
 * **无位置：** 尽管控制器可以在很长时间内正常运行，但有时系统也知道，甚至在目前不会有任何意义。 例如，刚刚打开的控制器可能从未被直观观察，或者用户可能会关闭控制器，然后由其他人选取。 在这种情况下，系统不会提供应用程序的任何位置，并且**TryGetPosition**将返回 false。
 
 ## <a name="interactions-low-level-spatial-input"></a>交互：低级别空间输入
@@ -233,7 +233,7 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 
 ## <a name="composite-gestures-high-level-spatial-input"></a>复合手势：高级空间输入
 
-可在一段时间内跟踪[手手势](gaze-and-commit.md#composite-gestures)和运动控制器以检测一组通用的高级 **[复合手势](gaze-and-commit.md#composite-gestures)** 。 这使您的应用程序能够检测高级**分流**、**定格**、**操作**和**导航**手势，无论用户最终使用的是手还是控制器。
+这两 [另一方面手势](gaze-and-commit.md#composite-gestures) 和运动控制器可以跟踪随时间来检测常见套高级别的 **[复合手势](gaze-and-commit.md#composite-gestures)** 。 这使您的应用程序能够检测高级**分流**、**定格**、**操作**和**导航**手势，无论用户最终使用的是手还是控制器。
 
 ## <a name="rendering-the-motion-controller-model"></a>呈现运动控制器模型
 
@@ -251,7 +251,7 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
  
 ["" 中的整分辨率动作控制器线条图黑色 ""](images/motioncontrollers-black.png)
 
-## <a name="faq"></a>常见问题解答
+## <a name="faq"></a>常见问题
 
 ### <a name="can-i-pair-motion-controllers-to-multiple-pcs"></a>是否可以将运动控制器配对到多台电脑？
 
@@ -269,7 +269,7 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 
 不适用于通用 Windows 应用程序。
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>疑难解答
 
 请参阅发烧指南中的[运动控制器故障排除](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#motion-controllers)。
 

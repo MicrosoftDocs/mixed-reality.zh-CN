@@ -35,7 +35,7 @@ ms.locfileid: "73439898"
 </td></td><td>2019 年 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrtk-porting-guide>让现有应用程序准备好使用 HoloLens 2</a><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>从 HoloToolKit 移植到 MRTK API</a></td>
 </tr>
 <tr>
-<td>每月的开源开发人员模块（教程/示例应用）</td><td>2019 年 6 月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1>MR 学习基础模块</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1>Azure 空间锚，教程</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrlearning-speechsdk-ch1>Azure 语音服务教程</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrlearning-sharing(photon)-ch1>多用户功能教程</a></td>
+<td>每月的开源开发人员模块（教程/示例应用）</td><td>2019 年 7 月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1>MR 学习基础模块</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1>Azure 空间锚，教程</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrlearning-speechsdk-ch1>Azure 语音服务教程</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrlearning-sharing(photon)-ch1>多用户功能教程</a></td>
 </tr>
 <tr>
 <td>适用于 HoloLens 2 的 MRTK</td><td>2019年10月</td><td> <ul><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html>MRTK 文档</a><li><a href=https://github.com/Microsoft/MixedRealityToolkit-Unity/releases>MRTK release 2.1。0</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/mrtk-getting-started>Getting started with MRTK v2</a>（MRTK v2 入门）</td>
