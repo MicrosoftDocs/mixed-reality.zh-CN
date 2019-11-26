@@ -17,7 +17,7 @@ ms.locfileid: "74203329"
 
 在 Windows Mixed Reality 中，手动和[运动控制器](motion-controllers.md)输入都是通过空间输入 api 处理的，该空间输入 Api 位于[Windows. input](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial)命名空间中。 这使您能够轻松地处理常见的操作，例如在双手和运动控制器中**选择**"按相同方式"。
 
-## <a name="getting-started"></a>入门
+## <a name="getting-started"></a>即刻体验
 
 若要访问 Windows Mixed Reality 中的空间输入，请从 SpatialInteractionManager 接口开始。  可以通过调用[SpatialInteractionManager：： GetForCurrentView](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionmanager.getforcurrentview)访问此接口，通常在应用启动期间进行。
 
