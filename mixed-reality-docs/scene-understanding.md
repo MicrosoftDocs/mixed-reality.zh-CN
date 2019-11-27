@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: fdfe40571ac8893dcb3a3ba8fe3bb12707c800e4
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: bacec5e6a9bfda49d4ad6d3dd849156c9cc09add
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926920"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539705"
 ---
 # <a name="scene-understanding"></a>场景理解
 
@@ -19,7 +19,29 @@ ms.locfileid: "73926920"
 
 ![空间映射网格，标签平面表面，watertight 网格](images/SUScenarios.png)
 
-本文档旨在提供方案概述，并阐明场景理解和空间映射共享的关系。 有关场景理解如何工作以及如何为其开发的详细信息，请参阅[场景了解 SDK 概述](scene-understanding-SDK.md)文档。
+本文档旨在提供方案概述，并阐明场景理解和空间映射共享的关系。
+
+## <a name="developing-with-scene-understanding"></a>通过场景理解进行开发
+
+本文仅用于介绍运行时和概念的场景。 如果你正在寻找有关如何通过场景理解进行开发的文档，你可能对以下内容感兴趣：
+
+[场景理解 SDK 概述](scene-understanding-SDK.md)
+
+可以从示例 GitHub 站点下载场景理解示例应用：
+
+[场景理解示例](https://github.com/sceneunderstanding-microsoft/unitysample)
+
+如果你没有设备，并且想要访问示例场景来尝试场景了解，示例资产文件夹中有一些场景：
+
+[场景了解示例场景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+
+### <a name="sdk"></a>SDK
+
+如果你正在寻找有关如何针对场景 Understandiing 进行开发的特定详细信息，请参阅[场景了解 SDK 概述](scene-understanding-SDK.md)文档，了解有关场景理解如何工作的详细信息以及如何开发。
+
+
+### <a name="sample"></a>示例
+
 
 ## <a name="device-support"></a>设备支持
 

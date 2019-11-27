@@ -2,16 +2,16 @@
 title: 移植指南
 description: 分步演练介绍了如何将现有沉浸式应用程序移植到 Windows Mixed Reality。
 author: ChimeraScorn
-ms.author: cwhite
+ms.author: alexturn
 ms.date: 10/02/2018
 ms.topic: article
 keywords: 端口，移植，unity，中间件，引擎，UWP
-ms.openlocfilehash: 19835cd06680e374c92e6e454b11663481bc4a07
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 5d3debc9a810873f21a9f55a32061565d4ce75ae
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438334"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539512"
 ---
 # <a name="porting-guides"></a>移植指南
 

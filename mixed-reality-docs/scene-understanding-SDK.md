@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: f38145c4124a9f162e58188c6179dc29c22e864e
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
-ms.translationtype: HT
+ms.openlocfilehash: f365b0444576e03acd8dba194d7f8f24175e7bee
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491127"
+ms.locfileid: "74539526"
 ---
 # <a name="scene-understanding-sdk-overview"></a>场景理解 SDK 概述
 
@@ -124,7 +124,7 @@ SceneObjects 可以包含以下任一项：
 <tr><td>突破</td><td>楼层是可以进行审核的任何表面。 注意：楼梯不是楼层。 另请注意，该楼层假设有任何不可的表面，因此没有显式假设。 多层结构，斜坡等 .。。应将所有分类为楼层。</td></tr>
 <tr><td>顶角</td><td>房间的上部面。</td></tr>
 <tr><td>平台</td><td>一个大平面，可以在其上放置全息影像。 它们倾向于表示表、countertops 和其他大型水平曲面。</td></tr>
-<tr><td>World</td><td>标记不可知的几何数据的保留标签。 通过设置 EnableWorldMesh 更新标志生成的网格将归为 "世界"。</td></tr>
+<tr><td>世界</td><td>标记不可知的几何数据的保留标签。 通过设置 EnableWorldMesh 更新标志生成的网格将归为 "世界"。</td></tr>
 <tr><td>Unknown</td><td>尚未对此场景对象进行分类并为其分配一种类型。 这不应与背景混淆，因为此对象可能是任何内容，而系统刚刚没有提供足够强大的分类。</td></tr>
 </tr>
 </table>
@@ -265,7 +265,7 @@ foreach (var mesh in firstFloor.Meshes)
 
 在处理转换时，场景理解已精心尝试与传统的三维场景表示。 因此，每个场景都局限于一个坐标系统，这与大多数常见的3D 环境表示形式非常类似。 每个 SceneObjects 都提供它们在该坐标系中的位置和方向。 如果你的应用程序正在处理的场景会延伸单个源所提供的限制，则可以将 SceneObjects 定位到 SpatialAnchors，或生成多个场景并将它们合并在一起，但为了简单起见，我们假定 watertight 场景位于各自由 OriginSpatialGraphNodeId 定义的一个指定的本地化的原点。
 
-例如，以下 Unity 代码演示了如何使用 Windows 感知和 Unity Api 来协调坐标系。 若要[详细了解如何](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)获取与 unity 世界原点相对应的 SpatialCoordinateSystem，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之间进行转换的 `.ToUnity()` 扩展方法，请参阅[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 。
+例如，以下 Unity 代码演示了如何使用 Windows 感知和 Unity Api 来协调坐标系。 请参阅[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) ，了解有关 Windows 感知 api 的详细信息，以及[unity 中混合现实本机对象](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)的详细信息，以获取与 unity世界原点以及用于在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之间进行转换的 `.ToUnity()` 扩展方法。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -368,7 +368,20 @@ mesh.GetVertexPositions(positions);
 
 此时，你应该了解场景的核心构建基块了解运行时和 SDK。 大容量和复杂性在于访问模式、与3D 框架的交互，以及可以在这些 Api 之上编写的工具，以执行更高级的任务，例如空间规划、房间分析、导航、物理学等。我们想要在示例中捕获这些示例，这些示例应指导您正确地指导您的场景。 如果有我们未解决的示例/方案，请告知我们，我们将尝试记录/原型所需的内容。
 
+### <a name="where-can-i-get-sample-code"></a>在哪里可以获取示例代码？
+
+可在[Unity 示例页](https://github.com/sceneunderstanding-microsoft/unitysample)页面上了解 unity 的示例代码。 此应用程序将允许你与设备进行通信并呈现各种场景对象，或者，它允许你将序列化场景加载到电脑上，并允许你在不使用设备的情况下体验场景。
+
+### <a name="where-can-i-get-sample-scenes"></a>在哪里可以获取示例场景？
+
+如果你有 HoloLens2，则可以通过将 ComputeSerializedAsync 的输出保存到文件，并在方便时反序列化，来保存已捕获的任何场景。 
+
+如果你没有 HoloLens2 设备，但想要在场景理解的情况上播放，则需要下载预捕获的场景。 场景理解示例当前附带了序列化场景，可以在方便的时候下载和使用。 可在此处找到它们：
+
+[场景了解示例场景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+
 ## <a name="see-also"></a>另请参阅
 
 * [空间映射](spatial-mapping.md)
 * [场景理解](scene-understanding.md)
+* [Unity 示例](https://github.com/sceneunderstanding-microsoft/unitysample)

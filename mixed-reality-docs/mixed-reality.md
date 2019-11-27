@@ -6,14 +6,16 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality，全息，ar，vr，先生，xr，扩充现实，虚拟现实，说明
-ms.openlocfilehash: 601e42c03e827f0f531f9dcf937a0dd34b008dc3
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 65588902565ee0c5a1710f823311ccdecc23230e
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926776"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539551"
 ---
 # <a name="what-is-mixed-reality"></a>什么是混合现实？
+
+![在 HoloLens 2 上进行点和提交](images/02_MixedRealitySlashMixedReality.png)
 
 混合现实是将物理世界与数字世界相混合的结果。 混合现实是人类、计算机和环境交互方面的下一次演进，它解锁了此前受限于我们想象力的可能性。 这是通过计算机视觉、图形处理能力、显示技术和输入系统的进步来实现的。 术语*混合现实*1994 最初是通过 Paul Milgram 和 Fumio Kishino，"[一种混合现实视觉对象的分类](https://etclab.mie.utoronto.ca/people/paul_dir/IEICE94/ieice.html)。" 他们的白皮书介绍了*virtuality*的一种概念，重点介绍如何应用分类分类。 此后，混合现实的应用程序会超出显示范围。 它还包括环境输入、空间音质和位置。
 

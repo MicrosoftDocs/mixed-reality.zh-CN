@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 0595010a0b443d88e3f208b785903e3f6cc99295
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: f0a54bb591479dbe8ffa719cb5e6a9d846f67f9e
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926532"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539745"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3. 创建用户界面并配置混合现实工具包
 
@@ -29,7 +29,7 @@ ms.locfileid: "73926532"
 
 在本部分中，你将了解如何通过调整空间感知网格的显示选项来自定义和配置默认的 MRTK 配置文件。 调整 MRTK 配置文件中的任何设置或值时，也可以遵循这些原则。
 
-1. 从 "BaseScene" 层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，查找混合现实工具包脚本并选择活动配置文件，如下图所示。 双击该配置文件将其打开。
+1. 从 "BaseScene" 层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，查找混合现实工具包脚本并选择活动配置文件，如下图所示。 双击以打开它。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step1.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "73926532"
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step2b.png)
 
-    单击 "**克隆**" 创建 MRTK 配置文件的副本。 现在，可以使用自己的 MRTK 配置文件副本，自定义此配置文件中的任何设置。 还需要对此配置文件下嵌套的任何其他配置文件重复执行复制和自定义步骤，如后续步骤中所述。
+    单击 "**克隆**" 创建 MRTK 配置文件的副本。 使用自己的 MRTK 配置文件副本，现在可以自定义此配置文件中的任何设置。 还需要对此配置文件下嵌套的任何其他配置文件重复执行复制和自定义步骤，如后续步骤中所述。
 
 3. 禁用空间感知网格的可见性。 为此，请查找空间感知系统设置，如下图所示。 请确保已选中 "**启用空间感知系统**" 选项。 单击空间感知系统配置文件右侧的 "**克隆**" 按钮，以使用可自定义的副本替换默认配置文件。 在出现的弹出窗口中，按下的 "**克隆**" 按钮，如下图所示。
 
@@ -58,7 +58,7 @@ ms.locfileid: "73926532"
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step4a.png)
 
-    在这些选项中，你将看到处于灰色显示状态的默认混合现实空间网格观察程序（不可编辑）。 必须将此默认配置文件替换为可自定义的副本，以便能够对其进行编辑。 如前文所述，单击 "**克隆**" 按钮，然后在出现的弹出窗口中，按下的 "**克隆**" 按钮，如下图所示。
+    在这些选项中，你将看到处于灰色显示状态的默认混合现实空间网格观察程序（不可编辑）。 必须将此默认配置文件替换为可自定义的副本，以便能够对其进行编辑。 如前文所述，单击 "**克隆**" 按钮，然后在显示的弹出窗口中，按下的 "**克隆**" 按钮，如下图所示。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step4b.png)
 
@@ -99,13 +99,13 @@ ms.locfileid: "73926532"
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6b.png)
 
     >[!NOTE]
-    >一般情况下，Unity 中的 1 个单位大致相当于现实生活中的 1 米。 但也存在例外情况，例如，当对象是缩放对象的子级时。
+    >一般情况下，Unity 中的 1 个单位大致相当于现实生活中的 1 米。 此情况有例外;例如，当对象是缩放对象的子级时。
 
-5. 选中 "PressableButtonHoloLens2" 游戏对象后，在检查器中向下滚动，找到 "种不可交互" （脚本）组件的 "事件" 部分。
+5. 选中 "PressableButtonHoloLens2" 游戏对象后，向下滚动到检查器的底部，以找到种不可交互（脚本）组件的 "事件" 部分。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step4.png)
 
-6. 我们将修改现有事件，以便在推送时为按钮指定响应事件。 如您所见，事件接收器类型设置为 InteractableOnPressReceiver。 这样，在跟踪手按下该按钮时，该按钮会响应按键事件。 此时，您还应将交互筛选器更改为 "近到远处"。
+6. 我们将修改现有事件，以便在推送时为按钮指定响应事件。 如您所见，事件接收器类型设置为 InteractableOnPressReceiver。 这样，在跟踪手按下该按钮时，该按钮会响应按键事件。 此时，还应将交互筛选器更改为 "接近" 和 "远"。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step5.png)
 
@@ -117,17 +117,17 @@ ms.locfileid: "73926532"
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7b.png)
 
-    单击 "空白材料" 字段旁边的圆圈，打开 "选择材料" 弹出窗口。 MRTK 包括许多要从中进行选择的材料和颜色。 在此示例中，您将使用通过在 popup 搜索栏中键入 "MRTK_Standard" 找到的材料 MRTK_Standard_Cyan。 选择要填充材料字段的 MRTK_Standard_Cyan 材料。
+    单击 "空白材料" 字段旁边的圆圈，打开 "选择材料" 弹出窗口。 MRTK 包括许多要从中进行选择的材料和颜色。 在此示例中，您将使用通过在弹出搜索栏中键入 "MRTK_Standard" 找到的材料 MRTK_Standard_Cyan。 选择要填充材料字段的 MRTK_Standard_Cyan 材料。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7c.png)
 
     现已设置事件。按下按钮时，立方体会根据指定的材料改变颜色。 在本示例中，立方体将更改为青色。
 
-8. 接下来要设置释放操作，以便在释放按钮时，按钮会恢复其默认颜色。 重复上面的步骤7。 但这一次，OnRelease 事件而不是 OnPress MRTK_Standard_LightGray 材料，如下图所示。
+8. 接下来，您将设置 "发布" 操作，以便在发布时，按钮将恢复为其默认颜色。 重复上面的步骤7。 但这一次，OnRelease 事件而不是 OnPress MRTK_Standard_LightGray 材料，如下图所示。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step8.png)
 
-    现在，当按钮被按下时，它将更改为新的颜色蓝绿色。 按钮释放后，它会改回您指定的默认颜色（例如浅灰色）。按屏幕顶部的 "播放" 按钮在编辑器中试用，或将其部署到 HoloLens 2 进行测试。 若要了解有关编辑器内模拟的详细信息（包括手动模拟），请阅读[MRTK 的模拟文档页](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)。
+    现在，当按钮被按下时，它将变为新颜色;蓝. 当按钮被释放时，它将改回您指定的默认颜色（例如浅灰色）。按屏幕顶部的 "播放" 按钮在编辑器中试用，或将其部署到 HoloLens 2 进行测试。 若要了解有关编辑器内模拟的详细信息（包括手动模拟），请阅读[MRTK 的模拟文档页](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)。
 
 ### <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a>使用 MRTK 的网格对象集合创建按钮面板
 
@@ -155,7 +155,7 @@ ms.locfileid: "73926532"
 
     网格对象集合组件允许您在巧妙的行、列或网格中组织按钮或任何一组对象。 这是 MRTK 提供的构建基块之一，为你提供了一种快速简单的方法来创建具有吸引力的用户界面。
 
-5. 配置网格对象集合。 若要确保所有按钮都面向用户，请选择 "方向类型"。 然后选择 "正面朝上"，如下图所示。 接下来，更改单元格大小以设置按钮之间的间距。 对于单元宽度和单元高度，从0.05 个单位开始，按0.05 单位，如下图所示。 请确保 "距离" 设置为0，"行" 设置为1。 单击 "更新集合"。 场景将如下图所示。
+5. 配置网格对象集合。 若要确保所有按钮都面向用户，请选择 "方向类型"。 然后选择 "正面朝上"，如下图所示。 接下来，更改单元格大小以设置按钮之间的间距。 对于单元宽度和单元格高度，从0.05 个0.05 单位开始个单位，如下图所示。 请确保 "距离" 设置为0，"行" 设置为1。 单击 "更新集合"。 场景将如下图所示。
 
     ![Mrlearning Base Ch2 3Step5im](images/mrlearning-base-ch2-3-step5.png)
 
@@ -164,7 +164,7 @@ ms.locfileid: "73926532"
 
 ### <a name="adding-text-into-your-scene"></a>将文本添加到场景中
 
-本部分介绍如何将文本添加到混合现实体验以及如何编辑文本。 遵照[此处](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)的说明，确保已在 Unity 中启用 TextMeshPro（如果尚未启用）。
+本部分介绍如何将文本添加到混合现实体验以及如何编辑文本。 如果尚未这样做，请按照[此处](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)的说明操作，确保已在 Unity 中启用了 TextMeshPro。
 
 1. 选择 ButtonCollection 父对象，并右键单击该集合。 展开下拉菜单中的 "3D 对象"。 然后选择 "TextMeshPro"。 你应在按钮集合下看到一个 TextMeshPro 对象，如下图所示。
 
@@ -174,11 +174,11 @@ ms.locfileid: "73926532"
 
     ![第2课 Chapter4 步骤3](images/mrlearning-base-ch2-4-step3.png)
 
-3. 在 "检查器" 面板的 "TextMeshPro" 组件的 "文本" 字段中，键入 "Button Collection Text"，并将对齐属性调整为居中和顶端，如下图所示。
+3. 在 "检查器" 面板的 "TextMeshPro" 组件的 "文本" 字段中，键入 "Button Collection Text"，并将对齐属性调整为居中和靠上，如下图所示。
 
     ![第2课 Chapter4 步骤4](images/mrlearning-base-ch2-4-step4.png)
 
-4. 若要修改按钮对象的文本值，请单击任何按钮旁边的箭头将其展开，然后导航到 SeeItSayItLabel 对象。 导航到 TextMeshPro，你可以在其中编辑按钮的文本，如以上步骤中所述。
+4. 若要修改按钮对象的文本值，请单击任何按钮旁边的箭头将其展开，然后导航到 SeeItSayItLabel 对象。 导航到 TextMeshPro，在其中可以根据上述步骤中所述，编辑按钮的文本。
 
     ![Lesson2 Chapter4 Step5](images/Lesson2_Chapter4_Step5.JPG)
 

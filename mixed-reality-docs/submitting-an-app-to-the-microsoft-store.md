@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 应用程序，uwp，提交，提交，筛选器，元数据，系统要求，关键字，wack，证书，包，appx，销售情况
-ms.openlocfilehash: 63377239498319e84666ba0dbdbe36ce626901c5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f2eb4093a2bea51d8c39b94d23777e426810981e
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437438"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539607"
 ---
 # <a name="submitting-an-app-to-the-microsoft-store"></a>将应用提交到 Microsoft Store
 
@@ -76,6 +76,14 @@ Windows Mixed Reality 应用程序（适用于[HoloLens](hololens-hardware-detai
 </Dependencies>
 ```
 
+如果你的应用程序需要特定于使用**HoloLens 2**的功能，如目视跟踪或手动跟踪，则可以通过指定目标设备系列 "windows 版" 和 "MinVersion 10.0.18362.0" 来确保它面向 Windows 版本18362或更高版本。 
+
+```
+<Dependencies>
+   <TargetDeviceFamily Name="Windows.Holographic" MinVersion="10.0.18362.0" MaxVersionTested="10.0.18362.0" />
+</Dependencies>
+```
+
 如果你的应用是为**Windows Mixed Reality 沉浸式耳机**创建的，则可以通过指定目标设备系列 "，确保它仅安装在带 Windows 10 秋季创意者更新的 Windows 10 计算机上（Windows Mixed Reality 需要）"10.0.16299.0" 的 "Windows 桌面" 和 "MinVersion"。
 
 ```
@@ -119,6 +127,11 @@ Windows Mixed Reality 应用程序（适用于[HoloLens](hololens-hardware-detai
 如果有一个 Windows 通用包和一个 Windows. 全息包，并且 Windows 通用包具有较高的版本号，则 HoloLens 用户将下载更高版本的 Windows 通用包，而不是 Windows 全息版。软件包. 此问题有几种解决方案：
 1. 确保特定于平台的包（如 Windows. 全息）的版本号比平台无关包（如 Windows 通用）的版本号更高。
 2. 如果还具有特定于平台的包，请不要将应用打包为 Windows。通用包-改为将 Windows 通用包打包为要在其上提供的特定平台
+
+>[!NOTE]
+> 若要在 HoloLens （第一代）和 HoloLen 2 上支持你的应用，你将需要上传两个应用包;一个包含适用于 HoloLens 的 x86 （第一代），另一个包含用于 HoloLens 2 的 ARM 或 ARM64。 
+> 
+> 如果在包中同时包含 ARM 和 ARM64，则会在 HoloLens 2 上使用 ARM64 版本。 
 
 >[!NOTE]
 > 可以声明单个包，使其适用于多个目标设备系列
