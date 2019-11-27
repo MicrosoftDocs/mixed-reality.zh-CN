@@ -1,11 +1,11 @@
 ---
 title: OpenXR
-description: Build an engine using the portable OpenXR API standard and deploy it to Windows Mixed Reality and HoloLens 2 headsets.
+description: 使用可移植 OpenXR API 标准构建引擎，并将其部署到 Windows Mixed Reality 和 HoloLens 2 耳机。
 author: thetuvix
 ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
-keywords: OpenXR, Khronos, BasicXRApp, Mixed Reality OpenXR Developer Portal, DirectX, native, native app, custom engine, middleware
+keywords: OpenXR，Khronos，BasicXRApp，Mixed Reality OpenXR 开发人员门户，DirectX，本机，本机应用，自定义引擎，中间件
 ms.openlocfilehash: aa91918e20b4276b7453bae1a05ad18df9d8ab0e
 ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
 ms.translationtype: MT
@@ -15,215 +15,215 @@ ms.locfileid: "74491135"
 ---
 # <a name="openxr"></a>OpenXR
 
-OpenXR is an open royalty-free API standard from <a href="https://www.khronos.org/" target="_blank">Khronos</a> that provides engines native access to a wide range of devices from many vendors that span across the [mixed reality spectrum](mixed-reality.md).
+OpenXR 是来自<a href="https://www.khronos.org/" target="_blank">Khronos</a>的开放版税免费 API 标准，可提供引擎，可从多个供应商处跨[混合现实频谱](mixed-reality.md)对各种设备进行本机访问。
 
-You can develop using OpenXR on a HoloLens 2 or Windows Mixed Reality immersive headset on the desktop.  If you don't have access to a headset, you can use the HoloLens 2 Emulator or the Windows Mixed Reality Simulator instead.
+可以使用 OpenXR 在 HoloLens 2 或 Windows Mixed Reality 上的 Windows Mixed 耳机上进行开发。  如果你无权访问耳机，则可以改用 HoloLens 2 模拟器或 Windows Mixed Reality 模拟器。
 
-## <a name="why-openxr"></a>Why OpenXR?
+## <a name="why-openxr"></a>为什么要 OpenXR？
 
-With OpenXR, you can build engines that target both holographic devices (like HoloLens 2) that place digital content in the real world as if it were really there, as well as immersive devices (like Windows Mixed Reality headsets for desktop PCs) that hide the physical world and replace it with a digital experience.  OpenXR lets you write code once that's then portable across a wide range of hardware platforms.
+借助 OpenXR，你可以构建面向全息设备（如 HoloLens 2）的引擎，该引擎将数字内容置于真实世界中，就像它确实如此，还可以提供沉浸式设备（如台式计算机的 Windows Mixed Reality 耳机）世界，并将其替换为数字体验。  OpenXR 可让你编写代码，然后在各种硬件平台上对其进行迁移。
 
-The OpenXR API uses a loader that connects your application directly to your headset's native platform support.  This offers your end users maximum performance and minimum latency, whether they're using a Windows Mixed Reality headset or any other headset.
+OpenXR API 使用加载程序将应用程序直接连接到头戴显示设备的本机平台支持。  这为最终用户提供最大的性能和最小延迟，无论他们使用的是 Windows Mixed Reality 耳机还是其他任何耳机都是如此。
 
-## <a name="what-is-openxr"></a>What is OpenXR?
+## <a name="what-is-openxr"></a>什么是 OpenXR？
 
-The core OpenXR 1.0 API provides the base functionality you'll need to build an engine that can target both holographic devices like HoloLens 2 and immersive devices like Windows Mixed Reality headsets:
-* Systems + sessions
-* Reference spaces (view, local, stage)
-* View configurations (mono, stereo)
-* Swapchains + frame timing
-* Composition layers
-* Input and haptics
-* Graphics API + platform integration
+Core OpenXR 1.0 API 提供生成引擎的基本功能，你可以将其作为一种全息设备，如 HoloLens 2 和沉浸式设备，如 Windows Mixed Reality 耳机：
+* 系统 + 会话
+* 引用空间（视图、本地、暂存）
+* 查看配置（单声道、立体声）
+* 交换链 + 帧计时
+* 组合层
+* 输入和 haptics
+* 图形 API + 平台集成
 
-To learn about the OpenXR API, check out the OpenXR 1.0 <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">specification</a>, <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html" target="_blank">API reference</a> and <a href="https://www.khronos.org/files/openxr-10-reference-guide.pdf" target="_blank">quick reference guide</a>.  For more information, see the <a href="https://www.khronos.org/openxr/" target="_blank">Khronos OpenXR page</a>.
+若要了解有关 OpenXR API 的信息，请参阅 OpenXR 1.0<a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">规范</a>、 <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html" target="_blank">API 参考</a>和<a href="https://www.khronos.org/files/openxr-10-reference-guide.pdf" target="_blank">快速参考指南</a>。  有关详细信息，请参阅<a href="https://www.khronos.org/openxr/" target="_blank">Khronos OpenXR 页</a>。
 
-To target the full feature set of HoloLens 2, you'll also use cross-vendor and vendor-specific OpenXR extensions that enable additional features beyond the OpenXR 1.0 core, such as articulated hand tracking, eye tracking, spatial mapping and spatial anchors.  See the [Roadmap section](openxr.md#roadmap) section below for more information on the extensions coming later this year.
+若要面向一组完整的 HoloLens 2 功能，还将使用跨供应商和供应商特定的 OpenXR 扩展，这些扩展启用 OpenXR 1.0 核心之外的其他功能，例如已表述的手动跟踪、目视跟踪、空间映射和空间锚。  请参阅下面的 "[规划" 部分](openxr.md#roadmap)，了解有关今年晚些扩展的详细信息。
 
-Note that OpenXR is not itself a mixed reality engine.  Instead, OpenXR enables engines like Unity and Unreal to write portable code once that can then access the native platform features of the user's holographic or immersive device, regardless of which vendor built that platform.
+请注意，OpenXR 本身并不是混合现实引擎。  相反，OpenXR 使 Unity 和 Unreal 等引擎可以编写可移植代码一次，这样就可以访问用户的全息或沉浸式设备的本机平台功能，而不管哪个供应商构建了该平台。
 
-## <a name="getting-started-with-openxr-for-hololens-2"></a>Getting started with OpenXR for HoloLens 2
+## <a name="getting-started-with-openxr-for-hololens-2"></a>针对 HoloLens 2 的 OpenXR 入门
 
-To start developing OpenXR applications for HoloLens 2:
+开始开发适用于 HoloLens 2 的 OpenXR 应用程序：
 
-1. Set up a HoloLens 2 or follow the instructions to [install the HoloLens 2 emulator](using-the-hololens-emulator.md).
-1. Launch the Store app from within the device or emulator and ensure all apps are updated.  This will ensure that the OpenXR runtime on your HoloLens is updated to OpenXR 1.0.  If using the emulator, you'll want to consult the [emulator input instructions](using-the-hololens-emulator.md#basic-emulator-input) to help you use the Store app within the emulator.
+1. 设置 HoloLens 2 或按照说明[安装 hololens 2 模拟器](using-the-hololens-emulator.md)。
+1. 从设备或模拟器中启动应用商店应用，并确保更新所有应用。  这将确保你的 HoloLens 上的 OpenXR 运行时更新为 OpenXR 1.0。  如果使用模拟器，你将需要咨询[模拟器输入说明](using-the-hololens-emulator.md#basic-emulator-input)，以帮助你在模拟器内使用应用商店应用。
 
-## <a name="getting-started-with-openxr-for-windows-mixed-reality-headsets"></a>Getting started with OpenXR for Windows Mixed Reality headsets
+## <a name="getting-started-with-openxr-for-windows-mixed-reality-headsets"></a>OpenXR for Windows Mixed Reality 耳机入门
 
-To start developing OpenXR applications for immersive Windows Mixed Reality headsets:
+开始为沉浸式 Windows Mixed Reality 耳机开发 OpenXR 应用程序：
 
-1. Be sure you are running the Windows 10 May 2019 Update (1903), which is the minimum requirement for Windows Mixed Reality end users to run OpenXR applications.  If you're on an earlier version of Windows 10, you can upgrade to the May 2019 Update using the <a href="https://www.microsoft.com//software-download/windows10" target="_blank">Windows 10 Update Assistant</a>.  If you're not able to update your PC, it is also possible to [develop your OpenXR app using Windows 10 October 2018 Update (1809)](openxr.md#developing-on-windows-10-october-2018-update), although you may experience lower performance or other issues.
-2. Set up a Windows Mixed Reality headset or follow the instructions to [enable the Windows Mixed Reality simulator](using-the-windows-mixed-reality-simulator.md).  After setting up Windows Mixed Reality, Mixed Reality Portal will automatically install the Windows Mixed Reality OpenXR Runtime.  The Microsoft Store will then keep the runtime up to date.
-3. Make the Windows Mixed Reality OpenXR Runtime active by launching Mixed Reality Portal from the Start menu, clicking the ... menu in the lower-left and selecting "Set up OpenXR".<br>
-![Setting up OpenXR in the Mixed Reality Portal](images/mixed-reality-portal-set-up-openxr.png)
+1. 请确保运行 Windows 10 2019 更新（1903），这是 Windows Mixed Reality 最终用户运行 OpenXR 应用程序的最低要求。  如果你使用的是早期版本的 Windows 10，则可以使用<a href="https://www.microsoft.com//software-download/windows10" target="_blank">Windows 10 更新助手</a>升级到5月2019更新。  如果无法更新您的 PC，还可以[使用 Windows 10 10 月2018版（1809）开发 OpenXR 应用程序](openxr.md#developing-on-windows-10-october-2018-update)，不过您可能会遇到性能下降或其他问题。
+2. 设置 Windows Mixed Reality 耳机，或按照说明[启用 Windows Mixed reality 模拟器](using-the-windows-mixed-reality-simulator.md)。  设置 Windows Mixed Reality 后，混合现实门户会自动安装 Windows Mixed Reality OpenXR 运行时。  然后，Microsoft Store 会使运行时保持最新状态。
+3. 通过从 "开始" 菜单启动混合现实门户，并单击 .。。菜单，然后选择 "设置 OpenXR"。<br>
+![在混合现实门户中设置 OpenXR](images/mixed-reality-portal-set-up-openxr.png)
 
-If you ever need to make the Windows Mixed Reality OpenXR Runtime active again, repeat step 3.
+如果需要让 Windows Mixed Reality OpenXR 运行时再次激活，请重复步骤3。
 
 > [!NOTE]
-> The Windows Mixed Reality OpenXR Runtime will soon be set up automatically for all Windows Mixed Reality end users.
+> 系统很快会自动为所有 Windows Mixed Reality 最终用户设置 Windows Mixed Reality OpenXR 运行时。
 
-## <a name="getting-the-mixed-reality-openxr-developer-portal"></a>Getting the Mixed Reality OpenXR Developer Portal
+## <a name="getting-the-mixed-reality-openxr-developer-portal"></a>获取混合现实 OpenXR 开发人员门户
 
-To try out the Windows Mixed Reality OpenXR Runtime, you can install the <a href="https://www.microsoft.com/store/productId/9n5cvvl23qbt" target="_blank">[Mixed Reality OpenXR Developer Portal app</a>.  This app provides a demo scene that exercises various features of OpenXR, along with a System Status page that provides key information about the active runtime and the current headset.
+若要尝试 Windows Mixed Reality OpenXR 运行时，可以安装<a href="https://www.microsoft.com/store/productId/9n5cvvl23qbt" target="_blank">[Mixed Reality OpenXR 开发人员门户应用程序</a>。  此应用程序提供了演示 OpenXR 的各种功能的演示场景，同时提供了一个系统状态页，其中提供了有关活动运行时和当前耳机的关键信息。
 
-![Mixed Reality OpenXR Developer Portal app](images/mixed-reality-openxr-developer-portal.png)
+![混合现实 OpenXR 开发人员门户应用](images/mixed-reality-openxr-developer-portal.png)
 
-## <a name="building-a-sample-openxr-app"></a>Building a sample OpenXR app
+## <a name="building-a-sample-openxr-app"></a>生成示例 OpenXR 应用
 
-The <a href="https://github.com/Microsoft/OpenXR-SDK-VisualStudio/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a> project demonstrates a simple OpenXR sample with two Visual Studio project files, one for both a Win32 desktop app and one for a UWP HoloLens 2 app.  Because the solution contains a HoloLens UWP project, you'll need the [Universal Windows Platform development workload](install-the-tools.md#installation-checklist) installed in Visual Studio to fully open it.
+<a href="https://github.com/Microsoft/OpenXR-SDK-VisualStudio/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>项目演示了一个简单的 OpenXR 示例，其中包含两个 Visual Studio 项目文件，一个用于 Win32 桌面应用，另一个用于 UWP HoloLens 2 应用。  由于解决方案包含一个 HoloLens UWP 项目，因此需要在 Visual Studio 中安装[通用 Windows 平台开发工作负载](install-the-tools.md#installation-checklist)才能完全打开它。
 
-Note that while the Win32 and UWP project files are separate due to differences in packaging and deployment, the app code inside each project is 100% the same!
+请注意，虽然 Win32 和 UWP 项目文件是独立的，但由于打包和部署的不同，每个项目中的应用代码都是100%。
 
-After building an OpenXR Win32 desktop .EXE, you can use it with a VR headset on any desktop VR platform that supports OpenXR, whether it's a Windows Mixed Reality headset or any other headset.
+生成 OpenXR 的 Win32 桌面后。EXE，无论是 Windows Mixed Reality 耳机还是任何其他耳机，都可以在任何支持 OpenXR 的 desktop VR 平台上将它与 VR 耳机一起使用。
 
-After building an OpenXR UWP app package, you can [deploy that package](using-visual-studio.md) to either a HoloLens 2 device or the HoloLens 2 Emulator.
+生成 OpenXR UWP 应用包后，可以将[该包部署](using-visual-studio.md)到 hololens 2 设备或 Hololens 2 仿真器。
 
-## <a name="openxr-app-best-practices-for-hololens-2"></a>OpenXR app best practices for HoloLens 2
+## <a name="openxr-app-best-practices-for-hololens-2"></a>针对 HoloLens 2 的 OpenXR 应用最佳实践
 
-You can see an example of the best practices below in BasicXrApp's [OpenXRProgram.cpp](https://github.com/microsoft/OpenXR-SDK-VisualStudio/blob/master/samples/BasicXrApp/OpenXrProgram.cpp) file. The Run() function at the beginning captures a typical OpenXR app code flow from initialization to the event and rendering loop.
+可在 BasicXrApp 的[OpenXRProgram](https://github.com/microsoft/OpenXR-SDK-VisualStudio/blob/master/samples/BasicXrApp/OpenXrProgram.cpp)文件中查看以下最佳实践的示例。 开始时，Run （）函数从初始化到事件和呈现循环捕获典型的 OpenXR 应用代码流。
 
-### <a name="select-a-pixel-format"></a>Select a pixel format
+### <a name="select-a-pixel-format"></a>选择像素格式
 
-Always enumerate supported pixel formats using `xrEnumerateSwapchainFormats`, and choose the first color and depth pixel format from the runtime that the app supports, because that's what the runtime prefers. Note, on HoloLens 2, `DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` and `DXGI_FORMAT_D16_UNORM` is typically the first choice to achieve better rendering performance. This preference can be different on VR headsets running on a Desktop PC.  
+始终使用 `xrEnumerateSwapchainFormats`枚举受支持的像素格式，并从应用程序支持的运行时选择第一种颜色和深度像素格式，因为这是运行时首选的。 请注意，在 HoloLens 2 上，`DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` 和 `DXGI_FORMAT_D16_UNORM` 通常是实现更好的呈现性能的第一选择。 在台式计算机上运行的 VR 耳机上，此首选项可能有所不同。  
   
-**Performance Warning:** Using a format other than the primary swapchain color format will result in runtime post-processing which comes at a significant performance penalty.
+**性能警告：** 使用不是主存在颜色格式的格式将导致运行时后处理，这会产生严重的性能损失。
 
-### <a name="gamma-correct-rendering"></a>Gamma-correct rendering
+### <a name="gamma-correct-rendering"></a>伽玛正确的呈现
 
-Although this applies to all OpenXR runtimes, care must be taken to ensure the rendering pipeline is gamma-correct. When rendering to a swapchain, the render-target view format should match the swapchain format (e.g. DXGI_FORMAT_B8G8R8A8_UNORM_SRGB for both the swapchain format and the render-target view).
-The exception is if the app's rendering pipeline does a manual sRGB conversion in shader code, in which case the app should request an sRGB swapchain format but use the linear format for the render-target view (e.g. request DXGI_FORMAT_B8G8R8A8_UNORM_SRGB as the swapchain format but use DXGI_FORMAT_B8G8R8A8_UNORM as the render-target view) to prevent content from being double-gamma corrected.
+尽管这适用于所有 OpenXR 运行时，但必须注意确保呈现管道是伽玛正确的。 在呈现到存在时，呈现目标视图格式应与存在格式（例如，存在格式和呈现目标视图 DXGI_FORMAT_B8G8R8A8_UNORM_SRGB）匹配。
+例外情况是，应用程序的呈现管道在着色器代码中执行手动的 sRGB 转换，在这种情况下，应用程序应请求 sRGB 存在格式，但使用线性格式作为呈现目标视图（例如，request DXGI_FORMAT_B8G8R8A8_UNORM_SRGB存在格式，但使用 DXGI_FORMAT_B8G8R8A8_UNORM 作为呈现目标视图）以防止内容被更正为双精度。
 
-### <a name="use-a-single-projection-layer"></a>Use a single projection layer
+### <a name="use-a-single-projection-layer"></a>使用单个投影层
 
-HoloLens 2 has limited GPU power for applications to render content and a hardware compositor optimized for a single projection layer.
-Always using a single projection layer can help the application's framerate, hologram stability and visual quality.  
+HoloLens 2 为应用程序提供了有限的 GPU 能力，可让应用程序呈现内容和针对单个投影层优化的硬件组合器。
+始终使用单个投影层可帮助应用程序的帧速率、全息图稳定性和视觉质量。  
   
-**Performance Warning:** Submitting anything but a single protection layer will result in runtime post-processing which comes at a significant performance penalty.
+**性能警告：** 提交任何内容，但只有一个保护层会导致运行时后处理，这会产生严重的性能损失。
 
-### <a name="render-with-texture-array-and-vprt"></a>Render with texture array and VPRT
+### <a name="render-with-texture-array-and-vprt"></a>用纹理数组和 VPRT 进行呈现
 
-Create one `xrSwapchain` for both left and right eye using `arraySize=2` for color swapchain, and one for depth.
-Render the left eye into slice 0 and the right eye into slice 1.
-Use a shader with VPRT and instanced draw calls for stereoscopic rendering to minimize GPU load.
-This also enables the runtime's optimization to achieve the best performance on HoloLens 2.
-Alternatives to using a texture array, such as double-wide rendering or a separate swapchain per eye, will result in runtime post-processing which comes at a significant performance penalty.
+使用 `arraySize=2` 颜色存在和深度，为左右眼睛创建一个 `xrSwapchain`。
+将视觉眼睛渲染为切片0，将视觉眼睛转换为切片1。
+使用带有 VPRT 的着色器并使用实例化绘图调用 stereoscopic 渲染来最大程度地减少 GPU 负载。
+这还使运行时的优化能够在 HoloLens 2 上获得最佳性能。
+使用纹理数组的替代方法（如双重渲染或每个眼睛单独的存在）将导致运行时后处理，这会产生严重的性能损失。
 
-### <a name="render-with-recommended-rendering-parameters-and-frame-timing"></a>Render with recommended rendering parameters and frame timing
+### <a name="render-with-recommended-rendering-parameters-and-frame-timing"></a>使用建议的呈现参数和帧计时进行呈现
 
-Always render with the recommended view configuration width/height (`recommendedImageRectWidth` and `recommendedImageRectHeight` from `XrViewConfigurationView`), and always use `xrLocateViews` API to query for the recommended view pose, fov, and other rendering parameters before rendering.
-Always use the `XrFrameEndInfo.predictedDisplayTime` from the latest `xrWaitFrame` call when querying for poses and views.
-This allows HoloLens to adjust rendering and optimize visual quality for the person who is wearing the HoloLens.
+始终使用推荐的视图配置宽度/高度（`recommendedImageRectWidth` 和 `recommendedImageRectHeight` `XrViewConfigurationView`）进行呈现，并且始终使用 `xrLocateViews` API 在呈现之前查询建议的视图 fov、和其他呈现参数。
+查询姿势和视图时，请始终使用最新 `xrWaitFrame` 调用中的 `XrFrameEndInfo.predictedDisplayTime`。
+这允许 HoloLens 为正在戴上的 HoloLens 的人员调整呈现和优化视觉质量。
 
-### <a name="submit-depth-buffer-for-projection-layers"></a>Submit depth buffer for projection layers
+### <a name="submit-depth-buffer-for-projection-layers"></a>提交用于投影层的深度缓冲区
 
-Always use `XR_KHR_composition_layer_depth` extension and submit the depth buffer together with the projection layer when submitting a frame to `xrEndFrame`.
-This improves hologram stability by enabling hardware depth reprojection on HoloLens 2.
+提交帧到 `xrEndFrame`时，请始终使用 `XR_KHR_composition_layer_depth` 扩展，并随投影层一起提交深度缓冲区。
+这可以通过在 HoloLens 2 上启用硬件深度 reprojection 来改善全息影像的稳定性。
 
-### <a name="choose-a-reasonable-depth-range"></a>Choose a reasonable depth range
+### <a name="choose-a-reasonable-depth-range"></a>选择合理的深度范围
 
-Prefer a narrower depth range to scope the virtual content to help hologram stability on HoloLens.
-For example, the OpenXrProgram.cpp sample is using 0.1 to 20 meters.
-Use [reversed-Z](https://developer.nvidia.com/content/depth-precision-visualized) for a more uniform depth resolution.
-Note that, on HoloLens 2, using the preferred `DXGI_FORMAT_D16_UNORM` depth format will help achieve better frame rate and performance, although 16-bit depth buffers provide less depth resolution than 24-bit depth buffers.
-Therefore, following these best practices to make best use of the depth resolution becomes more important.
+首选较窄的深度范围来确定虚拟内容的作用域，以帮助在 HoloLens 上对虚拟目录进行稳定性。
+例如，OpenXrProgram 示例使用0.1 到20米。
+使用[反向-Z](https://developer.nvidia.com/content/depth-precision-visualized)以获得更统一的深度解析。
+请注意，在 HoloLens 2 上，使用首选 `DXGI_FORMAT_D16_UNORM` 深度格式将有助于获得更好的帧速率和性能，不过，16位深度缓冲区提供的分辨率低于24位深度缓冲区。
+因此，遵循这些最佳做法，充分利用深度解析变得更加重要。
 
-### <a name="prepare-for-different-environment-blend-modes"></a>Prepare for different environment blend modes
+### <a name="prepare-for-different-environment-blend-modes"></a>针对不同的环境混合模式做好准备
 
-If your application will also run on immersive headsets that completely block out the world, be sure to enumerate supported environment blend modes using `xrEnumerateEnvironmentBlendModes` API, and prepare your rendering content accordingly.
-For example, for a system with `XR_ENVIRONMENT_BLEND_MODE_ADDITIVE` such as the HoloLens, the app should use transparent as the clear color, while for a system with `XR_ENVIRONMENT_BLEND_MODE_OPAQUE`, the app should render some opaque color or some virtual room in the background.
+如果你的应用程序也将在完全堵塞世界的沉浸式耳机上运行，请确保使用 `xrEnumerateEnvironmentBlendModes` API 枚举支持的环境混合模式，并相应地准备呈现内容。
+例如，对于具有 `XR_ENVIRONMENT_BLEND_MODE_ADDITIVE` 的系统（如 HoloLens），应用应使用透明的颜色作为清晰的颜色，而对于具有 `XR_ENVIRONMENT_BLEND_MODE_OPAQUE`的系统，应用应在后台呈现一些不透明颜色或某些虚拟空间。
 
-### <a name="choose-unbounded-reference-space-as-applications-root-space"></a>Choose unbounded reference space as application's root space
+### <a name="choose-unbounded-reference-space-as-applications-root-space"></a>选择未绑定的引用空间作为应用程序的根空间
 
-Applications typically establish some root world coordinate space to connect views, actions and holograms together.
-Use `XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT` when the extension is supported to establish a [world-scale coordinate system](coordinate-systems.md#building-a-world-scale-experience), enabling your app to avoid undesired hologram drift when the user moves far (e.g. 5 meters away) from where the app starts.
-Use `XR_REFERENCE_SPACE_TYPE_LOCAL` as a fallback if the unbounded space extension doesn't exist.
+应用程序通常会建立一些根世界坐标空间，以便将视图、操作和全息连接在一起。
+当支持扩展以建立[全球范围的坐标系统](coordinate-systems.md#building-a-world-scale-experience)时，可使用 `XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT`，使应用能够避免在用户从应用启动的位置移到远处（如5米以外）时出现意外的全息影像偏移。
+如果未绑定的空间扩展不存在，请使用 `XR_REFERENCE_SPACE_TYPE_LOCAL` 作为回退。
 
-### <a name="associate-hologram-with-spatial-anchor"></a>Associate hologram with spatial anchor
+### <a name="associate-hologram-with-spatial-anchor"></a>将全息图与空间定位关联
 
-When using an unbounded reference space, holograms you place directly in that reference space [may drift as the user walks to distant rooms and then comes back](coordinate-systems.md#building-a-world-scale-experience).
-For hologram users place at a discrete location in the world, [create a spatial anchor](spatial-anchors.md#best-practices) using the `xrCreateSpatialAnchorSpaceMSFT` extension function and position the hologram at its origin.
-That will keep that hologram independently stable over time.
+使用未绑定的引用空间时，在该引用空间中直接放置的全息影像[可能会在用户进入远处房间后进入远处，并返回](coordinate-systems.md#building-a-world-scale-experience)。
+对于全息图用户在世界各地的不同位置，请使用 `xrCreateSpatialAnchorSpaceMSFT` extension 函数[创建空间锚](spatial-anchors.md#best-practices)，并将全息影像置于其原点。
+这会使全息图在一段时间内独立稳定。
 
-### <a name="support-mixed-reality-capture"></a>Support mixed reality capture
+### <a name="support-mixed-reality-capture"></a>支持混合现实捕获
 
-Although HoloLens 2's primary display uses additive environment blending, when the user initiates [mixed reality capture](mixed-reality-capture-for-developers.md), the app's rendering content will be alpha-blended with the environment video stream.
-To achieve the best visual quality in mixed reality capture videos, it's best to set the `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` in your projection layer's `layerFlags`.  
+尽管 HoloLens 2 的主显示器使用加法环境混合，但当用户启动[混合现实捕获](mixed-reality-capture-for-developers.md)时，应用的呈现内容将与环境视频流进行 alpha 混合。
+若要在混合现实中获得最佳视觉质量捕获视频，最好将 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` 设置在投影层的 `layerFlags`中。  
 
-**Performance Warning:** Omitting the `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` flag on the single projection layer will result in runtime post-processing which comes at a significant performance penalty.
+**性能警告：** 省略单个投影层上的 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` 标志将导致运行时后处理，这会产生严重的性能损失。
 
-### <a name="avoid-quad-layers"></a>Avoid quad layers
+### <a name="avoid-quad-layers"></a>避免出现四个层
 
-Rather than submitting quad layers as composition layers with `XrCompositionLayerQuad`, render the quad content directly into the projection swapchain.
+无需将四个层作为组合层提交 `XrCompositionLayerQuad`，而是直接将四个存在的内容呈现到投影中。
 
-**Performance Warning:** Providing additional layers beyond a single projection layer, such as quad layers, will result in runtime post-processing which comes at a significant performance penalty.
+**性能警告：** 除了多个层以外，提供其他层（如四层）将导致运行时后处理，这会产生严重的性能损失。
 
-## <a name="openxr-app-performance-on-hololens-2"></a>OpenXR app performance on HoloLens 2
+## <a name="openxr-app-performance-on-hololens-2"></a>HoloLens 2 上的 OpenXR 应用程序性能
 
-On HoloLens 2, there are a number of ways to submit composition data through `xrEndFrame` which will result in post-processing that will have a noticeable performance penalty.
-To avoid performance penalities, [submit a single `XrCompositionProjectionLayer`](#use-a-single-projection-layer) with the following characteristics:
-* [Use a texture array swapchain](#render-with-texture-array-and-vprt)
-* [Use the primary color swapchain format](#select-a-pixel-format)
-* [Set the texture-source-alpha blending flag](#support-mixed-reality-capture)
-* [Use the recommended view dimensions](#render-with-recommended-rendering-parameters-and-frame-timing)
-* Do not set the `XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT` flag
-* Set the `XrCompositionLayerDepthInfoKHR` `minDepth` to 0.0f and `maxDepth` to 1.0f
+在 HoloLens 2 上，有多种方法可通过 `xrEndFrame` 提交组合数据，这会导致后期处理，这将导致性能显著下降。
+若要避免性能 penalities，请提交具有以下特征的[单个 `XrCompositionProjectionLayer`](#use-a-single-projection-layer) ：
+* [使用纹理数组存在](#render-with-texture-array-and-vprt)
+* [使用主要颜色存在格式](#select-a-pixel-format)
+* [设置纹理源-alpha 混合标志](#support-mixed-reality-capture)
+* [使用建议的视图维度](#render-with-recommended-rendering-parameters-and-frame-timing)
+* 不设置 `XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT` 标志
+* 将 `XrCompositionLayerDepthInfoKHR` `minDepth` 设置为 0.0 f，并 `maxDepth` 设置为 1.0 f
 
-Additional considerations will result in better performance:
-* [Use the 16-bit depth format](#choose-a-reasonable-depth-range)
-* [Make instanced draw calls](#render-with-texture-array-and-vprt)
+其他注意事项将导致更好的性能：
+* [使用16位深度格式](#choose-a-reasonable-depth-range)
+* [进行实例化绘图调用](#render-with-texture-array-and-vprt)
 
 ## <a name="roadmap"></a>路线图
 
-The OpenXR specification defines an extension mechanism that enables runtime implementers to expose additional functionality beyond the [core features](openxr.md#what-is-openxr) defined in the <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">base OpenXR 1.0 specification</a>.
+OpenXR 规范定义了一种扩展机制，它使运行时实现程序能够公开超出<a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">基本 OpenXR 1.0 规范</a>中定义的[核心功能](openxr.md#what-is-openxr)的其他功能。
 
-There are three kinds of OpenXR extensions:
-* **Vendor extensions (e.g. MSFT):** Enables per-vendor innovation in hardware or software features.  Any runtime vendor can introduce and ship a vendor extension at any time.
-* **EXT extensions:** Cross-vendor extensions that multiple companies define and implement.  Groups of interested companies can introduce EXT extensions at any time.
-* **KHR extensions:** Official Khronos extensions ratified as part of a core spec release.  KHR extensions are covered by the same license as the core spec itself.
+有三种类型的 OpenXR 扩展：
+* **供应商扩展（例如 MSFT）：** 启用硬件或软件功能中的每个供应商创新。  任何运行时供应商随时都可以引入和交付供应商扩展。
+* **扩展插件：** 多个公司定义和实现的跨供应商扩展。  一组感兴趣的公司随时可以引入扩展扩展。
+* **KHR 扩展：** 正式 Khronos 扩展作为核心规范版本的一部分而被批准。  KHR 扩展与核心规范本身具有相同的许可证。
 
-By the end of the year, the Windows Mixed Reality OpenXR Runtime will support a set of MSFT and EXT extensions that bring the full set of HoloLens 2 features to OpenXR applications:
-* [Unbounded reference space (world-scale experiences)](coordinate-systems.md#building-a-world-scale-experience)
-* [Spatial anchors + storage](spatial-anchors.md)
-* [Hand articulation + hand mesh](hands-and-tools.md)
+一年结束后，Windows Mixed Reality OpenXR 运行时将支持一组 MSFT 和 EXT 扩展，这些扩展将整套 HoloLens 2 功能引入 OpenXR 应用程序：
+* [未绑定的参考空间（全球范围体验）](coordinate-systems.md#building-a-world-scale-experience)
+* [空间锚 + 存储](spatial-anchors.md)
+* [手型 articulation + 手写网格](hands-and-tools.md)
 * [眼睛凝视](eye-tracking.md)
-* [Secondary view configurations (Mixed Reality Capture)](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)
+* [辅助视图配置（混合现实捕获）](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)
 * [场景理解](scene-understanding.md)
-* Interop with Windows SDK APIs
+* 与 Windows SDK Api 互操作
 
-While some of these extensions may start out as vendor-specific MSFT extensions, Microsoft and other OpenXR runtime vendors are working together to design cross-vendor EXT or KHR extensions for many of these feature areas.  This will enable the code you write for those features to be portable across runtime vendors, just as with the core specification.
+尽管其中一些扩展可能会作为特定于供应商的 MSFT 扩展而开始，但 Microsoft 和其他 OpenXR 运行时供应商正在协同工作，为许多这些功能领域设计跨供应商 EXT 或 KHR 扩展。  这将使你为这些功能编写的代码可在运行时供应商之间移植，就像核心规范一样。
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>疑难解答
 
-Here are some troubleshooting tips for the Windows Mixed Reality OpenXR Runtime.  If you have any other questions about the <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 specification</a>, please visit the <a href="https://community.khronos.org/c/openxr" target="_blank">Khronos OpenXR Forums</a> or <a href="https://khr.io/slack" target="_blank">Slack #openxr channel</a>.
+下面是一些 Windows Mixed Reality OpenXR 运行时的故障排除提示。  如果你有关于<a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 规范</a>的任何其他问题，请访问<a href="https://community.khronos.org/c/openxr" target="_blank">Khronos OpenXR 论坛</a>或<a href="https://khr.io/slack" target="_blank">时差 #openxr 频道</a>。
 
-### <a name="developing-on-windows-10-october-2018-update"></a>Developing on Windows 10 October 2018 Update
+### <a name="developing-on-windows-10-october-2018-update"></a>在 Windows 10 10 月2018更新上进行开发
 
-If you're not able to [upgrade your development PC to the May 2019 Update](https://www.microsoft.com//software-download/windows10), you can set up your Windows 10 October 2018 Update (1809) PC for development by following one more step:
+如果无法将[开发电脑升级到 "2019 年5月更新版" 更新](https://www.microsoft.com//software-download/windows10)，可以通过执行以下一项操作来设置 Windows 10 10 月版2018更新（1809） PC 进行开发：
 
-1. Follow the steps above to get started with OpenXR on your desktop PC.
-1. To set the Windows Mixed Reality OpenXR Runtime as your system's active OpenXR runtime, install the [Windows Mixed Reality OpenXR Developer Compatibility Pack](https://aka.ms/openxr-compat).
+1. 按照上述步骤开始在台式计算机上 OpenXR。
+1. 若要将 Windows Mixed Reality OpenXR 运行时设置为系统的活动 OpenXR 运行时，请安装[Windows Mixed Reality OpenXR Developer 兼容包](https://aka.ms/openxr-compat)。
 
 > [!NOTE]
-> Although Windows 10 October 2018 Update (1809) can be used when developing your OpenXR applications, the Windows 10 May 2019 Update (1903) is the minimum requirement for end users to use OpenXR with Windows Mixed Reality.  You may experience lower performance or other issues when running your OpenXR app on the October 2018 Update.  It is strongly recommended that you upgrade your development PC to the Windows 10 May 2019 Update (1903).
+> 尽管在开发 OpenXR 应用程序时可以使用 Windows 10 十月2018更新（1809），但对于最终用户来说，Windows 10 可能2019更新（1903）是最终用户在 Windows Mixed Reality 中使用 OpenXR 的最低要求。  在 10 2018 月的更新中运行 OpenXR 应用程序时，可能会遇到性能下降或其他问题。  强烈建议将开发 PC 升级到 Windows 10 2019 更新（1903）。
 
-### <a name="openxr-app-not-starting-windows-mixed-reality"></a>OpenXR app not starting Windows Mixed Reality
+### <a name="openxr-app-not-starting-windows-mixed-reality"></a>OpenXR 应用未启动 Windows Mixed Reality
 
-If your OpenXR app is not starting Windows Mixed Reality when you run it, the Windows Mixed Reality OpenXR Runtime may not be set as the active runtime.  Be sure to follow the instructions above for [getting started with OpenXR for Windows Mixed Reality headsets](#getting-started-with-openxr-for-windows-mixed-reality-headsets) to make the runtime active.
+如果 OpenXR 应用在运行时未启动 Windows Mixed Reality，则 Windows Mixed Reality OpenXR 运行时可能不会设置为活动运行时。  请务必遵循上述说明，了解如何[开始 OpenXR For Windows Mixed Reality 耳机](#getting-started-with-openxr-for-windows-mixed-reality-headsets)，使运行时处于活动状态。
 
-You can also run the [Mixed Reality OpenXR Developer Portal](#getting-the-mixed-reality-openxr-developer-portal) for additional troubleshooting help around the state of the Windows Mixed Reality OpenXR Runtime on your system.
+还可以运行[混合现实 OpenXR 开发人员门户](#getting-the-mixed-reality-openxr-developer-portal)，以获取有关系统上 Windows Mixed Reality OpenXR 运行时状态的其他故障排除帮助。
 
-### <a name="mixed-reality-portal-not-showing-set-up-openxr-menu-item"></a>Mixed Reality Portal not showing "Set up OpenXR" menu item
+### <a name="mixed-reality-portal-not-showing-set-up-openxr-menu-item"></a>混合现实门户未显示 "设置 OpenXR" 菜单项
 
-Be sure you are running at least the Windows 10 October 2018 Update (1809).  If you're on an earlier version of Windows 10, you can upgrade to the May 2019 Update (1903) using the [Windows 10 Update Assistant](https://www.microsoft.com//software-download/windows10).
+请确保至少运行 Windows 10 十月2018更新（1809）。  如果使用的是早期版本的 Windows 10，则可以使用[windows 10 更新助手](https://www.microsoft.com//software-download/windows10)升级到2019更新（1903）。
 
-The "Set up OpenXR" menu item may not be available if you have an older version of the Mixed Reality Portal app.  Check for a [Mixed Reality Portal app update](https://www.microsoft.com/p/mixed-reality-portal/9ng1h8b3zc7m) to ensure you have the latest version.
+如果你的混合现实门户应用的版本较旧，"设置 OpenXR" 菜单项可能不可用。  检查[混合现实门户应用更新](https://www.microsoft.com/p/mixed-reality-portal/9ng1h8b3zc7m)以确保具有最新版本。
 
-Note that the "Set up OpenXR" menu item will not show up if the Windows Mixed Reality OpenXR Runtime is already installed and active.  You can install the [Mixed Reality OpenXR Developer Portal](#getting-the-mixed-reality-openxr-developer-portal) to determine the current status of the OpenXR runtime on your system.
+请注意，如果已安装并激活 Windows Mixed Reality OpenXR 运行时，则不会显示 "设置 OpenXR" 菜单项。  可以安装[混合现实 OpenXR 开发人员门户](#getting-the-mixed-reality-openxr-developer-portal)来确定系统上 OpenXR 运行时的当前状态。
 
 ## <a name="see-also"></a>另请参阅
 
-* <a href="https://www.khronos.org/openxr/" target="_blank">More information on OpenXR</a>
-* <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 specification</a>
-* <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html" target="_blank">OpenXR 1.0 API reference</a>
-* <a href="https://www.khronos.org/files/openxr-10-reference-guide.pdf" target="_blank">OpenXR 1.0 quick reference guide</a>
+* <a href="https://www.khronos.org/openxr/" target="_blank">有关 OpenXR 的详细信息</a>
+* <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 规范</a>
+* <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html" target="_blank">OpenXR 1.0 API 参考</a>
+* <a href="https://www.khronos.org/files/openxr-10-reference-guide.pdf" target="_blank">OpenXR 1.0 快速参考指南</a>
