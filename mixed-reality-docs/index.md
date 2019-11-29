@@ -8,12 +8,12 @@ ms.date: 08/24/2019
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目
-ms.openlocfilehash: 1a5e4fcbb7704db6df59db9d01bb72a5b153b576
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f6f72df63628bba590ac7af098d0b405e6721cc2
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438066"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539619"
 ---
 # <a name="get-started-with-mixed-reality"></a>混合现实入门
 
@@ -55,7 +55,7 @@ ms.locfileid: "73438066"
 如果不熟悉混合现实，则需知道它是什么并了解它的功能。
 
 
-![混合现实范围](images/RWtpZ1.jpeg)
+![虚拟蜂鸟与人手](images/01_MixedReality.png)
 
 ## <a name="what-is-mixed-reality"></a>什么是混合现实？
 
