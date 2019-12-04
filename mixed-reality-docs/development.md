@@ -8,17 +8,16 @@ ms.date: 08/27/2019
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合现实、开发、HoloLens、unity、directx
-ms.openlocfilehash: b37a9261f56b19edb3dde11cbeedc40a6e503e35
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 2c3416ffc1f3259c7be8f105a55427e3c29826fb
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435677"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539574"
 ---
 # <a name="learn-the-tools-and-architecture"></a>了解工具和体系结构
 
-
-![在混合现实学院中使用材料的团队](images/Development_Hero.png)
+![抽象三维球体](images/07_Development.png)
 
 ## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[扩展设计过程](case-study-expanding-the-design-process-for-mixed-reality.md)
 

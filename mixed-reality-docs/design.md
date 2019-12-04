@@ -8,17 +8,17 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目, 核心概念, 交互
-ms.openlocfilehash: 2bd2b3fef713bfe74f91714be100c7a02e46f8ac
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 92af4ddba96f659f0af812672599d4a90bf00224
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435729"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539605"
 ---
 # <a name="start-designing-and-prototyping"></a>开始设计和原型制作
 
 
-![核心概念](images/text_in_unity_viewingangle.jpg)
+![三维网格插图](images/03_Design.png)
 
 ## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[扩展设计过程](case-study-expanding-the-design-process-for-mixed-reality.md)
 
@@ -98,6 +98,10 @@ HoloLens 2 为开发人员提供了使用用户所注视对象的相关信息的
 ### <a name="clear-and-readable-typographytypographymd"></a>[清晰且易懂的版式](typography.md)
 就像2D 屏幕上的版式一样，目标应清晰且易懂。 由于混合现实有三个维度，文本和整体用户体验甚至可能会受到更大影响。
 
+<br>
+
+### <a name="ux-elements-for-the-mixed-realityapp-patterns-landingpagemd"></a>[用于混合现实的 UX 元素](app-patterns-landingpage.md)
+了解混合现实中空间交互和 UI 的构建基块。
 <br>
 
 
