@@ -8,14 +8,16 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程
-ms.openlocfilehash: 6041df2bbd5d55d8c72dfd07e40dca34e40fdac9
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: 66246e33bfd1b63630c07005661a744f8939de47
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491196"
+ms.locfileid: "74539653"
 ---
 # <a name="tutorials-and-sample-apps"></a>教程和示例应用
+
+![HoloLens 2 用户](images/08_Tutorials.png)
 
 目前，我们的所有教程和示例应用均基于 Unity。  在我们制作适用于其他引擎和平台的内容的过程中，“目录”中会列出相关的标题。
 
