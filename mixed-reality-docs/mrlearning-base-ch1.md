@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: d4e58e2c9236ba35b4394fd80cde3843edaa6f57
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: cae2398582d399f2bad56b354694f7e99ef8681c
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491199"
+ms.locfileid: "74539692"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化你的项目和第一个应用程序
 
@@ -61,7 +61,7 @@ ms.locfileid: "74491199"
 
 1. 下载[混合现实工具包](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [foundation 包版本 2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage) 并将其保存到电脑上的文件夹。
 
-2. 导入在上一步下载的混合现实工具包  。 一开始请单击“资产”   >   “导入” >   “自定义包”，然后选择 *Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage* 并将其打开，开始导入过程。 请等待几分钟，以便完成导入过程。
+2. 导入在上一步下载的混合现实工具包  。 一开始请单击“资产”   >   “导入” >   “自定义包”，然后选择 *Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage* 并将其打开，开始导入过程。 等待几分钟，以便该导入过程完成。
     ![第 1 课第 3 部分步骤 2a](images/mrlearning-base-ch1-3-step2a.JPG) ![第 1 课 第 3 部分步骤 2b](images/mrlearning-base-ch1-3-step2b.JPG)
 
 3. 在下一个弹出窗口中单击“导入”，开始将所选包导入 Unity 项目。  请确保选中所有项，如图所示。
