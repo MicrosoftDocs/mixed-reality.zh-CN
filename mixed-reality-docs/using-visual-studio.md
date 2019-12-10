@@ -7,12 +7,12 @@ ms.date: 10/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Visual Studio, HoloLens, 混合现实, Mixed Reality, 调试, 部署
-ms.openlocfilehash: fecd9db8777b6947c3ea19a02e428459c78c935b
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: b7e6a8d538670a53de20a2f3a2850639e756da1a
+ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491179"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830833"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>使用 Visual Studio 进行部署和调试
 
@@ -23,7 +23,7 @@ ms.locfileid: "74491179"
 
 ## <a name="prerequisites"></a>必备条件
 1. 有关安装说明，请参阅[安装工具](install-the-tools.md)。
-2. 在 Visual Studio 中创建新的通用 Windows 应用项目。  对于 HoloLens（第一代），请使用 Visual Studio 2017 或更高版本。  对于 HoloLens 2，请使用 Visual Studio 2019 16.2 或更高版本。 支持 C# 和 C++。 （或按说明[在 Unity 中生成应用](holograms-100.md)。）
+2. 在 Visual Studio 中创建新的通用 Windows 应用项目。  对于 HoloLens（第一代），请使用 Visual Studio 2017 或更高版本。  对于 HoloLens 2，请使用 Visual Studio 2019 16.2 或更高版本。 支持 C# 和 C++。 （或按说明[在 Unity 中创建应用](holograms-100.md)。）
 
 ## <a name="enabling-developer-mode"></a>启用开发人员模式
 
