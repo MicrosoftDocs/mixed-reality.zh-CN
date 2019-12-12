@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 9235452d9dce38e9d849821a694a5d4c710d8e87
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: e712fc2fd66b1add5b16b7dd8e6c37551aefe43a
+ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913319"
+ms.lasthandoff: 12/11/2019
+ms.locfileid: "75003206"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4. 设置意向和自然语言理解
 
-在本课程中，我们将探讨 Azure 语音服务的目的功能。 使用意向功能，我们可以使用 AI 功能的语音命令为应用程序提供支持，其中用户可以说出非特定的语音命令，并使系统能够理解其意图。 在本课程中，我们将设置 Azure LUIS 门户，设置我们的意向/实体/最谈话，发布我们的意图资源，将我们的 Unity 应用连接到我们的意图资源，并进行第一次意向 API 调用。
+在本课中，您将了解 Azure 语音服务的意图功能。 使用意向功能，您可以使用 AI 功能的语音命令为应用程序提供支持，用户可以在其中说出非特定的语音命令，并使系统理解其意图。 在本课程中，我们将设置 Azure LUIS 门户，设置我们的意向/实体/最谈话，发布我们的意图资源，将我们的 Unity 应用连接到我们的意图资源，并进行第一次意向 API 调用。
 
 ## <a name="objectives"></a>目标
 
@@ -25,7 +25,7 @@ ms.locfileid: "73913319"
 
 ## <a name="instructions"></a>说明
 
-1. 允许计算机启用听写，若要执行此操作，请转到 "Windows 设置"，选择 "隐私"，然后选择 "语音"，最后 "墨迹 & 键入"，然后打开语音服务和键入建议。
+1. 允许您的计算机启用听写。 为此，请转到 "Windows 设置"，选择 "隐私"，然后选择 "语音"，然后依次单击 "墨迹 & 键入" 和 "输入建议"。
 
     ![Module4Chapter4step1aim](images/module4chapter4step1aim.PNG)
 
@@ -33,7 +33,7 @@ ms.locfileid: "73913319"
 
     ![Module4Chapter4step1cim](images/module4chapter4step1cim.PNG)
 
-2. 登录到[Azure 门户](https://portal.azure.com/)。 登录后，单击 "创建资源"，搜索 "语言理解"，然后单击 "enter"。
+2. 登录到 [Azure 门户](https://portal.azure.com/)。 登录后，单击 "创建资源"，搜索 "语言理解"，然后单击 "Enter"。
 
     ![mrlearning-speech-ch4-1-step2 .png](images/mrlearning-speech-ch4-1-step2.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "73913319"
 
     ![mrlearning-speech-ch4-1-step3b .png](images/mrlearning-speech-ch4-1-step3b.png)
 
-4. 选择**创作位置**和**运行时位置**，出于本教程的目的，请使用 *（美国）美国西部*。 然后，选择 "**创作" 定价层**和 "**运行时" 定价层**的*F0 （每秒5个调用，每月10000个调用）* 。 最后，单击 "**创建**" 按钮以创建资源和新的资源组。
+4. 选择**创作位置**和**运行时位置**。 出于本教程的目的，请使用 *（美国） "美国西部*"，然后选择 "**创作" 定价层**和 "**运行时" 定价层**的*F0 （每秒5个调用，每月10000个调用）* 。 最后，单击 "**创建**" 按钮以创建资源，以及新资源组。
 
     ![mrlearning-speech-ch4-1-step4 .png](images/mrlearning-speech-ch4-1-step4.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "73913319"
 6. 使用相同的用户帐户登录到[语言理解智能服务（LUIS）](https://www.luis.ai/)门户，选择你的国家/地区，并同意使用条款。
 
     >[!NOTE]
-    >进入语言理解门户后，你可能需要登录（如果尚未登录），其凭据与 Azure 门户相同。 如果这是你第一次使用 LUIS，则需要向下滚动到 "欢迎" 页的底部，查找并单击 "创建 LUIS" 应用按钮。
+    >到达语言理解门户后，你可能需要登录（如果尚未登录），其凭据与 Azure 门户相同。 如果这是你第一次使用 LUIS，则需要向下滚动到 "欢迎" 页的底部，查找并单击 "创建 LUIS" 应用按钮。
 
 7. 登录后，单击 "我的应用" （如果当前不在该部分中）。 然后，可以单击 "创建新应用"。 将新应用命名为 "语音 SDK 学习模块"。 同时将 "语音 SDK 学习模块" 添加到 "说明" 字段。 然后单击 "完成"。
 
@@ -82,11 +82,11 @@ ms.locfileid: "73913319"
     >[!NOTE]
     >现在应有2个意向-"PressButton" 和 "None"。
 
-10. 在左侧的 "应用资产" 下，选择 "实体"，并单击 "创建新实体" 并将其命名为 "Action"，并将实体类型保留为 "Simple"。
+10. 在左侧的 "应用资产" 下，选择 "实体"，单击 "新建实体"，将其命名为 "Action"，并将实体类型保留为 "Simple"。
 
     ![Module4Chapter4step11im](images/module4chapter4step11im.PNG)
 
-11. 再次单击 "创建新实体" 并将其命名为 "Target"，并将实体类型保留为 "简单"。
+11. 再次单击 "创建新实体" 并将其命名为 "Target"。 将实体类型保留为 "简单"。
 
     ![Module4Chapter4step12im](images/module4chapter4step12im.PNG)
 
@@ -98,7 +98,7 @@ ms.locfileid: "73913319"
 
     ![Module4Chapter4step14aim](images/module4chapter4step14aim.PNG)
 
-    单击 "输入示例 ..." 工具箱. 然后输入以下最谈话：
+    单击 "输入示例 ..." 文本框中。 然后输入以下最谈话：
 
     ![Module4Chapter4step14bim](images/module4chapter4step14bim.PNG)
 
@@ -117,15 +117,15 @@ ms.locfileid: "73913319"
 17. 在文本框中输入 "选择启动按钮"。
 
     >[!NOTE]
-    >我们未将 "select" 添加为最谈话中任何一项操作，但如果单击 "检查"，则模型将 "select" 识别为 "操作" 实体。
+    >我们未将 "select" 添加为最谈话中任何一项的操作，但如果单击 "检查"，则模型被识别为 "选择" 作为操作实体。
     >
     > ![Module4Chapter4noteim](images/module4chapter4noteim.PNG)
 
-18. 现在，单击右上方的 "发布"。 确保下拉列表中显示 "生产"，并在弹出窗口中单击 "发布"。
+18. 单击右上方的 "发布"。 确保下拉列表中显示 "生产"，并在弹出窗口中单击 "发布"。
 
     ![Module4Chapter4step19im](images/module4chapter4step19im.PNG)
 
-19. 发布后，页面顶部会显示一个绿色栏。  单击绿色栏转到 "管理" 页。
+19. 发布后，页面顶部会显示一个绿色栏。 单击绿色条以查看 "管理" 页。
 
     ![Module4Chapter4step20im](images/module4chapter4step20im.PNG)
 
@@ -163,4 +163,4 @@ ms.locfileid: "73913319"
 
 ## <a name="congratulations"></a>祝贺
 
-在本课中，我们学习了如何添加 AI 功能的语音命令！ 即使您的程序没有 utter 精确的语音命令，也可以识别用户的意图。
+在本课中，您学习了如何添加 AI 功能的语音命令。 现在，你的程序可以识别用户的意图，即使它们不 utter 精确的语音命令也是如此！
