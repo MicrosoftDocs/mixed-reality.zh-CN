@@ -64,10 +64,13 @@
 ## UX 元素
 ### [概述](app-patterns-landingpage.md)
 ### 样式
-#### [颜色、光线和材料](color,-light-and-materials.md)
+#### [颜色、光线和材料](color-light-and-materials.md)
 #### [缩放](scale.md)
-#### [空间音效设计](spatial-sound-design.md)
 #### [版式](typography.md)
+### 空间音效
+#### [空间音效设计](spatial-sound-design.md)
+#### [案例研究：Holotour](case-study-spatial-sound-design-for-holotour.md)
+#### [案例研究：Roboraid](case-study-using-spatial-sound-in-roboraid.md)
 
 ### 控件和行为
 #### [光标](cursors.md)
@@ -126,6 +129,12 @@
 ###### [3.连接多个用户](mrlearning-sharing(photon)-ch3.md)
 ###### [4.与多个用户共享对象移动](mrlearning-sharing(photon)-ch4.md)
 ###### [5.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch5.md)
+##### 空间音频教程
+###### [1.在项目中添加空间音频](unity-spatial-audio-ch1.md)
+###### [2.将按钮交互声音空间化](unity-spatial-audio-ch2.md)
+###### [3.将视频中的音频空间化](unity-spatial-audio-ch3.md)
+###### [4.在运行时启用和禁用空间音频](unity-spatial-audio-ch4.md)
+###### [5.使用混响为空间音频添加距离感](unity-spatial-audio-ch5.md)
 #### HoloLens（第 1 代）开源示例应用
 ##### [元素周期表](periodic-table-of-the-elements.md)
 ##### [月亮模块](lunar-module.md)
@@ -208,7 +217,7 @@
 #### [空间映射](spatial-mapping-in-directx.md)
 #### [场景理解](scene-understanding-sdk.md)
 #### [共享空间定位点](shared-spatial-anchors-in-directx.md)
-#### [键盘、鼠标和控制器输入](keyboard,-mouse,-and-controller-input-in-directx.md)
+#### [键盘、鼠标和控制器输入](keyboard-mouse-and-controller-input-in-directx.md)
 #### [将 XAML 与全息应用配合使用](using-xaml-with-holographic-directx-apps.md)
 #### [QR 码跟踪](qr-code-tracking.md)
 ### [混合现实中的共享体验](shared-experiences-in-mixed-reality.md)
