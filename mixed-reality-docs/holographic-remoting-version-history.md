@@ -6,17 +6,26 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 9ff6a5f7594eb67dd4c1c8690812ab724cac9012
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: f051dbf24cab550470a312933ffb99e1ba595257
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926652"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181957"
 ---
 # <a name="holographic-remoting-version-history"></a>全息远程处理版本历史记录
 
 > [!IMPORTANT]
 > 本指南特定于 HoloLens 2 上的全息远程处理。
+
+## 版本2.0.18.0 （2019年12月17日）<a name="v2.0.18"></a>
+* 添加了对 HolographicViewConfiguration 的支持： https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration
+* 修复了导致崩溃的各种 bug。
+* 修复了一个 bug，HolographicCamera 需要 HolographicSpace CameraAdded 回调才能接受，并将其显示为 HoloraphicFrame 中的已添加照相机。
+
+## 版本2.0.16 （2019年11月11日）<a name="2.0.16"></a>
+* 修复了 QR 代码跟踪中的死锁。
+* 修复了在主线程中阻止等待的 unhandeled 异常。
 
 ## 版本2.0.14 （2019年10月26日）<a name="v2.0.14"></a>
 * 支持新的 PerceptionDevice Api （Windows 10 11 月2019更新）。
