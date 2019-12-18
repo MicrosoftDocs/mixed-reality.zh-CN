@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合现实、手势、交互、设计
-ms.openlocfilehash: 417811fff9d98e459dc0047d46ea065acfced4ef
-ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
+ms.openlocfilehash: 9cfee1104cb9b8135dae51bea73850062fadd25c
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064242"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181997"
 ---
 # <a name="system-gesture"></a>系统手势
 
@@ -27,13 +27,13 @@ ms.locfileid: "74064242"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>具有</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
     </tr>
      <tr>
-        <td>布隆</td>
+        <td>开花</td>
         <td>✔️</td>
         <td>❌</td>
         <td>❌</td>
@@ -52,7 +52,7 @@ ms.locfileid: "74064242"
     </tr>
 </table>
 
-## <a name="bloom"></a>布隆
+## <a name="bloom"></a>开花
 若要在 HoloLens 中显示 "开始" 菜单（第一代），我们设计了 "布隆"，这是一个模拟花朵开花的符号手势。 这是 surefooted 交互的独特之处，易于执行，并可快速回调。 若要在 HoloLens （第一代）上执行布隆手势，请将掌托在一起，并将其放在一起，然后将手指向外伸展。
 
 :::row:::
@@ -70,7 +70,7 @@ ms.locfileid: "74064242"
 
 ---
 
-## <a name="wrist-button"></a>手腕按钮
+## <a name="start-gesture"></a>开始手势
 在 HoloLens 2 中，我们将布隆手势替换为虚拟手腕按钮，该按钮允许更多的 instinctual 交互，无需其他教学。 通过向用户显示手腕上的按钮，用户可以以直观的方式进行访问，并将其与他人一起使用。
 
 :::row:::
@@ -89,8 +89,15 @@ ms.locfileid: "74064242"
 ---
 
 
-## <a name="eye-gaze-and-palm-up-pinch"></a>眼睛和掌上
-我们还为 HoloLens 2 中的轻松访问设计了一个直通解决方案。 此手势要求用户可以注视手腕按钮，然后使用同一手来使用拇指和食指执行手掌紧。<br>
+## <a name="one-handed-start-gesture"></a>单向开始手势
+
+> [!IMPORTANT]
+> 对于要运行的单移交开始手势：
+>
+> 1. 您必须更新到2019年11月更新版（版本18363.1039）或更高版本。
+> 1. 您的眼睛必须在设备上校准，以便目视跟踪能够正常工作。 查看 "开始" 图标时，如果看不到轨道点，则不会在设备上校准眼睛。
+
+您还可以只用一只手执行开始手势。 为此，请在你的掌上，为你的掌上，查看内部手腕上的 "**开始" 图标**。 **保持您的眼睛，同时**将您的拇指和食指汇聚在一起。<br>
 :::row:::
     :::column:::
         ![手腕按钮已准备好](images/wrist-button-ready.png)<br>

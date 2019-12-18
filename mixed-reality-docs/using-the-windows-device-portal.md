@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 设备门户、HoloLens
-ms.openlocfilehash: 972fe2e828a0a054925a45b4f6965c668f6da078
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 9bb8116330d88c532b955ef497d29fe98c86fddb
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926743"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182017"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 设备门户
 
@@ -30,8 +30,8 @@ ms.locfileid: "73926743"
 ## <a name="setting-up-hololens-to-use-windows-device-portal"></a>将 HoloLens 设置为使用 Windows 设备门户
 
 1. 打开 HoloLens 的电源，然后戴上设备。
-2. 执行[绽放](system-gesture.md#bloom)手势来启动主菜单。
-3. 查看 "**设置**" 磁贴，然后执行 "[空气分流](gaze-and-commit.md#composite-gestures)" 手势。 再执行一次点击，将应用放在环境中。 在放置“设置”应用后，将启动该应用。
+2. 在 HoloLens 上执行 HoloLens2 或[布隆](https://docs.microsoft.com/hololens/hololens1-basic-usage#open-the-start-menu-with-bloom)的[启动笔势](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture)（第一代）以启动主菜单。 
+3. 查看 "**设置**" 磁贴，并在 hololens （第一代）上执行 "[轻敲](https://docs.microsoft.com/hololens/hololens1-basic-usage#select-holograms-with-gaze-and-air-tap)" 手势，或在 hololens 2 上通过[触摸或使用手](https://docs.microsoft.com/hololens/hololens2-basic-usage)中选择它。 
 4. 选择“更新”菜单项。
 5. 选择“面向开发人员”菜单项。
 6. 启用“开发人员模式”。

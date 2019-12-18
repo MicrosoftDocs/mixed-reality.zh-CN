@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 呈现，全息影像
-ms.openlocfilehash: 9c32d8ddf5a1fb9e9d991211756ba1306f4d3fa9
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 8984a16d92ed2f2b72d99e103eaae81b8eba742b
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926862"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182027"
 ---
 # <a name="rendering"></a>渲染
 
@@ -27,7 +27,7 @@ ms.locfileid: "73926862"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>具有</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -83,17 +83,21 @@ Windows Mixed Reality 引入了**全息相机**的概念。 全息相机类似�
 在三维中呈现医学面向 mri 或工程量时，通常使用[卷渲染](volume-rendering.md)技术。 这种方法在混合现实中尤其有趣，用户可以自然地从不同的角度观看此类卷，只需移动其头。
 
 ## <a name="supported-resolutions-on-hololens-1st-gen"></a>HoloLens 上支持的解决方法（第一代）
-> [!NOTE]
-> 即将推出更多更新。 [查看更新列表](release-notes-april-2018.md)
 
-* 当前支持的最大分辨率为[视图配置](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)的属性。 默认情况下，默认情况下，HoloLens 设置为 "720p （1268x720）" 的最大分辨率。
-* 支持的视区大小最低为720p 的50%，即360p （634x360）。 在 HoloLens 上，这是0.5 的 ViewportScaleFactor。
-* 由于视觉降级，**不建议**使用小于540p 的任何内容，但可以使用它来标识以像素填充速率表示的瓶 necks。
+* 最大视区大小是[HolographicDisplay](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicdisplay)的属性。 默认情况下，默认情况下，默认情况下，默认情况下，默认情况下，将设置为720p （1268x720）。
+* 可以通过在 HolographicCamera 上设置 ViewportScaleFactor 来更改视区大小。 此比例因子在0到1的范围内。
+* HoloLens （第一代）上支持的最小视区大小为720p 的50%，即360p （634x360）。 这是0.5 的 ViewportScaleFactor。
+* 由于视觉降级，不建议使用小于540p 的任何内容，但可以使用它来识别像素填充率的瓶颈。
 
 ## <a name="supported-resolutions-on-hololens-2"></a>HoloLens 2 上支持的解决方法
 
-> [!NOTE]
-> 即将[推出](news.md)特定于 HoloLens 2 的更多指导。
+* 支持的当前和最大呈现器目标大小是[视图配置](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)的属性。 默认情况下，HoloLens 2 设置为1440x936 的最大呈现目标大小。
+* 应用可以通过调用 RequestRenderTargetSize 方法来更改呈现器目标缓冲区的大小，以请求新的呈现目标大小。 将选择一个新的呈现目标大小，该大小满足或超过请求的呈现目标大小。 此 API 更改呈现器目标缓冲区的大小，这需要在 GPU 上重新分配内存。 这包括：呈现目标大小可缩小以减少 GPU 上的内存压力，不应以高频率调用此方法。
+* 应用仍可更改视区大小，其方式与为 HoloLens 1 的操作方式相同。 这不会导致内存在 GPU 上重新分配，因此它可以在很高的频率下进行更改，但不能用于减少 GPU 上的内存压力。
+* HoloLens 2 上支持的最小视口大小为634x412。 当使用的是默认呈现器目标大小时，这是大约0.44 的 ViewportScaleFactor。
+* 如果提供的呈现目标大小小于受支持的最小视区大小，则会忽略视区缩放系数。
+* 由于视觉降级，不建议使用小于540p 的任何内容，但可以使用它来识别像素填充率的瓶颈。
+
 
 
 ## <a name="see-also"></a>另请参阅

@@ -3,15 +3,15 @@ title: 全息远程处理故障排除和限制
 description: HoloLens 2 上的全息远程处理的故障排除步骤。
 author: FlorianBagarMicrosoft
 ms.author: flbagar
-ms.date: 10/28/2019
+ms.date: 12/17/2019
 ms.topic: article
 keywords: Windows Mixed Reality，全息影像，全息远程处理，远程渲染，网络渲染，HoloLens，远程影像，故障排除，帮助
-ms.openlocfilehash: 7b438d9169c9306e0056655e561c04b62b1662cf
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 05333c8911010945a543cf603b9925eb30c841db
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434233"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181967"
 ---
 # <a name="holographic-remoting-troubleshooting"></a>全息远程处理疑难解答
 
@@ -31,13 +31,23 @@ ms.locfileid: "73434233"
 [Windows.Graphics.Holographic](https://docs.microsoft.com/uwp/api/windows.graphics.holographic)
 
 * [HolographicCamera.ViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.viewconfiguration)
+  - 支持从版本[2.0.18](holographic-remoting-version-history.md#v2.0.18)开始
+  - 在以前的版本中，始终会引发错误。
+* [HolographicViewConfiguration.RequestRenderTargetSize](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration.requestrendertargetsize#Windows_Graphics_Holographic_HolographicViewConfiguration_RequestRenderTargetSize_Windows_Foundation_Size_)
+  - 不会失败，但不会更改呈现目标大小。
 * [HolographicCameraPose.OverrideProjectionTransform](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideprojectiontransform)
 * [HolographicCameraPose.OverrideViewport](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideviewport)
 * [HolographicCameraPose.OverrideViewTransform](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideviewtransform)
 * [HolographicCameraRenderingParameters.CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)
   - 不会失败，但深度缓冲区将不会进行远程处理。
 * [HolographicDisplay.TryGetViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicdisplay.trygetviewconfiguration)
+  - 查询 HolographicViewConfigurationKind PhotoVideoCamera 将始终返回 ```nullptr```。
+  - 支持从版本[2.0.18](holographic-remoting-version-history.md#v2.0.18)开始
+  - 在以前的版本中，始终会引发错误。
 * [HolographicSpace.CreateFramePresentationMonitor](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createframepresentationmonitor)
+* [HolographicDisplay. Adaptivesourcemanager.getdefault](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicdisplay.getdefault#Windows_Graphics_Holographic_HolographicDisplay_GetDefault)
+  - 如果在建立连接之前调用，将报告错误。
+
 
 [Windows.Perception.Spatial](https://docs.microsoft.com/uwp/api/windows.perception.spatial)
 

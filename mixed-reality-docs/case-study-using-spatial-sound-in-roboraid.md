@@ -6,16 +6,16 @@ ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，HoloLens，RoboRaid，空间音效
-ms.openlocfilehash: 9be5c461c1546d241e559f6b2f874656a29b019a
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 1482c914d261cae698a1460873b217b0683cd16b
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436496"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181937"
 ---
 # <a name="case-study---using-spatial-sound-in-roboraid"></a>案例研究-在 RoboRaid 中使用空间音效
 
-Charles Sinex，Microsoft HoloLens 体验团队的音频主管，讨论了他在创建[RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)的音频时遇到的独特挑战，这是一个混合现实的第一人称射击。
+本文介绍 Microsoft HoloLens 体验团队在创建[RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)的音频时遇到的独特挑战，这是一种混合现实的第一员射击。
 
 ## <a name="the-tech"></a>技术人员
 
@@ -35,7 +35,7 @@ Charles Sinex，Microsoft HoloLens 体验团队的音频主管，讨论了他在
 
 Dodging mechanic 是 RoboRaid 中游戏的最重要的一个方面，也是我们认为在 HoloLens 体验中真正唯一的东西。 这种情况下，我们想让 dodges 对播放机取得成功。 在开发中，我们的 Doppler "whizz" 听起来非常引人注目。 最初，我的计划是使用循环并使用卷、间距和筛选器对其进行实时操作。 此操作的实现非常复杂。因此，在提交资源以实际生成之前，我们使用 Doppler 效果融入的资产创建了一种廉价的原型，只是为了找出这种情况。 我们的出色开发人员使得这一 whizz 的资产在玩家的耳内 projectile 之前会播放一则相当于0.7 秒的时间，结果感觉非常惊人！ 不用说，我们借助了更复杂的解决方案并实现了原型。
 
-\* * （如果想要详细了解如何创建包含 Doppler 效果的音频资产，请[在2分钟内](https://designingsound.org/2010/02/charles-deenen-special-100-whooshes-in-2-minutes/)查看 Charles Deenan 名为 100 Whooshes 的文章。）*
+*（有关创建带有内置 Doppler 效果的音频资产的详细信息，请参阅[100 Whooshes In 2 分钟](http://designingsound.org/2010/02/26/charles-deenen-special-100-whooshes-in-2-minutes/)。）*  
 <br>
 ![成功 dodging 敌人的 projectile 通过一种满意的 whizz 来奖励玩家。](images/successful-dodge-roboraid-500px.jpg)
 
@@ -67,30 +67,23 @@ HoloLens 扬声器很小，并且非常适合于设备的需求，因此您无�
 
 我希望音频专业人员在处理 RoboRaid 时，会在其自己的应用上工作时有很多乐趣和惊喜。 我看不到（听不到！）在 Microsoft 以外的任何人都会提出的 HoloLens。
 
-## <a name="do-it-yourself"></a>自行完成
+## <a name="do-it-yourself"></a>自制
 
 我发现了一个使某些事件（如爆炸）听起来更大（例如，填满房间）的技巧，就是为该空间声音创建单声道资产，并将其与2D 立体声资产混合，以三维方式播放。 它确实会进行一些优化，因为立体声内容中的信息过多会降低 mono 资产的方向。 但是，若要获得平衡，将会产生非常大的声音，让玩家按正确的方向。
 
 你可以使用以下音频资产自行尝试：
 
-**方案1**
-1. 下载[roboraid_enemy_explo_mono](images/roboraid-enemy-explo-mono.wav)并将其设置为通过空间音效播放，并将其分配给某个事件。
-2. 下载[roboraid_enemy_explo_stereo](images/roboraid-enemy-explo-stereo.wav)并将其设置为2d 立体声中的播放，并将其分配给上述相同的事件。 由于这些资产被规范化为 Unity，因此，这两个资产的衰减量使其不会被剪裁。
+**应用场景 1**
+1. 下载[roboraid_enemy_explo_mono .wav](images/roboraid-enemy-explo-mono.wav) ，并将其设置为通过空间音效播放，并将其分配给某个事件。
+2. 下载[roboraid_enemy_explo_stereo .wav](images/roboraid-enemy-explo-stereo.wav) ，并将其设置为在2d 立体声中播放，并将其分配给上述相同的事件。 由于这些资产被规范化为 Unity，因此，这两个资产的衰减量使其不会被剪裁。
 3. 同时播放两个声音。 四处移动您的头，看看它的工作方式。
 
-**方案2**
-1. 下载[roboraid_enemy_explo_summed](images/roboraid-enemy-explo-summed.wav)并将其设置为通过空间声音播放并分配给某个事件。
+**应用场景 2**
+1. 下载[roboraid_enemy_explo_summed .wav](images/roboraid-enemy-explo-summed.wav) ，并将其设置为通过空间音效播放并分配到事件。
 2. 单独播放此资产，然后将其与方案1中的事件进行比较。
 3. 尝试对 mono 和立体声文件进行不同的平衡。
 
-## <a name="about-the-author"></a>关于作者
 
-<table style="border-collapse:collapse">
-<tr>
-<td style="border-style: none" width="60px"><img alt="Picture of Charles Sinex" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>Charles Sinex</b><br>音频工程师 @Microsoft</td>
-</tr>
-</table>
 
 ## <a name="see-also"></a>另请参阅
 * [空间音效](spatial-sound.md)
