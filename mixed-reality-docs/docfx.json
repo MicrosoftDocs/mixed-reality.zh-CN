@@ -44,11 +44,18 @@
       "ms.technology": "mr-dev",
       "ms.date": "3/21/2018",
       "keywords": "mixed reality, windows mixed reality, hololens, mr, vr, ar, xr, virtual reality, augmented reality, holographic, develop, design, documentation",
-      "searchScope": ["MixedReality"],
+      "searchScope": [
+        "MixedReality"
+      ],
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/mixed-reality",
       "feedback_product_url": "https://docs.microsoft.com/windows/mixed-reality/give-us-feedback",
-      "disable_contribution_on_translation_quality": ["MT"]
+      "disable_contribution_on_translation_quality": [
+        "MT",
+        "MTE75",
+        "MTE95",
+        "Blank"
+      ]
     },
     "fileMetadata": {},
     "template": [],
