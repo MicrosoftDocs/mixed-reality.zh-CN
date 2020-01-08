@@ -7,16 +7,16 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 视线, 视线定位, 交互, 设计, 手动近距, HoloLens
-ms.openlocfilehash: e0b0e6273917df071f49eb0108039ebe204bbc12
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: d263c84d306a2ece3783c2e7fb0e3f599dec49eb
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105940"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694171"
 ---
 # <a name="direct-manipulation-with-hands"></a>用手直接操作
 
-![按钮](images/UX/UX_Hero_Manipulation.jpg)
+![Button](images/UX/UX_Hero_Manipulation.jpg)
 
 直接操作是一个输入模型，涉及到用手直接触摸全息影像。 此概念后面的理念是使对象的行为如同在现实世界中一样自然。 只需按下按钮就能将其激活，抓取对象可以拾取对象，2D 内容的行为与在虚拟触摸屏上类似。 因此，直接操作很容易学会，而且充满了乐趣。 它被视为一种“近距”输入模型，这意味着，它最好用于与手臂可触及范围内的内容进行交互。
 
@@ -178,14 +178,14 @@ ms.locfileid: "74105940"
 
 ## <a name="2d-slate-interaction"></a>2D 盖板交互
 
-2D 盖板是装有 Web 浏览器等 2D 应用内容的全息容器。 通过直接操作来与 2D 盖板交互的设计概念是，利用与物理触摸屏交互的心理模型。
+2D [盖板](slate.md)是用于承载 Web 浏览器等 2D 应用内容的全息容器。 通过直接操作来与 2D 盖板交互的设计概念是，利用与物理触摸屏交互的心理模型。
 
 ### <a name="to-interact-with-the-slate-contact"></a>若要与盖板触点交互
 
 :::row:::
     :::column:::
-       ![触摸](images/2d-slate-interaction-touch.jpg)<br>
-       **触摸**<br>
+       ![触控](images/2d-slate-interaction-touch.jpg)<br>
+       **触控**<br>
        使用食指按下某个超链接或按钮。
     :::column-end:::
     :::column:::

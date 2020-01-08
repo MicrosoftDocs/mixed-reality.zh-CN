@@ -3,14 +3,10 @@
 ## [让应用做好用于 HL2 的准备](mrtk-porting-guide.md)
 ## [了解 Azure 服务](azure-services.md)
 ## 计划和活动
-### [混合现实开发人员日](mr-dev-days.md)
-#### [混合现实开发人员日会议](mr-dev-days-sessions.md)
-#### [混合现实开发人员日常见问题解答](mr-dev-days-faq.md)
 ### [San Francisco Reactor Academy 活动日历](sf-academy-events.md)
-### [CVPR 2018 HoloLens 研究模式会议](cvpr-2018.md)
-### [ECCV 2018 HoloLens：计算机视觉研究工具](eccv-2018.md)
 ### [CVPR 2019 混合现实研讨会](cvpr-2019.md)
 ## [当前的混合现实发行说明](release-notes-may-2019.md)
+## [社区资源](community.md)
 ## [参与撰写本文档](CONTRIBUTING.md)
 # 发现
 ## [混合现实入门](index.md)
@@ -24,6 +20,7 @@
 ### [导航 Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)
 ### [爱好者指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [基于位置的娱乐](location-based-experiences.md)
+## [社区资源](community.md)
 # 设计
 ## [开始设计和原型制作](design.md)
 ## [关于此设计指南](about-this-design-guidance.md)
@@ -168,7 +165,7 @@
 ##### [MR 和 Azure 313：IoT 中心服务](mr-azure-313.md)
 ## Unity
 ### [Unity 开发概述](unity-development-overview.md)
-### 即刻体验
+### 入门
 #### [混合现实工具包 v2 入门](mrtk-getting-started.md)
 #### [配置用于 Windows Mixed Reality 的 Unity 项目](Configure-Unity-Project.md)
 #### [建议用于 Unity 的设置](recommended-settings-for-unity.md)
@@ -203,7 +200,7 @@
 ### [将 Edge 中的 WebVR 与 Windows Mixed Reality 配合使用](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## 本机
 ### [本机开发概述](directx-development-overview.md)
-### 即刻体验
+### 入门
 #### [创建本机全息项目](creating-a-holographic-directx-project.md)
 #### [获取 HolographicSpace](getting-a-holographicspace.md)
 #### [本机呈现](rendering-in-directx.md)
@@ -264,7 +261,7 @@
 ### [Unity 的输入移植指南](input-porting-guide-for-unity.md)
 ### [更新适用于 Windows Mixed Reality 的 SteamVR 应用程序](updating-your-steamvr-application-for-windows-mixed-reality.md)
 ### [更新混合现实的 2D UWP 应用](building-2d-apps.md)
-# 分配
+# 分发
 ## [3D 应用启动器设计指南](3d-app-launcher-design-guidance.md)
 ## [创建在主页中使用的 3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
 ## [实现 3D 应用启动器（UWP 应用）](implementing-3d-app-launchers.md)

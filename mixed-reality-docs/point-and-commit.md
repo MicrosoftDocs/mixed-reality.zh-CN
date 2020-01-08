@@ -7,12 +7,12 @@ ms.date: 04/05/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 交互, 设计, HoloLens, 手, 远, 指向和提交
-ms.openlocfilehash: 77c596f5250240d436529e879434a8f508b06732
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: c7952338c6937e42889a08ee37f6ce8bc1bb9ad3
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105995"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334061"
 ---
 # <a name="point-and-commit-with-hands"></a>使用手指向和提交
 
@@ -76,7 +76,7 @@ ms.locfileid: "74105995"
 
 ## <a name="transition-between-near-and-far"></a>在远近之间转换
 
-我们没有使用特定的手势（如“用食指指向”来引导射线），而是设计了射线从手掌中心发出，留出五根手指来做更多的操控性手势，如捏和抓。 通过这种设计，我们只创建了一个心理模型 - 同一组手势用于远交互和近交互。 可以使用相同的抓取手势来操纵不同距离的对象。 射线的调用是自动的，基于邻近度，如下所述：
+我们没有使用特定的手势（如“用食指指向”来引导射线），而是设计了射线从手掌中心发出，留出五根手指来做更多的操控性手势，如捏和抓。 通过这种设计，我们只创建了一个心理模型 - 同一组手势用于远交互和近交互。 可以使用相同的抓取手势来操纵不同距离的对象。 射线的调用是自动的，并且基于邻近度，如下所述：
 
 :::row:::
     :::column:::
