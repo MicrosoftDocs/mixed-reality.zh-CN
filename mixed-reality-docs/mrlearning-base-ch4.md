@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 8c60d8291ede123817c93458fff003891169840c
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: fe068d0cfcea369f10e6fa636eb73fecb3002fa7
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105969"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334386"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 与三维对象交互
 
@@ -30,9 +30,7 @@ ms.locfileid: "74105969"
 * 探索近距和远距交互
 * 了解其他手动跟踪手势，如抓取和触摸
 
-## <a name="instructions"></a>说明
-
-### <a name="organizing-3d-objects-in-a-collection"></a>在集合中组织 3D 对象
+## <a name="organizing-3d-objects-in-a-collection"></a>在集合中组织 3D 对象
 
 1. 右键单击你的层次结构，然后选择 "创建空" 创建一个空游戏对象，将其重命名为 "3DObjectCollection"，并确保其位于 x = 0、y = 0，z = 0。
 
@@ -70,7 +68,7 @@ ms.locfileid: "74105969"
     >[!NOTE]
     >你可能会注意到，某些对象处于中间中心，如上图中的对象。 这是因为，预制件或对象可能包含未对齐的子对象。 请对对象位置或子对象位置进行任何必要的调整，以获得适当对齐的网格。
 
-### <a name="manipulating-3d-objects"></a>操作 3D 对象
+## <a name="manipulating-3d-objects"></a>操作 3D 对象
 
 1. 添加操作立方体的功能。 若要添加操作3D 对象的功能，请执行以下操作：
     * 选择要在层次结构中操作的3D 对象（即某个多维数据集）。
@@ -132,7 +130,7 @@ ms.locfileid: "74105969"
     >[!NOTE]
     >此设置适用于方案，例如创建可引发的球。 保持适当的速度和角度速度，以确保在球发布后，它将继续以其释放速度的速度移动;与物理球的行为方式类似。
 
-### <a name="adding-bounding-boxes"></a>添加边界框
+## <a name="adding-bounding-boxes"></a>添加边界框
 
 边界框使您可以更轻松、更直观地处理对象，同时可以直接操作（接近交互）和基于光线的操作（远交互）。边界框提供可用于沿特定轴缩放和旋转对象的句柄。
 
@@ -180,7 +178,7 @@ ms.locfileid: "74105969"
     >[!NOTE]
     >只有在播放模式下，边界框可视化效果才会显示。
 
-### <a name="adding-touch-effects"></a>添加触摸效果
+## <a name="adding-touch-effects"></a>添加触摸效果
 
 本示例将在用手触摸某个对象时播放一段音效。
 

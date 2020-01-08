@@ -6,30 +6,30 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 照片、视频、hololens、照相机、unity、定位
-ms.openlocfilehash: f0183400f55b1c6663a9a20ab4992befe5ad0718
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: b4a1a7e11a7606dab76b954c8d58a335d6bae0ab
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63515431"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597610"
 ---
 # <a name="locatable-camera-in-unity"></a>Unity 中的定位照相机
 
 ## <a name="enabling-the-capability-for-photo-video-camera"></a>启用相片视频相机功能
 
-必须为应用声明 "网络摄像机" 功能, 才能使用[相机](locatable-camera.md)。
-1. 在 Unity 编辑器中, 导航到 "编辑 > 项目设置 > Player" 页, 转到 "播放机" 设置
+必须为应用声明 "网络摄像机" 功能，才能使用[相机](locatable-camera.md)。
+1. 在 Unity 编辑器中，导航到 "编辑 > 项目设置 > Player" 页，转到 "播放机" 设置。
 2. 单击 "Windows 应用商店" 选项卡
-3. 在 "发布设置 > 功能" 部分中, 检查**网络摄像机**和**麦克风**功能
+3. 在 "发布设置 > 功能" 部分中，检查**网络摄像机**和**麦克风**功能
 
-照相机一次只能出现一次操作。 若要确定照相机当前在哪个模式 (照片、视频或无), 可以检查 UnityEngine. XR。
+照相机一次只能出现一次操作。 若要确定照相机当前在哪个模式（照片、视频或无），可以检查 UnityEngine. XR。
 
 ## <a name="photo-capture"></a>照片捕获
 
 **命名空间：** *UnityEngine. XR*<br>
 **类型：** *PhotoCapture*
 
-*PhotoCapture*类型允许你使用照片摄像机拍摄照片。 使用*PhotoCapture*拍摄照片的一般模式如下所示:
+*PhotoCapture*类型允许你使用照片摄像机拍摄照片。 使用*PhotoCapture*拍摄照片的一般模式如下所示：
 1. 创建*PhotoCapture*对象
 2. 使用所需的设置创建*CameraParameters*对象
 3. 通过*StartPhotoModeAsync*启动照片模式
@@ -39,9 +39,9 @@ ms.locfileid: "63515431"
 
 ### <a name="common-set-up-for-photocapture"></a>通用设置 PhotoCapture
 
-对于所有这三个用途, 我们首先执行上述前3个步骤
+对于所有三个用途，请从上述前3个步骤开始
 
-首先创建一个*PhotoCapture*对象
+首先创建*PhotoCapture*对象
 
 ```cs
 PhotoCapture photoCaptureObject = null;
@@ -51,7 +51,7 @@ PhotoCapture photoCaptureObject = null;
    }
 ```
 
-接下来, 我们将存储对象、设置参数和启动照片模式
+接下来，存储对象、设置参数和启动照片模式
 
 ```cs
 void OnPhotoCaptureCreated(PhotoCapture captureObject)
@@ -70,7 +70,7 @@ void OnPhotoCaptureCreated(PhotoCapture captureObject)
    }
 ```
 
-最后, 我们还将使用此处提供的相同清理代码
+最后，你还将使用此处提供的相同清理代码
 
 ```cs
 void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
@@ -80,13 +80,13 @@ void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-完成这些步骤后, 你可以选择要捕获哪种类型的照片。
+完成这些步骤后，你可以选择要捕获哪种类型的照片。
 
 ### <a name="capture-a-photo-to-a-file"></a>将照片捕获到文件
 
 最简单的操作是将照片直接捕获到文件中。 照片可以保存为 JPG 或 PNG。
 
-如果已成功启动照片模式, 我们现在会拍摄照片, 并将其存储在磁盘上
+如果已成功启动照片模式，拍摄照片并将其存储在磁盘上
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -105,7 +105,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-将照片捕获到磁盘后, 将退出照片模式, 然后清理我们的对象
+将照片捕获到磁盘后，退出照片模式，然后清理对象
 
 ```cs
 void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
@@ -124,11 +124,11 @@ void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
 
 ### <a name="capture-a-photo-to-a-texture2d"></a>将照片捕获到 Texture2D
 
-将数据捕获到 Texture2D 时, 该过程与捕获到磁盘非常类似。
+将数据捕获到 Texture2D 时，该过程与捕获到磁盘非常类似。
 
-我们将按照上面的设置过程进行操作。
+遵循上面的设置过程。
 
-在*OnPhotoModeStarted*中, 我们会将一个帧捕获到内存。
+在*OnPhotoModeStarted*中，将帧捕获到内存。
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -144,7 +144,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-然后, 将结果应用到纹理, 并使用上面的常见清除代码。
+然后，将结果应用到纹理，并使用上面的常见清除代码。
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -165,9 +165,9 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
 
 ### <a name="capture-a-photo-and-interact-with-the-raw-bytes"></a>捕获照片并与原始字节交互
 
-若要与内存中帧的原始字节交互, 我们将按照上述设置步骤进行操作, 就像在 Texture2D 中捕获照片一样*OnPhotoModeStarted* 。 不同之处在于, 可在*OnCapturedPhotoToMemory*中获取原始字节并与其进行交互。
+若要与内存中帧的原始字节交互，请按照上述设置步骤进行操作，并在将照片捕获到 Texture2D 时*OnPhotoModeStarted* 。 不同之处在于，可在*OnCapturedPhotoToMemory*中获取原始字节并与其进行交互。
 
-在此示例中, 我们将创建*一个<Color>列表*, 该列表可以通过*SetPixels ()* 进一步处理或应用于纹理
+在此示例中，您将创建一个*列表，<Color>* 可以通过*SetPixels （）* 进一步处理或应用于纹理
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -205,7 +205,7 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
 **命名空间：** *UnityEngine. XR*<br>
 **类型：** *VideoCapture*
 
-*VideoCapture*函数与*PhotoCapture*非常类似。 唯一的两个不同之处在于, 必须指定每秒帧数 (FPS) 值, 并且只能以。 使用*VideoCapture*的步骤如下所示:
+*VideoCapture*函数与*PhotoCapture*非常类似。 唯一的两个不同之处在于，必须指定每秒帧数（FPS）值，并且只能以。 使用*VideoCapture*的步骤如下所示：
 1. 创建*VideoCapture*对象
 2. 使用所需的设置创建*CameraParameters*对象
 3. 通过*StartVideoModeAsync*启动视频模式
@@ -213,7 +213,7 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
 5. 停止录制视频
 6. 停止视频模式并清理资源
 
-首先创建*VideoCapture*对象*VideoCapture m_VideoCapture = null;*
+首先，创建*VideoCapture*对象*VideoCapture m_VideoCapture = null;*
 
 ```cs
 void Start ()
@@ -222,7 +222,7 @@ void Start ()
    }
 ```
 
-接下来, 我们将设置要用于记录和启动的参数。
+接下来，设置要用于记录和启动的参数。
 
 ```cs
 void OnVideoCaptureCreated (VideoCapture videoCapture)
@@ -252,7 +252,7 @@ void OnVideoCaptureCreated (VideoCapture videoCapture)
    }
 ```
 
-启动后, 我们将开始记录
+启动后，开始记录
 
 ```cs
 void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
@@ -267,7 +267,7 @@ void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-记录开始后, 你可以更新你的 UI 或行为以启用停止。 这里我们只记录
+记录开始后，你可以更新你的 UI 或行为以启用停止。 在这里，你只需记录。
 
 ```cs
 void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -277,7 +277,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-稍后, 我们需要停止记录。 例如, 这种情况可能发生在计时器或用户输入中。
+稍后，你将需要停止记录。 例如，这种情况可能发生在计时器或用户输入中。
 
 ```cs
 // The user has indicated to stop recording
@@ -287,7 +287,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-录制停止后, 将停止视频模式并清理资源。
+录制停止后，停止视频模式并清理资源。
 
 ```cs
 void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -303,9 +303,9 @@ void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>“疑难解答”
 * 无可用解决方案
     * 确保在项目中指定了**网络摄像机**功能。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 * [可定位相机](locatable-camera.md)

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: b740c463e3d73d5df9b996562e9ff0a1952703f0
-ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
+ms.openlocfilehash: 75a14697953026474d8ca00e6473145d7b12a482
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064318"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334351"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 浏览高级输入选项
 
@@ -23,9 +23,7 @@ ms.locfileid: "74064318"
 - 使用跟踪的指针通过跟踪的手平移纹理和3D 对象
 - 利用 HoloLens 2 目视跟踪功能选择对象
 
-## <a name="instructions"></a>说明
-
-### <a name="enabling-voice-commands"></a>启用语音命令
+## <a name="enabling-voice-commands"></a>启用语音命令
 
 本部分实现了两个语音命令。 首先，通过显示 "切换诊断"，可以切换帧速率诊断面板。 其次，可以通过语音命令播放声音。 首先查看负责配置语音命令的 MRTK 配置文件和设置。
 
@@ -108,7 +106,7 @@ ms.locfileid: "74064318"
 
     ![Lesson5 Chapter1.txt Step16im](images/Lesson5_chapter1_step16im.PNG)
 
-### <a name="the-pan-gesture"></a>平移手势
+## <a name="the-pan-gesture"></a>平移手势
 
 在本部分中，你将学习如何使用平移手势。 这适用于使用手指或手滚动内容滚动。 你还可以使用平移手势来旋转对象、循环浏览三维对象的集合，甚至滚动 2D UI。
 
@@ -194,7 +192,7 @@ ms.locfileid: "74064318"
 
     ![mrlearning-base-ch5-2-step10d .png](images/mrlearning-base-ch5-2-step10d.png)
 
-### <a name="eye-tracking"></a>眼动跟踪
+## <a name="eye-tracking"></a>眼动跟踪
 
 在本部分中，我们将探讨如何在演示中启用目视跟踪。 当您的3D 菜单项 gazed 时，我们将慢慢旋转它们。 此外，在选择所凝视的项时，我们还会触发一种有趣的效果。
 

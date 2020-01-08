@@ -6,12 +6,12 @@ ms.author: bestruku
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全息影像，稳定性，案例研究
-ms.openlocfilehash: d31f3128ba10d6fc7bd57f3068db3dd16b23f901
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 039b8f671f02a27393c30c7954cf0e2925635ad0
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436441"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597650"
 ---
 # <a name="case-study---using-the-stabilization-plane-to-reduce-holographic-turbulence"></a>案例研究-使用稳定面减少全息 turbulence
 
@@ -63,9 +63,9 @@ RoboRaid 设计为在设计时考虑到了稳定性。 Reticle，它将最大程
 
 如果移动到之前已作为播放空间进行了扫描的内容，则片段和年轻人 Conker 还会通过暂停应用程序来设计离全息 straying 太远的位置。 因此，它们使你能够在提供最稳定的体验的边界内实现。
 
-## <a name="do-it-yourself"></a>自行完成
+## <a name="do-it-yourself"></a>自制
 
-如果你有一个 HoloLens，并且想要与我讨论过的概念进行探讨，你可以下载一个测试场景并尝试以下练习。 它使用 Unity 的内置别出心裁 API，它应有助于您直观地显示平面的设置位置。 此代码还用于捕获此案例研究中的屏幕截图。
+如果你有一个 HoloLens，并且想要使用本文中的概念进行演练，则可以下载一个测试场景并尝试以下练习。 它使用 Unity 的内置别出心裁 API，可帮助你直观显示你的平面的设置位置。 此代码还用于捕获此案例研究中的屏幕截图。
 1. 同步最新版本的[MixedRealityToolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)。
 2. 打开[HoloToolkit-Examples/公用事业/场景/StabilizationPlaneSetting](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Utilities/Scenes/StabilizationPlaneSetting.unity)场景。
 3. 生成并配置生成的项目。
@@ -73,17 +73,17 @@ RoboRaid 设计为在设计时考虑到了稳定性。 Reticle，它将最大程
 
 ### <a name="exercise-1"></a>练习1
 
-你将看到不同方向的几个白点。 在您之前，您将在不同的深度看到三个点。 点击以更改平面设置为的点。 对于本练习，在这两个过程中，在 gazing 点时移动空间。 向左、向右、向上、向下旋转。 从点接近和成为父亲。 查看稳定性平面设置为不同目标时，如何做出反应。
+你将看到不同方向的几个白点。 在您之前，您将在不同的深度看到三个点。 点击以更改平面设置为的点。 对于本练习，在这两个过程中，在 gazing 点时移动空间。 向左、向右、向上、向下旋转。 从点更接近或更远地移动。 查看稳定性平面设置为不同目标时，如何做出反应。
 
 ### <a name="exercise-2"></a>练习2
 
-现在，转到右侧，直到看到两个移动点、水平路径上的一个振荡和一个垂直路径上的一个。 同样，单击即可更改该平面设置为的点。 请注意，在连接到平面的点上出现颜色分离的方式。 再次点击以在 "平面" 设置函数中使用点的速度。 此参数向 HoloLens 提供有关对象的预期运动的提示。 了解何时使用这一点非常重要，因为当在一个圆点上使用了速度时，另一个移动点将显示更大的颜色分隔。 在设计应用程序时请牢记这一点，这会使对象的运动产生内聚性，从而有助于防止出现项目。
+现在，转到右侧，直到看到两个移动点、水平路径上的一个振荡和一个垂直路径上的一个。 同样，单击即可更改该平面设置为的点。 请注意颜色分离如何减少并显示在连接到平面的点上。 再次点击以在 "平面" 设置函数中使用点的速度。 此参数向 HoloLens 提供有关对象的预期运动的提示。 了解何时使用这一点非常重要，因为当在一个圆点上使用了速度时，另一个移动点将显示更大的颜色分隔。 在设计应用程序时请牢记这一点，这会使对象的运动产生内聚性，从而有助于防止出现项目。
 
 ### <a name="exercise-3"></a>练习3
 
-再次转到右侧，直到看到新的点配置。 在这种情况下，这两个点之间存在点，并在其前面加上一个圆点。 点击以更改平面设置为的点，在背面的点与运动中的点之间交替。 请注意，将平面位置与螺旋式点的速度设置为会使项目显示在任何位置。
+再次转到右侧，直到看到新的点配置。 在这种情况下，距离有一个点，其中有一个圆点在其前面加上一个点。 点击以更改平面设置为的点，在背面的点与运动中的点之间交替。 请注意，将平面位置与螺旋式点的速度设置为会使项目显示在任何位置。
 
-**技巧**
+**提示**
 * 使平面设置逻辑简单。 如您所见，您不需要使用复杂的平面设置算法来实现沉浸式体验。 稳定平面只是一片谜。
 * 在任何可能的情况下，始终在目标之间平稳移动平面。 即时切换到远处目标可能会以可视方式中断场景。
 * 请考虑在飞机中设置一个选项，将逻辑锁定到非常具体的目标。 这样一来，就可以根据需要在对象（如徽标或标题屏幕）上锁定平面。

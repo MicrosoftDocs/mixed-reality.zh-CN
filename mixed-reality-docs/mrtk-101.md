@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 08/27/2019
 ms.topic: article
 keywords: HoloLens，MRTK，混合现实工具包，Windows Mixed Reality，设计，示例应用，控件
-ms.openlocfilehash: 95c81442cc390da8ac7c9a8de218341cb5e7c948
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: ad9d2755522c2610ae051fa61f96605e49404d2d
+ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439648"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75623497"
 ---
 # <a name="mrtk-101-how-to-use-mixed-reality-toolkit-unity-for-basic-interactions-hololens-2-hololens-windows-mixed-reality-openvr"></a>MRTK 101：如何将混合现实工具包 Unity 用于基本交互（HoloLens 2、HoloLens、Windows Mixed Reality、Open VR）
 
@@ -55,7 +55,7 @@ ManipulationHandler.cs 支持双向缩放/旋转。 这适用于各种输入类�
 <img alt="NearInteractionGrabbable and ManipulationHandler.cs assigned to an object" width="800" src="images/MRTK101/MRTK_ManipulationHandler.gif">
 
 ## <a name="how-to-move-or-rotate-an-object-with-precision"></a>如何以精确方式移动或旋转对象？
-将 BoundingBox.cs 分配给对象以使用边界框，这是用于缩放和旋转对象的接口。 默认情况下，它会显示1个 HoloLens 样式的蓝色控点和线路。 若要使用基于的 HoloLens 2 样式邻近动画句柄，需要分配 prototyping 和材料。 有关配置详细信息，请参阅边界框文档和 BoundingBoxExamples 场景。
+将 BoundingBox.cs 分配给对象以使用边界框，这是用于缩放和旋转对象的接口。 默认情况下，它会显示1个 HoloLens 样式的蓝色控点和线路。 若要使用基于的 HoloLens 2 样式邻近动画句柄，需要分配 prototyping 和材料。 有关配置详细信息，请参阅[边界框文档](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)和 BoundingBoxExamples 场景。
 
 <img alt="BoundingBox.cs assigned to an object" width="800" src="images/MRTK101/MRTK_BoundingBox.png">
 

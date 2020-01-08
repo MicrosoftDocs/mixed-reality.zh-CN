@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: ade7a839e03a306332bf18f1db49805f59c71429
-ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
+ms.openlocfilehash: e08de0bc769ceda493eafe40158b6aeed87751c7
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064259"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334359"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 放置动态内容并使用 solvers
 
@@ -23,9 +23,7 @@ ms.locfileid: "74064259"
 * 使用求解器让一组按钮跟随用户
 * 使用求解器使游戏对象跟随用户被追踪的双手
 
-## <a name="instructions"></a>说明
-
-### <a name="location-of-solvers-in-the-mrtk"></a>求解器在 MRTK 中的位置
+## <a name="location-of-solvers-in-the-mrtk"></a>求解器在 MRTK 中的位置
 
  若要在项目中查找可用的 solvers，请查看 MRTK SDK 文件夹（MixedRealityToolkit 文件夹）。 在 "实用程序" 文件夹下，会显示 solvers 文件夹，如下图所示。
 
@@ -34,7 +32,7 @@ ms.locfileid: "74064259"
 >[!NOTE]
 >在本课中，我们将只回顾 Orbital 求解器和 RadialView 求解器的实现。 若要详细了解 MRTK 中可用的 solvers 的详细信息，请访问： [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)
 
-### <a name="use-a-solver-to-follow-the-user"></a>使用求解器跟随用户
+## <a name="use-a-solver-to-follow-the-user"></a>使用求解器跟随用户
 
 本章的目标是增强之前创建的按钮集合，使其遵循用户的注视方向。 在以前版本的 MRTK 和 HoloToolkit 中，这称为 tagalong 功能。
 
@@ -50,13 +48,14 @@ ms.locfileid: "74064259"
     >添加 Orbital 组件时，你会注意到，系统还添加了 SolverHandler 组件，这是必需的组件。
 
 3. 若要将按钮集合配置为关注用户，我们需要实现以下调整（请参阅下图）：
+
     * 在 Orbital 脚本中，将 "方向类型" 下拉列表设置为 "仅偏航"。 这样，在对象跟随用户时，它只有一个轴在旋转。
     * 将所有轴上的局部偏移量设置为 0。 将世界偏移量设置为 x = 0、y =-0.1 和 z = 0.6。 这会锁定对象的移动，以便在用户更改高度时，对象将在物理环境中保持为固定高度，同时在用户移动有关环境的情况下仍允许它跟随用户。 可以调整这些值以实现广泛的行为。
     * 对于这种情况，在用户完全关闭用户的头衔后，只关注用户的视图，你可以选择 "对全球偏移使用角度单" 复选框（注意：在某些屏幕上可能会截断此标题，如下图所示）。例如，若要让对象每隔90度仅关注用户，请设置等于4的步骤数（在下面的示例中，用绿色箭头进行标记）。
 
     ![Lesson3 Chapter2 Step3im](images/Lesson3_chapter2_step3im.PNG)
 
-### <a name="enabling-objects-to-follow-tracked-hands"></a>使对象跟随跟踪的手
+## <a name="enabling-objects-to-follow-tracked-hands"></a>使对象跟随跟踪的手
 
 在本部分中，我们将配置先前创建的 Cube 游戏对象，以使用 RadialView 求解器按用户跟踪。
 

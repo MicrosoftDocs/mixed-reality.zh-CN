@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 设备门户、HoloLens
-ms.openlocfilehash: 9bb8116330d88c532b955ef497d29fe98c86fddb
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 17ed27653c8e3ec19c8c42b625fbd12cde2c5d84
+ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75182017"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75623323"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 设备门户
 
@@ -75,7 +75,7 @@ ms.locfileid: "75182017"
 
 ## <a name="security-certificate"></a>安全证书
 
-如果你在浏览器中看到“证书错误”，可以通过创建与该设备的信任关系来修复该错误。
+如果你在浏览器中看到 "证书错误"，则可以通过创建与设备的信任关系来修复该错误。
 
 每个 HoloLens 会生成唯一的自签名证书以供其 SSL 连接使用。 默认情况下，此证书不受电脑的 Web 浏览器信任，因此你可能会看到“证书错误”。 通过从你的 HoloLens 下载此证书（借助 USB 或信任的 WLAN 网络）并在你的电脑上信任该证书，可以安全地连接到设备。
 1. **请确保使用的是安全网络（USB 或你信任的 Wi-fi 网络）。**
@@ -136,7 +136,7 @@ Microsoft HoloLens 上 Windows 设备门户中 ![3D 视图页面](images/3dview-
   * **显示空间锚**：显示活动应用的空间锚。 必须单击 "更新" 按钮，才能获取和刷新锚。
   * **显示详细信息**：实时显示手的位置、头部旋转四元数和设备原点矢量的变化。
   * **“全屏”按钮**：以全屏模式显示 3D 视图。 按 ESC 键可退出全屏视图。
-* **Surface 重构**：单击或点击 "**更新**" 以显示设备的最新空间映射网格。 完成全面检查可能需要一些时间，最多只需几秒钟。 网格不会在三维视图中自动更新，您必须手动单击 "**更新**" 以从设备获取最新的网格。 单击 "**保存**" 可将当前空间映射网格作为 obj 文件保存到电脑上。
+* **Surface 重构**：单击或点击 "**更新**" 以显示设备的最新空间映射网格。 完全传递可能需要一些时间才能完成（长达几秒钟）。 网格不会在三维视图中自动更新，您必须手动单击 "**更新**" 以从设备获取最新的网格。 单击 "**保存**" 可将当前空间映射网格作为 obj 文件保存到电脑上。
 * **空间锚**：单击 "更新" 可显示或更新活动应用的空间锚。
 
 ### <a name="mixed-reality-capture"></a>混合现实捕获
@@ -236,7 +236,7 @@ Microsoft HoloLens 上 Windows 设备门户中 ![应用崩溃转储页面](image
 >[!NOTE]
 >展台模式仅适用于[Microsoft HoloLens 商业套件](commercial-features.md)。
 
-有关通过 Windows 设备门户启用展台模式的最新说明，请参阅 Windows IT 专业人员中心中的在[展台模式下设置 HoloLens](https://docs.microsoft.com/hololens/hololens-kiosk#set-up-kiosk-mode-using-the-windows-device-portal-windows-10-version-1607-and-version-1803) 。
+有关通过 Windows 设备门户启用展台模式的最新说明，请查看 Windows IT 专业中心中的 "[在展台模式下设置 HoloLens" 一](https://docs.microsoft.com/hololens/hololens-kiosk#set-up-kiosk-mode-using-the-windows-device-portal-windows-10-version-1607-and-version-1803)文。
 
 ### <a name="logging"></a>日志记录
 
@@ -256,10 +256,10 @@ Microsoft HoloLens 上 Windows 设备门户中 ![日志记录页面](images/wind
 * **自定义提供程序**：选择自定义 ETW 提供程序和跟踪级别。 根据其 GUDI 标识提供程序。 不要在 GUID 中包含括号。
 * **已启用的提供程序**：列出已启用的提供程序。 从下拉列表中选择一个提供程序，然后单击或点击**禁用**来停止跟踪。 单击或点击**全部停止**来暂停所有跟踪。
 * **提供程序历史记录**：显示已在当前会话期间启用的 ETW 提供程序。 单击或点击**启用**来激活已禁用的提供程序。 单击或点击**清除**来清除历史记录。
-* **事件**：以表格的形式列出来自选定提供程序的 ETW 事件。 此表将实时更新。 在表的下方，单击 "**清除**" 按钮，以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**来将当前收集的 ETW 事件本地导出到 CSV 文件。
+* **事件**：以表格的形式列出来自选定提供程序的 ETW 事件。 此表将实时更新。 在该表下方，单击**清除**按钮可删除表中的所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**来将当前收集的 ETW 事件本地导出到 CSV 文件。
 * **筛选器**：允许你筛选由 ID、关键字、级别、提供程序名称、任务名称或文本收集的 ETW 事件。 可以将多个条件组合在一起：
-   1. 对于应用到相同属性的条件，可以满足这些条件中的任何一个。
-   2. 适用于不同属性事件的条件必须满足所有条件
+   1. 对于应用于相同属性的条件，将显示可满足这些条件之一的事件。
+   2. 对于应用到其他属性的条件，事件必须满足所有条件
 
 例如，你可以指定条件 *（任务名称包含 "Foo" 或 "Bar"）以及（文本包含 "错误" 或 "警告"）*
 

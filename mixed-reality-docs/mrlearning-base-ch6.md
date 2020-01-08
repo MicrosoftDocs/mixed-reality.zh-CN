@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: b033e4f9a379fb1778da3d94da70262e073d141b
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 3127ffceea08202fe9d978ad77f8fddb6fba60a3
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926520"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334377"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7. 创建农历模块示例应用程序
 
@@ -25,9 +25,7 @@ ms.locfileid: "73926520"
 - 使用刚体的物理特性和力量
 - 探索如何使用工具提示
 
-## <a name="instructions"></a>说明
-
-### <a name="configuring-the-lunar-module"></a>配置登月舱
+## <a name="configuring-the-lunar-module"></a>配置登月舱
 
 在本部分中，我们将介绍创建示例体验所需的各种组件。
 
@@ -38,7 +36,7 @@ ms.locfileid: "73926520"
 
     ![Lesson6 Chapter1 Step1im](images/Lesson6_Chapter1_step1im.PNG)
 
-    如果在层次结构中展开 "火箭 Launcher_Tutorial 游戏" 对象并进一步展开农历模块对象，则会找到多个具有称为 "x 射线" 的子对象。 "X ray" 材料允许使用略微半透明的颜色，该颜色将用作用户的放置提示。 
+    如果在层次结构中展开 "火箭 Launcher_Tutorial 游戏" 对象并进一步展开农历模块对象，则会找到多个具有称为 "x 射线" 的子对象。 "X ray" 材料允许使用略微半透明的颜色，该颜色将用作用户的放置提示。
 
     ![Lesson6 Chapter1.txt Noteaim](images/Lesson6_Chapter1_noteaim.PNG)
 
@@ -81,7 +79,7 @@ ms.locfileid: "73926520"
 
     ![Lesson6 Chapter1 Step6im](images/Lesson6_Chapter1_step6im.PNG)
 
-### <a name="lunar-module-parts-overview"></a>农历模块部件概述
+## <a name="lunar-module-parts-overview"></a>农历模块部件概述
 
 农历 Module Part 父对象是用户与之交互的对象的集合。 下面的列表中提供了用括号标记名称的游戏对象名称：
 
@@ -106,7 +104,7 @@ Part Assembly Demo script （如上所示）是管理用户在农历模块上的
 
 音频源会自动进行。
 
-### <a name="configuring-the-placement-hints-button"></a>配置放置提示按钮
+## <a name="configuring-the-placement-hints-button"></a>配置放置提示按钮
 
 在[第2课](mrlearning-base-ch2.md)中，您学习了如何设置按钮并对其进行配置，如更改项的颜色或使其在推送时播放声音。 在为切换放置提示配置按钮时，我们将继续使用这些原则。
 
@@ -120,7 +118,7 @@ Part Assembly Demo script （如上所示）是管理用户在农历模块上的
 
     ![Lesson6 Chapter3 Step2im](images/Lesson6_Chapter3_step2im.PNG)
 
-### <a name="configuring-the-reset-button"></a>配置重置按钮
+## <a name="configuring-the-reset-button"></a>配置重置按钮
 
 在某些情况下，用户会犯错误，意外地丢弃对象或只是想要重置体验。 "重置" 按钮增加了重新启动体验的能力。
 
@@ -137,7 +135,7 @@ Part Assembly Demo script （如上所示）是管理用户在农历模块上的
     >[!NOTE]
     >请注意，默认情况下，GameObject 配置为 ResetPlacement。 这会为 RocketLauncher_Tutorial 的每个子对象广播名为 ResetPlacement 的消息。 具有 ResetPlacement （）方法的任何对象通过重置其位置来响应该消息。
 
-### <a name="configuring-the-launch-button"></a>配置启动按钮
+## <a name="configuring-the-launch-button"></a>配置启动按钮
 
 本部分介绍如何配置 "启动" 按钮，该按钮允许用户按下按钮并将阴历模块启动到空间中。
 
@@ -161,6 +159,6 @@ Part Assembly Demo script （如上所示）是管理用户在农历模块上的
 
     ![Lesson6 Chapter5 Step6im](images/Lesson6_Chapter5_step6im.PNG)
 
-### <a name="congratulations"></a>祝贺
+## <a name="congratulations"></a>祝贺
 
 已完全配置此应用程序。 现在，当按下 "播放" 时，可以完全组装农历模块、切换提示、启动农历模块，并将其重置为重新开始。

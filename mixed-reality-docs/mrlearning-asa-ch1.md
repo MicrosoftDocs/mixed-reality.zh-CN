@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 861c42f9449fcb3cf038258af91088fc927941e5
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: e62d3626ec6f2dbf8b66378212afab7db2f56422
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940925"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334454"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. Azure 空间定位点入门
 
@@ -30,11 +30,19 @@ ms.locfileid: "74940925"
 * 了解通过 Azure 空间锚点与 HoloLens 2 进行开发的基础知识
 * 创建、上传和下载空间锚
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
-* 满足[快速入门：创建使用 Azure 空间锚点的 Unity HoloLens 应用](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教程中所[列的要求](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#prerequisites)。
+>[!TIP]
+>如果尚未完成[入门教程](mrlearning-base.md)系列，建议先完成这些教程。
+
+* 使用安装了正确的[工具](install-the-tools.md)配置的 WINDOWS 10 电脑
+* Windows 10 SDK 10.0.18362.0 或更高版本
+* 一些基本C#编程功能
+* [为开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
 * 完成[快速入门：创建使用 Azure 空间锚点的 Unity HoloLens 应用](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教程中的[创建空间锚定资源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)部分。
-* 如果尚未完成[入门教程](mrlearning-base.md)系列，建议先完成这些教程。
+
+>[!IMPORTANT]
+>本系列教程需要<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a> ，建议的版本是 unity 2019.1.14。 这将取代上述先决条件中所述的任何 Unity 版本要求或建议。
 
 ## <a name="creating-the-unity-project"></a>创建 Unity 项目
 

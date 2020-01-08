@@ -3,15 +3,15 @@ title: 将 Vuforia 与 Unity 一起使用
 description: 利用 Vuforia 在 Unity 中构建 Windows Mixed Reality 应用程序。
 author: thetuvix
 ms.author: alexturn
-ms.date: 01/28/2019
+ms.date: 12/20/2019
 ms.topic: article
 keywords: Vuforia，标记，坐标，引用框架，跟踪
-ms.openlocfilehash: bae5d0eb04ab9434dd3e72674686743779a8f70c
-ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
+ms.openlocfilehash: 2d7cc27cd9a5fe9bb6502edaa6df0b7a80755049
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2019
-ms.locfileid: "75003186"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334469"
 ---
 # <a name="using-vuforia-engine-with-unity"></a>将 Vuforia 引擎与 Unity 一起使用
 
@@ -80,7 +80,7 @@ Vuforia 引擎自动融合来自相机跟踪和 HoloLens 空间跟踪的姿势�
 由于过程是自动处理的，因此不需要开发人员进行任何编程。
 
 
-**下面是发生的情况 ...**
+**下面是此过程的概要说明：**
 1. Vuforia 的目标跟踪器识别目标
 2. 然后初始化目标跟踪
 3. 分析目标的位置和旋转，为 HoloLens 提供可靠的姿势估计

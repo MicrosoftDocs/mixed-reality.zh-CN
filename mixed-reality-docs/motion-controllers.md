@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6dof 控制器，运动控制器
-ms.openlocfilehash: 84ebc6c0d7c63e58346b6ee9e565811bc40571b5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e4b3946401bcc9abfcefeb3e33bb79f01526ba20
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437856"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597670"
 ---
 # <a name="motion-controllers"></a>运动控制器
 
@@ -62,18 +62,18 @@ Windows Mixed Reality 动作控制器使用沉浸式耳机中的传感器提供�
 ![了解控制器](images/controllerimage-750px.png)<br>
 *了解控制器*
 
-**功能**
+**功能：**
 * 光学跟踪
-* 界限
+* 触发器
 * 抓取按钮
 * 控制
 * 触摸板
 
-## <a name="setup"></a>安装
+## <a name="setup"></a>“安装程序”
 
 ### <a name="before-you-begin"></a>开始之前
 
-**你将需要：**
+**需要：**
 * 两个运动控制器的集合。
 * 四个 AA 电池。
 * 支持蓝牙4.0 的 PC。
@@ -112,7 +112,7 @@ Windows Mixed Reality 动作控制器使用沉浸式耳机中的传感器提供�
 
 :::row:::
     :::column:::
-        成功配对两个控制器后，设置在 **"鼠标、键盘、& 笔" 类别**下应如下所示 <br>
+        成功配对两个控制器后，设置应如下所示，在 **"鼠标，键盘，& 笔" 类别**下 <br>
         <br>
         *图像：连接的运动控制器*
     :::column-end:::
@@ -121,7 +121,7 @@ Windows Mixed Reality 动作控制器使用沉浸式耳机中的传感器提供�
     :::column-end:::
 :::row-end:::
 
-如果在配对后关闭控制器，则其状态将显示为配对。 如果控制器始终位于 "其他设备" 下，则类别配对可能仅部分完成，需要再次执行才能使控制器正常运行。
+如果在配对后关闭控制器，则其状态将显示为配对。 如果控制器始终处于 "其他设备" 类别下，则配对可能只是部分完成，需要再次执行才能使控制器正常运行。
 
 ### <a name="updating-controller-firmware"></a>正在更新控制器固件
 
@@ -146,7 +146,7 @@ Windows Mixed Reality 动作控制器使用沉浸式耳机中的传感器提供�
 
 ## <a name="gazing-and-pointing"></a>Gazing 和指向
 
-Windows Mixed Reality 支持两个用于交互、**注视和提交** **和提交的关键模型：**
+Windows Mixed Reality 支持两个用于交互的关键模型;**注视并提交**和**提交**：
 * 使用 "**注视" 和 "提交**"，用户可通过其[注视](gaze-and-commit.md)来定位对象，并使用手接器、游戏板、clicker 或声音来选择对象。
 * 通过**点和提交**，用户可以在目标对象上目标为支持指针的运动控制器，然后使用控制器的触发器选择对象。
 
@@ -162,7 +162,7 @@ Windows Mixed Reality 支持两个用于交互、**注视和提交** **和提交
 
 Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制器的设计在用户的手位置和自然的 "前进" 方向上不同，应用程序在呈现控制器.
 
-为了更好地表示这些控制器，可以针对每个交互源来调查两种类型的姿势，**手柄姿势**和**指针姿势**。
+为了更好地表示这些控制器，可以针对每个交互源调查两种类型的姿势：**手柄姿势**和**指针构成**。
 
 ### <a name="grip-pose"></a>抓握姿势
 
@@ -203,13 +203,13 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 <tr>
 <th> 跟踪状态 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高准确度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高准确度</b> </td><td style="background-color: green; color: white"> &lt; 1。0 </td><td style="background-color: green; color: white"> “高” </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精度（存在丢失的风险）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度（存在丢失的风险）</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: green; color: white"> “高” </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>准确度</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: orange"> 近似 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>无位置</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: orange"> 近似 </td><td style="background-color: orange"> false</td>
+<td> <b>无位置</b> </td><td style="background-color: orange"> = = 1。0 </td><td style="background-color: orange"> 近似 </td><td style="background-color: orange"> 否</td>
 </tr>
 </table>
 
@@ -224,12 +224,12 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 ## <a name="interactions-low-level-spatial-input"></a>交互：低级别空间输入
 
 各种双手和运动控制器的核心交互是**选择**、**菜单**、**抓住**、**触摸板**、**操纵杆**和**Home**。
-* **选择**"是"，这是用于激活全息影像的主要交互，其中包含一个按下的发布。 对于运动控制器，可以使用控制器的触发器执行 Select 按下。 通过[语音命令](voice-input.md)"select" 执行选择的其他方法。 可以在任何应用中使用相同的选择交互。 将选择作为鼠标单击的等效操作，即一次学习的通用操作，然后应用于所有应用。
+* **选择**"是"，这是用于激活全息影像的主要交互，其中包含一个按下的发布。 对于运动控制器，可以使用控制器的触发器执行 Select 按下。 通过[语音命令](voice-input.md)"select" 执行选择的其他方法。 可以在任何应用中使用相同的选择交互。 请考虑选择作为鼠标单击的等效项;你一次学习的通用操作，然后应用于所有应用。
 * **菜单**是用于对对象进行操作的辅助交互，用于获取上下文菜单或执行其他辅助操作。 使用运动控制器，可以使用控制器的*菜单*按钮执行菜单操作。 （即其上带有汉堡 "menu" 图标的按钮）
 * **抓住**，用户可以直接对对象执行操作，以便对其进行操作。 借助运动控制器，你可以通过紧密地挤压你的前来执行抓住操作。 运动控制器可能检测到带有抓取按钮、棕榈触发器或其他传感器的抓住。
 * **触摸板**允许用户在运动控制器的触摸板图面上调整两个尺寸的操作，并通过单击触摸板上的 "向下" 来提交操作。 触摸板提供按下状态、接触状态和标准化的 XY 坐标。 X 和 Y 范围介于循环触摸板范围内的-1 到1之间，中心位于（0，0）。 对于 X，-1 位于左侧，1位于右侧。 对于 Y，-1 位于底部，1位于顶部。
 * 使用**操纵杆**，用户可以通过在其循环范围内移动运动控制器的操纵杆，并通过单击操纵杆提交操作来调整两个尺寸的操作。 Thumbsticks 还提供按下状态和标准化的 XY 坐标。 X 和 Y 范围介于循环触摸板范围内的-1 到1之间，中心位于（0，0）。 对于 X，-1 位于左侧，1位于右侧。 对于 Y，-1 位于底部，1位于顶部。
-* **Home**是一种特殊的系统操作，用于返回到 "开始" 菜单。 这类似于按键盘上的 Windows 键或 Xbox 控制器上的 Xbox 按钮。 可以通过按下动作控制器上的 "Windows" 按钮来回家。 请注意，你还可以通过说 "你好 Cortana，回家" 开始。 应用无法专门对 home 操作做出反应，因为这些操作由系统处理。
+* **Home**是一种特殊的系统操作，用于返回到 "开始" 菜单。 这类似于按键盘上的 Windows 键或 Xbox 控制器上的 Xbox 按钮。 可以通过按下动作控制器上的 "Windows" 按钮来回家。 请注意，你始终可以通过说 "你好 Cortana，回家" 开始。 应用无法专门对 Home 操作做出反应，因为这些操作由系统处理。
 
 ## <a name="composite-gestures-high-level-spatial-input"></a>复合手势：高级空间输入
 
@@ -269,7 +269,7 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 
 不适用于通用 Windows 应用程序。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>“疑难解答”
 
 请参阅发烧指南中的[运动控制器故障排除](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#motion-controllers)。
 

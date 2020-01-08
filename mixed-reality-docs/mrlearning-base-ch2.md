@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: f0a54bb591479dbe8ffa719cb5e6a9d846f67f9e
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: e961238b8fc7f2ef15bea5f25eba8a8e9eb2ef3e
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539745"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334398"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3. 创建用户界面并配置混合现实工具包
 
@@ -23,13 +23,11 @@ ms.locfileid: "74539745"
 * 使用 UI 元素和按钮与全息影像交互
 * 基本的手动跟踪输入和交互
 
-## <a name="instructions"></a>说明
-
-### <a name="how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option"></a>如何配置混合现实工具包配置文件（更改空间感知显示选项）
+## <a name="how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option"></a>如何配置混合现实工具包配置文件（更改空间感知显示选项）
 
 在本部分中，你将了解如何通过调整空间感知网格的显示选项来自定义和配置默认的 MRTK 配置文件。 调整 MRTK 配置文件中的任何设置或值时，也可以遵循这些原则。
 
-1. 从 "BaseScene" 层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，查找混合现实工具包脚本并选择活动配置文件，如下图所示。 双击以打开它。
+1. 从 "BaseScene" 层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，查找混合现实工具包脚本并选择活动配置文件，如下图所示。 双击将其打开。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step1.png)
 
@@ -73,7 +71,7 @@ ms.locfileid: "74539745"
 
 恭喜你！ 你已了解如何修改 MRTK 配置文件中的设置。 你知道，若要修改 MRTK 设置，需要创建默认配置文件的副本，以便能够对其进行编辑。 如果你想要使用新设置创建配置文件，或者可以返回到默认配置文件，则始终拥有默认的配置文件，这是不可编辑的。 可以调整大量的设置。 有关 MRTK 配置文件设置的完整引用，请参阅此处的 MRTK 文档： [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
 
-### <a name="hand-tracking-gestures-and-interactable-buttons"></a>手动跟踪手势和可交互按钮
+## <a name="hand-tracking-gestures-and-interactable-buttons"></a>手动跟踪手势和可交互按钮
 
 在本部分中，你将学习如何使用手动跟踪来按 pressable 按钮。
 
@@ -94,7 +92,7 @@ ms.locfileid: "74539745"
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6a.png)
 
-    现在，你的显示画面中应会包含一个立方体。 它会显得非常大。 您可以调整坐标（在层次结构区域中仍选择 Cube 时）以减小大小。 将刻度值设置为 x = 0.02，y = 0.02，z = 0.02。 请确保将多维数据集放在按钮附近，而不是与其重叠。 在下图中，多维数据集的位置为 x = 0、y = 0.4，z = 0.2。
+    现在，你的显示画面中应会包含一个立方体。 它会显得非常大。 您可以调整坐标（在层次结构区域中仍选择 Cube 时）以减小大小。 将刻度值设置为 x = 0.02，y = 0.02，z = 0.02。 请确保将多维数据集放在按钮附近，而不是与其重叠。 在下图中，多维数据集的位置为 x = 0、y = 0.04，z = 0.2。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6b.png)
 
@@ -129,7 +127,7 @@ ms.locfileid: "74539745"
 
     现在，当按钮被按下时，它将变为新颜色;蓝. 当按钮被释放时，它将改回您指定的默认颜色（例如浅灰色）。按屏幕顶部的 "播放" 按钮在编辑器中试用，或将其部署到 HoloLens 2 进行测试。 若要了解有关编辑器内模拟的详细信息（包括手动模拟），请阅读[MRTK 的模拟文档页](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)。
 
-### <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a>使用 MRTK 的网格对象集合创建按钮面板
+## <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a>使用 MRTK 的网格对象集合创建按钮面板
 
 在本部分中，你将了解如何使用 MRTK 的 GridObjectCollection 工具自动将多个按钮对齐到巧妙的用户界面。
 
@@ -162,7 +160,7 @@ ms.locfileid: "74539745"
     >[!NOTE]
     >根据子对象或父对象的方向，在将来的项目中可能需要以不同的方式调整方向设置。 此外，根据集合中对象的大小，可能需要以不同的方式定义“单元格宽度”和“单元格高度”字段。
 
-### <a name="adding-text-into-your-scene"></a>将文本添加到场景中
+## <a name="adding-text-into-your-scene"></a>将文本添加到场景中
 
 本部分介绍如何将文本添加到混合现实体验以及如何编辑文本。 如果尚未这样做，请按照[此处](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)的说明操作，确保已在 Unity 中启用了 TextMeshPro。
 

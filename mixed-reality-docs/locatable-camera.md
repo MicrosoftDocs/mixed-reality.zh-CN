@@ -6,16 +6,16 @@ ms.author: wguyman
 ms.date: 06/12/2019
 ms.topic: article
 keywords: 照相机，hololens，彩色相机，正面朝，hololens 2，cv，计算机视觉，基准，标记，qr 码，qr，照片，视频
-ms.openlocfilehash: e906da63b07643ccbf386c6fc72cc3c58006ae72
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f4c62a1c2ad7cf4de569e815ffc405fbcb06744a
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438506"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597620"
 ---
 # <a name="locatable-camera"></a>定位照相机
 
-HoloLens 包括在设备前面安装的面向世界的相机，使应用能够查看用户看到的内容。 开发人员可以访问和控制照相机，就像在 smartphone、笔记本或台式机上的彩色照相机一样。 在 mobile 和 desktop 上工作的相同通用 windows [media capture](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapture.aspx)和 windows Media foundation Api 在 HoloLens 上工作。 Unity[还包装了这些 Windows api](locatable-camera-in-unity.md) ，以便在 HoloLens 上抽象地使用照相机的简单用法，例如拍摄定期照片和视频（有或没有全息影像）以及查找相机在场景中的位置和透视。
+HoloLens 包含在设备前面安装的面向世界的相机，使应用能够查看用户看到的内容。 开发人员可以访问和控制照相机，就像在 smartphone、笔记本或台式机上的彩色照相机一样。 在 mobile 和 desktop 上工作的相同通用 windows [media capture](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapture.aspx)和 windows Media foundation Api 在 HoloLens 上工作。 Unity[还包装了这些 Windows api](locatable-camera-in-unity.md) ，以便在 HoloLens 上抽象地使用照相机的简单用法，例如拍摄定期照片和视频（有或没有全息影像）以及查找相机在场景中的位置和透视。
 
 ## <a name="device-camera-information"></a>设备照相机信息
 
@@ -69,11 +69,11 @@ HoloLens 包括在设备前面安装的面向世界的相机，使应用能够�
 
 HoloLens 文档中其他地方的 "照相机" 可能指的是 "虚拟游戏相机" （应用呈现到的截锥）。 除非另有指示，否则，此页上的 "照相机" 指的是实际的 RGB 颜色相机。
 
-此页上的详细信息介绍了如何使用[MediaFrameReference](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference)类，不过，还存在使用[媒体基础特性](https://msdn.microsoft.com/library/windows/desktop/mt740395(v=vs.85).aspx)请求照相机内部函数和位置的 api。 有关详细信息，请参阅[全息面部跟踪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)。
+本页上的详细信息介绍了如何使用[MediaFrameReference](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference)类。 不过，还存在使用[媒体基础特性](https://msdn.microsoft.com/library/windows/desktop/mt740395(v=vs.85).aspx)请求照相机内部函数和位置的 api。 有关详细信息，请参阅[全息面部跟踪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)。
 
 ### <a name="images-with-coordinate-systems"></a>带有坐标系统的图像
 
-每个图像帧（无论是照片还是视频）在捕获时都包含一个[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) ，可使用[MediaFrameReference](https://docs.microsoft.com//uwp/api/Windows.Media.Capture.Frames.MediaFrameReference)的[坐标系](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference.coordinatesystem#Windows_Media_Capture_Frames_MediaFrameReference_CoordinateSystem)属性进行访问。 此外，每个帧都包含了相机镜头模型的说明，该模型可在[CameraIntrinsics](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)属性中找到。 这些转换一起为每个像素定义了三维空间中的射线，表示生成像素的 photons 所采用的路径。 通过获取从帧的坐标系统到某个其他坐标系统的转换（例如从[固定的参考框架](coordinate-systems.md#stationary-frame-of-reference)中），可以将这些光线与应用程序中的其他内容相关。 总而言之，每个图像框架提供以下内容：
+每个图像帧（无论是照片还是视频）在捕获时都包含[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)的根，可以使用[MediaFrameReference](https://docs.microsoft.com//uwp/api/Windows.Media.Capture.Frames.MediaFrameReference)的[坐标系](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference.coordinatesystem#Windows_Media_Capture_Frames_MediaFrameReference_CoordinateSystem)属性访问。 此外，每个帧都包含对相机镜头型号的说明，可在[CameraIntrinsics](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)属性中找到。 这些转换一起为每个像素定义了三维空间中的射线，表示生成像素的 photons 所采用的路径。 通过获取从帧的坐标系统到某个其他坐标系统的转换（例如从[固定的参考框架](coordinate-systems.md#stationary-frame-of-reference)中），可以将这些光线与应用程序中的其他内容相关。 总而言之，每个图像框架提供以下内容：
 * 像素数据（以 RGB/NV12/JPEG/etc 格式）
 * 捕获位置的[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)
 * 包含照相机镜头模式的[CameraIntrinsics](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)类
@@ -90,7 +90,7 @@ HoloLens 文档中其他地方的 "照相机" 可能指的是 "虚拟游戏相�
 
 在 HoloLens 上，视频和静态图像流在系统的图像处理管道中 undistorted，然后才能将帧提供给应用程序（预览流包含原始扭曲帧）。 由于只有 CameraIntrinsics 可用，因此应用程序必须假定图像帧表示完美的 pinhole 相机。
 
-在 HoloLens （第一代）上，在帧元数据中使用 CameraIntrinsics 时，图像处理器中的 undistortion 函数可能仍会导致最大为10像素的错误。 在许多用例中，此错误并不重要，但如果将全息影像与真实的海报/标记对齐，则会注意到 < 10px 的偏移量（大约11mm，对于离 
+在 HoloLens （第一代）上，在帧元数据中使用 CameraIntrinsics 时，图像处理器中的 undistortion 函数可能仍会导致最多10个像素的错误。 在许多用例中，此错误并不重要，但如果将全息影像与真实的海报/标记对齐，则会注意到 < 的10px 偏移（大约11mm，对于离2米的全息影像），这可能导致此扭曲错误。 
 
 ## <a name="locatable-camera-usage-scenarios"></a>定位照相机使用方案
 
@@ -105,7 +105,7 @@ HoloLens 文档中其他地方的 "照相机" 可能指的是 "虚拟游戏相�
 若要识别可视模式，然后将该对象放在应用程序的世界空间中，需要执行以下操作：
 1. 图像模式识别工具包，如 QR 码、AR 标记、面部查找器、圆形跟踪器、OCR 等。
 2. 在运行时收集图像帧，并将其传递到识别层
-3. 将其图像位置 Unproject 为世界位置，或可能是世界光线。 See
+3. 将其图像位置 Unproject 为世界位置，或可能是世界光线。 
 4. 将虚拟模型放置在这些世界位置
 
 一些重要的图像处理链接：
@@ -122,7 +122,7 @@ HoloLens 文档中其他地方的 "照相机" 可能指的是 "虚拟游戏相�
 5. 主线程：移动虚拟模型以匹配找到的关键点
 6. 主线程：从步骤2重复
 
-某些图像标记系统仅提供单个像素位置（其他在这种情况下将不需要此部分），这相当于可能的位置。 若要访问单个3d 位置，我们可以利用多个射线，并按近似交点查找最终结果。 为此，您需要：
+某些图像标记系统仅提供单个像素位置（其他在这种情况下将不需要此部分），这相当于可能的位置。 若要访问单个3d 位置，我们可以利用多个射线，并按大致交集查找最终结果。 为此需要：
 1. 获取正在收集多个照相机图像的循环
 2. 查找关联的功能点及其世界光线
 3. 如果有一个功能字典，每个功能都有多个世界光线，则可以使用以下代码来解决这些光线的交集：
@@ -145,7 +145,7 @@ public static Vector3 ClosestPointBetweenRays(
  }
 ```
 
-如果有两个或多个跟踪标记位置，则可以将建模场景定位到适合用户当前方案。 如果无法假定重心，则需要三个标记位置。 在许多情况下，我们使用简单的配色方案，其中白色球体表示实时跟踪标记位置，蓝色球体表示建模标记位置，这使用户能够以可视方式衡量对齐质量。 我们假定在所有应用程序中都进行以下设置：
+如果有两个或多个跟踪标记位置，则可以将建模场景定位到适合用户的当前方案。 如果无法假定重心，则需要三个标记位置。 在许多情况下，我们使用简单的配色方案，其中白色球体表示实时跟踪的标记位置，蓝色球体表示建模标记位置。 这允许用户以直观方式衡量对齐质量。 我们假定在所有应用程序中都进行以下设置：
 * 两个或多个建模标记位置
 * 场景中的一个 "校准空间" 是标记的父项
 * 相机功能标识符
@@ -166,7 +166,7 @@ public static Vector3 ClosestPointBetweenRays(
 
 ### <a name="track-or-identify-tagged-stationary-or-moving-real-world-objectsfaces-using-leds-or-other-recognizer-libraries"></a>使用 Led 或其他识别器库跟踪或确定标记为静止或移动现实世界对象/面部
 
-示例：
+例如：
 * 带有 Led 的工业机器人（或用于缓慢移动对象的 QR 码）
 * 标识并识别房间中的对象
 * 确定并识别房间中的人员（例如，在人脸上放置全息的联系人卡片）

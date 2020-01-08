@@ -6,12 +6,12 @@ ms.author: shentan
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 混合现实、动手、运动控制器、交互、设计
-ms.openlocfilehash: 395862fe987244e2af70bb6794caa91e243cd076
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 27d13316bbc4b3b40a1e617d73dd5487c05cb347
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435184"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334442"
 ---
 # <a name="hands-and-motion-controllers"></a>双手和运动控制器
 ## <a name="scenarios"></a>场景
@@ -39,7 +39,7 @@ ms.locfileid: "73435184"
     :::column:::
        [手动 ![点和提交](images/hands-and-controllers-point-and-commit.jpg)](point-and-commit.md)<br>
         ### <a name="point-and-commit-with-handspoint-and-commitmdbr"></a>[使用手指向和提交](point-and-commit.md)<br>
-        这种模态使用户能够在远处与全息影像交互。 它使用户能够充分利用环境。 用户可以在任何位置放置全息影像，还可以从任意距离访问。 用于控制和操作2D 和3D 全息影像的心理模型和手势与直接操作的情况有关。
+        这种模态使用户能够在远处与全息影像交互。 它使用户能够充分利用环境。 用户可以在任何位置放置全息影像，同时仍然可以从任意距离访问。 用于控制和操作2D 和3D 全息影像的心理模型和手势与直接操作的情况有关。
     :::column-end:::
     :::column:::
        [![运动控制器](images/hands-and-controllers-motion-controllers.jpg)](motion-controllers.md)<br>
