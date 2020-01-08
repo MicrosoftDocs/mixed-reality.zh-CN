@@ -7,12 +7,12 @@ ms.author: grbury
 ms.date: 11/15/2019
 ms.topic: overview
 keywords: Windows Mixed Reality，设计，应用模式，控件，样式，HoloLens，交互，UX 元素，行为，构建基块
-ms.openlocfilehash: 8dd90a555faea62f69750847ddd6e6df4d9d0314
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: 16a6c08230dbe16ebb04c39751cce306bbc57c2d
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539668"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334182"
 ---
 # <a name="ux-elements-overview"></a>UX 元素概述
 
@@ -22,23 +22,20 @@ ms.locfileid: "74539668"
 
 :::row:::
     :::column:::
-       [![颜色、光线和材料](images/640px-fragments.jpg)](color,-light-and-materials.md) **[颜色、光线和材料](color,-light-and-materials.md)**
+       [![颜色、光线和材料](images/640px-fragments.png)](color,-light-and-materials.md) **[颜色、光线和材料](color,-light-and-materials.md)**
     :::column-end:::
     :::column:::
-       [![缩放](images/volvo-cars-microsoft-hololens-experience01-640px.jpg)](scale.md) **[比例](scale.md)**
-    :::column-end:::
-    :::column:::
-       [![空间音量](images/SpatialAudio.gif)](spatial-sound.md)  **[](spatial-sound.md)声音**
+       [![缩放](images/volvo-cars-microsoft-hololens-experience01-640px.png)](scale.md) **[比例](scale.md)**
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       [![版式](images/text_in_unity_viewingangle.jpg)](typography.md) **[版式](typography.md)**
+       [![版式](images/text_in_unity_viewingangle.png)](typography.md) **[版式](typography.md)**
     :::column-end:::
     :::column:::
-    :::column-end:::
-    :::column:::
+       [![声](images/spatialaudio.png)](spatial-sound.md)  **[音](spatial-sound.md)** 
+    
     :::column-end:::
 :::row-end:::
 
@@ -75,7 +72,8 @@ ms.locfileid: "74539668"
        [![手形菜单](images/UX/UX_Hero_HandMenu.jpg)](hand-menu.md) **[菜单](hand-menu.md)**
     :::column-end:::
     :::column:::
-       菜单附近[![附近菜单](images/UX/UX_Hero_NearMenu.jpg)](near-menu.md)  **[](near-menu.md)**
+       菜单附近[![附近](images/UX/UX_Hero_NearMenu.jpg)](near-menu.md)  **[菜单](near-menu.md)** 
+    
     :::column-end:::
     :::column:::
        [![对象集合](images/UX/UX_Hero_ObjectCollection.jpg)](object-collection.md) **[对象集合](object-collection.md)**
