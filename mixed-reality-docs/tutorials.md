@@ -8,22 +8,22 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程
-ms.openlocfilehash: 66246e33bfd1b63630c07005661a744f8939de47
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: ebb40c6ae877ac167c7c16a67e08ef2501f6290d
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539653"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334465"
 ---
 # <a name="tutorials-and-sample-apps"></a>教程和示例应用
 
 ![HoloLens 2 用户](images/08_Tutorials.png)
 
-目前，我们的所有教程和示例应用均基于 Unity。  在我们制作适用于其他引擎和平台的内容的过程中，“目录”中会列出相关的标题。
+目前，我们的所有教程和示例应用均基于 Unity。 在我们制作适用于其他引擎和平台的内容的过程中，“目录”中会列出相关的标题。
 
 ## <a name="hololens-2-tutorials"></a>HoloLens 2 教程
 
-HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程序的技术和最佳实践。  本教程基于[混合现实工具包 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)。
+HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程序的技术和最佳实践。 本教程基于[混合现实工具包 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)。
 
 * 入门教程 - [概述和目标第 1 部分（共 7 部分）](mrlearning-base.md)
 * Azure 空间定位点教程 - [Azure 空间定位点入门第 1 部分（共 3 部分）](mrlearning-asa-ch1.md)
@@ -48,7 +48,7 @@ HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程
 * 完成每篇教程往往需要先准备好一台装有适当[工具](install-the-tools.md)的 Windows 10 电脑。
 
 >[!NOTE]
->混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。  因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。  我们**不会**在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。   我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
+>混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。 因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。 我们**不会**在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。  我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
@@ -265,7 +265,7 @@ HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程
 
 ## <a name="mixed-reality-and-azure-services-tutorials"></a>混合现实和 Azure 服务教程
 
-这些独立教程非常适合用于学习如何在 Unity 项目中实现不同的 Azure 服务。  这些教程全都基于 HoloLens（第一代）或沉浸式头戴显示设备，但有关使用这些服务的课程基本上对任何设备通用。
+这些独立教程非常适合用于学习如何在 Unity 项目中实现不同的 Azure 服务。 这些教程全都基于 HoloLens（第一代）或沉浸式头戴显示设备，但有关使用这些服务的课程基本上对任何设备通用。
 
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
     <li>
@@ -413,7 +413,7 @@ HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程
                                           </div>
                                           <div class="cardText">
                                               <h3>MR 和 Azure 307：机器学习</h3>
-                                              <p>在混合现实应用中利用 Azure 机器学习工作室部署大量机器学习 (ML) 算法。</p>
+                                              <p>在混合现实应用中利用 Azure 机器学习工作室（经典）部署大量机器学习 (ML) 算法。</p>
                                           </div>
                                       </div>
                                   </div>

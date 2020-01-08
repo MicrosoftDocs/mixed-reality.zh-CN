@@ -8,17 +8,17 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目, 核心概念, 交互
-ms.openlocfilehash: 92af4ddba96f659f0af812672599d4a90bf00224
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: 9ef408e1551e9f6c52a6c5fcf7df3123cc099c8c
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539605"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334143"
 ---
 # <a name="start-designing-and-prototyping"></a>开始设计和原型制作
 
 
-![三维网格插图](images/03_Design.png)
+![混合现实设计摘要](images/03_Design.png)
 
 ## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[扩展设计过程](case-study-expanding-the-design-process-for-mixed-reality.md)
 
@@ -111,22 +111,22 @@ HoloLens 2 为开发人员提供了使用用户所注视对象的相关信息的
 
 :::row:::   
     :::column:::    
-       [![了解 Unity](images/unity_logo.png)](https://learn.unity.com/)<br>
+       [![了解 Unity](images/Final_unity_logo.png)](https://learn.unity.com/)<br>
         **[了解 Unity](https://learn.unity.com/)**<br>
         了解如何使用 Unity 创建交互式体验。 从头至尾从实践中学习。
     :::column-end:::    
     :::column:::    
-        [![混合现实工具包 (MRTK)](images/MRTK-small_logo.png)](https://github.com/Microsoft/MixedRealityToolkit-Unity)<br>
+        [![混合现实工具包 (MRTK)](images/Final_mrtk-small_logo.png)](https://github.com/Microsoft/MixedRealityToolkit-Unity)<br>
         **[混合现实工具包 (MRTK)](https://github.com/Microsoft/MixedRealityToolkit-Unity)**<br>  
         使用空间交互和 UI 构建基块，通过 Unity 立即开始混合现实设计和开发。   
     :::column-end:::
     :::column:::    
-        [![混合现实设计实验室](images/MRDL_logo.png)](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)<br>
+        [![混合现实设计实验室](images/Final_mrdl_logo.png)](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)<br>
         **[混合现实设计实验室](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)**<br>  
         获取示例应用，这些应用会演示如何使用 MRTK 的构建基块来创建美好的混合现实体验。
     :::column-end:::        
     :::column:::    
-        [![Microsoft Maquette](images/Maquette_logo.png)](https://www.maquette.ms/)<br>
+        [![Microsoft Maquette](images/Final_maquette_logo.png)](https://www.maquette.ms/)<br>
         **[Microsoft Maquette](https://www.maquette.ms/)**<br>  
         为 VR 而设计。 可以使用 Microsoft Maquette 快速便捷地进行沉浸式空间原型制作。 
     :::column-end:::    
@@ -142,7 +142,7 @@ HoloLens 2 为开发人员提供了使用用户所注视对象的相关信息的
 
 :::row:::
     :::column:::
-       [![了解基础知识](images/icon-lightbulb.jpg)](index.md#understand-the-basics)<br>
+       [![了解基础知识](images/icon-lightbulb.png)](index.md#understand-the-basics)<br>
         **[了解基础知识](index.md#understand-the-basics)**<br>
         更好地了解是什么定义了混合现实，以及如何使用混合现实。
     :::column-end:::

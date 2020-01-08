@@ -8,12 +8,12 @@ ms.date: 08/27/2019
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合现实、开发、HoloLens、unity、directx
-ms.openlocfilehash: 2c3416ffc1f3259c7be8f105a55427e3c29826fb
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: 7b1a67f05941fc862ad3f36834efe071b0d1c57b
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539574"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334251"
 ---
 # <a name="learn-the-tools-and-architecture"></a>了解工具和体系结构
 
@@ -130,7 +130,7 @@ HandInteractionExamples.unity 示例场景包含各种类型的交互和 UI 控�
 
 :::row:::
     :::column:::
-       [![了解基础知识](images/icon-lightbulb.jpg)](index.md#understand-the-basics)<br>
+       [![了解基础知识](images/icon-lightbulb.png)](index.md#understand-the-basics)<br>
         **[了解基础知识](index.md#understand-the-basics)**<br>
         更好地了解是什么定义了混合现实，以及如何使用混合现实。
     :::column-end:::
