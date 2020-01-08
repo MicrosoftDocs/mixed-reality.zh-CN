@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 部署，unity，visual studio，HoloLens，HoloLens 2，沉浸式耳机
-ms.openlocfilehash: 88eaa69f1349e3303a93d9d634479d8265eb417c
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 4d145568190ea43cf2ec43442a1c3d5ca4d92251
+ms.sourcegitcommit: 7e8b9de561cbc8483e84511f3e9cbd779f3a999f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926549"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502628"
 ---
 # <a name="best-practices-for-working-with-unity-and-visual-studio"></a>使用 Unity 和 Visual Studio 的最佳实践
 
@@ -29,7 +29,7 @@ Unity 中的 .NET 脚本编写后端支持在 Unity 2018 中被弃用，并且�
    - 单击 "**添加排除**"，然后选择包含 Unity 项目代码和生成输出的文件夹
 3) 使用 SSD 进行生成
 
-有关详细信息，请阅读[IL2CPP 优化生成时间](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)。 此外，请[在 IL2CPP 脚本后端上读取调试](https://docs.unity3d.com/Manual/windowsstore-debugging-il2cpp.html)。
+有关详细信息，请参阅[优化 IL2CPP 的生成时间](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)。 此外，请查看[IL2CPP 脚本编写后端的调试](https://docs.unity3d.com/Manual/windowsstore-debugging-il2cpp.html)。
 
 此外，请考虑安装[ *UnityScriptAnalyzer* Visual Studio 扩展](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/UnityScriptAnalyzer)。 此工具会分析你C#的 Unity 脚本，以获取能够以更优化的方式编写的代码。
 
@@ -45,7 +45,7 @@ Unity 中的 .NET 脚本编写后端支持在 Unity 2018 中被弃用，并且�
 
 ## <a name="expose-c-class-variables-for-easy-tuning"></a>公开C#类变量以便轻松优化
 
-可以通过两种方式公开类变量。 为此，建议将 [SerializeField] 特性添加到专用变量。 这样，便可以从编辑器访问这些方法，但不能以编程方式公开。  另一种方法是使C#类变量公开，以便在编辑器 UI 中公开它们。 
+可以通过两种方式公开类变量。 建议将 [SerializeField] 特性添加到专用变量。 这样，便可以从编辑器访问这些方法，但不能以编程方式公开。  另一种方法是使C#类变量公开，以便在编辑器 UI 中公开它们。 
 
 在编辑器中播放时，这两种方法都可以轻松地调整变量。 这对于优化交互 mechanic 属性特别有用。
 
@@ -58,6 +58,6 @@ Unity 中的 .NET 脚本编写后端支持在 Unity 2018 中被弃用，并且�
 以文本格式存储资产使你可以更轻松地在 Visual Studio 中查看内容更改差异。 您可以通过更改**资产序列化**模式来**强制文本**，在 "编辑 > 项目设置 > 编辑器" 中启用此项。 但是，合并文本资产文件更改很容易出错，不建议这样做，因此请考虑在源代码管理系统中启用独占二进制文件签出。
 
 ## <a name="see-also"></a>另请参阅
-- [Visual Studio Tools for Unity](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9)
+- [适用于 Unity 的 Visual Studio 工具](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9)
 - [优化 IL2CPP 的生成时间](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)
 - [*UnityScriptAnalyzer*Visual Studio 扩展](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/UnityScriptAnalyzer)

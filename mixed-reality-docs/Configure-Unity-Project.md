@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity，混合现实，开发，入门，新项目
-ms.openlocfilehash: af30cf91eda1b654bea6048c34f63c61238626c7
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 99c72f2d9d900c8a05fb7d8b9b8de10d657fdd13
+ms.sourcegitcommit: 7e8b9de561cbc8483e84511f3e9cbd779f3a999f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437120"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502648"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>为 Windows Mixed Reality 配置新的 Unity 项目 
 
@@ -29,7 +29,7 @@ ms.locfileid: "73437120"
 5. 将**生成类型**设置为**D3D**
 6. 将**UWP SDK**设置为**安装的最新版本**
 
-接下来，我们需要让 Unity 知道我们要导出的应用程序应创建[沉浸式视图](app-views.md)而不是2d 视图。 为此，请启用 "支持的虚拟现实"：
+接下来，您需要让 Unity 知道您尝试导出的应用程序应创建[沉浸式视图](app-views.md)而不是2d 视图。 为此，请启用 "支持的虚拟现实"：
 1. 从 "**生成设置 ...** " 窗口中，打开 "**播放机设置 ...** "
 2. 选择通用 Windows 平台 "选项卡的**设置**
 3. 展开 " **XR 设置**" 组
@@ -39,7 +39,7 @@ ms.locfileid: "73437120"
 ![Unity 质量设置](images/getting-started-unity-quality-settings.jpg)<br>
 *Unity xr 设置*
 
-现在，你的应用可以执行基本的全息呈现和空间输入。 若要进一步了解并利用某些功能，应用必须在其清单中声明相应的功能。 清单声明可以在 Unity 中进行，因此它们包含在每个后续的项目导出中。 此设置位于 "播放机设置" > "设置" 中**通用 Windows 平台 > 发布设置 > 功能**。 为混合现实启用常用 Unity Api 的适用功能包括：
+现在，你的应用可以执行基本的全息呈现和空间输入。 若要进一步了解并利用某些功能，应用必须在其清单中声明相应的功能。 清单声明可以在 Unity 中进行，因此它们包含在每个后续的项目导出中。 这些设置位于 "**播放机设置" > "通用 Windows 平台 >" 发布设置 "> 功能**的" 设置 "。 为混合现实启用常用 Unity Api 的适用功能包括：
 
 |  功能  |  需要功能的 Api | 
 |----------|----------|

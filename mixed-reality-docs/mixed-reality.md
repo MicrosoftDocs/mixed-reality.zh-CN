@@ -6,12 +6,12 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality，全息，ar，vr，先生，xr，扩充现实，虚拟现实，说明
-ms.openlocfilehash: 65588902565ee0c5a1710f823311ccdecc23230e
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: e3205590ce46e0fc9113421e0dbaeb87fe6bc0c2
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539551"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334036"
 ---
 # <a name="what-is-mixed-reality"></a>什么是混合现实？
 
@@ -19,8 +19,8 @@ ms.locfileid: "74539551"
 
 混合现实是将物理世界与数字世界相混合的结果。 混合现实是人类、计算机和环境交互方面的下一次演进，它解锁了此前受限于我们想象力的可能性。 这是通过计算机视觉、图形处理能力、显示技术和输入系统的进步来实现的。 术语*混合现实*1994 最初是通过 Paul Milgram 和 Fumio Kishino，"[一种混合现实视觉对象的分类](https://etclab.mie.utoronto.ca/people/paul_dir/IEICE94/ieice.html)。" 他们的白皮书介绍了*virtuality*的一种概念，重点介绍如何应用分类分类。 此后，混合现实的应用程序会超出显示范围。 它还包括环境输入、空间音质和位置。
 
-![混合现实频谱](images/MixedRealitySpectrum-worlds.jpg)<br>
-*混合现实是将物理世界与数字世界混合的结果。*
+![混合现实频谱](images/mixedrealityspectrum-worlds.png)<br>
+*映像：混合现实是将物理世界与数字世界混合的结果。*
 
 <br>
 
@@ -34,18 +34,12 @@ ms.locfileid: "74539551"
 
 <br>
 
+显示计算机、人和环境之间的交互的 ![维恩图](images/mixed-reality-venn-diagram-300px.png)<br> 
+*映像：计算机、人类和环境之间的交互。*
 
+<br>
 
-:::row:::
-    :::column:::
-        现在，所有三个--**计算机处理、人工输入和环境输入**的组合都可用于创建真正的混合现实体验。 在现实世界中的移动可以转换为数字世界中的运动。 现实世界中的边界可能会影响数字世界中的应用程序体验，例如游戏播放。 如果没有环境输入，体验就不能在物理和数字现实之间融合。<br>
-        <br>
-        *Image：计算机、人类和环境之间的交互。*
-    :::column-end:::
-        :::column:::
-       ![显示计算机、人类和环境之间的交互的维恩图](images/mixed-reality-venn-diagram-300px.png)<br> 
-    :::column-end:::
-:::row-end:::
+现在，所有三个--**计算机处理、人工输入和环境输入**的组合都可用于创建真正的混合现实体验。 在现实世界中的移动可以转换为数字世界中的运动。 现实世界中的边界可能会影响数字世界中的应用程序体验，例如游戏播放。 如果没有环境输入，体验就不能在物理和数字现实之间融合。<br>
 
 <br>
 
@@ -72,8 +66,8 @@ ms.locfileid: "74539551"
 
 <br>
 
-![混合现实频谱](images/MixedRealitySpectrum.jpg)<br>
-*混合现实范围*
+![混合现实频谱](images/mixedrealityspectrum.png)<br>
+*映像：混合现实范围*
 
 <br>
 
@@ -91,15 +85,17 @@ ms.locfileid: "74539551"
 
 <table>
 <tr>
-<th width="20%"> 特征</th><th width="40%"> 全息设备</th><th width="40%"> 沉浸式设备</th>
+<th width="30%"> 特征</th><th width="35%"> 全息设备</th><th width="35%"> 沉浸式设备</th>
 </tr><tr>
-<td> 示例设备</td><td> Microsoft HoloLens<br /> <img alt="Microsoft HoloLens image" width="300" height="169" src="images/mshololens-hero1-whitbg-rgb-300px.png" /></td><td> Acer Windows Mixed Reality 开发版<br /> <img alt="Acer Windows Mixed Reality Development Edition image" width="300" height="169" src="images/acer-windows-mixed-reality-development-edition-headset-300px.jpg" /></td>
+<td><strong>示例设备</strong></td><td> Microsoft HoloLens<br><br> <img alt="Microsoft HoloLens 2 image" width="300" height="169" src="images/HoloLens2.jpg" /></td><td> Samsung HMD 太空 +<br><br> <img alt="Samsung HMD Odyssey+ image" width="300" height="169" src="images/Samsung-HMD-Odyssey.jpg" /></td>
 </tr><tr>
-<td> “显示”</td><td> <i>查看-通过显示。</i> 允许用户在戴上耳机时查看物理环境。</td><td> <i>不透明显示。</i> 在戴上耳机时阻塞物理环境。</td>
+<td><strong>Display</strong></td><td> 查看-通过显示。 允许用户在戴上耳机时查看物理环境。</td><td> 不透明显示。 在戴上耳机时阻塞物理环境。</td>
 </tr><tr>
-<td> 搬家</td><td> 旋转和平移都具有全部六个自由度。</td><td> 旋转和平移都具有全部六个自由度。</td>
+<td><strong>搬家</strong></td><td> 旋转和平移都具有全部六个自由度。</td><td> 旋转和平移都具有全部六个自由度。</td>
 </tr>
 </table>
+
+
 
 请注意，设备是连接到单独的 PC 还是受限（通过 USB 电缆或 Wi-fi）或自包含设备（untethered），并不反映设备是全息设备还是沉浸式设备。 当然，改进移动性的功能会导致更好的体验，而全息和沉浸式设备可能是受限或 untethered。
 
@@ -108,8 +104,8 @@ ms.locfileid: "74539551"
 
 <br>
 
-混合现实频谱中的 ![设备类型](images/MixedRealitySpectrum-devices.jpg)<br>
-*混合现实范围内的设备*
+混合现实频谱中的 ![设备类型](images/Final_WhatIsMixedReality07.png)<br>
+*映像：在混合现实范围内存在设备*
 
 通常，最好考虑应用程序或游戏开发人员要创建的体验类型。 这些体验通常面向特定的点或部分。 然后，开发人员应考虑要面向的设备的功能。 例如，依赖于现实世界的体验将在 HoloLens 上运行最佳。
 * **向左（接近物理事实）。** 用户仍在其物理环境中存在，永远不会相信他们已离开该环境。

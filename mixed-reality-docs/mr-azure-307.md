@@ -1,20 +1,20 @@
 ---
 title: MR 和 Azure 307-机器学习
-description: 完成本课程以了解如何在混合现实应用程序内实现 Azure 机器学习 Studio。
+description: 完成本课程以了解如何在混合现实应用程序中实现 Azure 机器学习 Studio （经典）。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure，混合现实，学院，unity，教程，api，机器学习，ml，机器学习工作室，hololens，沉浸，vr
-ms.openlocfilehash: e302e287049cd746a436904c2af2bcc2b0835796
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: d1692faef825d0ee20be4cfc8d8333bcccd754e1
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926619"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75333822"
 ---
 >[!NOTE]
->混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 会使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 将来会发布一系列新教程，这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
+>混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。  因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。  我们**不会**在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。  我们将维护这些教程，使之持续适用于支持的设备。 将来会发布一系列新教程，这些教程将演示如何针对 HoloLens 2 进行开发。  此通知将在发布时通过指向这些教程的链接进行更新。
 
 <br>
 
@@ -22,13 +22,13 @@ ms.locfileid: "73926619"
 
 ![最终产品-启动](images/AzureLabs-Lab7-0.png)
 
-在本课程中，您将学习如何使用 Azure 机器学习 Studio 向混合现实应用程序添加机器学习（ML）功能。
+在本课程中，你将学习如何使用 Azure 机器学习 Studio （经典）将机器学习（ML）功能添加到混合现实应用程序。
 
-*Azure 机器学习 Studio*是一项 Microsoft 服务，它为开发人员提供了大量机器学习算法，可帮助进行数据输入、输出、准备和可视化。 然后，可以通过这些组件开发预测分析试验，对其进行循环访问，并使用它来训练模型。 完成培训后，可以在 Azure 云中操作模型，使其可以对新数据进行评分。 有关详细信息，请访问[Azure 机器学习 Studio 页](https://azure.microsoft.com/services/machine-learning-studio/)。
+*Azure 机器学习 Studio （经典）* 是一项 Microsoft 服务，它为开发人员提供了大量机器学习算法，可帮助进行数据输入、输出、准备和可视化。 然后，可以通过这些组件开发预测分析试验，对其进行循环访问，并使用它来训练模型。 完成培训后，可以在 Azure 云中操作模型，使其可以对新数据进行评分。 有关详细信息，请访问[Azure 机器学习 Studio （经典）页](https://azure.microsoft.com/services/machine-learning-studio/)。
 
 完成本课程后，你将拥有一个混合现实沉浸式耳机式应用程序，并将了解如何执行以下操作：
 
-1.  向*Azure 机器学习 Studio*门户提供销售数据表，并设计一个算法以预测未来的热门项目的销售情况。
+1.  向*Azure 机器学习 Studio （经典）* 门户提供销售数据表，并设计一个算法来预测未来的热门项目的销售情况。
 2.  创建可从 ML 服务接收和解释预测数据的**Unity 项目**。
 3.  通过在货位上提供最常用的销售项，直观显示**Unity 项目**中的断言而数据。
 
@@ -40,7 +40,7 @@ ms.locfileid: "73926619"
 
 <table>
 <tr>
-<th>摘要</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
+<th>Course</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td> MR 和 Azure 307：机器学习</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -49,7 +49,7 @@ ms.locfileid: "73926619"
 > [!NOTE]
 > 尽管本课程主要侧重于 Windows Mixed Reality 沉浸（VR）耳机，但你也可以将本课程中学习的内容应用于 Microsoft HoloLens。 在本课程中，你将看到有关支持 HoloLens 时可能需要执行的任何更改的说明。 使用 HoloLens 时，可能会在语音捕获过程中注意到某些回声。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 > [!NOTE]
 > 本教程面向具有 Unity 和C#的基本经验的开发人员。 另外请注意，本文档中的先决条件和书面说明表明了在编写时已测试和验证的内容（5月2018）。 您可以随意使用最新的软件（如[安装工具一文](install-the-tools.md)中所述），但不应假定本课程中的信息将与下面列出的内容完全匹配。
@@ -92,10 +92,10 @@ ms.locfileid: "73926619"
     1.  插入帐户的**名称**，请注意，此字段仅接受数字和小写字母。
     2.  对于**部署模型，选择 "** **资源管理器**"。
     3.  对于 "**帐户类型**"，请选择 "**存储（常规用途 v1）** "。
-    4.  对于 "**性能**"，请选择 "**标准**"。
+    4.  对于“性能”，请选择“标准”。
     5.  对于**复制**，请选择 "**读取-访问-异地冗余存储（GRS）** "。
     6.  使**安全传输**保持**禁用状态**。
-    7.  选择**订阅**。
+    7.  选择一个订阅。
     4. 选择一个**资源组**，或创建一个新的资源组。 资源组提供一种监视、控制访问、预配和管理 Azure 资产集合的计费的方法。 建议将所有与单个项目关联的 Azure 服务（例如这些实验室）保存在一个公共资源组中。
 
         > 若要了解有关 Azure 资源组的详细信息，请[访问资源组一文](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
@@ -112,13 +112,13 @@ ms.locfileid: "73926619"
 
     ![Azure 存储帐户设置](images/AzureLabs-Lab7-4.png)
 
-## <a name="chapter-2---the-azure-machine-learning-studio"></a>第2章-Azure 机器学习工作室
+## <a name="chapter-2---the-azure-machine-learning-studio--classic"></a>第2章-Azure 机器学习 Studio （经典）
 
 若要使用*Azure 机器学习*，需要配置机器学习服务的实例，使其可用于你的应用程序。
 
 1.  在 Azure 门户中，单击左上角的 "**新建**"，然后搜索**机器学习 Studio 工作区**，按**enter**。
 
-    ![Azure 机器学习 Studio](images/AzureLabs-Lab7-5.png)
+    ![Azure 机器学习 Studio （经典）](images/AzureLabs-Lab7-5.png)
 
 2.  新页将提供**机器学习 Studio 工作区**服务的说明。 在此提示符的左下方，单击 "**创建**" 按钮以创建与此服务的关联。
 
@@ -126,7 +126,7 @@ ms.locfileid: "73926619"
 
     1.  为此服务实例插入所需的**工作区名称**。
 
-    2.  选择**订阅**。
+    2.  选择一个订阅。
 
     3. 选择一个**资源组**，或创建一个新的资源组。 资源组提供一种监视、控制访问、预配和管理 Azure 资产集合的计费的方法。 建议将所有与单个项目关联的 Azure 服务（例如这些实验室）保存在一个公共资源组中。 
 
@@ -146,30 +146,30 @@ ms.locfileid: "73926619"
 
     10. 单击**创建**。
 
-        ![Azure 机器学习 Studio](images/AzureLabs-Lab7-6.png)
+        ![Azure 机器学习 Studio （经典）](images/AzureLabs-Lab7-6.png)
 
 4.  单击 "**创建**" 后，需要等待创建服务，这可能需要一分钟时间。
 
 5.  创建服务实例后，门户中将显示一个通知。
 
-    ![Azure 机器学习 Studio](images/AzureLabs-Lab7-7.png)
+    ![Azure 机器学习 Studio （经典）](images/AzureLabs-Lab7-7.png)
 
 6.  单击通知以浏览新服务实例。
 
-    ![Azure 机器学习 Studio](images/AzureLabs-Lab7-8.png)
+    ![Azure 机器学习 Studio （经典）](images/AzureLabs-Lab7-8.png)
 
 7.  单击通知中的 "**中转到资源**" 按钮以浏览新服务实例。
 
 8.  在显示的页面的 "**其他链接**" 部分下，单击 "**启动机器学习 Studio**"，这会将浏览器定向到**机器学习 studio**门户。
 
-    ![Azure 机器学习 Studio](images/AzureLabs-Lab7-9.png)
+    ![Azure 机器学习 Studio （经典）](images/AzureLabs-Lab7-9.png)
 
-9.  使用右上角的 "**登录**" 按钮登录到机器学习 Studio。
+9.  使用右上角的 "**登录**" 按钮登录到机器学习 Studio （经典）。
 
-    ![Azure 机器学习 Studio](images/AzureLabs-Lab7-10.png)
+    ![Azure 机器学习 Studio （经典）](images/AzureLabs-Lab7-10.png)
 
 
-## <a name="chapter-3---the-machine-learning-studio-dataset-setup"></a>第3章-机器学习 Studio：数据集设置
+## <a name="chapter-3---the-machine-learning-studio-classic-dataset-setup"></a>第3章-机器学习 Studio （经典）：数据集设置
 
 机器学习算法的一种方法是分析现有数据，然后根据现有数据集尝试预测未来结果。 这通常意味着您拥有的现有数据越多，算法的预测未来结果就越好。
 
@@ -180,25 +180,25 @@ ms.locfileid: "73926619"
 
 此示例数据集包含2017年每一天的每个小时的最佳销售对象的记录。
         
-![机器学习 Studio：数据集设置](images/AzureLabs-Lab7-11.png)
+![机器学习 Studio （经典）：数据集设置](images/AzureLabs-Lab7-11.png)
 
 例如，在2017的第1天（每小时13点），最佳销售物品是 salt 和辣椒。
 
 此示例表包含9998个条目。
 
-1.  返回到**机器学习 Studio**门户，并将此表添加为 ML 的**数据集**。 单击屏幕左下角的 " **+ 新建**" 按钮即可执行此操作。
+1.  返回到**机器学习 Studio （经典）** 门户，并将此表添加为 ML 的**数据集**。 单击屏幕左下角的 " **+ 新建**" 按钮即可执行此操作。
 
-    ![机器学习 Studio：数据集设置](images/AzureLabs-Lab7-12.png)
+    ![机器学习 Studio （经典）：数据集设置](images/AzureLabs-Lab7-12.png)
 
 2.  部分将从底部开始，并在左侧有导航面板。 单击 "数据集"，然后依次单击 "**数据集**"、"**本地文件**"。
 
-    ![机器学习 Studio：数据集设置](images/AzureLabs-Lab7-13.png)
+    ![机器学习 Studio （经典）：数据集设置](images/AzureLabs-Lab7-13.png)
 
 3.  按照以下步骤上传新的**数据集**：
 
     1. 此时将显示 "上传" 窗口，您可以在其中**浏览**硬盘驱动器以查找新的数据集。
 
-        ![机器学习 Studio：数据集设置](images/AzureLabs-Lab7-14.png)
+        ![机器学习 Studio （经典）：数据集设置](images/AzureLabs-Lab7-14.png)
 
     2.  选择后，返回到 "上传" 窗口，将复选框保留为 "未选中"。
 
@@ -208,7 +208,7 @@ ms.locfileid: "73926619"
 
     5.  按上传窗口右下角的勾选标记，将上传**数据集**。
 
-## <a name="chapter-4---the-machine-learning-studio-the-experiment"></a>第4章-机器学习工作室：试验
+## <a name="chapter-4---the-machine-learning-studio-classic-the-experiment"></a>第4章-机器学习 Studio （经典）：试验
 
 在构建机器学习系统之前，你需要构建一个试验来验证你的数据的理论。 在结果中，你将知道是否需要更多数据，或者数据与可能的结果之间是否没有关联。
 
@@ -216,39 +216,39 @@ ms.locfileid: "73926619"
 
 1.  再次单击页面左下角的 " **+ 新建**" 按钮，然后单击**试验** > **空白实验**。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-15.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-15.png)
 
 2.  将显示一个新页面，其中包含一个空白实验：
 
 3.  在左侧面板中，展开 "**保存的数据集**" >  **"我的数据集**"，并将**ProductsTableCSV**拖到**试验画布**上。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-16.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-16.png)
 
 4.  在左侧面板中，展开 "**数据转换**" > "**示例" 和 "拆分**"。 然后将**拆分**数据项拖到**试验画布**中。 拆分数据项会将数据集拆分为两个部分。 用于训练机器学习算法的部分。 第二部分将用于计算生成的算法的准确性。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-17.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-17.png)
 
 5.  在右侧面板中（选择了画布上的 Split 数据项时），将**第一个输出数据集中的行的小数部分**编辑为**0.7**。 这会将数据拆分为两个部分，第一部分将为70% 的数据，第二个部分将是剩余的30%。 若要确保数据随机拆分，请确保**随机拆分**复选框保持选中状态。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-18.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-18.png)
 
 6.  将连接从画布上**ProductsTableCSV**项的基拖到拆分数据项的顶部。 这会将这些项连接起来，并将**ProductsTableCSV**数据集输出（数据）发送到拆分数据输入。  
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-19.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-19.png)
 
 7.  在左侧的**试验**面板中，展开 "**机器学习** > **训练**"。 将**训练模型**项拖出到试验画布。 画布应与下面的外观相同。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-20.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-20.png)
 
 8.  从 "**拆分数据项**" 的左下***方***将连接拖到 "**定型模型**" 项的**右上方**。 定型模型将使用数据集中的第一个70% 拆分来训练该算法。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-21.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-21.png)
 
 9.  在画布上选择 "**训练模型**" 项，然后在 "**属性**" 面板（位于浏览器窗口的右侧）中，单击 "**启动列选择器**" 按钮。
 
 10. 在文本框中键入**product** ，然后按**enter**，*产品*将设置为用于定型预测的列。 在此之后，单击右下角的**勾选标记**以关闭选择对话框。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-22.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-22.png)
 
 11. 你将定型**多类逻辑回归**算法，根据一天中的小时和日期预测最销售的**产品**。 此文档超出了本文档的讨论范围，可以说明 Azure 机器学习 studio 提供的不同算法的详细信息，但你可以从[机器学习算法](https://docs.microsoft.com/azure/machine-learning/studio/algorithm-cheat-sheet)备忘单中了解详细信息
 
@@ -256,7 +256,7 @@ ms.locfileid: "73926619"
 
 13. 将**多类逻辑回归**的底部的输出连接到**定型模型**项的左上方输入。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-23.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-23.png)
 
 14. 在左侧面板中的实验项列表中，展开 "**机器学习** > **评分**"，然后将 "**评分模型**" 项拖到画布上。
 
@@ -264,60 +264,60 @@ ms.locfileid: "73926619"
 
 16. 将从**拆分数据**向右下的输出连接到**评分模型**项的右上方输入。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-24.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-24.png)
 
 17. 在左侧面板中的**实验**项列表中，展开 "**机器学习** > "**评估**"，然后将"**评估模型**"项拖到画布上。
 
 18. 将**评分模型**的输出连接到**评估模型**的左上方输入。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-25.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-25.png)
 
 19. 您已经生成了第一个机器学习试验。 你现在可以保存并运行试验。 在页面底部的菜单中，单击 "**保存**" 按钮以保存实验，并单击 "**运行**" 开始试验。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-26.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-26.png)
 
 20. 可以在画布的右上方查看试验**状态**。 请稍等片刻，等待试验结束。
 
     > 如果有大型（现实）数据集，可能会有可能需要数小时才能运行试验。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-27.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-27.png)
 
 21. 右键单击画布中的 "**评估模型**" 项，然后从上下文菜单中将鼠标悬停在 "**评估结果**" 上，然后选择 "**可视化**"。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-28.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-28.png)
 
 22. 将显示计算结果，显示预测结果与实际结果。 这将使用之前拆分的原始数据集的30% 来计算模型。 您可以看到，结果并不是很好，理想情况下，每行中的最大数目是列中突出显示的项。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-29.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-29.png)
 
 23. 关闭**结果**。
 
 24. 若要使用新训练的机器学习模型，你需要将其公开为**Web 服务**。 为此，请单击页面底部菜单中的 "**设置 Web 服务**" 菜单项，然后单击 "**预测 Web 服务**"。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-30.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-30.png)
 
 25. 将创建一个新选项卡，并合并定型模型以创建新的 web 服务。 
 
 26. 在页面底部的菜单中，单击 "**保存**"，然后单击 "**运行**"。 你将在实验画布的右上角显示状态 "已更新"。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-31.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-31.png)
 
 27. 运行完毕后，将在页面底部显示 "**部署 Web 服务**" 按钮。 你已准备好部署 web 服务。 单击页面底部菜单中的 "**部署 Web 服务**（经典）"。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-32.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-32.png)
 
     > 你的浏览器可能会提示你允许弹出窗口（你应该**允许**这样做），尽管你可能需要再次按 "**部署 Web 服务**" （如果未显示 "部署" 页）。 
 
 28. 一旦创建了实验，你会被重定向到 "**仪表板**" 页面，你将在其中显示**API 密钥**。 将其复制到记事本中，你将很快在代码中需要它。 记下 API 密钥后，请单击密钥下面的 "**默认终结点**" 部分中的 "**请求/响应**" 按钮。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-33.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-33.png)
 
     > [!NOTE] 
     > 如果单击此页中的 "测试"，将能够输入输入数据并查看输出。 输入**日期** **和时间**。 将**产品**条目留空。 然后单击 "**确认**" 按钮。 页面底部的输出将显示 JSON，表示每个产品选择的可能性。
 
-29. 随即打开一个新网页，其中显示了有关机器学习 Studio 所需的请求结构的说明和示例。 将此页中显示的**请求 URI**复制到记事本中。
+29. 随即打开一个新网页，其中显示了有关机器学习 Studio （经典）所需的请求结构的说明和示例。 将此页中显示的**请求 URI**复制到记事本中。
 
-    ![机器学习 Studio：试验](images/AzureLabs-Lab7-34.png)
+    ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-34.png)
 
 现在，你已构建了一个机器学习系统，它提供了最有可能使用的产品，这些产品是基于历史购买数据销售的，并与一天中的时间和日期相关联。
 
@@ -648,9 +648,9 @@ ms.locfileid: "73926619"
     > [!IMPORTANT]
     > 请确保将机器学习门户中的**主密钥**和**请求-响应终结点**插入到此处的变量中。 以下图像显示了从何处获取密钥和终结点的位置。 
     >  
-    > ![机器学习 Studio：试验](images/AzureLabs-Lab7-53-1.png)
+    > ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-53-1.png)
     >
-    > ![机器学习 Studio：试验](images/AzureLabs-Lab7-53-2.png)
+    > ![机器学习 Studio （经典）：试验](images/AzureLabs-Lab7-53-2.png)
 
 8.  将此代码插入**Start （）** 方法内。 当类初始化时，将调用**Start （）** 方法：
 
@@ -876,7 +876,7 @@ ms.locfileid: "73926619"
 
 ![添加 NuGet 包](images/AzureLabs-Lab7-0.png)
 
-## <a name="exercise"></a>小心谨慎
+## <a name="exercise"></a>练习
 
 **练习1**
 

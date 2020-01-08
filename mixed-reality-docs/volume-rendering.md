@@ -6,12 +6,12 @@ ms.author: kkennedy
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 容量耗尽映像，卷渲染，性能，混合现实
-ms.openlocfilehash: 1b3ec59adf4f6449ed3f12d7f98f329c4e963ea5
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 04931df5e4225225e4c11c3f6d72801e2d58f646
+ms.sourcegitcommit: 317653cd8500563c514464f0337c1f230a6f3653
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926681"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75503826"
 ---
 # <a name="volume-rendering"></a>卷渲染
 
@@ -23,7 +23,7 @@ ms.locfileid: "73926681"
 3. 好：削减子卷：仅显示卷的几个层
 4. 好：降低了卷渲染的分辨率（请参阅 "混合分辨率场景渲染"）
 
-只有一定数量的信息可从应用程序传输到屏幕的任何特定帧，这是总内存带宽。 此外，转换该数据以供演示所需的任何处理（或 "底纹"）也需要时间。 执行卷渲染时的主要注意事项如下：
+只有一定数量的信息可从应用程序传输到屏幕上的任何特定帧（这是总内存带宽）。 此外，转换此数据以进行呈现需要的任何处理（或 "底纹"）都需要时间。 执行卷渲染时的主要注意事项如下：
 * 屏幕宽度 * 屏幕高度 * 屏幕上的屏幕计数 * 每帧的总容量-每帧样本数
 * 1028 * 720 * 2 * 256 = 378961920 （100%）（完全 res 卷：样本太多）
 * 1028 * 720 * 2 * 1 = 1480320 （已满0.3%）（瘦切片：每个像素1个采样，顺畅运行）
@@ -98,7 +98,7 @@ float4 ShadeVol( float intensity ) {
    color.rgba = tex2d( ColorRampTexture, float2( unitIntensity, 0 ) );
 ```
 
-在许多应用程序中，我们在我们的应用程序中存储了原始强度值和 "分段索引" （用于划分外观和骨骼等不同部分，这些段通常由专家在专用工具中创建）。 这可以与上述方法结合使用，为每个段索引放置不同的颜色，甚至不同的颜色斜坡：
+在许多应用程序中，我们都将原始强度值和 "分段索引" （用于划分外观和骨骼等不同部分，这些段通常由专家在专用的工具中创建）。 这可以与上述方法结合使用，为每个段索引放置不同的颜色，甚至不同的颜色斜坡：
 
 ```
 // Change color to match segment index (fade each segment towards black):
@@ -122,7 +122,7 @@ float4 ShadeVol( float intensity ) {
 
 ## <a name="volume-tracing-in-shaders"></a>着色中的卷跟踪
 
-如何使用 GPU 进行子卷跟踪（先走一些 voxels，然后将数据从后到前面）：
+如何使用 GPU 进行子卷跟踪（演练几个 voxels 深度，然后将数据从后到前面）：
 
 ```
 float4 AlphaBlend(float4 dst, float4 src) {
@@ -166,7 +166,7 @@ float4 AlphaBlend(float4 dst, float4 src) {
 
 ## <a name="whole-volume-rendering"></a>整个卷渲染
 
-修改以上的子卷代码，获取：
+修改上述子卷代码后，我们将获得：
 
 ```
 float4 volTraceSubVolume(float3 objPosStart, float3 cameraPosVolSpace) {
@@ -181,11 +181,11 @@ float4 volTraceSubVolume(float3 objPosStart, float3 cameraPosVolSpace) {
 
 如何以低分辨率渲染场景的一部分并将其放回原位：
 1. 设置两个离线相机，每个屏幕上都有一个用于更新每个帧的
-2. 设置相机呈现到的两个低分辨率呈现器目标（200x200 大小）
+2. 设置相机呈现的两个低分辨率呈现器目标（即200x200 大小）
 3. 设置在用户前移动的四个
 
 每个帧：
 1. 在低分辨率（卷数据、昂贵的着色器等）上绘制每个眼睛的渲染目标。
 2. 通常将场景绘制为完整分辨率（网格、UI 等）
-3. 在用户面前，在场景上绘制四个四核，并在其上绘制低分辨率。
-4. 结果：包含低分辨率但高密度卷数据的完整分辨率元素的直观组合。
+3. 在用户前、场景上绘制四核，并将低分辨率呈现到
+4. 结果：包含低分辨率但高密度卷数据的完整分辨率元素的直观组合
