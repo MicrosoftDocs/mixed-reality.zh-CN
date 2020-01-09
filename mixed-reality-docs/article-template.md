@@ -6,12 +6,12 @@ ms.author: randyw
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 无
-ms.openlocfilehash: b443e48f96b6fb978fdf487c6eea7e6c804c9e70
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 314d07292a679eefb22583d522ff9bd4182a0832
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439548"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694011"
 ---
 # <a name="title-be-as-specific-as-possible-use-human-terms"></a>标题（尽可能具体，使用人类术语） 
 
@@ -31,14 +31,14 @@ ms.locfileid: "73439548"
     <col width="22%" />
 </colgroup>
 <tr>
-     <td><strong>具有</strong></td>
+     <td><strong>功能</strong></td>
      <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
      <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
      <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
 </tr>
 <tr>
      <td>主题或文章标题</td>
-     <td>不支持 ❌</td>
+     <td>❌ 不支持</td>
      <td>✔️ 推荐</td>
      <td>✔️ 推荐</td>
 </tr>
@@ -92,7 +92,7 @@ ms.locfileid: "73439548"
 ---
 
 
-### <a name="3-columns"></a>3列
+### <a name="3-columns"></a>3 columns
 
 Les nabis photorealism 操作绘制颜色字段绘画 stuckism 国际 cloisonnism，remodernism socialist 真实感几何抽象概念艺术，secularism structuralism neo-minimalism mannerism。<br>
 
@@ -143,7 +143,7 @@ Neo-geo humanism structuralism impressionism 骰子 brücke existentialism super
     :::column-end:::
 :::row-end:::
 
-### <a name="subsection-name"></a>子节名称
+### <a name="subsection-name"></a>子节名
 
 Les nabis photorealism 操作绘制颜色字段绘画 stuckism 国际 cloisonnism，remodernism socialist 真实感几何抽象概念艺术，secularism structuralism neo-minimalism mannerism。 Divisionism 国际哥特 baroque situationist 国际 lettrism vorticism mt。<br>
 
@@ -192,7 +192,7 @@ Les nabis photorealism 操作绘制颜色字段绘制 stuckism 国际 cloisonnis
 
 Neo-geo humanism structuralism impressionism 骰子 brücke existentialism superflat，Neo-数据 idealism gründerzeit。
 
-| 长途 | 查看角度 | Size |
+| 距离 | 查看角度 | Size |
 |---------|---------|---------|
 | 45cm  | 不小于2° | 1.6 x 1.6 厘米 |
 
@@ -237,7 +237,4 @@ Neo-geo humanism structuralism impressionism 骰子 brücke existentialism super
 
 * [相关文章1名称](design.md)
 * [相关文章2名称](design.md)
-* [相关文章3名称](design.md)
-
-
-
+* [相关文章3名称-指向特定部分的链接](design.md#what-are-the-core-concepts-of-an-experience)
