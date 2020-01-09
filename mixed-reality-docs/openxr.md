@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，Mixed Reality OpenXR 开发人员门户，DirectX，本机，本机应用，自定义引擎，中间件
-ms.openlocfilehash: aa91918e20b4276b7453bae1a05ad18df9d8ab0e
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: 8140b9d3a9e1f4d2d7a25b77a48b39cb765cf6d9
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491135"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694131"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -83,7 +83,7 @@ Core OpenXR 1.0 API 提供生成引擎的基本功能，你可以将其作为一
 
 可在 BasicXrApp 的[OpenXRProgram](https://github.com/microsoft/OpenXR-SDK-VisualStudio/blob/master/samples/BasicXrApp/OpenXrProgram.cpp)文件中查看以下最佳实践的示例。 开始时，Run （）函数从初始化到事件和呈现循环捕获典型的 OpenXR 应用代码流。
 
-### <a name="select-a-pixel-format"></a>选择像素格式
+### <a name="select-a-swapchain-format"></a>选择存在格式
 
 始终使用 `xrEnumerateSwapchainFormats`枚举受支持的像素格式，并从应用程序支持的运行时选择第一种颜色和深度像素格式，因为这是运行时首选的。 请注意，在 HoloLens 2 上，`DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` 和 `DXGI_FORMAT_D16_UNORM` 通常是实现更好的呈现性能的第一选择。 在台式计算机上运行的 VR 耳机上，此首选项可能有所不同。  
   
@@ -148,9 +148,7 @@ HoloLens 2 为应用程序提供了有限的 GPU 能力，可让应用程序呈�
 ### <a name="support-mixed-reality-capture"></a>支持混合现实捕获
 
 尽管 HoloLens 2 的主显示器使用加法环境混合，但当用户启动[混合现实捕获](mixed-reality-capture-for-developers.md)时，应用的呈现内容将与环境视频流进行 alpha 混合。
-若要在混合现实中获得最佳视觉质量捕获视频，最好将 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` 设置在投影层的 `layerFlags`中。  
-
-**性能警告：** 省略单个投影层上的 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` 标志将导致运行时后处理，这会产生严重的性能损失。
+若要在混合现实中获得最佳视觉质量捕获视频，最好将 `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` 设置在投影层的 `layerFlags`中。
 
 ### <a name="avoid-quad-layers"></a>避免出现四个层
 
@@ -163,8 +161,7 @@ HoloLens 2 为应用程序提供了有限的 GPU 能力，可让应用程序呈�
 在 HoloLens 2 上，有多种方法可通过 `xrEndFrame` 提交组合数据，这会导致后期处理，这将导致性能显著下降。
 若要避免性能 penalities，请提交具有以下特征的[单个 `XrCompositionProjectionLayer`](#use-a-single-projection-layer) ：
 * [使用纹理数组存在](#render-with-texture-array-and-vprt)
-* [使用主要颜色存在格式](#select-a-pixel-format)
-* [设置纹理源-alpha 混合标志](#support-mixed-reality-capture)
+* [使用主要颜色存在格式](#select-a-swapchain-format)
 * [使用建议的视图维度](#render-with-recommended-rendering-parameters-and-frame-timing)
 * 不设置 `XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT` 标志
 * 将 `XrCompositionLayerDepthInfoKHR` `minDepth` 设置为 0.0 f，并 `maxDepth` 设置为 1.0 f
@@ -193,7 +190,7 @@ OpenXR 规范定义了一种扩展机制，它使运行时实现程序能够公�
 
 尽管其中一些扩展可能会作为特定于供应商的 MSFT 扩展而开始，但 Microsoft 和其他 OpenXR 运行时供应商正在协同工作，为许多这些功能领域设计跨供应商 EXT 或 KHR 扩展。  这将使你为这些功能编写的代码可在运行时供应商之间移植，就像核心规范一样。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>“疑难解答”
 
 下面是一些 Windows Mixed Reality OpenXR 运行时的故障排除提示。  如果你有关于<a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 规范</a>的任何其他问题，请访问<a href="https://community.khronos.org/c/openxr" target="_blank">Khronos OpenXR 论坛</a>或<a href="https://khr.io/slack" target="_blank">时差 #openxr 频道</a>。
 
