@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality，应用栏，边界框
-ms.openlocfilehash: e4f519cba459efac25f6c1370b07fcda4def30a1
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: dab41207c2558fe8bb3fe07fca666cb2668f4e45
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143170"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723196"
 ---
 # <a name="bounding-box-and-app-bar"></a>边界框和应用栏
 ![边界是在混合现实中用于对象操作的标准接口。](images/UX/UX_Hero_BoundingBox.jpg)<br>
@@ -29,7 +29,7 @@ ms.locfileid: "74143170"
         *视频循环：通过边界框缩放对象*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![通过边界框缩放对象](images/HoloLens2_BoundingBox.gif) 的 HoloLens 观点<br>
     :::column-end:::
 :::row-end:::
@@ -44,7 +44,7 @@ ms.locfileid: "74143170"
         *视频循环：通过边界框旋转对象*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![通过边界框旋转对象](images/HoloLens2_BoundingBox_Rotate.gif) 的 HoloLens 观点<br>
     :::column-end:::
 :::row-end:::
@@ -59,7 +59,7 @@ ms.locfileid: "74143170"
         *视频循环：基于与边界框的邻近的视觉反馈示例*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![视觉对象反馈](images/HoloLens2_Proximity.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -84,7 +84,7 @@ ms.locfileid: "74143170"
         *视频循环：浏览全息图，应用栏跟随*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![走出全息影像。 应用栏如下所示。](images/HoloLens2_AppBarFollowing.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -92,7 +92,7 @@ ms.locfileid: "74143170"
 <br>
 
 
-## <a name="bounding-box-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 的 MRTK （混合现实工具包）中的边界框
+## <a name="bounding-box-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 的 MRTK （混合现实工具包）中的边界框
 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 为边界框和应用栏提供脚本和 prototyping。 只需将 BoundingBox.cs 脚本分配到任何对象即可添加边界框。
 
 * [MRTK-边界框](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)
@@ -106,20 +106,20 @@ ms.locfileid: "74143170"
 ## <a name="see-also"></a>另请参阅
 
 * [光标](cursors.md)
-* [手动 ray](point-and-commit.md)
+* [手部射线](point-and-commit.md)
 * [Button](button.md)
 * [可交互对象](interactable-object.md)
 * [边界框和应用栏](app-bar-and-bounding-box.md)
-* [起源](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手动菜单](hand-menu.md)
-* [邻近菜单](near-menu.md)
+* [追踪菜单](near-menu.md)
 * [对象集合](object-collection.md)
 * [语音命令](voice-input.md)
 * [键盘](keyboard.md)
-* [提示](tooltip.md)
-* [盖板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑块](slider.md)
 * [着色器](shader.md)
 * [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
-* [Surface 磁性](surface-magnetism.md)
+* [表面磁吸](surface-magnetism.md)

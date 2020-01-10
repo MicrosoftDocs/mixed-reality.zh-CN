@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计，控件，ui，ux
-ms.openlocfilehash: 4befaa6f55bff6a820c976db969fdad7b64a2214
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: d028b8717dae0e04a9a1104a8a4b7803023334ef
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143250"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723206"
 ---
 # <a name="progress-indicator"></a>进度指示器
 
@@ -37,7 +37,7 @@ ms.locfileid: "74143250"
         *图像： HoloLens 中的进度栏示例*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        HoloLens](images/640px-progressbar.jpg) 中的 ![进度栏示例<br>
     :::column-end:::
 :::row-end:::
@@ -54,7 +54,7 @@ ms.locfileid: "74143250"
         *图像： HoloLens 中的进度环形示例*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        HoloLens 中的 ![进度环示例](images/640px-progressring.jpg)<br>
     :::column-end:::
 :::row-end:::
@@ -71,7 +71,7 @@ ms.locfileid: "74143250"
         *Image：自定义网格示例（HoloLens）的进度*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        在 HoloLens 中 ![自定义网格示例的进度](images/640px-progresscustom.jpg)<br>
     :::column-end:::
 :::row-end:::
@@ -80,7 +80,7 @@ ms.locfileid: "74143250"
 
 ---
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳实践
 * 将[billboarding 或标记一起](billboarding-and-tag-along.md)紧密地转换为进度的显示，因为用户可以轻松地将其标头移到空空间，并丢失上下文。 如果用户无法看到任何内容，你的应用可能看起来好像已崩溃。 Billboarding 和标记一起内置于 prefab 中。
 * 提供有关用户发生的情况的状态信息始终是好的。 进度 prefab 提供了各种视觉样式，包括用于提供状态的 Windows 标准环形类型进度。 如果希望进度的样式与应用的品牌保持一致，还可以将自定义网格与动画一起使用。
 
@@ -88,7 +88,7 @@ ms.locfileid: "74143250"
 
 ---
 
-## <a name="progress-indicator-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 的 MRTK （混合现实工具包）中的进度指示器
+## <a name="progress-indicator-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 的 MRTK （混合现实工具包）中的进度指示器
 
 * [MRTK-进度指示器 prototyping](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/ProgressIndicators)
 * [MRTK-场景转换服务](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html)
@@ -101,20 +101,20 @@ ms.locfileid: "74143250"
 ## <a name="see-also"></a>另请参阅
 
 * [光标](cursors.md)
-* [手动 ray](point-and-commit.md)
+* [手部射线](point-and-commit.md)
 * [Button](button.md)
 * [可交互对象](interactable-object.md)
 * [边界框和应用栏](app-bar-and-bounding-box.md)
-* [起源](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手动菜单](hand-menu.md)
-* [邻近菜单](near-menu.md)
+* [追踪菜单](near-menu.md)
 * [对象集合](object-collection.md)
 * [语音命令](voice-input.md)
 * [键盘](keyboard.md)
-* [提示](tooltip.md)
-* [盖板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑块](slider.md)
 * [着色器](shader.md)
 * [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
-* [Surface 磁性](surface-magnetism.md)
+* [表面磁吸](surface-magnetism.md)

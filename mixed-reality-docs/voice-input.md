@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、语音、cortana、语音、输入
-ms.openlocfilehash: 7264b0b8882928f64860bc5a30b97683306cb19c
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: f2ae18d4063c7c4a63346a1202cacaa7fbbdf959
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105784"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723186"
 ---
 # <a name="voice-input"></a>语音输入
 
@@ -42,7 +42,7 @@ ms.locfileid: "74105784"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>具有</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -121,7 +121,7 @@ ms.locfileid: "74105784"
         *图像：用户可以说 "调整" 命令，该命令显示在应用程序栏中以调整应用的位置*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
         ![查看应用程序窗口或全息图时，用户可以在应用程序栏中显示 "调整" 命令，以调整应用程序在世界中的位置](images/microphone-600px.png)<br>
     :::column-end:::
 :::row-end:::
@@ -183,7 +183,7 @@ ms.locfileid: "74105784"
 
 考虑为生成的任何体验添加语音命令。 语音是一种功能强大、方便的控制系统和应用的方式。 由于用户使用各种方言和口音说话，恰当选择语音关键字将确保用户的命令得到清晰的解释。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 以下是一些有助于流畅语音识别的做法。
 * **使用简明命令** - 如果可能的话，选择两个或更多音节的关键词。 不同口音的人说单音节词时倾向于使用不同的元音。 示例： "播放视频" 优于 "播放当前选定的视频"
@@ -296,7 +296,7 @@ HoloLens 2 还支持其他语言。 请记住，即使安装了多个键盘或�
 
 ---
 
-## <a name="voice-input-in-mrtkmixed-reality-toolkit-for-unity"></a>适用于 Unity 的 MRTK （混合现实工具包）中的语音输入
+## <a name="voice-input-in-mrtk-mixed-reality-toolkit-for-unity"></a>适用于 Unity 的 MRTK （混合现实工具包）中的语音输入
 借助 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，你可以轻松地为任何对象分配语音命令。 使用 MRTK 的**语音输入配置文件**定义关键字。 通过分配**SpeechInputHandler**脚本，你可以使任何对象响应语音输入配置文件中定义的关键字。 SpeechInputHandler 还提供了语音确认标签以提高用户信心。
 
 * [MRTK-语音命令](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html)

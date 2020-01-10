@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，billboarding，连同标记
-ms.openlocfilehash: ff2b1ce20174b1b9aecbb90b1d1dc3e8896b3761
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 24c4ca8bdc3c6ea1081311102204d4a7f5a95425
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143128"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723176"
 ---
 # <a name="billboarding-and-tag-along"></a>Billboarding 和标记
 
@@ -46,7 +46,7 @@ Billboarding 是一种可应用于混合现实中的对象的行为概念。 具
 
 ---
 
-## <a name="billboarding-and-tag-along-in-mrtkmixed-reality-toolkit-for-unity"></a>用于 Unity 的 MRTK （混合现实工具包）中的 Billboarding 和标记
+## <a name="billboarding-and-tag-along-in-mrtk-mixed-reality-toolkit-for-unity"></a>用于 Unity 的 MRTK （混合现实工具包）中的 Billboarding 和标记
 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 为 Billboarding 和标记的行为提供脚本。 只需将 Billboard.cs 脚本分配到任何对象即可添加 billboarding 行为，并使对象始终为你。 若要添加标记和行为，请使用 RadialView.cs 脚本。 可以调整各种选项，如 lerping 时间、距离和角度。
 
 * [MRTK-径向视图规划求解](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html#radialview)
@@ -60,20 +60,20 @@ Billboarding 是一种可应用于混合现实中的对象的行为概念。 具
 ## <a name="see-also"></a>另请参阅
 
 * [光标](cursors.md)
-* [手动 ray](point-and-commit.md)
+* [手部射线](point-and-commit.md)
 * [Button](button.md)
 * [可交互对象](interactable-object.md)
 * [边界框和应用栏](app-bar-and-bounding-box.md)
-* [起源](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手动菜单](hand-menu.md)
-* [邻近菜单](near-menu.md)
+* [追踪菜单](near-menu.md)
 * [对象集合](object-collection.md)
 * [语音命令](voice-input.md)
 * [键盘](keyboard.md)
-* [提示](tooltip.md)
-* [盖板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑块](slider.md)
 * [着色器](shader.md)
 * [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
-* [Surface 磁性](surface-magnetism.md)
+* [表面磁吸](surface-magnetism.md)

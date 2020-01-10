@@ -6,12 +6,12 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: 手型、菜单、按钮、快速访问、布局
-ms.openlocfilehash: c53fdc4ea6f3243cf906ee1916a9c234d0fce6ca
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: c0e1800be69a15706e17f40b1601fc79d05e5d75
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143185"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723256"
 ---
 # <a name="hand-menu"></a>手动菜单
 
@@ -26,15 +26,15 @@ ms.locfileid: "74143185"
 ---
 
 ## <a name="behavior-best-practices"></a>行为最佳实践
-**答：保持小按钮的数量：** 由于手锁定菜单和眼睛之间的距离接近，而且用户在任何时候都关注相对较小的视觉区域（attentional 的视觉位置约为10度），因此我们建议保持较小的按钮数。 基于我们的浏览，即使用户将其指针移到 FOV 的中心，包含三个按钮的一列也能正常工作。 
+**答：保持较小的按钮数：** 由于手锁定菜单和眼睛之间的距离接近，而且用户在任何时候都关注相对较小的视觉区域（attentional 的视觉效果约为10度），因此我们建议您保持小的按钮数。 基于我们的浏览，即使用户将其指针移到 FOV 的中心，包含三个按钮的一列也能正常工作。 
 
 **B. 利用 "快速操作" 菜单：** 提起扶手并维持位置可以轻松地引起 arm 疲劳。 对需要短交互的菜单使用手锁定的方法。 如果菜单非常复杂并且需要延长交互时间，请考虑改用世界锁定或正文锁定。 
 
-**C. 按钮/面板角度：** 菜单应以相反的肩和中间点为方向：这允许自然地移动到与菜单的交互，并在触摸按钮. 
+**C. 按钮/面板角度：** 菜单应以相反的肩和中间开头：这允许自然手移动与菜单之间的交互，并避免在触摸按钮上出现任何难或令人不安的位置。 
 
 **D. 考虑支持单向或无需手动操作：** 不要假设用户的手始终可用。 当一种或两种方法均不可用时，请考虑使用各种上下文，并确保你的设计帐户适用于这些情况。 若要支持右手菜单，可以尝试将菜单位置从 "手动锁定" 切换到 "世界锁定" （向下翻向下）。 对于无需人工使用的方案，请考虑使用语音命令调用手形菜单按钮。
 
-**E. 双重调用：** 如果使用 "上滑作为事件来触发手形菜单"，则它可能会在您不需要时意外出现（误报），因为人们有意（对于通信和对象操作）移动它们和无意。 如果在应用中遇到误报，请考虑添加除手掌事件外的附加步骤，以调用手菜单，如完全打开的手指。
+**E. 双重调用：** 如果使用 "上滑作为事件来触发手形菜单"，则它可能会在您不需要时意外出现（误报），因为人们有意（用于通信和对象操作）和无意地移动它们。 如果在应用中遇到误报，请考虑添加除手掌事件外的附加步骤，以调用手菜单，如完全打开的手指。
 
 **F. 避免在手腕（系统主页按钮）附近添加按钮：** 如果菜单按钮离 home 按钮太近，则当与 "手形" 菜单交互时，可能会意外触发该按钮。
 
@@ -127,7 +127,7 @@ ms.locfileid: "74143185"
 
 ---
 
-## <a name="hand-menu-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 中的 MRTK （混合现实工具包）的菜单
+## <a name="hand-menu-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 中的 MRTK （混合现实工具包）的菜单
 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 为手形菜单提供脚本和示例场景。 HandConstraintPalmUp 求解器脚本允许你轻松地将任何对象附加到各种可配置选项。
 
 * [MRTK HandConstraint 和 HandConstraintPalmUp 的菜单](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_Solver.md#hand-menu-with-handconstraint-and-handconstraintpalmup)
@@ -141,20 +141,20 @@ ms.locfileid: "74143185"
 ## <a name="see-also"></a>另请参阅
 
 * [光标](cursors.md)
-* [手动 ray](point-and-commit.md)
+* [手部射线](point-and-commit.md)
 * [Button](button.md)
 * [可交互对象](interactable-object.md)
 * [边界框和应用栏](app-bar-and-bounding-box.md)
-* [起源](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手动菜单](hand-menu.md)
-* [邻近菜单](near-menu.md)
+* [追踪菜单](near-menu.md)
 * [对象集合](object-collection.md)
 * [语音命令](voice-input.md)
 * [键盘](keyboard.md)
-* [提示](tooltip.md)
-* [盖板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑块](slider.md)
 * [着色器](shader.md)
 * [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
-* [Surface 磁性](surface-magnetism.md)
+* [表面磁吸](surface-magnetism.md)

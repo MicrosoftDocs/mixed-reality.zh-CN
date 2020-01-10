@@ -1,23 +1,23 @@
 ---
 title: 种不可交互对象
-description: "\"Button\" 是一种用于在二维抽象环境中触发事件的比喻。 在这三维混合现实世界中，我们不必再局限于这种抽象领域。"
+description: 按钮是一个隐喻，长久以来用于触发二维抽象世界中的某个事件。 而在三维混合现实世界中, 我们无需局限在这种抽象世界中。
 author: cre8ivepark
 ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: 混合现实、控件、交互、ui、ux
-ms.openlocfilehash: 73c8a3ce9e01f580ecbae23f2178871642c4540e
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 87979d2d7b7de4a384b42b5059239e9b830a92e8
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143265"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723226"
 ---
 # <a name="interactable-object"></a>种不可交互对象
 
 ![Interactible 对象](images/UX/UX_Hero_Interactable.jpg)
 
-"Button" 是一种用于在二维抽象环境中触发事件的比喻。 在这三维混合现实世界中，我们不必再局限于这种抽象领域。 任何内容都可以是触发事件的**种不可交互对象**。 种不可交互对象可表示为从桌子上的咖啡杯到悬浮的球标的任何内容。 在某些情况下（例如，在对话框 UI 中），我们仍要使用传统按钮。 按钮的可视化表示形式取决于上下文。
+按钮是一个隐喻，长久以来用于触发二维抽象世界中的某个事件。 而在三维混合现实世界中, 我们无需局限在这种抽象世界中。 任何内容都可以是触发事件的**可交互对象**。 从桌子上的咖啡杯到悬浮在空中的气球，可交互对象可表示为任何内容。 在某些情况下 (例如, 在对话框 UI 中)，我们仍会使用传统的按钮。 按钮的可视化表示形式取决于上下文。
 
 <br>
 
@@ -140,8 +140,8 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
 
 :::row:::
     :::column:::
-        ![默认值](images/640px-interactibleobject-pressablebutton-default.jpg)<br>
-        **缺省值**<br>
+        ![默认](images/640px-interactibleobject-pressablebutton-default.jpg)<br>
+        **默认**<br>
     :::column-end:::
     :::column:::
         ![悬停](images/640px-interactibleobject-pressablebutton-hover.jpg)<br>
@@ -157,8 +157,8 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
         显示波纹效果。
     :::column-end:::
     :::column:::
-        ![按](images/640px-interactibleobject-pressablebutton-press.jpg)<br>
-        **长**<br>
+        ![请按](images/640px-interactibleobject-pressablebutton-press.jpg)<br>
+        **请按**<br>
         移动前面板。
     :::column-end:::
 :::row-end:::
@@ -175,7 +175,7 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
         *视频循环：基于与边界框的邻近的视觉反馈示例*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ![视觉对象反馈](images/HoloLens2_Proximity.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -216,7 +216,7 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
 ---
 
 
-## <a name="sizing-recommendations"></a>大小建议 
+## <a name="sizing-recommendations"></a>重设大小建议 
 
 为了确保用户可以轻松地接触到所有种不可交互对象，我们建议您确保种不可交互的大小达到最小值（通常以视觉弧线度量的视觉角度），这取决于从用户的距离。 视觉角度基于用户眼睛与对象之间的距离并保持不变，而目标的物理大小可能会随用户更改的距离而更改。 若要根据用户的距离确定对象的必要物理大小，请尝试使用视觉角度计算器（如[此](https://elvers.us/perception/visualAngle/)类）。
 
@@ -225,7 +225,7 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
 
 ### <a name="target-size-for-direct-hand-interaction"></a>直接手动交互的目标大小
 
-| 长途 | 查看角度 | Size |
+| 距离 | 查看角度 | Size |
 |---------|---------|---------|
 | 45cm  | 不小于2° | 1.6 x 1.6 厘米 |
 
@@ -238,7 +238,7 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
 
 创建直接交互的按钮时，建议使用较大的最小 3.2 x 3.2 厘米，以确保有足够的空间来包含图标，并可能有一些文本。
 
-| 长途 | 最小大小 |
+| 距离 | 最小大小 |
 |---------|---------|
 | 45cm  | 3.2 x 3.2 厘米 |
 
@@ -248,7 +248,7 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
 <br>
 
 ### <a name="target-size-for-hand-ray-or-gaze-interaction"></a>手动 ray 或注视交互的目标大小
-| 长途 | 查看角度 | Size |
+| 距离 | 查看角度 | Size |
 |---------|---------|---------|
 | 2m  | 不小于1° | 3.5 x 3.5 厘米 |
 
@@ -261,11 +261,11 @@ HoloLens 2 支持已表述的手动跟踪输入，可用于与对象进行交互
 ---
 
 
-## <a name="interactable-object-in-mrtkmixed-reality-toolkit-for-unit"></a>单元的 MRTK （混合现实工具包）中的种不可交互对象
+## <a name="interactable-object-in-mrtk-mixed-reality-toolkit-for-unity"></a>用于 Unity 的 MRTK 中的种不可交互对象（混合现实工具包）
 
 在 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 中，可以使用脚本[**种不可交互**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Scripts)使对象对各种类型的输入交互状态进行响应。 它支持各种类型的主题，这些主题允许您通过控制对象属性（如颜色、大小、材料和着色器）来定义可视状态。
 
-* [种不可交互](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
+* [可交互](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
 * [Button](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
 * [手动交互示例场景](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)
 
@@ -281,20 +281,20 @@ MixedRealityToolkit 的标准着色器提供了各种选项 **，例如，可**�
 ## <a name="see-also"></a>另请参阅
 
 * [光标](cursors.md)
-* [手动 ray](point-and-commit.md)
+* [手部射线](point-and-commit.md)
 * [Button](button.md)
 * [可交互对象](interactable-object.md)
 * [边界框和应用栏](app-bar-and-bounding-box.md)
-* [起源](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [手动菜单](hand-menu.md)
-* [邻近菜单](near-menu.md)
+* [追踪菜单](near-menu.md)
 * [对象集合](object-collection.md)
 * [语音命令](voice-input.md)
 * [键盘](keyboard.md)
-* [提示](tooltip.md)
-* [盖板](slate.md)
+* [工具提示](tooltip.md)
+* [平板](slate.md)
 * [滑块](slider.md)
 * [着色器](shader.md)
 * [公告和尾随](billboarding-and-tag-along.md)
 * [显示进度](progress.md)
-* [Surface 磁性](surface-magnetism.md)
+* [表面磁吸](surface-magnetism.md)
