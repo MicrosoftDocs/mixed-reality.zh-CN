@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 57a23e34404e4bff653d74b7f6afc65adff8b19c
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: efa03c49a9a083d2b8e591e03bccbeb776bb57b2
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334329"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901476"
 ---
 # <a name="1-setting-up-photon-unity-networking"></a>1. 设置 Photon Unity 网络
 
@@ -28,7 +28,7 @@ ms.locfileid: "75334329"
 ## <a name="prerequisites"></a>先决条件
 
 >[!TIP]
->如果尚未完成[入门教程](mrlearning-base.md)系列，建议先完成这些教程。
+>如果尚未完成[入门](mrlearning-base.md)教程和[Azure 空间定位点入门](mrlearning-asa-ch1.md)教程教程系列，则建议先完成这些教程。
 
 * 使用安装了正确的[工具](install-the-tools.md)配置的 WINDOWS 10 电脑
 * Windows 10 SDK 10.0.18362.0 或更高版本

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: f523aabd74b9267b3f7f5024d8af46110e43c32a
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: f1bcbbd368635c25207127142f21ff50f26a7b58
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334288"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901483"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4. 与多个用户共享对象移动
 
@@ -74,10 +74,6 @@ ms.locfileid: "75334288"
 11. 从 Prototyping 文件夹的 "项目" 面板中，将 "prefab" 表拖入刚刚创建的 "TableAnchor" 子对象。
 
     ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
-
-12. 在 DebugWindow 对象中，将 width 改为50，将高度更改为20。
-
-    ![Module3Chapter4step9im](images/module3chapter4step11im.PNG)
 
 ## <a name="congratulations"></a>祝贺
 

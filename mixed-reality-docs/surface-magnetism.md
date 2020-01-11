@@ -1,23 +1,23 @@
 ---
 title: Surface 磁性
-description: 使用 surface 磁性技术，可以将全息对象置于真实的物理表面。
+description: 使用 surface 磁性技术，可以在实际的物理表面上放置全息对象。
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: 混合现实、控件、交互、ui、ux
-ms.openlocfilehash: 17015fef7a73930109844a48d6017230a4efecd5
-ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
+ms.openlocfilehash: bc9c8a36f110010270ca7dadbd8655f29af25f32
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694141"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901439"
 ---
 # <a name="surface-magnetism"></a>Surface 磁性
 
 ![Surface 磁性](images/UX/MRTK_SurfaceMagnetism.gif)
 
-使用 surface 磁性技术，可以将全息对象置于真实的物理表面。 通过使对象的方向与实际表面对齐，你可以创建更多的沉浸式和自然体验。
+使用 surface 磁性技术，可以在实际的物理表面上放置全息对象。 通过使对象的方向与实际表面对齐，你可以创建更多的沉浸式和自然体验。
 
 <br>
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 6840bcc583fe3e42dcaa6f42e71098f4dbe76f4c
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 6abf4fa8fc87afc7007d6f7c76becfbd88ed7a12
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334315"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901524"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. 获取 Unity 以便开发
 
@@ -75,12 +75,16 @@ ms.locfileid: "75334315"
 
 12. 导入列出的自定义包：
 
-    a. [HoloLens2. GettingStarted. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
+    a. [AzureSpatialAnchors. unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.0.0/AzureSpatialAnchors.unitypackage) （版本2.0.0）
 
-    b. [HoloLens2. MultiUserCapabilities. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.0/Unity.HoloLens2.MultiUserCapabilities.Tutorials.Asset.2.1.0.0.unitypackage)
+    b. [MRTK.HoloLens2. GettingStarted. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.1.0.1.unitypackage)
+
+    c. [MRTK.HoloLens2. AzureSpatialAnchors. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.1.0.1.unitypackage)
+
+    d. [MRTK.HoloLens2. MultiUserCapabilities. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
 
     >[!TIP]
-    >如果你已完成[入门教程](mrlearning-base-ch1.md)，则你的计算机上可能会存储名为 HoloLens2 的 unity 包。 _2.1.0.0. unitypackage_ 。 如果是这样，则可以跳过下载上一步中列出的资产。
+    >有关如何为 Azure 空间锚定配置 Unity 项目的提醒，请参阅 azure 空间[锚定入门教程，](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)其中包含[Azure 空间锚定](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)系列教程系列。
 
     ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 
