@@ -7,12 +7,12 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 视线, 视线定位, 交互, 设计, 手动近距, HoloLens
-ms.openlocfilehash: d263c84d306a2ece3783c2e7fb0e3f599dec49eb
-ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
+ms.openlocfilehash: 6811fe0b09ecff1ddc76d9df9ddc440f9c934ce3
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694171"
+ms.locfileid: "75723246"
 ---
 # <a name="direct-manipulation-with-hands"></a>用手直接操作
 
@@ -326,7 +326,7 @@ HoloLens 2 可让用户将边界框应用到每个 3D 对象，以便用手引�
 
 ---
 
-## <a name="manipulation-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 的 MRTK（混合现实工具包）中的操作
+## <a name="manipulation-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 的 MRTK（混合现实工具包）中的操作
 有了 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，可以使用脚本 **ManipulationHandler** 轻松实现常见的操作行为。 借助 ManipulationHandler，可以直接使用手或手部射线抓取和移动对象。 它还支持使用双手操作来缩放和旋转对象。
 
 * [MRTK - 操作](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)
