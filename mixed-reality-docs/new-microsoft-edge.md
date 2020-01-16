@@ -1,25 +1,30 @@
 ---
 title: Windows Mixed Reality 和新的 Microsoft Edge
-description: 如何参与 Windows 混合现实文档。
+description: 在 Windows Mixed Reality 中准备好新的 Microsoft Edge。 包括对预期的更改、要查找的更新和已知问题。
 author: mattzmsft
 ms.author: mazeller
-ms.date: 01/07/2020
+ms.date: 01/15/2020
 ms.topic: article
 keywords: 边缘，新，沉浸式 web，microsoft edge，browser，vr
-ms.openlocfilehash: cb0f96069ffaa8f7d40b64bae55ab2749f5f02c6
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.openlocfilehash: e38cd83cef274281f0d36ae8714ea82aac5f0c65
+ms.sourcegitcommit: e9e4e722f4b607888ce69185f8bda9549ad526ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75727044"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76040998"
 ---
 # <a name="windows-mixed-reality-and-the-new-microsoft-edge"></a>Windows Mixed Reality 和新的 Microsoft Edge
 
-正如您所知，[新的 Microsoft Edge 即将推出](https://blogs.windows.com/windowsexperience/2019/11/04/introducing-the-new-microsoft-edge-and-bing/)！ 对于2020年1月15日的公开上市，我们希望让 Windows Mixed Reality VR 耳机客户知道从新的 Microsoft Edge 获得的内容，并通知你一些会在 Windows Mixed 中提高你的 web 浏览体验的待定更新。但.
+[新的 Microsoft Edge 现在可供下载](https://blogs.windows.com/windowsexperience/?p=173496)，但客户也可以在未来的几个月内通过一种经过衡量的推出方法，[等待它安装到 Windows 10 的未来更新中](https://blogs.windows.com/msedgedev/2020/01/15/upgrading-new-microsoft-edge-79-chromium/)。 
+
+在此新闻中，**我们希望让 Windows Mixed REALITY VR 耳机客户知道从新的 Microsoft Edge 获得的内容，并通知你一些会在 Windows Mixed Reality 中提高你的 web 浏览体验的待定更新**。
 
 ## <a name="introducing-the-new-microsoft-edge"></a>推出新的 Microsoft Edge
 
 新的 Microsoft Edge[采用桌面上的 Chromium 开放源代码项目](https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/)，为客户创建更好的 web 兼容性，为所有 web 开发人员创建更少的 web 兼容性。 它还支持在启动时 WebXR，这是用于创建用于 VR 耳机的沉浸式 web 体验的新标准，而不是 WebVR。
+
+>[!IMPORTANT]
+>当你在最新的 Windows 10 设备上安装 Microsoft Edge 时，它将替换你的电脑上的以前（旧）版本。
 
 ## <a name="getting-ready-for-the-new-microsoft-edge"></a>准备好开始新的 Microsoft Edge
 
@@ -45,7 +50,7 @@ ms.locfileid: "75727044"
 
 -   当混合现实门户关闭时，在 Windows Mixed Reality 中打开的网站将会丢失，但 Microsoft Edge 窗口仍会保留在混合现实中的位置。
 -   Microsoft Edge windows 中的音频未 spatialized。
--   在 Windows Mixed Reality 中从 YouTube 打开360视频可能会导致耳机上出现视频失真。 刷新 YouTube 视频页面并重新执行360视频应可解决此问题。
+-   在 Windows Mixed Reality 中从 YouTube 打开360视频可能会导致耳机上出现视频失真。 刷新 YouTube 视频页面并重新执行360视频*可能会*解决此问题，但我们知道此问题可能会持续提供反馈。
 -   在 Windows Mixed Reality 会话期间，虚拟监视器将在 "设置" > 系统 > 显示中显示为一般物理监视器。
 
 

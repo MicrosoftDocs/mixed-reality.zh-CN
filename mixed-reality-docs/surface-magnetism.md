@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: 混合现实、控件、交互、ui、ux
-ms.openlocfilehash: bc9c8a36f110010270ca7dadbd8655f29af25f32
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: 9de4cc1a7a015f85be54b4b9ff6188a7e9d02e85
+ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901439"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036370"
 ---
 # <a name="surface-magnetism"></a>Surface 磁性
 
 ![Surface 磁性](images/UX/MRTK_SurfaceMagnetism.gif)
 
-使用 surface 磁性技术，可以在实际的物理表面上放置全息对象。 通过使对象的方向与实际表面对齐，你可以创建更多的沉浸式和自然体验。
+使用 surface 磁性技术，可以在实际的物理表面上放置全息对象。 通过将对象的方向与实际表面对齐，可以为用户创建更具沉浸和自然的体验。
 
 <br>
 

@@ -3,15 +3,15 @@ title: HoloLens 模拟器存档
 description: Microsoft HoloLens 模拟器的已发布版本的列表。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 12/5/2019
+ms.date: 1/13/2020
 ms.topic: article
 keywords: HoloLens、模拟器、版本、版本
-ms.openlocfilehash: 3061c97e0e945bf9d829e2259533c7d32683d581
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 11fd763ec0832558a7a981dce34e0c6700d12a37
+ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940795"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036320"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模拟器存档
 
@@ -19,6 +19,7 @@ HoloLens 模拟器（第一代）和 HoloLens 2 模拟器会并行安装。 我�
 
 |  内部版本 |  发布日期 |  注释 | 
 |----------|----------|----------|
+|  [HoloLens 2 模拟器生成10.0.18362.1044](https://go.microsoft.com/fwlink/?linkid=2114824) | 2020年1月13日 | 2020年1月版。  有关常规 HoloLens 2 发行说明，请参阅 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1042](https://go.microsoft.com/fwlink/?linkid=2112589) | 2019年12月6日 | 2019年12月2日生成。  解决了在显示 pin 面板时，模拟器中运行的全息应用程序将意外挂起的问题。  使用感知模拟 API 或感知模拟控制应用时启用与远程模拟器的连接。  有关常规 HoloLens 2 发行说明，请参阅 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1034](https://go.microsoft.com/fwlink/?linkid=2106649) | 2019 年 10 月 8 日 | 10月2019版 HoloLens 2 生成。  当运行的版本低于最新的可用版本时，模拟器将提示更新为新版本。  在 Windows 10 上使用模拟器2019更新或更高版本时，新的 NAT 配置选项卡允许开发人员打开单独设备上运行的应用程序的端口以连接到模拟器，并且 "更新" 选项卡将显示可用的仿真程序版本。  有关更多详细信息，请参阅[HoloLens 模拟器文档](using-the-hololens-emulator.md)。 |
 |  [HoloLens 2 模拟器生成10.0.18362.1031](https://go.microsoft.com/fwlink/?linkid=2103724) | 2019 年 9 月 11 日 | 2019年9月2日生成。  在 Windows 10 上运行模拟器2019更新或更高版本时，"网络" 选项卡将显示在 "模拟器工具" 窗口中。 |
