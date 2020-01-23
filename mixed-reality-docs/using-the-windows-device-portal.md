@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 设备门户、HoloLens
-ms.openlocfilehash: 17ed27653c8e3ec19c8c42b625fbd12cde2c5d84
-ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
+ms.openlocfilehash: b22c70305076e3b2c18f880878b48c3142efdbfe
+ms.sourcegitcommit: cf3b662cfcf3fb05a554c302e595eb018f01abf2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75623323"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76521688"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 设备门户
 
@@ -19,7 +19,7 @@ ms.locfileid: "75623323"
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens（第一代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
-<td> Windows Device Portal</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
+<td> Windows 设备门户</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
 </tr>
 </table>
 
@@ -51,7 +51,7 @@ ms.locfileid: "75623323"
 ## <a name="connecting-over-usb"></a>通过 USB 连接
 
 1. [安装这些工具](install-the-tools.md)，确保你的 Visual Studio Update 1 具有安装在你的电脑上的 Windows 10 开发人员工具。 这支持 USB 连接。
-2. 使用微型 USB 电缆将 HoloLens 连接到电脑。
+2. 将你的 HoloLens 连接到电脑，使用适用于 HoloLens 的微 USB 电缆（第一代）或用于 HoloLens 2 的 USB-C。
 3. 在电脑上的 web 浏览器中转到[https://127.0.0.1:10080](https://127.0.0.1:10080)。
 
 ## <a name="connecting-to-an-emulator"></a>连接到模拟器
