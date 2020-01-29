@@ -7,12 +7,12 @@ ms.date: 1/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 仿真器
-ms.openlocfilehash: 7cbddae7cc5088bc8be7187e8b2dff3249e9d265
-ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
+ms.openlocfilehash: 3d358cf72e8481d27ca41784bbc059c45e0da7ff
+ms.sourcegitcommit: cf3b662cfcf3fb05a554c302e595eb018f01abf2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76036464"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76521678"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 仿真器
 
@@ -220,7 +220,7 @@ HoloLens（第 1 代）上的光标可跟踪头部运动和旋转。 在 HoloLen
 
 安装仿真器时，可能会出现错误消息，指出需要“Visual Studio 2015 Update 1 和 UWP 工具版本 1.2”。  出现此错误的三个可能原因如下：
 * Visual Studio 的版本不够新（需要 Visual Studio 2019、Visual Studio 2017 或 Visual Studio 2015 Update 1 或更高版本）。 若要纠正此问题，请安装最新版本的 Visual Studio。
-* 已安装最新版本的 Visual Studio，但未安装通用 Windows 平台 (UWP) 工具。 这是 Visual Studio 的一项可选功能。
+* 已安装最新版本的 Visual Studio，但未安装通用 Windows 平台 (UWP) 工具。 这是 Visual Studio 的一项可选功能。 对于 HoloLens（第一代），你需要适用于 Visual Studio 2015 或 Visual Studio 2017 的 UWP 工具。
 
 此外，在 Windows 的非专业版/企业版/教育版 SKU 上安装仿真器，或者未启用 Hyper-V 功能时，也可能会看到错误。
 * 有关完整的要求，请阅读前面的[系统要求](#hololens-emulator-system-requirements)部分。
