@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: f1bcbbd368635c25207127142f21ff50f26a7b58
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: 56f7c767323285453cbeea9034f97a7c14e92359
+ms.sourcegitcommit: d73d9012941fa1b13eb7d2f45ccc481d6365827a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901483"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885635"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4. 与多个用户共享对象移动
 
@@ -74,6 +74,12 @@ ms.locfileid: "75901483"
 11. 从 Prototyping 文件夹的 "项目" 面板中，将 "prefab" 表拖入刚刚创建的 "TableAnchor" 子对象。
 
     ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
+   
+12. 从资产 > 资源-> Prototyping 打开 "火箭 Launcher_Complete Variant" prefab。
+
+13. 选择 "LunarModule" GameObject 并添加以下两个组件： "Photon 变换视图" 和 "Photon View"。
+
+14. 在仍选中 "LunarModule" GameObject 的情况下，将 "Photon 转换视图" 组件拖到 "Photon View" 组件中的 "已观察组件" 槽。
 
 ## <a name="congratulations"></a>祝贺
 

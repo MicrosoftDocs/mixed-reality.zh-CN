@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 01/15/2020
 ms.topic: article
 keywords: 边缘，新，沉浸式 web，microsoft edge，browser，vr
-ms.openlocfilehash: e38cd83cef274281f0d36ae8714ea82aac5f0c65
-ms.sourcegitcommit: e9e4e722f4b607888ce69185f8bda9549ad526ad
+ms.openlocfilehash: 2576762786c9234377308f226036c830e01d9133
+ms.sourcegitcommit: d73d9012941fa1b13eb7d2f45ccc481d6365827a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76040998"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885618"
 ---
 # <a name="windows-mixed-reality-and-the-new-microsoft-edge"></a>Windows Mixed Reality 和新的 Microsoft Edge
 
@@ -50,7 +50,7 @@ ms.locfileid: "76040998"
 
 -   当混合现实门户关闭时，在 Windows Mixed Reality 中打开的网站将会丢失，但 Microsoft Edge 窗口仍会保留在混合现实中的位置。
 -   Microsoft Edge windows 中的音频未 spatialized。
--   在 Windows Mixed Reality 中从 YouTube 打开360视频可能会导致耳机上出现视频失真。 刷新 YouTube 视频页面并重新执行360视频*可能会*解决此问题，但我们知道此问题可能会持续提供反馈。
+-   **修复了360查看器扩展版本 2.3.8**：在 Windows Mixed Reality 中从 YouTube 打开360视频可能会导致耳机上出现视频失真。 重启边缘应在不可见的情况下更新360查看器扩展以解决此问题。 您可以通过在地址栏中输入 `edge://system/`，然后选择 "扩展" 旁边的**展开**按钮来确认您拥有哪个版本的扩展。
 -   在 Windows Mixed Reality 会话期间，虚拟监视器将在 "设置" > 系统 > 显示中显示为一般物理监视器。
 
 
