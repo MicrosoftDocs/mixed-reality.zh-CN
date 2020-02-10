@@ -6,12 +6,12 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: 手型、菜单、按钮、快速访问、布局
-ms.openlocfilehash: c0e1800be69a15706e17f40b1601fc79d05e5d75
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.openlocfilehash: 41a936d6041438c1cf1d8e4d4cc8cc30a5167491
+ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75723256"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77092051"
 ---
 # <a name="hand-menu"></a>手动菜单
 
@@ -26,7 +26,7 @@ ms.locfileid: "75723256"
 ---
 
 ## <a name="behavior-best-practices"></a>行为最佳实践
-**答：保持较小的按钮数：** 由于手锁定菜单和眼睛之间的距离接近，而且用户在任何时候都关注相对较小的视觉区域（attentional 的视觉效果约为10度），因此我们建议您保持小的按钮数。 基于我们的浏览，即使用户将其指针移到 FOV 的中心，包含三个按钮的一列也能正常工作。 
+**答：保持较小的按钮数：** 由于手锁定菜单和眼睛之间的距离接近，而且用户在任何时候都关注相对较小的视觉区域（attentional 的视觉效果约为10度），因此我们建议您保持小的按钮数。 基于我们的探索，一列包含三个按钮的工作非常有效，即使在用户将其手移到 FOV 的中心时，也会将所有内容保留在视图（FOV）中。 
 
 **B. 利用 "快速操作" 菜单：** 提起扶手并维持位置可以轻松地引起 arm 疲劳。 对需要短交互的菜单使用手锁定的方法。 如果菜单非常复杂并且需要延长交互时间，请考虑改用世界锁定或正文锁定。 
 
@@ -88,7 +88,7 @@ ms.locfileid: "75723256"
     :::column:::
         ![上手指](images/AboveFingers.gif)<br>
         **上手指**<br>
-        1-由于长时间保留疲劳，<br>
+        1-疲劳，因为要长时间保留手<br>
         2-手动跟踪索引和中间指的问题
     :::column-end:::
 :::row-end:::
@@ -105,7 +105,7 @@ ms.locfileid: "75723256"
     :::column:::
         ![Top 手指](images/TopFingerTip.gif) **top 手指**<br>
         1-手写跟踪问题<br>
-        双局疲劳，保留高于正常状况<br>
+        2-疲劳在正常情况上保持手动<br>
         3-由于手指间的空间有限，导致按下按钮时出现意外的按键
     :::column-end:::
 :::row-end:::
@@ -117,7 +117,7 @@ ms.locfileid: "75723256"
         Arm ![背面](images/BackOfTheArm.gif)<br>
         **Arm 背面**<br>
         1-可以意外触发主按钮<br>
-        2-用户不自然或舒适地
+        2-不是自然或舒适的位置
     :::column-end:::
     :::column:::
     :::column-end:::
