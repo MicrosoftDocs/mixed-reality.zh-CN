@@ -7,12 +7,12 @@ ms.date: 10/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 测试, MRTK, MRTK 版本 2, HoloLens 2
-ms.openlocfilehash: 41e6f8b3632a53663f237deb54a3144fb8ad79e8
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 8e0c66a1c3d8ebd5422d19a02f313147ecf76653
+ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926203"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77092031"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>让现有应用准备好使用 HoloLens 2
 
@@ -22,7 +22,7 @@ ms.locfileid: "73926203"
 
 | 步骤 1 | 步骤 2 | 步骤 3 | 步骤 4 |
 |----------|-------------------|-------------------|-------------------|
-| ![Visual Studio 徽标](images/visualstudio_logo.png) | ![Unity 徽标](images/unity_logo.png)| ![Unity 图标](images/hololens2_icon.jpg) | ![MRTK 徽标](images/MRTKIcon.jpg) |
+| ![Visual Studio 徽标](images/visualstudio_logo.png) | ![Unity 徽标](images/final_unity_logo.png)| ![Unity 图标](images/hololens2_icon.jpg) | ![MRTK 徽标](images/final_mrtk-small_logo.png) |
 | 下载最新的工具 | 更新 Unity 项目 | ARM 编译 | 迁移到 MRTK v2
 
 先决条件：
@@ -47,7 +47,7 @@ ms.locfileid: "73926203"
 |----------|-------------------|
 | ARM32 生成支持 | ARM32 和 ARM64 生成支持 |
 | 稳定的 LTS 生成版本 | Beta 稳定性 |
-| [.NET 脚本后端](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html)已弃用  | [.NET 脚本后端](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html)已删除  |
+| [.NET 脚本后端](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *已弃用* | [.NET 脚本后端](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *已删除* |
 | UNET 网络已弃用  | UNET 网络已弃用  |
 
 ## <a name="update-sceneproject-settings-in-unity"></a>在 Unity 中更新场景/项目设置
@@ -92,7 +92,7 @@ HoloLens（第 1 代）在 x86 处理器上执行应用程序，而 HoloLens 2 �
 
 若要了解 HTK/MRTK 与 MRTK v2 之间的具体 API 差异，请参阅 [MRTK 版本 2 Wiki](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html) 中的移植指南。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 - 优先使用 [MRTK 标准着色器](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_MRTKStandardShader.html)。
 - 每次处理一种重大更改类型（例如：将 IFocusable 更改为 [IMixedRealityFocusHandler](https://microsoft.github.io/MixedRealityToolkit-Unity/api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityFocusHandler.html)）。
