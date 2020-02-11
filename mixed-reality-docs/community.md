@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: Mixed Reality，社区，mvp，会议
-ms.openlocfilehash: 486a099cb38a99975171cb7ec4a6754b1c0b682f
-ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
-ms.translationtype: MT
+ms.openlocfilehash: 1b140fffdda91fca0a73ae6d4309c518efd6660c
+ms.sourcegitcommit: 567bcb7019820ac933834087d77b01d684b5cc7b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77092063"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125188"
 ---
 # <a name="mixed-reality-community"></a>混合现实社区
 
@@ -34,8 +34,8 @@ ms.locfileid: "77092063"
 |团体名称|Country|城市|链接|
 |---------|---------|---------|---------|
 |**芝加哥 AWE Nite**|美国|芝加哥|[Link](https://www.meetup.com/AWENiteChicago/)|
-<!-- 
-|Row2     |         |         |         |
+|**VR 菲律宾**|Philoppines|不可用|[Link](https://www.facebook.com/vrphilippines/)|
+<!--
 |Row3     |         |         |         |
 |Row4     |         |         |         |
 |Row5     |         |         |         |
@@ -90,6 +90,7 @@ Microsoft 最有价值专家（Mvp）是 passionately 与社区分享他们的�
 |---------|---------|---------|
 |![Aleksandr Kudishov](images/BiographyImages/aleksandr_kudishov_270_270.png)</br>**Aleksandr Kudishov**</br>*俄罗斯*|针对游戏开发 & Windows 开发，VR/AR/MR 的 MVP。 游戏制造者、技术布道师、全息开发人员、MSP 游戏开发。|[电子邮件](mailto:draconifore@gmail.com)|
 |![Alexander Meijers](images/BiographyImages/AlexanderMeijers_270x270.png)</br>**Alexander Meijers**</br>*荷兰，Rijswijk*|激励、激发和培训企业如何通过在其旅程中利用虚拟、增强和混合现实来利用新兴技术的专业人员。 他在 SharePoint、Office 365 和 Microsoft Azure 上有一个强大的背景，并使用机器学习、人工智能和认知服务。</br></br>他主要致力于制造、建设、行业、后勤和海事/离岸，他的目标是通过使用服务、应用和设备（例如，适用于 Azure 的 HoloLens 和|[电子邮件](mailto:alexander@appzinside.com)|
+|![Bronwen Zande](images/BiographyImages/BronwenZande_270x270.png)</br>**Bronwen Zande**</br>*澳大利亚布里斯班*|Bronwen Zande 是一家灵魂解决方案的总监，他的生活比开发人员更多。</br></br>她是一位长期的 Microsoft 最有价值专家（MVP），为 Windows 开发、新兴经验、Kinect、必应地图和 Live 服务授予 MVP 状态。</br></br>Bronwen 是一项活跃的社区成员，在将其作为职业发展的职业生涯中，他们参与了用户的判断，年轻人资源管理器和技术将为你提供任何地方。 Bronwen 是布里斯班女孩书呆子就，organiser 的开发人员、开发人员、开发人员布里斯班（现在是 DDD 布里斯班）和用于 SheEO 的多年澳大利亚激活器。</br></br>她是一 avid 旅行，但在旅行时，通常可以在本地会议或用户组中找到照相机的镜头。|[电子邮件](mailto:bronwen@soulsolutions.com.au)
 |![Bruno Anjos](images/BiographyImages/BrunoAnjos_270x270.jpg)</br>**Bruno Anjos**</br>*巴西*|创新经理，管理和管理数字页面创新项目，并提供 XR 的专业经验、混合和虚拟的现实平台。 Microsoft MVP 在混合现实2020-2021 中，我作为开发和规划混合现实解决方案的专家，在 体验游戏和应用程序开发，以及资产创建和多媒体内容。|[电子邮件](mailto:brunof.anjos@outlook.com)|
 |![Clemente Giorio](images/BiographyImages/ClementeGiorio_270x270.png)</br>**Clemente Giorio**</br>*Torino, Italia*|"黑客，书呆子，maker，研究人员，家，培训师，开发人员 。</br>为自己的工作提供了科学和技术。</br>在许多社区中，通常会积极地将其作为演讲者和事件组织程序，特别是对健身房、DotNetPodcast、FabLabNapoli、DotNetCampania 和 HoloLens 开发人员进行编码。</br>他的签名食谱是：人工智能、计算机视觉、物联网、自然用户界面和混合现实。</br>Microsoft MVP 和 Intel Software 家是 Deltatre 使用开发软件原型的高级研究 & 开发工程师。|[电子邮件](mailto:tinuxnet@hotmail.com)|
 |![Dave Smits](images/BiographyImages/DaveSmits_270x270.jpg)</br>**Dave Smits**</br>*Amersfoort，荷兰*|Dave Smits 是 Microsoft MVP，自2014起，开始使用自第一版以来的 HoloLens。 为客户提供多个项目，从简单的模型开始，到包含运动跟踪传感器的应用程序，这些应用程序包括在全息影像上使用。|[电子邮件](mailto:dave@familie-smits.com)|
@@ -106,3 +107,5 @@ Microsoft 最有价值专家（Mvp）是 passionately 与社区分享他们的�
 |![Takahiro Miyaura](images/BiographyImages/TakahiroMiyaura_270x270.jpg)</br>**Takahiro Miyaura**</br>*日本 Nara*|我正在作为软件工程师和 IT 行业的开发人员。 特别是，我已经完成了研究 XR （VR/AR/MR 等。 ）技术和各种技术（AI、IoT 等），可以利用 XR。|[电子邮件](mailto:cafe.kobe@gmail.com)|
 |![Tamás Deme](images/BiographyImages/tamasdeme_270.png)</br>**Tamás Deme**</br>*布达佩斯，匈牙利*|Tamás 是一种混合现实工程师，适用于基于亚特兰大的 VIM，他开发的设备解决方案范围从服务器到显示全息影像的耳机。 在 Windows 开发中，他是 Microsoft MVP 的5倍，对开源项目、教学和辅导感兴趣。 你可以在[https://twitter.com/tomzorz_](https://twitter.com/tomzorz_)上的[https://tomzorz.me](https://tomzorz.me)或 twitter 上找到用户联机。|[电子邮件](mailto:mixedreality@tomzorz.me)|
 |![Tatsuro Ueda](images/BiographyImages/TatsuroUeda_270x270.png)</br>**Tatsuro Ueda**</br>*日本 Mie*|5个国家/地区物理学的女士|[电子邮件](mailto:tatsuro.ueda@feel-physics.jp)|
+|![圣文森特 Guigui](images/BiographyImages/VincentGuigui_270x270.jpg)</br>**圣文森特 Guigui**</br>*法国巴黎*|为满足创新性的交互部门的 OCTO 技术，帮助我们的客户在人类和数字世界之间建立新的互动。</br></br>我是关于创新和自然用户界面的利亚，讨论了沉浸式体验（VR/AR/MR）、会话接口（机器人），以及将来可能的用户界面。</br></br>自2013起，Microsoft 已被 Microsoft 作为 Kinect、自然用户界面和 HoloLens （最有价值专家奖）的欧洲领先专家之一。|[电子邮件](mailto:vincent@guigui.fr)|
+
