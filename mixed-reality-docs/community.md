@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: Mixed Reality，社区，mvp，会议
-ms.openlocfilehash: 1b140fffdda91fca0a73ae6d4309c518efd6660c
-ms.sourcegitcommit: 567bcb7019820ac933834087d77b01d684b5cc7b
-ms.translationtype: HT
+ms.openlocfilehash: 191c80c0429370f7864f5826c538296306e26e8d
+ms.sourcegitcommit: f5d6dd420aa347acf1de4798f4e3e0f6a11d19cc
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125188"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155504"
 ---
 # <a name="mixed-reality-community"></a>混合现实社区
 
@@ -33,8 +33,8 @@ ms.locfileid: "77125188"
 
 |团体名称|Country|城市|链接|
 |---------|---------|---------|---------|
-|**芝加哥 AWE Nite**|美国|芝加哥|[Link](https://www.meetup.com/AWENiteChicago/)|
-|**VR 菲律宾**|Philoppines|不可用|[Link](https://www.facebook.com/vrphilippines/)|
+|**芝加哥 AWE Nite**|USA|芝加哥|[Link](https://www.meetup.com/AWENiteChicago/)|
+|**VR 菲律宾**|菲律宾|不可用|[Link](https://www.facebook.com/vrphilippines/)|
 <!--
 |Row3     |         |         |         |
 |Row4     |         |         |         |
@@ -107,5 +107,5 @@ Microsoft 最有价值专家（Mvp）是 passionately 与社区分享他们的�
 |![Takahiro Miyaura](images/BiographyImages/TakahiroMiyaura_270x270.jpg)</br>**Takahiro Miyaura**</br>*日本 Nara*|我正在作为软件工程师和 IT 行业的开发人员。 特别是，我已经完成了研究 XR （VR/AR/MR 等。 ）技术和各种技术（AI、IoT 等），可以利用 XR。|[电子邮件](mailto:cafe.kobe@gmail.com)|
 |![Tamás Deme](images/BiographyImages/tamasdeme_270.png)</br>**Tamás Deme**</br>*布达佩斯，匈牙利*|Tamás 是一种混合现实工程师，适用于基于亚特兰大的 VIM，他开发的设备解决方案范围从服务器到显示全息影像的耳机。 在 Windows 开发中，他是 Microsoft MVP 的5倍，对开源项目、教学和辅导感兴趣。 你可以在[https://twitter.com/tomzorz_](https://twitter.com/tomzorz_)上的[https://tomzorz.me](https://tomzorz.me)或 twitter 上找到用户联机。|[电子邮件](mailto:mixedreality@tomzorz.me)|
 |![Tatsuro Ueda](images/BiographyImages/TatsuroUeda_270x270.png)</br>**Tatsuro Ueda**</br>*日本 Mie*|5个国家/地区物理学的女士|[电子邮件](mailto:tatsuro.ueda@feel-physics.jp)|
-|![圣文森特 Guigui](images/BiographyImages/VincentGuigui_270x270.jpg)</br>**圣文森特 Guigui**</br>*法国巴黎*|为满足创新性的交互部门的 OCTO 技术，帮助我们的客户在人类和数字世界之间建立新的互动。</br></br>我是关于创新和自然用户界面的利亚，讨论了沉浸式体验（VR/AR/MR）、会话接口（机器人），以及将来可能的用户界面。</br></br>自2013起，Microsoft 已被 Microsoft 作为 Kinect、自然用户界面和 HoloLens （最有价值专家奖）的欧洲领先专家之一。|[电子邮件](mailto:vincent@guigui.fr)|
+|![圣文森特 Guigui](images/BiographyImages/VincentGuigui_270x270.jpg)</br>**圣文森特 Guigui**</br>*法国巴黎*|为满足创新性的交互部门的[OCTO 技术](https://www.octo.com)，帮助我们的客户在人类和数字世界之间建立新的互动。</br></br>我是关于创新和自然用户界面的利亚，讨论了沉浸式体验（VR/AR/MR）、会话接口（机器人），以及将来可能的用户界面。</br></br>自2013起，Microsoft 已被 Microsoft 作为 Kinect、自然用户界面和 HoloLens （最有价值专家奖）的欧洲领先专家之一。|[电子邮件](mailto:vincent@guigui.fr)|
 

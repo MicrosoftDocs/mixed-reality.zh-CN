@@ -6,16 +6,17 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: e961238b8fc7f2ef15bea5f25eba8a8e9eb2ef3e
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 067832a130f130ffbaa8d455007b8e77e1b13671
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334398"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130474"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3. 创建用户界面并配置混合现实工具包
+<!-- TODO: Consider renaming to 'Configuring Mixed Reality Toolkit profiles and creating user interfaces' -->
 
-在上一课中，您已了解到混合现实工具包（MRTK）通过启动适用于 HoloLens 2 的第一个应用程序而必须提供的一些功能。 在下一课中，您将学习如何创建和组织按钮以及 UI 文本面板，并使用默认交互（触摸）与每个按钮进行交互。 此外，本课还会探讨如何添加简单的操作和效果，例如更改对象的大小、声音和颜色。 此模块将介绍有关修改 MRTK 配置文件的基本概念，从关闭[空间映射](spatial-mapping.md)网格可视化效果开始。
+在上一教程中，你已了解到混合现实工具包（MRTK）通过启动适用于 HoloLens 2 的第一个应用程序而必须提供的一些功能。 在本教程中，您将学习如何创建和组织按钮以及 UI 文本面板，并使用默认交互（触摸）与每个按钮进行交互。 此外，本课还会探讨如何添加简单的操作和效果，例如更改对象的大小、声音和颜色。 此模块将介绍有关修改 MRTK 配置文件的基本概念，从关闭[空间映射](spatial-mapping.md)网格可视化效果开始。
 
 ## <a name="objectives"></a>目标
 
@@ -24,164 +25,300 @@ ms.locfileid: "75334398"
 * 基本的手动跟踪输入和交互
 
 ## <a name="how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option"></a>如何配置混合现实工具包配置文件（更改空间感知显示选项）
+<!-- TODO: Consider renaming to 'How to customize the MRTK profiles' -->
 
-在本部分中，你将了解如何通过调整空间感知网格的显示选项来自定义和配置默认的 MRTK 配置文件。 调整 MRTK 配置文件中的任何设置或值时，也可以遵循这些原则。
+在本部分中，你将学习如何自定义和配置默认的 MRTK 配置文件。
 
-1. 从 "BaseScene" 层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，查找混合现实工具包脚本并选择活动配置文件，如下图所示。 双击将其打开。
+此特定示例将演示如何通过更改空间网格观察程序的设置来隐藏空间感知网格。 但是，你可以遵循这些相同的原则自定义 MRTK 配置文件中的任何设置或值。
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step1.png)
+隐藏空间感知网格需要执行的主要步骤如下：
 
-    >[!NOTE]
-    >默认情况下，MRTK 配置文件不可编辑。 这些是可以复制和自定义的默认配置文件模板。 自定义项和配置文件有多个层。 因此，在配置一个或多个设置时，可以复制和自定义多个配置文件。
-    >
-    >若要了解有关 MRTK 配置文件及其体系结构的详细信息，请访问[MRTK 文档](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html>)。
+1. 克隆默认配置文件
+2. 启用空间感知系统
+3. 克隆默认的空间感知系统配置文件
+4. 克隆默认的空间感知网格观察程序配置文件
+5. 更改空间感知网格的可见性
 
-2. 创建默认配置文件的副本以对其进行自定义。 首先，单击 "**复制 & 自定义**"。
+> [!NOTE]
+> 默认情况下，MRTK 配置文件不可编辑。 这些是默认的配置文件模板，你必须先进行克隆，然后才能编辑它们。 配置文件有多个嵌套层。 因此，在配置一个或多个设置时，通常会克隆和编辑多个配置文件。
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step2a.png)
+### <a name="1-clone-the-default-configuration-profile"></a>1. 克隆默认配置文件
 
-    这会打开*克隆配置文件*的弹出窗口。
+> [!NOTE]
+> 配置文件是顶级配置文件。 因此，为了能够编辑任何其他配置文件，你必须首先克隆配置文件。
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step2b.png)
+在 "层次结构" 窗口中选择**MixedRealityToolkit**对象后，在 "检查器" 窗口中，单击 "**复制 & 自定义**" 按钮以打开 "克隆配置文件" 窗口：
 
-    单击 "**克隆**" 创建 MRTK 配置文件的副本。 使用自己的 MRTK 配置文件副本，现在可以自定义此配置文件中的任何设置。 还需要对此配置文件下嵌套的任何其他配置文件重复执行复制和自定义步骤，如后续步骤中所述。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step1-1.png)
 
-3. 禁用空间感知网格的可见性。 为此，请查找空间感知系统设置，如下图所示。 请确保已选中 "**启用空间感知系统**" 选项。 单击空间感知系统配置文件右侧的 "**克隆**" 按钮，以使用可自定义的副本替换默认配置文件。 在出现的弹出窗口中，按下的 "**克隆**" 按钮，如下图所示。
+在 "克隆配置文件" 窗口中，单击 "**克隆**" 按钮，创建**DefaultHololens2ConfigurationProfile**的可编辑副本：
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step3a.png)
+![mrlearning](images/mrlearning-base/tutorial2-section1-step1-2.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step3b.png)
+新创建的配置文件现已分配为场景的配置文件：
 
-4. 创建默认混合现实空间网格观察者的自定义副本。 单击 "Windows Mixed Reality 空间网格观察器" 旁的向下箭头以查看其他选项。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step1-3.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step4a.png)
+在 Unity 菜单中，选择 "**文件**" > **保存**"以保存场景。
 
-    在这些选项中，你将看到处于灰色显示状态的默认混合现实空间网格观察程序（不可编辑）。 必须将此默认配置文件替换为可自定义的副本，以便能够对其进行编辑。 如前文所述，单击 "**克隆**" 按钮，然后在显示的弹出窗口中，按下的 "**克隆**" 按钮，如下图所示。
+> [!TIP]
+> 请记住在整个教程中保存您的工作。
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step4b.png)
+### <a name="2-enable-the-spatial-awareness-system"></a>2. 启用空间感知系统
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step4c.png)
+仍在 "层次结构" 窗口中选择**MixedRealityToolkit**对象后，在 "检查器" 窗口中，选择 "**空间感知**" 选项卡，然后选中 "**启用空间感知系统**" 复选框：
 
-5. 接下来，调整带有“遮挡”字样的显示选项的设置。 这会使空间映射网格不可见，但仍会隐藏空间映射网格后面的游戏对象（也称为封闭）。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step2-1.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step5.png)
+### <a name="3-clone-the-default-spatial-awareness-system-profile"></a>3. 克隆默认的空间感知系统配置文件
 
-    >[!NOTE]
-    >注意：虽然空间映射网格不可见，但仍存在，你可以与之进行交互。 空间映射网格后面的任何全息影像（如可见墙后的全息图）都不可见，这是因为封闭设置。
+在 "**空间感知**" 选项卡中，单击 "**克隆**" 按钮打开 "克隆配置文件" 窗口：
 
-恭喜你！ 你已了解如何修改 MRTK 配置文件中的设置。 你知道，若要修改 MRTK 设置，需要创建默认配置文件的副本，以便能够对其进行编辑。 如果你想要使用新设置创建配置文件，或者可以返回到默认配置文件，则始终拥有默认的配置文件，这是不可编辑的。 可以调整大量的设置。 有关 MRTK 配置文件设置的完整引用，请参阅此处的 MRTK 文档： [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
+![mrlearning](images/mrlearning-base/tutorial2-section1-step3-1.png)
 
-## <a name="hand-tracking-gestures-and-interactable-buttons"></a>手动跟踪手势和可交互按钮
+在 "克隆配置文件" 窗口中，单击 "**克隆**" 按钮，创建**DefaultMixedRealitySpatialAwarenessSystemProfile**的可编辑副本：
 
-在本部分中，你将学习如何使用手动跟踪来按 pressable 按钮。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step3-2.png)
 
-1. 从 "项目" 文件夹中选择 "资产"。
+新创建的空间感知系统配置文件现在会自动分配给配置文件：
 
-2. 在搜索栏中键入 "PressableButtonHoloLens2"。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step3-3.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step2.png)
+### <a name="4-clone-the-default-spatial-awareness-mesh-observer-profile"></a>4. 克隆默认的空间感知网格观察程序配置文件
 
-3. 将名为 "PressableButtonHoloLens2" 的 prefab （由蓝色框表示）拖到层次结构中，并将位置值设置为 x = 0、y = 0 和 z = 0.2，使该按钮位于相机的前方。 （相机定位于原点）。
+在仍然选择 "**空间感知**" 选项卡的情况下，展开 " **Windows Mixed Reality 空间网格观察**程序" 部分，然后单击 "**克隆**" 按钮以打开克隆配置文件窗口：
 
-    >[!NOTE]
-    >如果收到有关 "导入 TMP Essentials" 的消息，请立即导入它。 如果你的项目中尚不包含 TMP Essentials，则在导入 TMP Essentials 后可能需要重复此步骤，否则可能不会出现按钮文本。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step4-1.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step3.png)
+在 "克隆配置文件" 窗口中，单击 "**克隆**" 按钮，创建**DefaultMixedRealitySpatialAwarenessMeshObserverProfile**的可编辑副本：
 
-4. 将立方体添加到场景。 右键单击 "层次结构" 区域，选择一个3D 对象，然后单击 "多维数据集"。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step4-2.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6a.png)
+此时，新建的空间感知网格观察程序配置文件会自动分配给空间感知系统配置文件：
 
-    现在，你的显示画面中应会包含一个立方体。 它会显得非常大。 您可以调整坐标（在层次结构区域中仍选择 Cube 时）以减小大小。 将刻度值设置为 x = 0.02，y = 0.02，z = 0.02。 请确保将多维数据集放在按钮附近，而不是与其重叠。 在下图中，多维数据集的位置为 x = 0、y = 0.04，z = 0.2。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step4-3.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6b.png)
+### <a name="5-change-the-visibility-of-the-spatial-awareness-mesh"></a>5. 更改空间感知网格的可见性
 
-    >[!NOTE]
-    >一般情况下，Unity 中的 1 个单位大致相当于现实生活中的 1 米。 此情况有例外;例如，当对象是缩放对象的子级时。
+在**空间网格观察程序设置**中，将**显示选项**更改为**封闭**，使空间映射网格在仍正常运行时不可见：
 
-5. 选中 "PressableButtonHoloLens2" 游戏对象后，向下滚动到检查器的底部，以找到种不可交互（脚本）组件的 "事件" 部分。
+![mrlearning](images/mrlearning-base/tutorial2-section1-step5-1.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step4.png)
+> [!NOTE]
+> 虽然空间映射网格不可见，但它仍然存在且正常工作。 例如，空间映射网格后面的任何全息影像（如物理壁后面的全息图）都将不可见。
 
-6. 我们将修改现有事件，以便在推送时为按钮指定响应事件。 如您所见，事件接收器类型设置为 InteractableOnPressReceiver。 这样，在跟踪手按下该按钮时，该按钮会响应按键事件。 此时，还应将交互筛选器更改为 "接近" 和 "远"。
+你已了解如何修改 MRTK 配置文件中的设置。 正如您所看到的，为了自定义 MRTK 设置，您首先需要创建默认配置文件的副本。 因为默认的配置文件是不可编辑的，所以，如果要还原为默认设置，你始终会将它们作为参考。 若要了解有关 MRTK 配置文件及其体系结构的详细信息，可以访问[MRTK 文档门户](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[混合现实工具包配置文件配置指南](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html)。
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step5.png)
+## <a name="hand-tracking-gestures-and-interactable-buttons"></a>手动跟踪手势和种不可交互按钮
 
-7. 此步骤将立方体设置为在按下按钮时改变颜色。 选择 "BaseScene" 层次结构中的 "PressableButtonHoloLens2"，并将 "多维数据集游戏" 对象从 BaseScene 层次结构拖到 "仅运行时" 字段，如下图所示。
+在本部分中，你将学习如何使用手动跟踪按下按钮，并在按下按钮时触发事件，从而导致操作。
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7a.png)
+此特定示例将演示如何在按下按钮时更改多维数据集的颜色，并在释放按钮时将其更改回原始颜色。 但是，您可以遵循这些相同的原则来创建其他事件。
 
-    单击未显示函数的下拉列表。 选择 "MeshRenderer"，然后选择 "材料材料"。 这允许您在按下按钮时更改材料。
+更改多维数据集颜色的主要步骤如下：
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7b.png)
+1. 将 pressable 按钮 prefab 添加到场景
+2. 将多维数据集添加到场景
+3. 配置 InteractableOnPressReceiver 事件类型
+4. 配置多维数据集以接收按下事件
+5. 定义要在按下事件时触发的操作
+6. 配置多维数据集以接收 On Release 事件
+7. 定义要在发布事件时触发的操作
+8. 使用编辑器中的模拟测试按钮
 
-    单击 "空白材料" 字段旁边的圆圈，打开 "选择材料" 弹出窗口。 MRTK 包括许多要从中进行选择的材料和颜色。 在此示例中，您将使用通过在弹出搜索栏中键入 "MRTK_Standard" 找到的材料 MRTK_Standard_Cyan。 选择要填充材料字段的 MRTK_Standard_Cyan 材料。
+### <a name="1-add-a-pressable-button-prefab-to-the-scene"></a>1. 向场景添加 pressable 按钮 prefab
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7c.png)
+> [!TIP]
+> <a href="https://docs.unity3d.com/Manual/Prefabs.html" target="_blank">Prefab</a>是作为 Unity 资产存储的预配置 GameObject，可在整个项目中重复使用。
 
-    现已设置事件。按下按钮时，立方体会根据指定的材料改变颜色。 在本示例中，立方体将更改为青色。
+在 "**项目" 窗口**中，搜索**PressableButtonHoloLens2**以查找将用于此示例的 prefab：
 
-8. 接下来，您将设置 "发布" 操作，以便在发布时，按钮将恢复为其默认颜色。 重复上面的步骤7。 但这一次，OnRelease 事件而不是 OnPress MRTK_Standard_LightGray 材料，如下图所示。
+![mrlearning](images/mrlearning-base/tutorial2-section2-step1-1.png)
 
-    ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step8.png)
+在**搜索**结果中，选择**PressableButtonHoloLens2** prefab 并**将其拖**到 "**层次结构**" 窗口中，将其添加到场景：
 
-    现在，当按钮被按下时，它将变为新颜色;蓝. 当按钮被释放时，它将改回您指定的默认颜色（例如浅灰色）。按屏幕顶部的 "播放" 按钮在编辑器中试用，或将其部署到 HoloLens 2 进行测试。 若要了解有关编辑器内模拟的详细信息（包括手动模拟），请阅读[MRTK 的模拟文档页](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)。
+![mrlearning](images/mrlearning-base/tutorial2-section2-step1-2.png)
+
+> [!TIP]
+> 若要按下图所示显示场景，请在 "层次结构" 窗口中双击 "PressableButtonHoloLens2" 对象以使其成为焦点，然后使用位于场景窗口右上角的<a href="https://docs.unity3d.com/Manual/SceneViewNavigation.html" target="_blank">场景别出心裁</a>，将查看角度调整为沿正向 Z 轴。
+
+在 PressableButtonHoloLens2 对象仍处于选中状态的**检查器**窗口中：
+
+* 更改其转换**位置**，使其位于相机前面（例如 x = 0、y = 0 和 z = 0.5）。
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step1-3.png)
+
+> [!NOTE]
+> 通常，Unity 中的1个位置单位大致相当于物理世界中的1米。 但存在一些例外情况，例如，当对象是缩放对象的子级时。
+
+### <a name="2-add-a-cube-to-the-scene"></a>2. 将多维数据集添加到场景
+
+右键单击 "层次结构" 窗口中的空白点，然后选择 " **3D 对象** > **多维数据集**以将多维数据集添加到场景：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step2-1.png)
+
+如果仍选中多维数据集对象，则在 "**检查器**" 窗口中：
+
+* 更改其转换**位置**，使其位于 "pressable" 按钮附近，但不与它重叠，例如 x = 0、y = 0.04 和 z = 0。5
+* 将其转换**比例**更改为合适的大小，例如 x = 0.02、y = 0.02 和 z = 0.02
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step2-2.png)
+
+### <a name="3-configure-the-interactableonpressreceiver-event-type"></a>3. 配置 InteractableOnPressReceiver 事件类型
+
+在 "层次结构" 窗口中选择 "PressableButtonHoloLens2" 对象之后，在 "**检查器**" 窗口**汉堡菜单**中，选择 " **Collaps 所有组件**" 以获取此对象上的所有组件的概述：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step3-1.png)
+
+展开**种不可交互（脚本）** 组件，然后找到并展开 "**事件** > **接收**方" 部分：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step3-2.png)
+
+对于事件接收器类型**InteractableOnPressReceiver**，请将**交互筛选器**更改为 "**接近" 和 "远**"：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step3-3.png)
+
+> [!NOTE]
+> 名为 InteractableOnPressReceiver 的事件接收器类型允许按钮在按下按钮时响应按下的事件。
+
+### <a name="4-configure-the-cube-to-receive-the-on-press-event"></a>4. 配置多维数据集以接收按下事件
+
+在 "层次结构" 窗口中，**单击并将** **多维数据集**拖动到 "**按下（）** 事件的**事件属性**对象" 字段中，以便将多维数据集分配为按下（）事件的接收方：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step4-1.png)
+
+### <a name="5-define-the-action-to-be-triggered-by-the-on-press-event"></a>5. 定义要在按下事件时触发的操作
+
+单击 "操作" 下拉列表，当前未分配 "**函数**"，然后选择 " **MeshRenderer** > **材料材料**，以设置在触发 On 按下（）事件时要更改的多维数据集的材料属性：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step5-1.png)
+
+单击 "材料" 字段旁边的小**圆圈**图标（当前填充了 "**无（材料）"）** 以打开 "选择材料" 窗口：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step5-2.png)
+
+在 "选择材料" 窗口中，**搜索**" **MRTK_Standard** " 并选择合适的材料，例如**MRTK_Standard_Cyan** ，以便在按下按钮时，多维数据集的颜色更改为 "青色"：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step5-3.png)
+
+### <a name="6-configure-the-cube-to-receive-the-on-release-event"></a>6. 配置多维数据集以接收 On Release 事件
+
+**重复**"发布时" 事件的步骤4，用于将多维数据集分配为 On Release （）事件的接收方。
+
+### <a name="7-define-the-action-to-be-triggered-by-the-on-release-event"></a>7. 定义要在发布事件时触发的操作
+
+**重复**第5步：对于 "发布" 事件，但选择 " **MRTK_Standard_LightGray**材料，以便在按钮被释放时，将多维数据集的颜色恢复为其原始的浅灰色颜色：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step7-1.png)
+
+### <a name="8-test-the-button-using-the-in-editor-simulation"></a>8. 使用编辑器内模拟测试按钮
+
+按 "**播放**" 按钮进入游戏模式，并使用编辑器内输入模拟来测试新配置的按钮。
+
+未按下按钮（向后滚动鼠标滚轮）：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step8-1.png)
+
+按下按钮（向前滚动滚轮）：
+
+![mrlearning](images/mrlearning-base/tutorial2-section2-step8-2.png)
+
+> [!TIP]
+> 若要了解如何使用编辑器内输入模拟，可以参考[使用编辑器内手写输入模拟](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene)在[MRTK 文档门户](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中测试场景指南。
 
 ## <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a>使用 MRTK 的网格对象集合创建按钮面板
 
-在本部分中，你将了解如何使用 MRTK 的 GridObjectCollection 工具自动将多个按钮对齐到巧妙的用户界面。
+在本部分中，你将了解如何使用 MRTK 的网格对象集合工具自动将多个按钮对齐到巧妙的用户界面。
 
-1. 复制前一部分中的按钮，直到有五个按钮。 可以通过多种方法执行此操作：-右键单击按钮，然后单击 "复制"。 然后，在按钮下向下并再次右键单击，然后单击 "粘贴"。
-    -右键单击按钮，然后单击 "复制"。
-    -通过单击多维数据集，然后在键盘上按 Ctrl D 来使用键盘命令。
+此特定示例将演示如何创建一个面板，该面板具有水平对齐的五个按钮。 但是，您可以遵循这些相同的原则来创建其他布局。
 
-    重复此操作，直到有五个按钮;请参阅下图中的五个红色箭头。
+为实现此目的需要执行的主要步骤如下：
 
-    ![Mrlearning Base Ch2 3Step1im](images/mrlearning-base-ch2-3step1im.PNG)
+1. 父对象的父对象的父对象
+2. 添加和配置网格对象集合（脚本）组件
+3. 使用编辑器内模拟测试按钮
 
-2. 将按钮分组到空的父游戏对象下。 为了使网格集合中的按钮，需要将按钮分组到公共父对象下。 右键单击 hiearachy，然后单击 "创建空"。 随后会创建一个新的空游戏对象用于放置所有按钮。 它显示为 "gameObject"。 右键单击并将其重命名为 ButtonCollection。
+### <a name="1-parent-the-button-objects-to-a-parent-object"></a>1. 将 button 对象父对象的父对象
 
-    ![Mrlearning Base Ch2 3Step2im](images/mrlearning-base-ch2-3step2im.PNG)
+右键单击 "层次结构" 窗口中的空白点，然后选择 "**创建空**项"：
 
-3. 将所有按钮移入新集合， 为此，请选择层次结构中的所有五个按钮对象，并将其全部拖动到 ButtonCollection 游戏对象下，如下图所示。 提示：按住 Ctrl 键的同时选择项，选择多个项。
+![mrlearning](images/mrlearning-base/tutorial2-section3-step1-1.png)
 
-    ![Mrlearning Base Ch2 3Step3imb](images/mrlearning-base-ch2-3step3imb.PNG)
+右键单击新创建的对象，选择 "**重命名**"，并为其指定一个适当的名称，例如**ButtonCollection**：
 
-4. 将 MRTK 的网格对象集合组件添加到按钮集合。 为此，请选择 "ButtonCollection" 父对象。 从检查器面板中，单击 "添加组件" 按钮。 在搜索栏中搜索 "网格对象集合"，并在列表中显示它时将其选中。
+![mrlearning](images/mrlearning-base/tutorial2-section3-step1-2.png)
 
-    ![Mrlearning Base Ch2 3Step4im](images/mrlearning-base-ch2-3-step4.png)
+选择**PressableButtonHoloLens2**对象并**将其拖**到**ButtonCollection**对象的顶部，使其成为 ButtonCollection 对象的子元素：
 
-    网格对象集合组件允许您在巧妙的行、列或网格中组织按钮或任何一组对象。 这是 MRTK 提供的构建基块之一，为你提供了一种快速简单的方法来创建具有吸引力的用户界面。
+![mrlearning](images/mrlearning-base/tutorial2-section3-step1-3.png)
 
-5. 配置网格对象集合。 若要确保所有按钮都面向用户，请选择 "方向类型"。 然后选择 "正面朝上"，如下图所示。 接下来，更改单元格大小以设置按钮之间的间距。 对于单元宽度和单元格高度，从0.05 个0.05 单位开始个单位，如下图所示。 请确保 "距离" 设置为0，"行" 设置为1。 单击 "更新集合"。 场景将如下图所示。
+右键单击**PressableButtonHoloLens2**对象，然后选择 "**复制**" 以创建其副本：
 
-    ![Mrlearning Base Ch2 3Step5im](images/mrlearning-base-ch2-3-step5.png)
+![mrlearning](images/mrlearning-base/tutorial2-section3-step1-4.png)
 
-    >[!NOTE]
-    >根据子对象或父对象的方向，在将来的项目中可能需要以不同的方式调整方向设置。 此外，根据集合中对象的大小，可能需要以不同的方式定义“单元格宽度”和“单元格高度”字段。
+**重复**此步骤四次，直到总共有5个 PressableButtonHoloLens2 对象。
 
-## <a name="adding-text-into-your-scene"></a>将文本添加到场景中
+### <a name="2-add-and-configure-the-grid-object-collection-script-component"></a>2. 添加和配置网格对象集合（脚本）组件
 
-本部分介绍如何将文本添加到混合现实体验以及如何编辑文本。 如果尚未这样做，请按照[此处](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)的说明操作，确保已在 Unity 中启用了 TextMeshPro。
+在 "层次结构" 窗口中选择 "ButtonCollection" 对象之后，在 "检查器" 窗口中，单击 "**添加组件**" 按钮，然后搜索并选择 "**网格对象集合**"，将网格对象集合（脚本）组件添加到 ButtonCollection 对象：
 
-1. 选择 ButtonCollection 父对象，并右键单击该集合。 展开下拉菜单中的 "3D 对象"。 然后选择 "TextMeshPro"。 你应在按钮集合下看到一个 TextMeshPro 对象，如下图所示。
+![mrlearning](images/mrlearning-base/tutorial2-section3-step2-1.png)
 
-    ![第2课 Chapter4 Step1a](images/Lesson2_Chapter4_Step1a.JPG) ![第2课 Chapter4 Step1b](images/Lesson2_Chapter4_Step1b.JPG)
+按如下所示配置网格对象集合（脚本）：
 
-2. 若要改善可读性的文本大小和位置，请调整 TextMeshPro 组件中的 "字体大小" 字段以更改字体大小。 还需要调整矩形转换位置和缩放比例，如下图所示。 请参阅下面的图像获取用于文本配置的值。 您可以使用这些值作为开始点，进一步提高文本字段的大小和位置。
+* 将**Num 行**更改为1，使所有按钮在一行上对齐
+* 将**单元格宽度**改为0.05，使行中的按钮间距
 
-    ![第2课 Chapter4 步骤3](images/mrlearning-base-ch2-4-step3.png)
+然后单击 "**更新集合**" 按钮应用新配置：
 
-3. 在 "检查器" 面板的 "TextMeshPro" 组件的 "文本" 字段中，键入 "Button Collection Text"，并将对齐属性调整为居中和靠上，如下图所示。
+![mrlearning](images/mrlearning-base/tutorial2-section3-step2-2.png)
 
-    ![第2课 Chapter4 步骤4](images/mrlearning-base-ch2-4-step4.png)
+> [!NOTE]
+> 刚才应用的配置更改表示实现将按钮置于单个行中的目标所需的最小更改。 但是，在将来的项目中，根据各种因素（例如，父对象和子对象的方向），您可能需要调整其他设置，例如，如方向类型。 若要详细了解 MRTK 的网格对象集合，可以访问[MRTK 文档门户](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[对象集合脚本](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html#object-collection-scripts)指南。
 
-4. 若要修改按钮对象的文本值，请单击任何按钮旁边的箭头将其展开，然后导航到 SeeItSayItLabel 对象。 导航到 TextMeshPro，在其中可以根据上述步骤中所述，编辑按钮的文本。
+如果仍在 "层次结构" 窗口中选择 "ButtonCollection" 对象，则在 "检查器" 窗口中，更改 ButtonCollection 对象的转换**位置**，使其子按钮对象位于相机前面，例如 x = 0、y = 0 和 z = 0.5：
 
-    ![Lesson2 Chapter4 Step5](images/Lesson2_Chapter4_Step5.JPG)
+![mrlearning](images/mrlearning-base/tutorial2-section3-step2-3.png)
 
-## <a name="congratulations"></a>祝贺
+> [!NOTE]
+> 第一次将 PressableButtonHoloLens2 prefab 添加到上面的 "[手写跟踪手势" 和 "种不可交互按钮](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)" 部分时，会将其放在照相机的前方。 但是，因为网格对象集合控制其直接子对象的位置，所以根据网格对象集合与父值0之间的默认距离，PressableButtonHoloLens2 子对象的 Z 位置被重置为0。 这是为了使父/子位置关系保持井然有序，这是因为我们将父 ButtonCollection 对象的位置向前移动，而不是配置从父值到 PressableButtonHoloLens2 子对象的距离。
 
-在本课中，您学习了如何复制、自定义和配置 MRTK 配置文件设置（例如，空间感知网格可见性）。还了解了如何与按钮交互，以便在 HoloLens 2 上使用跟踪的手触发事件。 最后，你已学习了如何使用 Unity 文本网格专业版和 MRTK 的网格对象集合组件创建简单的 UI 接口。
+### <a name="3-test-the-buttons-using-the-in-editor-simulation"></a>3. 使用编辑器内模拟测试按钮
 
-[下一课： 4. 放置动态内容并使用 solvers](mrlearning-base-ch3.md)
+按下 "播放" 按钮进入游戏模式，并使用编辑器内输入模拟在新创建的按钮面板中测试每个按钮：
+
+![mrlearning](images/mrlearning-base/tutorial2-section3-step3-1.png)
+
+> [!TIP]
+> 目前，当您按下任何五个按钮时，多维数据集颜色将变为青色。 若要使体验更有趣，可使用刚刚了解的内容来配置每个按钮，将多维数据集更改为不同的颜色。
+
+## <a name="adding-text-into-your-scene"></a>向场景中添加文本
+
+在本部分中，你将学习如何使用 Unity 的 TextMesh Pro，并在上一教程的 "[导入 TextMesh Pro 基本资源](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources)" 部分中准备好如何向混合现实体验添加文本。
+
+在此特定示例中，你将在上一节中创建的按钮集合下添加一个简单标签。
+
+右键单击 "ButtonCollection" 对象，然后选择 " **3D object** > **TextMeshPro** ，将 TextMeshPro 对象创建为 ButtonCollection 对象的子对象：
+
+![mrlearning](images/mrlearning-base/tutorial2-section4-step1-1.png)
+
+在新创建的 TextMeshPro 对象（仍处于选定状态）中，在 "检查器" 窗口中更改其位置和大小，以便将标签整齐放置在按钮集合下，例如：
+
+* 将矩形转换位置**Y**改为-0.0425
+* 将矩形转换**宽度**更改为0.24
+* 将矩形转换**高度**更改为0.024
+
+然后，更新文本以反映标签的内容，并选择字体属性，使文本适合标签，例如：
+
+* 将文本网格 Pro （脚本）**文本**更改为按钮集合
+* 将文本网格 Pro （脚本）**字体样式**更改为粗体
+* 将文本网格 Pro （脚本）**字号**更改为0。2
+* 将文本网格 Pro （脚本）**对齐方式**更改为居中和居中
+
+![mrlearning](images/mrlearning-base/tutorial2-section4-step1-2.png)
+
+## <a name="congratulations"></a>祝贺你
+
+本教程介绍了如何克隆、自定义和配置 MRTK 配置文件设置。 还了解了如何与按钮交互，以便在 HoloLens 2 上使用跟踪的动手触发器事件。 最后，你已了解如何使用 MRTK 的网格对象集合组件和 Unity 文本网格 Pro 创建简单的 UI 接口。
+
+[下一教程： 4. 放置动态内容并使用 solvers](mrlearning-base-ch3.md)
