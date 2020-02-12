@@ -6,238 +6,262 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 75a14697953026474d8ca00e6473145d7b12a482
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 18bcbc95746a2e66b88d83f279603aa7f171bbcb
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334351"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77129596"
 ---
-# <a name="6-exploring-advanced-input-options"></a><span data-ttu-id="60eb3-105">6. 浏览高级输入选项</span><span class="sxs-lookup"><span data-stu-id="60eb3-105">6. Exploring advanced input options</span></span>
+# <a name="6-exploring-advanced-input-options"></a><span data-ttu-id="96ae2-105">6. 浏览高级输入选项</span><span class="sxs-lookup"><span data-stu-id="96ae2-105">6. Exploring advanced input options</span></span>
 
-<span data-ttu-id="60eb3-106">在本教程中，将探索 HoloLens 2 的几个高级输入选项，包括使用语音命令、平移手势和目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="60eb3-106">In this tutorial, several advanced input options for HoloLens 2 are explored, including the use of voice commands, panning gesture, and eye tracking.</span></span> 
+<span data-ttu-id="96ae2-106">在本教程中，你将了解 HoloLens 2 的几个高级输入选项，包括使用语音命令、平移手势和目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="96ae2-106">In this tutorial, you will explore a few advanced input options for HoloLens 2, including the use of voice commands, panning gesture, and eye tracking.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="60eb3-107">目标</span><span class="sxs-lookup"><span data-stu-id="60eb3-107">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="96ae2-107">目标</span><span class="sxs-lookup"><span data-stu-id="96ae2-107">Objectives</span></span>
 
-- <span data-ttu-id="60eb3-108">使用声音命令和关键字触发事件</span><span class="sxs-lookup"><span data-stu-id="60eb3-108">Trigger events using voice commands and keywords</span></span>
-- <span data-ttu-id="60eb3-109">使用跟踪的指针通过跟踪的手平移纹理和3D 对象</span><span class="sxs-lookup"><span data-stu-id="60eb3-109">Use tracked hands to pan textures and 3D objects with tracked hands</span></span>
-- <span data-ttu-id="60eb3-110">利用 HoloLens 2 目视跟踪功能选择对象</span><span class="sxs-lookup"><span data-stu-id="60eb3-110">Leverage HoloLens 2 eye tracking capabilities to select objects</span></span>
+* <span data-ttu-id="96ae2-108">使用声音命令和关键字触发事件</span><span class="sxs-lookup"><span data-stu-id="96ae2-108">Trigger events using voice commands and keywords</span></span>
+* <span data-ttu-id="96ae2-109">使用跟踪的指针通过跟踪的手平移纹理和3D 对象</span><span class="sxs-lookup"><span data-stu-id="96ae2-109">Use tracked hands to pan textures and 3D objects with tracked hands</span></span>
+* <span data-ttu-id="96ae2-110">利用 HoloLens 2 目视跟踪功能选择对象</span><span class="sxs-lookup"><span data-stu-id="96ae2-110">Leverage HoloLens 2 eye tracking capabilities to select objects</span></span>
 
-## <a name="enabling-voice-commands"></a><span data-ttu-id="60eb3-111">启用语音命令</span><span class="sxs-lookup"><span data-stu-id="60eb3-111">Enabling Voice Commands</span></span>
+## <a name="enabling-voice-commands"></a><span data-ttu-id="96ae2-111">启用语音命令</span><span class="sxs-lookup"><span data-stu-id="96ae2-111">Enabling Voice Commands</span></span>
+<!-- TODO: Consider changing to 'Enabling Speech Commands -->
 
-<span data-ttu-id="60eb3-112">本部分实现了两个语音命令。</span><span class="sxs-lookup"><span data-stu-id="60eb3-112">In this section, two voice commands are implemented.</span></span> <span data-ttu-id="60eb3-113">首先，通过显示 "切换诊断"，可以切换帧速率诊断面板。</span><span class="sxs-lookup"><span data-stu-id="60eb3-113">First, the ability to toggle the frame rate diagnostics panel is introduced by saying "toggle diagnostics".</span></span> <span data-ttu-id="60eb3-114">其次，可以通过语音命令播放声音。</span><span class="sxs-lookup"><span data-stu-id="60eb3-114">Second, the ability to play a sound with a voice command is explored.</span></span> <span data-ttu-id="60eb3-115">首先查看负责配置语音命令的 MRTK 配置文件和设置。</span><span class="sxs-lookup"><span data-stu-id="60eb3-115">The MRTK profiles and settings responsible for configuring voice commands is reviewed first.</span></span>
+<span data-ttu-id="96ae2-112">在本部分中，你将实现一个语音命令，让用户在八对象上播放声音。</span><span class="sxs-lookup"><span data-stu-id="96ae2-112">In this section, you will implement a speech command to let the user play a sound on the Octa object.</span></span> <span data-ttu-id="96ae2-113">为此，您将创建一个新的语音命令，然后配置该事件，以便在口述语音命令关键字时触发所需的操作。</span><span class="sxs-lookup"><span data-stu-id="96ae2-113">For this, you will create a new speech command and then configure the event so it triggers the desired action when the speech command keyword is spoken.</span></span>
 
-1. <span data-ttu-id="60eb3-116">在 BaseScene 层次结构中，选择 MixedRealityToolkit。</span><span class="sxs-lookup"><span data-stu-id="60eb3-116">In the BaseScene hierarchy, select MixedRealityToolkit.</span></span> <span data-ttu-id="60eb3-117">然后，在 "检查器" 面板中，选择 "输入"，然后单击 "DefaultMixedRealityInputSystemProfile" 左侧的 "小克隆" 按钮，以打开 "克隆配置文件" 弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="60eb3-117">Then, in the Inspector panel, select Input and click the small Clone button to the left of the DefaultMixedRealityInputSystemProfile to open the Clone Profile popup.</span></span> <span data-ttu-id="60eb3-118">在弹出窗口中，单击 "克隆" 以创建新的配置文件 MixedRealityInputSystemProfile。</span><span class="sxs-lookup"><span data-stu-id="60eb3-118">In the popup click Clone to create a new profile MixedRealityInputSystemProfile.</span></span>
+<span data-ttu-id="96ae2-114">为实现此目的需要执行的主要步骤如下：</span><span class="sxs-lookup"><span data-stu-id="96ae2-114">The main steps you will take to achieve this are:</span></span>
 
-    ![mrlearning-base-ch5-1-step1a .png](images/mrlearning-base-ch5-1-step1a.png)
+1. <span data-ttu-id="96ae2-115">克隆默认输入系统配置文件</span><span class="sxs-lookup"><span data-stu-id="96ae2-115">Clone the default Input System Profile</span></span>
+2. <span data-ttu-id="96ae2-116">克隆默认的语音命令配置文件</span><span class="sxs-lookup"><span data-stu-id="96ae2-116">Clone the default Speech Commands Profile</span></span>
+3. <span data-ttu-id="96ae2-117">创建新的语音命令</span><span class="sxs-lookup"><span data-stu-id="96ae2-117">Create a new speech command</span></span>
+4. <span data-ttu-id="96ae2-118">添加和配置语音输入处理程序（脚本）组件</span><span class="sxs-lookup"><span data-stu-id="96ae2-118">Add and configure the Speech Input Handler (Script) component</span></span>
+5. <span data-ttu-id="96ae2-119">实现语音命令的响应事件</span><span class="sxs-lookup"><span data-stu-id="96ae2-119">Implement the Response event for the speech command</span></span>
 
-    <span data-ttu-id="60eb3-120">这也会自动填充 MixedRealityToolkitConfigurationProfile 和新创建的 MixedRealityInputSystemProfile。</span><span class="sxs-lookup"><span data-stu-id="60eb3-120">This will also auto-populate the MixedRealityToolkitConfigurationProfile with the newly created MixedRealityInputSystemProfile.</span></span>
+### <a name="1-clone-the-default-input-system-profile"></a><span data-ttu-id="96ae2-120">1. 克隆默认输入系统配置文件</span><span class="sxs-lookup"><span data-stu-id="96ae2-120">1. Clone the default Input System Profile</span></span>
 
-    ![mrlearning-base-ch5-1-step1b .png](images/mrlearning-base-ch5-1-step1b.png)
+<span data-ttu-id="96ae2-121">在 "层次结构" 窗口中，选择 " **MixedRealityToolkit** " 对象，然后在 "检查器" 窗口中，选择 "**输入**" 选项卡并克隆**DefaultHoloLens2InputSystemProfile** ，将其替换为你自己的可自定义**输入系统配置文件**：</span><span class="sxs-lookup"><span data-stu-id="96ae2-121">In the Hierarchy window, select the **MixedRealityToolkit** object, then in the Inspector window, select the **Input** tab and clone the **DefaultHoloLens2InputSystemProfile** to replace it with your own customizable **Input System Profile**:</span></span>
 
-2. <span data-ttu-id="60eb3-122">在输入系统配置文件中，有各种设置。</span><span class="sxs-lookup"><span data-stu-id="60eb3-122">In the input system profile, there are a variety of settings.</span></span> <span data-ttu-id="60eb3-123">对于语音命令，展开 "语音" 部分并按照上一步骤中所述的过程进行操作，以克隆 DefaultMixedRealitySpeechCommandsProfile 并将其替换为你自己的可编辑副本。</span><span class="sxs-lookup"><span data-stu-id="60eb3-123">For voice commands, expand the Speech section and follow the same process as in the previous step to clone the DefaultMixedRealitySpeechCommandsProfile and replace it with your own editable copy.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section1-step1-1.png)
 
-    ![mrlearning-base-ch5-1-step2 .png](images/mrlearning-base-ch5-1-step2.png)
+> [!TIP]
+> <span data-ttu-id="96ae2-123">有关如何克隆 MRTK 配置文件的提醒，可以参阅[如何配置混合现实工具包配置文件](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)说明。</span><span class="sxs-lookup"><span data-stu-id="96ae2-123">For a reminder on how to clone MRTK profiles, you can refer to the [How to configure the Mixed Reality Toolkit Profiles](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option) instructions.</span></span>
 
-    <span data-ttu-id="60eb3-125">在语音命令配置文件中，你会注意到一系列设置。</span><span class="sxs-lookup"><span data-stu-id="60eb3-125">In the speech command profile, you’ll notice a range of settings.</span></span> <span data-ttu-id="60eb3-126">有关这些设置的完整说明，请参阅[MRTK speech 文档](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html>)。</span><span class="sxs-lookup"><span data-stu-id="60eb3-126">For a full description of these settings, refer to the [MRTK speech documentation](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html>).</span></span>
+### <a name="2-clone-the-default-speech-commands-profile"></a><span data-ttu-id="96ae2-124">2. 克隆默认语音命令配置文件</span><span class="sxs-lookup"><span data-stu-id="96ae2-124">2. Clone the default Speech Commands Profile</span></span>
 
-    <span data-ttu-id="60eb3-127">默认情况下，一般行为是自动启动。</span><span class="sxs-lookup"><span data-stu-id="60eb3-127">By default, the general behavior is auto-start.</span></span> <span data-ttu-id="60eb3-128">如果需要，可以将其更改为手动-启动。</span><span class="sxs-lookup"><span data-stu-id="60eb3-128">This can be changed to manual-start, if desired.</span></span> <span data-ttu-id="60eb3-129">但在此示例中，请将其保留为自动启动。</span><span class="sxs-lookup"><span data-stu-id="60eb3-129">But for this example, keep it on auto-start.</span></span> <span data-ttu-id="60eb3-130">MRTK 附带了几个默认的语音命令，如菜单、切换诊断和切换探查器。</span><span class="sxs-lookup"><span data-stu-id="60eb3-130">The MRTK comes with several default voice commands, such as menu, toggle diagnostics and toggle profiler.</span></span> <span data-ttu-id="60eb3-131">我们将使用关键字 "切换诊断" 来打开和关闭 "诊断帧速率" 计数器。</span><span class="sxs-lookup"><span data-stu-id="60eb3-131">We will use the keyword “toggle diagnostics,” in order to turn on and off the diagnostics framerate counter.</span></span> <span data-ttu-id="60eb3-132">在以下步骤中，我们还将添加一个新的语音命令。</span><span class="sxs-lookup"><span data-stu-id="60eb3-132">We will also add a new voice command in the steps below.</span></span>
+<span data-ttu-id="96ae2-125">展开 "**语音**" 部分，克隆**DefaultMixedRealitySpeechCommandsProfile**以将其替换为你自己的可自定义**语音命令配置文件**：</span><span class="sxs-lookup"><span data-stu-id="96ae2-125">Expand the **Speech** section and clone the **DefaultMixedRealitySpeechCommandsProfile** to replace it with your own customizable **Speech Commands Profile**:</span></span>
 
-3. <span data-ttu-id="60eb3-133">添加新的语音命令。</span><span class="sxs-lookup"><span data-stu-id="60eb3-133">Add a new voice command.</span></span> <span data-ttu-id="60eb3-134">为此，请单击 "+ 添加新的语音命令" 按钮。</span><span class="sxs-lookup"><span data-stu-id="60eb3-134">To do this, click the + Add a New Speech Command button.</span></span> <span data-ttu-id="60eb3-135">你将看到一个新行，出现在现有语音命令列表下。</span><span class="sxs-lookup"><span data-stu-id="60eb3-135">You'll see a new line that appears below the list of existing voice commands.</span></span> <span data-ttu-id="60eb3-136">键入要使用的语音命令。</span><span class="sxs-lookup"><span data-stu-id="60eb3-136">Type the voice command you want to use.</span></span> <span data-ttu-id="60eb3-137">在此示例中，使用命令 "播放音乐"。</span><span class="sxs-lookup"><span data-stu-id="60eb3-137">In this example, use the command “play music".</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section1-step2-1.png)
 
-    ![mrlearning-base-ch5-1-step3 .png](images/mrlearning-base-ch5-1-step3.png)
+### <a name="3-create-a-new-speech-command"></a><span data-ttu-id="96ae2-127">3. 创建新的语音命令</span><span class="sxs-lookup"><span data-stu-id="96ae2-127">3. Create a new speech command</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="60eb3-139">还可为语音命令设置键码。</span><span class="sxs-lookup"><span data-stu-id="60eb3-139">You can also set a keycode for speech commands.</span></span> <span data-ttu-id="60eb3-140">这允许语音命令在按键时触发事件。</span><span class="sxs-lookup"><span data-stu-id="60eb3-140">This allows for voice commands to trigger events upon the press of a keyboard key.</span></span>
+<span data-ttu-id="96ae2-128">在 "**语音命令**" 部分中，单击 " **+ 添加新语音命令**" 按钮，在现有语音命令列表的底部添加新的语音命令，然后在**关键字**字段中输入合适的词或短语，例如**播放音乐**：</span><span class="sxs-lookup"><span data-stu-id="96ae2-128">In the **Speech Commands** section, click the **+ Add a New Speech Command** button to add a new speech command to the bottom of the list of existing speech commands, then in the **Keyword** field enter a suitable word or phrase, for example **Play Music**:</span></span>
 
-4. <span data-ttu-id="60eb3-141">添加响应语音命令的功能。</span><span class="sxs-lookup"><span data-stu-id="60eb3-141">Add the ability to respond to voice commands.</span></span> <span data-ttu-id="60eb3-142">选择 BaseScene 层次结构中未附加任何其他输入脚本的任何对象，例如 MixedRealityPlayspace 游戏对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-142">Select any object in the BaseScene hierarchy that does not have any other input scripts attached to it, for example, the MixedRealityPlayspace game object.</span></span> <span data-ttu-id="60eb3-143">在检查器面板中，单击 "添加组件"，搜索 "语音"，然后选择语音输入处理程序脚本。</span><span class="sxs-lookup"><span data-stu-id="60eb3-143">In the Inspector panel, click Add Component, search for "speech", and select the Speech Input Handler script.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section1-step3-1.png)
 
-    ![mrlearning-base-ch5-1-step4 .png](images/mrlearning-base-ch5-1-step4.png)
+> [!TIP]
+> <span data-ttu-id="96ae2-130">如果您的计算机没有麦克风，并且您想要使用编辑器内模拟来测试语音命令，则可以将 KeyCode 分配给语音命令，以便在按下相应的键时触发它。</span><span class="sxs-lookup"><span data-stu-id="96ae2-130">If your computer doesn't have a microphone and you would like to test the speech command using the in-editor simulation, you can assign a KeyCode to the speech command which will let you trigger it when the corresponding key is pressed.</span></span>
 
-    <span data-ttu-id="60eb3-145">默认情况下，你将看到两个复选框。</span><span class="sxs-lookup"><span data-stu-id="60eb3-145">By default, you will see two checkboxes.</span></span> <span data-ttu-id="60eb3-146">其中一个是 "是否需要焦点" 复选框。</span><span class="sxs-lookup"><span data-stu-id="60eb3-146">One is the Is Focus Required checkbox.</span></span> <span data-ttu-id="60eb3-147">因此，只要您将鼠标指针指向具有眼睛眼睛、看好、看看或手工看的对象，就会触发语音命令。</span><span class="sxs-lookup"><span data-stu-id="60eb3-147">So, as long as you are pointing at the object with a ray-eye-gaze, head-gaze, controller-gaze, or hand-gaze, the voice command will be triggered.</span></span> <span data-ttu-id="60eb3-148">取消选中此复选框，以便用户不必查看对象即可使用语音命令。</span><span class="sxs-lookup"><span data-stu-id="60eb3-148">Uncheck this checkbox so that the user does not have to look at the object to use the voice command.</span></span>
+### <a name="4-add-and-configure-the-speech-input-handler-script-component"></a><span data-ttu-id="96ae2-131">4. 添加和配置语音输入处理程序（脚本）组件</span><span class="sxs-lookup"><span data-stu-id="96ae2-131">4. Add and configure the Speech Input Handler (Script) component</span></span>
 
-5. <span data-ttu-id="60eb3-149">添加响应语音命令的功能。</span><span class="sxs-lookup"><span data-stu-id="60eb3-149">Add the ability to respond to a voice command.</span></span> <span data-ttu-id="60eb3-150">为此，请单击语音输入处理程序中的 "+" 按钮。</span><span class="sxs-lookup"><span data-stu-id="60eb3-150">To do this, click the + button that’s in the Speech Input Handler.</span></span>
+<span data-ttu-id="96ae2-132">在 "层次结构" 窗口中，选择 "**八**" 对象，并将**语音输入处理程序（脚本）** 组件添加到八对象。</span><span class="sxs-lookup"><span data-stu-id="96ae2-132">In the Hierarchy window, select the **Octa** object and add the **Speech Input Handler (Script)** component to the Octa object.</span></span> <span data-ttu-id="96ae2-133">然后取消选中 "**是否需要焦点**" 复选框，以便用户无需查看八对象即可触发语音命令：</span><span class="sxs-lookup"><span data-stu-id="96ae2-133">Then uncheck the **Is Focus Required** checkbox so the user is not required to look at the Octa object to trigger the speech command:</span></span>
 
-    ![mrlearning-base-ch5-1-step5 .png](images/mrlearning-base-ch5-1-step5.png)
+![mrlearning](images/mrlearning-base/tutorial5-section1-step4-1.png)
 
-6. <span data-ttu-id="60eb3-152">在关键字旁边，可以看到一个下拉菜单。</span><span class="sxs-lookup"><span data-stu-id="60eb3-152">Next to Keyword, you'll see a dropdown menu.</span></span> <span data-ttu-id="60eb3-153">选择 "切换诊断"，以便每当用户显示短语 "切换诊断" 时，都会触发一个操作。</span><span class="sxs-lookup"><span data-stu-id="60eb3-153">Select Toggle Diagnostics so that whenever the user says the phrase “toggle diagnostics”, it triggers an action.</span></span> <span data-ttu-id="60eb3-154">请注意，您可能需要通过按下箭头旁边的箭头来展开元素0。</span><span class="sxs-lookup"><span data-stu-id="60eb3-154">Note that you might need to expand Element 0 by pressing the arrow next to it.</span></span>
+### <a name="5-implement-the-response-event-for-the-speech-command"></a><span data-ttu-id="96ae2-135">5. 实现语音命令的响应事件</span><span class="sxs-lookup"><span data-stu-id="96ae2-135">5. Implement the Response event for the speech command</span></span>
 
-    ![mrlearning-base-ch5-1-step6 .png](images/mrlearning-base-ch5-1-step6.png)
+<span data-ttu-id="96ae2-136">在语音输入处理程序（脚本）组件上，单击 "小 **+** " 按钮添加关键字，然后在 "**关键字**" 下拉列表中，选择之前创建的 "**播放音乐**" 关键字：</span><span class="sxs-lookup"><span data-stu-id="96ae2-136">On the Speech Input Handler (Script) component, click the small **+** button to add a keyword, and then, from the **Keyword** dropdown, choose the **Play Music** keyword you created earlier:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="60eb3-156">根据你在步骤3中编辑的配置文件填充这些关键字。</span><span class="sxs-lookup"><span data-stu-id="60eb3-156">These keywords are populated, based on the profile you edited in the step 3.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section1-step5-1.png)
 
-7. <span data-ttu-id="60eb3-157">添加 "诊断系统" 语音控件脚本，以打开和关闭计数器计数器诊断。</span><span class="sxs-lookup"><span data-stu-id="60eb3-157">Add the Diagnostics System Voice Controls script to toggle the framerate counter diagnostic on and off.</span></span> <span data-ttu-id="60eb3-158">为此，请按 "添加组件"，搜索 "诊断系统语音控制脚本"，然后从菜单添加它。</span><span class="sxs-lookup"><span data-stu-id="60eb3-158">To do this, press Add Component, search for Diagnostics System Voice Controls script and add it from the menu.</span></span> <span data-ttu-id="60eb3-159">此脚本可添加到任何对象，但为了简单起见，我们将其添加到语音输入处理程序所在的同一对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-159">This script can be added to any object, but for simplicity, we will add it to the same object as the speech input handler.</span></span>
+> [!NOTE]
+> <span data-ttu-id="96ae2-138">关键字下拉列表中的关键字根据语音命令配置文件中的 "语音命令" 列表中定义的关键字进行填充。</span><span class="sxs-lookup"><span data-stu-id="96ae2-138">The keywords in the Keyword dropdown are populated based on the keywords defined in the Speech Commands list in the Speech Commands Profile.</span></span>
 
-    ![mrlearning-base-ch5-1-step7 .png](images/mrlearning-base-ch5-1-step7.png)
+<span data-ttu-id="96ae2-139">创建新的**响应（）** 事件，配置**八**对象以接收事件，将**AudioSource**定义为要触发的操作，并将适当的音频剪辑分配给**音频剪辑**字段，例如 MRTK_Gem 音频剪辑：</span><span class="sxs-lookup"><span data-stu-id="96ae2-139">Create a new **Response ()** event, configure the **Octa** object to receive the event, define **AudioSource.PlayOneShot** as the action to be triggered, and assign a suitable audio clip to the **Audio Clip** field, for example, the MRTK_Gem audio clip:</span></span>
 
-8. <span data-ttu-id="60eb3-161">在语音输入处理程序中添加新的响应。</span><span class="sxs-lookup"><span data-stu-id="60eb3-161">Add a new response in the speech input handler.</span></span> <span data-ttu-id="60eb3-162">为此，请单击 "+" 图标，将新响应添加到响应列表。</span><span class="sxs-lookup"><span data-stu-id="60eb3-162">To do this, click the "+" icon to add a new response to the response list.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section1-step5-2.png)
 
-    ![mrlearning-base-ch5-1-step8 .png](images/mrlearning-base-ch5-1-step8.png)
+> [!TIP]
+> <span data-ttu-id="96ae2-141">若要提醒如何实现事件和分配音频剪辑，可以参阅按[触控开始执行事件](mrlearning-base-ch4.md#4-implement-the-on-touch-started-event)说明。</span><span class="sxs-lookup"><span data-stu-id="96ae2-141">For a reminder on how to implement events and assign an audio clip, you can refer to the [Implement the On Touch Started event](mrlearning-base-ch4.md#4-implement-the-on-touch-started-event) instructions.</span></span>
 
-9. <span data-ttu-id="60eb3-164">将具有诊断系统语音控制脚本的对象拖到您在上一步中刚创建的新响应。</span><span class="sxs-lookup"><span data-stu-id="60eb3-164">Drag the object that has the Diagnostics System Voice Controls script to the new response you just created in the previous step.</span></span>
+## <a name="the-pan-gesture"></a><span data-ttu-id="96ae2-142">平移手势</span><span class="sxs-lookup"><span data-stu-id="96ae2-142">The Pan Gesture</span></span>
 
-    ![mrlearning-base-ch5-1-step9 .png](images/mrlearning-base-ch5-1-step9.png)
+<span data-ttu-id="96ae2-143">平移手势对于使用手指或手滚动内容滚动很有用。</span><span class="sxs-lookup"><span data-stu-id="96ae2-143">The pan gesture is useful for scrolling by using your finger or hand to scroll through content.</span></span> <span data-ttu-id="96ae2-144">在此示例中，您将首先了解如何滚动 2D UI，然后将其展开以便能够滚动浏览三维对象的集合。</span><span class="sxs-lookup"><span data-stu-id="96ae2-144">In this example, you will first learn how to scroll a 2D UI and then expand on that to be able to scroll through a collection of 3D objects.</span></span>
 
-10. <span data-ttu-id="60eb3-166">单击 "函数" 下拉列表（其中不显示 "函数"），然后选择 "诊断系统语音控制"，然后选择 ToggleDiagnostics （）函数，以打开和关闭诊断。</span><span class="sxs-lookup"><span data-stu-id="60eb3-166">Click the function dropdown (where it says No Function), then Diagnostics System Voice Controls, and select the ToggleDiagnostics () function which toggles your diagnostics on and off.</span></span>
+<span data-ttu-id="96ae2-145">为实现此目的需要执行的主要步骤如下：</span><span class="sxs-lookup"><span data-stu-id="96ae2-145">The main steps you will take to achieve this are:</span></span>
 
-    ![mrlearning-base-ch5-1-step10 .png](images/mrlearning-base-ch5-1-step10.png)
+1. <span data-ttu-id="96ae2-146">创建可用于平移的四个对象</span><span class="sxs-lookup"><span data-stu-id="96ae2-146">Create a Quad object that can be used for panning</span></span>
+2. <span data-ttu-id="96ae2-147">添加 Near 交互可触摸（脚本）组件</span><span class="sxs-lookup"><span data-stu-id="96ae2-147">Add the Near Interaction Touchable (Script) component</span></span>
+3. <span data-ttu-id="96ae2-148">添加手写交互平移缩放（脚本）组件</span><span class="sxs-lookup"><span data-stu-id="96ae2-148">Add the Hand Interaction Pan Zoom (Script) component</span></span>
+4. <span data-ttu-id="96ae2-149">添加要滚动的2D 内容</span><span class="sxs-lookup"><span data-stu-id="96ae2-149">Add 2D content to be scrolled</span></span>
+5. <span data-ttu-id="96ae2-150">添加三维内容滚动</span><span class="sxs-lookup"><span data-stu-id="96ae2-150">Add 3D content to be scrolled</span></span>
+6. <span data-ttu-id="96ae2-151">添加带平移（脚本）组件的移动</span><span class="sxs-lookup"><span data-stu-id="96ae2-151">Add the Move With Pan (Script) component</span></span>
 
-    >[!IMPORTANT]
-    > <span data-ttu-id="60eb3-168">在生成到设备之前，你需要启用 mic 设置。</span><span class="sxs-lookup"><span data-stu-id="60eb3-168">Before building to your device, you need to enable mic settings.</span></span> <span data-ttu-id="60eb3-169">为此，请单击 "文件"，然后依次单击 "生成设置" 和 "播放机设置"，并确保已设置麦克风功能。</span><span class="sxs-lookup"><span data-stu-id="60eb3-169">To do this, click File and go to Build Settings, Player Settings and ensure that the microphone capability is set.</span></span>
+> [!NOTE]
+> <span data-ttu-id="96ae2-152">带平移（脚本）组件的移动不是 MRTK 的一部分。</span><span class="sxs-lookup"><span data-stu-id="96ae2-152">The Move With Pan (Script) component is not part of MRTK.</span></span> <span data-ttu-id="96ae2-153">本教程提供了本教程的资产。</span><span class="sxs-lookup"><span data-stu-id="96ae2-153">It was provided with this tutorial's assets.</span></span>
 
-    <span data-ttu-id="60eb3-170">接下来，使用八对象添加从语音命令播放音频文件的功能。</span><span class="sxs-lookup"><span data-stu-id="60eb3-170">Next, add the ability to play an audio file from voice command using the Octa object.</span></span> <span data-ttu-id="60eb3-171">从[第4课](mrlearning-base-ch4.md)中回忆，已添加了从触摸八对象播放音频剪辑的能力。</span><span class="sxs-lookup"><span data-stu-id="60eb3-171">Recall from [lesson 4](mrlearning-base-ch4.md) that the ability to play an audio clip from touching the Octa object was added.</span></span> <span data-ttu-id="60eb3-172">我们会将此音频源同样用于音乐语音命令。</span><span class="sxs-lookup"><span data-stu-id="60eb3-172">We will leverage this same audio source for our music voice command.</span></span>
+### <a name="1-create-a-quad-object-that-can-be-used-for-panning"></a><span data-ttu-id="96ae2-154">1. 创建可用于平移的四个对象</span><span class="sxs-lookup"><span data-stu-id="96ae2-154">1. Create a Quad object that can be used for panning</span></span>
 
-11. <span data-ttu-id="60eb3-173">选择 BaseScene 层次结构中的八对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-173">Select the Octa object in the BaseScene hierarchy.</span></span>
+<span data-ttu-id="96ae2-155">在 "层次结构" 窗口中，右键单击空白区域，并选择 " **3D 对象** > **四**个"，将 "四个" 添加到场景中。</span><span class="sxs-lookup"><span data-stu-id="96ae2-155">In the Hierarchy window, right-click at an empty area and select **3D Object** > **Quad** to add a quad to your scene.</span></span> <span data-ttu-id="96ae2-156">为它提供适当的名称（例如**PanGesture**），并将其放置在合适的位置，例如 X = 0、Y =-0.2、Z = 2。</span><span class="sxs-lookup"><span data-stu-id="96ae2-156">Give it a suitable name, for example, **PanGesture**, and position it in a suitable location, for example, X = 0, Y = -0.2, Z = 2.</span></span>
 
-12. <span data-ttu-id="60eb3-174">添加另一个语音输入处理程序（重复步骤4和5），但包含八对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-174">Add another speech input handler (repeat Steps 4 and 5), but with the octa object.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step1-1.png)
 
-13. <span data-ttu-id="60eb3-175">添加 "播放音乐" 语音命令，而不是从步骤6添加 "切换诊断语音" 命令，如下图所示。</span><span class="sxs-lookup"><span data-stu-id="60eb3-175">Instead of adding the Toggle Diagnostics voice command from step 6, add the Play Music voice command as shown in the image below.</span></span>
+> [!TIP]
+> <span data-ttu-id="96ae2-158">有关如何向场景中添加 Unity 基元（如三维四类）的提醒，可以参阅[将多维数据集添加到场景](mrlearning-base-ch2.md#2-add-a-cube-to-the-scene)说明。</span><span class="sxs-lookup"><span data-stu-id="96ae2-158">For a reminder on how to add Unity primitives, such as a 3D quad, to your scene, you can refer to the [Add a cube to the scene](mrlearning-base-ch2.md#2-add-a-cube-to-the-scene) instructions.</span></span>
 
-    ![mrlearning-base-ch5-1-step13 .png](images/mrlearning-base-ch5-1-step13.png)
+<span data-ttu-id="96ae2-159">与任何其他交互一样，平移手势还需要碰撞器。</span><span class="sxs-lookup"><span data-stu-id="96ae2-159">As with any other interaction, the the pan gesture also requires a collider.</span></span> <span data-ttu-id="96ae2-160">默认情况下，四个网络有一个网格碰撞器。</span><span class="sxs-lookup"><span data-stu-id="96ae2-160">By default, a Quad has a mesh collider.</span></span> <span data-ttu-id="96ae2-161">但是，网格碰撞器并不理想，因为它非常精简。</span><span class="sxs-lookup"><span data-stu-id="96ae2-161">However, the mesh collider is not ideal because it is extremely thin.</span></span> <span data-ttu-id="96ae2-162">为了使用户能够更轻松地与碰撞器进行交互，我们将使用箱碰撞器替换网格碰撞器。</span><span class="sxs-lookup"><span data-stu-id="96ae2-162">To make it easier for the user to interact with the collider, we will replace the mesh collider with a box collider.</span></span>
 
-14. <span data-ttu-id="60eb3-177">对于步骤8和9，添加一个新的响应，并将八对象（具有诊断系统语音控制脚本的对象）添加到空的响应槽。</span><span class="sxs-lookup"><span data-stu-id="60eb3-177">As with Steps 8 and 9, add a new response and drag the Octa object, the object that has the Diagnostics System Voice Controls script on it, to the empty response slot.</span></span>
+<span data-ttu-id="96ae2-163">在仍选择 PanGesture 对象的情况下，单击**网格碰撞**器组件的**设置**图标，然后选择 "**删除组件**" 以删除网格碰撞器：</span><span class="sxs-lookup"><span data-stu-id="96ae2-163">With the PanGesture object still selected, click the **Mesh Collider** component's **Settings** icon and select **Remove Component** to remove the Mesh Collider:</span></span>
 
-15. <span data-ttu-id="60eb3-178">选择不显示函数的下拉菜单。</span><span class="sxs-lookup"><span data-stu-id="60eb3-178">Select the dropdown menu that says No Function.</span></span> <span data-ttu-id="60eb3-179">然后选择 "音频源"，然后选择 "PlayOneShot" （AudioClip）。</span><span class="sxs-lookup"><span data-stu-id="60eb3-179">Then select Audio Source, followed by PlayOneShot (AudioClip).</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step1-2.png)
 
-    ![Lesson5 Chapter1 Step15im](images/Lesson5_chapter1_step15im.PNG)
+<span data-ttu-id="96ae2-165">在 "检查器" 窗口中，使用 "**添加组件**" 按钮添加一个**框碰撞**器，然后将 box 碰撞器**大小**Z 改为0.15 以增加框碰撞器的厚度：</span><span class="sxs-lookup"><span data-stu-id="96ae2-165">In the Inspector window, use the **Add Component** button to add a **Box Collider**, then change the Box Collider **Size** Z to 0.15 to increase the thickness of the box collider:</span></span>
 
-16. <span data-ttu-id="60eb3-181">在此示例中，我们将使用[第4课](mrlearning-base-ch4.md)中的相同音频剪辑。</span><span class="sxs-lookup"><span data-stu-id="60eb3-181">For this example, we are going to use the same audio clip from [Lesson 4](mrlearning-base-ch4.md).</span></span> <span data-ttu-id="60eb3-182">进入项目面板，搜索 "MRTK_Gem" 音频剪辑，并将其拖动到音频源槽，如下图所示。</span><span class="sxs-lookup"><span data-stu-id="60eb3-182">Go into your Project panel, search for “MRTK_Gem” audio clip and drag it into the audio source slot as shown in the image below.</span></span> <span data-ttu-id="60eb3-183">现在，你的应用程序将响应语音命令 "切换诊断" 以切换 "帧速率" 计数器面板，并播放音乐来播放 MRTK_Gem 的歌曲。</span><span class="sxs-lookup"><span data-stu-id="60eb3-183">Now your application will respond to the voice commands “toggle diagnostics” to toggle the Frame Rate Counter panel and Play Music to play the MRTK_Gem song.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step1-3.png)
 
-    ![Lesson5 Chapter1.txt Step16im](images/Lesson5_chapter1_step16im.PNG)
+### <a name="2-add-the-near-interaction-touchable-script-component"></a><span data-ttu-id="96ae2-167">2. 添加 Near 交互可触摸（脚本）组件</span><span class="sxs-lookup"><span data-stu-id="96ae2-167">2. Add the Near Interaction Touchable (Script) component</span></span>
 
-## <a name="the-pan-gesture"></a><span data-ttu-id="60eb3-185">平移手势</span><span class="sxs-lookup"><span data-stu-id="60eb3-185">The Pan Gesture</span></span>
+<span data-ttu-id="96ae2-168">在仍选择**PanGesture**对象的情况下，将**near 交互可触摸（脚本）** 组件添加到 PanGesture 对象，然后单击 "**修复边界**" 和 "**修复中心**" 按钮，更新接近交互可触摸（脚本）的局部中心和边界属性，使之与 BoxCollider 匹配：</span><span class="sxs-lookup"><span data-stu-id="96ae2-168">With the **PanGesture** object still selected, add the **Near Interaction Touchable (Script)** component to the PanGesture object, and then click the **Fix Bounds** and **Fix Center** buttons to update the Local Center and Bounds properties of the Near Interaction Touchable (Script) to match the BoxCollider:</span></span>
 
-<span data-ttu-id="60eb3-186">在本部分中，你将学习如何使用平移手势。</span><span class="sxs-lookup"><span data-stu-id="60eb3-186">In this section, you will learn how to use the pan gesture.</span></span> <span data-ttu-id="60eb3-187">这适用于使用手指或手滚动内容滚动。</span><span class="sxs-lookup"><span data-stu-id="60eb3-187">This is useful for scrolling by using your finger or hand to scroll through content.</span></span> <span data-ttu-id="60eb3-188">你还可以使用平移手势来旋转对象、循环浏览三维对象的集合，甚至滚动 2D UI。</span><span class="sxs-lookup"><span data-stu-id="60eb3-188">You can also use the pan gesture to rotate objects, cycle through a collection of 3D objects, or even to scroll a 2D UI.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step2-1.png)
 
-1. <span data-ttu-id="60eb3-189">创建一个四面体。</span><span class="sxs-lookup"><span data-stu-id="60eb3-189">Create a quad.</span></span> <span data-ttu-id="60eb3-190">在 BaseScene 层次结构中，右键单击，选择 "3D 对象"，然后选择 "四个"。</span><span class="sxs-lookup"><span data-stu-id="60eb3-190">In your BaseScene hierarchy, right-click, select "3D Object" followed by Quad.</span></span>
+### <a name="3-add-the-hand-interaction-pan-zoom-script-component"></a><span data-ttu-id="96ae2-170">3. 添加手写交互平移缩放（脚本）组件</span><span class="sxs-lookup"><span data-stu-id="96ae2-170">3. Add the Hand Interaction Pan Zoom (Script) component</span></span>
 
-    ![Lesson5 Chapter2 Step2im](images/Lesson5_chapter2_step2im.PNG)
+<span data-ttu-id="96ae2-171">在仍选择**PanGesture**对象的情况下，将**手写交互平移缩放（脚本）** 组件添加到 PanGesture 对象，然后选中 "**锁定水平**" 复选框以仅允许垂直滚动：</span><span class="sxs-lookup"><span data-stu-id="96ae2-171">With the **PanGesture** object still selected, add the **Hand Interaction Pan Zoom (Script)** component to the PanGesture object, and then check the **Lock Horizontal** checkbox to allow vertical scrolling only:</span></span>
 
-2. <span data-ttu-id="60eb3-192">根据需要重定位四部分。</span><span class="sxs-lookup"><span data-stu-id="60eb3-192">Reposition the quad, as appropriate.</span></span> <span data-ttu-id="60eb3-193">对于我们的示例，我们将 x = 0、y = 0 和 z = 1.5 远离相机，以实现从 HoloLens 2 获得的舒适位置。</span><span class="sxs-lookup"><span data-stu-id="60eb3-193">For our example, we set the x = 0, the y = 0 and the z = 1.5 away from the camera for a comfortable position from HoloLens 2.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step3-1.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="60eb3-194">如果故障诊断块或位于前一课中的任何内容之前，请务必将其移动，使其不会阻止其他任何对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-194">If the quad blocks or is in front of any content from the previous lessons, be sure to move it so that it doesn’t block any of the other objects.</span></span>
+### <a name="4-add-2d-content-to-be-scrolled"></a><span data-ttu-id="96ae2-173">4. 添加要滚动的2D 内容</span><span class="sxs-lookup"><span data-stu-id="96ae2-173">4. Add 2D content to be scrolled</span></span>
 
-3. <span data-ttu-id="60eb3-195">将材料应用到四面体。</span><span class="sxs-lookup"><span data-stu-id="60eb3-195">Apply a material to the quad.</span></span> <span data-ttu-id="60eb3-196">此材料将是使用平移手势滚动的内容。</span><span class="sxs-lookup"><span data-stu-id="60eb3-196">This material will be what we will be scrolling through with the pan gesture.</span></span>
+<span data-ttu-id="96ae2-174">在 "项目" 面板中，搜索**PanContent**材料，然后单击并将其拖动到**PanGesture**对象的 "网状呈现器**材料**元素 0" 属性：</span><span class="sxs-lookup"><span data-stu-id="96ae2-174">In the Project panel, search for the **PanContent** material and then click-and-drag it on to the **PanGesture** object's Mesh Renderer **Material** Element 0 property:</span></span>
 
-    ![Lesson5 Chapter2 Step3im](images/Lesson5_chapter2_step3im.PNG)
+![mrlearning](images/mrlearning-base/tutorial5-section2-step4-1.png)
 
-4. <span data-ttu-id="60eb3-198">在 "项目" 面板的 "搜索" 框中键入 "平移内容"。</span><span class="sxs-lookup"><span data-stu-id="60eb3-198">In your Projects panel, type “pan content” in the Search box.</span></span> <span data-ttu-id="60eb3-199">将该材料拖到场景中的四个部分。</span><span class="sxs-lookup"><span data-stu-id="60eb3-199">Drag that material onto the quad in your scene.</span></span>
+<span data-ttu-id="96ae2-176">在 "检查器" 窗口中，展开新添加的 " **PanContent**材料" 组件，然后将其 "**平铺**Y" 值更改为0.5，使其与 X 值匹配，磁贴显示为方形：</span><span class="sxs-lookup"><span data-stu-id="96ae2-176">In the Inspector window, expand the newly added **PanContent** material component, and then change it's **Tiling** Y value to 0.5 so it matches the X value and the tiles appear square:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="60eb3-200">PanContent 资料不是 MRTK 的一部分，而是在上一课中导入的 BaseModuleAssets 资产中包含。</span><span class="sxs-lookup"><span data-stu-id="60eb3-200">The PanContent material is not part of MRTK but included with the BaseModuleAssets asset imported in the previous lesson.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step4-2.png)
 
-    <span data-ttu-id="60eb3-201">若要使用平移手势，需要在对象中添加一个碰撞体。</span><span class="sxs-lookup"><span data-stu-id="60eb3-201">To use the pan gesture, you will need a collider on your object.</span></span> <span data-ttu-id="60eb3-202">你可能会看到，四面体已有一个网格碰撞体。</span><span class="sxs-lookup"><span data-stu-id="60eb3-202">You may see the quad already has a mesh collider.</span></span> <span data-ttu-id="60eb3-203">但是，该网格碰撞体并不理想，因为它非常小，很难将其选中。</span><span class="sxs-lookup"><span data-stu-id="60eb3-203">However, the mesh collider is not ideal, because it is extremely thin and difficult to select.</span></span> <span data-ttu-id="60eb3-204">我们建议将网格碰撞体替换为盒碰撞体。</span><span class="sxs-lookup"><span data-stu-id="60eb3-204">We suggest replacing the mesh collider with a box collider.</span></span>
+<span data-ttu-id="96ae2-178">如果你现在进入游戏模式，则可以使用编辑器内模拟中的平移手势来测试是否滚动2D 内容：</span><span class="sxs-lookup"><span data-stu-id="96ae2-178">If you now enter Game mode, you can test scrolling the 2D content using the pan gesture in the in-editor simulation:</span></span>
 
-5. <span data-ttu-id="60eb3-205">右键单击 "检查器" 面板上的 "故障诊断" 中的网格碰撞器。</span><span class="sxs-lookup"><span data-stu-id="60eb3-205">Right-click the mesh collider that’s on the quad from the Inspector panel.</span></span> <span data-ttu-id="60eb3-206">然后单击 "删除组件" 将其删除。</span><span class="sxs-lookup"><span data-stu-id="60eb3-206">Then remove it by clicking Remove Component.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step4-3.png)
 
-    ![Lesson5 Chapter2 Step5im](images/Lesson5_chapter2_step5im.PNG)
+### <a name="5-add-3d-content-to-be-scrolled"></a><span data-ttu-id="96ae2-180">5. 添加要滚动的3D 内容</span><span class="sxs-lookup"><span data-stu-id="96ae2-180">5. Add 3D content to be scrolled</span></span>
 
-6. <span data-ttu-id="60eb3-208">现在，通过单击 "添加组件" 并搜索 "box 碰撞器" 来添加框碰撞器。</span><span class="sxs-lookup"><span data-stu-id="60eb3-208">Now add the box collider by clicking Add Component and searching “box collider”.</span></span> <span data-ttu-id="60eb3-209">默认添加的框碰撞器仍然太小，因此请单击 "编辑碰撞器" 按钮进行编辑。</span><span class="sxs-lookup"><span data-stu-id="60eb3-209">The default added box collider is still too thin, so click the Edit Collider button to edit.</span></span> <span data-ttu-id="60eb3-210">按下该对象后，可以使用 x、y 和 z 值或场景编辑器中的元素来调整其大小。</span><span class="sxs-lookup"><span data-stu-id="60eb3-210">When it’s pressed in, you can adjust the size using the x, y and z values or the elements in the scene editor.</span></span> <span data-ttu-id="60eb3-211">对于本示例，我们希望盒碰撞体稍微靠在四面体的后面。</span><span class="sxs-lookup"><span data-stu-id="60eb3-211">For our example, we want to extend the box collider a little behind the quad.</span></span> <span data-ttu-id="60eb3-212">在场景编辑器中，将盒碰撞体往后朝外拖动（参考下图）。</span><span class="sxs-lookup"><span data-stu-id="60eb3-212">In the scene editor, drag the box collider from the back, outwards (see the image below).</span></span> <span data-ttu-id="60eb3-213">这样，用户不仅可以使用手指，而且能滚动整个手。</span><span class="sxs-lookup"><span data-stu-id="60eb3-213">This lets the user not only use their finger, but their entire hand to scroll.</span></span>
+<span data-ttu-id="96ae2-181">在 "层次结构" 窗口中，将**四个多维数据集创建**为**PanContent**的子对象，并将其转换**比例**设置为 X = 0.15，Y = 0.15，Z = 0.15：</span><span class="sxs-lookup"><span data-stu-id="96ae2-181">In the Hierarchy window, **create four cubes** as a child objects of the **PanContent** and set their Transform **Scale** to X = 0.15, Y = 0.15, Z = 0.15:</span></span>
 
-    ![Lesson5 Chapter2 Step6im](images/Lesson5_chapter2_step6im.PNG)
+![mrlearning](images/mrlearning-base/tutorial5-section2-step5-1.png)
 
-7. <span data-ttu-id="60eb3-215">使对象具有交互能力。</span><span class="sxs-lookup"><span data-stu-id="60eb3-215">Make it interactive.</span></span> <span data-ttu-id="60eb3-216">由于我们希望直接与四个部分交互，我们想要使用在第4课中使用的近乎交互可触摸组件来播放八对象中的音乐。</span><span class="sxs-lookup"><span data-stu-id="60eb3-216">Since we want to interact with the quad directly, we want to use the Near Interaction Touchable component that we used this in Lesson 4 for playing music from the Octa object.</span></span> <span data-ttu-id="60eb3-217">单击 "添加组件"，搜索 "near 交互可触摸" 并将其选中，如下图所示。</span><span class="sxs-lookup"><span data-stu-id="60eb3-217">Click Add Component, search for “near interaction touchable” and select it as shown in the images below.</span></span>
+<span data-ttu-id="96ae2-183">若要将多维数据集均匀地缩小，并保存一些时间，请将网格对象集合（脚本）组件添加到多维数据集的父对象（即 PanGesture 对象），并按如下所示配置网格对象集合（脚本）：</span><span class="sxs-lookup"><span data-stu-id="96ae2-183">To space the cubes out evenly, and save some time, add the Grid Object Collection (Script) component, to the cubes' parent object, i.e. the PanGesture object, and configure the Grid Object Collection (Script) as follows:</span></span>
 
-    ![mrlearning-base-ch5-2-step7a .png](images/mrlearning-base-ch5-2-step7a.png)
+* <span data-ttu-id="96ae2-184">将**Num 行**更改为1，使所有多维数据集在一行上对齐</span><span class="sxs-lookup"><span data-stu-id="96ae2-184">Change **Num Rows** to 1 to have all the cubes aligned on one single row</span></span>
+* <span data-ttu-id="96ae2-185">将**单元格宽度**更改为0.25，以将行内的多维数据集变为空白</span><span class="sxs-lookup"><span data-stu-id="96ae2-185">Change **Cell Width** to 0.25 to space out the cubes within the row</span></span>
 
-    <span data-ttu-id="60eb3-219">如果你看到有关边界和/或中心与 BoxCollider 大小和/或中心不匹配的黄色警告，请单击 "修复边界" 和/或 "修复中心" 按钮，更新中心和边界值。</span><span class="sxs-lookup"><span data-stu-id="60eb3-219">If you see a yellow warning about bounds and/or center not matching the BoxCollider's size and/or center, click the Fix Bounds and/or Fix Center buttons to update the center and bounds values.</span></span>
+<span data-ttu-id="96ae2-186">然后单击 "**更新集合**" 按钮应用新配置：</span><span class="sxs-lookup"><span data-stu-id="96ae2-186">Then click the **Update Collection** button to apply the new configuration:</span></span>
 
-    ![mrlearning-base-ch5-2-step7b .png](images/mrlearning-base-ch5-2-step7b.png)
+![mrlearning](images/mrlearning-base/tutorial5-section2-step5-2.png)
 
-8. <span data-ttu-id="60eb3-221">添加识别平移手势的功能。</span><span class="sxs-lookup"><span data-stu-id="60eb3-221">Add the ability to recognize the pan gesture.</span></span> <span data-ttu-id="60eb3-222">单击 "添加组件"，在搜索字段中键入 "手工交互"，然后添加 "手写交互平移缩放脚本" 组件。</span><span class="sxs-lookup"><span data-stu-id="60eb3-222">Click Add Component, type “hand interaction” in the search field and add the Hand Interaction Pan Zoom script component.</span></span>
+### <a name="6-add-the-move-with-pan-script-component"></a><span data-ttu-id="96ae2-188">6. 添加带平移（脚本）组件的移动</span><span class="sxs-lookup"><span data-stu-id="96ae2-188">6. Add the Move With Pan (Script) component</span></span>
 
-    ![mrlearning-base-ch5-2-step8a .png](images/mrlearning-base-ch5-2-step8a.png)
+<span data-ttu-id="96ae2-189">在 "层次结构" 窗口中，选择所有**多维数据集子对象**，然后在 "检查器" 窗口中，使用 "**添加组件**" 按钮将**Move （Script）** 组件添加到所有多维数据集：</span><span class="sxs-lookup"><span data-stu-id="96ae2-189">In the Hierarchy window, select all the **Cube child objects**, then in the Inspector window, use the **Add Component** button to add the **Move With Pan (Script)** component to all the cubes:</span></span>
 
-    <span data-ttu-id="60eb3-224">这样就可以使用启用了平移的四核。</span><span class="sxs-lookup"><span data-stu-id="60eb3-224">And with that, you have a pan-enabled quad.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step6-1.png)
 
-    <span data-ttu-id="60eb3-225">正如您所看到的，手动交互平移缩放脚本组件具有各种设置，作为可选的练习，您可以自由地使用它们。</span><span class="sxs-lookup"><span data-stu-id="60eb3-225">As you can see, the Hand Interaction Pan Zoom script component has various settings, as an optional exercise, feel free to play around with them.</span></span>
+> [!TIP]
+> <span data-ttu-id="96ae2-191">有关如何在 "层次结构" 窗口中选择多个对象的提醒，tou 可以参考[将操作处理程序（脚本）组件添加到所有对象](mrlearning-base-ch4.md#1-add-the-manipulation-handler-script-component-to-all-the-objects)指令中。</span><span class="sxs-lookup"><span data-stu-id="96ae2-191">For a reminder on how to select multiple objects in the Hierarchy window, tou can refer to the [Add the Manipulation Handler (Script) component to all the objects](mrlearning-base-ch4.md#1-add-the-manipulation-handler-script-component-to-all-the-objects) instructions.</span></span>
 
-    ![mrlearning-base-ch5-2-step8b .png](images/mrlearning-base-ch5-2-step8b.png)
+<span data-ttu-id="96ae2-192">在仍选择了所有多维数据集的情况下，单击 " **PanGesture** " 对象并将其拖至 "**平移输入源**" 字段：</span><span class="sxs-lookup"><span data-stu-id="96ae2-192">With all the cubes still selected, click-and-drag the **PanGesture** object to the **Pan Input Source** field:</span></span>
 
-9. <span data-ttu-id="60eb3-227">接下来，我们了解如何平移 3D 对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-227">Next, we will learn how to pan 3D objects.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step6-2.png)
 
-    <span data-ttu-id="60eb3-228">在层次结构中，右键单击 "四个对象"，打开上下文弹出菜单，然后选择 "**三维对象** > **多维数据集**" 将多维数据集添加到场景中。</span><span class="sxs-lookup"><span data-stu-id="60eb3-228">In the Hierarchy, right-click the Quad object, to open the contextual popup menu, then select **3D Object** > **Cube** to add a cube to your scene.</span></span>
+> [!TIP]
+> <span data-ttu-id="96ae2-194">每个多维数据集上的 "在移动时使用平移（脚本）" 组件会侦听 PanGesture 对象上的 HandInteractionPanZoom （Script）组件发送的平移更新事件，在上面的步骤中已将该对象指定为平移输入源，并更新每个多维数据集的位置并.</span><span class="sxs-lookup"><span data-stu-id="96ae2-194">The Move With Pan (Script) component on each cube listens for the Pan Updated event sent by the HandInteractionPanZoom (Script) component on the PanGesture object, which you assigned as the Pan Input Source in the step above, and updates each cube's position accordingly.</span></span>
 
-    <span data-ttu-id="60eb3-229">确保将多维数据集的**位置**设置为_0，0，0，_ 使其在四部分中整齐放置。</span><span class="sxs-lookup"><span data-stu-id="60eb3-229">Ensure the Cube's **Position** is set to  _0, 0, 0_ so it's positioned neatly within the Quad.</span></span> <span data-ttu-id="60eb3-230">将多维数据集缩小为_0.1、0.1、0.1_的**小数位数**。</span><span class="sxs-lookup"><span data-stu-id="60eb3-230">Scale the Cube down to a **Scale** of _0.1, 0.1, 0.1_.</span></span>
+<span data-ttu-id="96ae2-195">在 "层次结构" 窗口中，选择 " **PanGesture** " 对象，然后在 "检查器" 中**取消选中**"**网格呈现**器" 复选框，以禁用网格呈现器组件：</span><span class="sxs-lookup"><span data-stu-id="96ae2-195">In the Hierarchy window, select the **PanGesture** object, then in the inspector **un-check** the **Mesh Renderer** checkbox to disable the Mesh Renderer component:</span></span>
 
-    ![mrlearning-base-ch5-2-step9 .png](images/mrlearning-base-ch5-2-step9.png)
+![mrlearning](images/mrlearning-base/tutorial5-section2-step6-3.png)
 
-    <span data-ttu-id="60eb3-232">右键单击多维数据集，打开上下文快捷菜单并选择 "**复制**"，从而将多维数据集重复三次。</span><span class="sxs-lookup"><span data-stu-id="60eb3-232">Duplicate the Cube three times by right-clicking the Cube, to open the contextual popup menu, and selecting **Duplicate**.</span></span>
+<span data-ttu-id="96ae2-197">如果你现在进入游戏模式，则可以使用编辑器内模拟中的平移手势测试滚动3D 内容：</span><span class="sxs-lookup"><span data-stu-id="96ae2-197">If you now enter Game mode, you can test scrolling the 3D content using the pan gesture in the in-editor simulation:</span></span>
 
-    <span data-ttu-id="60eb3-233">将多维数据集均匀隔开。</span><span class="sxs-lookup"><span data-stu-id="60eb3-233">Space the cubes out evenly.</span></span> <span data-ttu-id="60eb3-234">场景应类似于下图。</span><span class="sxs-lookup"><span data-stu-id="60eb3-234">Your scene should look similar to the image below.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section2-step6-4.png)
 
-10. <span data-ttu-id="60eb3-235">按住 CTRL 键的同时选择 "层次结构" 面板中的每个**多维数据集**对象，将 MoveWithPan 脚本添加到所有多维数据集。</span><span class="sxs-lookup"><span data-stu-id="60eb3-235">Add the MoveWithPan script to all the cubes by holding down the CTRL key while selecting each **Cube** object in the Hierarchy panel.</span></span> <span data-ttu-id="60eb3-236">在 "检查器" 面板中，单击 "添加组件"，然后搜索并选择 "**移动以平移**脚本"，将其添加到所有多维数据集。</span><span class="sxs-lookup"><span data-stu-id="60eb3-236">In the Inspector panel, click Add Component, and search for and select the **Move With Pan** script to add it to all the cubes.</span></span>
+## <a name="eye-tracking"></a><span data-ttu-id="96ae2-199">眼动跟踪</span><span class="sxs-lookup"><span data-stu-id="96ae2-199">Eye Tracking</span></span>
 
-    ![mrlearning-base-ch5-2-step10a .png](images/mrlearning-base-ch5-2-step10a.png)
+<span data-ttu-id="96ae2-200">在本部分中，你将了解如何在项目中启用目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="96ae2-200">In this section, you will explore how to enable eye tracking in your project.</span></span> <span data-ttu-id="96ae2-201">在此示例中，你将实现一些功能，使3DObjectCollection 中的每个对象在用户眼睛眼睛查看时慢慢旋转，并在通过 "轻敲" 或 "语音" 命令选择要查看的对象时触发故障效果。</span><span class="sxs-lookup"><span data-stu-id="96ae2-201">For this example, you will implement functionality to make each object in the 3DObjectCollection spin slowly while being looked at by the user's eye gaze, as well as, trigger a blip effect when the object being looked at is selected by air-tap or speech command.</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="60eb3-238">MoveWithPan 脚本不是 MRTK 的一部分，而是在上一课中导入的 BaseModuleAssets 资产中包含。</span><span class="sxs-lookup"><span data-stu-id="60eb3-238">The MoveWithPan script is not part of MRTK but included with the BaseModuleAssets asset imported in the previous lesson.</span></span>
+<span data-ttu-id="96ae2-202">为实现此目的需要执行的主要步骤如下：</span><span class="sxs-lookup"><span data-stu-id="96ae2-202">The main steps you will take to achieve this are:</span></span>
 
-    <span data-ttu-id="60eb3-239">在仍选中多维数据集的情况下，将 "层次结构" 面板中的 "**四**个对象" 拖到 "**带平移的移动**脚本" 组件的 "**平移输入源**" 字段</span><span class="sxs-lookup"><span data-stu-id="60eb3-239">With the cubes still selected, drag the **Quad** object from the Hierarchy panel into the **Pan Input Source** field of the **Move With Pan** script component.</span></span>
+1. <span data-ttu-id="96ae2-203">将目视跟踪目标（脚本）组件添加到所有目标对象</span><span class="sxs-lookup"><span data-stu-id="96ae2-203">Add the Eye Tracking Target (Script) component to all target objects</span></span>
+2. <span data-ttu-id="96ae2-204">将目视跟踪教程演示（脚本）组件添加到所有目标对象</span><span class="sxs-lookup"><span data-stu-id="96ae2-204">Add the Eye Tracking Tutorial Demo (Script) component  to all target objects</span></span>
+3. <span data-ttu-id="96ae2-205">在查看目标事件时实现</span><span class="sxs-lookup"><span data-stu-id="96ae2-205">Implement the While Looking At Target event</span></span>
+4. <span data-ttu-id="96ae2-206">实现所选事件</span><span class="sxs-lookup"><span data-stu-id="96ae2-206">Implement the On Selected event</span></span>
+5. <span data-ttu-id="96ae2-207">为编辑器内模拟启用模拟的目视跟踪</span><span class="sxs-lookup"><span data-stu-id="96ae2-207">Enable simulated eye tracking for in-editor simulations</span></span>
+6. <span data-ttu-id="96ae2-208">在 Visual Studio 项目的应用功能中启用注视输入</span><span class="sxs-lookup"><span data-stu-id="96ae2-208">Enable Gaze Input in the Visual Studio project's app capabilities</span></span>
 
-    ![mrlearning-base-ch5-2-step10b .png](images/mrlearning-base-ch5-2-step10b.png)
+### <a name="1-add-the-eye-tracking-target-script-component-to-all-target-objects"></a><span data-ttu-id="96ae2-209">1. 将目视跟踪目标（脚本）组件添加到所有目标对象</span><span class="sxs-lookup"><span data-stu-id="96ae2-209">1. Add the Eye Tracking Target (Script) component to all target objects</span></span>
 
-    <span data-ttu-id="60eb3-241">现在，多维数据集将随平移手势一起移动。</span><span class="sxs-lookup"><span data-stu-id="60eb3-241">Now, the cubes will move with your pan gesture.</span></span>
+<span data-ttu-id="96ae2-210">在 "层次结构" 窗口中，展开 " **3DObjectCollection** " 对象并选择所有**子对象**，然后在 "检查器" 窗口中，使用 "**添加组件**" 按钮将**眼睛跟踪目标（脚本）** 组件添加到所有子对象：</span><span class="sxs-lookup"><span data-stu-id="96ae2-210">In the Hierarchy window, expand the **3DObjectCollection** object and select all the **child objects**, then in the Inspector window, use the **Add Component** button to add the **Eye Tracking Target (Script)** component to all the child objects:</span></span>
 
-    >[!TIP]
-    ><span data-ttu-id="60eb3-242">每个多维数据集上的 MoveWithPan 实例侦听从四个对象上的 HandInteractionPanZoom 实例发送的 PanUpdated 事件，这些事件已添加到每个多维数据集上的 "平移输入源" 字段中，并相应地更新相应的多维数据集对象的位置。</span><span class="sxs-lookup"><span data-stu-id="60eb3-242">The MoveWithPan instance on each cube listens for the PanUpdated event sent from the HandInteractionPanZoom instance on the Quad object, that we added to the Pan Input Source field on each of the cubes, and updates the respective cube object's position accordingly.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section3-step1-1.png)
 
-    <span data-ttu-id="60eb3-243">如果仍选中多维数据集，则将它们沿其 Z 轴向前移动，使每个多维数据集的网格位于**四**个**箱的碰撞**器中，方法是将其**位置 Z**值更改为_0.7_。</span><span class="sxs-lookup"><span data-stu-id="60eb3-243">With the cubes still selected, move them forward along their Z axis so each cube's mesh is inside the **Quad**'s **Box Collider** by changing their **Position Z** values to _0.7_.</span></span>
+<span data-ttu-id="96ae2-212">在仍选择所有**子对象**的情况下，按如下所示配置**目视跟踪目标（脚本）** 组件：</span><span class="sxs-lookup"><span data-stu-id="96ae2-212">With all the **child objects** still selected, configure the **Eye Tracking Target (Script)** component as follows:</span></span>
 
-    ![mrlearning-base-ch5-2-step10c .png](images/mrlearning-base-ch5-2-step10c.png)
+* <span data-ttu-id="96ae2-213">更改**选择操作**以**选择**，将此对象的 "空中点击" 操作定义为 "选择"</span><span class="sxs-lookup"><span data-stu-id="96ae2-213">Change **Select Action** to **Select**, to define the air-tap action for this object as Select</span></span>
+* <span data-ttu-id="96ae2-214">展开**语音选择**，将语音命令列表**大小**设置为1，然后在显示的新元素列表中，将**元素 0**更改为**选择**，以将此对象的语音命令操作定义为 "选择"</span><span class="sxs-lookup"><span data-stu-id="96ae2-214">Expand **Voice Select** and set the voice command list **Size** to 1, and then, in the new element list that appear, change **Element 0** to **Select**, to define the speech command action for this object as Select</span></span>
 
-    <span data-ttu-id="60eb3-245">现在，如果通过在 "检查器" 面板中取消选中并禁用**四**个 "**网格呈现**器" 组件，则会看到一个不可见的四个部分，可在其中平移3d 对象的列表。</span><span class="sxs-lookup"><span data-stu-id="60eb3-245">Now, if you disable the **Quad**'s **Mesh Renderer** component by un-checking it in the Inspector panel, you will have an invisible quad where you can pan through a list of 3D objects.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section3-step1-2.png)
 
-    ![mrlearning-base-ch5-2-step10d .png](images/mrlearning-base-ch5-2-step10d.png)
+### <a name="2-add-the-eye-tracking-tutorial-demo-script-component--to-all-target-objects"></a><span data-ttu-id="96ae2-216">2. 将目视跟踪教程演示（脚本）组件添加到所有目标对象</span><span class="sxs-lookup"><span data-stu-id="96ae2-216">2. Add the Eye Tracking Tutorial Demo (Script) component  to all target objects</span></span>
 
-## <a name="eye-tracking"></a><span data-ttu-id="60eb3-247">眼动跟踪</span><span class="sxs-lookup"><span data-stu-id="60eb3-247">Eye Tracking</span></span>
+<span data-ttu-id="96ae2-217">在仍选择所有**子对象**的情况下，使用 "**添加组件**" 按钮将**目视跟踪教程演示（脚本）** 组件添加到所有子对象：</span><span class="sxs-lookup"><span data-stu-id="96ae2-217">With all the **child objects** still selected, use the **Add Component** button to add the **Eye Tracking Tutorial Demo (Script)** component to all the child objects:</span></span>
 
-<span data-ttu-id="60eb3-248">在本部分中，我们将探讨如何在演示中启用目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="60eb3-248">In this section, we will explore how to enable eye tracking in our demo.</span></span> <span data-ttu-id="60eb3-249">当您的3D 菜单项 gazed 时，我们将慢慢旋转它们。</span><span class="sxs-lookup"><span data-stu-id="60eb3-249">We will slowly spin our 3D menu items when they are being gazed upon with your eye gaze.</span></span> <span data-ttu-id="60eb3-250">此外，在选择所凝视的项时，我们还会触发一种有趣的效果。</span><span class="sxs-lookup"><span data-stu-id="60eb3-250">We will also trigger a fun effect when the gazed-upon item is selected.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section3-step2-1.png)
 
-1. <span data-ttu-id="60eb3-251">确保为目视跟踪正确配置 MRTK 配置文件。</span><span class="sxs-lookup"><span data-stu-id="60eb3-251">Ensure the MRTK profiles are properly configured for eye tracking.</span></span> <span data-ttu-id="60eb3-252">若要执行此操作，请转到[MRTK 说明中的目视跟踪](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html)入门，并通过查看[设置目视跟踪分步](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#setting-up-eye-tracking-step-by-step)部分中的步骤来验证是否正确配置了目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="60eb3-252">To do this, go to the [Getting started with eye tracking in MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html) instructions and verify that eye tracking is properly configured by reviewing the steps in the [Setting up eye tracking step-by-step](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#setting-up-eye-tracking-step-by-step) section.</span></span> <span data-ttu-id="60eb3-253">完成文档中的所有剩余步骤。</span><span class="sxs-lookup"><span data-stu-id="60eb3-253">Complete any remaining steps in the documentation.</span></span>
+> [!NOTE]
+> <span data-ttu-id="96ae2-219">眼睛跟踪目标（脚本）组件不是 MRTK 的一部分。</span><span class="sxs-lookup"><span data-stu-id="96ae2-219">The Eye Tracking Target (Script) component is not part of MRTK.</span></span> <span data-ttu-id="96ae2-220">本教程提供了本教程的资产。</span><span class="sxs-lookup"><span data-stu-id="96ae2-220">It was provided with this tutorial's assets.</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="60eb3-254">如果使用 DefaultHoloLens2InputSystemProfile （如[配置混合现实工具包](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1#configure-the-mixed-reality-toolkit)课程中所述）来克隆自定义 MRTK 配置文件，则默认情况下会在 unity 项目中启用目视跟踪，但仍需为 unity 编辑器设置目视跟踪模拟，并将 Visual Studio 配置为允许对生成进行目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="60eb3-254">If you used the DefaultHoloLens2InputSystemProfile, as instructed in the [Configure the Mixed Reality Toolkit](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1#configure-the-mixed-reality-toolkit) lesson, to clone your custom MRTK configuration profile, eye tracking is enabled by default in the Unity project but you will still have to set up eye tracking simulation for the Unity editor and configure Visual Studio to allow eye tracking for the build.</span></span>
+### <a name="3-implement-the-while-looking-at-target-event"></a><span data-ttu-id="96ae2-221">3. 在查看目标事件时实现</span><span class="sxs-lookup"><span data-stu-id="96ae2-221">3. Implement the While Looking At Target event</span></span>
 
-    <span data-ttu-id="60eb3-255">上述链接提供了有关以下操作的简要说明：</span><span class="sxs-lookup"><span data-stu-id="60eb3-255">The link above provides brief instructions for:</span></span>
+<span data-ttu-id="96ae2-222">在 "层次结构" 窗口中，选择 "**奶酪**" 对象，然后在 "**查看目标（）** " 事件时创建一个新的，配置**奶酪**对象以接收事件，并将**EyeTrackingTutorialDemo**定义为要触发的操作：</span><span class="sxs-lookup"><span data-stu-id="96ae2-222">In the Hierarchy window, select the **Cheese** object, then create a new **While Looking At Target ()** event, configure the **Cheese** object to receive the event, and define **EyeTrackingTutorialDemo.RotateTarget** as the action to be triggered:</span></span>
 
-    - <span data-ttu-id="60eb3-256">创建 Windows Mixed Reality 眼睛数据提供程序以在 MRTK 配置文件中使用</span><span class="sxs-lookup"><span data-stu-id="60eb3-256">Creating the Windows Mixed Reality Eye Gaze Data Provider for use in the MRTK profile</span></span>
-    - <span data-ttu-id="60eb3-257">在连接到相机的目视提供者中启用目视跟踪</span><span class="sxs-lookup"><span data-stu-id="60eb3-257">Enabling eye tracking in the Gaze Provider attached to the camera</span></span>
-    - <span data-ttu-id="60eb3-258">在 Unity 编辑器中设置目视跟踪模拟</span><span class="sxs-lookup"><span data-stu-id="60eb3-258">Setting up an eye tracking simulation in the Unity editor</span></span>
-    - <span data-ttu-id="60eb3-259">编辑 Visual Studio 解决方案的功能，以便在生成的应用程序中进行眼动跟踪</span><span class="sxs-lookup"><span data-stu-id="60eb3-259">Editing the Visual Studio solution's capabilities to allow eye tracking in the built application</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section3-step3-1.png)
 
-2. <span data-ttu-id="60eb3-260">将眼动跟踪目标组件添加到目标对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-260">Add the Eye Tracking Target component to target objects.</span></span> <span data-ttu-id="60eb3-261">若要允许对象响应眼睛眼睛事件，我们需要使用目视注视将 EyeTrackingTarget 组件添加到要与之交互的每个对象上。</span><span class="sxs-lookup"><span data-stu-id="60eb3-261">To allow an object to respond to eye gaze events, we'll need to add the EyeTrackingTarget component on each object that we want to interact with by using eye gaze.</span></span> <span data-ttu-id="60eb3-262">将此组件添加到网格集合中的每个（共九个）3D 对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-262">Add this component to each of the nine 3D objects that are part of the grid collection.</span></span>
+<span data-ttu-id="96ae2-224">对3DObjectCollection 中的每个子对象**重复**此操作。</span><span class="sxs-lookup"><span data-stu-id="96ae2-224">**Repeat** for each of the child objects in the 3DObjectCollection.</span></span>
 
-    >[!TIP]
-    ><span data-ttu-id="60eb3-263">你可以使用 Shift 和/或 CRTL 键选择层次结构中的多个项，然后大容量添加 EyeTrackingTarget 组件。</span><span class="sxs-lookup"><span data-stu-id="60eb3-263">You can use the Shift and/or CRTL keys to select multiple items in the Hierarchy and then bulk-add the EyeTrackingTarget component.</span></span>
+> [!TIP]
+> <span data-ttu-id="96ae2-225">有关如何实现事件的提醒，可参阅 "[手动跟踪手势" 和 "种不可交互" 按钮](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)说明。</span><span class="sxs-lookup"><span data-stu-id="96ae2-225">For a reminder on how to implement events, you can refer to the [Hand tracking gestures and interactable buttons](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons) instructions.</span></span>
 
-    ![Lesson5 Chapter3 步骤2](images/Lesson5Chapter3Step2.JPG)
+### <a name="4-implement-the-on-selected-event"></a><span data-ttu-id="96ae2-226">4. 实现所选事件</span><span class="sxs-lookup"><span data-stu-id="96ae2-226">4. Implement the On Selected event</span></span>
 
-3. <span data-ttu-id="60eb3-265">接下来，我们将为一些激动人心的交互添加 EyeTrackingTutorialDemo 脚本。</span><span class="sxs-lookup"><span data-stu-id="60eb3-265">Next, we will add the EyeTrackingTutorialDemo script for some exciting interactions.</span></span> <span data-ttu-id="60eb3-266">对于网格集合中的每个三维对象，通过在 "添加组件" 菜单中搜索组件来添加 EyeTrackingTutorialDemo 脚本。</span><span class="sxs-lookup"><span data-stu-id="60eb3-266">For each 3D object in the grid collection, add the EyeTrackingTutorialDemo script by searching for the component in the Add Component menu.</span></span>
+<span data-ttu-id="96ae2-227">在 "层次结构" 窗口中，选择 "**奶酪**" 对象，然后**在所选（）事件上**创建新的，将**奶酪**对象配置为接收事件，并将**EyeTrackingTutorialDemo**定义为要触发的操作：</span><span class="sxs-lookup"><span data-stu-id="96ae2-227">In the Hierarchy window, select the **Cheese** object, then create a new **On Selected ()** event, configure the **Cheese** object to receive the event, and define **EyeTrackingTutorialDemo.RotateTarget** as the action to be triggered:</span></span>
 
-    ![Lesson5 Chapter3 步骤3](images/Lesson5Chapter3Step3.JPG)
+![mrlearning](images/mrlearning-base/tutorial5-section3-step4-1.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="60eb3-268">EyeTrackingTutorialDemo 脚本材料不是 MRTK 的一部分，而是在上一课中导入的 BaseModuleAssets 资产中包含。</span><span class="sxs-lookup"><span data-stu-id="60eb3-268">The EyeTrackingTutorialDemo script material is not part of MRTK but included with the BaseModuleAssets asset imported in the previous lesson.</span></span>
+<span data-ttu-id="96ae2-229">对3DObjectCollection 中的每个子对象**重复**此操作。</span><span class="sxs-lookup"><span data-stu-id="96ae2-229">**Repeat** for each of the child objects in the 3DObjectCollection.</span></span>
 
-4. <span data-ttu-id="60eb3-269">在注视目标的同时旋转对象。</span><span class="sxs-lookup"><span data-stu-id="60eb3-269">Spin the object while looking at the target.</span></span> <span data-ttu-id="60eb3-270">我们想要在查看三维对象时将其配置为旋转。</span><span class="sxs-lookup"><span data-stu-id="60eb3-270">We want to configure our 3D objects to spin while we are looking at them.</span></span> <span data-ttu-id="60eb3-271">为此，请在 "EyeTrackingTarget" 组件的 "查看目标" 部分中插入一个新字段，如下图所示。</span><span class="sxs-lookup"><span data-stu-id="60eb3-271">To do this, insert a new field in the While Looking At Target() section of the EyeTrackingTarget component, as shown in the image below.</span></span>
+### <a name="5-enable-simulated-eye-tracking-for-in-editor-simulations"></a><span data-ttu-id="96ae2-230">5. 为编辑器内模拟启用模拟的目视跟踪</span><span class="sxs-lookup"><span data-stu-id="96ae2-230">5. Enable simulated eye tracking for in-editor simulations</span></span>
 
-    ![Lesson5 Chapter3 Step4a](images/Lesson5Chapter3Step4a.JPG)
+<span data-ttu-id="96ae2-231">在 "层次结构" 窗口中，选择 " **MixedRealityToolkit** " 对象，然后在 "检查器" 窗口中，选择 "**输入**" 选项卡，展开 "**输入数据访问接口**" 部分，然后展开 "**输入模拟服务**" 部分，并克隆**DefaultMixedRealityInputSimulationProfile** ，将其替换为你自己的可自定义**输入模拟配置文件**：</span><span class="sxs-lookup"><span data-stu-id="96ae2-231">In the Hierarchy window, select the **MixedRealityToolkit** object, then in the Inspector window, select the **Input** tab, expand the **Input Data Providers** section and then the **Input Simulation Service** section, and clone the **DefaultMixedRealityInputSimulationProfile** to replace it with your own customizable **Input Simulation Profile**:</span></span>
 
-    <span data-ttu-id="60eb3-273">在新创建的字段中，将当前游戏对象添加到空字段，然后选择 EyeTrackingTutorialDemo > RotateTarget （），如下图所示。</span><span class="sxs-lookup"><span data-stu-id="60eb3-273">In the newly-created field, add the current Game Object to the empty field, and select EyeTrackingTutorialDemo>RotateTarget(), as shown in the image below.</span></span> <span data-ttu-id="60eb3-274">现在，该 3D 对象已配置为在使用眼动跟踪凝视它时会自动旋转。</span><span class="sxs-lookup"><span data-stu-id="60eb3-274">Now the 3D object is configured to spin when it is being gazed upon with eye tracking.</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section3-step5-1.png)
 
-    ![Lesson5 Chapter3 Step4b](images/Lesson5Chapter3Step4b.JPG)
+> [!TIP]
+> <span data-ttu-id="96ae2-233">有关如何克隆 MRTK 配置文件的提醒，可以参阅[如何配置混合现实工具包配置文件](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)说明。</span><span class="sxs-lookup"><span data-stu-id="96ae2-233">For a reminder on how to clone MRTK profiles, you can refer to the [How to configure the Mixed Reality Toolkit Profiles](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option) instructions.</span></span>
 
-5. <span data-ttu-id="60eb3-276">添加 "故障目标" 的功能，即通过使用 "gazed" 选择的 "选择"。</span><span class="sxs-lookup"><span data-stu-id="60eb3-276">Add in the ability to “blip target” that is being gazed at upon select by air-tap or saying “select”.</span></span> <span data-ttu-id="60eb3-277">与步骤4类似，我们想要通过将 EyeTrackingTutorialDemo 分配给 EyeTrackingTarget 组件的游戏对象的 Select （）字段来触发 > BlipTarget （），如下图所示。</span><span class="sxs-lookup"><span data-stu-id="60eb3-277">Similar to Step 4, we want to trigger EyeTrackingTutorialDemo>BlipTarget() by assigning it to the game object’s Select() field of the EyeTrackingTarget component, as shown in the figure below.</span></span> <span data-ttu-id="60eb3-278">现在已配置此配置，每当触发选择操作（例如，分流或语音命令 "select"）时，就会注意到游戏对象中的故障。</span><span class="sxs-lookup"><span data-stu-id="60eb3-278">With this now configured, you will notice a slight blip in the game object whenever you trigger a select action, such as air-tap or the voice command “select”.</span></span>
+<span data-ttu-id="96ae2-234">在 "**目视模拟**" 部分中，选中 "**模拟眼睛位置**" 复选框以启用目视跟踪模拟：</span><span class="sxs-lookup"><span data-stu-id="96ae2-234">In the **Eye Simulation** section, check the **Simulate Eye Position** checkbox to enable eye tracking simulation:</span></span>
 
-    ![Lesson5 Chapter3 步骤5](images/Lesson5Chapter3Step5.JPG)
+![mrlearning](images/mrlearning-base/tutorial5-section3-step5-2.png)
 
-6. <span data-ttu-id="60eb3-280">在 HoloLens 2 中生成之前，请确保已正确配置眼动跟踪功能。</span><span class="sxs-lookup"><span data-stu-id="60eb3-280">Ensure eye tracking capabilities are properly configured before building to HoloLens 2.</span></span> <span data-ttu-id="60eb3-281">在撰写本文时，Unity 尚不能为眼睛跟踪功能设置注视输入。</span><span class="sxs-lookup"><span data-stu-id="60eb3-281">As of this writing, Unity does not yet have the ability to set the gaze input for eye tracking capabilities.</span></span> <span data-ttu-id="60eb3-282">若要在 HoloLens 2 中使用目视跟踪，需要设置此功能。</span><span class="sxs-lookup"><span data-stu-id="60eb3-282">Setting this capability is required for eye tracking to work in HoloLens 2.</span></span> <span data-ttu-id="60eb3-283">按照[HoloLens 2 说明测试 Unity 应用](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2)，以启用 "注视输入" 功能。</span><span class="sxs-lookup"><span data-stu-id="60eb3-283">Follow the [Testing your Unity app on a HoloLens 2](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2) instructions to enable the gaze input capability.</span></span>
+<span data-ttu-id="96ae2-236">如果你现在进入游戏模式，则可以通过调整视图来测试你实现的旋转和故障效果，使光标点击其中一个对象，并使用 "手动交互" 或 "语音" 命令选择对象：</span><span class="sxs-lookup"><span data-stu-id="96ae2-236">If you now enter Game mode, you can test the spin and blip effects you implemented by adjusting the view so the cursor hits one of the objects and using hand interaction or speech command to select the object:</span></span>
 
-## <a name="congratulations"></a><span data-ttu-id="60eb3-284">祝贺</span><span class="sxs-lookup"><span data-stu-id="60eb3-284">Congratulations</span></span>
+![mrlearning](images/mrlearning-base/tutorial5-section3-step5-3.png)
 
-<span data-ttu-id="60eb3-285">已成功将基本的目视跟踪功能添加到应用程序。</span><span class="sxs-lookup"><span data-stu-id="60eb3-285">You’ve successfully added basic eye tracking capabilities to your application.</span></span> <span data-ttu-id="60eb3-286">这些操作仅为眼动跟踪实现的探索领域开了一个头。</span><span class="sxs-lookup"><span data-stu-id="60eb3-286">These actions are only the beginning of a world of possibilities with eye tracking.</span></span> <span data-ttu-id="60eb3-287">本章还结束第5课，其中介绍了高级输入功能，如语音命令、平移手势和目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="60eb3-287">This chapter also concludes Lesson 5, where we learned about advanced input functionality, such as voice commands, panning gestures, and eye tracking.</span></span>
+> [!NOTE]
+> <span data-ttu-id="96ae2-238">如果未使用 DefaultHoloLens2ConfigurationProfile 克隆可自定义的 MRTK 配置文件，如[配置混合现实工具包](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)说明中所述，可能无法在项目中启用目视跟踪并且需要启用。</span><span class="sxs-lookup"><span data-stu-id="96ae2-238">If you did not use the DefaultHoloLens2ConfigurationProfile to clone your customizable MRTK configuration profile, as instructed in the [Configure the Mixed Reality Toolkit](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit) instructions, eye tracking may not be enable in your project and will need to be enabled.</span></span> <span data-ttu-id="96ae2-239">为此，可以参阅[MRTK 说明中的目视跟踪](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html)入门。</span><span class="sxs-lookup"><span data-stu-id="96ae2-239">For that, you can refer to the [Getting started with eye tracking in MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html) instructions.</span></span>
 
-[<span data-ttu-id="60eb3-288">下一课： 7. 创建农历模块示例应用程序</span><span class="sxs-lookup"><span data-stu-id="60eb3-288">Next Lesson: 7. Creating a Lunar Module sample application</span></span>](mrlearning-base-ch6.md)
+### <a name="6-enable-gaze-input-in-the-visual-studio-projects-app-capabilities"></a><span data-ttu-id="96ae2-240">6. 在 Visual Studio 项目的应用功能中启用注视输入</span><span class="sxs-lookup"><span data-stu-id="96ae2-240">6. Enable Gaze Input in the Visual Studio project's app capabilities</span></span>
+
+<span data-ttu-id="96ae2-241">在从 Visual Studio 生成应用并将其部署到设备之前，必须在项目的应用功能中启用 "注视输入"。</span><span class="sxs-lookup"><span data-stu-id="96ae2-241">Before building and deploying your app from Visual Studio to your device, Gaze Input has to been enabled in the project's app capabilities.</span></span> <span data-ttu-id="96ae2-242">为此，可以按照[HoloLens 2 说明测试 Unity 应用](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2)。</span><span class="sxs-lookup"><span data-stu-id="96ae2-242">For this, you can follow the [Testing your Unity app on a HoloLens 2](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2) instructions.</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="96ae2-243">祝贺你</span><span class="sxs-lookup"><span data-stu-id="96ae2-243">Congratulations</span></span>
+
+<span data-ttu-id="96ae2-244">已成功将基本的目视跟踪功能添加到应用程序。</span><span class="sxs-lookup"><span data-stu-id="96ae2-244">You have successfully added basic eye tracking capabilities to your application.</span></span> <span data-ttu-id="96ae2-245">这些操作仅为眼动跟踪实现的探索领域开了一个头。</span><span class="sxs-lookup"><span data-stu-id="96ae2-245">These actions are only the beginning of a world of possibilities with eye tracking.</span></span> <span data-ttu-id="96ae2-246">在本教程中，您还了解了其他高级输入功能，如语音命令和平移手势。</span><span class="sxs-lookup"><span data-stu-id="96ae2-246">In this tutorial, you also learned about other advanced input features, such as voice commands and panning gestures.</span></span>
+
+[<span data-ttu-id="96ae2-247">下一课： 7. 创建农历模块示例应用程序</span><span class="sxs-lookup"><span data-stu-id="96ae2-247">Next Lesson: 7. Creating a Lunar Module sample application</span></span>](mrlearning-base-ch6.md)
