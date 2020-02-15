@@ -6,49 +6,53 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 19529cbfebd74938395545c329097d42b5af9ff9
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: f4f609a71b05a52e8761e282763a540b42e9f7f5
+ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334401"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77250676"
 ---
-# <a name="3-displaying-azure-spatial-anchor-feedback"></a><span data-ttu-id="46f87-105">3. 显示 Azure 空间锚点反馈</span><span class="sxs-lookup"><span data-stu-id="46f87-105">3. Displaying Azure Spatial Anchor feedback</span></span>
+# <a name="3-displaying-azure-spatial-anchor-feedback"></a><span data-ttu-id="d65fa-105">3. 显示 Azure 空间锚点反馈</span><span class="sxs-lookup"><span data-stu-id="d65fa-105">3. Displaying Azure Spatial Anchor feedback</span></span>
 
-<span data-ttu-id="46f87-106">在本课程中，你将了解如何在使用 Azure 空间锚点时向用户提供有关定位点发现、事件和状态的反馈。</span><span class="sxs-lookup"><span data-stu-id="46f87-106">In this lesson, you'll learn how to provide users with feedback about anchor discovery, events and status when using Azure Spatial Anchors.</span></span>
+<span data-ttu-id="d65fa-106">在本教程中，你将了解如何在使用 Azure 空间锚（ASA）时向用户提供有关定位点发现、事件和状态的反馈。</span><span class="sxs-lookup"><span data-stu-id="d65fa-106">In this tutorial, you will learn how to provide users with feedback about anchor discovery, events, and status when using Azure Spatial Anchors (ASA).</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="46f87-107">目标</span><span class="sxs-lookup"><span data-stu-id="46f87-107">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="d65fa-107">目标</span><span class="sxs-lookup"><span data-stu-id="d65fa-107">Objectives</span></span>
 
-* <span data-ttu-id="46f87-108">了解如何设置显示当前 ASA 会话重要信息的 UI 面板</span><span class="sxs-lookup"><span data-stu-id="46f87-108">Learn how to set up a UI panel that displays important information about the current ASA session</span></span>
+* <span data-ttu-id="d65fa-108">了解如何设置显示当前 ASA 会话重要信息的 UI 面板</span><span class="sxs-lookup"><span data-stu-id="d65fa-108">Learn how to set up a UI panel that displays important information about the current ASA session</span></span>
+* <span data-ttu-id="d65fa-109">了解并探索 ASA SDK 向用户提供的反馈元素</span><span class="sxs-lookup"><span data-stu-id="d65fa-109">Understand and explore feedback elements that the ASA SDK makes available to users</span></span>
 
-* <span data-ttu-id="46f87-109">了解并探索 ASA SDK 向用户提供的反馈元素</span><span class="sxs-lookup"><span data-stu-id="46f87-109">Understand and explore feedback elements that the ASA SDK makes available to users</span></span>
+## <a name="set-up-asa-feedback-ui-panel"></a><span data-ttu-id="d65fa-110">设置 ASA 反馈 UI 面板</span><span class="sxs-lookup"><span data-stu-id="d65fa-110">Set up ASA feedback UI panel</span></span>
 
-## <a name="set-up-asa-feedback-ui-panel"></a><span data-ttu-id="46f87-110">设置 ASA 反馈 UI 面板</span><span class="sxs-lookup"><span data-stu-id="46f87-110">Set Up ASA Feedback UI Panel</span></span>
+<span data-ttu-id="d65fa-111">在 "层次结构" 窗口中，右键单击 > **TextContent** "对象的**说明**，然后选择" **3d 对象** > " **TextMeshPro** " 以将 TextMeshPro 文本对象创建为说明 > TextContent 对象的子项，并为其提供一个合适的名称，例如 "**反馈**"：</span><span class="sxs-lookup"><span data-stu-id="d65fa-111">In the Hierarchy window, right-click on the **Instructions** > **TextContent** object and select **3D Object** > **Text - TextMeshPro** to create a TextMeshPro text object as a child of the Instructions > TextContent object and give it a suitable name, for example, **Feedback**:</span></span>
 
-1. <span data-ttu-id="46f87-111">在本课中，我们未使用 "SaveAnchorToDisk" 和 "ShareAnchor" 按钮，因此，请选择两个按钮，并取消选中 "检查器" 面板中的复选框（如下所示）以隐藏这些按钮。</span><span class="sxs-lookup"><span data-stu-id="46f87-111">In this lesson, we are not using the "SaveAnchorToDisk" and "ShareAnchor" buttons, so select both buttons and uncheck the checkbox in the inspector panel (as shown below) to hide these buttons.</span></span>
+![mrlearning](images/mrlearning-asa/tutorial3-section1-step1-1.png)
 
-    ![module2chapter3step1im](images/module2chapter3step1im.PNG)
+> [!TIP]
+> <span data-ttu-id="d65fa-113">若要更轻松地使用场景，请通过单击对象左侧的眼睛图标，将 ParentAnchor 对象的<a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">场景可见性</a>设置为 "关"。</span><span class="sxs-lookup"><span data-stu-id="d65fa-113">To make it easier to work with your scene, set the  <a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">Scene Visibility</a> for the ParentAnchor object to off by clicking the eye icon to the left of the object.</span></span> <span data-ttu-id="d65fa-114">这将隐藏场景窗口中的对象，而无需更改其游戏中的可见性。</span><span class="sxs-lookup"><span data-stu-id="d65fa-114">This hides the object in the Scene window without changing their in-game visibility.</span></span>
 
-2. <span data-ttu-id="46f87-113">创建指令面板。</span><span class="sxs-lookup"><span data-stu-id="46f87-113">Create the instruction panel.</span></span> <span data-ttu-id="46f87-114">首先右键单击 "说明" 按钮，将鼠标悬停在 "3D 对象" 上，然后选择 "textmeshpro"。</span><span class="sxs-lookup"><span data-stu-id="46f87-114">Start by right-clicking the "instructions" button, hover over "3D Object" and select "textmeshpro-text."</span></span>
+<span data-ttu-id="d65fa-115">当**反馈**对象仍处于选中状态时，在 "检查器" 窗口中更改其位置和大小，以便将它整齐地放置在说明文本下，例如：</span><span class="sxs-lookup"><span data-stu-id="d65fa-115">With the **Feedback** object still selected, in the Inspector window change its position and size so it is placed neatly underneath the instruction text, for example:</span></span>
 
-    ![module2chapter3step2im](images/module2chapter3step2im.PNG)
+* <span data-ttu-id="d65fa-116">将矩形转换位置**Y**改为-0.24</span><span class="sxs-lookup"><span data-stu-id="d65fa-116">Change the Rect Transform **Pos Y** to -0.24</span></span>
+* <span data-ttu-id="d65fa-117">将矩形转换**宽度**更改为0.555</span><span class="sxs-lookup"><span data-stu-id="d65fa-117">Change the Rect Transform **Width** to 0.555</span></span>
+* <span data-ttu-id="d65fa-118">将矩形转换**高度**更改为0。1</span><span class="sxs-lookup"><span data-stu-id="d65fa-118">Change the Rect Transform **Height** to 0.1</span></span>
 
-3. <span data-ttu-id="46f87-116">调整文本的规模和位置，使其与场景中的说明相匹配。</span><span class="sxs-lookup"><span data-stu-id="46f87-116">Adjust the scale and positioning of the text, so that it matches with the instructions in your scene.</span></span> <span data-ttu-id="46f87-117">此外，请确保所有文本的对齐方式都居中。</span><span class="sxs-lookup"><span data-stu-id="46f87-117">Also, ensure the alignment for all of the text is centered.</span></span> <span data-ttu-id="46f87-118">然后从文本编辑器中删除示例文本，如下图中所示。</span><span class="sxs-lookup"><span data-stu-id="46f87-118">Then delete the sample text from the text editor, as shown in in the image below.</span></span>
+<span data-ttu-id="d65fa-119">然后选择字体属性，使文本在文本区域内非常合适，例如：</span><span class="sxs-lookup"><span data-stu-id="d65fa-119">Then choose font properties so the text fits nicely within the text area, for example:</span></span>
 
-    ![module2chapter3step3im](images/module2chapter3step3im.PNG)
+* <span data-ttu-id="d65fa-120">将文本网格 Pro （脚本）**字体样式**更改为粗体</span><span class="sxs-lookup"><span data-stu-id="d65fa-120">Change the Text Mesh Pro (Script) **Font Style** to Bold</span></span>
+* <span data-ttu-id="d65fa-121">将文本网格 Pro （脚本）**字号**更改为0.17</span><span class="sxs-lookup"><span data-stu-id="d65fa-121">Change the Text Mesh Pro (Script) **Font Size** to 0.17</span></span>
+* <span data-ttu-id="d65fa-122">将文本网格 Pro （脚本）**对齐方式**更改为居中和居中</span><span class="sxs-lookup"><span data-stu-id="d65fa-122">Change the Text Mesh Pro (Script) **Alignment** to Center and Middle</span></span>
 
-4. <span data-ttu-id="46f87-120">将 TextMeshPro 对象的名称更改为 "FeedbackPanel"。</span><span class="sxs-lookup"><span data-stu-id="46f87-120">Change the name of the TextMeshPro object to "FeedbackPanel."</span></span>
+![mrlearning](images/mrlearning-asa/tutorial3-section1-step1-2.png)
 
-    ![module2chapter3step4im](images/module2chapter3step4im.PNG)
+<span data-ttu-id="d65fa-124">如果仍选中 "**反馈**" 对象，则在 "检查器" 窗口中，使用 "**添加组件**" 按钮将**定位点反馈脚本（脚本）** 组件添加到反馈对象：</span><span class="sxs-lookup"><span data-stu-id="d65fa-124">With the **Feedback** object still selected, in the Inspector window, use the **Add Component** button to add the **Anchor Feedback Script (Script)** component to the Feedback object:</span></span>
 
-5. <span data-ttu-id="46f87-122">确保在 ASA_feedback 层次结构中选择 "feedbackpanel" 文本，单击 "添加组件"，并通过搜索和选择定位反馈脚本来添加它。</span><span class="sxs-lookup"><span data-stu-id="46f87-122">Ensure that the "feedbackpanel" text is selected in the ASA_feedback hierarchy, click "add component" and add the anchor feedback script by searching for it and selecting it once it appears.</span></span>
+![mrlearning](images/mrlearning-asa/tutorial3-section1-step1-3.png)
 
-    ![module2chapter3step8im](images/module2chapter3step8im.PNG)
+<span data-ttu-id="d65fa-126">将**反馈**对象分配给**定位点反馈脚本（脚本）** 组件的**反馈文本**字段：</span><span class="sxs-lookup"><span data-stu-id="d65fa-126">Assign the **Feedback** object to the **Anchor Feedback Script (Script)** component's **Feedback Text** field:</span></span>
 
-6. <span data-ttu-id="46f87-124">将 "feedbackPanel" 文本对象从 ASA_Feedback 层次结构拖到脚本下的空槽中，如下图所示。</span><span class="sxs-lookup"><span data-stu-id="46f87-124">Drag the "feedbackPanel" text object from the ASA_Feedback hierarchy into the empty slot beneath the script as seen in the picture below.</span></span>
+![mrlearning](images/mrlearning-asa/tutorial3-section1-step1-4.png)
 
-    ![module2chapter3step9im](images/module2chapter3step9im.PNG)
+## <a name="congratulations"></a><span data-ttu-id="d65fa-128">祝贺你</span><span class="sxs-lookup"><span data-stu-id="d65fa-128">Congratulations</span></span>
 
-## <a name="congratulations"></a><span data-ttu-id="46f87-126">祝贺</span><span class="sxs-lookup"><span data-stu-id="46f87-126">Congratulations</span></span>
-
-<span data-ttu-id="46f87-127">在本课程中，我们学习了如何创建 UI 面板来显示 Azure 空间锚体验的当前状态，以便为用户提供实时反馈。</span><span class="sxs-lookup"><span data-stu-id="46f87-127">In this lesson, we learned how to create a UI panel to display the current status of the Azure Spatial Anchor experience for providing users with real-time feedback.</span></span>
+<span data-ttu-id="d65fa-129">在本教程中，已学习如何创建 UI 面板来显示 Azure 空间锚体验的当前状态，以便为用户提供实时反馈。</span><span class="sxs-lookup"><span data-stu-id="d65fa-129">In this tutorial, you learned how to create a UI panel to display the current status of the Azure Spatial Anchor experience for providing users with real-time feedback.</span></span>
