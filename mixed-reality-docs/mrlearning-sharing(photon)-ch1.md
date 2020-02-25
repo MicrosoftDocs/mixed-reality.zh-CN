@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: efa03c49a9a083d2b8e591e03bccbeb776bb57b2
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: d879144c7097d8b3873618f986b9f169e8553fa8
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901476"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553815"
 ---
 # <a name="1-setting-up-photon-unity-networking"></a>1. 设置 Photon Unity 网络
 
@@ -30,13 +30,13 @@ ms.locfileid: "75901476"
 >[!TIP]
 >如果尚未完成[入门](mrlearning-base.md)教程和[Azure 空间定位点入门](mrlearning-asa-ch1.md)教程教程系列，则建议先完成这些教程。
 
-* 使用安装了正确的[工具](install-the-tools.md)配置的 WINDOWS 10 电脑
+* 一台 Windows 10 电脑，其中已[安装](install-the-tools.md)并配置正确的工具
 * Windows 10 SDK 10.0.18362.0 或更高版本
-* 一些基本C#编程功能
-* [为开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
+* 一些基本的 C# 编程功能
+* 一个[针对开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
 
 >[!IMPORTANT]
->本系列教程需要<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a> ，建议的版本是 unity 2019.1.14。 这将取代上述先决条件中所述的任何 Unity 版本要求或建议。
+> 建议用于本系列教程的 Unity 版本是 Unity 2019.2.X。 这将取代上述链接的先决条件中所述的任何 Unity 版本要求或建议。
 
 ## <a name="setting-up-photon"></a>设置 Photon
 
@@ -76,7 +76,7 @@ ms.locfileid: "75901476"
 
     ![module3chapter1step13im](images/module3chapter1step13im.PNG)
 
-## <a name="congratulations"></a>祝贺
+## <a name="congratulations"></a>祝贺你
 
 已成功创建 Photon 帐户，设置本地 Photon 服务器，并将双关语导入到 Unity。 下一步是设置项目，并允许与其他用户进行连接，以便多个用户可以看到你的工作。
 

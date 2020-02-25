@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: a1b26d56b4693ef23f2d77ba53e0961693489a3a
-ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
+ms.openlocfilehash: 7eb38e205237257e400550299fdeebb73ba746f1
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77130212"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77555431"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 与三维对象交互
 
@@ -29,20 +29,20 @@ ms.locfileid: "77130212"
 
 下载并导入 Unity 自定义包：
 
-* [MRTK.HoloLens2. GettingStarted. 2.2.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.2.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.2.0.0.unitypackage)
+* [MRTK.HoloLens2. GettingStarted. 2.3.0.2. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
 
 导入教程资产后，项目窗口应如下所示：
 
-![mrlearning](images/mrlearning-base/tutorial4-section1-step1-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section1-step1-1.png)
 
 > [!TIP]
 > 有关如何导入 Unity 自定义包的提醒，可以参阅[导入混合现实工具包](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)说明。
 
 ## <a name="decluttering-the-scene-view"></a>Decluttering 场景视图
 
-若要更轻松地使用场景，请通过单击对象左侧的**眼睛**图标将 Cube 和 ButtonCollection 对象的**场景可见性**设置为 off。 这将隐藏场景窗口中的对象，而无需更改其游戏中的可见性：
+若要更轻松地使用场景，请通过单击对象左侧的**眼睛**图标将**Cube**和**ButtonCollection**对象的**场景可见性**设置为 off。 这将隐藏场景窗口中的对象，而无需更改其游戏中的可见性：
 
-![mrlearning](images/mrlearning-base/tutorial4-section2-step1-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section2-step1-1.png)
 
 > [!TIP]
 > 若要详细了解场景可见性控件以及如何使用它们来优化场景视图和工作流，可访问 Unity 的<a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">场景可见性</a>文档。
@@ -69,19 +69,18 @@ ms.locfileid: "77130212"
 * Platonic
 * TheModule
 
-![mrlearning](images/mrlearning-base/tutorial4-section3-step1-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-1.png)
 
 在 "层次结构" 窗口中，**创建三个多维数据集**作为**3DObjectCollection**的子对象，并将其转换**比例**设置为 X = 0.15，Y = 0.15，Z = 0.15：
 
-![mrlearning](images/mrlearning-base/tutorial4-section3-step1-2.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-2.png)
 
-<!-- TODO: Finish -->
 > [!TIP]
 > 有关如何执行上述步骤的提醒，可以参阅[创建用户界面和配置混合现实工具包](mrlearning-base-ch2.md)教程。
 
 重新定位多维数据集，以便可以查看每个多维数据集：
 
-![mrlearning](images/mrlearning-base/tutorial4-section3-step1-3.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-3.png)
 
 在 "项目" 窗口中，导航到 "**资产**" > " **MixedRealityToolkit** " > **STANDARDASSETS** > **材料**，查看 MRTK 提供的材料。
 
@@ -89,19 +88,19 @@ ms.locfileid: "77130212"
 
 * MRTK_Standard_GlowingCyan
 * MRTK_Standard_GlowingOrange
-* MRTK_Standard_Green：
+* MRTK_Standard_Green
 
-![mrlearning](images/mrlearning-base/tutorial4-section3-step1-4.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-4.png)
 
 ### <a name="2-add-and-configure-the-grid-object-collection-script-component"></a>2. 添加和配置网格对象集合（脚本）组件
 
-将**网格对象集合（脚本）** 组件添加到3DObjectCollection 对象，并按如下所示对其进行配置：
+将**网格对象集合（脚本）** 组件添加到**3DObjectCollection**对象，并按如下所示对其进行配置：
 
-* 将**排序类型**更改为子级顺序，以确保子对象按照其置于父对象下的顺序进行排序
+* 将**排序类型**更改为**子级顺序**，以确保子对象按照其置于父对象下的顺序进行排序
 
 然后单击 "**更新集合**" 按钮应用新配置：
 
-![mrlearning](images/mrlearning-base/tutorial4-section3-step2-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step2-1.png)
 
 ## <a name="manipulating-3d-objects"></a>操作三维对象
 
@@ -127,9 +126,9 @@ ms.locfileid: "77130212"
 
 ### <a name="1-add-the-manipulation-handler-script-component-to-all-the-objects"></a>1. 将操作处理程序（脚本）组件添加到所有对象
 
-在 "层次结构" 窗口中，选择 "**奶酪**" 对象，按住**Shift**键，然后选择**Cube （）** 对象，并将**操作处理程序（脚本）** 组件添加到所有对象：
+在 "层次结构" 窗口中，选择 "**奶酪**" 对象，按住**Shift**键，然后选择**Cube （） 2**对象，并将**操作处理程序（脚本）** 组件添加到所有对象：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step1-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step1-1.png)
 
 > [!NOTE]
 > 出于本教程的目的，colliders 已添加到 prototyping 中。 对于 Unity 基元（如 Cube 对象），创建对象时，会自动添加碰撞器组件。 在上面的图像中，colliders 表示为绿色的轮廓。 若要了解有关 colliders 的详细信息，可访问 Unity 的<a href="https://docs.unity3d.com/Manual/CollidersOverview.html" target="_blank">碰撞</a>器文档。
@@ -138,7 +137,7 @@ ms.locfileid: "77130212"
 
 在 "层次结构" 窗口中，选择 "**奶酪**" 对象，按住**Shift**键，然后选择 " **TheModule** " 对象，并将**Near 交互 Grabbable （脚本）** 组件添加到所有对象：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step2-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step2-1.png)
 
 ### <a name="3-configure-the-manipulation-handler-script-component"></a>3. 配置操作处理程序（脚本）组件
 
@@ -146,46 +145,50 @@ ms.locfileid: "77130212"
 
 对于**多维数据集**对象，请保留默认的所有属性，以体验默认操作行为：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step3-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-1.png)
 
 > [!TIP]
 > 若要将组件重置为其默认值，可以选择组件的 "设置" 图标，然后选择 "重置"。
 
 #### <a name="restrict-manipulation-to-scale-only"></a>仅限缩放操作
 
-对于**多维数据集（1）** 对象，将两个正在进行的**操作类型**更改为仅允许用户更改对象的大小：
+对于**多维数据集（1）** 对象，将两个**正在进行的** **操作类型**更改为仅允许用户更改对象的大小：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step3-2.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-2.png)
 
 #### <a name="constrain-the-movement-to-a-fixed-distance-from-the-user"></a>限制移动与用户的固定距离
 
-对于**Cube （2）** 对象，更改**对移动的约束**以修复与 Head 的距离，以便在移动对象时，它将保持与用户相同的距离：
+对于**Cube （2）** 对象，更改**对移动的约束**以**修复与 Head 的距离**，以便在移动对象时，它将保持与用户相同的距离：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step3-3.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-3.png)
 
 #### <a name="default-grabbable-manipulation"></a>默认 grabbable 操作
 
 对于**奶酪**、 **CoffeCup**和**EarthCore**对象，请将所有属性都保留为默认值，以体验默认 grabbable 操作行为：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step3-4.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-4.png)
 
 #### <a name="remove-the-ability-of-far-manipulation"></a>消除远端操作的能力
 
 对于**八**对象，请取消选中 "**允许远端操作**" 复选框，以便用户只能使用跟踪的指针直接与对象交互：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step3-5.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-5.png)
 
 #### <a name="make-an-object-rotate-around-its-center"></a>使对象围绕中心旋转
 
-对于**Platonic**对象，请将**一只手旋转模式**更改为近、**一只手旋转模式**，以围绕对象中心旋转，这样当用户用一只手旋转对象时，它就会围绕对象中心旋转：
+对于**Platonic**对象，请将**一只手旋转模式**更改为近、**一只手旋转模式**，以围绕**对象中心旋转**，这样当用户用一只手旋转对象时，它就会围绕对象中心旋转：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step3-6.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-6.png)
 
-#### <a name="prevent-movement-after-object-is-released"></a>在释放对象后阻止移动
+#### <a name="keep-movement-after-object-is-released"></a>释放对象后保持移动
 
-对于**TheModule**对象，将**版本行为**更改为 "无"，以便一旦对象从用户的手中释放，就不会继续移动：
+对于**TheModule**对象，添加一个**刚体**组件以启用物理学，然后取消选中 "**使用重力**" 复选框，以使对象不受重力的影响：
 
-![mrlearning](images/mrlearning-base/tutorial4-section4-step3-7.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-7.png)
+
+返回到操作处理程序（脚本）组件，验证是否已将 "**发布行为**" 设置为 "**保持速度**" 并**保持角度速度**，以便一旦对象从用户的手中释放，就会继续移动：
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-8.png)
 
 若要了解有关操作处理程序组件及其关联属性的详细信息，可以访问[MRTK 文档门户](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[操作处理程序](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)指南。
 
@@ -205,7 +208,7 @@ ms.locfileid: "77130212"
 
 在 "检查器" 窗口中，选择 " **EarthCore** " 对象，并将**边界框（脚本）** 组件添加到 EarthCore 对象：
 
-![mrlearning](images/mrlearning-base/tutorial4-section5-step1-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section5-step1-1.png)
 
 > [!NOTE]
 > 边界框可视化效果是在运行时创建的，因此在进入游戏模式之前不可见。
@@ -214,7 +217,7 @@ ms.locfileid: "77130212"
 
 按 "播放" 按钮进入游戏模式。 然后按住空格键以调出手，并使用鼠标与边界框进行交互：
 
-![mrlearning](images/mrlearning-base/tutorial4-section5-step2-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section5-step2-1.png)
 
 若要详细了解边界框组件及其关联的属性，可以访问[MRTK 文档门户](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的 "[边界框](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)" 指南。
 
@@ -244,29 +247,29 @@ ms.locfileid: "77130212"
 
 在 "层次结构" 窗口中，选择 "**八**" 对象，将 "**音频源**" 组件添加到八对象，然后将 "**空间混合**" 更改为1以启用空间音频：
 
-![mrlearning](images/mrlearning-base/tutorial4-section6-step1-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step1-1.png)
 
 ### <a name="2-add-the-near-interaction-touchable-script-component-to-the-object"></a>2. 将 Near 交互可触摸（脚本）组件添加到对象
 
 在仍选择**八**对象的情况下，将**near 交互可触摸（脚本）** 组件添加到八对象，然后单击 "**修复边界**" 和 "**修复中心**" 按钮，更新接近交互可触摸（脚本）的局部中心和边界属性，使之与 BoxCollider 匹配：
 
-![mrlearning](images/mrlearning-base/tutorial4-section6-step2-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step2-1.png)
 
 ### <a name="3-add-the-hand-interaction-touch-script-component-to-the-object"></a>3. 将手形交互触摸（脚本）组件添加到对象
 
 在仍选择**八**对象的情况下，将**手写交互触摸（脚本）** 组件添加到八对象：
 
-![mrlearning](images/mrlearning-base/tutorial4-section6-step3-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step3-1.png)
 
 ### <a name="4-implement-the-on-touch-started-event"></a>4. 实现 On Touch 已开始事件
 
-在 "手动交互触摸（脚本）" 组件上，单击 "小 **+** " 图标以**在 "Touch 已启动（）"** 事件上创建新的。 然后配置**八**对象以接收事件，并将**AudioSource**定义为要触发的操作：
+在 "**手动交互触摸（脚本）** " 组件上，单击 "小 **+** " 图标以**在 "Touch 已启动（）"** 事件上创建新的。 然后配置**八**对象以接收事件，并将**AudioSource**定义为要触发的操作：
 
-![mrlearning](images/mrlearning-base/tutorial4-section6-step4-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-1.png)
 
 导航到 "**资产**" > **MixedRealityToolkit** " > **StandardAssets** >" 材料 "查看与 MRTK 一起提供的音频剪辑，然后将合适的音频剪辑分配到"**音频剪辑**"字段，例如 MRTK_Gem 音频剪辑：
 
-![mrlearning](images/mrlearning-base/tutorial4-section6-step4-2.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-2.png)
 
 > [!TIP]
 > 有关如何实现事件的提醒，可参阅 "[手动跟踪手势" 和 "种不可交互" 按钮](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)说明。
@@ -275,7 +278,7 @@ ms.locfileid: "77130212"
 
 按 "播放" 按钮进入游戏模式。 然后按住空格键以调出手，并使用鼠标来触摸八对象并触发声音效果：
 
-![mrlearning](images/mrlearning-base/tutorial4-section6-step5-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step5-1.png)
 
 > [!NOTE]
 > 正如上图中所示，在测试触摸屏交互时，八对象的颜色 pulsated。 此效果硬编码为手动交互触摸（脚本）组件，而不是上面步骤中完成的事件配置的结果。

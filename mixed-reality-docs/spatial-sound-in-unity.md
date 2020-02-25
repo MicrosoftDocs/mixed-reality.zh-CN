@@ -6,12 +6,12 @@ ms.author: kegodin
 ms.date: 11/07/2019
 ms.topic: article
 keywords: Unity，空间音效，HRTF，房间大小
-ms.openlocfilehash: 3e7d0ea231545d5112d182dffbc02f217ca4a4a7
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 6720eac30c69ebfcd0f003cf131f60295818d676
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181987"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553695"
 ---
 # <a name="spatial-sound-in-unity"></a>Unity 中的空间音效
 
@@ -34,15 +34,16 @@ ms.locfileid: "75181987"
 * 将**音频源**附加到层次结构中的对象
 * 选中 "**启用 spatialization** " 复选框
 * 将**空间混合**滑块移动到 "1"
+* 确保已在开发人员工作站上启用空间音频。 右键单击任务栏上的 "音量" 图标，并确保 "空间" "声音" 设置为 "关闭"，以启用它。 若要获取有关在 HoloLens 2 上收到的内容的最佳表示，请选择 " **Windows Sonic" 作为耳机**。
 
-有关更多详细信息，请参阅：
+有关详细信息，请参阅：
 * [Microsoft spatializer GitHub 存储库](https://github.com/microsoft/spatialaudio-unity)
 * [Microsoft 的 spatializer 教程](unity-spatial-audio-ch1.md)
 * [Unity 的音频源文档](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)
 * [Unity 的 spatializer 文档](https://docs.unity3d.com/Manual/VRAudioSpatializer.html)
 
 ## <a name="distance-based-attenuation"></a>基于距离的衰减
-Unity 的默认基于距离的衰减的最小距离为1米，最大距离为500米，对数 rolloff。 这些设置可能适用于你的方案，你可能会发现源衰减太快或太慢。 有关更多详细信息，请参阅：
+Unity 的默认基于距离的衰减的最小距离为1米，最大距离为500米，对数 rolloff。 这些设置可能适用于你的方案，你可能会发现源衰减太快或太慢。 有关详细信息，请参阅：
 * [混合现实中的声音设计](spatial-sound-design.md)建议的设置。
 * [Unity 的音频源文档](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)，了解有关如何设置这些曲线的说明。
 

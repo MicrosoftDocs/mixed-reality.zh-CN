@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: f4f609a71b05a52e8761e282763a540b42e9f7f5
-ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
+ms.openlocfilehash: 3d762950ea8e211fd5a8e4cf8af717674d3fe7e1
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77250676"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553919"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3. 显示 Azure 空间锚点反馈
 
@@ -26,7 +26,7 @@ ms.locfileid: "77250676"
 
 在 "层次结构" 窗口中，右键单击 > **TextContent** "对象的**说明**，然后选择" **3d 对象** > " **TextMeshPro** " 以将 TextMeshPro 文本对象创建为说明 > TextContent 对象的子项，并为其提供一个合适的名称，例如 "**反馈**"：
 
-![mrlearning](images/mrlearning-asa/tutorial3-section1-step1-1.png)
+![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-1.png)
 
 > [!TIP]
 > 若要更轻松地使用场景，请通过单击对象左侧的眼睛图标，将 ParentAnchor 对象的<a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">场景可见性</a>设置为 "关"。 这将隐藏场景窗口中的对象，而无需更改其游戏中的可见性。
@@ -43,15 +43,15 @@ ms.locfileid: "77250676"
 * 将文本网格 Pro （脚本）**字号**更改为0.17
 * 将文本网格 Pro （脚本）**对齐方式**更改为居中和居中
 
-![mrlearning](images/mrlearning-asa/tutorial3-section1-step1-2.png)
+![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-2.png)
 
 如果仍选中 "**反馈**" 对象，则在 "检查器" 窗口中，使用 "**添加组件**" 按钮将**定位点反馈脚本（脚本）** 组件添加到反馈对象：
 
-![mrlearning](images/mrlearning-asa/tutorial3-section1-step1-3.png)
+![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-3.png)
 
-将**反馈**对象分配给**定位点反馈脚本（脚本）** 组件的**反馈文本**字段：
+将**反馈**对象本身分配给**定位点反馈脚本（脚本）** 组件的**反馈文本**字段：
 
-![mrlearning](images/mrlearning-asa/tutorial3-section1-step1-4.png)
+![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-4.png)
 
 ## <a name="congratulations"></a>祝贺你
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 05728cf090b2e998e92980816943a2c3bef18dfb
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 25e5aa05839845620a23c3dba6698ac7b5854d6d
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334290"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553966"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1. 集成和使用语音识别与脚本
 
@@ -30,13 +30,13 @@ ms.locfileid: "75334290"
 >[!TIP]
 >如果尚未完成[入门教程](mrlearning-base.md)系列，建议先完成这些教程。
 
-* 使用安装了正确的[工具](install-the-tools.md)配置的 WINDOWS 10 电脑
+* 一台 Windows 10 电脑，其中已[安装](install-the-tools.md)并配置正确的工具
 * Windows 10 SDK 10.0.18362.0 或更高版本
-* 一些基本C#编程功能
-* [为开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
+* 一些基本的 C# 编程功能
+* 一个[针对开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
 
 >[!IMPORTANT]
->本系列教程需要<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a> ，建议的版本是 unity 2019.1.14。 这将取代上述先决条件中所述的任何 Unity 版本要求或建议。
+> 建议用于本系列教程的 Unity 版本是 Unity 2019.2.X。 这将取代上述链接的先决条件中所述的任何 Unity 版本要求或建议。
 
 ## <a name="getting-started"></a>入门
 
@@ -47,7 +47,7 @@ ms.locfileid: "75334290"
     >[!NOTE]
     >请确保将模板设置为 "三维"，如上图所示。
 
-2. 下载[混合现实工具包](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [foundation 包版本 2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage) 并将其保存到电脑上的文件夹。 将包导入 Unity 项目。 有关如何执行此操作的详细说明，请参阅[入门教程-第2课。正在初始化项目和首个应用程序](mrlearning-base-ch1.md)。
+2. 下载[混合现实工具包](https://github.com/microsoft/MixedRealityToolkit-Unity/releases)Unity [foundation 包版本 2.3.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage) ，并将其保存到电脑上的文件夹中。 将包导入 Unity 项目。 有关如何执行此操作的详细说明，请参阅[入门教程-第2课。正在初始化项目和首个应用程序](mrlearning-base-ch1.md)。
 
 3. 下载并导入用于 Unity 资产包的 Azure [SPEECH SDK](https://aka.ms/csspeech/unitypackage) 。 通过单击 "资产"，选择 "导入包"，然后选择 "自定义包" 来导入语音 SDK 包。 找到先前下载的语音 SDK 包，并打开它以开始导入过程。
 
@@ -59,9 +59,13 @@ ms.locfileid: "75334290"
 
     ![mrlearning-speech-ch1-1-step4 .png](images/mrlearning-speech-ch1-1-step4.png)
 
-5. 单击[此链接](https://github.com/microsoft/MixedRealityLearning/releases/tag/Speech_2)，下载语音 SDK 模块资产包（也称为 Lunarcom 包）。 Lunarcom 资产包是为本课系列开发的资产和脚本的集合，旨在展示 Azure 语音 SDK 的实际使用情况。 它是一个语音命令终端，最终将与[入门教程-第7课中开发的农历模块组装体验进行交互。创建农历模块示例应用程序](mrlearning-base-ch6.md)。
+5. 下载教程资产：
+    * [MRTK.HoloLens2. GettingStarted. 2.3.0.2. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
+    * [SpeechSDKAssets. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/Speech_2/SpeechSDKAssets.unitypackage) （版本1.2）
 
-6. 按照导入混合现实工具包和语音 SDK 所用的类似步骤，将 Lunarcom 资产包导入 Unity 项目。
+    SpeechSDKAssets 资产包是为此教程系列开发的资产和脚本的集合，用于展示 Azure 语音 SDK 的实际使用。 它是一个语音命令终端，最终将与[入门教程-第7课中开发的火箭启动器程序集体验建立交互。创建农历模块示例应用程序](mrlearning-base-ch6.md)。
+
+6. 按照导入混合现实工具包和语音 SDK 所用的类似步骤，将两个教程资产包导入 Unity 项目。
 
 7. 配置混合现实工具包（MRTK）。
 
@@ -69,7 +73,7 @@ ms.locfileid: "75334290"
 
     ![mrlearning-speech-ch1-1-step7a .png](images/mrlearning-speech-ch1-1-step7a.png)
 
-    在出现的弹出窗口中，选择 "DefaultHoloLens2ConfigurationProfile" 以使其成为混合现实工具包的活动配置文件。
+    在场景层次结构中选择 MixedRealityToolkit 对象后，在 "检查器" 窗口中选择 "DefaultHoloLens2ConfigurationProfile"，以使其成为混合现实工具包的活动配置文件。
 
     ![mrlearning-speech-ch1-1-step7b .png](images/mrlearning-speech-ch1-1-step7b.png)
 
@@ -187,8 +191,8 @@ ms.locfileid: "75334290"
 
     ![mrlearning-ch1-step11.JPG](images/mrlearning-speach-ch1-2-step11.jpg)
 
-## <a name="congratulations"></a>祝贺
+## <a name="congratulations"></a>祝贺你
 
-你已在应用程序中设置了语音识别，由 Azure 提供支持。 运行应用程序以确保所有功能和功能都正常工作。 首先说到你在步骤22中键入的唤醒字词，然后激活终端。 选择麦克风按钮启动语音识别。 开始说话。 你会在说话时看到你的转录。 再次按下麦克风按钮以停止语音识别。 说关闭终端，隐藏 Lunarcom 终端。 在下一课中，您将学习如何使用设备支持的语音识别来实现 Azure 语音 SDK 不可用的情况，因为 HoloLens 2 处于脱机状态。
+你已在应用程序中设置了语音识别，由 Azure 提供支持。 运行应用程序以确保所有功能和功能都正常工作。 首先说到你在步骤25中键入的唤醒字词，然后激活终端。 选择麦克风按钮启动语音识别。 开始说话。 你会在说话时看到你的转录。 再次按下麦克风按钮以停止语音识别。 说关闭终端，隐藏 Lunarcom 终端。 在下一课中，您将学习如何使用设备支持的语音识别来实现 Azure 语音 SDK 不可用的情况，因为 HoloLens 2 处于脱机状态。
 
 [下一教程： 2. 为本地语音到文本转换添加脱机模式](mrlearning-speechSDK-ch2.md)

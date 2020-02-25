@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: e712fc2fd66b1add5b16b7dd8e6c37551aefe43a
-ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
+ms.openlocfilehash: 8805fa6410e882bce2f0fe8da780dfd5f794cc74
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2019
-ms.locfileid: "75003206"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553987"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4. 设置意向和自然语言理解
 
@@ -33,7 +33,7 @@ ms.locfileid: "75003206"
 
     ![Module4Chapter4step1cim](images/module4chapter4step1cim.PNG)
 
-2. 登录到 [Azure 门户](https://portal.azure.com/)。 登录后，单击 "创建资源"，搜索 "语言理解"，然后单击 "Enter"。
+2. 登录到[Azure 门户](https://portal.azure.com/)。 登录后，单击 "创建资源"，搜索 "语言理解"，然后单击 "Enter"。
 
     ![mrlearning-speech-ch4-1-step2 .png](images/mrlearning-speech-ch4-1-step2.png)
 
@@ -147,20 +147,28 @@ ms.locfileid: "75003206"
 
     ![Module4Chapter4step23im](images/module4chapter4step23im.PNG)
 
-23. 在 "检查器" 面板中的 "LunarcomIntentRecognizer" 的 "Luis 终结点" 字段中，输入在步骤22中保存的终结点 URL。
+23. 在 "检查器" 面板中的 "LunarcomIntentRecognizer" 的 "Luis 终结点" 字段中，输入你在步骤21中保存的终结点 URL。
 
     ![Module4Chapter4step24im](images/module4chapter4step24im.PNG)
 
     >[!NOTE]
     >在 "检查器" 面板中的 "LunarcomOfflineRecognizer" 组件中，请确保已为 "SimulateOfflineMode" 选择 "禁用"，否则测试程序将不起作用。
 
-24. 按 Unity 编辑器中的 "播放" 按钮，然后单击 "火箭" 按钮，开始意图识别。 Utter "选择启动火箭" 按钮。
+24. 在项目窗口中，导航到 "资产" > "MRTK"。GettingStarted > Prototyping > RocketLauncher 文件夹中，将 RocketLauncher_Complete prefab 拖到 "层次结构" 窗口，并将其放置在 Lunarcom_Base 对象的前面。
+
+    ![Module4Chapter4step24im](images/module4chapter4step24im-missing01.png)
+
+25. 在 "层次结构" 窗口中，选择 "Lunarcom_Base" 对象并找到 "Lunarcom 意向识别器（脚本）" 组件，然后展开 "RocketLauncher_Complete" > "按钮对象，并将每个按钮对象分配给相应的农历启动器按钮定义域.
+
+    ![Module4Chapter4step24im](images/module4chapter4step24im-missing02.png)
+
+26. 按 Unity 编辑器中的 "播放" 按钮，然后单击 "火箭" 按钮，开始意图识别。 Utter "选择启动火箭" 按钮。
 
     >[!NOTE]
     >应用已识别所需的函数并激活了 "火箭" 按钮。
     >
     >![Module4Chapter4step24im](images/module4chapter4note2im.PNG)
 
-## <a name="congratulations"></a>祝贺
+## <a name="congratulations"></a>祝贺你
 
 在本课中，您学习了如何添加 AI 功能的语音命令。 现在，你的程序可以识别用户的意图，即使它们不 utter 精确的语音命令也是如此！

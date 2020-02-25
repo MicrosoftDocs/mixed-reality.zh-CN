@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 6abf4fa8fc87afc7007d6f7c76becfbd88ed7a12
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: 2bcec7e70949186c6e711120c36ee8649c006ec7
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901524"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553827"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. 获取 Unity 以便开发
 
@@ -25,31 +25,37 @@ ms.locfileid: "75901524"
 
 ## <a name="instructions"></a>说明
 
-1. 单击此处下载并保存混合现实工具包 Foundation unity 包[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)
+1. 单击此处下载并保存混合现实工具包 Foundation unity 包[。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)
 
 2. 在 Unity 中，单击 "资产" 菜单并选择 "导入包"，然后单击 "自定义包"。
 
     ![Module3Chapter2step2im](images/module3chapter2step2im.PNG)
 
-3. 选择刚刚从步骤1中提供的链接下载的 Unity 包。 导入弹出窗口出现在 Unity 中后，单击 "导入" 按钮以开始导入 MRTK。 这可能需要几分钟。
+3. 选择刚刚从步骤1中提供的链接下载的 Unity 包。 导入弹出窗口出现在 Unity 中后，单击 "导入" 按钮以开始导入 MRTK。 这可能需要几分钟的时间。
 
     ![Module3Chapter2step3im](images/module3chapter2step3im.PNG)
 
     >[!NOTE]
     >下载的包位于你的本地文件夹中，你在该文件夹中保存了该文件。 上面的图像不会描绘出包的位置。
 
-4. 创建新场景。 可以通过单击 "文件" 并选择 "新建场景" 来完成此操作。 将其保存为 HLSharedProjectMain。
+    在导入包后，应显示“MRTK 项目配置器”窗口。 如果未打开，请在 Unity 菜单中选择 "混合现实工具包" > 实用程序 > 配置 Unity 项目 "。
 
-    你可能会收到类似于下面的图像的弹出窗口。 现在，单击 "否"。
-    ![Module3Chapter2note1im](images/module3chapter2note1im.PNG)
+    在 "MRTK 项目配置器" 窗口中，展开 "修改配置" 部分，取消选中 "启用 MSBuild for Unity" 复选框，确保选中所有其他选项，然后单击 "应用" 按钮以应用设置。
+
+    ![Module3Chapter2note1im](images/module3chapter2note1im-missing01.png)
+
+    > [!CAUTION]
+    > MSBuild for Unity 可能不支持你将使用的所有 SDK，在启用它后再禁用它可能比较困难。 因此，强烈建议不要启用 MSBuild for Unity。
+    
+4. 创建新场景。 可以通过单击 "文件" 并选择 "新建场景" 来完成此操作。 将其保存为 HLSharedProjectMain。
 
 5. 在 "混合现实工具包" 下，单击 "添加到场景" 并配置。
 
     ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
 
-6. 完成后，将显示一个新的配置文件，让你选择自定义配置文件。
+6. 完成后，从层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，将 MRTK 配置文件更改为 DefaultHoloLens2ConfigurationProfile。
 
-    ![Module2Chapter1step4ima](images/Module2Chapter1step4ima.PNG)
+    ![Module2Chapter1step4ima](images/Module2Chapter1step4ima-missing01.png)
 
 7. 从层次结构中选择混合现实工具包（MRTK）。 在 "检查器" 面板中，查找混合现实工具包脚本并按下图所示的 "复制 & 自定义" 按钮。  此时将显示一个 pop，并在弹出菜单中选择 "克隆" 选项。
 
@@ -75,18 +81,14 @@ ms.locfileid: "75901524"
 
 12. 导入列出的自定义包：
 
-    a. [AzureSpatialAnchors. unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.0.0/AzureSpatialAnchors.unitypackage) （版本2.0.0）
-
-    b. [MRTK.HoloLens2. GettingStarted. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.1.0.1.unitypackage)
-
-    c. [MRTK.HoloLens2. AzureSpatialAnchors. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.1.0.1.unitypackage)
-
-    d. [MRTK.HoloLens2. MultiUserCapabilities. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
+    * [AzureSpatialAnchors. unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.1.1/AzureSpatialAnchors.unitypackage) （版本2.1.1）
+    * [MRTK.HoloLens2. GettingStarted. 2.3.0.2. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
+    * [MRTK.HoloLens2. AzureSpatialAnchors. 2.3.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage)
+    * [MRTK.HoloLens2. MultiUserCapabilities. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
 
     >[!TIP]
     >有关如何为 Azure 空间锚定配置 Unity 项目的提醒，请参阅 azure 空间[锚定入门教程，](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)其中包含[Azure 空间锚定](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)系列教程系列。
 
-    ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 
 13. 在 "项目" 面板中，切换到 Prototyping 文件夹。 在下面的步骤中，你将在场景中实施几个 prototyping。 在 Prototyping 文件夹中，单击 "prefab" 并将其拖到层次结构中。 完成后，单击 "文件"，然后单击 "保存" 或按 Ctrl + S 保存该项目。
 
@@ -96,7 +98,7 @@ ms.locfileid: "75901524"
 
     ![Module3Chapter2note2im](images/module3chapter2note2im.PNG)
 
-## <a name="congratulations"></a>祝贺
+## <a name="congratulations"></a>祝贺你
 
 你的 Unity 项目现在已准备好 Photon。 在随后的教程中，我们将在此场景和 Unity 项目的基础上构建全面的共享体验。
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 8275d5a97d7827d34ed3926cabe4032cc7f4cfac
-ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
+ms.openlocfilehash: 5463f363291790fd5e5d76ffa322a61ca7bf8e31
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77129303"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553860"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 放置动态内容并使用 Solvers
 <!-- Consider renaming to 'Placing dynamic content using Solvers' -->
@@ -28,7 +28,7 @@ ms.locfileid: "77129303"
 
  MRTK 的 Solvers 位于 MRTK SDK 文件夹中。 若要在项目中查看可用的 Solvers，请在 "项目" 窗口中，导航到 "**资产**" > **MixedRealityToolkit** > **功能**" > **实用工具**" > **Solvers**：
 
-![mrlearning](images/mrlearning-base/tutorial3-section1-step1-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial3-section1-step1-1.png)
 
 在本教程中，我们将回顾 Orbital 求解器和径向视图规划求解的实现。 若要详细了解 MRTK 中可用的 Solvers 的详细信息，可以访问[MRTK 文档门户](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[Solvers](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)指南。
 
@@ -58,11 +58,11 @@ ms.locfileid: "77129303"
 
 配置**Orbital （脚本）** 组件：
 
-* 更改**方向类型**以跟踪**跟踪的对象**
+* 验证是否已将 "**方向类型**" 设置为 "**跟随跟踪的对象**"
 * 将**局部偏移量**重置为 X = 0、Y = 0、Z = 0
 * 将**世界偏移量**更改为 X = 0，Y =-0.4，Z = 0。3
 
-![mrlearning](images/mrlearning-base/tutorial3-section2-step2-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial3-section2-step2-1.png)
 
 ### <a name="3-test-the-orbital-solver-using-the-in-editor-simulation"></a>3. 使用编辑器内模拟测试 Orbital 求解器
 
@@ -71,7 +71,7 @@ ms.locfileid: "77129303"
 * 现在，ButtonCollection 的转换位置由求解器设置驱动
 * 多维数据集不受求解器影响的多维数据集将保持不变
 
-![mrlearning](images/mrlearning-base/tutorial3-section2-step3-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial3-section2-step3-1.png)
 
 > [!TIP]
 > 如果在场景窗口中看不到相机射线，请确保已启用 Gizmos 菜单。 若要详细了解 Gizmos 菜单以及如何使用它来优化场景视图，可访问 Unity 的<a href="https://docs.unity3d.com/Manual/GizmosMenu.html" target="_blank">Gizmos 菜单</a>文档。
@@ -104,13 +104,13 @@ ms.locfileid: "77129303"
 * 更改**面向对象**的**引用方向**，然后选中 "**定向到引用方向**" 复选框
 * 更改**最小距离**和**最大距离**为0
 
-![mrlearning](images/mrlearning-base/tutorial3-section3-step2-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial3-section3-step2-1.png)
 
 ### <a name="3-test-the-radial-view-solver-using-the-in-editor-simulation"></a>3. 使用编辑器内模拟测试径向视图规划求解
 
 按下 "播放" 按钮进入游戏模式，然后按住空格键以调出手。 将鼠标光标移动到手上，然后单击并按住鼠标左键来旋转手：
 
-![mrlearning](images/mrlearning-base/tutorial3-section3-step3-1.png)
+![mrlearning-base](images/mrlearning-base/tutorial3-section3-step3-1.png)
 
 ## <a name="congratulations"></a>祝贺你
 
