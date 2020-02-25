@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: d3392df9bfad5938d71d3a01999be51834a98a5d
-ms.sourcegitcommit: 87aca9c2b73b0e83cb70a46443dcdb08c3621005
+ms.openlocfilehash: 9c219313ad6e73cde78efd8e5e718a466ebd6137
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77373447"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77554342"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化你的项目和第一个应用程序
 
@@ -154,13 +154,13 @@ ms.locfileid: "77373447"
 
 下载 Unity 自定义包：
 
-* [Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.2.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage)
+* [Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)
 
 在 Unity 菜单中选择“资产” > “导入包” > “自定义包...”，打开“导入包...”窗口：   
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section4-step1-1.png)
 
-在“导入包...”窗口中，选择下载的 **Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage**，然后单击“打开”  按钮：
+在“导入包...”窗口中，选择下载的 **Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage**，然后单击“打开”  按钮：
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section4-step1-2.png)
 
@@ -190,15 +190,18 @@ ms.locfileid: "77373447"
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-1.png)
 
-在“层次结构”窗口中选择 MixedRealityToolkit 对象后，请在“检查器”窗口中将混合现实工具包配置文件更改为 **DefaultHoloLens2ConfigurationProfile**：
+在“层次结构”窗口中选择 MixedRealityToolkit 对象后，请在“检查器”窗口中验证混合现实工具包配置文件是否已设置为 **DefaultMixedRealityToolkitConfigurationProfile**：
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-2.png)
+
+> [!IMPORTANT]
+> 通常，在针对 HoloLens 进行开发时会使用 DefaultHoloLens2ConfigurationProfile。 但是，在本教程中，你将使用 DefaultMixedRealityToolkitConfigurationProfile，然后在下一教程（[创建用户界面并配置混合现实工具包](mrlearning-base-ch2.md)）中，你将改用 DefaultHoloLens2ConfigurationProfile。
 
 在 Unity 菜单中选择“文件” > “另存为...”，打开“保存场景”窗口：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-3.png)
 
-在“保存场景”窗口中，导航到项目的 **Scenes** 文件夹中，为场景提供一个合适的名称（例如“入门”  ），然后单击“保存”  按钮以保存场景：
+在“保存场景”窗口中，导航到项目的 **Scenes** 文件夹中，为场景提供一个合适的名称（例如“GettingStarted”  ），然后单击“保存”  按钮以保存场景：
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-4.png)
 
