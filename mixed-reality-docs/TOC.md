@@ -86,6 +86,7 @@
 #### [平板](slate.md)
 #### [滑块](slider.md)
 #### [着色器](shader.md)
+#### [手部指导](hand-coach.md)
 #### [公告和尾随](billboarding-and-tag-along.md)
 #### [显示进度](progress.md)
 #### [表面磁吸](surface-magnetism.md)
