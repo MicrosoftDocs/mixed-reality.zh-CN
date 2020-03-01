@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 设备门户、HoloLens
-ms.openlocfilehash: b22c70305076e3b2c18f880878b48c3142efdbfe
-ms.sourcegitcommit: cf3b662cfcf3fb05a554c302e595eb018f01abf2
+ms.openlocfilehash: 43ecfead7d2882d3624809bc05184f74131b8594
+ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76521688"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78202717"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 设备门户
 
@@ -46,7 +46,7 @@ ms.locfileid: "76521688"
 2. 查找设备的 IP 地址。
    * 在 "**设置" > Network & > > Internet**"下的" 设置 "中找到设备的 IP 地址。
 3. 从电脑上的 web 浏览器中转到 https：//< YOUR_HOLOLENS_IP_ADDRESS >
-   * 浏览器将显示以下消息： "此网站的安全证书有问题"。 由于颁发给设备门户的证书是测试证书，因此会显示上述消息。 你可以暂时忽略此证书错误并继续。
+   * 浏览器将显示以下消息： "此网站的安全证书有问题"。 由于颁发给 Device Portal 的证书是测试证书，因此会显示上述消息。 你可以暂时忽略此证书错误并继续。
 
 ## <a name="connecting-over-usb"></a>通过 USB 连接
 
@@ -56,18 +56,18 @@ ms.locfileid: "76521688"
 
 ## <a name="connecting-to-an-emulator"></a>连接到模拟器
 
-也可以将设备门户与仿真器结合使用。 若要连接到设备门户，请使用[工具栏](using-the-hololens-emulator.md)。 单击此图标： ![打开设备门户图标](images/emulator-deviceportal.png)**打开设备门户**：在模拟器中打开用于 HoloLens OS 的 Windows 设备门户。
+也可以将 Device Portal 与仿真器结合使用。 若要连接到设备门户，请使用[工具栏](using-the-hololens-emulator.md)。 单击此图标： ![打开设备门户图标](images/emulator-deviceportal.png)**打开设备门户**：在模拟器中打开用于 HoloLens OS 的 Windows 设备门户。
 
 ## <a name="creating-a-username-and-password"></a>创建用户名和密码
 
 ![设置对 Windows 设备门户的访问权限](images/windows-device-portal-credentials-reset-page-1000px.png)<br>
 *设置对 Windows 设备门户的访问*
 
-首次连接到 HoloLens 上的设备门户时，需要创建用户名和密码。
+首次连接到 HoloLens 上的 Device Portal 时，需要创建用户名和密码。
 1. 在电脑上的 Web 浏览器中，输入 HoloLens 的 IP 地址。 将打开“设置访问”页面。
 2. 单击或点击 "**请求 pin** "，并查看 HoloLens 显示以获取生成的 pin。
 3. 在 "设备" 文本框中**显示的 pin**中输入 pin。
-4. 输入将用于连接到设备门户的用户名。 无需使用 Microsoft 帐户 (MSA) 名称或域名作为用户名。
+4. 输入将用于连接到 Device Portal 的用户名。 无需使用 Microsoft 帐户 (MSA) 名称或域名作为用户名。
 5. 输入密码并进行确认。 密码长度必须至少为七个字符。 无需使用 MSA 密码或域密码作为密码。
 6. 单击 "**配对**" 以连接到 HoloLens 上的 Windows 设备门户。
 
@@ -81,22 +81,28 @@ ms.locfileid: "76521688"
 1. **请确保使用的是安全网络（USB 或你信任的 Wi-fi 网络）。**
 2. 从设备门户上的 "安全性" 页下载此设备的证书。
    * 导航到： https：//< YOUR_HOLOLENS_IP_ADDRESS >/devicepair.htm
+   * 打开系统 > 首选项的节点。 
+   * 向下滚动到 "设备安全"，然后单击 "下载此设备的证书" 按钮。
 3. 在电脑上的 "受信任的根证书颁发机构" 存储中安装证书。
    * 在 Windows 菜单中，键入： "管理计算机证书" 并启动小程序。
    * 展开 "**受信任的根证书颁发机构**" 文件夹。
    * 单击 "**证书**" 文件夹。
    * 从“操作”菜单中，依次选择“所有任务”&gt;“导入...”
-   * 使用从设备门户下载的证书文件，完成“证书导入向导”。
+   * 使用从 Device Portal 下载的证书文件，完成“证书导入向导”。
 4. 重新启动浏览器。
 
-## <a name="device-portal-pages"></a>设备门户页面
+>[!NOTE]
+> 此证书仅对设备是受信任的，并且如果设备已闪出，用户必须再次完成此过程。
 
-### <a name="home"></a>“主页”
+
+## <a name="device-portal-pages"></a>Device Portal 页面
+
+### <a name="home"></a>主页
 
 ![Microsoft HoloLens 上的 Windows 设备门户主页](images/windows-device-portal-home-page-1000px.png)<br>
 *Microsoft HoloLens 上的 Windows 设备门户主页*
 
-设备门户会话从主页开始。 可从主页的左侧导航栏访问其他页面。
+Device Portal 会话从主页开始。 可从主页的左侧导航栏访问其他页面。
 
 主页顶部的工具栏提供对常用状态和功能的访问。
 * **联机**：指示设备是否已连接到 WLAN。
@@ -205,7 +211,7 @@ Microsoft HoloLens 上 Windows 设备门户中 ![系统性能 "页面](images/wi
 * **网络**：已接收和已发送
 * **内存**：总计、已用、已提交、分页和非分页
 
-### <a name="apps"></a>“应用”
+### <a name="apps"></a>应用程序
 
 Microsoft HoloLens 上 Windows 设备门户中 ![应用 "页面](images/windows-device-portal-apps-page-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 设备门户中的 "应用" 页*
@@ -224,7 +230,7 @@ Microsoft HoloLens 上 Windows 设备门户中 ![应用崩溃转储页面](image
 
 此页面允许你收集旁加载应用的故障转储。 对于要为其收集故障转储的每个应用，选中 "**已启用故障转储**" 复选框。 返回到此页面可收集故障转储。 可[在 Visual Studio 中打开转储文件以进行调试](https://msdn.microsoft.com/library/d5zhxt22.aspx)。
 
-### <a name="file-explorer"></a>“文件资源管理器”
+### <a name="file-explorer"></a>文件资源浏览器
 
 ![Microsoft HoloLens 上 Windows 设备门户中的文件资源管理器页面](images/fileexplorer-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 设备门户中的文件资源管理器页*

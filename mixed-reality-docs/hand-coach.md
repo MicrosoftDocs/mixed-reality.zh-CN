@@ -1,19 +1,19 @@
 ---
-title: MRTK 手型指导设计指南
+title: 手动指导
 description: 当系统未检测到用户的手以帮助提供帮助时，将触发3D 指针。
 author: grayclee
 ms.author: glee
 ms.date: 09/25/2019
 ms.topic: article
 keywords: Windows Mixed Reality，设计，手型指导，沉浸式耳机，MRTK，双手，帮助
-ms.openlocfilehash: dc04f8f77548b226a822576befd60be107f4d3fb
-ms.sourcegitcommit: 87aca9c2b73b0e83cb70a46443dcdb08c3621005
+ms.openlocfilehash: c5f0a0c241ff71dc93f370a5a8caa627128bfb1a
+ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77373518"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78202729"
 ---
-# <a name="hand-coach-design-guidance"></a>手动指导设计指南
+# <a name="hand-coach"></a>手动指导
 
 手动指导是指在系统未检测到用户的手时触发的三维建模手。 这是作为 "教学" 组件实现的，该组件可帮助引导用户在未教授手势时进行引导。 如果用户未在某个时间段内完成指定的手势，则会循环一段时间。 手型指导可用于表示按下按钮或选取全息图标。  
 
@@ -176,7 +176,7 @@ ms.locfileid: "77373518"
     *   每项目设置
         *   场景设置为 UWP：可在[配置 Unity 项目](Configure-Unity-Project.md)中找到 Windows Mixed Reality 的说明
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 * [交互-基础](interaction-fundamentals.md)
 * [资产创建过程](asset-creation-process.md)
 * [手势](gestures.md)
