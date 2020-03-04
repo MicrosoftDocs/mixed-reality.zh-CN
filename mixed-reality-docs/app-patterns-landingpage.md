@@ -34,7 +34,7 @@ ms.locfileid: "78202747"
        [![版式](images/text_in_unity_viewingangle.png)](typography.md) **[版式](typography.md)**
     :::column-end:::
     :::column:::
-       [![声音](images/spatialaudio.png)](spatial-sound.md) **[声音](spatial-sound.md)**
+       [![声音](images/spatialaudio.png)](spatial-sound.md) [声音](spatial-sound.md) 
     :::column-end:::
 :::row-end:::
 
@@ -71,7 +71,7 @@ ms.locfileid: "78202747"
        [![手部菜单](images/UX/UX_Hero_HandMenu.jpg)](hand-menu.md) **[手部菜单](hand-menu.md)**
     :::column-end:::
     :::column:::
-       [![追踪菜单](images/UX/UX_Hero_NearMenu.jpg)](near-menu.md) **[追踪菜单](near-menu.md)**
+       [![追踪菜单](images/UX/UX_Hero_NearMenu.jpg)](near-menu.md) [追踪菜单](near-menu.md) 
     :::column-end:::
     :::column:::
        [![对象集合](images/UX/UX_Hero_ObjectCollection.jpg)](object-collection.md) **[对象集合](object-collection.md)**
@@ -116,7 +116,7 @@ ms.locfileid: "78202747"
 
 :::row:::
     :::column:::
-       [![手部指导](images/HandCoach/MRTK_handCoach.jpg)](hand-coach.md) **[手部指导](hand-coach.md)**
+       [![手部指导](images/HandCoach/MRTK_handCoach.jpg)](hand-coach.md) [手部指导](hand-coach.md) 
     :::column-end:::
     :::column:::
     :::column-end:::
