@@ -3,15 +3,15 @@ title: HoloLens 模拟器存档
 description: Microsoft HoloLens 模拟器的已发布版本的列表。
 author: hamalawi
 ms.author: moelhama
-ms.date: 2/12/2020
+ms.date: 3/10/2020
 ms.topic: article
 keywords: HoloLens、模拟器、版本、版本
-ms.openlocfilehash: 4696330e62d2b7b5d58c73e13713e0731f5ec3bc
-ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
+ms.openlocfilehash: 7aed01ecc155e4ea93bbbf9c347f117b319d2bc7
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77250662"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031777"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模拟器存档
 
@@ -19,6 +19,7 @@ HoloLens 模拟器（第一代）和 HoloLens 2 模拟器会并行安装。 我�
 
 |  构建 |  发布日期 |  注意 | 
 |----------|----------|----------|
+|  [HoloLens 2 模拟器生成10.0.18362.1056](https://go.microsoft.com/fwlink/?linkid=2121323) | 2020年3月10日 | 2020年3月2日生成。  有关常规 HoloLens 2 发行说明，请参阅 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1053](https://go.microsoft.com/fwlink/?linkid=2118321) | 2020年2月11日 | 2020年2月版。  有关常规 HoloLens 2 发行说明，请参阅 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1044](https://go.microsoft.com/fwlink/?linkid=2114824) | 2020年1月13日 | 2020年1月版。  有关常规 HoloLens 2 发行说明，请参阅 https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1042](https://go.microsoft.com/fwlink/?linkid=2112589) | 2019年12月6日 | 2019年12月2日生成。  解决了在显示 pin 面板时，模拟器中运行的全息应用程序将意外挂起的问题。  使用感知模拟 API 或感知模拟控制应用时启用与远程模拟器的连接。  有关常规 HoloLens 2 发行说明，请参阅 https://docs.microsoft.com/hololens/hololens-release-notes |

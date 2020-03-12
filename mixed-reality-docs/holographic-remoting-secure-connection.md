@@ -1,17 +1,17 @@
 ---
 title: 建立与全息远程处理的安全连接
 description: 本页说明如何在使用全息远程处理时建立安全的加密连接。
-author: bethau
-ms.author: bethau
-ms.date: 10/21/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 1142ba3bd8b0d05202ccd04885de5d70165872d1
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: ac1170cb3e6d681fc164c3f4cee14da6ab6eb90b
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434192"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092475"
 ---
 # <a name="establishing-a-secure-connection-with-holographic-remoting"></a>建立与全息远程处理的安全连接
 
@@ -25,7 +25,7 @@ ms.locfileid: "73434192"
 >[!IMPORTANT]
 >即使使用受信任的本地 WiFi，也应考虑使用加密连接。
 
-若要使用加密的连接，则需要同时实现[自定义播放器](holographic-remoting-create-player.md)和[自定义主机应用](holographic-remoting-create-host.md)。
+若要使用加密的连接，则需要同时实现[自定义播放器](holographic-remoting-create-player.md)和[自定义远程应用](holographic-remoting-create-host.md)。
 
 加密是通过使用基础平台 TLS 实现实现的。
 
@@ -61,7 +61,7 @@ ms.locfileid: "73434192"
 实现这些对象后 ```ListenSecure``` 需要调用，而不是 ```Listen``` 和 ```ConnectSecure```，而不是在远程上下文和播放机上下文上分别 ```Connect```。 ```ListenSecure``` 要求在 ```Listen```上使用其他证书提供程序和身份验证接收器。 ```ConnectSecure``` 要求对 ```Connect```使用额外的身份验证提供程序和证书验证程序。
 
 ## <a name="see-also"></a>另请参阅
-* [编写全息远程处理主机应用](holographic-remoting-create-host.md)
+* [编写全息远程处理远程应用](holographic-remoting-create-host.md)
 * [编写自定义全息远程处理播放器应用程序](holographic-remoting-create-player.md)
 * [全息远程处理故障排除和限制](holographic-remoting-troubleshooting.md)
 * [全息远程处理软件许可条款](https://docs.microsoft.com//legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)

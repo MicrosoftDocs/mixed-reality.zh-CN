@@ -1,24 +1,24 @@
 ---
 title: 全息远程处理播放器
 description: 全息远程处理播放器是一种附属应用，用于连接到支持全息远程处理的 PC 应用和游戏。 使用 Wi-fi 连接，全息远程处理会实时地将 PC 中的全息内容流式处理到你的 Microsoft HoloLens。
-author: JonMLyons
-ms.author: jlyons
-ms.date: 08/01/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 2827676ee95daf6a24ad11fceaade839f579cff4
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 88a9aa0bb058776a32016e51fc22bcb73f08ab85
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434335"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092373"
 ---
 # <a name="holographic-remoting-player"></a>全息远程处理播放器
 
 >[!IMPORTANT]
->HoloLens 2 的全息远程处理是一种主要版本更改。 [用于 hololens 的主机应用程序 **（第一代）** ](add-holographic-remoting.md) **必须使用 NuGet** **包版本 1.x**和[适用于**hololens 2**的主机应用程序](holographic-remoting-create-host.md)必须使用1.x。 这意味着，为 HoloLens 2 编写的主机应用程序与 HoloLens （第一代）不兼容，反之亦然。
+>HoloLens 2 的全息远程处理是一种主要版本更改。 [适用于 hololens 的远程应用程序 **（第一代）** ](add-holographic-remoting.md) **必须使用 NuGet** **包版本 1.x**和[ **hololens 2**的远程应用程序](holographic-remoting-create-host.md)必须使用1.x。 这意味着，为 HoloLens 2 编写的远程应用程序与 HoloLens （第一代）不兼容，反之亦然。
 
-全息远程处理播放器是一种附属应用，用于连接到支持全息远程处理的 PC 应用和游戏。 使用 Wi-fi 连接，全息远程处理会实时地将 PC 中的全息内容流式处理到你的 Microsoft HoloLens。
+[全息远程处理播放器](https://www.microsoft.com/p/holographic-remoting-player/9nblggh4sv40)是一种附属应用，用于连接到支持全息远程处理的 PC 应用和游戏。 使用 Wi-fi 连接，全息远程处理会实时地将 PC 中的全息内容流式处理到你的 Microsoft HoloLens。
 
 全息远程处理播放器只能与专门设计用于支持全息远程处理的 PC 应用程序一起使用。
 
@@ -55,7 +55,7 @@ ms.locfileid: "73434335"
 * **Render** -远程处理播放机在上一秒内呈现的帧数。 请注意，这与通过网络到达的帧数量无关（请参阅**视频帧**）。 此外，将显示呈现的帧间最后一秒的平均/最大呈现增量时间（以毫秒为单位）。
 
 * **视频帧**-将跳过显示的第一个数字视频帧，第二个显示的是视频帧，第三个是接收视频帧。 所有数字表示上一秒的计数。
-    * ```Received frames``` 是在上一秒钟到达的视频帧的数目。 正常情况下，这应为60，但如果不是，则指示由于网络问题而导致的帧被丢弃，或者远程/主机端不生成具有预期速率的帧。
+    * ```Received frames``` 是在上一秒钟到达的视频帧的数目。 正常情况下，这应为60，但如果不是，则指示由于网络问题而导致的帧被丢弃，或者远程/远程端不生成具有预期速率的帧。
     * ```Reused frames``` 是在上一秒钟内多次使用的视频帧的计数。 例如，如果视频帧晚到达，播放机的呈现循环仍将呈现一个帧，但需要*重复*使用它已用于前一帧的视频帧。
     * ```Skipped frames``` 是播放机的呈现循环尚未使用的视频帧的计数。 例如，网络抖动可能会造成视频帧无法均匀地分布。 例如，如果有一些延迟，而另一些时间到达时，则在以60Hz 运行时，它们不会再出现16.66 毫秒的增量。 在播放机的呈现循环的两个刻度之间，可能会有多个帧到达。 在这种情况下，播放机将*跳过*一个或多个帧，因为应该始终显示最近收到的视频帧。
 
@@ -63,7 +63,7 @@ ms.locfileid: "73434335"
     >当网络抖动时，跳过和重复使用的帧通常是相同的。 相反，如果您只看到跳过的帧，则表明播放机不会达到其目标帧速率。 在这种情况下，应注意诊断问题时的最大渲染增量时间。
 
 * **视频帧增量**-上一秒收到的视频帧之间的最小/最大增量。 当网络抖动导致的问题时，此数字通常与跳过/重复使用帧关联。
-* **延迟**-上一秒的平均周转时间（以毫秒为单位）。 在此上下文中，"周转时间" 是指将姿势/传感器数据从 HoloLens 发送到远程/主机端的时间，直到在 HoloLens 显示屏上显示该姿势/遥测数据的视频帧。
+* **延迟**-上一秒的平均周转时间（以毫秒为单位）。 在此上下文中，"周转时间" 是指从 HoloLens 向远程/远程端发送姿势/传感器数据到远程/远程端的时间，直到在 HoloLens 显示器上显示该姿势/遥测数据的视频帧。
 * **丢弃的视频帧**-上一秒内丢弃的视频帧的数量，自建立连接后被丢弃的视频帧的数目。 被丢弃的视频帧的主要原因是，视频帧未按顺序到达，出于此原因，需要将其丢弃，因为已经有一个新的。 这类似于*丢弃的帧*，但原因是远程堆栈中的较低级别。 丢弃的视频帧只需要很严重的网络条件。
 
 
@@ -77,6 +77,6 @@ ms.locfileid: "73434335"
 
 ## <a name="see-also"></a>另请参阅
 * [HoloLens （第一代）：添加全息远程处理](add-holographic-remoting.md)
-* [HoloLens 2：编写全息远程处理主机应用](holographic-remoting-create-host.md)
+* [HoloLens 2：编写全息远程处理远程应用](holographic-remoting-create-host.md)
 * [全息远程处理软件许可条款](https://docs.microsoft.com//legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft 隐私声明](https://go.microsoft.com/fwlink/?LinkId=521839)

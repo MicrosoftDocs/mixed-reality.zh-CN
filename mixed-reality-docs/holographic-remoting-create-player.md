@@ -1,28 +1,28 @@
 ---
 title: 编写自定义全息远程处理播放器
 description: 通过创建自定义的全息远程处理播放器应用，你可以创建一个自定义应用程序，该应用程序能够将远程计算机上呈现的内容显示到 HoloLens 2 上。 本文介绍如何实现此目的。
-author: NPohl-MSFT
-ms.author: nopohl
-ms.date: 10/21/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 1f8a0cbe0f6da88c0c5e5a695737d8694020635c
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: eaa6549eb34d3a37c21b3decb348bf43594a110f
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926658"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092415"
 ---
 # <a name="writing-a-custom-holographic-remoting-player-app"></a>编写自定义全息远程处理播放器应用程序
 
 >[!IMPORTANT]
->本文档介绍了如何为 HoloLens 2 创建自定义播放器应用程序。 为 HoloLens 2 编写的自定义播放器与为 HoloLens 1 编写的主机应用程序不兼容。 这意味着两个应用程序必须使用 NuGet 包**版本2.x。**
+>本文档介绍了如何为 HoloLens 2 创建自定义播放器应用程序。 为 HoloLens 2 编写的自定义播放器与为 HoloLens 1 编写的远程应用程序不兼容。 这意味着两个应用程序必须使用 NuGet 包**版本2.x。**
 
 通过创建自定义的全息远程处理播放器应用，你可以创建一个自定义应用程序，该应用程序能够在你的 HoloLens 2 上的远程计算机上显示[沉浸式视图](app-views.md)。 本文介绍如何实现此目的。 此页面上的所有代码和工作项目都可以在 "[全息远程处理示例 github 存储库](https://github.com/microsoft/MixedReality-HolographicRemoting-Samples)" 中找到。
 
-全息远程处理播放机允许应用显示桌面 PC 或 UWP 设备（如 Xbox 设备）上[呈现](rendering.md)的全息内容，允许访问更多系统资源。 全息远程处理播放机应用将输入数据流式传输到全息远程处理主机应用程序，并将沉浸式视图作为视频和音频流接收回来。 使用标准 Wi-fi 建立连接。 若要创建播放器应用，需要使用 NuGet 包将全息远程处理添加到 UWP 应用，并编写代码来处理连接并显示沉浸式视图。 
+全息远程处理播放机允许应用显示桌面 PC 或 UWP 设备（如 Xbox 设备）上[呈现](rendering.md)的全息内容，允许访问更多系统资源。 全息远程处理播放机应用将输入数据流式传输到全息远程处理远程应用程序，并将沉浸式视图作为视频和音频流接收回来。 使用标准 Wi-fi 建立连接。 若要创建播放器应用，需要使用 NuGet 包将全息远程处理添加到 UWP 应用，并编写代码来处理连接并显示沉浸式视图。 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 很好的起点是基于 DirectX 的基于 DirectX 的 UWP 应用，已经以 Windows Mixed Reality API 为目标。 有关详细信息，请参阅[DirectX 开发概述](directx-development-overview.md)。 如果你没有现有应用，并且想要从头开始，则可以使用[ C++全息版项目模板](creating-a-holographic-directx-project.md)。
 
@@ -77,7 +77,7 @@ ms.locfileid: "73926658"
 ...
 
 private:
-// PlayerContext used to connect with a Holographic Remoting host and display remotely rendered frames
+// PlayerContext used to connect with a Holographic Remoting remote app and display remotely rendered frames
 winrt::Microsoft::Holographic::AppRemoting::PlayerContext m_playerContext = nullptr;
 ```
 
@@ -92,7 +92,7 @@ m_playerContext = winrt::Microsoft::Holographic::AppRemoting::PlayerContext::Cre
 ```
 
 >[!WARNING]
->全息远程处理的工作原理是通过使用远程处理特定运行时替换作为 Windows 一部分的 Windows Mixed Reality 运行时。 这是在创建播放机上下文的过程中完成的。 因此，在创建播放机上下文之前对任何 Windows Mixed Reality API 进行的任何调用都可能导致意外的行为。 推荐的方法是尽早创建播放机上下文，然后再与任何混合现实 API 交互。 永远不要混合使用任何 Windows Mixed Reality ```PlayerContext::Create()``` API 创建或检索的对象。
+>全息远程处理的工作原理是通过使用远程处理特定运行时替换作为 Windows 一部分的 Windows Mixed Reality 运行时。 这是在创建播放机上下文的过程中完成的。 因此，在创建播放机上下文之前对任何 Windows Mixed Reality API 进行的任何调用都可能导致意外的行为。 推荐的方法是尽早创建播放机上下文，然后再与任何混合现实 API 交互。 永远不要混合使用任何 Windows Mixed Reality ```PlayerContext::Create``` API 创建或检索的对象。
 
 接下来，可以通过调用[CreateForCoreWindow](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicspace.createforcorewindow)创建 HolographicSpace。
 
@@ -100,15 +100,15 @@ m_playerContext = winrt::Microsoft::Holographic::AppRemoting::PlayerContext::Cre
 m_holographicSpace = winrt::Windows::Graphics::Holographic::HolographicSpace::CreateForCoreWindow(window);
 ```
 
-## <a name="connect-to-the-host"></a>连接到主机
+## <a name="connect-to-the-remote-app"></a>连接到远程应用
 
-播放机应用准备好呈现内容后，可以建立与主机的连接。
+播放机应用准备好呈现内容后，可以建立到远程应用的连接。
 
 可以通过以下方式之一建立连接：
-1) 在 HoloLens 2 上运行的播放机应用会连接到主机应用。
-2) 主机应用连接到在 HoloLens 2 上运行的播放机应用。
+1) 在 HoloLens 2 上运行的播放机应用会连接到远程应用。
+2) 远程应用连接到在 HoloLens 2 上运行的播放机应用。
 
-若要从播放机应用连接到主机，请调用播放机上下文中指定主机名和端口的 ```Connect``` 方法。 默认端口为**8265**。
+若要从播放机应用连接到远程应用，请调用播放机上下文中指定主机名和端口的 ```Connect``` 方法。 默认端口为**8265**。
 
 ```cpp
 try
@@ -141,7 +141,7 @@ catch(winrt::hresult_error& e)
 ## <a name="handling-connection-related-events"></a>处理与连接相关的事件
 
 ```PlayerContext``` 公开了三个事件来监视连接的状态
-1) OnConnected：成功建立与主机的连接后触发。
+1) OnConnected：已成功建立到远程应用程序的连接时触发。
 ```cpp
 m_onConnectedEventToken = m_playerContext.OnConnected([]() 
 {
@@ -177,11 +177,11 @@ winrt::Microsoft::Holographic::AppRemoting::ConnectionState state = m_playerCont
 
 ## <a name="display-the-remotely-rendered-frame"></a>显示远程呈现的帧
 
-若要显示远程呈现的内容，请在呈现[HolographicFrame](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe)时调用 ```PlayerContext::BlitRemoteFrame()```。 
+若要显示远程呈现的内容，请在呈现[HolographicFrame](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe)时调用 ```PlayerContext::BlitRemoteFrame```。 
 
-```BlitRemoteFrame()``` 要求当前 HolographicFrame 的后台缓冲区绑定为呈现器目标。 可以通过[Direct3D11BackBuffer](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.direct3d11backbuffer)属性从[HolographicCameraRenderingParameters](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe.getrenderingparameters)接收后台缓冲区。
+```BlitRemoteFrame``` 要求当前 HolographicFrame 的后台缓冲区绑定为呈现器目标。 可以通过[Direct3D11BackBuffer](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.direct3d11backbuffer)属性从[HolographicCameraRenderingParameters](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe.getrenderingparameters)接收后台缓冲区。
 
-调用时，```BlitRemoteFrame()``` 会将最新接收的帧从主机应用程序复制到 HolographicFrame 的后台缓冲区。 此外，如果远程应用程序在呈现远程帧期间指定了焦点，则会设置焦点集。
+调用时，```BlitRemoteFrame``` 将从远程应用程序接收的最新帧复制到 HolographicFrame 的后台缓冲区中。 此外，如果远程应用程序在呈现远程帧期间指定了焦点，则会设置焦点集。
 
 ```cpp
 // Blit the remote frame into the backbuffer for the HolographicFrame.
@@ -189,14 +189,34 @@ winrt::Microsoft::Holographic::AppRemoting::BlitResult result = m_playerContext.
 ```
 
 >[!NOTE]
->```PlayerContext::BlitRemoteFrame()``` 可能会覆盖当前帧的焦点。 
->- 若要指定回退焦点点，请在 ```PlayerContext::BlitRemoteFrame()```之前调用[HolographicCameraRenderingParameters：： SetFocusPoint](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.setfocuspoint) 。 
->- 若要覆盖远程焦点，请在 ```PlayerContext::BlitRemoteFrame()```后调用[HolographicCameraRenderingParameters：： SetFocusPoint](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.setfocuspoint) 。
+>```PlayerContext::BlitRemoteFrame``` 可能会覆盖当前帧的焦点。 
+>- 若要指定回退焦点点，请在 ```PlayerContext::BlitRemoteFrame```之前调用[HolographicCameraRenderingParameters：： SetFocusPoint](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.setfocuspoint) 。 
+>- 若要覆盖远程焦点，请在 ```PlayerContext::BlitRemoteFrame```后调用[HolographicCameraRenderingParameters：： SetFocusPoint](https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.setfocuspoint) 。
 
-成功时，```BlitRemoteFrame()``` 返回 ```BlitResult::Success_Color```。 否则，它将返回失败原因：
+成功时，```BlitRemoteFrame``` 返回 ```BlitResult::Success_Color```。 否则，它将返回失败原因：
 - ```BlitResult::Failed_NoRemoteFrameAvailable```：失败，因为没有可用的远程帧。
 - ```BlitResult::Failed_NoCamera```：由于没有照相机，导致失败。
 - ```BlitResult::Failed_RemoteFrameTooOld```：由于远程帧太旧，导致失败（请参见 PlayerContext：： BlitRemoteFrameTimeout 属性）。
+
+>[!IMPORTANT]
+> 从版本[2.1.0](holographic-remoting-version-history.md#v2.1.0)开始，自定义播放器可以通过全息远程处理使用深度 reprojection。
+
+```BlitResult``` 还可以在以下条件下返回 ```BlitResult::Success_Color_Depth```：
+
+- 远程应用已通过 HolographicCameraRenderingParameters 提交深度缓冲区[。 CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)。
+- 自定义播放机应用在调用 ```BlitRemoteFrame```之前已经绑定了有效的深度缓冲区。
+
+如果满足这些条件 ```BlitRemoteFrame``` 会将远程深度 array.blit 当前绑定的本地深度缓冲区。 然后，您可以呈现其他本地内容，这将与远程呈现的内容具有深度交集。 此外，还可以通过自定义播放机中的[HolographicCameraRenderingParameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)来提交本地深度缓冲区，以获得远程和本地呈现内容的深度 reprojection。 有关详细信息，请参阅[深度 Reprojection](hologram-stability.md#reprojection) 。
+
+### <a name="projection-transform-mode"></a>投影转换模式
+
+通过全息远程处理使用深度 reprojection 的一个问题是，可以使用不同于自定义播放器应用直接呈现的本地内容的投影转换来呈现远程内容。 常见的用例是在播放机端和远程端为近和远平面指定不同的值（通过[HolographicCamera：： SetNearPlaneDistance](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.setnearplanedistance)和[HolographicCamera：： SetFarPlaneDistance](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.setfarplanedistance)）。 在这种情况下，如果播放机端上的投影转换应反映远程的接近/远平面距离或局部，则不清楚。
+
+从版本[2.1.0](holographic-remoting-version-history.md#v2.1.0)开始，可以通过 ```PlayerContext::ProjectionTransformConfig```来控制投影转换模式。 支持的值是：
+
+- ```Local``` - [HolographicCameraPose：:P rojectiontransform](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.projectiontransform)返回投影转换，该转换反映自定义播放器应用在 HolographicCamera 上设置的近/远平面距离。
+- ```Remote``` 投影转换反映远程应用指定的近/远平面距离。
+- ```Merged```-与远程应用和自定义播放器应用的接近/远平面距离将合并。 默认情况下，这是通过使用接近平面距离和最大平面距离的最小值来完成的。 如果远程或本地侧反转，说远 < 接近，则会翻转远程近/远平面距离。
 
 ## 可选：设置 BlitRemoteFrameTimeout<a name="BlitRemoteFrameTimeout"></a>
 >[!IMPORTANT]
@@ -231,7 +251,7 @@ winrt::Microsoft::Holographic::AppRemoting::PlayerFrameStatistics statistics = m
 自定义数据信道可用于通过已建立的远程处理连接发送用户数据。 有关详细信息，请参阅[自定义数据通道](holographic-remoting-custom-data-channels.md)。
 
 ## <a name="see-also"></a>另请参阅
-* [编写全息远程处理主机应用](holographic-remoting-create-host.md)
+* [编写全息远程处理远程应用](holographic-remoting-create-host.md)
 * [自定义全息远程处理数据通道](holographic-remoting-custom-data-channels.md)
 * [建立与全息远程处理的安全连接](holographic-remoting-secure-connection.md)
 * [全息远程处理故障排除和限制](holographic-remoting-troubleshooting.md)

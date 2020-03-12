@@ -1,25 +1,32 @@
 ---
 title: 全息远程处理版本历史记录
 description: HoloLens 2 上的全息远程处理的版本历史记录。
-author: NPohl-MSFT
-ms.author: nopohl
-ms.date: 10/21/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: f051dbf24cab550470a312933ffb99e1ba595257
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 62f54dbcf5327cdd5f13622704684a2cb0606d7d
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181957"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092321"
 ---
 # <a name="holographic-remoting-version-history"></a>全息远程处理版本历史记录
 
 > [!IMPORTANT]
 > 本指南特定于 HoloLens 2 上的全息远程处理。
 
-## 版本2.0.18.0 （2019年12月17日）<a name="v2.0.18"></a>
-* 添加了对 HolographicViewConfiguration 的支持： https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration
+## 版本2.1.0 （2020年3月11日）<a name="v2.1.0"></a>
+* 已将网络传输切换为使用[RTP](https://en.wikipedia.org/wiki/Real-time_Transport_Protocol) via UDP。 安全连接现在使用[SRTP](https://en.wikipedia.org/wiki/Secure_Real-time_Transport_Protocol) 。 请注意，[全息远程处理播放器](holographic-remoting-player.md)仍与所有以前版本的全息远程处理版本兼容。 若要从新的网络传输中获益，全息远程处理播放器和有问题的远程应用必须使用版本2.1.0。
+* 添加了对[HolographicCameraRenderingParameters. CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)的支持。 
+
+## 版本2.0.20 （2020年2月2日）<a name="v2.0.20"></a>
+* 修复了导致崩溃的各种 bug。
+
+## 版本2.0.18 （2019年12月17日）<a name="v2.0.18"></a>
+* 添加了对[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration)的支持
 * 修复了导致崩溃的各种 bug。
 * 修复了一个 bug，HolographicCamera 需要 HolographicSpace CameraAdded 回调才能接受，并将其显示为 HoloraphicFrame 中的已添加照相机。
 
