@@ -7,11 +7,11 @@ ms.date: 10/31/2019
 ms.topic: article
 keywords: 混合现实，注视，注视目标，交互，设计，眼睛跟踪，头跟踪
 ms.openlocfilehash: df152f6a3a6e4ae2d6c32a0c56fbb615bcfa7aa8
-ms.sourcegitcommit: a5dc182da237f63f0487d40a2e11894027208b6c
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441123"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375844"
 ---
 # <a name="gaze-and-commit"></a>注视并提交
 
@@ -249,7 +249,7 @@ Xbox 自适应控制器使用 "A" 按钮执行单击传动作为辅助输入。 
 ### <a name="air-tap"></a>隔空敲击
 Air 攻攻敲击手势（以及下面的其他手势）仅对特定攻丝做出反应。 若要检测其他点击，如菜单或抓住，你的应用程序必须直接使用上面两个关键组件手势部分中所述的低级交互。
 
-### <a name="tap-and-hold"></a>Tap and hold
+### <a name="tap-and-hold"></a>点击并按住
 按住是指保持隔空敲击手指向下的位置。 与 arm 移动（如选取对象，而不是激活对象或 mousedown 辅助交互，如显示上下文菜单）结合使用时，点击和保持的组合允许使用各种更复杂的 "单击并拖动" 交互。
 但在设计此手势时请务必小心，因为用户在做出任何扩展手势的过程都很可能放松手部姿势。
 
@@ -291,12 +291,12 @@ HoloLens 通过跟踪设备可识别的一只手或双手的位置来识别手�
 
 
 ## <a name="see-also"></a>另请参阅
-* [基于目视的交互](eye-gaze-interaction.md)
-* [HoloLens 2 上的目视跟踪](eye-tracking.md)
+* [基于眼睛的交互](eye-gaze-interaction.md)
+* [HoloLens 2 中的眼动跟踪](eye-tracking.md)
 * [凝视和停留](gaze-and-dwell.md)
-* [直接操作](direct-manipulation.md)
-* [动手手势](gaze-and-commit.md#composite-gestures)
-* [动手并提交](point-and-commit.md)
+* [手 - 直接操作](direct-manipulation.md)
+* [手 - 手势](gaze-and-commit.md#composite-gestures)
+* [手 - 指向并提交](point-and-commit.md)
 * [本能交互](interaction-fundamentals.md)
 * [语音输入](voice-input.md)
 

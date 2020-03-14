@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows mixed reality，空间映射，环境，交互，directx，winrt，api，示例代码，UWP，SDK，演练
 ms.openlocfilehash: 456fcf1c00e23a287a741673e94b3f8d2d2d346c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437443"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375814"
 ---
 # <a name="spatial-mapping-in-directx"></a>DirectX 中的空间映射
 
@@ -74,7 +74,7 @@ ms.locfileid: "73437443"
   - 从这里，你的应用程序可以选择执行网格数据的分析或[处理](spatial-mapping.md#mesh-processing)，并将其用于[呈现](spatial-mapping.md#rendering)和物理学[raycasting 和冲突](spatial-mapping.md#raycasting-and-collision)。
   - 需要注意的一个重要细节是，您必须将一个规模应用于网格顶点位置（例如，在用于呈现网格的顶点着色器中），以便将它们从缓冲区中存储的优化整数单位转换为米。 可以通过调用[VertexPositionScale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)来检索此缩放。
 
-### <a name="troubleshooting"></a>“疑难解答”
+### <a name="troubleshooting"></a>故障排除
 * 别忘了使用 SpatialSurfaceMesh 返回的刻度在顶点着色器中缩放网格顶点位置[。 VertexPositionScale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)
 
 ## <a name="spatial-mapping-code-sample-walkthrough"></a>空间映射代码示例
@@ -216,7 +216,7 @@ m_surfaceObserver->SetBoundingVolume(
             );
 ```
 
-如果你的应用程序在表面映射数据不可用时需要执行任何操作，则可以编写代码来响应不**允许**使用[SpatialPerceptionAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialperceptionaccessstatus.aspx)的情况（例如，在具有沉浸功能的电脑上不允许这样做）。附加设备，因为这些设备没有用于空间映射的硬件。 对于这些设备，你应改用空间阶段来了解有关用户的环境和设备配置的信息。
+如果你的应用程序在表面映射数据不可用时需要执行任何操作，则可以编写代码来响应不**允许**使用[SpatialPerceptionAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialperceptionaccessstatus.aspx)的情况，例如，由于这些设备没有用于空间映射的硬件，因此不允许在已连接沉浸设备的电脑上使用它。 对于这些设备，你应改用空间阶段来了解有关用户的环境和设备配置的信息。
 
 ### <a name="initialize-and-update-the-surface-mesh-collection"></a>初始化和更新 surface 网格集合
 

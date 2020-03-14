@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality，全息，ar，vr，先生，xr，扩充现实，虚拟现实，说明
 ms.openlocfilehash: e3205590ce46e0fc9113421e0dbaeb87fe6bc0c2
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334036"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376034"
 ---
 # <a name="what-is-mixed-reality"></a>什么是混合现实？
 
@@ -89,7 +89,7 @@ ms.locfileid: "75334036"
 </tr><tr>
 <td><strong>示例设备</strong></td><td> Microsoft HoloLens<br><br> <img alt="Microsoft HoloLens 2 image" width="300" height="169" src="images/HoloLens2.jpg" /></td><td> Samsung HMD 太空 +<br><br> <img alt="Samsung HMD Odyssey+ image" width="300" height="169" src="images/Samsung-HMD-Odyssey.jpg" /></td>
 </tr><tr>
-<td><strong>Display</strong></td><td> 查看-通过显示。 允许用户在戴上耳机时查看物理环境。</td><td> 不透明显示。 在戴上耳机时阻塞物理环境。</td>
+<td><strong>显示器</strong></td><td> 查看-通过显示。 允许用户在戴上耳机时查看物理环境。</td><td> 不透明显示。 在戴上耳机时阻塞物理环境。</td>
 </tr><tr>
 <td><strong>搬家</strong></td><td> 旋转和平移都具有全部六个自由度。</td><td> 旋转和平移都具有全部六个自由度。</td>
 </tr>

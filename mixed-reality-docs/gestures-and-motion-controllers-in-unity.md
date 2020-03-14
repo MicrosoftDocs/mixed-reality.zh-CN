@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 手势，运动控制器，unity，注视，输入
 ms.openlocfilehash: a85797bfb443f33147c116e90a02c88abda63c67
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926565"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375644"
 ---
 # <a name="gestures-and-motion-controllers-in-unity"></a>Unity 中的手势和运动控制器
 
@@ -94,7 +94,7 @@ Windows Mixed Reality 支持多种形式的运动控制器，其中每个控制�
 
 系统提供的指针姿势最适合用于在**呈现控制器模型本身**时进行 raycast。 如果要渲染某个其他虚拟对象来替代控制器（如虚拟压力），则应使用该虚拟对象的最自然的光线，如沿应用定义的机枪模型的桶向下移动的射线。 由于用户可以看到虚拟对象，而不是物理控制器，因此，使用虚拟对象指向虚拟对象可能会更自然地使用应用。
 
-目前，指针姿势仅通过 Windows MR 专用 API TryGetPosition/轮换提供，并传入 InteractionSourceNode 作为参数传递 。 *sourceState/sourcePose。*
+目前，指针姿势仅通过 Windows MR 专用 API TryGetPosition/轮换提供，并传入 InteractionSourceNode 作为参数传递*InteractionSourceNode.Pointer* 。 *sourceState/sourcePose。*
 
 ## <a name="controller-tracking-state"></a>控制器跟踪状态
 
@@ -490,7 +490,7 @@ void OnDestroy()
 
 可在[此处](https://github.com/keluecke/MixedRealityToolkit-Unity/blob/master/External/Unitypackages/ThrowingStarter.unitypackage)找到如何实现引发的示例。 此示例遵循以下四个准则：
 * **使用控制器的*速度*（而不是位置**）。 在11月的 Windows 更新中，我们引入了["近似" 位置跟踪状态](motion-controllers.md#controller-tracking-state)下的行为更改。 在此状态下，只要我们认为它是高准确度，就会继续报告关于控制器的速度信息，这通常比位置长。
-* **合并控制器的 *角度速度* 。** 此逻辑全部包含在 `GetThrownObjectVelAngVel` 静态方法的 `throwing.cs` 文件中，位于上面链接的包中：
+* **合并控制器的*角度速度*** 。 此逻辑全部包含在 `GetThrownObjectVelAngVel` 静态方法的 `throwing.cs` 文件中，位于上面链接的包中：
    1. 在角度速度为 conserved 的情况下，引发的对象必须保持与抛出时相同的角度速度： `objectAngularVelocity = throwingControllerAngularVelocity;`
    2. 由于引发的对象很大范围可能不会成为手柄姿势的中心，因此它可能具有不同的速度，而控制器在用户的引用框架中。 以这种方式提供的对象速度的部分是围绕控制器原点的已抛出对象的质量的瞬间相切速度。 此相切速度是控制器角度速度的叉积，向量表示控制器原点与所引发对象的质量中心之间的距离。
     

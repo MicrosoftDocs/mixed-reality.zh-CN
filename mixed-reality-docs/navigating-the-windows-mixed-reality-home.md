@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: shell，os，平台，cliff 房子，房子，home，环境，开始，开始菜单，主页菜单，pin，应用，启动应用，放置应用，传送，移动，导航
 ms.openlocfilehash: 9de4cb44505d6cf4d0d3e4bd0fd9c5ee681063a5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438161"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375894"
 ---
 # <a name="navigating-the-windows-mixed-reality-home"></a>导航 Windows Mixed Reality 主页
 
@@ -109,7 +109,7 @@ ms.locfileid: "73438161"
 * 按住鼠标**左键**并执行选择操作，其作用类似于 "[空中点击](gaze-and-commit.md#composite-gestures)" 笔势。
 * 按住**右键单击**鼠标按钮将打开[teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home) reticle。
 * 按键盘上的**Windows**键打开 "开始"[菜单](navigating-the-windows-mixed-reality-home.md#start-menu)，并与[布隆](system-gesture.md#bloom)手势类似。
-* 当[gazing](gaze-and-commit.md)在2d 桌面应用程序中时，可以**单击**以选择，**右键单击**以打开上下文菜单，然后使用滚轮滚动（就像您的 PC 桌面上一样）。
+* 当[gazing](gaze-and-commit.md)在2d 桌面应用程序中时，可以**单击**以选择，**右键单击**以打开上下文菜单，然后使用滚轮滚动（就**scroll wheel**像您的 PC 桌面上一样）。
 
 ## <a name="cortana"></a>Cortana
 

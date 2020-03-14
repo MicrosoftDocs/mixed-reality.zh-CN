@@ -7,11 +7,11 @@ ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合现实、手势、交互、设计
 ms.openlocfilehash: 9cfee1104cb9b8135dae51bea73850062fadd25c
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181997"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375904"
 ---
 # <a name="system-gesture"></a>系统手势
 
@@ -27,13 +27,13 @@ ms.locfileid: "75181997"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>功能</strong></td>
+        <td><strong>具有</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
     </tr>
      <tr>
-        <td>开花</td>
+        <td>布隆</td>
         <td>✔️</td>
         <td>❌</td>
         <td>❌</td>
@@ -52,7 +52,7 @@ ms.locfileid: "75181997"
     </tr>
 </table>
 
-## <a name="bloom"></a>开花
+## <a name="bloom"></a>布隆
 若要在 HoloLens 中显示 "开始" 菜单（第一代），我们设计了 "布隆"，这是一个模拟花朵开花的符号手势。 这是 surefooted 交互的独特之处，易于执行，并可快速回调。 若要在 HoloLens （第一代）上执行布隆手势，请将掌托在一起，并将其放在一起，然后将手指向外伸展。
 
 :::row:::

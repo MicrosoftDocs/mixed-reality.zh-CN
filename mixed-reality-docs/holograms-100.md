@@ -7,14 +7,14 @@ ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合现实，Windows Mixed Reality，HoloLens，沉浸，，vr，先生，入门，全息影像，学院，教程
 ms.openlocfilehash: 0600383b3cca3f580f014597217afc6ae78836dd
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926633"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375594"
 ---
 >[!NOTE]
->混合现实学院教程的设计附带了 HoloLens （第一代）和混合现实沉浸式耳机。  因此，对于那些仍在寻找为这些设备进行开发的指导的开发人员来说，我们认为这些教程是非常重要的。  这些教程将 **_不_** 会使用最新工具集或用于 HoloLens 2 的交互进行更新。  将保留这些设备以继续使用支持的设备。 为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
+>混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。  因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。  我们**不会_在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。_**  我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
 
 <br>
 
@@ -26,13 +26,13 @@ ms.locfileid: "73926633"
 
 <table>
 <tr>
-<th>摘要</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
+<th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
 <td>MR 要点100： Unity 入门</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 配置了正确[工具](install-the-tools.md)的 WINDOWS 10 电脑。
 
@@ -81,7 +81,7 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 
 **对于 hololens 应用程序**，near 剪辑平面可以设置为[HoloLens 建议](camera-in-unity.md#clip-planes)0.85 米。
 
-1. 在 "**层次结构**" 面板中选择了**主相机**后，请在 "**检查器**" 面板中找到**照相机**组件，并将 "**附近的剪辑平面**" 字段从默认的**0.3**更改为**0.85 "** .
+1. 在 "层次结构" 面板中，**在 "** **层次结构**" 面板中**选择 "相机** **" 组件，** 并将 "附近的**剪辑平面**" 字段从默认的0.3 更改为 " **0.3** **0.85**"。
 
 **对于以沉浸式耳机为目标的混合现实应用程序**，可以使用 Unity 提供的默认设置。
 
@@ -164,7 +164,7 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 2. **> 全息仿真打开 > XR 的窗口**。
 3. 将**仿真模式**从**None**更改为**远程到设备**。
 4. 在**远程计算机**上，输入你之前记下的 HOLOLENS 的 IP 地址。
-5. 单击**连接**。
+5. 单击“连接”。
 6. 确保**连接状态**更改为 "**已连接**绿色"。
 7. 现在，你可以在 Unity 编辑器中单击 "**播放**"。
 
@@ -194,7 +194,7 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 6.  **UWP 生成类型**应为**D3D**。
 7.  **UWP SDK**可以保持**最新安装的版本**。
 8.  检查正在调试的**Unity C#项目**。
-9.  单击**生成**。
+9.  单击“生成”。
 10. 在文件资源管理器中，单击 "**新建文件夹**"，然后将文件夹命名为 **"App"** 。
 11. 选择**应用**文件夹后，单击 "**选择文件夹**" 按钮。
 12. 当 Unity 完成生成后，将显示一个 Windows 文件资源管理器窗口。

@@ -7,11 +7,11 @@ ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality，设计，样式，字体，版式，ui，ux
 ms.openlocfilehash: 9664d355e941d800ac1ac862860fc5889b6b7686
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437418"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375794"
 ---
 # <a name="typography"></a>版式
 
@@ -83,14 +83,14 @@ ms.locfileid: "73437418"
 内容*![近和远交互范围
 
 ### <a name="the-minimum-legible-font-size"></a>最小清晰字体大小
-| 长途 | 查看角度 | 文本高度 | 字号 * * |
+| 距离 | 查看角度 | 文本高度 | 字号 * * |
 |---------|---------|---------|---------|
 | 45cm （直接操作距离） | 0.4 °-0.5 ° | 3.14 –3.9 毫米 | 8.9-11.13 pt |
 | 2m | 0.35 °0.4 ° | 12.21 – 13.97 mm | 34.63-39.58 pt |
 
 
 ### <a name="the-comfortably-legible-font-size"></a>可读性更清晰的字号
-| 长途 | 查看角度 | 文本高度 | 字号 * * |
+| 距离 | 查看角度 | 文本高度 | 字号 * * |
 |---------|---------|---------|---------|
 | 45cm （直接操作距离） | 0.65 °0.8 ° | 5.1-6.3 毫米 | 14.47-17.8 pt |
 | 2m | 0.6 °-0.75 ° | 20.9-26.2 mm | 59.4-74.2 pt |
@@ -111,9 +111,9 @@ Segoe UI （Windows 的默认字体）在大多数情况下都适用。 不过�
 
 :::row:::
     :::column:::
-    ### <a name="segoe-fontshttpsdownloadmicrosoftcomdownload1bc1bcf071a-78ee-4968-acbe-15461c274b61segoe20fonts20v1705zipbr"></a>[宋体](https://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe%20fonts%20v1705.zip)<br>
+    ### <a name="segoe-fontsbr"></a>[宋体](https://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe%20fonts%20v1705.zip)<br>
     （Zip 文件）<br>
-    ### <a name="hololens-fonthttpsdownloadmicrosoftcomdownload38d38d659e2-4b9c-413a-b2e7-1956181dc427hololens20fontzipbr"></a>[HoloLens 字体](https://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens%20font.zip)<br>
+    ### <a name="hololens-fontbr"></a>[HoloLens 字体](https://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens%20font.zip)<br>
     （Zip 文件）<br>
     <br>
     *映像： HoloLens 字体提供 Windows Mixed Reality 中使用的符号字形。*

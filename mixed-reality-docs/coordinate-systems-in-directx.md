@@ -7,11 +7,11 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合现实，空间定位器，空间参考框架，空间坐标系统，空间阶段，示例代码，图像稳定，空间锚，空间锚定存储，跟踪丢失，演练
 ms.openlocfilehash: a0bce897c1982715af24f0bf7c398cdee10f017f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436225"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375614"
 ---
 # <a name="coordinate-systems-in-directx"></a>在 DirectX 中协调系统
 
@@ -574,7 +574,7 @@ std::vector<unsigned short> SpatialStageManager::TriangulatePoints(std::vector<f
 
 ## <a name="create-holograms-using-a-device-attached-frame-of-reference"></a>使用设备附加的参考框架创建全息影像
 
-有时，你想要呈现已[附加](coordinate-systems.md#attached-frame-of-reference)到设备位置的全息影像，例如，当设备只能确定其方向而不能确定其位置时，包含调试信息或信息性消息的面板空间. 为此，我们使用附加的参考框架。
+有时，你想要呈现已[附加](coordinate-systems.md#attached-frame-of-reference)到设备位置的全息影像，例如，当设备只能确定其方向而不能确定其在空间中的位置时，包含调试信息或信息性消息的面板。 为此，我们使用附加的参考框架。
 
 SpatialLocatorAttachedFrameOfReference 类定义相对于设备而不是实际的坐标系统。 此框架的固定标题相对于用户在创建引用框架时面向的方向的用户环境。 接下来，这一帧参考中的所有方向都是相对于该固定标题的，即使用户要旋转设备也是如此。
 

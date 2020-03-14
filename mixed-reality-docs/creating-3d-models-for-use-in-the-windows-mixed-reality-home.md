@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 3D，建模，建模指南，资产要求，创作准则，启动器，3D 启动器，纹理，材料，复杂性，三角形，网格，多边形，polycount，限制
 ms.openlocfilehash: 536fd9bc2002d679ee3bf73d5c906b84c51e5d46
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926581"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375624"
 ---
 # <a name="create-3d-models-for-use-in-the-home"></a>创建用于主页的3D 模型
 
@@ -54,15 +54,15 @@ Windows Mixed Reality home 不支持超过10000个三角形的模型。 建议�
 |  LOD 级别  |  推荐的三角形计数  |  最大三角形计数 | 
 |------|------|------|
 |  LOD 0 |  10,000 |  10,000 | 
-|  LOD 1 |  5000  |  10,000 | 
+|  LOD 1 |  5,000  |  10,000 | 
 |  LOD 2 |  2500  |  10,000 | 
 
 ### <a name="node-counts-and-submesh-limits"></a>节点计数和子网格限制
 Windows Mixed Reality home 不支持每个 LOD 具有超过64个节点或 32 submeshes 的模型。 节点是[glTF 规范](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#nodes-and-hierarchy)中定义场景中对象的概念。 Submeshes 是在对象的网格上的[基元](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#meshes)数组中定义的。 
 
-|  功能 |  描述  |  支持的最大值 | 文档 |
+|  功能 |  说明  |  支持的最大值 | 文档 |
 |------|------|------|------|
-|  节点数 |  GlTF 场景中的对象 |  每 LOD 64 | [这儿](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#nodes-and-hierarchy)|
+|  节点 |  GlTF 场景中的对象 |  每 LOD 64 | [这儿](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#nodes-and-hierarchy)|
 |  Submeshes |  所有网格上的基元的总和 |  每 LOD 32 | [这儿](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#meshes)|
 
 ## <a name="material-guidelines"></a>材料指导原则
@@ -94,7 +94,7 @@ Windows Mixed Reality home 不支持每个 LOD 具有超过64个节点或 32 sub
 
 指示着色器（如果有）。 Raw 金属 = 1.0 白色非金属色 = 0.0 黑色。 可能有一些过渡灰度值，这些值指示了诸如灰尘等原材料的内容，但通常情况下，此地图只应为黑色和白色。
 
-## <a name="optimizations"></a>效果
+## <a name="optimizations"></a>优化
 
 Windows Mixed Reality 主页在使用自定义扩展定义的核心 glTF 规范之上提供一系列优化。 Windows 版本 < 为1709，并且建议在更高版本的 Windows 上执行这些优化。 可以使用[GitHub 上提供的 Windows Mixed Reality 资产转换器](https://github.com/Microsoft/glTF-Toolkit/releases)轻松优化任何 glTF 2.0 模型。 此工具将执行下面指定的正确纹理打包和优化。 对于常规用法，我们建议使用 WindowsMRAssetConverter，但如果您需要更好地控制体验并想要生成自己的优化管道，则可以参阅下面的详细规范。  
 
@@ -167,7 +167,7 @@ Windows MR 使用几何节点 LODs 根据屏幕覆盖情况在不同的详细级
 |  LOD 级别  |  推荐的三角形计数  |  最大三角形计数 | 
 |-------|-------|-------|
 |  LOD 0 |  10,000 |  10,000 | 
-|  LOD 1 |  5000  |  10,000 | 
+|  LOD 1 |  5,000  |  10,000 | 
 |  LOD 2 |  2500  |  10,000 | 
 
 当使用 LODs 时，始终指定3个 LOD 级别。 缺少 LODs 将导致模型不会意外呈现，因为 LOD 系统会切换到缺少的 LOD 级别。 glTF 2.0 当前不支持 LODs 作为核心规范的一部分，因此应使用[MSFT_LOD 扩展](https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod)来定义 LODs。
@@ -235,10 +235,10 @@ Windows Mixed Reality 主页支持以下动画触发语义。
 ### <a name="restrictions"></a>限制
 动画的长度不能超过20分钟，并且不能包含超过36000个关键帧（20分钟，30 FPS）。 此外，当使用基于平滑目标的动画时，不能超过8192的变形目标顶点。 超过这些计数将导致动态资产在 Windows Mixed Reality 主页中不受支持。 
 
-|功能|最多|
+|功能|最大值|
 |-----|-----|
-|Duration|20 minutes|
-|关键帧|36000| 
+|持续时间|20 分钟|
+|关键帧|36,000| 
 |变形目标顶点|8192|
 
 ## <a name="gltf-implementation-notes"></a>glTF 实现注释

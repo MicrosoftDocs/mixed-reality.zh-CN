@@ -7,15 +7,15 @@ ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit，mixedrealitytoolkit，mixedrealitytoolkit-unity，全息呈现，全息，沉浸式，聚焦点，深度缓冲区，仅限方向，位置，不透明，透明，剪辑
 ms.openlocfilehash: 1a2e66d5c028109a58ea8682668521f50158add9
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436958"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375584"
 ---
 # <a name="camera-in-unity"></a>Unity 中的照相机
 
-当你磨损混合现实耳机时，它将成为你的全息世界的中心。 当你的项目将 "受支持的虚拟现实" 选作 "Windows Mixed Reality" 作为设备（在其他设置中）时，Unity[相机](https://docs.unity3d.com/Manual/class-Camera.html)组件会自动处理 stereoscopic 渲染，并遵循你的头运动和旋转。部分中的。 在较旧版本的 Unity 中，这可能作为 "Windows 全息" 列出。
+当你磨损混合现实耳机时，它将成为你的全息世界的中心。 如果你的项目将 "Windows Mixed Reality" 选择为 "受支持的虚拟现实" 作为设备（在 Windows 应用商店播放机设置的 "其他设置" 部分），则 Unity[相机](https://docs.unity3d.com/Manual/class-Camera.html)组件会自动处理 stereoscopic 渲染，并遵循打印头运动和旋转。 在较旧版本的 Unity 中，这可能作为 "Windows 全息" 列出。
 
 但是，若要完全优化视觉质量和[全息图稳定性](hologram-stability.md)，应设置以下描述的相机设置。
 
@@ -76,7 +76,7 @@ HoloLens 和沉浸式耳机都将 reproject 你的应用程序呈现的每个帧
 * **沉浸式耳机**将执行位置 reprojection，如果应用为给定帧提供深度缓冲区，则在位置和方向调整你的全息影像。  如果未提供深度缓冲区，则系统只会方向上的 mispredictions。
 * 如果应用程序提供了深度缓冲区，就像 HoloLens 这样的**全息耳机**会执行位置 reprojection。  在不使用 HoloLens 上的深度缓冲区的情况下，可能会出现位置 reprojection，因为呈现通常是由真实世界提供的稳定背景稀疏的。
 
-如果你知道要使用严格的正文锁定内容（例如，360度视频内容）构建[仅限方向的体验](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)，则可以将 reprojection 模式显式设置为仅通过设置[HolographicSettings. ReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.ReprojectionMode.html) [HolographicReprojectionMode. OrientationOnly](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.HolographicReprojectionMode.html)。
+如果你知道要使用严格的正文锁定内容（例如，360度视频内容）构建[仅限方向的体验](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)，则可以通过将[ReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.ReprojectionMode.html)设置为[HolographicReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.HolographicReprojectionMode.html)，将 reprojection 模式显式设置为 "方向"。
 
 ## <a name="sharing-your-depth-buffers-with-windows"></a>与 Windows 共享你的深度缓冲区
 

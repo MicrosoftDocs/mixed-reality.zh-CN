@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，同步，空间定位，传输，多人，查看，方案，演练，示例代码，传输，本地定位点传输，定位点导出，定位点导入
 ms.openlocfilehash: f961862c3c49872484683e264fb9c62b5d0b60ee
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437953"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376024"
 ---
 # <a name="local-anchor-transfers-in-directx"></a>DirectX 中的本地定位点传输
 
@@ -284,7 +284,7 @@ Blob 包含 SpatialAnchor 附近环境的表示形式，以便能够在导入 Sp
 
 ### <a name="export-of-multiple-spatialanchors"></a>导出多个 SpatialAnchors
 
-与导出单个 SpatialAnchor 一样，blob 在所有指定的 SpatialAnchors 附近都包含环境的表示形式。 此外，blob 还包含有关包含的 SpatialAnchors 之间的连接的信息（如果它们位于相同的物理空间中）。 这意味着，如果导入两个附近的 SpatialAnchors，则即使设备只能识别*第一个*SpatialAnchor 周围的环境，也可以定位附加到*第二个*SpatialAnchor 的全息影像，因为有足够的数据可用于blob 中包含两个 SpatialAnchors 之间的计算转换。 如果这两个 SpatialAnchors 是单独导出的（两次单独调用 TryExportSpatialAnchors），则在 blob 中包含的数据可能不足以容纳第一个要定位的 SpatialAnchor。
+与导出单个 SpatialAnchor 一样，blob 在所有指定的 SpatialAnchors 附近都包含环境的表示形式。 此外，blob 还包含有关包含的 SpatialAnchors 之间的连接的信息（如果它们位于相同的物理空间中）。 这意味着，如果导入了两个附近的 SpatialAnchors，则即使该设备只识别*第一个*SpatialAnchor 周围的环境，也会找到附加到*第二个*SpatialAnchor 的全息影像，因为这两个 SpatialAnchors 之间的计算转换所包含的数据足以用于计算 blob。 如果这两个 SpatialAnchors 是单独导出的（两次单独调用 TryExportSpatialAnchors），则在 blob 中包含的数据可能不足以容纳第一个要定位的 SpatialAnchor。
 
 ![使用单个 TryExportAnchorsAsync 调用导出多个定位点](images/multipleanchors.png) ![为每个定位点使用单独的 TryExportAnchorsAsync 调用导出多个定位点](images/separateanchors.png)
 

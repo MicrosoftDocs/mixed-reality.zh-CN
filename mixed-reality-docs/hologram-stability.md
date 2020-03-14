@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 全息影像，稳定性，hololens
 ms.openlocfilehash: ad48d057ee55d4d0d9ae3080d8030a481aef130f
-ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75623313"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375774"
 ---
 # <a name="hologram-stability"></a>全息影像稳定性
 
@@ -57,7 +57,7 @@ ms.locfileid: "75623313"
 当 fixates 和专注于某个对象时，该视觉对象系统会集成多个距离相关的信号。
 * [便利设施](https://en.wikipedia.org/wiki/Accommodation_%28eye%29)-单个眼睛的重点。
 * [收敛](https://en.wikipedia.org/wiki/Convergence_(eye))-两个眼睛向内或向外移动到对象的中心。
-* [望远镜视觉](https://en.wikipedia.org/wiki/Stereopsis)对象-在与固定点远离某个对象距离的左侧和右侧图像之间发达国家/地区。
+* [望远镜视觉](https://en.wikipedia.org/wiki/Stereopsis)对象-在与固定点远离某个对象距离的左侧和右侧图像之间发达国家。
 * 底纹、相对角度大小和其他 monocular （单一眼睛）提示。
 
 收敛和便利设施是唯一的，因为它们是视网膜的提示，与眼睛在不同距离上感知对象的方式相关。 在自然查看中，聚合和便利设施均已链接。 当眼睛接近时（例如，鼻子），眼睛交叉并适应近点。 当眼睛查看无穷时，眼睛会成为平行的，眼睛可容纳无限大。 戴 HoloLens 的用户将始终适应 2.0 m 以维护一个清晰的图像，因为 HoloLens 显示固定在远离用户的光纤上。 应用开发人员通过在不同的深度放置内容和全息影像来控制用户的眼睛汇聚。 当用户容纳并聚合到不同的距离时，两个提示之间的自然链接会断开，这可能会导致视觉对象 discomfort 或疲劳，特别是当冲突量大时。 通过保留用户最接近 2.0 m 的内容（例如，在具有很多深度的场景中，如有可能），可避免或最小化 vergence 的 Discomfort。 当内容不能放置在 2.0 m 附近时，当用户在不同距离之间来回注视时，discomfort 会出现 vergence 冲突。 换而言之，观看 50 厘米远的静态全息影像，比观看 50 厘米远的前后不断移动的全息影像要舒适得多。
@@ -91,8 +91,8 @@ HoloLens 会执行一种复杂的硬件辅助全息稳定技术（称为 reproje
 
 稳定类型 |    沉浸式耳机 |    HoloLens 第1代 | HoloLens 2
 --- | --- | --- | ---
-深度 Reprojection |    推荐 |   N/A |   推荐<br/><br/>Unity 应用程序必须使用 Unity 2018.4.12 或更高版本或 Unity 2019.3 或更高版本。 否则，请使用自动平面 Reprojection。
-自动平面 Reprojection | N/A |   建议默认值 |   如果深度 Reprojection 未提供最佳结果，建议使用<br/><br/>建议 unity 应用程序使用 Unity 2018.4.12 或更高版本或 Unity 2019.3 或更高版本。  以前的 Unity 版本将使用略微降级的 reprojection 结果。
+深度 Reprojection |    推荐 |   不可用 |   推荐<br/><br/>Unity 应用程序必须使用 Unity 2018.4.12 或更高版本或 Unity 2019.3 或更高版本。 否则，请使用自动平面 Reprojection。
+自动平面 Reprojection | 不可用 |   建议默认值 |   如果深度 Reprojection 未提供最佳结果，建议使用<br/><br/>建议 unity 应用程序使用 Unity 2018.4.12 或更高版本或 Unity 2019.3 或更高版本。  以前的 Unity 版本将使用略微降级的 reprojection 结果。
 平面 Reprojection |   不建议 |   如果自动平面未提供最佳结果，建议使用 |    如果两个深度选项都不能获得所需的结果，请使用    
 
 ### <a name="verifying-depth-is-set-correctly"></a>验证深度设置正确

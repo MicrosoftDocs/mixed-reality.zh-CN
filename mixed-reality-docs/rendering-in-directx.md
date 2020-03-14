@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全息影像，呈现，3D 图形，HolographicFrame，render 循环，更新循环，演练，示例代码，Direct3D
 ms.openlocfilehash: 6b2e2dca9115d7093e94019d5ed91201f6ee3424
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940865"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375974"
 ---
 # <a name="rendering-in-directx"></a>在 DirectX 中呈现
 
@@ -536,7 +536,7 @@ if (options.VPAndRTArrayIndexFromAnyShaderFeedingRasterizer)
 }
 ```
 
-若要在不使用此可选功能的情况下支持呈现，你的应用程序必须使用几何着色器来设置呈现目标数组索引。 此代码段将在 **VSSetConstantBuffers**之后和在上一节中所示的代码示例中的**PSSetShader** *之前*添加，说明如何在 HoloLens 上呈现立体声。
+若要在不使用此可选功能的情况下支持呈现，你的应用程序必须使用几何着色器来设置呈现目标数组索引。 此代码段将在*after* **VSSetConstantBuffers**之后和在上一节中所示的代码示例中的**PSSetShader** *之前*添加，说明如何在 HoloLens 上呈现立体声。
 
 From **SpinningCubeRenderer：： Render**：
 
@@ -593,7 +593,7 @@ void main(triangle GeometryShaderInput input[3], inout TriangleStream<GeometrySh
 }
 ```
 
-## <a name="present"></a>显示
+## <a name="present"></a>存在
 
 ### <a name="enable-the-holographic-frame-to-present-the-swap-chain"></a>启用全息帧以显示交换链
 

@@ -7,11 +7,11 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows 设备门户、HoloLens
 ms.openlocfilehash: 43ecfead7d2882d3624809bc05184f74131b8594
-ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78202717"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375784"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 设备门户
 
@@ -19,7 +19,7 @@ ms.locfileid: "78202717"
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens（第一代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
-<td> Windows 设备门户</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
+<td> Windows Device Portal</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
 </tr>
 </table>
 
@@ -230,7 +230,7 @@ Microsoft HoloLens 上 Windows 设备门户中 ![应用崩溃转储页面](image
 
 此页面允许你收集旁加载应用的故障转储。 对于要为其收集故障转储的每个应用，选中 "**已启用故障转储**" 复选框。 返回到此页面可收集故障转储。 可[在 Visual Studio 中打开转储文件以进行调试](https://msdn.microsoft.com/library/d5zhxt22.aspx)。
 
-### <a name="file-explorer"></a>文件资源浏览器
+### <a name="file-explorer"></a>文件资源管理器
 
 ![Microsoft HoloLens 上 Windows 设备门户中的文件资源管理器页面](images/fileexplorer-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 设备门户中的文件资源管理器页*
@@ -280,7 +280,7 @@ Microsoft HoloLens 上 Windows 设备门户中 ![模拟页面](images/windows-de
 * **播放**：单击或点击 "**上传记录**"，从电脑选择 xef 文件，并将数据发送到 HoloLens。
 * **控制模式**：从下拉列表中选择 "**默认**" 或 "**模拟**"，然后单击或点击 "**设置**" 按钮以在 HoloLens 上选择模式。 相反，选择“模拟”会禁用 HoloLens 上的真实传感器，并使用已上载的模拟数据。 如果切换到“模拟”，HoloLens 将不会响应真实用户，除非切换回“默认”。
 
-### <a name="networking"></a>网络
+### <a name="networking"></a>联网
 
 Microsoft HoloLens 上 Windows 设备门户中的 ![网络 "页面](images/windows-device-portal-networking-page-1000px.png)<br>
 *Microsoft HoloLens 上 Windows 设备门户中的 "网络" 页*

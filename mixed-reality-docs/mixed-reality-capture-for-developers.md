@@ -7,11 +7,11 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、照片、视频、捕获、照相机
 ms.openlocfilehash: 72600f889997c96a629faebc35aba4b4841d4d8b
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926802"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375964"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>面向开发人员的混合现实捕获
 
@@ -197,17 +197,17 @@ Unity 应用程序应看到属性[Locatable_camera_in_Unity](locatable-camera-in
 
 MRC 视频效果（**MixedRealityCapture. MixedRealityCaptureVideoEffect**）
 
-|  属性名称  |  在任务栏的搜索框中键入  |  默认值  |  描述 | 
+|  属性名称  |  类型  |  默认值  |  说明 | 
 |----------|----------|----------|----------|
 |  StreamType  |  UINT32 （[mediastreamtype.video](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType)）  |  1（VideoRecord）  |  描述此影响所使用的捕获流。 音频不可用。 | 
-|  HologramCompositionEnabled  |  布尔型  |  TRUE  |  用于在视频捕获中启用或禁用全息影像的标志。 | 
-|  RecordingIndicatorEnabled  |  布尔型  |  TRUE  |  用于在全息影像捕获期间启用或禁用录制指示器的标志。 | 
-|  VideoStabilizationEnabled  |  布尔型  |  FALSE  |  用于启用或禁用由 HoloLens 跟踪器支持的视频稳定的标志。 | 
+|  HologramCompositionEnabled  |  布尔值  |  TRUE  |  用于在视频捕获中启用或禁用全息影像的标志。 | 
+|  RecordingIndicatorEnabled  |  布尔值  |  TRUE  |  用于在全息影像捕获期间启用或禁用录制指示器的标志。 | 
+|  VideoStabilizationEnabled  |  布尔值  |  FALSE  |  用于启用或禁用由 HoloLens 跟踪器支持的视频稳定的标志。 | 
 |  VideoStabilizationBufferLength  |  UINT32  |  0  |  设置视频抖动使用的历史帧数。 从电源和性能的角度来看，0从0到延迟，几乎是 "免费"。 对于最高质量，建议使用15个（成本为延迟和内存15帧）。 | 
-|  GlobalOpacityCoefficient  |  浮点数  |  0.9 （HoloLens）1.0 （沉浸式耳机）  |  将范围从0.0 （完全透明）到1.0 的全局不透明度系数设置为 "完全不透明"。 | 
-|  BlankOnProtectedContent  |  布尔型  |  FALSE  |  用于启用或禁用在有显示受保护内容的 2d UWP 应用时返回空帧的标志。 如果此标志为 false，并且二维 UWP 应用显示受保护的内容，则在耳机和混合现实捕获中，二维 UWP 应用将替换为受保护的内容纹理。 |
-|  ShowHiddenMesh  |  布尔型  |  FALSE  |  用于启用或禁用显示全息相机隐藏区域网格和相邻内容的标志。 |
-| OutputSize | Size | 0，0 | 在裁剪视频稳定性后设置所需的输出大小。 如果指定了0或指定了无效的输出大小，则选择默认裁剪大小。 |
+|  GlobalOpacityCoefficient  |  float  |  0.9 （HoloLens）1.0 （沉浸式耳机）  |  将范围从0.0 （完全透明）到1.0 的全局不透明度系数设置为 "完全不透明"。 | 
+|  BlankOnProtectedContent  |  布尔值  |  FALSE  |  用于启用或禁用在有显示受保护内容的 2d UWP 应用时返回空帧的标志。 如果此标志为 false，并且二维 UWP 应用显示受保护的内容，则在耳机和混合现实捕获中，二维 UWP 应用将替换为受保护的内容纹理。 |
+|  ShowHiddenMesh  |  布尔值  |  FALSE  |  用于启用或禁用显示全息相机隐藏区域网格和相邻内容的标志。 |
+| OutputSize | 大小 | 0, 0 | 在裁剪视频稳定性后设置所需的输出大小。 如果指定了0或指定了无效的输出大小，则选择默认裁剪大小。 |
 | PreferredHologramPerspective | UINT32 | 1（PhotoVideoCamera） | 枚举，用于指示应捕获的全息相机视图配置。 设置0（显示）表示不要求应用从照片/视频相机进行呈现 |
 
 MRC 音频效果（**MixedRealityCapture. MixedRealityCaptureAudioEffect**）
@@ -215,9 +215,9 @@ MRC 音频效果（**MixedRealityCapture. MixedRealityCaptureAudioEffect**）
 <table>
 <tr>
 <th>属性名称</th>
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 <th>默认值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 <tr>
 <td>MixerMode</td>

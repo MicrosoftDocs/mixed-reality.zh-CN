@@ -7,11 +7,11 @@ ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、语音、cortana、语音、输入
 ms.openlocfilehash: f2ae18d4063c7c4a63346a1202cacaa7fbbdf959
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75723186"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375984"
 ---
 # <a name="voice-input"></a>语音输入
 
@@ -42,7 +42,7 @@ ms.locfileid: "75723186"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>功能</strong></td>
+        <td><strong>具有</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -84,7 +84,7 @@ ms.locfileid: "75723186"
 ---
 
 
-## <a name="hey-cortana"></a>“你好小娜”
+## <a name="hey-cortana"></a>Hey Cortana
 
 你还可以说 "你好 Cortana" 来随时显示 Cortana。 您无需等待她继续询问她的问题或给她发出说明，例如，尝试说 "你好 Cortana，天气是什么？"。 作为单个句子。 有关 Cortana 和你可以执行的操作的详细信息，只需咨询她！ 说 "你好 Cortana，我该怎么办？" 然后，她将获取工作和建议命令的列表。 如果已进入 Cortana 应用，还可以单击 " **？** " 图标，提取此相同的菜单。
 
@@ -121,7 +121,7 @@ ms.locfileid: "75723186"
         *图像：用户可以说 "调整" 命令，该命令显示在应用程序栏中以调整应用的位置*
     :::column-end:::
         :::column:::
-        ![space](images/spacer-20x582.png)<br>
+        ![空间](images/spacer-20x582.png)<br>
         ![查看应用程序窗口或全息图时，用户可以在应用程序栏中显示 "调整" 命令，以调整应用程序在世界中的位置](images/microphone-600px.png)<br>
     :::column-end:::
 :::row-end:::
@@ -183,7 +183,7 @@ ms.locfileid: "75723186"
 
 考虑为生成的任何体验添加语音命令。 语音是一种功能强大、方便的控制系统和应用的方式。 由于用户使用各种方言和口音说话，恰当选择语音关键字将确保用户的命令得到清晰的解释。
 
-### <a name="best-practices"></a>最佳实践
+### <a name="best-practices"></a>最佳做法
 
 以下是一些有助于流畅语音识别的做法。
 * **使用简明命令** - 如果可能的话，选择两个或更多音节的关键词。 不同口音的人说单音节词时倾向于使用不同的元音。 示例： "播放视频" 优于 "播放当前选定的视频"
@@ -219,7 +219,7 @@ ms.locfileid: "75723186"
 关键是通过在系统正在侦听时向用户提供反馈，并为系统理解哪些内容来明确理解用户的潜在问题，以解决应用程序中的这一难题。  
 
 **共享空间中的语音输入**在与他人共享的空格中，语音可能无法社交。
-以下是几个示例：
+以下是一些示例：
 * 用户可能不想干扰其他人（例如，在安静库或共享办公室中）
 * 用户可能会很难被视为公开的，
 * 用户可能会在其他人正在侦听时感觉不舒服
@@ -286,7 +286,7 @@ ms.locfileid: "75723186"
 
 HoloLens 2 还支持其他语言。 请记住，即使安装了多个键盘或应用尝试使用其他语言创建语音识别器，语音命令也始终会在系统的显示语言中运行。
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>故障排除
 
 如果使用 "选择" 和 "你好 Cortana" 时遇到任何问题，请尝试移动到可取消选择的空间、远离噪音源或说出更大的声音。 目前，HoloLens 上的所有语音识别都专门针对美国英语的本机扬声器进行优化和优化。
 
