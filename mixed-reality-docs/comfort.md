@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 设计, 舒适感, HoloLens 2, HoloLens（第一代）
 ms.openlocfilehash: 178044ce8c76de75b7cce5e10664ce65d108f0f8
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491153"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376064"
 ---
 # <a name="comfort"></a>舒适感
 
