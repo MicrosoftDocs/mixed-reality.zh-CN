@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality，混合现实，虚拟现实，VR，先生，性能，优化，CPU，GPU
-ms.openlocfilehash: 7d8a0c95d59ec7e42e11bc1e1b6b40c702e01529
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 287b95363acff00ab7a0407475e0a419fc076611
+ms.sourcegitcommit: 184227dc591ca2791f523d520555730ba1e95b5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438232"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79479570"
 ---
 # <a name="understanding-performance-for-mixed-reality"></a>了解混合现实的性能
 
@@ -70,7 +70,7 @@ ms.locfileid: "73438232"
 
 通常，在 CPU 上混合现实应用程序中的大部分工作都涉及到执行场景的 "模拟" 和处理应用程序逻辑。 以下区域通常针对优化：
 
-- “动画”
+- Animations
 - 物理
 - 内存分配
 - 复杂算法（即 反向运动，路径查找）
@@ -98,7 +98,8 @@ ms.locfileid: "73438232"
 4) 要呈现的像素数（显示分辨率）
 
 #### <a name="reduce-polygon-count"></a>减少多边形计数
-较大的多边形计数会导致更多的 GPU 操作;减少场景中的多边形数量将减少渲染时间。 对于可能开销较大的几何图形，还涉及到其他因素，而多边形计数是确定要呈现场景的成本最高的指标。
+
+较大的多边形计数会导致更多的 GPU 操作;[减少场景中的多边形数量](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/optimize-models#performance-targets)将减少渲染时间。 对于可能开销较大的几何图形，还涉及到其他因素，而多边形计数是确定要呈现场景的成本最高的指标。
 
 #### <a name="limit-overdraw"></a>限制过度绘制
 
@@ -123,9 +124,11 @@ ms.locfileid: "73438232"
     - 通常，顶点的数目要小于像素数（720p 为921600像素，1080p 为2073600像素，等等）。
 
 #### <a name="remove-gpu-stages"></a>删除 GPU 阶段
+
 后期处理效果可能会非常昂贵，并会提高应用程序的填充率。 这包括诸如 MSAA 这样的抗锯齿技术。 在 HoloLens 上，建议完全避免使用这些技术以及其他着色器阶段，如几何、球面和计算着色器。
 
 ## <a name="memory-recommendations"></a>内存建议
+
 过多的内存分配和释放操作可能导致性能不一致、冻结帧以及其他不利行为。 在 Unity 中进行开发时了解内存的注意事项尤其重要，因为内存管理由垃圾回收器控制。
 
 #### <a name="object-pooling"></a>对象池
@@ -135,3 +138,6 @@ ms.locfileid: "73438232"
 ## <a name="see-also"></a>另请参阅
 - [针对 Unity 的性能建议](performance-recommendations-for-unity.md)
 - [建议用于 Unity 的设置](recommended-settings-for-unity.md)
+- [优化3D 模型](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/optimize-models#performance-targets)
+- [转换和优化实时3D 模型的最佳做法](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/best-practices)
+
