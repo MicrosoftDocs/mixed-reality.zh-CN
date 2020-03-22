@@ -6,12 +6,12 @@ ms.author: kegodin
 ms.date: 11/07/2019
 ms.topic: article
 keywords: Unity，空间音效，HRTF，房间大小
-ms.openlocfilehash: 6720eac30c69ebfcd0f003cf131f60295818d676
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
+ms.openlocfilehash: af3f1486c3e931ad93d7b8960d822653ec740c12
+ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77553695"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082044"
 ---
 # <a name="spatial-sound-in-unity"></a>Unity 中的空间音效
 
@@ -35,6 +35,9 @@ ms.locfileid: "77553695"
 * 选中 "**启用 spatialization** " 复选框
 * 将**空间混合**滑块移动到 "1"
 * 确保已在开发人员工作站上启用空间音频。 右键单击任务栏上的 "音量" 图标，并确保 "空间" "声音" 设置为 "关闭"，以启用它。 若要获取有关在 HoloLens 2 上收到的内容的最佳表示，请选择 " **Windows Sonic" 作为耳机**。
+
+>[!NOTE]
+>如果在 Unity 中由于缺少某个依赖项而无法加载 SpatialAudio，请检查你的电脑上是否已安装最新版本的[Microsoft Visual C++可再发行组件](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
 有关详细信息，请参阅：
 * [Microsoft spatializer GitHub 存储库](https://github.com/microsoft/spatialaudio-unity)
