@@ -1,47 +1,47 @@
 ---
-title: Azure 语音服务教程-3。 添加 Azure 认知服务语音翻译组件
-description: 在本课程中，你将了解如何在混合现实应用程序中实现 Azure Speech SDK。
+title: Azure 语音服务教程 - 3. 添加 Azure 认知服务语音翻译组件
+description: 本课程介绍如何在混合现实应用程序中实施 Azure 语音 SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: dc5300b51ccb151a2e38f9d15b84a4a9031e2bb4
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: d8e73e24f0522ff71b95ea1886d59893216b0597
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143234"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79028320"
 ---
-# <a name="3-adding-the-azure-cognitive-services-speech-translation-component"></a>3. 添加 Azure 认知服务语音翻译组件
+# <a name="3-adding-the-azure-cognitive-services-speech-translation-component"></a>3.添加 Azure 认知服务语音翻译组件
 
-在本教程中，你将了解你的项目的 Azure 认知服务语音翻译组件以及如何转换为三种不同的语言。
+在本教程中，你将在项目中添加语音翻译，以便可以将语音翻译和听录成三种不同的语言。
+
+## <a name="objectives"></a>目标
+
+* 了解如何集成 Azure 语音翻译
 
 ## <a name="instructions"></a>说明
 
-1. 选择层次结构中的 "Lunarcom_Base" 对象，然后在 "检查器" 面板中单击 "添加组件"。 搜索并选择 Lunarcom 转换识别器。
+在“层次结构”窗口中选择“Lunarcom”对象，然后在“检查器”窗口中，使用“添加组件”按钮将“Lunarcom 翻译识别器(脚本)”组件添加到 Lunarcom 对象，并按如下所述配置该组件：   
 
-    ![Module4Chapter3step1im](images/module4chapter3step1im.PNG)
+* 将“目标语言”更改为所选语言，例如“德语”  
 
-    禁用脱机模式模拟器。
+![mrlearning-speech](images/mrlearning-speech/tutorial3-section1-step1-1.png)
 
-    ![Module4Chapter3noteim](images/module4chapter3noteim.PNG)
+> [!NOTE]
+> MRTK 中未包含“Lunarcom 翻译识别器(脚本)”组件。 本教程的资产中随附了该组件。
 
-    >[!IMPORTANT]
-    >在继续之前，请确保在测试 Speech SDK 转换器之前禁用了脱机模式模拟器（如上图所示）。 若要进行转换，必须连接到 internet。
+如果现在进入“游戏”模式，可以先按卫星按钮来测试语音翻译。 假设计算机上配备了麦克风，当你讲话时，你的语音将翻译成所选语言，并在终端面板上听录：
 
-2. 单击 Lunarcom 转换识别器中的下拉箭头，然后选择要转换为的语言。
+![mrlearning-speech](images/mrlearning-speech/tutorial3-section1-step1-2.png)
 
-    ![Module4Chapter3step2im](images/module4chapter3step2im.PNG)
-
-3. 运行应用程序并通过单击 "附属项" 按钮来测试转换器，开始说话。 再次按卫星按钮以停止识别。 下面是场景外观的示例。 可以随时更改 "目标语言" 下拉列表下的语言（请参阅上图），以浏览其他语言的翻译。
-
-    以下是场景外观的示例：
-
-    ![Module4Chapter3exampleim](images/module4chapter3exampleim.PNG)
+> [!CAUTION]
+> 应用程序需要连接到 Azure，因此请确保计算机/设备已连接到 Internet。
 
 ## <a name="congratulations"></a>祝贺
 
-你的项目现在可以成功地将你说的字词转换为多种不同的语言。 可以自由地利用语言，并测试翻译的准确性。
+项目现在可以成功地将你讲出的词语翻译成多种不同的语言。 请在设备上运行该应用程序，以确保功能正常。
 
-[下一教程： 4. 设置意向和自然语言理解](mrlearning-speechSDK-ch4.md)
+[下一教程：4.设置意向和自然语言理解](mrlearning-speechSDK-ch4.md)

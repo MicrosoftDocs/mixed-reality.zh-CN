@@ -1,24 +1,25 @@
 ---
-title: 入门教程-7。 创建农历模块示例应用程序
-description: 在本课中，您将组合从前面的课程中学到的多个概念，以创建独特的示例体验。
+title: 入门教程 - 7. 创建登月舱示例应用程序
+description: 本课程将结合以前课程中所介绍的多个概念来创建一个独特的示例体验。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 3a557be91bee9b98e750ae1546ea1c4b3103298e
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 7b432c5ba0ebee5199f5abb1c26715185fc0d70d
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77555215"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031562"
 ---
-# <a name="7-creating-a-lunar-module-sample-application"></a>7. 创建农历模块示例应用程序
+# <a name="7-creating-a-lunar-module-sample-application"></a>7.创建登月舱示例应用程序
 <!-- TODO: Rename to 'Creating a Rocket Launcher sample application' -->
 
-在本教程中，将多个概念与前面的课程结合起来，以创建独特的示例体验。 你将了解如何创建部件程序集应用程序，用户需要使用跟踪的手选取部件并尝试组装农历模块。 你将使用 pressable 按钮来打开和关闭放置提示、重置体验并将阴历模块启动到空间中！
+本教程结合前面课程中介绍的多个概念创建一个独特的示例体验。 其中将会介绍如何创建一个部件装配应用程序，其用户需要使用跟踪手来拾取部件并尝试装配登月舱。 你将使用可按按钮打开和关闭位置提示、重置体验，并将登月舱发射到太空！
 
-在将来的教程中，你将继续根据此体验来构建，其中包括使用 Azure 空间锚点实现空间对齐的强大多用户用例。
+在以后的教程中，你将继续基于此体验生成应用程序，包括强大的利用 Azure 空间定位点进行空间对齐的多用户用例。
 
 ## <a name="objectives"></a>目标
 
@@ -28,189 +29,189 @@ ms.locfileid: "77555215"
 * 使用刚体的物理特性和力量
 * 探索如何使用工具提示
 
-## <a name="lunar-module-parts-overview"></a>农历模块部件概述
+## <a name="lunar-module-parts-overview"></a>登月舱部件概述
 <!-- TODO: Rename to 'Implementing the part assembly functionality' -->
 
-在本部分中，你将创建一个简单的部件程序集质询，其中用户的目标是将位于表格上的五个部件分散到农历模块上的正确位置。
+在本部分，你将创建一个简单的部件装配质询方案，其中，用户的目标是将分散在台面上的五个部件定位在登月舱中的适当位置。
 
-为实现此目的需要执行的主要步骤如下：
+若要实现此目的，请执行以下主要步骤：
 
-1. 将火箭启动器 prefab 添加到场景
+1. 将火箭发射器预制件添加到场景中
 2. 为所有部件启用对象操作
-3. 添加和配置部件程序集演示（脚本）组件
+3. 添加并配置“部件装配演示(脚本)”组件
 
 > [!NOTE]
-> 部分程序集演示（脚本）组件不是 MRTK 的一部分。 本教程提供了本教程的资产。
+> MRTK 中未包含“部件装配演示(脚本)”组件。 本教程的资产中随附了该组件。
 
-### <a name="1-add-the-rocket-launcher-prefab-to-the-scene"></a>1. 将火箭启动器 prefab 添加到场景
+### <a name="1-add-the-rocket-launcher-prefab-to-the-scene"></a>1.将火箭发射器预制件添加到场景中
 
-在项目窗口中，导航到 "**资产**" > " **MRTK"。GettingStarted** > **Prototyping** > **RocketLauncher**文件夹中，将**RocketLauncher** prefab 拖到 "层次结构" 窗口中，将其添加到场景中，然后将其放置在合适的位置，例如：
+在“项目”窗口中导航到“资产” > “MRTK.Tutorials.GettingStarted” > “预制件” > “RocketLauncher”文件夹，将“RocketLauncher”预制件拖放到“层次结构”窗口以将其添加到场景中，然后将其定位在适当的位置，例如：     
 
-* 转换位置 X = 1.5，Y =-0.4，Z = 0，因此它位于用户右侧 waist 高度
-* 转换 X = 0，Y = 180，Z = 0，使用户体验的主要功能
+* 变换位置 X = 1.5，Y = -0.4，Z = 0，使之位于用户右侧的腰部高度处
+* 转换旋转 X = 0，Y = 180，Z = 0，使该体验的主要功能面对用户
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section1-step1-1.png)
 
-### <a name="2-enable-object-manipulation-for-all-the-parts"></a>2. 为所有部件启用对象操作
+### <a name="2-enable-object-manipulation-for-all-the-parts"></a>2.为所有部件启用对象操作
 
-在 "层次结构" 窗口中，找到 RocketLauncher > **LunarModuleParts**对象，然后选择所有**子对象**，添加**操作处理程序（脚本）** 组件和**近交互 Grabbable （脚本）** 组件，然后按如下所示配置操作处理程序（脚本）：
+在“层次结构”窗口中找到“RocketLauncher”>“LunarModuleParts”对象，选择所有**子对象**，添加“操作处理程序(脚本)”组件和“近距交互可抓取对象(脚本)”组件，然后按如下所述配置“操作处理程序(脚本)”：   
 
-* 取消选中 "**允许远端操作**" 复选框以仅允许近交互
-* 更改**两个**正在进行的操作类型以**移动旋转**，因而禁用缩放
+* 取消选中“允许远距操作”复选框，以便仅允许近距交互 
+* 将“双手操作类型”更改为“移动旋转”，以禁用缩放  
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section1-step1-2.png)
 
 > [!TIP]
-> 若要获得有关如何实现对象操作的分步说明，请参阅[操作三维对象](mrlearning-base-ch4.md#manipulating-3d-objects)说明。
+> 有关如何实现对象操作的提示和分步说明，可参阅[操作 3D 对象](mrlearning-base-ch4.md#manipulating-3d-objects)中的说明。
 
-### <a name="3-add-and-configure-the-part-assembly-demo-script-component"></a>3. 添加和配置部件程序集演示（脚本）组件
+### <a name="3-add-and-configure-the-part-assembly-demo-script-component"></a>3.添加并配置“部件装配演示(脚本)”组件
 
-在仍选择所有 LunarModuleParts 子对象的情况下，添加**音频源**组件，并按如下所示对其进行配置：
+在仍选中了所有 LunarModuleParts 子对象的情况下，添加“音频源”组件，然后按如下所述对其进行配置： 
 
-* 将合适的音频剪辑分配到**AudioClip**字段，例如 MRKT_Scale_Start
-* 取消选中 "**在唤醒**状态下播放" 复选框，以便在加载场景时不会自动播放音频剪辑
-* 更改**空间混合**为1以启用空间音频
+* 将适当的音频剪辑（例如 MRKT_Scale_Start）分配到“AudioClip”字段 
+* 取消选中“唤醒时播放”复选框，以便在加载场景时不会自动播放该音频剪辑 
+* 将“空间混合”更改为 1，以启用空间音频 
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-1.png)
 
-所有 LunarModuleParts 子对象仍处于选中状态时，添加**部分程序集演示（脚本）** 组件：
+在仍选中了所有 LunarModuleParts 子对象的情况下，添加“部件装配演示(脚本)”组件： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-2.png)
 
-在 "层次结构" 窗口中，选择 " **RoverEnclosure** " 对象，并按如下所示配置其**部件程序集演示（脚本）** 组件：
+在“层次结构”窗口中选择“RoverEnclosure”对象，并按如下所述配置其“部件装配演示(脚本)”组件：  
 
-* 对于 "要**放置的对象**" 字段，分配对象**本身**，在本例中为 RoverEnclosure 对象
-* 对于 "要**放置的位置**" 字段，分配相应的**PlacementHints**对象，在本例中为 RoverEnclosure_PlacementHint 对象
-* 在 "**工具提示对象**" 字段中，指定相应的**工具提示**，在本例中为 RoverEnclosure_ToolTip 对象
-* 在 "**音频源**" 字段中，分配对象**本身**，在本例中为 RoverEnclosure 对象
+* 在“要定位的对象”字段中分配该对象**本身**，在本例中为 RoverEnclosure 对象 
+* 在“定位位置”字段中分配相应的“PlacementHints”对象，在本例中为 RoverEnclosure_PlacementHint 对象  
+* 在“工具提示对象”字段中分配相应的“ToolTip”对象，在本例中为 RoverEnclosure_ToolTip 对象  
+* 在“音频源”字段中分配该对象**本身**，在本例中为 RoverEnclosure 对象 
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-3.png)
 
-对每个其他 LunarModuleParts 子对象（例如 FuelTank、EnergyCell、DockingPortal 和 ExternalSensor）**重复**此操作。
+针对其他每个 LunarModuleParts 子对象（即 FuelTank、EnergyCell、DockingPortal 和 ExternalSensor）**重复**上述步骤。
 
-如果你现在进入游戏模式并移动 "对象，使其靠近其位置"，你会注意到：
+如果现在进入“游戏”模式，并使某个“要定位的对象”靠近其相应的“定位位置”，将会发现：
 
-* 对象将会靠下并置于 LunarModule 对象下，使其成为农历模块的一部分
-* 对象上的音频源将在对象的位置播放指定的音频剪辑
-* 将隐藏相应的工具提示对象
+* 该对象将会卡入就位，并成为 LunarModule 对象下的父级，因此成了登月舱的部件
+* 该对象上的音频源将在该对象的位置播放分配的音频剪辑
+* 相应的工具提示对象将会隐藏
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-4.png)
 
 > [!TIP]
-> 有关如何使用编辑器内输入模拟的提醒，可参阅[使用编辑器内手写输入模拟](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene)在[MRTK 文档门户](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中测试场景指南。
+> 有关如何使用编辑器中的输入模拟功能的提示，可参阅 [MRTK 文档门户](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)中的[使用编辑器中的手写输入模拟来测试场景](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene)指南。
 
 ## <a name="configuring-the-lunar-module"></a>配置登月舱
 
-在本部分中，你将向火箭启动器应用程序添加其他功能，以便用户能够：
+在本部分，你将在火箭发射器应用程序中添加附加的功能，使用户能够：
 
-* 与农历模块交互
-* 启动农历模块并在其启动时播放声音
-* 重置应用程序，使农历模块和所有部件恢复到其原始位置
-* 隐藏放置提示，使部件程序集质询更难。
+* 与登月舱交互
+* 将登月舱发射到太空，并在发射时播放声音
+* 重置应用程序，使登月舱和所有部件复位到其原始位置
+* 隐藏位置提示，使部件装配质询变得更困难。
 
-为实现此目的需要执行的主要步骤如下：
+若要实现此目的，请执行以下主要步骤：
 
 1. 启用对象操作
 2. 启用物理学
-3. 添加音频源组件
-4. 添加和配置 "启动农历模块（脚本）" 组件
-5. 添加和配置切换放置提示（脚本）组件
+3. 添加“音频源”组件
+4. 添加并配置“发射登月舱(脚本)”组件
+5. 添加并配置“切换位置提示(脚本)”组件
 
 > [!NOTE]
-> 启动农历模块（脚本）组件和切换放置提示（脚本）组件不是 MRTK 的一部分。 本教程提供了本教程的资产。
+> MRTK 中未包含“发射登月舱(脚本)”组件和“切换位置提示(脚本)”组件。 本教程的资产中随附了这些组件。
 
-### <a name="1-enable-object-manipulation"></a>1. 启用对象操作
+### <a name="1-enable-object-manipulation"></a>1.启用对象操作
 
-在 "层次结构" 窗口中，选择 RocketLauncher > **LunarModule**对象，添加**操作处理程序（脚本）** 组件和**近交互 Grabbable （脚本）** 组件，然后配置操作处理程序（脚本），如下所示：
+在“层次结构”窗口中选择“RocketLauncher”>“LunarModule”对象，添加“操作处理程序(脚本)”组件和“近距交互可抓取对象(脚本)”组件，然后按如下所述配置“操作处理程序(脚本)”：   
 
-* 取消选中 "**允许远端操作**" 复选框以仅允许近交互
-* 更改**两个**正在进行的操作类型以移动旋转，因而禁用缩放
+* 取消选中“允许远距操作”复选框，以便仅允许近距交互 
+* 将“双手操作类型”更改为“移动旋转”，以禁用缩放 
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section2-step1-1.png)
 
-### <a name="2-enable-physics"></a>2. 启用物理学
+### <a name="2-enable-physics"></a>2.启用物理学
 
-在仍选择 RocketLauncher > **LunarModule**对象的情况下，添加一个**刚体**组件，然后按如下所示对其进行配置：
+在仍选中了“RocketLauncher”>“LunarModule”对象的情况下，添加一个“刚体”组件，并按如下所述对其进行配置：  
 
-* 取消选中 "**使用重力**" 复选框，使农历模块不受引力的影响
-* 选中 "**是运动**" 复选框，这样农历模块最初不会受到 physic 强制的影响
+* 取消选中“使用重力”复选框，使登月舱不受重力的影响 
+* 选中“遵守运动力学”复选框，使登月舱最初不受物理作用力的影响 
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section2-step2-1.png)
 
-### <a name="3-add-an-audio-source-component"></a>3. 添加音频源组件
+### <a name="3-add-an-audio-source-component"></a>3.添加“音频源”组件
 
-在仍选择 RocketLauncher > **LunarModule**对象的情况下，添加**音频源**组件，并按如下所示对其进行配置：
+在仍选中了“RocketLauncher”>“LunarModule”对象的情况下，添加一个“音频源”组件，并按如下所述对其进行配置：  
 
-* 将**空间混合**更改为1以启用空间音频
+* 将“空间混合”更改为 1，以启用空间音频 
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section2-step3-1.png)
 
-### <a name="4-add-and-configure-the-launch-lunar-module-script-component"></a>4. 添加和配置 "启动农历模块（脚本）" 组件
+### <a name="4-add-and-configure-the-launch-lunar-module-script-component"></a>4.添加并配置“发射登月舱(脚本)”组件
 
-在仍选择 RocketLauncher > **LunarModule**对象的情况下，添加 "**启动农历模块（脚本）** " 组件，并按如下所示进行配置：
+在仍选中了“RocketLauncher”>“LunarModule”对象的情况下，添加“发射登月舱(脚本)”组件，并按如下所述对其进行配置：  
 
-* 更改**主旨是**值，以使农历模块在启动时正常飞入，例如，到0.01
+* 更改“推力”值（例如，更改为 0.01），使登月舱在发射后优雅飞行 
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section2-step4-1.png)
 
-### <a name="5-add-and-configure-the-toggle-placement-hints-script-component"></a>5. 添加并配置切换放置提示（脚本）组件
+### <a name="5-add-and-configure-the-toggle-placement-hints-script-component"></a>5.添加并配置“切换位置提示(脚本)”组件
 
-在仍选择 RocketLauncher > **LunarModule**对象的情况下，添加**切换放置提示（脚本）** 组件，然后按如下所示对其进行配置：
+在仍选中了“RocketLauncher”>“LunarModule”对象的情况下，添加“切换位置提示(脚本)”组件，并按如下所述对其进行配置：  
 
-* 将 "游戏对象数组**大小**" 属性设置为5
-* 将每个 RocketLauncher > LunarModule > **PlacementHints**对象的**子对象**分配到游戏对象数组中的一个**元素**字段：
+* 将游戏对象数组“大小”属性设置为 5 
+* 将“RocketLauncher”>“LunarModule”>“PlacementHints”对象的每个**子对象**分配到游戏对象数组中的“元素”字段：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section2-step5-1.png)
 
-## <a name="configuring-the-launch-button"></a>配置启动按钮
+## <a name="configuring-the-launch-button"></a>配置“发射”按钮
 
-在 "层次结构" 窗口中，选择 "RocketLauncher >" 按钮 > **LaunchButton** "对象，然后在" **Pressable "按钮（脚本）** 组件上，创建一个新的**按钮按下（）** 事件，配置**LunarModule**对象以接收事件，并将**LaunchLunarModule**定义为要触发的操作：
+在“层次结构”窗口中选择“RocketLauncher”>“Buttons”>“LaunchButton”对象，然后在“可按按钮(脚本)”组件中创建新的 **Button Pressed ()** 事件，将“LunarModule”对象配置为接收该事件，然后将“LaunchLunarModule.StartThruster”定义为要触发的操作：    
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-1.png)
 
 > [!TIP]
-> 有关如何实现事件的提醒，可参阅 "[手动跟踪手势" 和 "种不可交互" 按钮](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)说明。
+> 有关如何实现事件的提示，可参阅[手动跟踪手势和可交互按钮](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons)中的说明。
 
-使用 RocketLauncher > 按钮 > **LaunchButton**对象，在**Pressable 按钮（脚本）** 组件上，创建一个新的**按钮按下（）** 事件，将**LunarModule**对象配置为接收事件，将**AudioSource**定义为要触发的操作，并将适当的音频剪辑分配给**音频剪辑**字段，例如 MRTK_Gem 音频剪辑：
+在仍选中了“RocketLauncher”>“Buttons”>“LaunchButton”对象的情况下，在“可按按钮(脚本)”组件中创建新的 **Button Pressed ()** 事件，将“LunarModule”对象配置为接收该事件，将“AudioSource.PlayOneShot”定义为要触发的操作，然后将适当的音频剪辑（例如 MRTK_Gem 音频剪辑）分配到“音频剪辑”字段：     
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-2.png)
 
-将 RocketLauncher > 按钮 > **LaunchButton**对象保持为选中状态，在 " **Pressable" 按钮（脚本）** 组件上，创建一个新的 " **Touch End （）** " 事件，将**LunarModule**对象配置为接收事件，并将**LaunchLunarModule**定义为要触发的操作：
+在仍选中了“RocketLauncher”>“Buttons”>“LaunchButton”对象的情况下，在“可按按钮(脚本)”组件中创建新的 **Touch End ()** 事件，将“LunarModule”对象配置为接收该事件，然后将“LaunchLunarModule.StopThruster”定义为要触发的操作：    
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-3.png)
 
-如果你现在进入游戏模式并按下 "启动" 按钮，则会听到音频剪辑播放，如果你将 "启动" 按钮向下移动大约一秒钟或更长时间，你会看到农历模块启动到空间中：
+如果现在进入“游戏”模式并按下“发射”按钮，将会听到播放的音频剪辑；如果按住“发射”按钮一秒或更长时间，将会看到登月舱已发射到太空：
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-4.png)
 
-## <a name="configuring-the-reset-button"></a>配置重置按钮
+## <a name="configuring-the-reset-button"></a>配置“重置”按钮
 
-在 "层次结构" 窗口中，选择 "RocketLauncher >" 按钮 > **ResetButton** "对象，然后在" **Pressable "按钮（脚本）** 组件上，创建一个新的**按钮按下（）** 事件，配置**LunarModule**对象以接收事件，并将**LaunchLunarModule**定义为要触发的操作：
+在“层次结构”窗口中选择“RocketLauncher”>“Buttons”>“ResetButton”对象，然后在“可按按钮(脚本)”组件中创建新的 **Button Pressed ()** 事件，将“LunarModule”对象配置为接收该事件，然后将“LaunchLunarModule.ResetModule”定义为要触发的操作：    
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section4-step1-1.png)
 
-将 RocketLauncher > 按钮 > **ResetButton**对象保持为选中状态，在 " **Pressable" 按钮（脚本）** 组件上，创建一个新的**按钮按下（）** 事件，将**RocketLauncher**对象配置为接收事件，将**GameObject**定义为要触发的操作，并在 "消息" 字段中输入**BroadcastMessage** ：
+在仍选中了“RocketLauncher”>“Buttons”>“ResetButton”对象的情况下，在“可按按钮(脚本)”组件中创建新的 **Button Pressed ()** 事件，将“RocketLauncher”对象配置为接收该事件，将“GameObject.BroadcastMessage”定义为要触发的操作，然后在消息字段中输入 **ResetPlacement**：    
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section4-step1-2.png)
 
 > [!TIP]
-> GameObject. BroadcastMessage 操作将 ResetPlacement 消息从 RocketLauncher 对象发送到其所有子对象。 在添加到所有 LunarModuleParts 子对象的部件程序集演示（脚本）组件中定义的 ResetPlacement 函数的任何子对象将调用重置该子对象的位置的 ResetPlacement 函数。
+> GameObject.BroadcastMessage 操作会将 ResetPlacement 消息从 RocketLauncher 对象发送到其所有子对象。 具有 ResetPlacement 函数（在添加到所有 LunarModuleParts 子对象的“部件装配演示(脚本)”组件中定义）的任何子对象将调用 ResetPlacement 函数，以重置该子对象的位置。
 
-如果你现在进入游戏模式，则移动部分和/或启动农历模块，然后按 "重置" 按钮，你将看到部件和/或农历模块正在重置为其原始位置：
+如果现在进入“游戏”模式，移动某些部件和/或发射登月舱，然后按“重置”按钮，则将看到这些部件和/或登月舱重置到其原始位置：
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section4-step1-3.png)
 
-## <a name="configuring-the-placement-hints-button"></a>配置放置提示按钮
+## <a name="configuring-the-placement-hints-button"></a>配置“位置提示”按钮
 <!-- TODO: Rename to 'Configuring the Hints button'-->
 
-在 "层次结构" 窗口中，选择 "RocketLauncher >" 按钮 > **HintsButton** "对象，然后在" **Pressable "按钮（脚本）** 组件上，创建一个新的**按钮按下（）** 事件，配置**LunarModule**对象以接收事件，并将**TogglePlacementHints**定义为要触发的操作：
+在“层次结构”窗口中选择“RocketLauncher”>“Buttons”>“HintsButton”对象，然后在“可按按钮(脚本)”组件中创建新的 **Button Pressed ()** 事件，将“LunarModule”对象配置为接收该事件，然后将“TogglePlacementHints.ToggleGameObjects”定义为要触发的操作：    
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section5-step1-1.png)
 
-如果你现在进入游戏模式，你会注意到，默认情况下会禁用半透明的放置提示，但你可以通过按 "提示" 按钮打开和关闭它们：
+如果现在进入“游戏”模式，将会看到，默认已禁用半透明的位置提示，但可以通过按“提示”按钮来打开和关闭提示：
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section5-step1-2.png)
 
-## <a name="congratulations"></a>祝贺你
+## <a name="congratulations"></a>祝贺
 
-已完全配置此应用程序。 现在，你的应用程序允许用户完全组装农历模块，启动农历模块，切换提示，并重置应用程序以重新启动。
+现已完全配置了此应用程序。 该应用程序将允许用户全面装配登月舱，发射登月舱，打开/关闭提示，以及重置应用程序以重新开始设置。

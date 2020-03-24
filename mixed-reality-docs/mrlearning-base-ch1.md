@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 9c219313ad6e73cde78efd8e5e718a466ebd6137
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
+ms.openlocfilehash: 56adb4bfc66768684c8269c0f0cafd70c486ea8a
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77554342"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376204"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化你的项目和第一个应用程序
 
@@ -236,6 +236,9 @@ ms.locfileid: "77554342"
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section7-step2-2.png)
 
+> [!NOTE]
+> 如果未看到“设备”选项，可能需要将默认启动项目从 IC2Lpp 项目更改为你的 UWP 项目。 在“解决方案资源管理器”中，右键单击“yourprojectname (通用 Windows)”并选择“设为启动项目”。    
+
 将 HoloLens 2 连接到计算机。
 
 > [!IMPORTANT]
@@ -257,6 +260,6 @@ ms.locfileid: "77554342"
 你现在已经部署了第一个 HoloLens 2 应用程序。 当你四处走动时，应该看到空间映射网格覆盖了 HoloLens 2 感知到的所有表面。 此外，你应该在你的手和手指上看到用于手部跟踪的指示器，以及用于监视应用程序性能的帧速率计数器。 这些只是混合现实工具包中开箱即用的一些基本功能。 在接下来的教程中，我们将开始为场景添加更多的内容和交互性，以便充分探索 HoloLens 2 和混合现实工具包的功能。
 
 > [!NOTE]
-> 在应用中，你可能会注意到诊断探查器。可以使用语音命令“切换诊断”  来切换其可见性。 但是，通常建议在开发过程中让探查器始终保持可见状态，这样就可以了解何时对应用所做的更改会影响性能，例如，HoloLens 2 应用程序会[在 60 FPS 连续运行](understanding-performance-for-mixed-reality.md)。
+> 在应用中，你可能会注意到诊断探查器。可以使用语音命令“切换诊断”来切换其可见性。  但是，通常建议在开发过程中让探查器始终保持可见状态，这样就可以了解何时对应用所做的更改会影响性能，例如，HoloLens 2 应用程序会[在 60 FPS 连续运行](understanding-performance-for-mixed-reality.md)。
 
 [下一教程：3.创建用户界面并配置混合现实工具包](mrlearning-base-ch2.md)
