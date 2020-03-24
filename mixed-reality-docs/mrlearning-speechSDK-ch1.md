@@ -1,198 +1,167 @@
 ---
-title: Azure Speech Services 教程-1。 集成和使用语音识别与脚本
-description: 完成本课程，了解如何在混合现实应用程序中实现 Azure Speech SDK。
+title: Azure 语音服务教程 - 1. 集成并使用语音识别和听录
+description: 请完成本课程来了解如何在混合现实应用程序中实施 Azure 语音 SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 25e5aa05839845620a23c3dba6698ac7b5854d6d
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: a72eb808adbc14df65c55e694ea985d97f9ec24c
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77553966"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79032461"
 ---
-# <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1. 集成和使用语音识别与脚本
+# <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.集成并使用语音识别和听录
 
 ## <a name="overview"></a>概述
 
-本教程将创建一个混合现实应用程序，该应用程序探讨如何将 Azure 认知服务语音 SDK 与 HoloLens 2 一起使用。 完成本系列教程后，你将能够使用设备的麦克风实时转录语音，将语音翻译成其他语言，并利用语音 SDK 的意图功能来理解使用化.
+
+在本教程系列中，你将创建一个混合现实应用程序用于探索如何将 Azure 语音服务与 HoloLens 2 配合使用。 完成本教程系列后，你便可以使用设备的麦克风实时进行语音转文本的听录，将语音翻译成其他语言，并利用意向识别功能通过人工智能来理解语音命令。
 
 ## <a name="objectives"></a>目标
 
-* 了解如何将 Azure Speech SDK 集成到 HoloLens 2 应用程序
-* 了解如何使用语音命令
-* 了解如何使用语音到文本功能
+* 了解如何将 Azure 语音服务与 HoloLens 2 应用程序相集成
+* 了解如何使用语音识别来听录文本
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 >[!TIP]
->如果尚未完成[入门教程](mrlearning-base.md)系列，建议先完成这些教程。
+>如果你尚未完成[入门教程](mrlearning-base.md)系列，建议先完成这些教程。
 
 * 一台 Windows 10 电脑，其中已[安装](install-the-tools.md)并配置正确的工具
 * Windows 10 SDK 10.0.18362.0 或更高版本
 * 一些基本的 C# 编程功能
 * 一个[针对开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
+* <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并添加了通用 Windows 平台生成支持模块
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > 建议用于本系列教程的 Unity 版本是 Unity 2019.2.X。 这将取代上述链接的先决条件中所述的任何 Unity 版本要求或建议。
 
-## <a name="getting-started"></a>入门
+## <a name="creating-and-preparing-the-unity-project"></a>创建和准备 Unity 项目
 
-1. 启动 Unity，并创建一个新项目。 输入项目名称语音 SDK 学习模块。 选择保存项目的位置。 单击 "创建项目"。
+在本部分，你将创建一个新的 Unity 项目，并使其准备好用于 MRTK 开发。
 
-    ![Module2Chapter3step1im](images/module4chapter1step1im.PNG)
+为此，请先执行[初始化项目和第一个应用程序](mrlearning-base-ch1.md)中的以下步骤，但请忽略有关[在设备上生成应用程序](mrlearning-base-ch1.md#build-your-application-to-your-device)的说明：
 
-    >[!NOTE]
-    >请确保将模板设置为 "三维"，如上图所示。
+1. [创建新的 Unity 项目](mrlearning-base-ch1.md#create-new-unity-project)并为其指定适当的名称，例如 *MRTK Tutorials*
 
-2. 下载[混合现实工具包](https://github.com/microsoft/MixedRealityToolkit-Unity/releases)Unity [foundation 包版本 2.3.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage) ，并将其保存到电脑上的文件夹中。 将包导入 Unity 项目。 有关如何执行此操作的详细说明，请参阅[入门教程-第2课。正在初始化项目和首个应用程序](mrlearning-base-ch1.md)。
+2. [配置用于 Windows Mixed Reality 的 Unity 项目](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)
 
-3. 下载并导入用于 Unity 资产包的 Azure [SPEECH SDK](https://aka.ms/csspeech/unitypackage) 。 通过单击 "资产"，选择 "导入包"，然后选择 "自定义包" 来导入语音 SDK 包。 找到先前下载的语音 SDK 包，并打开它以开始导入过程。
+3. [导入 TextMesh Pro 基本资源](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources)
 
-    ![mrlearning-speech-ch1-1-step3a .png](images/mrlearning-speech-ch1-1-step3a.png)
+4. [导入混合现实工具包](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)
 
-    ![mrlearning-speech-ch1-1-step3b .png](images/mrlearning-speech-ch1-1-step3b.png)
+5. [配置用于混合现实工具包的 Unity 项目](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)
 
-4. 在下一个弹出窗口中，单击 "导入" 以开始导入语音 SDK 包。 确保选中所有项，如下图所示。
+6. [将混合现实工具包添加到 Unity 场景](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)，并为该场景指定适当的名称，例如 *AzureSpeechServices*
 
-    ![mrlearning-speech-ch1-1-step4 .png](images/mrlearning-speech-ch1-1-step4.png)
+然后，根据[如何配置混合现实工具包配置文件（更改空间感知显示选项）](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)中的说明将场景的 MRTK 配置配置文件更改为“DefaultHoloLens2ConfigurationProfile”，并将空间感知网格的显示选项更改为“遮挡”。  
 
-5. 下载教程资产：
-    * [MRTK.HoloLens2. GettingStarted. 2.3.0.2. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
-    * [SpeechSDKAssets. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/Speech_2/SpeechSDKAssets.unitypackage) （版本1.2）
+> [!CAUTION]
+> 根据上面链接的[配置用于混合现实工具包的 Unity 项目](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)说明中所述，强烈建议不要为 Unity 启用 MSBuild。
 
-    SpeechSDKAssets 资产包是为此教程系列开发的资产和脚本的集合，用于展示 Azure 语音 SDK 的实际使用。 它是一个语音命令终端，最终将与[入门教程-第7课中开发的火箭启动器程序集体验建立交互。创建农历模块示例应用程序](mrlearning-base-ch6.md)。
+## <a name="configuring-the-speech-commands-start-behavior"></a>配置语音命令的启动行为
 
-6. 按照导入混合现实工具包和语音 SDK 所用的类似步骤，将两个教程资产包导入 Unity 项目。
+由于你要使用语音 SDK 进行语音识别和听录，因此需要配置 MRTK 语音命令，使其不会干扰语音 SDK 的功能。 为此，可将语音命令的启动行为从“自动启动”更改为“手动启动”。
 
-7. 配置混合现实工具包（MRTK）。
+在“层次结构”窗口中选择“MixedRealityToolkit”对象后，在“检查器”窗口中选择“输入”选项卡，克隆“DefaultHoloLens2InputSystemProfile”和“DefaultMixedRealitySpeechCommandsProfile”，然后将语音命令的“启动行为”更改为“手动启动”：      
 
-    为此，请在窗口顶部单击 "混合现实工具包" 面板，然后选择 "添加到场景" 并配置。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section2-step1-1.png)
 
-    ![mrlearning-speech-ch1-1-step7a .png](images/mrlearning-speech-ch1-1-step7a.png)
+> [!TIP]
+> 有关如何克隆和配置 MRTK 配置文件的提示，可参阅[如何配置混合现实工具包配置文件（更改空间感知显示选项）](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)中的说明。
 
-    在场景层次结构中选择 MixedRealityToolkit 对象后，在 "检查器" 窗口中选择 "DefaultHoloLens2ConfigurationProfile"，以使其成为混合现实工具包的活动配置文件。
+## <a name="configuring-the-capabilities"></a>配置功能
 
-    ![mrlearning-speech-ch1-1-step7b .png](images/mrlearning-speech-ch1-1-step7b.png)
+在 Unity 菜单中，选择“编辑” > “项目设置...”打开“播放器设置”窗口，然后找到“播放器” >  “发布设置”部分：    
 
-8. 你的场景现在有多个 MRTK 中的新项。 单击 "文件"，然后单击 "另存为"，然后将场景命名为 "SpeechScene"，以其他名称保存场景。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section3-step1-1.png)
 
-    >[!NOTE]
-    >如果在将 MRTK 添加到项目中后按下了场景，而不进入播放模式，则可能需要重新启动 Unity。
+在“发布设置”中，向下滚动到“功能”部分，仔细检查在教程中最初创建项目时启用的“InternetClient”、“Microphone”和“SpatialPerception”功能是否确实已启用。      然后启用“InternetClientServer”和“PrivateNetworkClientServer”功能：  
 
-9. 在场景层次结构中选择 MixedRealityToolkit 对象后，单击 "检查器" 面板中的 "复制 & 自定义"，以打开 "克隆配置文件" 弹出窗口。 在 "克隆配置文件" 弹出窗口中，为自定义配置文件输入合适的名称，例如 "自定义 HoloLens2ConfigurationProfile"。 单击 "克隆" 创建自定义配置文件，并将其设置为活动配置文件。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section3-step1-2.png)
 
-    ![mrlearning-speech-ch1-1-step9 .png](images/mrlearning-speech-ch1-1-step9.png)
+## <a name="importing-the-tutorial-assets"></a>导入教程资产
 
-10. 同时，在 "检查器" 面板（在层次结构中选择 MixedRealityToolkit 对象）中，通过取消选中 "启用诊断系统" 右侧的框来禁用诊断系统。
+下载以下 Unity 自定义包，并**按其列出顺序**将其**导入**：
 
-    ![mrlearning-speech-ch1-1-step10 .png](images/mrlearning-speech-ch1-1-step10.png)
+* [Microsoft.CognitiveServices.Speech.N.N.N.unitypackage](https://aka.ms/csspeech/unitypackage)（最新版本）
+* [MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
+* [MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpeechServices.2.3.0.0.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-speech-services-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpeechServices.2.3.0.0.unitypackage)
 
-11. 在本教程中，我们将使用用于语音识别和脚本的输入语音命令。 我们会克隆输入配置文件，以更改语音设置。
+> [!TIP]
+> 有关如何导入 Unity 自定义包的提示，可参阅[导入混合现实工具包](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)中的说明。
 
-    在场景层次结构中，MixedRealityToolkit 对象仍处于选中状态，单击 "检查器" 面板中的 "小型克隆" 按钮，打开克隆配置文件弹出窗口。 在 "克隆配置文件" 弹出窗口中，为自定义配置文件输入合适的名称，例如 "自定义 HoloLens2InputSystemProfile"，然后单击 "克隆" 以创建自定义输入系统配置文件，并将其设置为活动配置文件。
+导入教程资产后，“项目”窗口应如下所示：
 
-    ![mrlearning-speech-ch1-1-step11 .png](images/mrlearning-speech-ch1-1-step11.png)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section4-step1-1.png)
 
-12. 克隆输入配置文件后，展开 "语音" 部分并按照上一步骤中所述的相同过程来克隆语音命令配置文件。
+## <a name="preparing-the-scene"></a>准备场景
 
-    ![mrlearning-speech-ch1-1-step12 .png](images/mrlearning-speech-ch1-1-step12.png)
+在本部分，你将通过添加教程预制件来准备场景，并配置“Lunarcom 控制器(脚本)”组件来控制场景。
 
-13. 在语音部分下，转到 "常规设置"，并将 "开始行为" 更改为手动启动。
+在“项目”窗口中导航到“资产” > “MRTK.Tutorials.AzureSpeechServices” > “预制件”文件夹，并将“Lunarcom”预制件拖放到“层次结构”窗口中，以将其添加到场景中：    
 
-    ![mrlearning-speech-ch1-1-step13 .png](images/mrlearning-speech-ch1-1-step13.png)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-1.png)
 
-14. 在 "项目" 面板中，展开 "Lunarcom" 文件夹并将 Lunarcom_Base "prefab" 拖动到场景层次结构。
+仍在“层次结构”窗口中选中了“Lunarcom”对象的情况下，在“检查器”窗口中，使用“添加组件”按钮将“Lunarcom 控制器(脚本)”组件添加到 Lunarcom 对象中：   
 
-    ![mrlearning-speech-ch1-1-step14 .png](images/mrlearning-speech-ch1-1-step14.png)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-2.png)
 
-15. 选择层次结构中的 Lunarcom_Base 对象，并确保将位置设置为 x = 0、y = 0、z = 0，以及将旋转设置为 x = 0、y = 0 和 z = 0。 将刻度设置为 read x = 0.008，y = 0.008，z = 0.01。
+> [!NOTE]
+> MRTK 中未包含“Lunarcom 控制器(脚本)”组件。 本教程的资产中随附了该组件。
 
-    ![Module4Chapter1step12im](images/module4chapter1step12im.PNG)
+在仍选中了“Lunarcom”对象的情况下，将其展开以显示其子对象，然后将“Terminal”对象拖放到“Lunarcom 控制器(脚本)”组件的“终端”字段中：   
 
-16. 单击 "添加组件"，搜索并选择 "Lunarcom 控制器"。 此脚本包含在步骤6中导入的 Lunarcom 资产包中。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-3.png)
 
-    ![Module4Chapter1step13im](images/module4chapter1step13im.PNG)
+在仍选中了“Lunarcom”对象的情况下，展开 Terminal 对象以显示其子对象，然后将“ConnectionLight”对象拖放到“Lunarcom 控制器(脚本)”组件的“连接光线”字段中，并将“OutputText”对象拖放到“输出文本”字段中：     
 
-17. 若要将应用程序连接到 Azure 认知服务，必须为语音服务输入订阅密钥（也称为 API 密钥）。 按照[此处](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started)的说明获取免费订阅密钥。 获取订阅密钥后，请在 "检查器" 面板中的 LunarcomController 组件的 "语音服务 API 密钥" 字段中输入该密钥，如下图所示。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-4.png)
 
-18. 将订阅密钥注册到 "检查器" 面板中 LunarcomController 组件的 "语音服务区域" 字段时，请输入所选的区域。 例如，对于美国西部，请在 "westus" 中键入。
+在仍选中了“Lunarcom”对象的情况下，展开 Buttons 对象以显示其子对象，然后在“检查器”窗口中展开“按钮”列表，将其“大小”设置为 3，并将“MicButton”、“SatelliteButton”和“RocketButton”对象分别拖放到“元素 0”、“元素 1”和“元素 2”字段中：       
 
-    ![Module4Chapter1step15im](images/module4chapter1step15im.PNG)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-5.png)
 
-19. 在层次结构中，通过单击其左侧的箭头展开 "Lunarcom_Base" 对象。 然后对其子对象 "终端" 执行相同的操作，如下图所示。
+## <a name="connecting-the-unity-project-to-the-azure-resource"></a>将 Unity 项目连接到 Azure 资源
 
-20. 选择 Lunarcom_Base 时，请在 "检查器" 面板中单击 "Lunarcom"，并将其从层次结构拖到 "LunarcomController" 组件中的 "输出文本" 槽，如下图所示。
+若要使用 Azure 语音服务，需要创建一个 Azure 资源并获取语音服务的 API 密钥。 按照“[免费试用语音服务](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started)”中的说明进行操作，并记下服务区域（也称为“位置”）和 API 密钥（也称为“密钥 1”或“密钥 2”）。
 
-21. 对终端槽执行相同的操作，并对连接轻型控制器槽执行相同的操作。
+在“层次结构”窗口中选择“Lunarcom”对象，然后在“检查器”窗口中找到“Lunarcom 控制器(脚本)”组件的“语音 SDK 凭据”部分，并按如下所述对其进行配置：   
 
-    ![Module4Chapter1step18im](images/module4chapter1step18im.PNG)
+* 在“语音服务 API 密钥”字段中，输入你的 API 密钥（“密钥 1”或“密钥 2”） 
+* 在“语音服务区域”字段中，使用小写字母输入不带空格的服务区域（位置） 
 
-22. 单击 "检查器" 面板中 "LunarcomController" 脚本的 "Lunarcom 按钮" 部分旁边的箭头，将大小更改为3。 按 Enter 或 Return。 这将导致显示三个新元素字段。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section6-step1-1.png)
 
-    ![Module4Chapter1step19im](images/module4chapter1step19im.PNG)
+## <a name="using-speech-recognition-to-transcribe-speech"></a>使用语音识别听录语音
 
-23. 在层次结构中单击其旁边的箭头，展开 "Lunarcom" 按钮，并使用上述相同过程，分别将 Mic、卫星和火箭 gameobject 拖到元素0、1和2引用，并在检查器面板。
+在“层次结构”窗口中选择“Lunarcom”对象，然后在“检查器”窗口中，使用“添加组件”按钮将“Lunarcom 语音识别器(脚本)”组件添加到 Lunarcom 对象中：   
 
-    ![Module4Chapter1step18im](images/module4chapter1step20im.PNG)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section7-step1-1.png)
 
-24. 选择层次结构中的 Lunarcom_Base "对象。 单击 "检查器" 面板中的 "添加组件"，搜索并选择 Lunarcom 语音识别器。 重复相同的步骤添加 Lunarcom 唤醒词识别器。
+> [!NOTE]
+> MRTK 中未包含“Lunarcom 语音识别器(脚本)”组件。 本教程的资产中随附了该组件。
 
-    ![Module4Chapter1step18im](images/module4chapter1step21im.PNG)
+如果现在进入“游戏”模式，可以先按麦克风按钮来测试语音识别：
 
-25. 在 "唤醒单词" 槽中，键入 "激活终端"。 在 "消除字" 槽中，键入 "消除终端"。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section7-step1-2.png)
 
-    ![Module4Chapter1step18im](images/module4chapter1step22im.PNG)
+假设计算机上配备了麦克风，当你讲话时，会在终端面板上听录你的语音：
 
-## <a name="build-your-application-to-your-device"></a>在设备上构建应用程序
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section7-step1-3.png)
 
-1. 转到 "文件 > 生成设置"，再次打开 "生成设置" 窗口。
 
-    ![images/mrlearning-ch1-2-步骤1](images/mrlearning-speach-ch1-2-step1.jpg)
+> [!CAUTION]
+> 应用程序需要连接到 Azure，因此请确保计算机/设备已连接到 Internet。
 
-2. 通过单击“添加打开的场景”按钮，确保要尝试的场景位于“生成中的场景”列表中。
+## <a name="congratulations"></a>祝贺
 
-3. 按 "播放机设置" 按钮，并单击 "发布设置"。 在 "功能" 下，启用： Internet、Internet 客户端服务器、专用网络客户端服务器、麦克风和空间感知。
+现已实现了由 Azure 提供支持的语音识别。 请在设备上运行该应用程序，以确保功能正常。
 
-4. 在相同的播放机设置中，选择 "XR 设置"，并选择 "支持的虚拟现实"。
+下一篇教程将介绍如何使用 Azure 语音识别执行命令。
 
-5. 按“生成”按钮开始生成过程。
-
-    ![mrlearning-ch1-步骤5](images/mrlearning-speach-ch1-2-step5.jpg)
-
-6. 为应用程序创建一个新文件夹并为其命名。 在下图中，创建了一个名为“应用”的文件夹以包含该应用程序。 单击“选择文件夹”，开始生成新创建的文件夹。 生成完成后，可以关闭 Unity 中的“生成设置”窗口。
-
-    ![mrlearning-ch1-步骤6](images/mrlearning-speach-ch1-2-step6.jpg)
-
-    >[!NOTE]
-    >如果生成失败，尝试再次生成或重启 Unity 并再次生成。 如果你看到错误，如 "错误： CS0246 = 无法找到类型或命名空间名称" XX "（是否缺少 using 指令或程序集引用？）"，你可能需要安装[Windows 10 SDK （10.0.18362.0）](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)
-
-7. 生成完成后，打开包含新生成的应用程序文件的新创建的文件夹。 双击 ".sln" 解决方案文件，在 Visual Studio 中打开解决方案文件。
-
-    >[!NOTE]
-    >如果遵循前面步骤中的命名约定，则请确保打开新创建的文件夹（即 "App" 文件夹），因为该文件夹外的命名 .sln 文件与 build 文件夹内的 .sln 文件不同。 
-
-    ![mrlearning-ch1-step7](images/mrlearning-speach-ch1-2-step7.jpg)
-
-    >[!NOTE]
-    >如果 Visual Studio 要求你安装新组件，请确保按照["安装工具" 页中的](install-the-tools.md)指定安装所有必备组件。
-
-8. 使用 USB 电缆将 HoloLens 2 插入电脑。 虽然这些课程说明假设你将使用 HoloLens 2 设备部署测试，但你也可以选择部署到 [HoloLens 2 仿真器](using-the-hololens-emulator.md)或选择创建[应用包以进行旁加载](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)
-
-9. 在生成到设备之前，请确保设备处于开发者模式。 如果这是你第一次部署到 HoloLens 2，Visual Studio 可能会要求你将 HoloLens 2 与 pin 配对。 如果需要启用开发者模式或与 Visual Studio 配对，请按照[这些说明](https://docs.microsoft.com//windows/mixed-reality/using-visual-studio)进行操作。
-
-10. 通过选择“发布”配置和“ARM”体系结构，配置 Visual Studio 以生成到 HoloLens 2。
-
-    ![mrlearning-ch1-step10](images/mrlearning-speach-ch1-2-step10.jpg)
-
-11. 最后一步是通过选择“调试”>“在不调试的情况下启动”来生成到你的设备。 选择“在不调试的情况下启动”将导致应用程序在成功生成后立即在设备上启动，但不会在 Visual Studio 中显示调试信息。 这也意味着可以在 HoloLens 2 上运行应用程序时断开 USB 电缆，而无需停止应用程序。 也可以选择“生成”>“部署解决方案”以部署到你的设备，而无需自动启动应用程序。
-
-    ![mrlearning-ch1-step11.JPG](images/mrlearning-speach-ch1-2-step11.jpg)
-
-## <a name="congratulations"></a>祝贺你
-
-你已在应用程序中设置了语音识别，由 Azure 提供支持。 运行应用程序以确保所有功能和功能都正常工作。 首先说到你在步骤25中键入的唤醒字词，然后激活终端。 选择麦克风按钮启动语音识别。 开始说话。 你会在说话时看到你的转录。 再次按下麦克风按钮以停止语音识别。 说关闭终端，隐藏 Lunarcom 终端。 在下一课中，您将学习如何使用设备支持的语音识别来实现 Azure 语音 SDK 不可用的情况，因为 HoloLens 2 处于脱机状态。
-
-[下一教程： 2. 为本地语音到文本转换添加脱机模式](mrlearning-speechSDK-ch2.md)
+[下一教程：2.使用语音识别执行命令](mrlearning-speechSDK-ch2.md)
