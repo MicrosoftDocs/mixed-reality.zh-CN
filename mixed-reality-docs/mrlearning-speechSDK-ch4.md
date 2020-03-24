@@ -1,174 +1,321 @@
 ---
-title: Azure 语音服务教程-4。 设置意向和自然语言理解
-description: 完成本课程，了解如何在混合现实应用程序中实现 Azure Speech SDK。
+title: Azure 语音服务教程 - 4. 设置意向和自然语言理解
+description: 请完成本课程来了解如何在混合现实应用程序中实施 Azure 语音 SDK。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
-ms.openlocfilehash: 8805fa6410e882bce2f0fe8da780dfd5f794cc74
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: b2342e7d0d502af2787ca311d18a44f8726acf2d
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77553987"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79028458"
 ---
-# <a name="4-setting-up-intent-and-natural-language-understanding"></a><span data-ttu-id="1c627-105">4. 设置意向和自然语言理解</span><span class="sxs-lookup"><span data-stu-id="1c627-105">4. Setting up intent and natural language understanding</span></span>
+# <a name="4-setting-up-intent-and-natural-language-understanding"></a><span data-ttu-id="f5063-105">4.设置意向和自然语言理解</span><span class="sxs-lookup"><span data-stu-id="f5063-105">4. Setting up intent and natural language understanding</span></span>
 
-<span data-ttu-id="1c627-106">在本课中，您将了解 Azure 语音服务的意图功能。</span><span class="sxs-lookup"><span data-stu-id="1c627-106">In this lesson, you will explore the Azure Speech Service's Intent feature.</span></span> <span data-ttu-id="1c627-107">使用意向功能，您可以使用 AI 功能的语音命令为应用程序提供支持，用户可以在其中说出非特定的语音命令，并使系统理解其意图。</span><span class="sxs-lookup"><span data-stu-id="1c627-107">The Intent feature allows you to equip our application with AI-powered voice commands, where users can say non-specific voice commands and still have their intent understood by the system.</span></span> <span data-ttu-id="1c627-108">在本课程中，我们将设置 Azure LUIS 门户，设置我们的意向/实体/最谈话，发布我们的意图资源，将我们的 Unity 应用连接到我们的意图资源，并进行第一次意向 API 调用。</span><span class="sxs-lookup"><span data-stu-id="1c627-108">During this lesson, we will set up our Azure LUIS Portal, setup our Intent/Entities/Utterances, publish our Intent Resource, connect our Unity app to our Intent Resource, and make our first Intent API call.</span></span>
+<span data-ttu-id="f5063-106">本教程探讨 Azure 语音服务的意向识别。</span><span class="sxs-lookup"><span data-stu-id="f5063-106">In this tutorial, you will explore the Azure Speech Service's intent recognition.</span></span> <span data-ttu-id="f5063-107">使用意向识别可以在我们的应用程序中配备 AI 驱动的语音命令，在其中，即使用户讲出非特定的语音命令，系统也仍能识别其意向。</span><span class="sxs-lookup"><span data-stu-id="f5063-107">The intent recognition allows you to equip our application with AI-powered speech commands, where users can say non-specific speech commands and still have their intent understood by the system.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="1c627-109">目标</span><span class="sxs-lookup"><span data-stu-id="1c627-109">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="f5063-108">目标</span><span class="sxs-lookup"><span data-stu-id="f5063-108">Objectives</span></span>
 
-- <span data-ttu-id="1c627-110">了解如何在应用程序中设置意向和自然语言理解</span><span class="sxs-lookup"><span data-stu-id="1c627-110">Learn how to set up intent and natural language understanding in our application</span></span>
-- <span data-ttu-id="1c627-111">了解如何设置 Azure 的 LUIS 门户</span><span class="sxs-lookup"><span data-stu-id="1c627-111">Learn how to set up Azure's LUIS Portal</span></span>
-- <span data-ttu-id="1c627-112">了解如何在 Azure 上设置意向、实体和最谈话</span><span class="sxs-lookup"><span data-stu-id="1c627-112">Learn how to set up intent, entities, and utterances on Azure</span></span>
+* <span data-ttu-id="f5063-109">了解如何在 LUIS 门户中设置意向、实体和言语</span><span class="sxs-lookup"><span data-stu-id="f5063-109">Learn how to set up intent, entities, and utterances in the LUIS portal</span></span>
+* <span data-ttu-id="f5063-110">了解如何在应用程序中实现意向和自然语言理解</span><span class="sxs-lookup"><span data-stu-id="f5063-110">Learn how to implement intent and natural language understanding in our application</span></span>
 
-## <a name="instructions"></a><span data-ttu-id="1c627-113">说明</span><span class="sxs-lookup"><span data-stu-id="1c627-113">Instructions</span></span>
+## <a name="preparing-the-scene"></a><span data-ttu-id="f5063-111">准备场景</span><span class="sxs-lookup"><span data-stu-id="f5063-111">Preparing the scene</span></span>
 
-1. <span data-ttu-id="1c627-114">允许您的计算机启用听写。</span><span class="sxs-lookup"><span data-stu-id="1c627-114">Allow your machine to enable Dictation.</span></span> <span data-ttu-id="1c627-115">为此，请转到 "Windows 设置"，选择 "隐私"，然后选择 "语音"，然后依次单击 "墨迹 & 键入" 和 "输入建议"。</span><span class="sxs-lookup"><span data-stu-id="1c627-115">To do this, go to Windows Settings, select "privacy," then "speech," followed by "inking & typing" and turn on speech services and typing suggestions.</span></span>
+<span data-ttu-id="f5063-112">在“层次结构”窗口中选择“Lunarcom”对象，然后在“检查器”窗口中，使用“添加组件”按钮将“Lunarcom 意向识别器(脚本)”组件添加到 Lunarcom 对象中：   </span><span class="sxs-lookup"><span data-stu-id="f5063-112">In the Hierarchy window, select the **Lunarcom** object, then in the Inspector window, use the **Add Component** button to add the **Lunarcom Intent Recognizer (Script)** component to the Lunarcom object:</span></span>
 
-    ![Module4Chapter4step1aim](images/module4chapter4step1aim.PNG)
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section1-step1-1.png)
 
-    ![Module4Chapter4step1bim](images/module4chapter4step1bim.PNG)
+<span data-ttu-id="f5063-114">在“项目”窗口中导航到“资产” > “MRTK.Tutorials.GettingStarted” > “预制件” > “RocketLauncher”文件夹，将“RocketLauncher_Complete”预制件拖放到“层次结构”窗口中，并将其放在相机前面的适当位置，例如：     </span><span class="sxs-lookup"><span data-stu-id="f5063-114">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.GettingStarted** > **Prefabs** > **RocketLauncher** folder, drag the **RocketLauncher_Complete** prefab into your Hierarchy window, and place it at a suitable location in front of the camera, for example:</span></span>
 
-    ![Module4Chapter4step1cim](images/module4chapter4step1cim.PNG)
+* <span data-ttu-id="f5063-115">变换**位置** X = 0，Y = -0.4，Z = 1</span><span class="sxs-lookup"><span data-stu-id="f5063-115">Transform **Position** X = 0, Y = -0.4, Z = 1</span></span>
+* <span data-ttu-id="f5063-116">变换**位置** X = 0，Y = 90，Z = 0</span><span class="sxs-lookup"><span data-stu-id="f5063-116">Transform **Rotation** X = 0, Y = 90, Z = 0</span></span>
 
-2. <span data-ttu-id="1c627-119">登录到[Azure 门户](https://portal.azure.com/)。</span><span class="sxs-lookup"><span data-stu-id="1c627-119">Log in to the [Azure Portal](https://portal.azure.com/).</span></span> <span data-ttu-id="1c627-120">登录后，单击 "创建资源"，搜索 "语言理解"，然后单击 "Enter"。</span><span class="sxs-lookup"><span data-stu-id="1c627-120">Once you are logged in, click on Create a resource, search for "Language Understanding" and click Enter.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section1-step1-2.png)
 
-    ![mrlearning-speech-ch4-1-step2 .png](images/mrlearning-speech-ch4-1-step2.png)
+<span data-ttu-id="f5063-118">在“层次结构”窗口中再次选择“Lunarcom”对象，展开“RocketLauncher_Complete” > “Button”对象，并将“Button”对象的每个子对象分配到相应的“Lunar Launcher 按钮”字段中：     </span><span class="sxs-lookup"><span data-stu-id="f5063-118">In the Hierarchy window, select the **Lunarcom** object again, then expand the **RocketLauncher_Complete** > **Button** object and assign each of the **Buttons** object's child objects to the corresponding **Lunar Launcher Buttons** field:</span></span>
 
-3. <span data-ttu-id="1c627-122">单击 "**创建**" 按钮以创建此服务的实例。</span><span class="sxs-lookup"><span data-stu-id="1c627-122">Click the **Create** button to create an instance of this service.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section1-step1-3.png)
 
-    ![mrlearning-speech-ch4-1-step3a .png](images/mrlearning-speech-ch4-1-step3a.png)
+## <a name="creating-the-azure-language-understanding-resource"></a><span data-ttu-id="f5063-120">创建 Azure 语言理解资源</span><span class="sxs-lookup"><span data-stu-id="f5063-120">Creating the Azure Language Understanding resource</span></span>
 
-    <span data-ttu-id="1c627-124">为资源提供**名称**，例如，*语音-SDK-学习模块*。</span><span class="sxs-lookup"><span data-stu-id="1c627-124">Give your resource a **Name**, for example, *Speech-SDK-Learning-Module*.</span></span> <span data-ttu-id="1c627-125">对于 "**订阅**"，选择 "即用*即付*" 或 "*免费*"。</span><span class="sxs-lookup"><span data-stu-id="1c627-125">For **Subscription**, select *Pay As You Go* or *Free Trail* if you have a trial account.</span></span> <span data-ttu-id="1c627-126">接下来，单击 **"新建" 链接创建**新的**资源组**，输入名称（例如，" *HoloLens-2-资源组*"），然后单击 **"确定"** 按钮。</span><span class="sxs-lookup"><span data-stu-id="1c627-126">Next, create a new **Resource Group** by clicking the **Create new** link, enter a name, for example, *HoloLens-2-Tutorials-Resource-Group*, and click the **OK** button.</span></span>
+<span data-ttu-id="f5063-121">在本部分，你将为要在下一部分创建的语言理解智能服务 (LUIS) 应用创建 Azure 预测资源。</span><span class="sxs-lookup"><span data-stu-id="f5063-121">In this section, you will create an Azure prediction resource for the Language Understanding Intelligent Service (LUIS) app you will create in the next section.</span></span>
 
-    ![mrlearning-speech-ch4-1-step3b .png](images/mrlearning-speech-ch4-1-step3b.png)
+<span data-ttu-id="f5063-122">登录到 <a href="https://portal.azure.com" target="_blank">Azure</a> 并单击“创建资源”。 </span><span class="sxs-lookup"><span data-stu-id="f5063-122">Sign in to <a href="https://portal.azure.com" target="_blank">Azure</a> and click **Create a resource**.</span></span> <span data-ttu-id="f5063-123">然后搜索并选择“语言理解”： </span><span class="sxs-lookup"><span data-stu-id="f5063-123">Then search for and select **Language Understanding**:</span></span>
 
-4. <span data-ttu-id="1c627-128">选择**创作位置**和**运行时位置**。</span><span class="sxs-lookup"><span data-stu-id="1c627-128">Select your **Authoring location** and **Runtime location**.</span></span> <span data-ttu-id="1c627-129">出于本教程的目的，请使用 *（美国） "美国西部*"，然后选择 "**创作" 定价层**和 "**运行时" 定价层**的*F0 （每秒5个调用，每月10000个调用）* 。</span><span class="sxs-lookup"><span data-stu-id="1c627-129">For the purpose of this tutorial, use *(US) West US*, then choose *F0 (5 Calls per second, 10K Calls per month)* for the **Authoring pricing tier** and **Runtime pricing tier**.</span></span> <span data-ttu-id="1c627-130">最后，单击 "**创建**" 按钮以创建资源，以及新资源组。</span><span class="sxs-lookup"><span data-stu-id="1c627-130">Finally, click the **Create** button to create the resource, as well as the new resource group.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section2-step1-1.png)
 
-    ![mrlearning-speech-ch4-1-step4 .png](images/mrlearning-speech-ch4-1-step4.png)
+<span data-ttu-id="f5063-125">单击“创建”按钮创建此服务的实例： </span><span class="sxs-lookup"><span data-stu-id="f5063-125">Click the **Create** button to create an instance of this service:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-132">单击 "创建" 按钮后，必须等待创建服务，这可能需要几分钟时间。</span><span class="sxs-lookup"><span data-stu-id="1c627-132">After you click the Create button, you will have to wait for the service to be created, which might take a few minutes.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section2-step1-2.png)
 
-5. <span data-ttu-id="1c627-133">资源创建过程完成后，你将看到**部署已完成**的消息。</span><span class="sxs-lookup"><span data-stu-id="1c627-133">Once the resource creation process is complete, you will see the message **Your deployment is complete**.</span></span>
+<span data-ttu-id="f5063-127">在“创建”页上，单击“预测”选项并输入以下值： </span><span class="sxs-lookup"><span data-stu-id="f5063-127">On the Create page, click the **Prediction** option and enter the following values:</span></span>
 
-    ![mrlearning-speech-ch4-1-step5 .png](images/mrlearning-speech-ch4-1-step5.png)
+* <span data-ttu-id="f5063-128">对于“订阅”，如果你有试用版订阅，请选择“免费试用”，否则请选择其他订阅之一  </span><span class="sxs-lookup"><span data-stu-id="f5063-128">For **Subscription**, select **Free Trail** if you have a trial subscription, otherwise, select one of your other subscriptions</span></span>
+* <span data-ttu-id="f5063-129">对于“资源组”，请单击“新建”链接，输入适当的名称（例如 *MRKT-Tutorials*），然后单击“确定”   </span><span class="sxs-lookup"><span data-stu-id="f5063-129">For the **Resource group**, click the **Create new** link, enter a suitable name, for example, *MRKT-Tutorials*, and then click the **OK**</span></span>
 
-6. <span data-ttu-id="1c627-135">使用相同的用户帐户登录到[语言理解智能服务（LUIS）](https://www.luis.ai/)门户，选择你的国家/地区，并同意使用条款。</span><span class="sxs-lookup"><span data-stu-id="1c627-135">Using the same user account, sign in to the [Language Understanding Intelligent Service (LUIS)](https://www.luis.ai/) portal, select your country, and agree to the terms of use.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section2-step1-3.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-136">到达语言理解门户后，你可能需要登录（如果尚未登录），其凭据与 Azure 门户相同。</span><span class="sxs-lookup"><span data-stu-id="1c627-136">Upon reaching the Language Understanding portal, you may need to log in, if you are not already, with the same credentials as your Azure portal.</span></span> <span data-ttu-id="1c627-137">如果这是你第一次使用 LUIS，则需要向下滚动到 "欢迎" 页的底部，查找并单击 "创建 LUIS" 应用按钮。</span><span class="sxs-lookup"><span data-stu-id="1c627-137">If this is your first time using LUIS, you will need to scroll down to the bottom of the Welcome page to find and click the "Create LUIS" app button.</span></span>
+> [!NOTE]
+> <span data-ttu-id="f5063-131">截至编写本文时，无需创建创作资源，因为在下一部分创建语言理解智能服务 (LUIS) 时，系统会在 LUIS 中自动生成一个创作试用密钥。</span><span class="sxs-lookup"><span data-stu-id="f5063-131">As of the time of this writing, you do not need to create an authoring resource because an authoring trial key will automatically be generated within LUIS when you create the Language Understanding Intelligent Service (LUIS) in the next section.</span></span>
 
-7. <span data-ttu-id="1c627-138">登录后，单击 "我的应用" （如果当前不在该部分中）。</span><span class="sxs-lookup"><span data-stu-id="1c627-138">Once logged in, click My Apps (if you are not currently in that section).</span></span> <span data-ttu-id="1c627-139">然后，可以单击 "创建新应用"。</span><span class="sxs-lookup"><span data-stu-id="1c627-139">You can then click on Create new app.</span></span> <span data-ttu-id="1c627-140">将新应用命名为 "语音 SDK 学习模块"。</span><span class="sxs-lookup"><span data-stu-id="1c627-140">Name the new app “Speech SDK Learning Module.”</span></span> <span data-ttu-id="1c627-141">同时将 "语音 SDK 学习模块" 添加到 "说明" 字段。</span><span class="sxs-lookup"><span data-stu-id="1c627-141">Add “Speech SDK Learning Module" to the description field, as well.</span></span> <span data-ttu-id="1c627-142">然后单击 "完成"。</span><span class="sxs-lookup"><span data-stu-id="1c627-142">Then click "done."</span></span>
+> [!TIP]
+> <span data-ttu-id="f5063-132">如果 Azure 帐户中已有另一个适当的资源组（例如，如果已完成 [Azure 空间定位点](mrlearning-asa-ch1.md)教程），则可以使用此资源组，而无需创建新资源组。</span><span class="sxs-lookup"><span data-stu-id="f5063-132">If you already have another suitable resource group in your Azure account, for example, if you completed the [Azure Spatial Anchors](mrlearning-asa-ch1.md) tutorial, you may use this resource group instead of creating a new one.</span></span>
 
-    ![Module4Chapter4step8aim](images/module4chapter4step8aim.PNG)
+<span data-ttu-id="f5063-133">仍在“创建”页上，输入以下值：</span><span class="sxs-lookup"><span data-stu-id="f5063-133">While still on the Create page, enter the following values:</span></span>
 
-    ![Module4Chapter4step8bim](images/module4chapter4step8bim.PNG)
+* <span data-ttu-id="f5063-134">对于“名称”，请输入服务的适当名称，例如 *MRTK-Tutorials-AzureSpeechServices* </span><span class="sxs-lookup"><span data-stu-id="f5063-134">For **Name**, enter a suitable name for the service, for example, *MRTK-Tutorials-AzureSpeechServices*</span></span>
+* <span data-ttu-id="f5063-135">对于“预测位置”，请选择与应用用户的实际位置靠近的位置，例如“(美国)美国西部”  </span><span class="sxs-lookup"><span data-stu-id="f5063-135">For **Prediction location**, choose a location close to your app users' physical location, for example, *(US) West US*</span></span>
+* <span data-ttu-id="f5063-136">对于“预测定价层”，根据本教程的目的，请选择“F0 (每秒 5 次调用，每月 1 万次调用)”  </span><span class="sxs-lookup"><span data-stu-id="f5063-136">For **Prediction pricing tier**, for the purpose of this tutorial, select **F0 (5 Calls per second, 10K Calls per month)**</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-145">如果你的应用程序应了解不同于英语的语言，则应将 "Culture" 改为适当的语言。</span><span class="sxs-lookup"><span data-stu-id="1c627-145">If your app is supposed to understand a language different from English, you should change the "Culture" to the appropriate language.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section2-step1-4.png)
 
-8. <span data-ttu-id="1c627-146">单击右上方的 "生成"。</span><span class="sxs-lookup"><span data-stu-id="1c627-146">Click “Build” located in the top right.</span></span>
+<span data-ttu-id="f5063-138">接下来，转到“查看 + 创建”选项卡，复查详细信息，然后单击页面底部的“创建”按钮，以创建资源和新资源组（如果配置为创建资源组）：  </span><span class="sxs-lookup"><span data-stu-id="f5063-138">Next, go to the **Review + create** tab, review the details, and then click the **Create** button, located at the bottom of the page, to create the resource, as well as, the new resource group if you configured one to be created:</span></span>
 
-9. <span data-ttu-id="1c627-147">在左侧的 "应用资产" 下，选择 "方法"，然后单击 "创建新意向" 并将其命名为 "PressButton"。</span><span class="sxs-lookup"><span data-stu-id="1c627-147">Under App Assets on the left, select “Intents” then click “Create New Intent” and name it “PressButton.”</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section2-step1-5.png)
 
-    ![Module4Chapter4step10im](images/module4chapter4step10im.PNG)
+> [!NOTE]
+> <span data-ttu-id="f5063-140">单击“创建”按钮后，必须等待服务创建完成，这可能需要几分钟时间。</span><span class="sxs-lookup"><span data-stu-id="f5063-140">After you click the Create button, you will have to wait for the service to be created, which might take a few minutes.</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-149">使用本教程中使用的意向和实体的名称很重要，因为 Lunarcom 应用程序将按名称引用它们。</span><span class="sxs-lookup"><span data-stu-id="1c627-149">It is important to use the names of Intents and Entities used in this tutorial because the Lunarcom app will be referencing them by name.</span></span>
+<span data-ttu-id="f5063-141">资源创建过程完成后，将看到消息“部署完成”： </span><span class="sxs-lookup"><span data-stu-id="f5063-141">Once the resource creation process is completed, you will see the message **Your deployment is complete**:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-150">现在应有2个意向-"PressButton" 和 "None"。</span><span class="sxs-lookup"><span data-stu-id="1c627-150">You should now have 2 Intents - “PressButton” and “None."</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section2-step1-6.png)
 
-10. <span data-ttu-id="1c627-151">在左侧的 "应用资产" 下，选择 "实体"，单击 "新建实体"，将其命名为 "Action"，并将实体类型保留为 "Simple"。</span><span class="sxs-lookup"><span data-stu-id="1c627-151">Under App Assets on the left, select “Entities”, click “Create New Entity”, name it “Action” and keep the Entity Type as “Simple.”</span></span>
+## <a name="creating-the-language-understanding-intelligent-service-luis"></a><span data-ttu-id="f5063-143">创建语言理解智能服务 (LUIS)</span><span class="sxs-lookup"><span data-stu-id="f5063-143">Creating the Language Understanding Intelligent Service (LUIS)</span></span>
 
-    ![Module4Chapter4step11im](images/module4chapter4step11im.PNG)
+<span data-ttu-id="f5063-144">在本部分，你将创建一个 LUIS 应用，配置并训练其预测模型，然后将其连接到在上一步骤中创建的 Azure 预测资源。</span><span class="sxs-lookup"><span data-stu-id="f5063-144">In this section, you will create a LUIS app, configure and train its prediction model, and connect it to the Azure prediction resource you created in the previous step.</span></span>
 
-11. <span data-ttu-id="1c627-153">再次单击 "创建新实体" 并将其命名为 "Target"。</span><span class="sxs-lookup"><span data-stu-id="1c627-153">Click “Create New Entity” again and name it “Target”.</span></span> <span data-ttu-id="1c627-154">将实体类型保留为 "简单"。</span><span class="sxs-lookup"><span data-stu-id="1c627-154">Keep the Entity Type as “Simple”, as well.</span></span>
+<span data-ttu-id="f5063-145">具体而言，你将创建以下意向：如果用户讲出要执行某项操作，该应用将对场景中的三个红色按钮之一（具体取决于用户引用的按钮）触发 Interactable.OnClick() 事件。</span><span class="sxs-lookup"><span data-stu-id="f5063-145">Specifically, you will create an intent that if the user says an action should be taken, the app will trigger the Interactable.OnClick() event on one of the three red buttons in the scene, depending on which button the user references.</span></span>
 
-    ![Module4Chapter4step12im](images/module4chapter4step12im.PNG)
+<span data-ttu-id="f5063-146">例如，如果用户讲出“继续发射火箭”，则该应用将预测出“继续”表示应执行某项“操作”，而“目标”Interactable.OnClick() 事件发生在“发射”按钮上。     </span><span class="sxs-lookup"><span data-stu-id="f5063-146">For example, if the user says **go ahead and launch the rocket**, the app will predict that **go ahead** means some **action** should be taken, and that the Interactable.OnClick() event to **target** is on the **launch** button.</span></span>
 
-12. <span data-ttu-id="1c627-156">在左侧的 "应用资产" 下，选择 "方法"，然后单击你在步骤10中创建的 "PressButton" 意向。</span><span class="sxs-lookup"><span data-stu-id="1c627-156">Under App Assets on the left, select "Intents" then click on your "PressButton" Intent that you created in step 10.</span></span>
+<span data-ttu-id="f5063-147">若要实现此目的，请执行以下主要步骤：</span><span class="sxs-lookup"><span data-stu-id="f5063-147">The main steps you will take to achieve this are:</span></span>
 
-    ![Module4Chapter4step13im](images/module4chapter4step13im.PNG)
+1. <span data-ttu-id="f5063-148">创建 LUIS 应用</span><span class="sxs-lookup"><span data-stu-id="f5063-148">Create a LUIS app</span></span>
+2. <span data-ttu-id="f5063-149">创建意向</span><span class="sxs-lookup"><span data-stu-id="f5063-149">Create intents</span></span>
+3. <span data-ttu-id="f5063-150">创建示例言语</span><span class="sxs-lookup"><span data-stu-id="f5063-150">Create example utterances</span></span>
+4. <span data-ttu-id="f5063-151">创建实体</span><span class="sxs-lookup"><span data-stu-id="f5063-151">Create entities</span></span>
+5. <span data-ttu-id="f5063-152">将实体分配到示例言语</span><span class="sxs-lookup"><span data-stu-id="f5063-152">Assign entities to the example utterances</span></span>
+6. <span data-ttu-id="f5063-153">训练、测试并发布应用</span><span class="sxs-lookup"><span data-stu-id="f5063-153">Train, test, and publish the app</span></span>
+7. <span data-ttu-id="f5063-154">将 Azure 预测资源分配到应用</span><span class="sxs-lookup"><span data-stu-id="f5063-154">Assign an Azure prediction resource to the app</span></span>
 
-13. <span data-ttu-id="1c627-158">单击右侧的 "查看选项" 下拉列表，然后选择 "显示实体值"。</span><span class="sxs-lookup"><span data-stu-id="1c627-158">Click the "View options" dropdown on the right and select "show entity values."</span></span>
+### <a name="1-create-a-luis-app"></a><span data-ttu-id="f5063-155">1.创建 LUIS 应用</span><span class="sxs-lookup"><span data-stu-id="f5063-155">1. Create a LUIS app</span></span>
 
-    ![Module4Chapter4step14aim](images/module4chapter4step14aim.PNG)
+<span data-ttu-id="f5063-156">使用在上一部分创建 Azure 资源时所用的同一用户帐户登录到 <a href="https://www.luis.ai" target="_blank">LUIS</a>，选择所在的国家/地区，然后同意使用条款。</span><span class="sxs-lookup"><span data-stu-id="f5063-156">Using the same user account you used when creating the Azure resource in the previous section, sign in to <a href="https://www.luis.ai" target="_blank">LUIS</a>, select your country, and agree to the terms of use.</span></span> <span data-ttu-id="f5063-157">在下一步骤中看到“链接 Azure 帐户”的提示时，请选择“继续使用试用密钥”，以改用 Azure 创作资源。  </span><span class="sxs-lookup"><span data-stu-id="f5063-157">In the next step, when asked to **Link your Azure account**, choose **Continue using your trial key**, to use an Azure authoring resource instead.</span></span>
 
-    <span data-ttu-id="1c627-160">单击 "输入示例 ..."</span><span class="sxs-lookup"><span data-stu-id="1c627-160">Click the “Enter an example…”</span></span> <span data-ttu-id="1c627-161">文本框中。</span><span class="sxs-lookup"><span data-stu-id="1c627-161">textbox.</span></span> <span data-ttu-id="1c627-162">然后输入以下最谈话：</span><span class="sxs-lookup"><span data-stu-id="1c627-162">Then, enter the following utterances:</span></span>
+> [!NOTE]
+> <span data-ttu-id="f5063-158">如果你已注册 LUIS 但创作试用密钥已过期，可以参阅[迁移到 Azure 资源创作密钥](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-authoring)文档，将 LUIS 创作资源切换到 Azure。</span><span class="sxs-lookup"><span data-stu-id="f5063-158">If you have already signed up for LUIS and your authoring trial key has expired, you can refer to the [Migrate to an Azure resource authoring key](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-authoring) documentation to switch your LUIS authoring resource to Azure.</span></span>
 
-    ![Module4Chapter4step14bim](images/module4chapter4step14bim.PNG)
+<span data-ttu-id="f5063-159">登录后，导航到“我的应用”页，然后单击“创建新应用”并在“创建新应用”弹出窗口中输入以下值：   </span><span class="sxs-lookup"><span data-stu-id="f5063-159">Once signed in, navigate to the **My apps** page, then click **Create new app** and enter the following values in the **Create new app** popup window:</span></span>
 
-14. <span data-ttu-id="1c627-164">单击右侧的 "查看选项" 下拉列表，然后选择 "显示实体名称"。</span><span class="sxs-lookup"><span data-stu-id="1c627-164">Click the "View options" dropdown on the right and select "Show entity names."</span></span>
+* <span data-ttu-id="f5063-160">对于“名称”，请输入适当的名称，例如 *MRTK Tutorials - AzureSpeechServices* </span><span class="sxs-lookup"><span data-stu-id="f5063-160">For **Name**, enter a suitable name, for example, *MRTK Tutorials - AzureSpeechServices*</span></span>
+* <span data-ttu-id="f5063-161">对于“区域性”，请选择“英语”  </span><span class="sxs-lookup"><span data-stu-id="f5063-161">For **Culture**, select **English**</span></span>
+* <span data-ttu-id="f5063-162">对于“说明”，请选择性地输入适当的说明 </span><span class="sxs-lookup"><span data-stu-id="f5063-162">For **Description**, optionally enter a suitable description</span></span>
 
-    ![Module4Chapter4step15im](images/module4chapter4step15im.PNG)
+<span data-ttu-id="f5063-163">然后单击“完成”按钮创建新应用： </span><span class="sxs-lookup"><span data-stu-id="f5063-163">Then click the **Done** button to create the new app:</span></span>
 
-15. <span data-ttu-id="1c627-166">确保10最谈话中的每一个都在以下位置有1个实体标签。）单击网文的词，然后在弹出窗口中选择 "删除标签" 和2。）单击应标记为的单词，然后在弹出窗口中选择相应的标签。</span><span class="sxs-lookup"><span data-stu-id="1c627-166">Ensure that each of the 10 Utterances have the following Entity labels in the following places by 1.) clicking on words that are mislabeled and, in the popup, selecting "remove label" and 2.) clicking on words that should be labeled and, in the popup, selecting the appropriate label.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step1-1.png)
 
-    ![Module4Chapter4step16im](images/module4chapter4step16im.PNG)
+<span data-ttu-id="f5063-165">创建新应用后，你将转到该应用的“仪表板”页： </span><span class="sxs-lookup"><span data-stu-id="f5063-165">When the new app has been created, you will be taken to that app's **Dashboard** page:</span></span>
 
-16. <span data-ttu-id="1c627-168">现在，若要发布模型，请单击右上方的 "训练"。</span><span class="sxs-lookup"><span data-stu-id="1c627-168">Now, to publish the model, click "Train" in the top right.</span></span> <span data-ttu-id="1c627-169">完成处理后，单击右上方的 "测试"。</span><span class="sxs-lookup"><span data-stu-id="1c627-169">Then, once it has finished processing, click "Test" in the top right.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step1-2.png)
 
-    ![Module4Chapter4step17im](images/module4chapter4step17im.PNG)
+### <a name="2-create-intents"></a><span data-ttu-id="f5063-167">2.创建意向</span><span class="sxs-lookup"><span data-stu-id="f5063-167">2. Create intents</span></span>
 
-17. <span data-ttu-id="1c627-171">在文本框中输入 "选择启动按钮"。</span><span class="sxs-lookup"><span data-stu-id="1c627-171">Enter in “select the launch button” in  the textbox.</span></span>
+<span data-ttu-id="f5063-168">在“仪表板”页上，导航到“生成”>“应用资产”>“意向”页，然后单击“创建新意向”，并在“创建新意向”弹出窗口中输入以下值：   </span><span class="sxs-lookup"><span data-stu-id="f5063-168">From the Dashboard page, navigate to the Build > App Assets > **Intents** page, then click **Create new intent** and enter the following value in the **Create new intent** popup window:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-172">我们未将 "select" 添加为最谈话中任何一项的操作，但如果单击 "检查"，则模型被识别为 "选择" 作为操作实体。</span><span class="sxs-lookup"><span data-stu-id="1c627-172">We did not add “select” as an action in any of our Utterances, but if you click on “Inspect,” the model recognized “select” as an action entity.</span></span>
-    >
-    > ![Module4Chapter4noteim](images/module4chapter4noteim.PNG)
+* <span data-ttu-id="f5063-169">对于“意向名称”，请输入 **PressButton** </span><span class="sxs-lookup"><span data-stu-id="f5063-169">For **Intent name**, enter **PressButton**</span></span>
 
-18. <span data-ttu-id="1c627-174">单击右上方的 "发布"。</span><span class="sxs-lookup"><span data-stu-id="1c627-174">Click "publish" in the top right.</span></span> <span data-ttu-id="1c627-175">确保下拉列表中显示 "生产"，并在弹出窗口中单击 "发布"。</span><span class="sxs-lookup"><span data-stu-id="1c627-175">Ensure the dropdown says “Production” and click "publish" on the popup, as well.</span></span>
+<span data-ttu-id="f5063-170">然后单击“完成”按钮创建新意向： </span><span class="sxs-lookup"><span data-stu-id="f5063-170">Then click the **Done** button to create the new intent:</span></span>
 
-    ![Module4Chapter4step19im](images/module4chapter4step19im.PNG)
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step2-1.png)
 
-19. <span data-ttu-id="1c627-177">发布后，页面顶部会显示一个绿色栏。</span><span class="sxs-lookup"><span data-stu-id="1c627-177">Once published, a green bar should appear at the top of the page.</span></span> <span data-ttu-id="1c627-178">单击绿色条以查看 "管理" 页。</span><span class="sxs-lookup"><span data-stu-id="1c627-178">Click the green bar to view the "Manage" page.</span></span>
+> [!CAUTION]
+> <span data-ttu-id="f5063-172">在本教程中，Unity 项目将按名称（即“PressButton”）引用此意向。</span><span class="sxs-lookup"><span data-stu-id="f5063-172">For the purpose of this tutorial, your Unity project will reference this intent by its name, i.e. 'PressButton'.</span></span> <span data-ttu-id="f5063-173">因此，为意向指定完全相同的名称极其重要。</span><span class="sxs-lookup"><span data-stu-id="f5063-173">Consequently, it is extremely important that you name your intent exactly the same.</span></span>
 
-    ![Module4Chapter4step20im](images/module4chapter4step20im.PNG)
+<span data-ttu-id="f5063-174">创建新意向后，你将转到该意向的页面：</span><span class="sxs-lookup"><span data-stu-id="f5063-174">When the new intent has been created, you will be taken to that intent's page:</span></span>
 
-20. <span data-ttu-id="1c627-180">在左侧的 "应用程序设置" 下，单击 "密钥和终结点"。</span><span class="sxs-lookup"><span data-stu-id="1c627-180">Click "Keys and Endpoints" under “Application Settings” to the left.</span></span> <span data-ttu-id="1c627-181">然后，将下拉 "发布到" 设置为 "生产"。</span><span class="sxs-lookup"><span data-stu-id="1c627-181">Then, set the drop down "Publish To" as "Production."</span></span> <span data-ttu-id="1c627-182">设置要匹配的时区，并选中复选框以包括所有预测意向分数。</span><span class="sxs-lookup"><span data-stu-id="1c627-182">Set the time-zone to match yours, and check the box to include all predicted intent scores.</span></span> <span data-ttu-id="1c627-183">最后，单击 "分配资源"。</span><span class="sxs-lookup"><span data-stu-id="1c627-183">Lastly, click "Assign resource."</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step2-2.png)
 
-    ![Module4Chapter4step21im](images/module4chapter4step21im.PNG)
+### <a name="3-create-example-utterances"></a><span data-ttu-id="f5063-176">3.创建示例言语</span><span class="sxs-lookup"><span data-stu-id="f5063-176">3. Create example utterances</span></span>
 
-21. <span data-ttu-id="1c627-185">从第一个下拉列表中选择 "租户"，然后在 "订阅名称" 下拉列表中选择 "即用即付"。</span><span class="sxs-lookup"><span data-stu-id="1c627-185">Select tenant from the first dropdown and select “Pay-as-you-go” in the Subscription Name dropdown.</span></span> <span data-ttu-id="1c627-186">在 "LUIS 资源名称" 下，选择前面在步骤1-5 中创建的资源。</span><span class="sxs-lookup"><span data-stu-id="1c627-186">Under LUIS resource name, choose the resource that we created above in steps 1-5.</span></span> <span data-ttu-id="1c627-187">然后，单击 "分配资源"。</span><span class="sxs-lookup"><span data-stu-id="1c627-187">Then, click on "Assign resource."</span></span>
+<span data-ttu-id="f5063-177">将以下示例言语添加到 **PressButton** 意向的“示例言语”列表中： </span><span class="sxs-lookup"><span data-stu-id="f5063-177">To the **PressButton** intent's **Example utterance** list, add the following example utterances:</span></span>
 
-    ![Module4Chapter4step22im](images/module4chapter4step22im.PNG)
+* <span data-ttu-id="f5063-178">激活发射顺序</span><span class="sxs-lookup"><span data-stu-id="f5063-178">activate launch sequence</span></span>
+* <span data-ttu-id="f5063-179">显示位置提示</span><span class="sxs-lookup"><span data-stu-id="f5063-179">show me a placement hint</span></span>
+* <span data-ttu-id="f5063-180">启动发射顺序</span><span class="sxs-lookup"><span data-stu-id="f5063-180">initiate the launch sequence</span></span>
+* <span data-ttu-id="f5063-181">按下位置提示按钮</span><span class="sxs-lookup"><span data-stu-id="f5063-181">press placement hints button</span></span>
+* <span data-ttu-id="f5063-182">给予提示</span><span class="sxs-lookup"><span data-stu-id="f5063-182">give me a hint</span></span>
+* <span data-ttu-id="f5063-183">按下发射按钮</span><span class="sxs-lookup"><span data-stu-id="f5063-183">push the launch button</span></span>
+* <span data-ttu-id="f5063-184">我需要提示</span><span class="sxs-lookup"><span data-stu-id="f5063-184">i need a hint</span></span>
+* <span data-ttu-id="f5063-185">按下重置按钮</span><span class="sxs-lookup"><span data-stu-id="f5063-185">press the reset button</span></span>
+* <span data-ttu-id="f5063-186">重置体验的时间</span><span class="sxs-lookup"><span data-stu-id="f5063-186">time to reset the experience</span></span>
+* <span data-ttu-id="f5063-187">继续发射火箭</span><span class="sxs-lookup"><span data-stu-id="f5063-187">go ahead and launch the rocket</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-189">请确保复制并保存与我们刚刚分配的资源相关联的终结点 URL，以便在下一部分可以轻松访问该 URL。</span><span class="sxs-lookup"><span data-stu-id="1c627-189">Ensure to copy and save the Endpoint URL associated with the resource we just assigned so it is easily accessible for the next section.</span></span>
+<span data-ttu-id="f5063-188">添加所有示例言语后，PressButton 意向页应如下所示：</span><span class="sxs-lookup"><span data-stu-id="f5063-188">When all the example utterances have been added, your PressButton intent page should look similar to this:</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-190">对于租户名称，请将为此应用程序创建的公司或配置文件放入其中。</span><span class="sxs-lookup"><span data-stu-id="1c627-190">For the Tenant name, put your corporation or profile that you created for this application.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step3-1.png)
 
-22. <span data-ttu-id="1c627-191">现在，请在 Unity 中打开新应用，并选择层次结构中的 Lunarcom_Base 对象。</span><span class="sxs-lookup"><span data-stu-id="1c627-191">Now, open the new app in Unity and select the Lunarcom_Base object in the hierarchy.</span></span> <span data-ttu-id="1c627-192">单击 "检查器" 面板中的 "添加组件"，搜索并选择 "LunarcomIntentRecognizer"。</span><span class="sxs-lookup"><span data-stu-id="1c627-192">Click “Add Component” in the inspector panel and search for and select “LunarcomIntentRecognizer.”</span></span>
+> [!CAUTION]
+> <span data-ttu-id="f5063-190">在本教程中，Unity 项目将引用词语“提示”、“重置”和“发射”。</span><span class="sxs-lookup"><span data-stu-id="f5063-190">For the purpose of this tutorial, your Unity project will reference the words 'hint', 'hints', 'reset', and 'launch'.</span></span> <span data-ttu-id="f5063-191">因此，以完全相同的方式拼写这些词语极其重要。</span><span class="sxs-lookup"><span data-stu-id="f5063-191">Consequently, it is extremely important that you spell these words in the exact same way.</span></span>
 
-    ![Module4Chapter4step23im](images/module4chapter4step23im.PNG)
+### <a name="4-create-entities"></a><span data-ttu-id="f5063-192">4.创建实体</span><span class="sxs-lookup"><span data-stu-id="f5063-192">4. Create entities</span></span>
 
-23. <span data-ttu-id="1c627-194">在 "检查器" 面板中的 "LunarcomIntentRecognizer" 的 "Luis 终结点" 字段中，输入你在步骤21中保存的终结点 URL。</span><span class="sxs-lookup"><span data-stu-id="1c627-194">In the Luis Endpoint field of the "LunarcomIntentRecognizer" in the inspector panel, enter the Endpoint URL that you saved in step 21.</span></span>
+<span data-ttu-id="f5063-193">从 PressButton 意向页导航到“生成”>“应用资产”>“实体”页，然后单击“创建新实体”，并在“创建新实体”弹出窗口中输入以下值：   </span><span class="sxs-lookup"><span data-stu-id="f5063-193">From the PressButton intent page, navigate to the Build > App Assets > **Entities** page, then click **Create new entity** and enter the following values in the **Create new entity** popup window:</span></span>
 
-    ![Module4Chapter4step24im](images/module4chapter4step24im.PNG)
+* <span data-ttu-id="f5063-194">对于“实体名称”，请输入 **Action** </span><span class="sxs-lookup"><span data-stu-id="f5063-194">For **Entity name**, enter **Action**</span></span>
+* <span data-ttu-id="f5063-195">对于“实体类型”，请选择“简单”  </span><span class="sxs-lookup"><span data-stu-id="f5063-195">For **Entity type**, select **Simple**</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-196">在 "检查器" 面板中的 "LunarcomOfflineRecognizer" 组件中，请确保已为 "SimulateOfflineMode" 选择 "禁用"，否则测试程序将不起作用。</span><span class="sxs-lookup"><span data-stu-id="1c627-196">In the "LunarcomOfflineRecognizer" component in the inspector panel, make sure that “disable” is selected for "SimulateOfflineMode" otherwise, testing the program will not work.</span></span>
+<span data-ttu-id="f5063-196">然后单击“完成”按钮创建新实体： </span><span class="sxs-lookup"><span data-stu-id="f5063-196">Then click the **Done** button to create the new entity:</span></span>
 
-24. <span data-ttu-id="1c627-197">在项目窗口中，导航到 "资产" > "MRTK"。GettingStarted > Prototyping > RocketLauncher 文件夹中，将 RocketLauncher_Complete prefab 拖到 "层次结构" 窗口，并将其放置在 Lunarcom_Base 对象的前面。</span><span class="sxs-lookup"><span data-stu-id="1c627-197">In the Project window, navigate to the Assets > MRTK.Tutorials.GettingStarted > Prefabs > RocketLauncher folder, drag the RocketLauncher_Complete prefab into your Hierarchy window, and position it in front of the Lunarcom_Base object.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step4-1.png)
 
-    ![Module4Chapter4step24im](images/module4chapter4step24im-missing01.png)
+<span data-ttu-id="f5063-198">**重复**上述步骤创建名为 **Target** 的另一个实体，因此现在有名为 Action 和 Target 的两个实体：</span><span class="sxs-lookup"><span data-stu-id="f5063-198">**Repeat** the previous step to create another entity named **Target**, so you have two entities named Action and Target:</span></span>
 
-25. <span data-ttu-id="1c627-199">在 "层次结构" 窗口中，选择 "Lunarcom_Base" 对象并找到 "Lunarcom 意向识别器（脚本）" 组件，然后展开 "RocketLauncher_Complete" > "按钮对象，并将每个按钮对象分配给相应的农历启动器按钮定义域.</span><span class="sxs-lookup"><span data-stu-id="1c627-199">In the Hierarchy window, select the Lunarcom_Base object and locate the Lunarcom Intent Recognizer (Script) component, then expand the RocketLauncher_Complete > Button object and assign each of the button objects to the corresponding Lunar Launcher Buttons field.</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step4-2.png)
 
-    ![Module4Chapter4step24im](images/module4chapter4step24im-missing02.png)
+> [!CAUTION]
+> <span data-ttu-id="f5063-200">在本教程中，Unity 项目将按名称（即“Action”和“Target”）引用这些实体。</span><span class="sxs-lookup"><span data-stu-id="f5063-200">For the purpose of this tutorial, your Unity project will reference these entities by their names, i.e. 'Action' and 'Target'.</span></span> <span data-ttu-id="f5063-201">因此，为实体指定完全相同的名称极其重要。</span><span class="sxs-lookup"><span data-stu-id="f5063-201">Consequently, it is extremely important that you name your entities exactly the same.</span></span>
 
-26. <span data-ttu-id="1c627-201">按 Unity 编辑器中的 "播放" 按钮，然后单击 "火箭" 按钮，开始意图识别。</span><span class="sxs-lookup"><span data-stu-id="1c627-201">Press the Play button in the Unity Editor and click the rocket button to start intent recognition.</span></span> <span data-ttu-id="1c627-202">Utter "选择启动火箭" 按钮。</span><span class="sxs-lookup"><span data-stu-id="1c627-202">Utter the phrase “select the launch rocket button.”</span></span>
+### <a name="5-assign-entities-to-the-example-utterances"></a><span data-ttu-id="f5063-202">5.将实体分配到示例言语</span><span class="sxs-lookup"><span data-stu-id="f5063-202">5. Assign entities to the example utterances</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="1c627-203">应用已识别所需的函数并激活了 "火箭" 按钮。</span><span class="sxs-lookup"><span data-stu-id="1c627-203">The app recognized the desired function and activated the rocket button.</span></span>
-    >
-    >![Module4Chapter4step24im](images/module4chapter4note2im.PNG)
+<span data-ttu-id="f5063-203">从“实体”页导航回到 **PressButton** 意向页。</span><span class="sxs-lookup"><span data-stu-id="f5063-203">From the Entities page, navigate back to the **PressButton** intent page.</span></span>
 
-## <a name="congratulations"></a><span data-ttu-id="1c627-205">祝贺你</span><span class="sxs-lookup"><span data-stu-id="1c627-205">Congratulations</span></span>
+<span data-ttu-id="f5063-204">返回到 PressButton 意向页后，依次单击单词“继”和“续”，然后从上下文弹出菜单中选择“Action (简单)”，将“继续”标记为 **Action** 实体值：    </span><span class="sxs-lookup"><span data-stu-id="f5063-204">Once back on the the PressButton intent page, click on the word **go** and then on the word **ahead**, and then select **Action (Simple)** from the contextual popup menu to label **go ahead** as an **Action** entity value:</span></span>
 
-<span data-ttu-id="1c627-206">在本课中，您学习了如何添加 AI 功能的语音命令。</span><span class="sxs-lookup"><span data-stu-id="1c627-206">In this lesson, you learned how to add AI-powered speech commands.</span></span> <span data-ttu-id="1c627-207">现在，你的程序可以识别用户的意图，即使它们不 utter 精确的语音命令也是如此！</span><span class="sxs-lookup"><span data-stu-id="1c627-207">Now your program can recognize users' intent, even if they do not utter precise voice commands!</span></span>
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step5-1.png)
+
+<span data-ttu-id="f5063-206">短语“继续”现在定义为 **Action** 实体值。 </span><span class="sxs-lookup"><span data-stu-id="f5063-206">The **go ahead** phrase is now defined as an **Action** entity value.</span></span> <span data-ttu-id="f5063-207">如果将鼠标光标悬停在 Action 实体名称上，可以看到关联的 Action 实体值：</span><span class="sxs-lookup"><span data-stu-id="f5063-207">If you hover your mouse cursor above the Action entity name, you can see the associated Action entity value:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step5-2.png)
+
+> [!NOTE]
+> <span data-ttu-id="f5063-209">上图中标签下方的红线表示尚未预测实体值，在下一部分训练模型时将解决此问题。</span><span class="sxs-lookup"><span data-stu-id="f5063-209">The red line you see under the label in the image above indicates that the entity value has not been predicted, this will be resolved when you train the model in the next section.</span></span>
+
+<span data-ttu-id="f5063-210">接下来单击词语“发射”，然后从上下文弹出菜单中选择“Target (简单)”，将“发射”标记为 **Target** 实体值：   </span><span class="sxs-lookup"><span data-stu-id="f5063-210">Next, click on the word **launch**, and then select **Target (Simple)** from the contextual popup menu to label **launch** as a **Target** entity value:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step5-3.png)
+
+<span data-ttu-id="f5063-212">词语“发射”现在定义为 **Target** 实体值。 </span><span class="sxs-lookup"><span data-stu-id="f5063-212">The **launch** word is now defined as a **Target** entity value.</span></span> <span data-ttu-id="f5063-213">如果将鼠标光标悬停在 Target 实体名称上，可以看到关联的 Target 实体值：</span><span class="sxs-lookup"><span data-stu-id="f5063-213">If you hover your mouse cursor above the Target entity name, you can see the associated Target entity value:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step5-4.png)
+
+<span data-ttu-id="f5063-215">PressButton 意向示例言语“继续发射火箭”现已配置为按如下所示进行预测：</span><span class="sxs-lookup"><span data-stu-id="f5063-215">The PressButton intent example utterance 'go ahead and launch the rocket' is now configured to be predicted as follows:</span></span>
+
+* <span data-ttu-id="f5063-216">意向：PressButton</span><span class="sxs-lookup"><span data-stu-id="f5063-216">Intent: PressButton</span></span>
+* <span data-ttu-id="f5063-217">Action 实体：继续</span><span class="sxs-lookup"><span data-stu-id="f5063-217">Action entity: go ahead</span></span>
+* <span data-ttu-id="f5063-218">Target 实体：发射</span><span class="sxs-lookup"><span data-stu-id="f5063-218">Target entity: launch</span></span>
+
+<span data-ttu-id="f5063-219">**重复**上述两步过程，将 Action 和 Target 实体标签分配到每个示例言语，请记住，应将以下词语标记为 **Target** 实体：</span><span class="sxs-lookup"><span data-stu-id="f5063-219">**Repeat** the previous two-step process to assign an Action and a Target entity label to each of the example utterances, keeping in mind that the following words should be labeled as **Target** entities:</span></span>
+
+* <span data-ttu-id="f5063-220">**提示**（针对 Unity 项目中的 HintsButton）</span><span class="sxs-lookup"><span data-stu-id="f5063-220">**hint** (targets the HintsButton in the Unity project)</span></span>
+* <span data-ttu-id="f5063-221">**提示**（针对 Unity 项目中的 HintsButton）</span><span class="sxs-lookup"><span data-stu-id="f5063-221">**hints** (targets HintsButton in the Unity project)</span></span>
+* <span data-ttu-id="f5063-222">**重置**（针对 Unity 项目中的 ResetButton）</span><span class="sxs-lookup"><span data-stu-id="f5063-222">**reset** (targets the ResetButton in the Unity project)</span></span>
+* <span data-ttu-id="f5063-223">**发射**（针对 Unity 项目中的 LaunchButton）</span><span class="sxs-lookup"><span data-stu-id="f5063-223">**launch** (targets the LaunchButton in the Unity project)</span></span>
+
+<span data-ttu-id="f5063-224">标记所有示例言语后，PressButton 意向页应如下所示：</span><span class="sxs-lookup"><span data-stu-id="f5063-224">When all the example utterances have been labeled, your PressButton intent page should look similar to this:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step5-5.png)
+
+<span data-ttu-id="f5063-226">若要通过另一种方式仔细检查是否分配了正确的实体，请单击“视图选项”菜单，然后将视图切换为“显示实体值”：  </span><span class="sxs-lookup"><span data-stu-id="f5063-226">For an alternative way to double-check that you have assigned the correct entities, click the **View options** menu and switch the view to **Show entity values**:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step5-6.png)
+
+<span data-ttu-id="f5063-228">现在，在将视图设置为显示实体值后，可将鼠标光标悬停在标记的单词和短语上，以快速验证分配的实体名称：</span><span class="sxs-lookup"><span data-stu-id="f5063-228">Now, with the view set to show entity values, you can hover the mouse courser over the labeled words and phrases to quickly verify the assigned entity name:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step5-7.png)
+
+### <a name="6-train-test-and-publish-the-app"></a><span data-ttu-id="f5063-230">6.训练、测试并发布应用</span><span class="sxs-lookup"><span data-stu-id="f5063-230">6. Train, test, and publish the app</span></span>
+
+<span data-ttu-id="f5063-231">若要训练应用，请单击“训练”按钮并等待训练过程完成： </span><span class="sxs-lookup"><span data-stu-id="f5063-231">To train the app, click the **Train** button and wait for the training process to complete:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step6-1.png)
+
+> [!NOTE]
+> <span data-ttu-id="f5063-233">在上图中可以发现，所有标签下面的红线都已删除，这表示已预测所有实体值。</span><span class="sxs-lookup"><span data-stu-id="f5063-233">As you can see in the image above, the red lines under all the labels have been removed, indicating that all the entity values have been predicted.</span></span> <span data-ttu-id="f5063-234">另外可以看到，“训练”按钮左侧的状态图标颜色已从红色变为绿色。</span><span class="sxs-lookup"><span data-stu-id="f5063-234">Also notice that the status icon to the left of the Train button has changed color from red to green.</span></span>
+
+<span data-ttu-id="f5063-235">处理完训练后，单击“测试”按钮，然后键入“继续发射火箭”并按 Enter 键：  </span><span class="sxs-lookup"><span data-stu-id="f5063-235">When the training is finished processing, click the **Test** button, then type in **go ahead and launch the rocket** and press the Enter key:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step6-2.png)
+
+<span data-ttu-id="f5063-237">处理测试言语后，单击“检查”以查看测试结果： </span><span class="sxs-lookup"><span data-stu-id="f5063-237">When the test utterance has been processed, click **Inspect** to see the test result:</span></span>
+
+* <span data-ttu-id="f5063-238">意向：PressButton（98.5% 确定性）</span><span class="sxs-lookup"><span data-stu-id="f5063-238">Intent: PressButton (with a 98.5% certainty)</span></span>
+* <span data-ttu-id="f5063-239">Action 实体：继续</span><span class="sxs-lookup"><span data-stu-id="f5063-239">Action entity: go ahead</span></span>
+* <span data-ttu-id="f5063-240">Target 实体：发射</span><span class="sxs-lookup"><span data-stu-id="f5063-240">Target entity: launch</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step6-3.png)
+
+<span data-ttu-id="f5063-242">若要发布应用，请单击右上方的“发布”按钮，然后在“选择发布槽和设置”弹出窗口中，选择“生产”并单击“发布”按钮：    </span><span class="sxs-lookup"><span data-stu-id="f5063-242">To publish the app, click the **Publish** button in the top right, then in the **Choose your publishing slot and settings** popup window, select **Production** and click the **Publish** button:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step6-4.png)
+
+<span data-ttu-id="f5063-244">等待发布过程完成：</span><span class="sxs-lookup"><span data-stu-id="f5063-244">Wait for the publishing process to complete:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step6-5.png)
+
+### <a name="7-assign-an-azure-prediction-resource-to-the-app"></a><span data-ttu-id="f5063-246">7.将 Azure 预测资源分配到应用</span><span class="sxs-lookup"><span data-stu-id="f5063-246">7. Assign an Azure prediction resource to the app</span></span>
+
+<span data-ttu-id="f5063-247">导航到“管理”>“应用程序设置”>“Azure 资源”页： </span><span class="sxs-lookup"><span data-stu-id="f5063-247">Navigate to the Manage > Application Settings > **Azure Resources** page:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step7-1.png)
+
+<span data-ttu-id="f5063-249">在“Azure 资源”页上，单击“添加预测资源”按钮，并在“将资源分配到应用”弹出窗口中选择以下值：  </span><span class="sxs-lookup"><span data-stu-id="f5063-249">On the Azure Resources page, click the **Add prediction resource** button and select the following values in the **Assign a resource to your app** popup window:</span></span>
+
+* <span data-ttu-id="f5063-250">对于“租户名称”，请选择你的租户名称 </span><span class="sxs-lookup"><span data-stu-id="f5063-250">For **Tenant name**, select your tenant name</span></span>
+* <span data-ttu-id="f5063-251">对于“订阅名称”，请选择前面在[创建 Azure 语言理解资源](mrlearning-speechSDK-ch4.md#creating-the-azure-language-understanding-resource)时使用的同一订阅 </span><span class="sxs-lookup"><span data-stu-id="f5063-251">For **Subscription Name**, select the same subscription you used earlier when [Creating the Azure Language Understanding resource](mrlearning-speechSDK-ch4.md#creating-the-azure-language-understanding-resource)</span></span>
+* <span data-ttu-id="f5063-252">对于“LUIS 资源名称”，请选择前面在[创建 Azure 语言理解资源](mrlearning-speechSDK-ch4.md#creating-the-azure-language-understanding-resource)时创建的预测资源 </span><span class="sxs-lookup"><span data-stu-id="f5063-252">For **LUIS resource name**, select the prediction resource you created earlier when [Creating the Azure Language Understanding resource](mrlearning-speechSDK-ch4.md#creating-the-azure-language-understanding-resource)</span></span>
+
+<span data-ttu-id="f5063-253">然后单击“分配资源”按钮，将 Azure 预测资源分配到应用： </span><span class="sxs-lookup"><span data-stu-id="f5063-253">Then click the **Assign resource** button to assign the Azure prediction resource to your app:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step7-2.png)
+
+<span data-ttu-id="f5063-255">分配资源后，Azure 资源页应如下所示：</span><span class="sxs-lookup"><span data-stu-id="f5063-255">When the resource has been assigned, your Azure Resources page should look similar to this:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step7-3.png)
+
+## <a name="connecting-the-unity-project-to-the-luis-app"></a><span data-ttu-id="f5063-257">将 Unity 项目连接到 LUIS 应用</span><span class="sxs-lookup"><span data-stu-id="f5063-257">Connecting the Unity project to the LUIS app</span></span>
+
+<span data-ttu-id="f5063-258">在“管理”>“应用程序设置”>“Azure 资源”页上，单击“复制”图标复制“示例查询”：   </span><span class="sxs-lookup"><span data-stu-id="f5063-258">On the Manage > Application Settings > **Azure Resources** page, click the **copy** icon to copy the **Example Query**:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section4-step1-1.png)
+
+<span data-ttu-id="f5063-260">返回到 Unity 项目，在“层次结构”窗口中选择“Lunarcom”对象，然后在“检查器”窗口中，找到“Lunarcom 意向识别器(脚本)”组件，并按如下所述对其进行配置：  </span><span class="sxs-lookup"><span data-stu-id="f5063-260">Back in your Unity project, in the Hierarchy window, select the **Lunarcom** object, then in the Inspector window, locate the **Lunarcom Intent Recognizer (Script)** component and configure it as follows:</span></span>
+
+* <span data-ttu-id="f5063-261">在“LUIS 终结点”字段中，粘贴在上一步骤中复制的“示例查询”：  </span><span class="sxs-lookup"><span data-stu-id="f5063-261">In the **LUIS Endpoint** field, past the **Example Query** you copied in the previous step:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section4-step1-2.png)
+
+## <a name="testing-and-improving-the-intent-recognition"></a><span data-ttu-id="f5063-263">测试和改善意向识别</span><span class="sxs-lookup"><span data-stu-id="f5063-263">Testing and improving the intent recognition</span></span>
+
+<span data-ttu-id="f5063-264">若要在 Unity 编辑器中直接使用意向识别，必须允许开发计算机使用听写。</span><span class="sxs-lookup"><span data-stu-id="f5063-264">To use intent recognition directly in the Unity editor, you must allow your development computer to use dictation.</span></span> <span data-ttu-id="f5063-265">若要验证此设置，请打开 Windows 的“设置”，然后选择“隐私” > “语音”，并确保启用“在线语音识别”：    </span><span class="sxs-lookup"><span data-stu-id="f5063-265">To verify this setting, open Windows **Settings** then choose **Privacy** > **Speech** and ensure **Online speech recognition** is turned on:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section5-step1-1.png)
+
+<span data-ttu-id="f5063-267">如果现在进入“游戏”模式，可以先按火箭按钮来测试意向识别。</span><span class="sxs-lookup"><span data-stu-id="f5063-267">If you now enter Game mode, you can test the intent recognition by first pressing the rocket button.</span></span> <span data-ttu-id="f5063-268">假设计算机上配备了麦克风，当你讲出第一个示例言语“继续发射火箭”时，将会看到 LunarModule 发射到了太空： </span><span class="sxs-lookup"><span data-stu-id="f5063-268">Then, assuming your computer has a microphone, when you say the first example utterance, **go ahead and launch the rocket**, you will see the LunarModule launch into space:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section5-step1-2.png)
+
+<span data-ttu-id="f5063-270">尝试所有**示例言语**，然后尝试**示例言语的一些变体**，以及一些**随机言语**。</span><span class="sxs-lookup"><span data-stu-id="f5063-270">Try all the **example utterances**, then some **variation of the example utterances**, as well as, a few **random utterances**.</span></span>
+
+<span data-ttu-id="f5063-271">接下来，返回到 <a href="https://www.luis.ai" target="_blank">LUIS</a> 并导航到“生成”>“改善应用性能”>“查看终结点言语”页，使用**切换**按钮从默认的“实体视图”切换到“标记视图”，然后查看言语：  </span><span class="sxs-lookup"><span data-stu-id="f5063-271">Next, return to <a href="https://www.luis.ai" target="_blank">LUIS</a> and navigate to Build > Improve app performance > **Review endpoint utterances** page, use the **toggle** button to switch from the default Entities View to **Tokens View**, and then review the utterances:</span></span>
+
+* <span data-ttu-id="f5063-272">在“言语”列中，根据需要更改和删除分配的标签，使之与意向相符 </span><span class="sxs-lookup"><span data-stu-id="f5063-272">In the **Utterance** column, change and remove the assigned labels as needed so they align with your intent</span></span>
+* <span data-ttu-id="f5063-273">在“对齐的意向”列中，检查意向是否正确 </span><span class="sxs-lookup"><span data-stu-id="f5063-273">In the **Aligned intent** column, verify that the intent is correct</span></span>
+* <span data-ttu-id="f5063-274">在“添加/删除”列中，单击绿色的勾选按钮添加言语，或单击红色的 X 按钮删除言语 </span><span class="sxs-lookup"><span data-stu-id="f5063-274">In the **Add/Delete** column, click the green check mark button to add the utterance or the red x button to delete it</span></span>
+
+<span data-ttu-id="f5063-275">检查所需数目的言语后，单击“训练”按钮以重新训练模型，然后单击“发布”按钮重新发布更新的应用：  </span><span class="sxs-lookup"><span data-stu-id="f5063-275">When you have reviewed as many utterances as you like, click the **Train** button to retrain the model, then the **Publish** button to republish the updated app:</span></span>
+
+![mrlearning-speech](images/mrlearning-speech/tutorial4-section5-step1-3.png)
+
+> [!NOTE]
+> <span data-ttu-id="f5063-277">如果某个终结点言语与 PressButton 意向不一致，但你希望模型知道该言语不包含意向，可将“对齐的意向”更改为“无”。</span><span class="sxs-lookup"><span data-stu-id="f5063-277">If an endpoint utterance does not align with the PressButton intent, but you would like your model to know that the utterance has no intent, you can change the Aligned intent to None.</span></span>
+
+<span data-ttu-id="f5063-278">**重复**此过程任意次，以改善应用模型。</span><span class="sxs-lookup"><span data-stu-id="f5063-278">**Repeat** this process as many times as you like to improve your app model.</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="f5063-279">祝贺</span><span class="sxs-lookup"><span data-stu-id="f5063-279">Congratulations</span></span>
+
+<span data-ttu-id="f5063-280">现已在项目中包含了 AI 驱动的语音命令，即使用户没有讲出准确的命令，应用程序也能识别用户的意向。</span><span class="sxs-lookup"><span data-stu-id="f5063-280">Your project now have AI-powered speech commands, allowing your application to recognize the users' intent even if they do not utter precise commands.</span></span> <span data-ttu-id="f5063-281">请在设备上运行该应用程序，以确保功能正常。</span><span class="sxs-lookup"><span data-stu-id="f5063-281">Run the application on your device to ensure the feature is working properly.</span></span>
