@@ -201,11 +201,16 @@
 ### [将 Edge 中的 WebVR 与 Windows Mixed Reality 配合使用](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## 本机
 ### [本机开发概述](directx-development-overview.md)
-### 入门
+### OpenXR
+#### [OpenXR 概述](openxr.md)
+#### [OpenXR 入门](openxr-getting-started.md)
+#### [OpenXR 最佳做法](openxr-best-practices.md)
+#### [OpenXR 性能](openxr-performance.md)
+#### [OpenXR 故障排除](openxr-troubleshooting.md)
+### WinRT
 #### [创建本机全息项目](creating-a-holographic-directx-project.md)
 #### [获取 HolographicSpace](getting-a-holographicspace.md)
 #### [本机呈现](rendering-in-directx.md)
-### [OpenXR](openxr.md)
 ## 平台功能和 API
 ### 核心构建基块
 #### [坐标系统](coordinate-systems-in-directx.md)
