@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: fa0ebc409fa38f664bdd0966906c6fd77f7a6081
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 47063fbf9a1b9f3a43497a0742deba2c16b53d99
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376144"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362056"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.Azure 空间定位点入门
 
@@ -47,13 +47,13 @@ ms.locfileid: "79376144"
 > 建议用于本系列教程的 Unity 版本是 Unity 2019.2.X。 这将取代上述链接的先决条件中所述的任何 Unity 版本要求或建议。
 
 ## <a name="creating-the-unity-project"></a>创建 Unity 项目
-<!-- TODO: Consider renaming to 'Creating and preparing the Unity scene and project'-->
+<!-- TODO: Consider renaming to 'Creating and preparing the Unity project'-->
 
 在本部分，你将创建一个新的 Unity 项目，并使其准备好用于 MRTK 开发。
 
 为此，请先执行[初始化项目和第一个应用程序](mrlearning-base-ch1.md)中的以下步骤，但请忽略有关[在设备上生成应用程序](mrlearning-base-ch1.md#build-your-application-to-your-device)的说明：
 
-1. [创建新的 Unity 项目](mrlearning-base-ch1.md#create-new-unity-project)并为其指定适当的名称，例如 *MRTK Tutorials*。
+1. [创建新的 Unity 项目](mrlearning-base-ch1.md#create-new-unity-project)并为其指定适当的名称，例如 *MRTK Tutorials*
 
 2. [配置用于 Windows Mixed Reality 的 Unity 项目](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)
 
