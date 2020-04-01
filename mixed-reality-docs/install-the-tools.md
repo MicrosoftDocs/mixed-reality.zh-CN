@@ -7,12 +7,12 @@ ms.date: 3/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新, 工具, 入门, 基础, Unity, Visual Studio, 工具包
-ms.openlocfilehash: 447260d9115ba58c9ed5ea286732e3406bb07154
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: a2f62ecad1d6f1bbe90b3684391e6a1825de9d00
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376124"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362046"
 ---
 # <a name="install-the-tools"></a>安装工具
 
@@ -35,7 +35,7 @@ ms.locfileid: "79376124"
 | 工具 | 说明 | 注释 |
 |---------|---------|---------|
 | ![Windows 徽标](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windows10" target="_blank">**Windows 10**（手动安装链接）</a> | 安装最新版本的 Windows 10，以便电脑的操作系统与正在为其生成混合现实应用程序的平台匹配。 | **安装 Windows 10** <br> <ul><li>可以通过“设置”中的“Windows 更新”，或者使用左栏中的链接创建安装媒体，来安装最新版本的 Windows 10。<li>有关每个 Windows 10 版本提供的最新混合现实功能的信息，请参阅[当前发行说明](release-notes-october-2018.md)。</ul> 通过“设置”>“更新和安全”>“对于开发人员”在电脑上启用开发人员模式  。 <br><br> 针对企业和企业托管电脑的注意事项：如果电脑由组织的 IT 部门管理，可能需要与他们联系才能进行更新  。 <br><br> Windows 的“N”版本  ：Windows 的“N”版本不支持 Windows Mixed Reality 沉浸式 (VR) 头戴显示设备。 |
-| ![Visual Studio 徽标](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2019（16.2 或更高版本）** （安装链接）</a> | 适用于 Windows 等的功能齐全的集成开发环境 (IDE)。 将使用 Visual Studio 来编写代码、调试、测试和部署。 | **要安装的工作负载：** <ul><li>使用 C++ 的桌面开发</li><li>通用 Windows 平台 (UWP) 开发</li></ul>**有关 Unity 的说明：** 除非有意出于特定目的安装较新（非 LTS）版本的 Unity，建议不要将 Unity 工作负荷作为 Visual Studio 安装的一部分进行安装，而是安装下文所述的 2018.4 LTS Unity 流  。<br> <br>**注意：** 在 Visual Studio 2019 版本16.0 中调试混合现实应用时存在一些已知问题。  请确保将 Visual Studio 2019 更新到版本 16.2 或更高版本。 |
+| ![Visual Studio 徽标](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2019（16.2 或更高版本）** （安装链接）</a> | 适用于 Windows 等的功能齐全的集成开发环境 (IDE)。 将使用 Visual Studio 来编写代码、调试、测试和部署。 | 请确保安装以下工作负载： <ul><li>**使用 C++ 的桌面开发**</li><li>**通用 Windows 平台 (UWP) 开发**</li></ul>在 UWP 工作负载内，如果要针对 HoloLens 进行开发，请务必选中以下可选组件：<ul><li>**USB 设备连接**</li></ul>**有关 Unity 的说明：** 除非你出于特定目的有意尝试安装较新（非 LTS）版本的 Unity，否则我们建议不要将 Unity 工作负载作为 Visual Studio 安装的一部分进行安装，而是安装下文所述的 Unity 2018.4 LTS  流  。<br> <br>**注意：** 在 Visual Studio 2019 版本16.0 中调试混合现实应用时存在一些已知问题。  请确保更新到 Visual Studio 2019 版本 16.2 或更高版本  。 |
 | ![Windows 徽标](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com//windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)** （手动安装链接）</a> | 提供用于在 HoloLens 2 上生成 Windows 10 应用的最新标头、库、元数据和工具。 | 若要生成 HoloLens 2 应用，必须安装 Windows SDK、内部版本 18362 或更高版本。<br> <br> 如果仅针对桌面 Windows Mixed Reality 头戴显示设备或 HoloLens（第 1 代）开发应用程序，则可以使用 Visual Studio 2017 安装的 Windows SDK。 |
 | ![Visual Studio 徽标](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2121323" target="_blank">**HoloLens 2 仿真器（2020 年 3 月更新）** （安装链接：10.0.18362.1056）</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens（第一代）仿真器**（安装链接：10.0.17763.134）</a> | 使用仿真器可在没有 HoloLens 的情况下在 HoloLens 虚拟机映像上运行应用程序。<br> <br> | 有关如何开始使用仿真器的详细信息，请参阅[使用 HoloLens 仿真器](using-the-hololens-emulator.md)。<br> <br> 系统必须支持 Hyper-V 才能成功安装仿真器  。 有关详细信息，请参阅下面的“系统要求”部分。 <br>|
 
@@ -43,20 +43,40 @@ ms.locfileid: "79376124"
 
 :::row:::
     :::column:::
-       [![Unity](images/unity_logo.png)](https://unity3d.com/unity/qa/lts-releases?version=2018.4)<br>
-        **[Unity](https://unity3d.com/unity/qa/lts-releases?version=2018.4)**<br>
-        通常建议使用 Unity LTS（长期支持）流，它是启动新项目的最佳版本，更新到其最新版本可获取最新的稳定修补程序。<br> <br>目前的建议是使用“Unity 2018.4.x”，这是下文的 MRTK v2 所需的 LTS 版本  。<br> <br>出于具体的原因，一些开发人员可能需要使用不同版本的 Unity。 对于这些情况，Unity 支持并行安装不同版本。<br><br>
-        [![MRTK](images/final_mrtk-small_logo.png)](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)<br>**[混合现实工具包 (MRTK)](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)**<br>适用于 Unity 的混合现实工具包 (MRTK) v2 是一款面向混合现实应用程序的开源跨平台开发套件。<br><br> MRTK v2 旨在加快面向 Microsoft HoloLens、Windows Mixed Reality 沉浸式 (VR) 头戴显示设备和 OpenVR 平台的应用程序的开发。 该项目旨在降低创建混合现实应用程序的门槛，并在我们成长的过程中回馈社区。
+        <a href="https://unity3d.com/unity/qa/lts-releases?version=2018.4" target="_blank">![Unity](images/unity_logo.png)<br>
+        **Unity**</a><br>
+        通常建议使用 Unity LTS（长期支持）流，它是启动新项目的最佳版本，更新到其最新版本可获取最新的稳定修补程序。<br>
+        <br>
+        目前的建议是使用“Unity 2018.4.x”，这是下文的 MRTK v2 所需的 LTS 版本  。<br>
+        <br>
+        出于具体的原因，一些开发人员可能需要使用不同版本的 Unity。 对于这些情况，Unity 支持并行安装不同版本。<br>
+        <br>
+        请参阅 [Unity 开发概述](unity-development-overview.md)，以便开始针对 HoloLens 2 或 Windows Mixed Reality 沉浸式耳机进行 Unity 开发。<br>
+        <br>
+        <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">![MRTK](images/final_mrtk-small_logo.png)<br>
+        **混合现实工具包 (MRTK)** </a><br>
+        适用于 Unity 的混合现实工具包 (MRTK) v2 是一款面向混合现实应用程序的开源跨平台开发套件。<br>
+        <br>
+        MRTK v2 旨在加快面向 Microsoft HoloLens、Windows Mixed Reality 沉浸式 (VR) 头戴显示设备和 OpenVR 平台的应用程序的开发。 该项目旨在降低创建混合现实应用程序的门槛，并在我们成长的过程中回馈社区。
     :::column-end:::
     :::column:::
-        [![Unreal](images/Unreal_logo.png)](https://docs.unrealengine.com//GettingStarted/Installation/index.html)<br>
-        **[Unreal](https://docs.unrealengine.com//GettingStarted/Installation/index.html)**<br>
-        Unreal Engine 4 是一种强大的开源创建引擎，全面支持采用 C++ 和 Azure 蓝图编写的混合现实。<br> <br>HoloLens 对 Unreal Engine 4.23 的支持目前为 Beta 版。
+        <a href="https://docs.unrealengine.com//GettingStarted/Installation/index.html" target="_blank">![Unreal](images/Unreal_logo.png)<br>
+        **Unreal**</a><br>
+        Unreal Engine 4 是一种强大的开源创建引擎，全面支持采用 C++ 和 Azure 蓝图编写的混合现实。<br>
+        <br>
+        对 Unreal Engine 4.24 的 HoloLens 支持目前以 Beta 版提供。<br>
+        <br>
+        请参阅 [Unreal 开发概述](unreal-development-overview.md)以开始针对 HoloLens 2 进行 Unreal 开发。
     :::column-end:::
     :::column:::
-        [![DirectX 应用模板](images/visualstudio-small_logo.png)](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)<br>
-        **[DirectX](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)**<br>
-        Windows Mixed Reality 应用模板提供了开始将 DirectX 与本机 API 配合使用来编写混合现实应用所需的所有基本要素。 包括一个渲染循环（或“游戏循环”）、一个 DeviceResources 帮助程序类（用于管理 Direct3D 设备和上下文），以及一个简单的示例全息渲染器。 适用于 Direct3D11 和 Direct3D 12。
+        ![本机应用开发](images/visualstudio-small_logo.png)<br>
+        [**本机 (OpenXR)** ](openxr-getting-started.md)<br>
+        OpenXR 是来自 Khronos 的开放式免版税 API 标准。对于来自多个供应商的跨混合现实范围的各种设备，该标准为引擎提供了对这些设备的本机访问。  <a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a> 项目演示了一个简单的 OpenXR 示例，其中包含两个 Visual Studio 项目文件，一个用于 Win32 桌面应用，另一个用于 UWP HoloLens 2 应用。<br>
+        <br>
+        <a href="https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX" target="_blank">**本机 (WinRT)** </a><br>
+        <a href="https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX" target="_blank">Windows Mixed Reality 本机应用模板</a>提供了开始将 DirectX 与本机 API 配合使用来编写混合现实应用所需的所有基本要素。 包括一个渲染循环（或“游戏循环”）、一个 DeviceResources 帮助程序类（用于管理 Direct3D 设备和上下文），以及一个简单的示例全息渲染器。 适用于 Direct3D11 和 Direct3D 12。<br>
+        <br>
+        请参阅[本机开发概述](directx-development-overview.md)，以便开始针对 HoloLens 2 或 Windows Mixed Reality 沉浸式耳机使用 WinRT 或 OpenXR 进行本地应用开发。
     :::column-end:::
 :::row-end:::
 
@@ -75,7 +95,7 @@ Windows 10 SDK 在 Windows 10 操作系统上效果最佳。 Windows 8.1、Windo
 
 ### <a name="for-hololens-development"></a>对于 HoloLens 开发
 
-在为进行 HoloLens 开发设置开发电脑时，请确保该电脑满足 <a href="https://unity3d.com/unity/system-requirements" target="_blank">Unity</a> 和 <a href="https://docs.microsoft.com//visualstudio/releases/2019/system-requirements" target="_blank">Visual Studio</a> 的系统要求。 如果你打算使用 HoloLens（第 1 代）仿真器，还需要确保电脑满足 [HoloLens 仿真器系统要求](using-the-hololens-emulator.md#hololens-emulator-system-requirements)。
+在为进行 HoloLens 开发设置开发电脑时，请确保该电脑满足 <a href="https://unity3d.com/unity/system-requirements" target="_blank">Unity</a> 和 <a href="https://docs.microsoft.com//visualstudio/releases/2019/system-requirements" target="_blank">Visual Studio</a> 的系统要求。 如果打算使用 HoloLens 仿真器，还需要确保电脑满足 [HoloLens 仿真器系统要求](using-the-hololens-emulator.md#hololens-emulator-system-requirements)。
 
 若要开始使用 HoloLens 仿真器，请参阅[使用 HoloLens 仿真器](using-the-hololens-emulator.md)。
 

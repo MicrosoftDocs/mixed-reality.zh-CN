@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 2825f99f49eca6fd7277d02828bfe1bc3c23291a
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: 8a85ab560d0e6b36b589970b4d5b8a441ed2bbe2
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031215"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362036"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4.放置动态内容和使用解算器
 <!-- Consider renaming to 'Placing dynamic content using Solvers' -->
@@ -39,7 +39,7 @@ ms.locfileid: "79031215"
 在本部分，你将增强在上一篇教程中创建的按钮集合，使其跟随用户的视线方向。 此外，将配置解算器，使按钮集合始终：
 
 * 平行于用户的阅读方向旋转（人们习惯于从左到右阅读）
-* 定位在略低于用户水平视线的位置，使其不会阻挡稍后要在本教程中添加的其他对象
+* 定位在低于用户水平视线的位置，使其不会阻挡稍后要在本教程中添加的其他对象
 * 定位在相距用户大约半个手臂长度的位置，以便可以方便地按下按钮
 
 为此，你将使用**轨道解算器**将对象锁定在指定的位置，并与参照对象之间保持一定的偏移量。
@@ -90,7 +90,7 @@ ms.locfileid: "79031215"
 
 ### <a name="1-add-the-radial-view-solver"></a>1.添加径向视图解算器
 
-在“层次结构”窗口中选择“Cube”对象，然后在“检查器”窗口中，使用“添加组件”按钮将“径向视图(脚本)”组件添加到 Cube 对象中。   
+在“层次结构”窗口中选择“Cube”对象，然后在“检查器”窗口中，使用“添加组件”按钮添加“径向视图(脚本)”组件的 Cube 对象。   
 
 ### <a name="2-configure-the-radial-view-solver"></a>2.配置径向视图解算器
 

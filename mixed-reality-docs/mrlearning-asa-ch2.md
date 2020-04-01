@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 4de40bb0b66ed299fa4a571490b33a0454f25817
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: 36f25229469e848a3f0612a5971cc8e9381262f5
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031708"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362008"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.保存、检索和共享 Azure 空间定位点
 
@@ -54,6 +54,9 @@ ms.locfileid: "79031708"
 7. 启动 Azure 会话。
 8. 查找 Azure 定位点（将“火箭发射器”体验定位在步骤 3 所述的位置）。
 
+> [!NOTE]
+> 若要完全重启应用程序，在退出沉浸式应用视图之后，需要先关闭混合现实主页中的应用窗口，然后从“开始”菜单重新启动应用程序。 如需更多详细信息，可以参阅[在 HoloLens 上使用应用](https://docs.microsoft.com/hololens/holographic-home#using-apps-on-hololens)文档。
+
 ## <a name="share-azure-anchors-between-multiple-devices"></a>在多个设备之间共享 Azure 定位点
 
 本部分介绍如何在多个设备之间共享 Azure 定位点 ID。 这样，多个设备便可以在 Azure 中查询同一个定位点 ID，从而可在空间上对齐定位点定的全息影像。 空间对齐（即，在多个设备之间的同一物理位置查看相同的全息影像）是 HoloLens 2 中本地共享体验的关键所在。
@@ -75,7 +78,7 @@ ms.locfileid: "79031708"
 2. 在 HoloLens 设备 1 上：启动 Azure 会话。
 3. 在 HoloLens 设备 1 上：创建 Azure 定位点（在“火箭发射器”体验位置创建定位点）。
 4. 在 HoloLens 设备 1 上：在网络中共享 Azure 定位点 ID。
-5. 在 HoloLens 设备 2 上：重启应用程序。
+5. 在 HoloLens 设备 2 上：启动应用程序。
 6. 在 HoloLens 设备 2 上：从网络中获取共享的定位点 ID（提取刚刚从 HoloLens 设备 1 共享的定位点 ID）。
 7. 在 HoloLens 设备 2 上：启动 Azure 会话。
 8. 在 HoloLens 设备 2 上：查找 Azure 定位点（将“火箭发射器”体验定位在步骤 3 所述的位置）。

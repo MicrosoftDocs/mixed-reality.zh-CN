@@ -7,12 +7,12 @@ ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 419b381c1240b2cc10708eab03245ed3aabfa859
-ms.sourcegitcommit: 61291e83536c8cb2e8401a8e66060128ede35922
+ms.openlocfilehash: 65bcef6a7c10450816d7a928302b0b266b132f0f
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79416134"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362071"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5.与 3D 对象交互
 
@@ -268,7 +268,7 @@ ms.locfileid: "79416134"
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-1.png)
 
-导航到“资产” > “MixedRealityToolkit.SDK” > “StandardAssets”>“材料”查看 MRTK 随附的音频剪辑，然后将适当的音频剪辑（例如 MRTK_Gem 音频剪辑）分配到“音频剪辑”字段：    
+导航到“资产” > “MixedRealityToolkit.SDK” > “StandardAssets” > “音频”以查看 MRTK 随附的音频剪辑，然后将适当的音频剪辑（例如 MRTK_Gem 音频剪辑）分配到“音频剪辑”字段：     
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-2.png)
 
@@ -284,7 +284,7 @@ ms.locfileid: "79416134"
 > [!NOTE]
 > 如上图所示，在测试触摸交互时，Octa 对象的颜色会有节律性地变化。 此效果已在“手动交互触摸(脚本)”组件中硬编码，而与前面步骤中完成的事件配置无关。
 >
-> 若要禁用此效果，可以注释掉第 32 行“TargetRenderer = GetComponentInChildren<Renderer>();”（示例），使 TargetRenderer 保持为 null，这样颜色就不会呈节律性的变化。
+> 若要禁用此效果，可以执行相应的操作，例如，注释掉第 32 行“TargetRenderer = GetComponentInChildren<Renderer>();”，使 TargetRenderer 保持为 null，这样颜色就不会呈节律性的变化。
 
 ## <a name="congratulations"></a>祝贺
 

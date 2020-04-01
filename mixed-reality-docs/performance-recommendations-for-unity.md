@@ -7,18 +7,20 @@ ms.date: 03/26/2019
 ms.topic: article
 keywords: 图形, cpu, gpu, 渲染, 垃圾回收, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: f889d899ba55f4b3040080f6632cd27db86d6fc3
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 18691ab7993b2802268d3c4ce05532dfa5bd1723
+ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082069"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160013"
 ---
 # <a name="performance-recommendations-for-unity"></a>针对 Unity 的性能建议
 
 本文是在[针对混合现实的性能建议](understanding-performance-for-mixed-reality.md)中所述内容的基础上编写的，但重点介绍特定于 Unity 引擎环境的知识。
 
-另外，强烈建议开发人员查看 [Unity 的建议环境设置](Recommended-settings-for-unity.md)一文。 此文中的内容涉及到一些对于生成高性能混合现实应用至关重要的场景配置。 本文也强调了其中建议的一些设置。
+## <a name="use-recommended-unity-project-settings"></a>使用建议的 Unity 项目设置
+
+在 Unity 中优化混合现实应用的性能时，最重要的第一步是确保使用[建议用于 Unity 的环境设置](recommended-settings-for-unity.md)。 该文中的内容涉及到一些对于生成高性能混合现实应用至关重要的场景配置。 本文也强调了其中建议的一些设置。
 
 ## <a name="how-to-profile-with-unity"></a>如何使用 Unity 进行探查
 
