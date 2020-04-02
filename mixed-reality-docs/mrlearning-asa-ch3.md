@@ -25,7 +25,7 @@ ms.locfileid: "79031254"
 
 ## <a name="set-up-asa-feedback-ui-panel"></a>设置 ASA 反馈 UI 面板
 
-在“层次结构”窗口中，右键单击“Instructions” > “TextContent”对象并选择“3D 对象” **“文本 - TextMeshPro”，以创建一个 TextMeshPro 文本对象作为“Instructions”>“TextContent”对象的子级，并为创建的对象指定适当的名称，例如 **Feedback**：     > **
+在“层次结构”窗口中，右键单击“Instructions” > “TextContent”对象并选择“3D 对象” **“文本 - TextMeshPro”，以创建一个 TextMeshPro 文本对象作为“Instructions” > “TextContent”对象的子级，并为创建的对象指定适当的名称，例如 **Feedback**：**   
 
 ![mrlearning-base](images/mrlearning-asa/tutorial3-section1-step1-1.png)
 

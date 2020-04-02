@@ -145,7 +145,7 @@ ms.locfileid: "79376134"
 ![mrlearning-base](images/mrlearning-base/tutorial2-section2-step1-2.png)
 
 > [!TIP]
-> 若要按下图所示显示场景，请在“层次结构”窗口中双击“PressableButtonHoloLens2”对象以将焦点置于其上，然后使用“场景”窗口右上角的“场景调节器”来调整 Z 轴的正向视角。<a href="https://docs.unity3d.com/Manual/SceneViewNavigation.html" target="_blank"></a>
+> 若要按下图所示显示场景，请在 "层次结构" 窗口中双击 "PressableButtonHoloLens2" 对象以使其成为焦点，然后使用位于场景窗口右上角的 <a href="https://docs.unity3d.com/Manual/SceneViewNavigation.html" target="_blank">场景别出心裁</a>，以将查看角度调整为沿正向 Z 轴。
 
 在仍选中了“PressableButtonHoloLens2”对象的情况下，在“检查器”窗口中执行以下操作：  
 
