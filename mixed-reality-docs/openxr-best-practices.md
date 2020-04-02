@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 2/28/2020
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，DirectX，本机，本机应用，自定义引擎，中间件，最佳做法，性能，质量，稳定性
-ms.openlocfilehash: c0ddbd0604760ccae34d347e93b918be4aead269
-ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
+ms.openlocfilehash: 0a0bbd37521be52ec328b4f32e53969c0ec7fef4
+ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80362014"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549370"
 ---
 # <a name="openxr-app-best-practices"></a>OpenXR 应用最佳实践
 
@@ -25,8 +25,8 @@ ms.locfileid: "80362014"
 
 ### <a name="gamma-correct-rendering"></a>伽玛正确的呈现
 
-必须小心，以确保您的渲染管道为伽玛正确。 在呈现到存在时，呈现目标视图格式应与存在格式（例如，存在格式和呈现目标视图 DXGI_FORMAT_B8G8R8A8_UNORM_SRGB）匹配。
-例外情况是，应用程序的呈现管道在着色器代码中执行手动的 sRGB 转换，在这种情况下，应用程序应请求 sRGB 存在格式，但使用线性格式作为呈现目标视图（例如，request DXGI_FORMAT_B8G8R8A8_UNORM_SRGB存在格式，但使用 DXGI_FORMAT_B8G8R8A8_UNORM 作为呈现目标视图）以防止内容被更正为双精度。
+必须小心，以确保您的渲染管道为伽玛正确。 在呈现到存在时，呈现目标视图格式应与存在格式（例如，存在格式和呈现目标视图 `DXGI_FORMAT_B8G8R8A8_UNORM_SRGB`）匹配。
+这种情况的例外是应用程序的呈现管道在着色器代码中执行手动 sRGB 转换，在这种情况下，应用程序应请求 sRGB 存在格式，但使用线性格式作为呈现目标视图（例如，请求 `DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` 为存在格式但使用 `DXGI_FORMAT_B8G8R8A8_UNORM` 作为呈现目标视图），以防止内容被双重伽玛更正。
 
 ### <a name="submit-depth-buffer-for-projection-layers"></a>提交用于投影层的深度缓冲区
 

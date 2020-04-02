@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
 keywords: 3D，徽标，图标，建模，启动器，3D 启动器，磁贴，动态立方体，深层链接，secondarytile，辅助磁贴，UWP
-ms.openlocfilehash: 5d18f699792760c39df4f814bde470fb9f889db7
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 0a2e2177ffa7e381c461a58f373c818c9c5e72c4
+ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926772"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549383"
 ---
 # <a name="implement-3d-app-launchers-uwp-apps"></a>实现三维应用启动器（UWP 应用）
 
@@ -42,12 +42,12 @@ ms.locfileid: "73926772"
 在清单的顶部，添加 uap5 架构，并将其包含为可忽略的命名空间：
 
 ```xml
-<Package xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest" 
-         xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
-         xmlns:uap5="https://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
          IgnorableNamespaces="uap uap2 uap5 mp"
-         xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10">
+         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 
 接下来，在应用程序的默认磁贴中指定 "MixedRealityModel"：
@@ -85,13 +85,13 @@ MixedRealityModel 元素接受指向存储在应用包中的3D 资产的文件�
 对范围框属性的支持将作为 MixedRealityModel 元素上的属性提供给 Windows RS4 更新。 若要首先在应用程序清单顶部定义边界框，请添加 uap6 架构，并将其包含为可忽略的命名空间：
 
 ```xml
-<Package xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest" 
-         xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
-         xmlns:uap5="https://schemas.microsoft.com/appx/manifest/uap/windows10/5"
-         xmlns:uap6="https://schemas.microsoft.com/appx/manifest/uap/windows10/6"
+<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+         xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"
          IgnorableNamespaces="uap uap2 uap5 uap6 mp"
-         xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10">
+         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 接下来，在 MixedRealityModel 上，将 SpatialBoundingBox 属性设置为定义边界框： 
 
@@ -118,7 +118,7 @@ MixedRealityModel 元素接受指向存储在应用包中的3D 资产的文件�
 >[!IMPORTANT]
 >3D 深层链接（secondaryTiles）仅适用于 2D UWP 应用。 不过，你可以创建一个[3d 应用启动器](implementing-3d-app-launchers.md)，从 Windows Mixed Reality 主页启动一个独占应用。
 
-您的2D 应用程序可以通过添加将3D 模型从应用置于[Windows Mixed reality 主](navigating-the-windows-mixed-reality-home.md)文件夹中的功能来增强 Windows mixed reality，就像 windows 开头的[2d 辅助磁贴](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-secondary-tiles)一样。下拉菜单. 例如，你可以创建360° photospheres，它直接链接到360°照片查看器应用，或让用户从一组资产中放置3D 内容，以便打开有关作者的详细信息页。 这只是使用三维内容展开2D 应用程序功能的几种方法。
+您的2D 应用程序可以通过添加将3D 模型从应用置于[Windows Mixed reality 主页](navigating-the-windows-mixed-reality-home.md)中来增强 Windows mixed reality，就像 Windows "开始" 菜单上的[2d 辅助磁贴](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-secondary-tiles)一样。 例如，你可以创建360° photospheres，它直接链接到360°照片查看器应用，或让用户从一组资产中放置3D 内容，以便打开有关作者的详细信息页。 这只是使用三维内容展开2D 应用程序功能的几种方法。
 
 ### <a name="creating-a-3d-secondarytile"></a>创建三维 "secondaryTile"
 
