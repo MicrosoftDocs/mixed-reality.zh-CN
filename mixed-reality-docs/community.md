@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: Mixed Reality，社区，mvp，会议
-ms.openlocfilehash: 7814db195e105c2fdf9ba894dc1877e2cbdc4675
-ms.sourcegitcommit: fcd4ca74d59bd4cf469b71f07169defd0887ac21
+ms.openlocfilehash: 47c903a4a9f5615d96c77d8118665a9c55602c53
+ms.sourcegitcommit: b1ca4194eff452804ce5852208cce9815c6a4500
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79084583"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80677998"
 ---
 # <a name="mixed-reality-community"></a>混合现实社区
 
@@ -33,15 +33,12 @@ ms.locfileid: "79084583"
 
 |团体名称|Country|城市|链接|
 |---------|---------|---------|---------|
+|**扩充的现实墨尔本**|澳大利亚|墨尔本|[Link](https://www.meetup.com/armelbourne/)|
 |**芝加哥 AWE Nite**|美国|芝加哥|[Link](https://www.meetup.com/AWENiteChicago/)|
+|**HoloMagicians**|日本|东京|[Link](https://hololens.connpass.com/)|
 |**混合现实用户组-荷兰**|荷兰|Rijswijk|[Link](https://www.mixug.com)|
 |**VR 菲律宾**|菲律宾|不可用|[Link](https://www.facebook.com/vrphilippines/)|
 |**XRLA**|美国|洛杉矶|[Link](https://www.meetup.com/XRLA_Meetup/)|
-<!--
-|Row4     |         |         |         |
-|Row5     |         |         |         |
-|Row6     |         |         |         |
--->
 
 <br>
 
@@ -98,8 +95,8 @@ Microsoft 最有价值专家（Mvp）是 passionately 与社区分享他们的�
 |![Dave Smits](images/BiographyImages/DaveSmits_270x270.jpg)</br>**Dave Smits**</br>*Amersfoort，荷兰*|Dave Smits 是 Microsoft MVP，自2014起，开始使用自第一版以来的 HoloLens。 为客户提供多个项目，从简单的模型开始，到包含运动跟踪传感器的应用程序，这些应用程序包括在全息影像上使用。|[电子邮件](mailto:dave@familie-smits.com)|
 |![Eric Provencher](images/BiographyImages/EricProvencher_270x270.jpg)</br>**Eric Provencher**</br>*蒙特利尔、QC、加拿大*|Eric 是 CAE 的高级混合现实框架和 UX 开发人员，是第一个 Microsoft 混合现实合作伙伴，另一个是一名 Microsoft 混合现实合作伙伴。 他的主要角色领先于内部跨平台开发框架的体系结构和开发，非常类似于 MRTK，并开发和维护新的和现有的医疗保健模拟和培训应用程序。他主要在 Unity 中构建应用程序，在 VR （Oculus 的寻找）中，AR （HoloLens 1 & 2）以及基于屏幕的（WebGL + iOS/Android）。|[电子邮件](mailto:erproven@gmail.com)|
 |![Fabrice Barbin](images/BiographyImages/FabriceBarbin_270x270.jpg)</br>**Fabrice Barbin**</br>*法国*|企业家、创新和技术爱好者多年来，Fabrice 是首席执行官， [SYNERGIZ](http://www.synergiz.com)，Microsoft Mixed Reality 合作伙伴，先锋在法国的 HoloLens 用例。 将 Microsoft 技术积极地推广为演讲者，在12年后获取 MVP，Fabrice 将对大量的产品感兴趣： HoloLens、Kinect4Azure、IoT、Surface Hub、手写、Touch、IA、机器学习、认知服务、Azure|[电子邮件](mailto:fbarbin@synergiz.com)|
-|![Francesco Clasadonte](images/BiographyImages/FrancescoClasadonte_270x270.jpg)</br>**Francesco Clasadonte**</br>*Milan，意大利*|Fanciful，我 passioned 的所有内容。 三年来，我一直在 Politecnico di Milano 上作为一个研究人员工作，重点介绍使用 disabilites 的孩子的交互式技术研究，在开发 IOT 系统、智能对象、机器人交互、照明设计、在国家和国际项目中都是 multisensory 环境和自然用户界面。</br></br>目前，我在 IOT、web 解决方案、系统集成的领域中作为高级创作开发人员的[FifthIngenium](https://fifthingenium.com) ，专注于新兴的创新技术，例如混合现实和人工智能。|[电子邮件](mailto:klasaf@outlook.com)|
-|![Gianni Rosa Gallina](images/BiographyImages/GianniRosaGallina_270x270.png)</br>**Gianni Rosa Gallina**</br>*意大利*|自2011以来，Gianni 是 Microsoft MVP，重点介绍新兴技术、AI 和虚拟/扩充/混合现实，因为2013。 目前，他是 Deltatre 使用的创新实验室中的 R & D 高级软件工程师，为运动相关体验和服务设计和原型设计下一代解决方案，从 "VR/MR" 应用到端到端 Azure 体系结构和视频工作流，通过认知服务、AI 等。 除此之外，他是本地社区 "Torino 技术组" （TTG）、组织和培训师的活动成员，用于编码健身房 Torino 每月聚会、Pluralsight 在线课程作者、在他的博客上发布文章和国际化技术会议和活动。|[电子邮件](mailto:giannishub@hotmail.com)|
+|![Francesco Clasadonte](images/BiographyImages/FrancescoClasadonte_270x270.jpg)</br>**Francesco Clasadonte**</br>*Milan，意大利*|Fanciful，我 passioned 的所有内容。 三年来，我一直致力于 Politecnico di Milano 上的一个研究人员，重点介绍使用 disabilites 的儿童的交互式技术研究，在开发 IOT 系统、智能对象、机器人交互、照明设计、multisensory 环境以及在国家和国际项目中自然用户界面。</br></br>目前，我在 IOT、web 解决方案、系统集成的领域中作为高级创作开发人员的[FifthIngenium](https://fifthingenium.com) ，专注于新兴的创新技术，例如混合现实和人工智能。|[电子邮件](mailto:klasaf@outlook.com)|
+|![Gianni Rosa Gallina](images/BiographyImages/GianniRosaGallina_270x270.png)</br>**Gianni Rosa Gallina**</br>*意大利*|自2011以来，Gianni 是 Microsoft MVP，重点介绍新兴技术、AI 和虚拟/扩充/混合现实，因为2013。 目前，他是 Deltatre 使用的创新实验室中的 R & D 高级软件工程师，为运动相关体验和服务设计和原型设计下一代解决方案，从 "VR/MR" 应用到端到端 Azure 体系结构和视频工作流，通过认知服务、AI 等。 除此之外，他是本地社区 "Torino 技术组" （TTG）、组织者和培训师的活动成员，用于编码健身房 Torino 每月聚会、Pluralsight 在线课程作者、在他的博客上发布文章，以及他在全国和国际技术会议和活动中的演讲者。|[电子邮件](mailto:giannishub@hotmail.com)|
 |![Jessica Engstrom](images/BiographyImages/JessicaEngstrom_270x270.jpg)</br>**Jessica Engstrom**</br>*斯德哥尔摩，瑞典*|Microsoft MVP-Windows 平台开发、公共演讲者、UX、Bot 和混合现实。 在工作播客后编码。 用户组和会议组织程序|[电子邮件](mailto:jessica@catoholic.se)|
 |![Jimmy Engstrom](images/BiographyImages/JimmyEngstrom_270x270.jpg)</br>**Jimmy Engstrom**</br>*斯德哥尔摩，瑞典*|Microsoft MVP-Windows 平台开发、发言人、Blazor、混合现实、HoloLens 和 Windows 开发人员。 在工作播客后编码。 用户组和会议组织程序|[电子邮件](mailto:jimmy@engstromjimmy.se)|
 |![Joost van Schaik](images/BiographyImages/JoostVanSchaik_270x270.jpg)</br>**Joost van Schaik**</br>*Amersfoort，荷兰*|我并不是在 MR 领域绘制大故事和宽 vistas 的一员，我将自己称为开发人员 + +，并进行一些操作。 我的主要声明为 "成名"，我的 "我的博客" 和 "我的应用" 是应用商店中提供的独立应用程序的第一个应用程序。 查找发布服务器 "LocalJoost"，并亲自查看。 在过去的三年中，我还涉及到非常多的商业项目。 我想自己成为社区人员-我喜欢在我的博客和个人上分享我的知识。|[电子邮件](mailto:joostvanschaik@outlook.com)|

@@ -6,12 +6,12 @@ ms.author: kegodin
 ms.date: 11/02/2019
 ms.topic: article
 keywords: Windows Mixed Reality，空间音质，设计，样式
-ms.openlocfilehash: 34923e1ebfc8e46ea8e67a4444fe3c2691efd4db
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 08844f6d837407d52ad2ab84b78440ce856151fc
+ms.sourcegitcommit: b1ca4194eff452804ce5852208cce9815c6a4500
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75182007"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80677985"
 ---
 # <a name="how-to-use-sound-in-mixed-reality-applications"></a>如何在混合现实应用程序中使用声音
 
@@ -46,20 +46,20 @@ ms.locfileid: "75182007"
 
 ### <a name="gesture-interactions"></a>手势交互
 在混合现实中，用户可以通过使用鼠标与按钮交互。 通常，当用户释放而不是按下按钮时，按钮操作会让用户有机会取消交互。 使用声音来强化这些阶段。 若要协助用户以较远的按钮为目标，还应考虑使用指针悬停声音。
-* 按钮-按下声音应为简短的 tactile "单击"。<br/>示例： [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
-* 按钮-"unpress" 声音应具有类似的 tactile 感觉。 比按下声音更高的跨度强调完成的意义。<br/>示例： [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
+* 按钮-按下声音应为简短的 tactile "单击"。<br/>示例： [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
+* 按钮-"unpress" 声音应具有类似的 tactile 感觉。 比按下声音更高的跨度强调完成的意义。<br/>示例： [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
 * 对于 "悬停声音"，请考虑使用细小的和非威胁的声音，如低频率 thud 或凹凸。
 
 ### <a name="direct-manipulation"></a>直接操作
 在 HoloLens 2 上，已表述的手动跟踪支持直接操作用户界面元素。 当没有其他物理反馈时，声音非常重要。
 
 *按钮按下*声音对于直接操作非常重要，因为当用户到达关键笔画的底部时，用户不会收到任何其他指示。 关键旅行的声音指示器可以是小型、微妙和封闭像素。 与手势交互一样，按钮按下会显示短暂的 tactile 声音，如单击。 Unpresses 应该具有类似的单击声音，但具有凸起的音调。
-* 示例： [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
-* 示例： [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonUnpress)
+* 示例： [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
+* 示例： [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
 
 难以直观地确认获取或释放操作。 用户的手常常会受到任何视觉效果的影响，而 expression-bodied 对象却缺乏现实的视觉对象。 声音可以有效地传达成功的获取和释放交互。
-* 抓取操作应该具有一个 muffled 的简短 tactile 声音，可唤起围绕对象的抓手。 有时还会有一个 "whoosh" 声音，该声音会导致抓住声音传达手的运动。<br/>示例： [MRTK_Move_Start .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_Move_Start.wav)
-* Release 操作应该获得类似的简短和 tactile 的声音。 它通常比抓住声音和反向顺序下的音调更小，但影响，然后使用 "whoosh" 传达对象正在进行的结算。<br/>示例： [MRTK_Move_End .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_Move_End.wav)
+* 抓取操作应该具有一个 muffled 的简短 tactile 声音，可唤起围绕对象的抓手。 有时还会有一个 "whoosh" 声音，该声音会导致抓住声音传达手的运动。<br/>示例： [MRTK_Move_Start .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_Move_Start.wav)
+* Release 操作应该获得类似的简短和 tactile 的声音。 它通常比抓住声音和反向顺序下的音调更小，但影响，然后使用 "whoosh" 传达对象正在进行的结算。<br/>示例： [MRTK_Move_End .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_Move_End.wav)
 
 *绘图*交互应会获得持久的循环声音，其卷由用户的移动决定。 当用户的手仍在 loudest 时，它应为无提示。
 
