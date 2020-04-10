@@ -6,16 +6,16 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: f365b0444576e03acd8dba194d7f8f24175e7bee
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: f293e779b041cdf4aa636cf317b7eaca70e16410
+ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539526"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "81003323"
 ---
 # <a name="scene-understanding-sdk-overview"></a>场景理解 SDK 概述
 
-场景理解的目标是转换混合现实设备捕获的非结构化环境传感器数据，并将其转换为直观且易于开发的功能强大但更抽象的表示形式。 SDK 充当应用程序和场景了解运行时之间的通信层。 它旨在模拟现有的标准构造，如3d 表示形式的三维场景图形和2d 应用程序的2D 矩形/面板。 尽管构造场景了解模拟将映射到你可以使用的具体框架，但在一般情况下，SceneUnderstanding 是框架不可知的，允许在与它交互的可变框架之间进行互操作。 随着场景理解演变，SDK 的作用是确保新的表示形式和功能继续在统一框架内公开。 在本文档中，我们将首先介绍高级概念，这些概念将帮助你熟悉开发环境/用法，并为特定的类和构造提供更详细的文档。
+场景理解的目标是转换混合现实设备捕获的非结构化环境传感器数据，并将其转换为直观且易于开发的功能强大但更抽象的表示形式。 SDK 充当应用程序和场景了解运行时之间的通信层。 它旨在模拟现有的标准构造，如3D 表示的三维场景图形、2d 矩形和用于2D 应用程序的面板。 尽管构造场景了解模拟将映射到你可以使用的具体框架，但在一般情况下，SceneUnderstanding 是框架不可知的，允许在与它交互的可变框架之间进行互操作。 随着场景理解演变，SDK 的作用是确保新的表示形式和功能继续在统一框架内公开。 在本文档中，我们将首先介绍高级概念，这些概念将帮助你熟悉开发环境/用法，并为特定的类和构造提供更详细的文档。
 
 ## <a name="where-do-i-get-the-sdk"></a>在何处获取 SDK？
 
@@ -37,7 +37,7 @@ SceneUnderstanding 需要 Windows SDK 版本18362或更高版本。
 
 混合现实设备会不断集成有关它在你的环境中看到的内容的信息。 场景了解漏斗图所有这些数据源，并生成一个统一的抽象抽象。 场景理解会生成场景，这些场景是[SceneObjects](scene-understanding-SDK.md#sceneobjects)的组成部分，表示单个事物的实例（例如墙壁/天花板/楼层。）场景对象本身是[SceneComponents](scene-understanding-SDK.md#scenecomponents)的组成部分，表示构成此 SceneObject 的更精细的部分。 组件的示例包括四边形和网格，但将来可能表示边界框、冲突网格、元数据等。
 
-将原始传感器数据转换为场景的过程是一项潜在的成本高昂的操作，可能需要几秒钟的时间（约10x10m）到非常大的空间（~ 50x50m）应用程序请求。 相反，应用程序会按需触发场景生成。 SceneObserver 类具有可计算或反序列化场景的静态方法，然后可以使用该场景进行枚举/交互。 "计算" 操作按需执行，在 CPU 上执行，但在单独的进程中执行（混合现实驱动程序）。 但是，虽然我们在另一个进程中进行计算，但生成的场景数据会存储在应用程序的场景对象中并进行维护。 
+将原始传感器数据转换为场景的过程是一项潜在的代价高昂的操作，可能需要几秒钟的时间（约10x10m）到几分钟的时间才能获得非常大的空间（~ 50x50m），因此，不是由没有应用程序请求的设备计算。 相反，应用程序会按需触发场景生成。 SceneObserver 类具有可计算或反序列化场景的静态方法，然后可以使用该场景进行枚举/交互。 "计算" 操作按需执行，在 CPU 上执行，但在单独的进程中执行（混合现实驱动程序）。 但是，虽然我们在另一个进程中进行计算，但生成的场景数据会存储在应用程序的场景对象中并进行维护。 
 
 下面的关系图演示了此流程，并显示了两个应用程序与场景理解运行时交互的示例。 
 
@@ -117,15 +117,15 @@ SceneObjects 可以包含以下任一项：
 
 <table>
 <tr>
-<th>SceneObjectKind</th> <th>描述</th>
+<th>SceneObjectKind</th> <th>说明</th>
 </tr>
-<tr><td>后台</td><td>已知 SceneObject<b>不</b>是其他已识别的场景对象类型之一。 此类不应与 Unknown 混淆，其中背景已知不是墙壁/楼层/天花板，等等 .。。虽然未知还未分类。</b></td></tr>
+<tr><td>背景</td><td>已知 SceneObject<b>不</b>是其他已识别的场景对象类型之一。 此类不应与 Unknown 混淆，其中背景已知不是墙壁/楼层/天花板，等等 .。。虽然未知还未分类。</b></td></tr>
 <tr><td>壁</td><td>物理墙。 墙壁被认为是可移动的环境结构。</td></tr>
 <tr><td>突破</td><td>楼层是可以进行审核的任何表面。 注意：楼梯不是楼层。 另请注意，该楼层假设有任何不可的表面，因此没有显式假设。 多层结构，斜坡等 .。。应将所有分类为楼层。</td></tr>
-<tr><td>顶角</td><td>房间的上部面。</td></tr>
+<tr><td>Ceiling</td><td>房间的上部面。</td></tr>
 <tr><td>平台</td><td>一个大平面，可以在其上放置全息影像。 它们倾向于表示表、countertops 和其他大型水平曲面。</td></tr>
 <tr><td>世界</td><td>标记不可知的几何数据的保留标签。 通过设置 EnableWorldMesh 更新标志生成的网格将归为 "世界"。</td></tr>
-<tr><td>Unknown</td><td>尚未对此场景对象进行分类并为其分配一种类型。 这不应与背景混淆，因为此对象可能是任何内容，而系统刚刚没有提供足够强大的分类。</td></tr>
+<tr><td>未知</td><td>尚未对此场景对象进行分类并为其分配一种类型。 这不应与背景混淆，因为此对象可能是任何内容，而系统刚刚没有提供足够强大的分类。</td></tr>
 </tr>
 </table>
 
@@ -263,9 +263,9 @@ foreach (var mesh in firstFloor.Meshes)
 
 ### <a name="dealing-with-transforms"></a>处理转换
 
-在处理转换时，场景理解已精心尝试与传统的三维场景表示。 因此，每个场景都局限于一个坐标系统，这与大多数常见的3D 环境表示形式非常类似。 每个 SceneObjects 都提供它们在该坐标系中的位置和方向。 如果你的应用程序正在处理的场景会延伸单个源所提供的限制，则可以将 SceneObjects 定位到 SpatialAnchors，或生成多个场景并将它们合并在一起，但为了简单起见，我们假定 watertight 场景位于各自由 OriginSpatialGraphNodeId 定义的一个指定的本地化的原点。
+在处理转换时，场景理解已精心尝试与传统的三维场景表示。 因此，每个场景都局限于一个坐标系统，这与大多数常见的3D 环境表示形式非常类似。 每个 SceneObjects 都提供它们在该坐标系中的位置和方向。 如果你的应用程序正在处理的场景会延伸到单个源所提供的限制，则可以将 SceneObjects 定位到 SpatialAnchors，或生成多个场景并将它们合并在一起，但为了简单起见，我们假定 watertight 场景位于其自身的源中，而该已由由场景 OriginSpatialGraphNodeId 定义的一个本地化。
 
-例如，以下 Unity 代码演示了如何使用 Windows 感知和 Unity Api 来协调坐标系。 请参阅[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) ，了解有关 Windows 感知 api 的详细信息，以及[unity 中混合现实本机对象](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)的详细信息，以获取与 unity世界原点以及用于在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之间进行转换的 `.ToUnity()` 扩展方法。
+例如，以下 Unity 代码演示了如何使用 Windows 感知和 Unity Api 来协调坐标系。 若要[详细了解如何](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)获取与 unity 世界原点相对应的 SpatialCoordinateSystem，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之间进行转换的 `.ToUnity()` 扩展方法，请参阅[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 。
 
 ```cs
 public class SceneRootComponent : MonoBehavior

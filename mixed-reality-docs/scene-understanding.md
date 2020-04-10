@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: 4b959b7b7ec58fc30ed0fe93b568d123cbe70bb1
-ms.sourcegitcommit: 7e8b9de561cbc8483e84511f3e9cbd779f3a999f
+ms.openlocfilehash: 3d56f375c38b1dee6ab9eb97219a5e37fe698c63
+ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/27/2019
-ms.locfileid: "75502668"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "81003333"
 ---
 # <a name="scene-understanding"></a>场景理解
 
@@ -35,7 +35,7 @@ ms.locfileid: "75502668"
 
 [场景了解示例场景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
 
-### <a name="sdk"></a>SDK
+### <a name="sdk"></a>SDK 中 IsInRole 中的声明
 
 如果你正在寻找有关如何针对场景理解进行开发的特定详细信息，或有关场景理解如何工作的详细信息以及如何针对其进行开发的详细信息，请参阅[场景了解 SDK 概述](scene-understanding-SDK.md)文档。
 
@@ -53,7 +53,7 @@ ms.locfileid: "75502668"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>功能</strong></td>
+        <td><strong>具有</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -73,11 +73,11 @@ ms.locfileid: "75502668"
 
 <br>
 
-环境感知应用程序的许多核心方案（放置、封闭、物理学等）都可通过空间映射和场景理解来寻址，本节重点介绍这些差异。 场景理解和空间映射之间的核心差异是对结构和简易性的最大准确性和延迟的折衷。 如果你的应用程序需要可能的最低延迟，并且网格三角形只需要直接访问空间映射，但要执行更高级别的处理，则可以考虑切换到场景理解模型，因为它应提供你有功能的超集。 另请注意，由于场景理解将空间映射网格提供为其表示形式的一部分，因此你始终可以访问最完整且最准确的空间映射数据。
+环境感知应用程序的许多核心方案（放置、封闭、物理学等）都可通过空间映射和场景理解来寻址，本节重点介绍这些差异。 场景理解和空间映射之间的核心差异是对结构和简易性的最大准确性和延迟的折衷。 如果你的应用程序需要可能的最低延迟时间和仅你需要访问的网格三角形，请直接使用空间映射。 如果要执行更高级别的处理，则可以考虑切换到场景理解模型，因为它应提供功能的超集。 另请注意，由于场景理解会提供空间映射网格的快照作为其表示形式的一部分，因此你始终可以访问最完整且最准确的空间映射数据。
 
 以下部分将在新的场景理解 SDK 的上下文中重新访问核心空间映射方案。
 
-### <a name="placement"></a>放置
+### <a name="placement"></a>位置
 
 场景理解提供了专门设计用于简化放置方案的新构造。 场景可以计算称为 SceneQuads 的基元，它们描述了可放置全息影像的平面面。 SceneQuads 专门围绕放置而设计，并介绍了二维图面，并提供了一个用于放置在该表面上的 API。 以前，当使用三角形网格来执行放置时，必须扫描四个四个区域并执行孔填充/后处理来识别对象放置的好位置。 这并不是始终需要的四边形，因为场景了解运行时能够推断出四个未扫描的四个区域，并使四个不属于图面的区域无效。
 
@@ -105,7 +105,7 @@ ms.locfileid: "75502668"
 
 如果你的要求能够容忍更多的场景理解延迟，应用程序开发人员应考虑使用场景理解 watertight 网格，并使空间映射网格与平面表示形式结合。 这将提供 "这两个领域的最佳" 方案，其中简化的 watertight 封闭可以提供更好的 nonplanar 几何，提供最现实的封闭地图。
 
-### <a name="physics"></a>物理学
+### <a name="physics"></a>物理
 
 场景理解会生成 watertight 的网格，这些网格通过语义分解空间，特别是解决空间映射网格施加的物理限制。 Watertight 结构可确保始终命中物理射线强制转换，通过语义分解可以更简单地生成用于室内导航的导航网格。 如[封闭](#occlusion)上的部分中所述，使用 EnableSceneObjectMeshes 和 EnableWorldMesh 创建场景可能会产生最实际的完整网格。 环境网格的 watertight 属性将阻止命中测试失败，并且网格数据将确保物理学与场景中的所有对象交互，而不仅仅是与房间结构交互。
 
@@ -115,7 +115,7 @@ ms.locfileid: "75502668"
 
 生成准确的导航网格目前仍需要后处理，也就是说，应用程序仍然必须将 occluders 到地面上，以确保导航不会经历混乱/表等。实现此目的的最准确方法是在场景是用 EnableWorldMesh 标志计算的情况下，投影所提供的世界网格数据。
 
-### <a name="visualization"></a>可视化效果
+### <a name="visualization"></a>可视化
 
 虽然[空间映射可视化](spatial-mapping.md#visualization)可用于环境的实时反馈，但在很多情况下，平面和 watertight 对象的简单性提供了更高的性能或视觉质量。 如果在四边形或平面 watertight 网格提供的平面表面上投影，则使用空间映射描述的阴影投影和接地技术可能更好。 这对于这样的环境/方案特别适用：由于场景将推断这一事实，完全预扫描并非最佳，而完整的环境和平面假设将最小化项目。
 
