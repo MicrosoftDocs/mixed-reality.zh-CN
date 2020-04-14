@@ -1,17 +1,17 @@
 ---
 title: DirectX 中的本地定位点传输
 description: 说明如何通过传输空间锚点来同步两个 HoloLens 设备。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens，同步，空间定位，传输，多人，查看，方案，演练，示例代码，传输，本地定位点传输，定位点导出，定位点导入
-ms.openlocfilehash: f961862c3c49872484683e264fb9c62b5d0b60ee
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: e709f107e280f9c88a4f1af590cb62de301633fe
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376024"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278065"
 ---
 # <a name="local-anchor-transfers-in-directx"></a>DirectX 中的本地定位点传输
 

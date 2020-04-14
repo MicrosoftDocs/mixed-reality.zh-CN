@@ -1,17 +1,17 @@
 ---
 title: 语音输入
 description: 语音输入是适用于 HoloLens 和 Windows Mixed Reality 沉浸式耳机的核心输入。 语音可用于命令、听写、Cortana 等。
-author: Hak0n
+author: hak0n
 ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、语音、cortana、语音、输入
-ms.openlocfilehash: f2ae18d4063c7c4a63346a1202cacaa7fbbdf959
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 6cf94e6bc828c6f07ee81cb121cb64601df41c4e
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375984"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277975"
 ---
 # <a name="voice-input"></a>语音输入
 
@@ -183,7 +183,7 @@ ms.locfileid: "79375984"
 
 考虑为生成的任何体验添加语音命令。 语音是一种功能强大、方便的控制系统和应用的方式。 由于用户使用各种方言和口音说话，恰当选择语音关键字将确保用户的命令得到清晰的解释。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 以下是一些有助于流畅语音识别的做法。
 * **使用简明命令** - 如果可能的话，选择两个或更多音节的关键词。 不同口音的人说单音节词时倾向于使用不同的元音。 示例： "播放视频" 优于 "播放当前选定的视频"
@@ -275,7 +275,7 @@ ms.locfileid: "79375984"
 
 ## <a name="communication"></a>通信
 
-对于想要利用 HoloLens 提供的自定义音频输入处理选项的应用程序，请务必了解应用程序可使用的各种[音频流类别](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)。 Windows 10 支持多种不同的流类别，HoloLens 利用这三个类别来启用自定义处理，以优化为语音、通信和其他可用于环境环境音频的麦克风音频质量捕获（即 "摄像机"）方案。
+对于想要利用 HoloLens 提供的自定义音频输入处理选项的应用程序，请务必了解应用程序可使用的各种[音频流类别](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)。 Windows 10 支持多个不同的流类别，HoloLens 使用这三个类别来启用自定义处理，以优化为语音、通信和其他可用于环境环境音频捕获（即 "摄像机"）方案而定制的麦克风音频质量。
 * 为呼叫质量和旁白方案自定义 AudioCategory_Communications 流类别，并为客户端提供用户语音的 16kHz 24bit mono 音频流
 * 为 HoloLens （Windows）语音引擎自定义 AudioCategory_Speech 流类别，并为其提供用户语音的 16kHz 24bit mono 流。 第三方语音引擎可以根据需要使用此类别。
 * 为环境环境录音录音自定义 AudioCategory_Other 流类别，并为客户端提供 48kHz 24 位立体声音频流。

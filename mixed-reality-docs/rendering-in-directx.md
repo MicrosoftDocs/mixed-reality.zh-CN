@@ -1,17 +1,17 @@
 ---
 title: 在 DirectX 中呈现
 description: 介绍适用于 Windows Mixed Reality 的全息着色。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全息影像，呈现，3D 图形，HolographicFrame，render 循环，更新循环，演练，示例代码，Direct3D
-ms.openlocfilehash: 6b2e2dca9115d7093e94019d5ed91201f6ee3424
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: a781093e0054a986b81a0e284e03076dd018f8c0
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375974"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277505"
 ---
 # <a name="rendering-in-directx"></a>在 DirectX 中呈现
 

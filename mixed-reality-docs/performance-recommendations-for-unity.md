@@ -1,18 +1,18 @@
 ---
 title: 针对 Unity 的性能建议
 description: 有关提高混合现实应用性能的 Unity 特定提示。
-author: Troy-Ferrell
+author: troy-ferrell
 ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: 图形, cpu, gpu, 渲染, 垃圾回收, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 18691ab7993b2802268d3c4ce05532dfa5bd1723
-ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
+ms.openlocfilehash: 28f09986cdb8c562aedfc9deae7b0369214ebc05
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160013"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277565"
 ---
 # <a name="performance-recommendations-for-unity"></a>针对 Unity 的性能建议
 

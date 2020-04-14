@@ -1,17 +1,17 @@
 ---
 title: 全息远程处理播放器
 description: 全息远程处理播放器是一种附属应用，用于连接到支持全息远程处理的 PC 应用和游戏。 使用 Wi-fi 连接，全息远程处理会实时地将 PC 中的全息内容流式处理到你的 Microsoft HoloLens。
-author: FlorianBagarMicrosoft
+author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 88a9aa0bb058776a32016e51fc22bcb73f08ab85
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: e5255fb5537201058c491f5e4c682bb1c22d0edb
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79092373"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278205"
 ---
 # <a name="holographic-remoting-player"></a>全息远程处理播放器
 

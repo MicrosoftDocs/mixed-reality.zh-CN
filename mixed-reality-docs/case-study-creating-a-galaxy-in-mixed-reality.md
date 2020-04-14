@@ -1,17 +1,17 @@
 ---
 title: 案例研究-在混合现实中创建 galaxy
 description: 在发布 Microsoft HoloLens 之前，我们会询问开发人员社区要为新设备查看有经验的内部团队构建的应用类型。 共享了5000多个想法，在24小时的 Twitter 投票后，入选方是一个称为 "Galaxy 资源管理器" 的概念。
-author: KarimLUCCIN
+author: karimluccin
 ms.author: kaluccin
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Galaxy 资源管理器，HoloLens，Windows Mixed Reality，分享你的想法，案例研究
-ms.openlocfilehash: 696662eb92371708389f8a128dcee6a61acf1816
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f13395250c8a73718408c051ab95d2ec4bf62014
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436872"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278175"
 ---
 # <a name="case-study---creating-a-galaxy-in-mixed-reality"></a>案例研究-在混合现实中创建 galaxy
 
@@ -23,7 +23,7 @@ Zibits 是项目上的艺术线索，Karim Luccin，团队的图形工程师谈�
 
 [我们的团队](galaxy-explorer.md#meet-the-team)组成了两个开发人员：三个开发人员、四个艺术家、一个制造者和一个测试人员-有六周时间来构建一个完全功能的应用程序，该应用程序允许用户了解并探索银河的 vastness 和美。
 
-我们想要充分利用 HoloLens 在生活空间中直接呈现3D 对象的能力，因此我们决定创建一个真实的 galaxy，使用户能够放大并查看单个星形，每个星分别在各自的轨迹上.
+我们想要充分利用 HoloLens 功能，以便在生活空间中直接呈现3D 对象，因此我们决定创建一个真实的 galaxy，用户可以在其中放大并查看单个星形，每个星都在各自的轨迹上。
 
 在开发的第一周，我们提出了几个目标来实现银河的工作方式： Galaxy：它需要具有深度、移动和感觉容量耗尽，这将有助于创建 Galaxy 的形状。
 
@@ -41,7 +41,7 @@ Zibits 是项目上的艺术线索，Karim Luccin，团队的图形工程师谈�
 
 ### <a name="creating-the-position-of-the-stars"></a>创建星形位置
 
-我们的一位团队成员已经编写了C#在其最初位置生成星形的代码。 星形位于一个椭圆上，并且其位置可由（**curveOffset**， **ellipseSize**，**仰角**）描述，其中**curveOffset**是星形沿椭圆的角度， **ellipseSize**是椭圆的尺寸沿 X 和 Z，并提升 galaxy 内星形的适当提升。 这样，我们可以创建一个缓冲区（[Unity 的 ComputeBuffer](https://docs.unity3d.com/ScriptReference/ComputeBuffer.html)），它将使用每个星型属性进行初始化，并将其发送到 GPU 上，以实现其余的体验。 若要绘制此缓冲区，我们使用[Unity 的 DrawProcedural](https://docs.unity3d.com/ScriptReference/Graphics.DrawProcedural.html) ，它允许在任意一组点上运行着色器（代码），而无需使用表示 galaxy 的实际网格：
+我们的一位团队成员已经编写了C#在其最初位置生成星形的代码。 星形位于一个椭圆上，并且其位置可由（**curveOffset**， **ellipseSize**，**仰角**）描述，其中**curveOffset**是沿椭圆的星形的角度， **ellipseSize**是沿 X 和 Z 的椭圆的尺寸，并提升 galaxy 内星形的适当提升。 这样，我们可以创建一个缓冲区（[Unity 的 ComputeBuffer](https://docs.unity3d.com/ScriptReference/ComputeBuffer.html)），它将使用每个星型属性进行初始化，并将其发送到 GPU 上，以实现其余的体验。 若要绘制此缓冲区，我们使用[Unity 的 DrawProcedural](https://docs.unity3d.com/ScriptReference/Graphics.DrawProcedural.html) ，它允许在任意一组点上运行着色器（代码），而无需使用表示 galaxy 的实际网格：
 
 **CPU**
 
@@ -74,7 +74,7 @@ v2g vert (uint index : SV_VertexID)
 
 我们尝试了多个旋转的模式和粒子系统，如下所示。
 
-我们的团队对 galaxies 函数的方式进行了一些研究，我们为 galaxy 专门提供了一个自定义粒子系统，以便我们可以基于 "[密度波理论](https://en.wikipedia.org/wiki/Density_wave_theory)" 移动省略号，这 theorizes 了 galaxy 的扶手是密度较高，但 flux，如流量堵塞。 它看起来稳定稳定，但当星形沿着各自的椭圆移动时，它们实际上会移入和移出扶手。 在我们的系统中，粒子永远不会存在于 CPU 上-我们会生成卡并在 GPU 上调整它们的方向，因此整个系统只是初始状态和时间。 如下所示：
+我们的团队对 galaxies 函数的方式进行了一些研究，我们为 galaxy 专门提供了一个自定义的粒子系统，以便我们可以基于 "[密度波理论](https://en.wikipedia.org/wiki/Density_wave_theory)" 移动省略号，这 theorizes 了 galaxy 的作用是密度较高的区域，如流量堵塞。 它看起来稳定稳定，但当星形沿着各自的椭圆移动时，它们实际上会移入和移出扶手。 在我们的系统中，粒子永远不会存在于 CPU 上-我们会生成卡并在 GPU 上调整它们的方向，因此整个系统只是初始状态和时间。 如下所示：
 
 ![具有 GPU 呈现的粒子系统的进度](images/spiral-galaxy-arms-500px.jpg)
 

@@ -1,17 +1,17 @@
 ---
 title: 了解混合现实的性能
 description: 有关优化 Windows Mixed Reality 应用的性能的高级主题和详细信息
-author: Troy-Ferrell
+author: troy-ferrell
 ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality，混合现实，虚拟现实，VR，先生，性能，优化，CPU，GPU
-ms.openlocfilehash: 287b95363acff00ab7a0407475e0a419fc076611
-ms.sourcegitcommit: 184227dc591ca2791f523d520555730ba1e95b5c
+ms.openlocfilehash: 54e1eec5445fe655a0b498be5c18f08efe2270f0
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79479570"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277475"
 ---
 # <a name="understanding-performance-for-mixed-reality"></a>了解混合现实的性能
 
@@ -70,7 +70,7 @@ ms.locfileid: "79479570"
 
 通常，在 CPU 上混合现实应用程序中的大部分工作都涉及到执行场景的 "模拟" 和处理应用程序逻辑。 以下区域通常针对优化：
 
-- Animations
+- 动画
 - 物理
 - 内存分配
 - 复杂算法（即 反向运动，路径查找）
@@ -133,7 +133,7 @@ ms.locfileid: "79479570"
 
 #### <a name="object-pooling"></a>对象池
 
-对象池是一种常用技术，可降低对象的连续分配和释放的成本。 这是通过以下方式实现的：分配一个较大的相同对象池，并重新使用此池中的非活动可用实例，而不是随着时间推移不断地生成和销毁对象。 对象池非常适合在应用过程中具有可变生存期的重复使用的组件。
+对象池是一种常用技术，可降低对象的连续分配和释放的成本。 此技术是通过以下方式实现的：分配一个由相同对象构成的较大池并重复使用此池中非活动的可用实例，而不是在各个时间内不断生成和销毁对象。 对象池非常适合应用中生存期可变的可重用组件。
 
 ## <a name="see-also"></a>另请参阅
 - [针对 Unity 的性能建议](performance-recommendations-for-unity.md)

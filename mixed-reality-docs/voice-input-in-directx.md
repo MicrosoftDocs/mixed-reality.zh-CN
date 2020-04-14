@@ -1,17 +1,17 @@
 ---
 title: DirectX 中的语音输入
 description: 介绍如何在适用于 Windows Mixed Reality 的 DirectX 应用程序中实现语音命令和短语识别。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 演练，语音命令，短语，识别，语音，directx，平台，cortana，windows mixed reality
-ms.openlocfilehash: c0a7ca85c24147e607603e733c9d191c64cbd927
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 2837a0fc42e8fdebb2e1facee118d20b5668cd43
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181817"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277965"
 ---
 # <a name="voice-input-in-directx"></a>DirectX 中的语音输入
 

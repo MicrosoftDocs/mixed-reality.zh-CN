@@ -1,17 +1,17 @@
 ---
 title: DirectX 中的键盘、鼠标和控制器输入
 description: 说明如何创建使用键盘、鼠标和游戏控制器的 Windows Mixed Reality 应用。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，键盘，鼠标，游戏控制器，xbox 控制器，HoloLens，桌面，演练，示例代码
-ms.openlocfilehash: 1e61cb50a561492fdc6849b5b231e97fab1bb6cf
-ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
+ms.openlocfilehash: 27f1bf72435ce6889ba3f7b83664367a4440b162
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835093"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278085"
 ---
 # <a name="keyboard-mouse-and-controller-input-in-directx"></a>DirectX 中的键盘、鼠标和控制器输入
 

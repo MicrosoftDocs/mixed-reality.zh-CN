@@ -1,17 +1,17 @@
 ---
 title: 案例研究-HoloTour
 description: HoloTour for Microsoft HoloLens 为世界各地的图标位置提供了沉浸式三维个人教程。 此案例研究将指导您捕获和创建用于 HoloTour 的内容。
-author: DannyAskew
+author: dannyaskew
 ms.author: daaske
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloTour、HoloLens、Windows Mixed Reality
-ms.openlocfilehash: 035bec9b0d46a31978bc91f23bfb3a5ee47d6247
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 59c3dffd48009aa792643ea27b59f8f6f85b64d7
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436923"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278185"
 ---
 # <a name="case-study---holotour"></a>案例研究-HoloTour
 
@@ -83,7 +83,7 @@ HoloTour for Microsoft HoloLens 为世界各地的图标位置提供了沉浸式
 显示拼接 Pantheon 素材的 PTGui 屏幕截图。 
 
 
-### <a name="video-playback"></a>视频播放
+### <a name="video-playback"></a>视频回放
 
 完成对素材的处理后，会获得一个无缝视频，但这种情况并不太大，而是围绕8K 的分辨率。 解码视频非常昂贵，并且很少有计算机可以处理8K 视频，因此，下一个难题是查找在 HoloLens 上播放此视频的方式。 我们开发了多种策略来避免解码成本，同时还使用户看起来像是查看整个视频。
 

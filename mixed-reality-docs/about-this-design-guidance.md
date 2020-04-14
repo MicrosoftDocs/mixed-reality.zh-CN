@@ -1,21 +1,21 @@
 ---
 title: 关于本设计指南
 description: 本指南由 Microsoft 设计人员、开发人员、程序经理和研究人员撰写，他们在工作时会用到全息设备（如 HoloLens）和沉浸式设备（如 Acer 和 HP Windows 混合现实头戴显示设备）。
-author: MRWied
+author: mrwied
 ms.author: jonwie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，设计，简介，指南
-ms.openlocfilehash: fd2b8d704c9053d9eeb63ab2cceca1e4257d86ed
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 114a3808d57b2bd78044ce743d568bd5effe25bb
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437095"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277515"
 ---
 # <a name="about-this-design-guidance"></a>关于本设计指南
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 
 **大家好，欢迎使用混合现实的设计指南。**
 
@@ -25,7 +25,7 @@ ms.locfileid: "73437095"
 
 只要有可能，我们就会在 GitHub 上提供具有相关代码的可操作的设计指南。 也就是说，因为我们与你一起学习，我们并不总是能够在此提供特定的可操作指南。 我们共享的部分内容将是 "我们已学到的经验" 的精神，并 "避免出现此路径"。
 
-我们知道，很大的设计社区将生成许多创新。 接下来，我们期待你的反馈，从你那里学习，并与你密切合作。 对于我们的部分，我们将尽最大努力分享我们的见解，即使他们是探索性和初期，还可以通过设计思维、最佳做法和可使用的相关开源控件、模式和示例应用直接在自己的工作中。
+我们知道，很大的设计社区将生成许多创新。 接下来，我们期待你的反馈，从你那里学习，并与你密切合作。 对于我们的部分，我们将尽最大努力分享我们的见解，即使他们是探索性和初期，还可以通过设计思维、最佳做法以及可直接在自己的工作中使用的相关开源控件、模式和示例应用来实现这些目的。
 
 ## <a name="overview"></a>概述
 
@@ -58,7 +58,7 @@ ms.locfileid: "73437095"
 
 ![满足他们的创建者](images/500px-creators.jpg) <br>
 
-我们希望很多受众都能找到这一指导。 你有不同的技能集（开始、中级、高级）、使用不同的工具（Unity、DirectX C++、 C#、、其他），熟悉各种平台（Windows、iOS、Android）。）和正在处理不同大小的团队（单核、小型、中型、大型）。 因此，可以通过不同的视角和需求来查看此指南。 如果可能，我们会尽量记住这种多样性，并尽可能多地使我们的指导尽可能多。 此外，我们还知道许多人已经在 GitHub 上。 那么，我们将直接链接到 GitHub 存储库和论坛，以满足你的需要。 
+我们希望很多受众都能找到这一指导。 你有不同的技能集（开始、中级、高级）、使用不同的工具（Unity、DirectX C++、 C#、等），熟悉各种平台（Windows、iOS、Android）、来自不同背景（移动、企业、游戏），并在不同的规模团队（单核、小型、中型、大型）上工作。 因此，可以通过不同的视角和需求来查看此指南。 如果可能，我们会尽量记住这种多样性，并尽可能多地使我们的指导尽可能多。 此外，我们还知道许多人已经在 GitHub 上。 那么，我们将直接链接到 GitHub 存储库和论坛，以满足你的需要。 
 
 ### <a name="share-as-much-as-possible-from-experimental-to-explicit"></a>从实验到显式共享尽可能多的内容
 

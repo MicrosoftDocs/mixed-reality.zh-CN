@@ -1,18 +1,18 @@
 ---
 title: 什么是混合现实？
 description: 本文提供混合现实的定义，并说明简单的 AR 和 VR 设备，以及 Microsoft HoloLens 和 Windows Mixed Reality 沉浸式头戴显示设备等 Windows Mixed Reality 设备在混合现实范畴中所处的位置。
-author: BrandonBray
+author: brandonbray
 ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 混合现实, 全息, ar, vr, mr, xr, 增强现实, 虚拟现实, 说明
 ms.localizationpriority: high
-ms.openlocfilehash: f170fe7a3353ac0cce1bd7532802eaff7a357494
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 7b0dcbdb88f880d4c1632fae874ba6a610f023fb
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082082"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278045"
 ---
 # <a name="what-is-mixed-reality"></a>什么是混合现实？
 

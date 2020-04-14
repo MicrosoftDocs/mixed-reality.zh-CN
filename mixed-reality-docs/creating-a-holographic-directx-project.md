@@ -1,17 +1,17 @@
 ---
 title: 创建全息 DirectX 项目
 description: 介绍如何基于 Windows Mixed Reality 应用模板创建新的全息应用。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，全息应用，新应用，UWP 应用，模板应用，全息影像，新建项目，演练，下载，示例代码
-ms.openlocfilehash: d99478a0d98d0593b7b82f25080d20913789cb6c
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 30f2c630b2919fbc304dc96d13cab74e22ed4adc
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940837"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277915"
 ---
 # <a name="creating-a-holographic-directx-project"></a>创建全息 DirectX 项目
 
@@ -25,7 +25,7 @@ DirectX 11 全息 UWP 应用模板非常类似于 DirectX 11 UWP 应用模板;�
 * 处理[注视](gaze-and-commit.md)的输入，并识别简单的[手势](gaze-and-commit.md#composite-gestures)。
 * 进入全屏立体声呈现模式。
 
-## <a name="how-do-i-get-started"></a>我如何开始？
+## <a name="how-do-i-get-started"></a>如何开始？
 
 按照下载 Visual Studio 2019 和 Windows Mixed Reality 应用模板中的说明，首先[安装这些工具](install-the-tools.md)。 混合现实应用模板在 Visual Studio marketplace 上可作为[web 下载](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)，或通过 VISUAL studio UI 安装为扩展。
 
@@ -44,17 +44,17 @@ DirectX 11 全息 UWP 应用模板非常类似于 DirectX 11 UWP 应用模板;�
    *Visual Studio 2019 C++中的全息 DirectX 11/WinRT UWP 应用项目模板*
    >[!IMPORTANT]
    >确保项目模板的名称包含 "（C++/WinRT）"。  如果没有，则已安装全息版项目模板。  若要获取最新的项目模板，请将[其安装](install-the-tools.md)为 Visual Studio 2019 的扩展。
-5. 单击**下一步**。
+5. 单击 **“下一步”** 。
 5. 填写 "**项目名称**" 和 "**位置**" 文本框，然后单击或点击 "**创建**"。 创建全息应用项目。
 6. 对于仅面向 HoloLens 2 的开发，请确保将**目标版本**和**最低版本**设置为**Windows 10，版本 1903**。  如果你还面向 HoloLens （第一代）或桌面 Windows Mixed Reality 耳机，你可以将**最低版本**设置为**Windows 10 版本 1809** ，但在使用 HoloLens 2 的新功能时，这将要求在代码中进行一些<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">自适应检查</a>。
    将 Windows 10 （版本1903）设置为目标和最低版本的 ![屏幕截图](images/new-uwp-project.png)<br>
-   *将 **Windows 10 (版本 1903)** 设置为目标和最低版本*
+   *将**Windows 10 （版本1903）** 设置为目标和最低版本*
    >[!IMPORTANT]
    >如果看不到**windows 10 （版本 1903** ）作为选项，则不会安装最新的 WINDOWS 10 SDK。  若要使此选项显示，请<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk" target="_blank">安装10.0.18362.0 或更高版本的 Windows 10 SDK</a>。
 
 在 Visual Studio 2017 中创建新项目：
 1. 启动**Visual Studio**。
-2. 在 "**文件**" 菜单上，指向 "**新建**"，然后从上下文菜单中选择 "**项目**"。 此时将打开 "**新建项目**" 对话框。
+2. 在 "**文件**" 菜单上，指向 "**新建**"，然后从上下文菜单中选择 "**项目**"。 此时会打开“新建项目”对话框。
 3. 展开左侧的 "**已安装**"，然后展开 "**可视C++** 语言" 节点。
 4. 导航到**Windows 通用 > 全息**节点，然后选择 "**全息 DirectX 11 应用（通用 Windows）C++（/WinRT）** "。
    在 Visual Studio 2017 中 ![全息C++的 DirectX 11/WinRT UWP 应用项目模板的屏幕截图](images/holographic-directx-app-cpp-new-project.png)<br>
@@ -64,7 +64,7 @@ DirectX 11 全息 UWP 应用模板非常类似于 DirectX 11 UWP 应用模板;�
 5. 填写 "**名称**" 和 "**位置**" 文本框，然后单击或点击 **"确定"** 。 创建全息应用项目。
 6. 对于仅面向 HoloLens 2 的开发，请确保将**目标版本**和**最低版本**设置为**Windows 10，版本 1903**。  如果你还面向 HoloLens （第一代）或桌面 Windows Mixed Reality 耳机，你可以将**最低版本**设置为**Windows 10 版本 1809** ，但在使用 HoloLens 2 的新功能时，这将要求在代码中进行一些<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">自适应检查</a>。
    将 Windows 10 （版本1903）设置为目标和最低版本的 ![屏幕截图](images/new-uwp-project.png)<br>
-   *将 **Windows 10 (版本 1903)** 设置为目标和最低版本*
+   *将**Windows 10 （版本1903）** 设置为目标和最低版本*
    >[!IMPORTANT]
    >如果看不到**windows 10 （版本 1903** ）作为选项，则不会安装最新的 WINDOWS 10 SDK。  若要使此选项显示，请<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk" target="_blank">安装10.0.18362.0 或更高版本的 Windows 10 SDK</a>。
 
@@ -174,7 +174,7 @@ int APIENTRY wWinMain(
 
 `AppMain.cpp` 中的**Render**方法采用<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a> ，并根据当前应用和空间定位状态将当前帧呈现到每个全息相机。
 
-## <a name="notes"></a>注释
+## <a name="notes"></a>注意
 
 Windows Mixed Reality 应用模板现在支持启用了 Spectre 缓解标志（/Qspectre）的编译。 在编译启用了 Spectre 缓解功能的配置之前，请确保C++安装 Spectre 的 Microsoft Visual （MSVC）运行时库的版本。 若要安装可 Spectre 的C++库，请启动 Visual Studio 安装程序并选择 "**修改**"。 导航到**各个组件**并搜索 "spectre"。 选择与要为其编译 Spectre 的代码所需的目标平台和 MSVC 版本对应的框，然后单击 "**修改**" 开始安装。
 

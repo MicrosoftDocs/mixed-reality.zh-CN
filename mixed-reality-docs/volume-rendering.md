@@ -1,17 +1,17 @@
 ---
 title: 卷渲染
 description: 容量耗尽映像包含丰富的信息，这些信息具有不透明度和颜色在整个卷中，无法轻松地表示为表面。 了解如何在 Windows Mixed Reality 内有效呈现容量耗尽映像。
-author: KevinKennedy
+author: kevinkennedy
 ms.author: kkennedy
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 容量耗尽映像，卷渲染，性能，混合现实
-ms.openlocfilehash: 04931df5e4225225e4c11c3f6d72801e2d58f646
-ms.sourcegitcommit: 317653cd8500563c514464f0337c1f230a6f3653
+ms.openlocfilehash: 6dbb49c31761d4b7b9da5060d15763c3925be754
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75503826"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277945"
 ---
 # <a name="volume-rendering"></a>卷渲染
 

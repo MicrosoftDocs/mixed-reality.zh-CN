@@ -1,17 +1,17 @@
 ---
 title: 自定义全息远程处理数据通道
 description: 自定义数据通道可用于通过已建立的全息远程处理连接发送用户数据。
-author: FlorianBagarMicrosoft
+author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 8bfa19b7af0f3429130aabf70d9d11083bc56a52
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 12fa47b6b3a46521a9e6029cab61fa1c628c06e9
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79092302"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278095"
 ---
 # <a name="custom-holographic-remoting-data-channels"></a>自定义全息远程处理数据通道
 

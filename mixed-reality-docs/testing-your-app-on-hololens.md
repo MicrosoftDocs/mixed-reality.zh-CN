@@ -1,17 +1,17 @@
 ---
 title: 在 HoloLens 上测试你的应用
 description: 测试 HoloLens 应用的指南和建议
-author: JonMLyons
+author: jonmlyons
 ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens，测试
-ms.openlocfilehash: 9a189bf139c97fc13034d94f05aa8f5974cc19b9
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 3ab5eeec4046b81dc41db51ae138eb9d1069d1ff
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437387"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277585"
 ---
 # <a name="testing-your-app-on-hololens"></a>在 HoloLens 上测试你的应用
 
@@ -36,14 +36,14 @@ ms.locfileid: "73437387"
 
 ![用于 HoloLens 应用开发的环境测试矩阵](images/environment-matrix-600px.png)
 
-## <a name="comfort"></a>感到
+## <a name="comfort"></a>舒适感
 1. **剪辑平面。** 要留心到[呈现全息影像](hologram-stability.md#hologram-render-distances)的位置。
 2. **避免与实际头运动不一致的虚拟移动。** 避免以不代表用户实际运动的方式移动相机。 如果你的应用程序要求通过场景移动用户，则可预测运动，尽量减少加速度，并让用户控制移动。
 3. **按照全息图质量指导原则进行操作。** 实现[全息影像质量指导的高](hologram-stability.md)性能应用程序不太可能导致用户 discomfort。
 4. **横向分布全息影像，而不是垂直分布。** 强制用户花很长时间查找或缩小可能会导致疲劳。
 
 
-## <a name="input"></a>Input
+## <a name="input"></a>输入
 
 ### <a name="interaction-models"></a>交互模型
 
@@ -67,7 +67,7 @@ ms.locfileid: "73437387"
 
 ## <a name="system-integration"></a>系统集成
 
-### <a name="battery"></a>“电池”
+### <a name="battery"></a>电池
 
 在未连接电源的情况下测试应用程序，以了解它消耗电池的速度。 通过查看电源 LED 读数，可以轻松地了解电池状态。 
 

@@ -1,17 +1,17 @@
 ---
 title: 适用于 Unity 的推荐设置
 description: Unity 提供一些特定于混合现实的行为，这些行为可通过项目设置进行切换。
-author: Troy-Ferrell
+author: troy-ferrell
 ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity，设置，混合现实
-ms.openlocfilehash: 2ab7eb0f9a7e06506ef8c57103518d8ef0a775df
-ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
+ms.openlocfilehash: 9b4e04e10e95f6c4f12a25a6f34236d9d2bf99a2
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/01/2020
-ms.locfileid: "75597630"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278005"
 ---
 # <a name="recommended-settings-for-unity"></a>适用于 Unity 的推荐设置
 
@@ -44,18 +44,18 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 在 Unity 项目中启用此功能
 
-1)  打开**播放机 XR 设置**（ > **Player** > "**设置**" "**编辑**" > **项目设置**
-2) 从 "**立体声呈现方法**" 下拉菜单中选择 "**单一传递实例**" （必须选中 "**支持虚拟现实**" 复选框）
+1)  打开“播放器 XR 设置”（转到“编辑” **“项目设置”** “播放器” **“XR 设置”）**  >  >  > 
+2) 从“立体渲染方法”下拉菜单中选择“单通道实例化”（必须选中“支持虚拟现实”复选框）
 
 有关此呈现方法的更多详细信息，请参阅 Unity 中的以下文章。
 
-- [如何通过高级立体声呈现最大化 AR 和 VR 性能](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
-- [单步实例](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
+- [如何使用高级立体渲染最大化 AR 和 VR 的性能](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
+- [单通道实例化](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
 
 >[!NOTE]
-> 如果开发人员已有未为实例化编写的现有自定义着色器，则会出现单一传递实例呈现的一个常见问题。 启用此功能后，开发人员可能会注意到某些 Gameobject 只会在一眼中呈现。 这是因为关联的自定义着色器没有用于实例化的适当属性。
+> 如果开发人员的现有自定义着色器不是针对实例化编写的，则单通道实例化渲染会发生一个常见问题。 启用此功能后，开发人员可能会注意到，某些 GameObject 只在一只眼睛中呈现。 这是因为，关联的自定义着色器没有与实例化相关的适当属性。
 >
-> 有关如何解决此问题的详细说明，请参阅针对基于 Unity 的[HoloLens 的单一传递立体声呈现](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)
+> 请参阅 Unity 文章 [HoloLens 的 单通道立体渲染](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)来了解如何解决此问题
 
 ### <a name="enable-depth-buffer-sharing"></a>启用深度缓冲共享
 
@@ -63,7 +63,7 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 在 Unity 项目中启用此功能
 
-1) 打开**播放机 XR 设置**（ > **Player** > "**设置**" "**编辑**" > **项目设置**
+1) 打开“播放器 XR 设置”（转到“编辑” **“项目设置”** “播放器” **“XR 设置”）**  >  >  > 
 2) 选中 "在**虚拟现实 sdk**下**启用深度缓冲区共享**" 复选框 > **Windows Mixed Reality**扩展（必须选中 "**支持虚拟现实**" 复选框）
 
 此外，建议在此面板中的 "**深度格式**" 设置下选择 " **16 位深度**"，尤其是对于 HoloLens 开发。 与24位相比，选择16位可显著减少带宽需求，因为需要移动/处理的数据量较少。
@@ -116,10 +116,10 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 
 |  显示 Unity 初始屏幕  |  全息闪屏映像  |  行为 |
 |----------|----------|----------|
-|  On  |  无  |  显示5秒的默认 Unity 初始屏幕或在加载应用之前，以较长者为准。 |
-|  On  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
-|  Off  |  无  |  在加载应用之前显示透明的黑色（无）。 |
-|  Off  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
+|  开  |  无  |  显示5秒的默认 Unity 初始屏幕或在加载应用之前，以较长者为准。 |
+|  开  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
+|  关闭  |  无  |  在加载应用之前显示透明的黑色（无）。 |
+|  关闭  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
 
 有关详细信息，请阅读[Unity 初始屏幕文档](https://docs.unity3d.com/Manual/class-PlayerSettingsSplashScreen.html)。
 
@@ -161,7 +161,7 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 为全息应用启用常用 Api 的适用功能包括：
 <br>
 
-|  功能  |  需要功能的 Api |
+|  Capability  |  需要功能的 Api |
 |----------|----------|
 |  SpatialPerception  |  SurfaceObserver |
 |  网络摄像头  |  PhotoCapture 和 VideoCapture |

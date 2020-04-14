@@ -1,17 +1,17 @@
 ---
 title: 案例研究-HoloTour 的空间音效设计
 description: 若要创建适用于 Microsoft HoloLens 的真正沉浸式3D 虚拟教程，全景视频和全息版风景只是公式的一部分。
-author: JSyltebo
+author: jsyltebo
 ms.author: jsylte
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality，HoloLens，HoloTour，空间音效，案例研究
-ms.openlocfilehash: f2dd704089d9c76b7ba175a4a1ad5cebf9ec6c68
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 5c6331bd93447f53c1dd4c9941bfa13a5eadc1bd
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181922"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278135"
 ---
 # <a name="case-study-spatial-sound-design-for-holotour"></a>案例研究： HoloTour 的空间音效设计
 

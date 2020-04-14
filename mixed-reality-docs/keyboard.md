@@ -1,21 +1,20 @@
 ---
-title: Keyboard
-description: ''
+title: 键盘
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: 混合现实、控件、交互、ui、ux
-ms.openlocfilehash: a16d0a2a8dddf1d9a338cdaff3247e8955c47029
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.openlocfilehash: 90f20d96fca9bebfcbce8283bedd3cb8422d9ea8
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75723166"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278075"
 ---
-# <a name="keyboard"></a>Keyboard
+# <a name="keyboard"></a>键盘
 
-![Keyboard](images/UX/UX_Hero_Keyboard.jpg)
+![键盘](images/UX/UX_Hero_Keyboard.jpg)
 
 混合现实应用程序可以随时调用系统键盘。 请注意，系统键盘的行为取决于目标平台的功能，例如，HoloLens 2 上的键盘支持直接交互，而 HoloLens 上的键盘支持 "注视" 和 "空中点击" 笔势输入。
 

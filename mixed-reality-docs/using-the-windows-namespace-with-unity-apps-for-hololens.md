@@ -1,17 +1,17 @@
 ---
 title: 用于 HoloLens 的适用于 Unity 的 WinRT Api
 description: 介绍如何在适用于 HoloLens 的 Unity 项目中使用 WinRT Api （Windows 命名空间）。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity，WinRT，windows mixed reality，API，演练
-ms.openlocfilehash: 73764d191813f6dcae750e74ce3181af987c9e0e
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 80f950d7571a936e93eb08490ad83dbb34a50b3a
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437241"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277985"
 ---
 # <a name="winrt-apis-with-unity-for-hololens"></a>用于 HoloLens 的适用于 Unity 的 WinRT Api
 
@@ -38,7 +38,7 @@ var worldOrigin = SpatialCoordinateSystem.FromNativePtr(unityWorldOriginPtr);
 这可以通过 Unity 中的两个步骤完成：
 1) API 兼容级别必须设置为 " **.net 4.6** " 或 "播放机设置" 中 **.NET Standard 2.0**
     - **编辑** > **项目设置** > **Player** > **配置** > **Api 兼容性级别**设置为 **.net 4.6**或 **.NET Standard 2.0**
-2) 预处理器指令**ENABLE_WINMD_SUPPORT**必须围绕任何 WinRT 利用代码进行包装
+2) 必须围绕任何 WinRT 利用代码包装预处理器指令**ENABLE_WINMD_SUPPORT**
 
 以下代码片段来自 Unity 手动页，用于[脚本中C#的通用 WINDOWS 平台： WinRT API](https://docs.unity3d.com/Manual/windowsstore-scripts.html)。 在此示例中，将返回一个广告 ID，但只能在 UWP 和 Xbox one build 上生成：
 
@@ -62,7 +62,7 @@ public class WinRTAPI : MonoBehaviour {
 
 ## <a name="edit-your-scripts-in-a-unity-c-project"></a>在 Unity C#项目中编辑脚本
 
-双击 Unity 编辑器中的脚本时，默认情况下，该脚本将在编辑器项目中启动。 WinRT Api 将显示为 "未知"，因为 Visual Studio 项目未引用 Windows 运行时。 此外， **ENABLE_WINMD_SUPPORT**指令将是未定义的，并且在你将项目生成到 UWP Visual Studio 解决方案之前，将忽略任何 *#if*包装代码。
+双击 Unity 编辑器中的脚本时，默认情况下，该脚本将在编辑器项目中启动。 WinRT Api 将显示为 "未知"，因为 Visual Studio 项目未引用 Windows 运行时。 此外， **ENABLE_WINMD_SUPPORT**指令将是未定义的，并且在你将项目生成到 UWP Visual Studio 解决方案之前，将忽略任何 *#if*包装的代码。
 
 ## <a name="see-also"></a>另请参阅
 * [导出和构建 Unity Visual Studio 解决方案](exporting-and-building-a-unity-visual-studio-solution.md)

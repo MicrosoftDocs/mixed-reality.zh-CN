@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/11/2019
 ms.topic: article
 keywords: 发行说明，版本，windows 10，build，19h1，os，可能2019
-ms.openlocfilehash: f5163e128c3f1e1b68d827b09078b565a58c5a4d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 97bf4c3b5c24fc6f0c763b8dd9f146bbaa01187a
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438316"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277625"
 ---
 # <a name="release-notes---may-2019"></a>发行说明-5 月2019
 
@@ -43,6 +43,10 @@ ms.locfileid: "73438316"
 ## <a name="hololens-1st-gen-long-term-servicing"></a>HoloLens （第一代）长期服务
 
 HoloLens （第一代）正在进入长期维护（LTS）状态。 将来的更新将重点介绍问题和安全修补程序，同时保持与适用于 HoloLens 的[Windows 10 10 月2018版](release-notes-october-2018.md)（也称为 RS5）的功能奇偶校验。 
+
+## <a name="known-issues"></a>已知问题
+
+我们正在跟踪一个问题，需要将监视器连接到电脑才能使沉浸式头能正常工作。 背包 PC 用户可能想要使用活动的显示适配器（或 EDID 模拟器），以确保在未使用 PC 监视器时，其沉浸式耳机继续呈现。 
 
 ## <a name="provide-feedback-and-report-issues"></a>提供反馈和报告问题
 
