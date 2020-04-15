@@ -197,8 +197,10 @@
 #### [将 Vuforia 与 Unity 配合使用](vuforia-development-overview.md)
 ## Unreal
 ### [Unreal 开发概述](unreal-development-overview.md)
-## WebVR
-### [将 Edge 中的 WebVR 与 Windows Mixed Reality 配合使用](using-webvr-in-edge-with-windows-mixed-reality.md)
+## JavaScript
+### [JavaScript 开发概述](javascript-development-overview.md)
+### [WebXR](webxr-overview.md)
+### [WebVR](webvr-overview.md)
 ## 本机
 ### [本机开发概述](directx-development-overview.md)
 ### OpenXR
