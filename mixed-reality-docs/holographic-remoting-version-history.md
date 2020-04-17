@@ -6,17 +6,25 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 5ba3aaa8874dea4418114b331d3d99fc977e982c
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: cd6d076c00fd21ca6fa60cafb94eb9d89796825a
+ms.sourcegitcommit: 48456c607a2d0dcf035a77e8ba67615396b0a211
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278195"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81484297"
 ---
 # <a name="holographic-remoting-version-history"></a>全息远程处理版本历史记录
 
 > [!IMPORTANT]
 > 本指南特定于 HoloLens 2 上的全息远程处理。
+
+## <a name="version-212-april-5-2020"></a>版本2.1.2 （2020年4月5日）<a name="v2.1.2"></a>
+* 修复了最新的全息远程处理播放器与使用小于2.1.0 的版本的远程应用之间的音频向后兼容性问题。
+* 固定空间锚定问题，意外关闭了全息远程处理播放器。 此问题还会影响自定义播放机。
+
+## <a name="version-211-march-20-2020"></a>版本2.1.1 （2020年3月20日）<a name="v2.1.1"></a>
+* 修复了使用 AMD Gpu 时远程应用的视频编码问题。
+* 全息远程处理播放器性能改进。
 
 ## <a name="version-210-march-11-2020"></a>版本2.1.0 （2020年3月11日）<a name="v2.1.0"></a>
 * 已将网络传输切换为使用[RTP](https://en.wikipedia.org/wiki/Real-time_Transport_Protocol) via UDP。 安全连接现在使用[SRTP](https://en.wikipedia.org/wiki/Secure_Real-time_Transport_Protocol) 。 请注意，[全息远程处理播放器](holographic-remoting-player.md)仍与所有以前版本的全息远程处理版本兼容。 若要从新的网络传输中获益，全息远程处理播放器和有问题的远程应用必须使用版本2.1.0。
@@ -28,7 +36,7 @@ ms.locfileid: "81278195"
 ## <a name="version-2018-december-17-2019"></a>版本2.0.18 （2019年12月17日）<a name="v2.0.18"></a>
 * 添加了对[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration)的支持
 * 修复了导致崩溃的各种 bug。
-* 修复了一个 bug，HolographicCamera 需要 HolographicSpace CameraAdded 回调才能接受，并将其显示为 HoloraphicFrame 中的已添加照相机。
+* 修复了一个 bug，HolographicCamera 需要 HolographicSpace CameraAdded 回调才能接受，并将其显示为 HolographicFrame 中的已添加照相机。
 
 ## <a name="version-2016-november-11-2019"></a>版本2.0.16 （2019年11月11日）<a name="2.0.16"></a>
 * 修复了 QR 代码跟踪中的死锁。
