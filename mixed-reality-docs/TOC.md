@@ -235,7 +235,7 @@
 #### [工作原理 - 混合现实捕获工作室](how-it-works-mixed-reality-capture-studios.md)
 ### 全息远程处理
 #### [全息远程播放器](holographic-remoting-player.md)
-#### [编写全息远程处理主机应用](holographic-remoting-create-host.md)
+#### [编写全息远程处理远程应用](holographic-remoting-create-host.md)
 #### [编写自定义全息远程处理播放器](holographic-remoting-create-player.md)
 #### [自定义全息远程处理数据通道](holographic-remoting-custom-data-channels.md)
 #### [使用全息远程处理时建立安全连接](holographic-remoting-secure-connection.md)
