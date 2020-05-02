@@ -8,10 +8,10 @@ ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
 ms.openlocfilehash: c389c7a3d16770dcbf57d9acdcfd81c6507f7cd6
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79376134"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.创建用户界面并配置混合现实工具包
@@ -330,4 +330,4 @@ ms.locfileid: "79376134"
 
 本教程已介绍如何克隆、自定义和配置 MRTK 配置文件设置。 此外，还介绍了如何在 HoloLens 2 中使用跟踪手来与触发事件的按钮交互。 最后，介绍了如何使用 MRTK 的“网格对象集合”组件和 Unity 的 Text Mesh Pro 创建一个简单的 UI。
 
-[下一教程：4.放置动态内容并使用解算器](mrlearning-base-ch3.md)
+[下一教程：4.放置动态内容并使用求解器](mrlearning-base-ch3.md)

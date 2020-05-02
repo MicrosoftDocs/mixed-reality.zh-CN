@@ -8,10 +8,10 @@ ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
 ms.openlocfilehash: b2342e7d0d502af2787ca311d18a44f8726acf2d
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79028458"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.设置意向和自然语言理解

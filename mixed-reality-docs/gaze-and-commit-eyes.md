@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: 眼动追踪, 混合现实, 输入, 眼睛注视, 视线定位, HoloLens 2, 视线选择
 ms.openlocfilehash: 89f5031635f2b67ba4c9afdf605559c2b9da4ac2
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73437823"
 ---
 # <a name="eye-gaze-and-commit"></a>眼睛凝视和提交

@@ -8,10 +8,10 @@ ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
 ms.openlocfilehash: ec078015304e1cddc9b042fb5e94cf1904a302cb
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79376084"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6.探索高级输入选项
@@ -269,4 +269,4 @@ ms.locfileid: "79376084"
 
 现已将基本的眼动跟踪功能成功添加到应用程序。 这些操作仅为眼动跟踪实现的探索领域开了一个头。 本教程还介绍了其他高级输入功能，例如语音命令和平移手势。
 
-[下一课：7.创建登月舱示例应用程序](mrlearning-base-ch6.md)
+[下一课：7.创建农历模块示例应用程序](mrlearning-base-ch6.md)

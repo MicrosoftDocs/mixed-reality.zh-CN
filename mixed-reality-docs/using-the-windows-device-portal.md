@@ -8,10 +8,10 @@ ms.topic: article
 keywords: Windows 设备门户，HoloLens
 ms.localizationpriority: high
 ms.openlocfilehash: 9cd9b33fed12802e5b41afa3fee850356911a989
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81278025"
 ---
 # <a name="using-the-windows-device-portal"></a>使用 Windows 设备门户

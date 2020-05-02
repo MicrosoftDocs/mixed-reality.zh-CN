@@ -7,18 +7,20 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unity, 混合现实, 开发, 入门, 新项目, 移植, 功能, 相机, 模拟, 仿真, 文档
-ms.openlocfilehash: 23b3d9a3fe419911e774722a7d2db6809c2955cf
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: e0fe775f5fe891416145d91e52a5a801e049c568
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491092"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81433413"
 ---
 # <a name="unity-development-overview"></a>Unity 开发概述
 
 构建[混合现实应用](app-views.md)的最快途径是使用 [Unity](https://unity.com)。 建议你花一些时间浏览 [Unity 教程](https://unity3d.com/learn/tutorials)。 如果你需要资产，Unity 有一个包罗万象的[资产商店](https://www.assetstore.unity3d.com/)。 有了对 Unity 的基本了解以后，即可访问[教程](tutorials.md)，了解使用 Unity 进行混合现实开发的具体细节。 若要与社区的其他人员交流在 Unity 中构建混合现实应用的心得，以及查找可能遇到的问题的解决方案，请务必访问 [Unity 混合现实论坛](https://forum.unity3d.com/forums/hololens.102/)。
 
 若要开始使用 Unity 构建混合现实应用，请先[安装工具](install-the-tools.md)。 
+
+>[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Setting-up-your-HoloLens-2-development-environment/player?format=ny]
 
 ## <a name="new-unity-project-with-mixed-reality-toolkit"></a>使用混合现实工具包新建 Unity 项目 
 
