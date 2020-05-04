@@ -1,5 +1,5 @@
 ---
-title: 多用户功能教程 - 2. 让 Unity 为开发做好准备
+title: 多用户功能教程 - 3. 连接多个用户
 description: 完成本课程可以了解如何在 HoloLens 2 应用程序中实现多用户共享体验。
 author: jessemcculloch
 ms.author: jemccull
@@ -7,100 +7,110 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: f7ae77d6978b5da860d890bcfe5b6f7c3d4640c8
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: a597aadbddb49fefc824d8c5b5193585fa9476a5
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031241"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81610933"
 ---
-# <a name="2-getting-unity-ready-for-development"></a><span data-ttu-id="3b8d5-105">2.让 Unity 为开发做好准备</span><span class="sxs-lookup"><span data-stu-id="3b8d5-105">2. Getting Unity ready for development</span></span>
+# <a name="2-connecting-multiple-users"></a><span data-ttu-id="6b0ca-105">2.连接多个用户</span><span class="sxs-lookup"><span data-stu-id="6b0ca-105">2. Connecting multiple users</span></span>
 
-<span data-ttu-id="3b8d5-106">本教程介绍如何为应用程序开发准备和配置 Unity，包括导入混合现实工具包、配置生成设置和准备场景。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-106">In this tutorial, you will learn how to prepare and configure Unity for application development, including importing the Mixed Reality Toolkit, configuring build settings, and preparing your scene.</span></span>
+<span data-ttu-id="6b0ca-106">本教程介绍如何将多个用户连接为实时共享体验的一部分。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-106">In this tutorial, you will learn how to connect multiple users as part of a live shared experience.</span></span> <span data-ttu-id="6b0ca-107">在本教程结束时，你将能够在多个设备上运行应用程序，并让每个用户都能实时看到其他用户的头像移动。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-107">By the end of the tutorial you will be able to run the application on multiple devices and have each user see the avatar of other users move in real-time.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="3b8d5-107">目标</span><span class="sxs-lookup"><span data-stu-id="3b8d5-107">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="6b0ca-108">目标</span><span class="sxs-lookup"><span data-stu-id="6b0ca-108">Objectives</span></span>
 
-* <span data-ttu-id="3b8d5-108">为应用程序开发配置 Unity</span><span class="sxs-lookup"><span data-stu-id="3b8d5-108">Configure Unity for application development</span></span>
-* <span data-ttu-id="3b8d5-109">导入混合现实工具包</span><span class="sxs-lookup"><span data-stu-id="3b8d5-109">Import the Mixed Reality Toolkit</span></span>
-* <span data-ttu-id="3b8d5-110">准备项目场景</span><span class="sxs-lookup"><span data-stu-id="3b8d5-110">Prepare your project scene</span></span>
+* <span data-ttu-id="6b0ca-109">了解如何在共享体验中连接多个用户</span><span class="sxs-lookup"><span data-stu-id="6b0ca-109">Learn how to connect multiple users in a shared experience</span></span>
 
-## <a name="instructions"></a><span data-ttu-id="3b8d5-111">说明</span><span class="sxs-lookup"><span data-stu-id="3b8d5-111">Instructions</span></span>
+## <a name="preparing-the-scene"></a><span data-ttu-id="6b0ca-110">准备场景</span><span class="sxs-lookup"><span data-stu-id="6b0ca-110">Preparing the scene</span></span>
 
-1. <span data-ttu-id="3b8d5-112">单击[此处](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)下载 Mixed Reality Toolkit Foundation Unity 包并将其保存。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-112">Download and save the Mixed Reality Toolkit Foundation unity package by clicking [here.](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)</span></span>
+<span data-ttu-id="6b0ca-111">在本部分，你将通过添加一些教程预制件来准备场景。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-111">In this section, you will prepare the scene by adding some of the tutorial prefabs.</span></span>
 
-2. <span data-ttu-id="3b8d5-113">在 Unity 中，单击“资产”菜单并选择“导入包”，然后单击“自定义包”。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-113">In Unity, click the Assets menu and select Import Package, then click on Custom Package.</span></span>
+<span data-ttu-id="6b0ca-112">在“项目”窗口中，导航到“资产” > “MRTK.Tutorials.MultiUserCapabilities” > “预制件”文件夹。   </span><span class="sxs-lookup"><span data-stu-id="6b0ca-112">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.MultiUserCapabilities** > **Prefabs** folder.</span></span> <span data-ttu-id="6b0ca-113">在按住 CTRL 按钮的同时，单击“DebugWindow”  、“NetworkLobby”和  “SharedPlayground”，  以便选择这三个预制件：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-113">While holding down the CTRL button, click on **DebugWindow**, **NetworkLobby**, and **SharedPlayground** to select the three prefabs:</span></span>
 
-    ![Module3Chapter2step2im](images/module3chapter2step2im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section1-step1-1.png)
 
-3. <span data-ttu-id="3b8d5-115">选择刚刚从步骤 1 中提供的链接下载的 Unity 包。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-115">Select the Unity package you just downloaded from the link provided in step 1.</span></span> <span data-ttu-id="3b8d5-116">Unity 中出现“导入”弹出窗口后，单击“导入”按钮开始导入 MRTK。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-116">Once the import pop-up window appears in Unity, click the Import button to begin importing the MRTK.</span></span> <span data-ttu-id="3b8d5-117">此过程可能需要几分钟时间。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-117">This may take several minutes.</span></span>
+<span data-ttu-id="6b0ca-115">在仍选中了这三个预制件的情况下，将其拖动到“层次结构”窗口中，以将其添加到场景：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-115">With the three prefabs still selected, drag them into the Hierarchy window to add them to the scene:</span></span>
 
-    ![Module3Chapter2step3im](images/module3chapter2step3im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section1-step1-2.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="3b8d5-119">下载的包位于文件所保存到的本地文件夹中。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-119">The downloaded package is in your local folder, where you have saved the file.</span></span> <span data-ttu-id="3b8d5-120">上图未展示该包的保存位置。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-120">The image above does not portray where you will find the package.</span></span>
+## <a name="creating-the-user-prefab"></a><span data-ttu-id="6b0ca-117">创建用户预制件</span><span class="sxs-lookup"><span data-stu-id="6b0ca-117">Creating the user prefab</span></span>
 
-    <span data-ttu-id="3b8d5-121">在导入包后，应显示“MRTK 项目配置器”窗口。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-121">After the package has been imported, the MRTK Project Configurator window should appear.</span></span> <span data-ttu-id="3b8d5-122">如果未显示该窗口，请在 Unity 菜单中选择“混合现实工具包”>“实用工具”>“配置 Unity 项目”将其打开。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-122">If it does not, open it by selecting Mixed Reality Toolkit > Utilities > Configure Unity Project in the Unity menu.</span></span>
+<span data-ttu-id="6b0ca-118">在本部分中，你将创建一个预制件，用于表示共享体验中的用户。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-118">In this section, you will create a prefab that will be used to represent the users in the shared experience.</span></span>
 
-    <span data-ttu-id="3b8d5-123">在“MRTK 项目配置器”窗口中，展开“修改配置”部分，取消选中“启用 MSBuild for Unity”复选框，确保勾选所有其他选项，然后单击“应用”按钮以应用设置。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-123">In the MRTK Project Configurator window, expand the Modify Configurations section, uncheck the Enable MSBuild for Unity checkbox, ensure all other options are checked, and click the Apply button to apply the settings.</span></span>
+### <a name="1-create-and-configure-the-user"></a><span data-ttu-id="6b0ca-119">1.创建和配置用户</span><span class="sxs-lookup"><span data-stu-id="6b0ca-119">1. Create and configure the user</span></span>
 
-    ![Module3Chapter2note1im](images/module3chapter2note1im-missing01.png)
+<span data-ttu-id="6b0ca-120">在“层次结构”窗口中，右键单击空白区域，然后选择“创建空白项”  将空对象添加到场景中，将该对象命名为“PhotonUser”  ，并按如下所示对其进行配置：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-120">In the Hierarchy window, right-click on an empty area and select **Create Empty** to add an empty object to your scene, name the object **PhotonUser**, and configure it as follows:</span></span>
 
-    > [!CAUTION]
-    > <span data-ttu-id="3b8d5-125">MSBuild for Unity 可能不支持你将使用的所有 SDK，在启用它后再禁用它可能比较困难。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-125">MSBuild for Unity may not support all SDKs you will be using and can be challenging to disable after it has been enabled.</span></span> <span data-ttu-id="3b8d5-126">因此，强烈建议不要启用 MSBuild for Unity。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-126">Consequently, it is strongly recommended to not enable MSBuild for Unity.</span></span>
-    
-4. <span data-ttu-id="3b8d5-127">创建新场景。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-127">Create a new scene.</span></span> <span data-ttu-id="3b8d5-128">可以单击“文件”并选择“新建场景”来完成此操作。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-128">This can be done by clicking File and selecting New Scene".</span></span> <span data-ttu-id="3b8d5-129">将场景保存为 HLSharedProjectMain。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-129">Save it as HLSharedProjectMain.</span></span>
+* <span data-ttu-id="6b0ca-121">请确保将变换位置  设置为 X = 0，Y = 0，Z = 0：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-121">Ensure the Transform **Position** is set to X = 0, Y = 0, Z = 0:</span></span>
 
-5. <span data-ttu-id="3b8d5-130">在“混合现实工具包”下，单击“添加到场景并进行配置”。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-130">Under Mixed Reality Toolkit, click on Add to Scene and Configure.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-1.png)
 
-    ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
+<span data-ttu-id="6b0ca-123">在仍选中了“PhotonUser”对象的情况下，在“检查器”窗口中，使用“添加组件”按钮将“Photon 用户(脚本)”组件添加到 PhotonUser 对象：   </span><span class="sxs-lookup"><span data-stu-id="6b0ca-123">With the **PhotonUser** object still selected, in the Inspector window, use the **Add Component** button to add the **Photon User (Script)** component to the PhotonUser object:</span></span>
 
-6. <span data-ttu-id="3b8d5-132">完成该操作后，在层次结构中选择“混合现实工具包(MRTK)”。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-132">Once that is complete, select Mixed-Reality Toolkit (MRTK) from the hierarchy.</span></span> <span data-ttu-id="3b8d5-133">在检查器面板中，将 MRTK 配置配置文件更改为 DefaultHoloLens2ConfigurationProfile。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-133">In the inspector panel, change the MRTK configuration profile to DefaultHoloLens2ConfigurationProfile.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-2.png)
 
-    ![Module2Chapter1step4ima](images/Module2Chapter1step4ima-missing01.png)
+<span data-ttu-id="6b0ca-125">在“检查器”窗口中，使用“添加组件”  按钮将“通用网络同步(脚本)”  组件添加到 PhotonUser 对象，并按如下所示对其进行配置：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-125">In the Inspector window, use the **Add Component** button to add the **Generic Net Sync (Script)** component to the PhotonUser object and configure it as follows:</span></span>
 
-7. <span data-ttu-id="3b8d5-135">在层次结构中选择“混合现实工具包(MRTK)”。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-135">Select Mixed-Reality Toolkit (MRTK) from the  hierarchy.</span></span> <span data-ttu-id="3b8d5-136">在检查器面板中，找到“混合现实工具包脚本”并按“复制和自定义”按钮，如下图所示。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-136">In the inspector panel, look for the Mixed Reality Toolkit Script and press the "Copy & Customize" button  as shown in the figure below.</span></span>  <span data-ttu-id="3b8d5-137">随后会显示一个弹出窗口。请在弹出菜单中选择克隆选项。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-137">A pop will appear after this and select clone option in the pop up menu.</span></span>
+* <span data-ttu-id="6b0ca-126">选中“是用户”  复选框</span><span class="sxs-lookup"><span data-stu-id="6b0ca-126">Check the **Is User** checkbox</span></span>
 
-    ![Module3Chapter2step6imc](images/module3chapter2step6imc.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-3.png)
 
-    ![Module3Chapter2step6imd](images/module3chapter2step6imd.PNG)
+<span data-ttu-id="6b0ca-128">在“检查器”窗口中，使用“添加组件”  按钮将“Photon 视图(脚本)”  组件添加到 PhotonUser 对象，并按如下所示对其进行配置：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-128">In the Inspector window, use the **Add Component** button to add the **Photon View (Script)** component to the PhotonUser object and configure it as follows:</span></span>
 
-8. <span data-ttu-id="3b8d5-140">若要隐藏诊断窗口，请向下滚动并取消选中“启用诊断系统”。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-140">Scroll down and uncheck Enable Diagnostics system if you want to hide the diagnostics window.</span></span> <span data-ttu-id="3b8d5-141">我们建议在应用程序开发期间保持启用诊断窗口以监视性能，并在生产或应用程序演示期间将其禁用。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-141">We recommend keeping the diagnostics window enabled during application development to monitor performance, and then disabling it during production or application demonstrations.</span></span> 
+* <span data-ttu-id="6b0ca-129">向“观察到的组件”  字段中分配“通用网络同步(脚本)”组件</span><span class="sxs-lookup"><span data-stu-id="6b0ca-129">To the **Observed Components** field, assign the Generic Net Sync (Script) component</span></span>
 
-    ![Module3Chapter2step7ima](images/module3chapter2step7ima.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-4.png)
 
-9. <span data-ttu-id="3b8d5-143">按 Ctrl+Shift+B 或转到“文件”>“生成设置”打开生成设置。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-143">Open the build settings by pressing control+shift+B or going to File->Build Settings.</span></span> <span data-ttu-id="3b8d5-144">请注意，该程序当前已在 PC、Mac 和 Linux 独立平台下设置。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-144">Notice that the program is currently set under the PC, Mac and Linux standalone platform.</span></span> <span data-ttu-id="3b8d5-145">对于 HoloLens 2 开发，请将平台设置为“通用 Windows 平台”。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-145">For HoloLens 2 development, set the platform to be Universal Windows Platform.</span></span> <span data-ttu-id="3b8d5-146">选择此选项并单击“切换平台”。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-146">Select it and click Switch Platform.</span></span>
+### <a name="2-create-the-avatar"></a><span data-ttu-id="6b0ca-131">2.创建头像</span><span class="sxs-lookup"><span data-stu-id="6b0ca-131">2. Create the avatar</span></span>
 
-    ![Module3Chapter2step8im](images/module3chapter2step8im.PNG)
+<span data-ttu-id="6b0ca-132">在“层次结构”窗口中，右键单击“PhotonUser”  对象，然后选择“3D 对象”   >   “球体”创建一个作为 PhotonUser 对象的子项的球体对象，并按如下所示对其进行配置：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-132">In the Hierarchy window, right-click on the **PhotonUser** object and select **3D Object** > **Sphere** to create a sphere object as a child of the PhotonUser object and configure it as follows:</span></span>
 
-10. <span data-ttu-id="3b8d5-148">完成后，单击名为“添加开放场景”的框。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-148">Once complete, click the box called Add Open Scenes.</span></span> <span data-ttu-id="3b8d5-149">现在请转到“检查器”面板，确保已选中“支持的虚拟现实”右侧的复选框（如下图所示）。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-149">Now go to the Inspector panel and ensure that the check box to the right of Virtual Reality Supported (as shown in the image below) is checked.</span></span> <span data-ttu-id="3b8d5-150">另请确保选中了“scenes/HLSharedProjectMain”旁边的复选框，如下图所示。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-150">Also ensure that the check box next to scenes/HLSharedProjectMain is also checked, as shown in the image below.</span></span>
+* <span data-ttu-id="6b0ca-133">请确保将变换位置  设置为 X = 0，Y = 0，Z = 0</span><span class="sxs-lookup"><span data-stu-id="6b0ca-133">Ensure the Transform **Position** is set to X = 0, Y = 0, Z = 0</span></span>
+* <span data-ttu-id="6b0ca-134">将变换标度  更改为适当的大小，例如 X = 0.15，Y = 0.15，Z = 0.15</span><span class="sxs-lookup"><span data-stu-id="6b0ca-134">Change the Transform **Scale** to a suitable size, for example, X = 0.15, Y = 0.15, Z = 0.15</span></span>
 
-    ![Module3Chapter2step9im](images/module3chapter2step9im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step2-1.png)
 
-11. <span data-ttu-id="3b8d5-152">在“检查器”面板中的“发布设置”部分下，向下滚动到“功能”并确保已选中以下复选框：</span><span class="sxs-lookup"><span data-stu-id="3b8d5-152">Under the Publishing Settings section in the Inspector panel, scroll down to Capabilities and ensure the following check boxes are marked:</span></span>
+### <a name="3-create-the-prefab"></a><span data-ttu-id="6b0ca-136">3.创建预制件</span><span class="sxs-lookup"><span data-stu-id="6b0ca-136">3. Create the prefab</span></span>
 
-    ![Module3Chapter2step9imb](images/module3chapter2step9imb.PNG)
+<span data-ttu-id="6b0ca-137">在“项目”窗口中，导航到“资产” > “MRTK.Tutorials.MultiUserCapabilities” > “资源”文件夹：   </span><span class="sxs-lookup"><span data-stu-id="6b0ca-137">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.MultiUserCapabilities** > **Resources** folder:</span></span>
 
-12. <span data-ttu-id="3b8d5-154">导入列出的自定义包：</span><span class="sxs-lookup"><span data-stu-id="3b8d5-154">Import the listed custom packages:</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-1.png)
 
-    * <span data-ttu-id="3b8d5-155">[AzureSpatialAnchors.unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.1.1/AzureSpatialAnchors.unitypackage)（版本 2.1.1）</span><span class="sxs-lookup"><span data-stu-id="3b8d5-155">[AzureSpatialAnchors.unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.1.1/AzureSpatialAnchors.unitypackage) (version 2.1.1)</span></span>
-    * [<span data-ttu-id="3b8d5-156">MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage</span><span class="sxs-lookup"><span data-stu-id="3b8d5-156">MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
-    * [<span data-ttu-id="3b8d5-157">MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage</span><span class="sxs-lookup"><span data-stu-id="3b8d5-157">MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage)
-    * [<span data-ttu-id="3b8d5-158">MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage</span><span class="sxs-lookup"><span data-stu-id="3b8d5-158">MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
+<span data-ttu-id="6b0ca-139">在“资源”文件夹仍处于选定状态的情况下，单击“层次结构”窗口中的“PhotonUser”对象并将其拖动到“资源”文件夹，以使 PhotonUser 对象成为预制件：   </span><span class="sxs-lookup"><span data-stu-id="6b0ca-139">With the Resources folder still selected, **click-and-drag** the **PhotonUser** object from the Hierarchy window into the **Resources** folder to make the PhotonUser object a prefab:</span></span>
 
-    >[!TIP]
-    ><span data-ttu-id="3b8d5-159">有关如何为 Azure 空间定位点配置 Unity 项目的提示，可参阅 [Azure 空间定位点](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)教程系列中的 [Azure 空间定位点入门](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)教程。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-159">For a reminder on how to configure a Unity project for Azure Spatial Anchors, you can refer to the [Getting started with Azure Spatial Anchors](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1) tutorial which is part of the the [Azure Spatial Anchors](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1) tutorial series.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-2.png)
 
+<span data-ttu-id="6b0ca-141">在“层次结构”窗口中，右键单击“PhotonUser”  对象，然后选择“删除”  将其从场景中删除：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-141">In the Hierarchy window, right-click on the **PhotonUser** object and select **Delete** to remove it from the scene:</span></span>
 
-13. <span data-ttu-id="3b8d5-160">在“项目”面板中，转到“预制件”文件夹。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-160">In the Project panel, go to the Prefabs folder.</span></span> <span data-ttu-id="3b8d5-161">以下步骤将在场景中实现几个预制件。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-161">In the following steps, you will implement a few prefabs into the scene.</span></span> <span data-ttu-id="3b8d5-162">在“预制件”文件夹中，单击“调试窗口”预制件并将其拖放到层次结构中。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-162">In the Prefabs folder, click and drag the prefab, Debug Window into the hierarchy.</span></span> <span data-ttu-id="3b8d5-163">完成后，单击“文件”并选择“保存”，或者按 Ctrl+S 以保存项目。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-163">Once finished, save the project by clicking File, then Save or press Control+S.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-3.png)
 
-    ![Module3Chapter2step12im](images/module3chapter2step12im.PNG)
+## <a name="configuring-pun-to-instantiate-the-user-prefab"></a><span data-ttu-id="6b0ca-143">配置 PUN 以将用户预制件实例化</span><span class="sxs-lookup"><span data-stu-id="6b0ca-143">Configuring PUN to instantiate the user prefab</span></span>
 
-    <span data-ttu-id="3b8d5-165">单击该预制件时，你可能会发现显示了一个弹出窗口，其中询问是否要导入 TMP 基本信息。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-165">You may notice a pop-up appear as you click on the prefab, asking you about TMP Essentials.</span></span> <span data-ttu-id="3b8d5-166">请单击“导入 TMP 基本信息”，因为需要这些信息。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-166">Click Import TMP Essentials as they are needed.</span></span> <span data-ttu-id="3b8d5-167">如果出现此弹出窗口，你可能需要从层次结构中删除该预制件，并将其重新拖放到层次结构中，以免出现文本相关的潜在错误。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-167">If this pop-up appears, you might need to delete the prefab from your hierarchy and re-drag it into your hierarchy to avoid potential text-related errors.</span></span>
+<span data-ttu-id="6b0ca-144">在本部分中，你将配置项目以使用在上一部分中创建的 PhotonUser 预制件。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-144">In this section, you will configure the project to use the PhotonUser prefab you created in the previous section.</span></span>
 
-    ![Module3Chapter2note2im](images/module3chapter2note2im.PNG)
+<span data-ttu-id="6b0ca-145">在“项目”窗口中，导航到“资产” > “MRTK.Tutorials.MultiUserCapabilities” > “资源”文件夹。   </span><span class="sxs-lookup"><span data-stu-id="6b0ca-145">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.MultiUserCapabilities** > **Resources** folder.</span></span>
 
-## <a name="congratulations"></a><span data-ttu-id="3b8d5-169">祝贺</span><span class="sxs-lookup"><span data-stu-id="3b8d5-169">Congratulations</span></span>
+<span data-ttu-id="6b0ca-146">在“层次结构”窗口中，展开“NetworkLobby”  对象并选择“NetworkRoom”  子对象，然后在“检查器”窗口中，找到“Photon 房间(脚本)”  组件，并按如下所示对其进行配置：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-146">In the Hierarchy window, expand the **NetworkLobby** object and select the **NetworkRoom** child object, then in the Inspector window, locate the **Photon Room (Script)** component and configure it as follows:</span></span>
 
-<span data-ttu-id="3b8d5-170">Unity 项目现已准备好用于 Photon 开发。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-170">Your Unity Project is now ready for Photon.</span></span> <span data-ttu-id="3b8d5-171">在后面的教程中，我们将基于此场景生成应用程序，而我们的 Unity 项目也会逐渐形成一个完整的共享体验。</span><span class="sxs-lookup"><span data-stu-id="3b8d5-171">In the coming tutorials, we'll build upon this scene and our Unity project towards a full shared experience.</span></span>
+* <span data-ttu-id="6b0ca-147">向“Photon 用户预制件”  字段中分配来自“资源”文件夹的“PhotonUser”  预制件</span><span class="sxs-lookup"><span data-stu-id="6b0ca-147">To the **Photon User Prefab** field, assign the **PhotonUser** prefab from the Resources folder</span></span>
 
-<span data-ttu-id="3b8d5-172">[下一教程：3.连接多个用户](mrlearning-sharing(photon)-ch3.md)</span><span class="sxs-lookup"><span data-stu-id="3b8d5-172">[Next tutorial: 3. Connecting multiple users](mrlearning-sharing(photon)-ch3.md)</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section3-step1-1.png)
+
+## <a name="trying-the-experience-with-multiple-users"></a><span data-ttu-id="6b0ca-149">尝试包含多个用户的体验</span><span class="sxs-lookup"><span data-stu-id="6b0ca-149">Trying the experience with multiple users</span></span>
+
+<span data-ttu-id="6b0ca-150">如果现在生成了 Unity 项目并将其部署到 HoloLens，然后返回到 Unity，并且在应用程序运行于 HoloLens 上时按“玩游戏”按钮以进入“游戏”模式，那么，当你来回晃动头部 (HoloLens) 时，你将看到 HoloLens 用户头像移动：</span><span class="sxs-lookup"><span data-stu-id="6b0ca-150">If you now build and deploy the Unity project to your HoloLens, and then, back in Unity, press the Play button to enter Game mode while the application is running on your HoloLens, you will see the HoloLens user avatar move when you move your head (HoloLens) around:</span></span>
+
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section4-step1-1.gif)
+
+> [!TIP]
+> <span data-ttu-id="6b0ca-152">有关如何生成 Unity 项目并将其部署到 HoloLens 2 的提示，可参阅[在设备上生成应用程序](mrlearning-base-ch1.md#build-your-application-to-your-device)中的说明。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-152">For a reminder on how to build and deploy your Unity project to HoloLens 2, you can refer to the [Build your application to your device](mrlearning-base-ch1.md#build-your-application-to-your-device) instructions.</span></span>
+
+> [!CAUTION]
+> <span data-ttu-id="6b0ca-153">应用程序需要连接到 Photon，因此请确保计算机/设备已连接到 Internet。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-153">The application needs to connect to Photon, so make sure your computer/device is connected to the internet.</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="6b0ca-154">祝贺</span><span class="sxs-lookup"><span data-stu-id="6b0ca-154">Congratulations</span></span>
+
+<span data-ttu-id="6b0ca-155">你已成功将项目配置为允许多个用户连接到相同体验并可看到彼此的移动。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-155">You have successfully configured your project to allow multiple users to connect to the same experience and see each other's movements.</span></span> <span data-ttu-id="6b0ca-156">在下一教程中，你将实现功能，以使对象的移动也可以在多个设备之间共享。</span><span class="sxs-lookup"><span data-stu-id="6b0ca-156">In the next tutorial, you will implement functionality so that the movements of objects are also shared across multiple devices.</span></span>
+
+<span data-ttu-id="6b0ca-157">[下一教程：2.与多个用户共享对象移动](mrlearning-sharing(photon)-ch3.md)</span><span class="sxs-lookup"><span data-stu-id="6b0ca-157">[Next tutorial: 2. Sharing object movements with multiple users](mrlearning-sharing(photon)-ch3.md)</span></span>
