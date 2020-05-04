@@ -7,12 +7,12 @@ ms.date: 04/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Visual Studio, HoloLens, 混合现实, Mixed Reality, 调试, 部署
-ms.openlocfilehash: 718635922196b9c044c6904ebab994e9e2a2ff1a
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 8708ca39460fbd381bd41f5887e1276291f48b07
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81277995"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81484317"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>使用 Visual Studio 进行部署和调试
 
@@ -31,8 +31,8 @@ ms.locfileid: "81277995"
 
 ### <a name="hololens"></a>HoloLens
 1. 打开 HoloLens，然后戴上设备。
-2. 执行[绽放](system-gesture.md#bloom)手势来启动主菜单。
-3. 凝视“设置”磁贴，然后执行[隔空敲击](gaze-and-commit.md#composite-gestures)手势。  执行第二个空中点击，以便将该应用放入你的环境中。 在放置“设置”应用后，将启动该应用。
+2. 执行[开始手势](system-gesture.md)以启动主菜单。
+3. 选择“设置”  磁贴，以在你的环境中启动应用。
 4. 选择“更新”  菜单项。
 5. 选择“面向开发人员”  菜单项。
 6. 启用“开发人员模式”  。 这样，就可以[将应用从 Visual Studio 部署到](using-visual-studio.md) HoloLens。
@@ -84,6 +84,9 @@ ms.locfileid: "81277995"
 4. 首次将应用从电脑部署到 HoloLens 时，系统会提示输入 PIN。 按下面的说明**配对设备**。
 
 ## <a name="deploying-an-app-over-usb---hololens-2"></a>通过 USB 部署应用 - HoloLens 2
+
+>[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Deploying-your-HoloLens-2-application/player?format=ny]
+
 1. 为你的应用选择一个 **ARM** 或 **ARM64** 生成配置</br>
 ![Visual Studio 中的 ARM64 生成配置](images/arm64setting.png)</br>
 2. 在部署目标下拉菜单中选择“设备” </br>

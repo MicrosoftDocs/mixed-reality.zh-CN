@@ -8,15 +8,15 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: 旁观视图, iPhone, iOS, iPad, OpenCV, 相机, ARKit, HoloLens, 混合现实, MixedRealityToolkit, 演示, 录制
 ms.openlocfilehash: 9bc1c2809c7d780d439d9efb58f464b41de3dccd
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74491161"
 ---
 # <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens 和 HoloLens 2 的旁观视图
 
-![Marker](images/SpecViewPhoneHero.jpg)
+![记号笔](images/SpecViewPhoneHero.jpg)
 
 ## <a name="overview"></a>概述
 
@@ -47,7 +47,7 @@ ms.locfileid: "74491161"
 
 下表显示了不同的旁观视图功能。 请选择最符合你的视频录制需求的选项：
 
-|                                      | 移动版                  |                    摄像机              |
+|                                      | 移动电话号码                  |                    摄像机              |
 |--------------------------------------|:-----------------------:|:-------------------------------------------:|
 | 高清质量                           |         全高清         |        专业质量摄影（取决于摄像机）      |
 | 相机移动轻松                 |            ✔            |                      ✔                      |
