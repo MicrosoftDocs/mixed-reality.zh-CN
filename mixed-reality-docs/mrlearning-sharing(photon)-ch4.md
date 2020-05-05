@@ -1,5 +1,5 @@
 ---
-title: 多用户功能教程 - 4. 与多个用户共享对象运动
+title: 多用户功能教程 - 5. 将 Azure 空间定位点集成到共享体验中
 description: 完成本课程可以了解如何在 HoloLens 2 应用程序中实现多用户共享体验。
 author: jessemcculloch
 ms.author: jemccull
@@ -7,81 +7,101 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: b0ddf0799fd94c29ce8f1221c55073cd77b63703
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: c27ed7327cfe0a61f2b63e309348bdea1a535ea1
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031250"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604968"
 ---
-# <a name="4-sharing-object-movements-with-multiple-users"></a>4.与多个用户共享对象运动
+# <a name="4-integrating-azure-spatial-anchors-into-a-shared-experience"></a>4.将 Azure 空间定位点集成到共享体验中
 
-本教程介绍如何共享对象的运动，使共享会话的所有参与者可以展开协作并查看彼此的交互。 本课程基于[基础模块教程](mrlearning-base.md)中生成的月球探测器发射器。
+本教程介绍如何将 Azure 空间定位点 (ASA) 集成到共享体验中。 ASA 允许多台设备具有一个对物理环境的共同引用，从而使用户能够在其实际物理位置看到彼此，并看到同一位置中的共享体验。
 
 ## <a name="objectives"></a>目标
 
-- 以 3D 模型的形式引入要共享的月球探测器发射器
-- 将项目配置为共享 3D 模型的运动
-- 了解如何生成基本的多用户协作应用程序
+* 将 ASA 集成到共享体验，以实现多设备空间配准
+* 了解 ASA 在本地共享体验上下文中的基本工作原理
 
-## <a name="instructions"></a>说明
+## <a name="preparing-the-scene"></a>准备场景
 
-1. 保存上一课程中创建的场景 (Ctrl+S)。 可将其命名为 HLSharedProjectMainPart4.unity，以便在需要时轻松找到它。
+在“层次结构”窗口中，展开“SharedPlayground”  对象，然后展开“TableAnchor”  对象以公开其子对象：
 
-2. 在“项目”窗口中，双击“资产”->“脚本”文件夹中的“GenericNetSync”，在 Visual Studio 或所用的其他代码编辑器中将其打开。  
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section1-step1-1.png)
 
-    ![module3chapter4updatestep2](images/module3chapter4updatestep2.png)
+在“项目”窗口中，导航到“资产”   > “MRTK.Tutorials.MultiUserCapabilities”   > “预制件”  文件夹，然后将“Buttons”  预制件拖动到“层次结构”窗口中“TableAnchor”  子对象的顶部，以将其作为 TableAnchor 对象的子项添加到场景：
 
-3. 在第 34 和 38 行中，删除“//”以激活要在本课程中使用的工作台的代码。 接下来保存该文件。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section1-step1-2.png)
 
-    ![module3chapter4updatestep3](images/module3chapter4updatestep3.png)
+## <a name="configuring-the-buttons-to-operate-the-scene"></a>配置按钮以操作场景
 
-4. 在“项目”窗口中，双击“资产”>“脚本”文件夹中的“PhotonRoom.cs”文件，在 Visual Studio 中将其打开。
+在本部分中，你将配置一系列按钮事件，用于演示如何使用 Azure 空间定位点实现共享体验中的空间配准。
 
-    ![module3chapter4updatestep4](images/module3chapter4updatestep4.png)
+在“层次结构”窗口中展开“Button”对象，然后选择名为“StartAzureSession”的第一个子按钮对象：  
 
-5. 与在步骤 3 中一样，需要删除“//”以激活第 25、26 和 106 行中的代码。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-1.png)
 
-    ![module3chapter4updatestep5a](images/module3chapter4updatestep5a.png)
+在“检查器”窗口中，找到“可交互(脚本)”  组件，并按如下所示配置 OnClick ()  事件：
 
-    ![module3chapter4updatestep5b](images/module3chapter4updatestep5b.png)
+* 向“无(对象)”  字段中分配“TableAnchor”  对象
+* 从“无函数”  下拉列表中，选择“AnchorModuleScript”   > “StartAzureSession ()”  函数
 
-6. 在“层次结构”视图中选择“NetworkRoom”对象。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-2.png)
 
-    ![module3chapter4updatestep6](images/module3chapter4updatestep6.png)
+在“层次结构”窗口中，选择名为“CreateAzureAnchor”  的第二个子按钮对象，然后在“检查器”窗口中，找到“可交互(脚本)”  组件，并按如下所示配置 OnClick ()  事件：
 
-7. 在“项目”视图中，导航到“资产”->“资源”->“预制件”。 首先，将 Table 预制件拖放到 PhotonRoom 类中的 Tableprefab 槽。 接下来，将 RocketLauncherCompleteVariantprefab 拖放到 PhotonRoom 类中的 Module Prefab 槽。
+* 向“无(对象)”  字段中分配“TableAnchor”  对象
+* 从“无函数”  下拉列表中，选择“AnchorModuleScript”   > “CreateAzureAnchor ()”  函数
+* 向出现的新“无(游戏对象)”  字段中分配“TableAnchor”  对象
 
-    ![module3chapter4updatestep7](images/module3chapter4updatestep7.png)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-3.png)
 
-    >[!NOTE]
-    >如果单击某个预制件对象并松开鼠标，检查器将切换到该对象。 单击每个对象并将其拖放到相应的槽，然后松开鼠标。
+在“层次结构”窗口中，选择名为“ShareAzureAnchor”  的第三个子按钮对象，然后在“检查器”窗口中，找到“可交互(脚本)”  组件，并按如下所示配置 OnClick ()  事件：
 
-8. 单击 MixedRealityPlayspace 左侧的箭头，并将子游戏对象 MainCamera 下移到 SharedPlayground 预制件。 接下来，选择 MixedRealityPlayspace 预制件，然后按 Delete 键将其删除。
+* 向“无(对象)”  字段中分配“TableAnchor”  对象
+* 从“无函数”  下拉列表中，选择“SharingModuleScript”   > “ShareAzureAnchor ()”  函数
 
-    ![Module3hapter4step5im](images/module3chapter4step5im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-4.png)
 
-    >[!NOTE]
-    >确保主相机和 SharedPlayground 位置均设置为 0,0,0。
+在“层次结构”窗口中，选择名为“GetAzureAnchor”  的第四个子按钮对象，然后在“检查器”窗口中，找到“可交互(脚本)”  组件，并按如下所示配置 OnClick ()  事件：
 
-9. 选择“SharedPlayground”对象，然后单击鼠标右键并选择“创建空对象”选项，以创建一个空游戏对象作为“SharedPlayground”游戏对象的子级。
+* 向“无(对象)”  字段中分配“TableAnchor”  对象
+* 从“无函数”  下拉列表中，选择“SharingModuleScript”   > “GetAzureAnchor ()”  函数
 
-   ![Module3chapter4step6im](images/module3chapter4step6im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-5.png)
 
-10. 在层次结构中选择该新对象后，在“检查器”面板中将该对象的名称更改为 TableAnchor。 另外，单击“添加组件”并搜索 TableAnchor 组件。 选择该组件并将其添加到对象。
+## <a name="connecting-the-scene-to-the-azure-resource"></a>将场景连接到 Azure 资源
 
-    ![Module3Chapter4step7im](images/module3chapter4step7im.PNG)
+在“层次结构”窗口中，展开“SharedPlayground”  对象，然后选择“TableAnchor”  对象。 然后，在“检查器”窗口中，找到“空间定位点管理器(脚本)”  组件，并使用来自 Azure 空间定位点帐户（该帐户作为本教程系列[必备条件](mrlearning-sharing(photon)-ch1.md#prerequisites)的一部分创建）的凭据配置“凭据”  部分：
 
-11. 在“项目”面板中的“预制件”文件夹内，将 Table 预制件拖放到刚刚创建的“TableAnchor”子对象中。
+* 在“空间定位点帐户 ID”  字段中，粘贴来自你的 Azure 空间定位点帐户的“帐户 ID” 
+* 在“空间定位点帐户密钥”  字段中，  粘贴来自你的 Azure 空间定位点帐户的主“访问密钥”或辅助“访问密钥”
 
-    ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section3-step1-1.png)
+
+在仍选中“TableAnchor”  对象的情况下，在“检查器”窗口中，确保已启用所有脚本组件：
+
+* 选中“空间定位点管理器(脚本)”组件旁边的复选框以启用该组件 
+* 选中“空间模块脚本(脚本)”组件旁边的复选框以启用该组件 
+* 选中“共享模块脚本(脚本)”组件旁边的复选框以启用该组件 
+
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section3-step1-2.png)
+
+## <a name="trying-the-experience-with-spatial-alignment"></a>尝试带有空间配准的体验
+
+> [!NOTE]
+> Azure 空间定位点不能在 Unity 中运行。 因此，若要测试 Azure 空间定位点功能，需将项目部署到至少两个 HoloLens 设备。
+
+如果现在生成 Unity 项目并将其部署到两个 HoloLens 设备，则可以通过共享 Azure 定位点 ID 在设备之间实现空间配准。 若要进行测试，可执行以下步骤：
+
+1. 在 HoloLens 设备 1 上：**启动应用程序**（火箭发射器已实例化并置于台子上）
+2. 在 HoloLens 设备 2 上：**启动应用程序**（这两个用户都看到带有火箭启动器的台子，但是，该台子未出现在同一位置，用户头像未出现在用户所在的位置）
+3. 在 HoloLens 设备 1 上：按“启动 Azure 会话”  按钮
+4. 在 HoloLens 设备 1 上：按“创建 Azure 定位点”  按钮（在 TableAnchor 对象的位置创建定位点，并将定位点信息存储在 Azure 资源中）。
+5. 在 HoloLens 设备 1 上：按“共享 Azure 定位点”  按钮（与其他用户实时共享定位点 ID）
+6. 在 HoloLens 设备 2 上：按“启动 Azure 会话”  按钮
+7. 在 HoloLens 设备 2 上：按“获取 Azure 定位点”  按钮（连接到 Azure 资源以检索共享定位点 ID 的定位点信息，然后将 TableAnchor 对象移到通过 HoloLens 设备 1 创建定位点的位置）
 
 ## <a name="congratulations"></a>祝贺
 
-完成此过程后，找到登月舱。 此时，参与 Unity 项目的所有用户都可以四处移动月球探测器发射器。  所有运动都是同步的，因此每个用户都可以看到彼此的交互。 这些概念是全功能共享协作体验的构建基块。
-
-尽管所有用户已作为共享体验的一部分进行连接，并且可以看到对象的相对运动，但应用程序仍然无法准确对齐头像和对象，因此本地用户无法在现实世界中的同一位置看到彼此和对象。 若要定位点定本地共享体验，每个设备都需要对物理环境有一个共识。 在本模块中，我们将使用下一课程中要实现的 [Azure 空间定位点](<https://azure.microsoft.com//services/spatial-anchors/>) (ASA) 来达到这种共识。
-
-在继续学习下一课程之前，需要先完成 ASA 学习模块，其中介绍了 ASA 基础知识、Azure 帐户和资源的创建，以及在可将此模块集成到共享体验之前所需的其他构建基块。
-
-[下一课：5.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch5.md)
+在本教程中，你已了解如何集成 Azure 中强大的空间定位点功能，以在共享体验中为设备实现空间配准。 这也是此教程系列的总结。在此教程系列中，你已学会了如何设置 Photon 帐户、将 Photon 和 PUN 集成到 Unity 应用程序中、配置用户头像和共享的对象，并最终使用 ASA 来为多个参与者实现空间配准。
