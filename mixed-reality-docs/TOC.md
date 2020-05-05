@@ -123,10 +123,9 @@
 ###### [4.设置意向和自然语言理解](mrlearning-speechSDK-ch4.md)
 ##### 多用户功能教程
 ###### [1.设置 Photon Unity Networking](mrlearning-sharing(photon)-ch1.md)
-###### [2.让 Unity 为开发做好准备](mrlearning-sharing(photon)-ch2.md)
-###### [3.连接多个用户](mrlearning-sharing(photon)-ch3.md)
-###### [4.与多个用户共享对象移动](mrlearning-sharing(photon)-ch4.md)
-###### [5.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch5.md)
+###### [2.连接多个用户](mrlearning-sharing(photon)-ch2.md)
+###### [3.与多个用户共享对象移动](mrlearning-sharing(photon)-ch3.md)
+###### [4.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch4.md)
 ##### 空间音频教程
 ###### [1.在项目中添加空间音频](unity-spatial-audio-ch1.md)
 ###### [2.将按钮交互声音空间化](unity-spatial-audio-ch2.md)
