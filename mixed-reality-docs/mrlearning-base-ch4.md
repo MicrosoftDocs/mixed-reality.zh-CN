@@ -7,12 +7,12 @@ ms.date: 05/02/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 65bcef6a7c10450816d7a928302b0b266b132f0f
-ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
+ms.openlocfilehash: b807ac7e51e4009d2c44d3b7c67fbdf3488ccbd9
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80362071"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604988"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5.与 3D 对象交互
 
@@ -30,7 +30,7 @@ ms.locfileid: "80362071"
 
 下载并导入 Unity 自定义包：
 
-* [MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
+* [MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.3.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.3/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.3.unitypackage)
 
 导入教程资产后，“项目”窗口应如下所示：
 
