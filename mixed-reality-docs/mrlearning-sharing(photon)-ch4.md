@@ -1,5 +1,5 @@
 ---
-title: 多用户功能教程 - 4. 与多个用户共享对象运动
+title: 多用户功能教程 - 5. 将 Azure 空间定位点集成到共享体验中
 description: 完成本课程可以了解如何在 HoloLens 2 应用程序中实现多用户共享体验。
 author: jessemcculloch
 ms.author: jemccull
@@ -7,81 +7,101 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: b0ddf0799fd94c29ce8f1221c55073cd77b63703
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: c27ed7327cfe0a61f2b63e309348bdea1a535ea1
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031250"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604968"
 ---
-# <a name="4-sharing-object-movements-with-multiple-users"></a><span data-ttu-id="13b54-105">4.与多个用户共享对象运动</span><span class="sxs-lookup"><span data-stu-id="13b54-105">4. Sharing object movements with multiple users</span></span>
+# <a name="4-integrating-azure-spatial-anchors-into-a-shared-experience"></a><span data-ttu-id="7c747-105">4.将 Azure 空间定位点集成到共享体验中</span><span class="sxs-lookup"><span data-stu-id="7c747-105">4. Integrating Azure Spatial Anchors into a shared experience</span></span>
 
-<span data-ttu-id="13b54-106">本教程介绍如何共享对象的运动，使共享会话的所有参与者可以展开协作并查看彼此的交互。</span><span class="sxs-lookup"><span data-stu-id="13b54-106">In this Tutorial, you'll learn how to share the movements of objects so that all participants of a shared session can collaborate and view each others' interactions.</span></span> <span data-ttu-id="13b54-107">本课程基于[基础模块教程](mrlearning-base.md)中生成的月球探测器发射器。</span><span class="sxs-lookup"><span data-stu-id="13b54-107">This lesson builds upon the Lunar Launcher that was built as part of the [Base Module Tutorials](mrlearning-base.md).</span></span>
+<span data-ttu-id="7c747-106">本教程介绍如何将 Azure 空间定位点 (ASA) 集成到共享体验中。</span><span class="sxs-lookup"><span data-stu-id="7c747-106">In this tutorial, you will learn how to integrate Azure Spatial Anchors (ASA) into the shared experience.</span></span> <span data-ttu-id="7c747-107">ASA 允许多台设备具有一个对物理环境的共同引用，从而使用户能够在其实际物理位置看到彼此，并看到同一位置中的共享体验。</span><span class="sxs-lookup"><span data-stu-id="7c747-107">ASA allows multiple devices to have a common reference to the physical world so that the users see each other in their actual physical location and see the shared experience in the same place.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="13b54-108">目标</span><span class="sxs-lookup"><span data-stu-id="13b54-108">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="7c747-108">目标</span><span class="sxs-lookup"><span data-stu-id="7c747-108">Objectives</span></span>
 
-- <span data-ttu-id="13b54-109">以 3D 模型的形式引入要共享的月球探测器发射器</span><span class="sxs-lookup"><span data-stu-id="13b54-109">Bring in the lunar launcher as the 3D model to be shared</span></span>
-- <span data-ttu-id="13b54-110">将项目配置为共享 3D 模型的运动</span><span class="sxs-lookup"><span data-stu-id="13b54-110">Configure your project to share the movements of the 3D model</span></span>
-- <span data-ttu-id="13b54-111">了解如何生成基本的多用户协作应用程序</span><span class="sxs-lookup"><span data-stu-id="13b54-111">Learn how to build a basic multi-user collaborative application</span></span>
+* <span data-ttu-id="7c747-109">将 ASA 集成到共享体验，以实现多设备空间配准</span><span class="sxs-lookup"><span data-stu-id="7c747-109">Integrate ASA into a shared experience for multi-device alignment</span></span>
+* <span data-ttu-id="7c747-110">了解 ASA 在本地共享体验上下文中的基本工作原理</span><span class="sxs-lookup"><span data-stu-id="7c747-110">Learn the fundamentals of how ASA works in the context of a local shared experience</span></span>
 
-## <a name="instructions"></a><span data-ttu-id="13b54-112">说明</span><span class="sxs-lookup"><span data-stu-id="13b54-112">Instructions</span></span>
+## <a name="preparing-the-scene"></a><span data-ttu-id="7c747-111">准备场景</span><span class="sxs-lookup"><span data-stu-id="7c747-111">Preparing the scene</span></span>
 
-1. <span data-ttu-id="13b54-113">保存上一课程中创建的场景 (Ctrl+S)。</span><span class="sxs-lookup"><span data-stu-id="13b54-113">Save the scene from the previous lesson (Control+S).</span></span> <span data-ttu-id="13b54-114">可将其命名为 HLSharedProjectMainPart4.unity，以便在需要时轻松找到它。</span><span class="sxs-lookup"><span data-stu-id="13b54-114">You can name it HLSharedProjectMainPart4.unity so it's easier to find when you need it.</span></span>
+<span data-ttu-id="7c747-112">在“层次结构”窗口中，展开“SharedPlayground”  对象，然后展开“TableAnchor”  对象以公开其子对象：</span><span class="sxs-lookup"><span data-stu-id="7c747-112">In the Hierarchy window, expand the **SharedPlayground** object, then expand the **TableAnchor** object to expose its child objects:</span></span>
 
-2. <span data-ttu-id="13b54-115">在“项目”窗口中，双击“资产”->“脚本”文件夹中的“GenericNetSync”，在 Visual Studio 或所用的其他代码编辑器中将其打开。</span><span class="sxs-lookup"><span data-stu-id="13b54-115">From the Project window, in the Assets->Scripts folder, double-click GenericNetSync to open it in Visual Studio or which ever code editor you are using.</span></span>  
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section1-step1-1.png)
 
-    ![module3chapter4updatestep2](images/module3chapter4updatestep2.png)
+<span data-ttu-id="7c747-114">在“项目”窗口中，导航到“资产”   > “MRTK.Tutorials.MultiUserCapabilities”   > “预制件”  文件夹，然后将“Buttons”  预制件拖动到“层次结构”窗口中“TableAnchor”  子对象的顶部，以将其作为 TableAnchor 对象的子项添加到场景：</span><span class="sxs-lookup"><span data-stu-id="7c747-114">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.MultiUserCapabilities** > **Prefabs** folder and drag the **Buttons** prefab on top of the **TableAnchor** child object in the Hierarchy window to add it to your scene as a child of the TableAnchor object:</span></span>
 
-3. <span data-ttu-id="13b54-117">在第 34 和 38 行中，删除“//”以激活要在本课程中使用的工作台的代码。</span><span class="sxs-lookup"><span data-stu-id="13b54-117">On Lines 34 and 38, remove "//" to activate the code for the table that you will use in this lesson.</span></span> <span data-ttu-id="13b54-118">接下来保存该文件。</span><span class="sxs-lookup"><span data-stu-id="13b54-118">Next, save the file.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section1-step1-2.png)
 
-    ![module3chapter4updatestep3](images/module3chapter4updatestep3.png)
+## <a name="configuring-the-buttons-to-operate-the-scene"></a><span data-ttu-id="7c747-116">配置按钮以操作场景</span><span class="sxs-lookup"><span data-stu-id="7c747-116">Configuring the buttons to operate the scene</span></span>
 
-4. <span data-ttu-id="13b54-120">在“项目”窗口中，双击“资产”>“脚本”文件夹中的“PhotonRoom.cs”文件，在 Visual Studio 中将其打开。</span><span class="sxs-lookup"><span data-stu-id="13b54-120">In the Project window, double-click the PhotonRoom.cs file in the Assets->Scripts folder to open it in Visual Studio.</span></span>
+<span data-ttu-id="7c747-117">在本部分中，你将配置一系列按钮事件，用于演示如何使用 Azure 空间定位点实现共享体验中的空间配准。</span><span class="sxs-lookup"><span data-stu-id="7c747-117">In this section, you will configure a series of button events that demonstrate the fundamentals of how Azure Spatial Anchors can be used to achieve spatial alignment in a shared experience.</span></span>
 
-    ![module3chapter4updatestep4](images/module3chapter4updatestep4.png)
+<span data-ttu-id="7c747-118">在“层次结构”窗口中展开“Button”对象，然后选择名为“StartAzureSession”的第一个子按钮对象：  </span><span class="sxs-lookup"><span data-stu-id="7c747-118">In the Hierarchy window, expand the **Button** object and select the first child button object named **StartAzureSession**:</span></span>
 
-5. <span data-ttu-id="13b54-122">与在步骤 3 中一样，需要删除“//”以激活第 25、26 和 106 行中的代码。</span><span class="sxs-lookup"><span data-stu-id="13b54-122">Just like in Step 3, we need to remove "//" to activate the code at Lines 25, 26, and 106.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-1.png)
 
-    ![module3chapter4updatestep5a](images/module3chapter4updatestep5a.png)
+<span data-ttu-id="7c747-120">在“检查器”窗口中，找到“可交互(脚本)”  组件，并按如下所示配置 OnClick ()  事件：</span><span class="sxs-lookup"><span data-stu-id="7c747-120">In the Inspector window, locate the **Interactable (Script)** component and configure the **OnClick ()** event as follows:</span></span>
 
-    ![module3chapter4updatestep5b](images/module3chapter4updatestep5b.png)
+* <span data-ttu-id="7c747-121">向“无(对象)”  字段中分配“TableAnchor”  对象</span><span class="sxs-lookup"><span data-stu-id="7c747-121">To **None (Object)** field, assign the **TableAnchor** object</span></span>
+* <span data-ttu-id="7c747-122">从“无函数”  下拉列表中，选择“AnchorModuleScript”   > “StartAzureSession ()”  函数</span><span class="sxs-lookup"><span data-stu-id="7c747-122">From **No Function** dropdown, select the **AnchorModuleScript** > **StartAzureSession ()** function</span></span>
 
-6. <span data-ttu-id="13b54-125">在“层次结构”视图中选择“NetworkRoom”对象。</span><span class="sxs-lookup"><span data-stu-id="13b54-125">In the Hierarchy view, select the NetworkRoom object.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-2.png)
 
-    ![module3chapter4updatestep6](images/module3chapter4updatestep6.png)
+<span data-ttu-id="7c747-124">在“层次结构”窗口中，选择名为“CreateAzureAnchor”  的第二个子按钮对象，然后在“检查器”窗口中，找到“可交互(脚本)”  组件，并按如下所示配置 OnClick ()  事件：</span><span class="sxs-lookup"><span data-stu-id="7c747-124">In the Hierarchy window, select the second child button object named **CreateAzureAnchor**, then in the Inspector window, locate the **Interactable (Script)** component and configure the **OnClick ()** event as follows:</span></span>
 
-7. <span data-ttu-id="13b54-127">在“项目”视图中，导航到“资产”->“资源”->“预制件”。</span><span class="sxs-lookup"><span data-stu-id="13b54-127">In the Project view, navigate to Assets->Resources->Prefabs.</span></span> <span data-ttu-id="13b54-128">首先，将 Table 预制件拖放到 PhotonRoom 类中的 Tableprefab 槽。</span><span class="sxs-lookup"><span data-stu-id="13b54-128">First, drag and drop the Table prefab to the Tableprefab slot on the PhotonRoom class.</span></span> <span data-ttu-id="13b54-129">接下来，将 RocketLauncherCompleteVariantprefab 拖放到 PhotonRoom 类中的 Module Prefab 槽。</span><span class="sxs-lookup"><span data-stu-id="13b54-129">Next, drag and drop the RocketLauncherCompleteVariantprefab to the Module Prefab slot on the PhotonRoom class.</span></span>
+* <span data-ttu-id="7c747-125">向“无(对象)”  字段中分配“TableAnchor”  对象</span><span class="sxs-lookup"><span data-stu-id="7c747-125">To **None (Object)** field, assign the **TableAnchor** object</span></span>
+* <span data-ttu-id="7c747-126">从“无函数”  下拉列表中，选择“AnchorModuleScript”   > “CreateAzureAnchor ()”  函数</span><span class="sxs-lookup"><span data-stu-id="7c747-126">From **No Function** dropdown, select the **AnchorModuleScript** > **CreateAzureAnchor ()** function</span></span>
+* <span data-ttu-id="7c747-127">向出现的新“无(游戏对象)”  字段中分配“TableAnchor”  对象</span><span class="sxs-lookup"><span data-stu-id="7c747-127">To the new **None (Game Object)** field that appears, assign the **TableAnchor** object</span></span>
 
-    ![module3chapter4updatestep7](images/module3chapter4updatestep7.png)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-3.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="13b54-131">如果单击某个预制件对象并松开鼠标，检查器将切换到该对象。</span><span class="sxs-lookup"><span data-stu-id="13b54-131">If you click one of the prefab objects and release, the inspector will switch to that object.</span></span> <span data-ttu-id="13b54-132">单击每个对象并将其拖放到相应的槽，然后松开鼠标。</span><span class="sxs-lookup"><span data-stu-id="13b54-132">Click, drag, drop, and release each object to its appropriate slot.</span></span>
+<span data-ttu-id="7c747-129">在“层次结构”窗口中，选择名为“ShareAzureAnchor”  的第三个子按钮对象，然后在“检查器”窗口中，找到“可交互(脚本)”  组件，并按如下所示配置 OnClick ()  事件：</span><span class="sxs-lookup"><span data-stu-id="7c747-129">In the Hierarchy window, select the third child button object named **ShareAzureAnchor**, then in the Inspector window, locate the **Interactable (Script)** component and configure the **OnClick ()** event as follows:</span></span>
 
-8. <span data-ttu-id="13b54-133">单击 MixedRealityPlayspace 左侧的箭头，并将子游戏对象 MainCamera 下移到 SharedPlayground 预制件。</span><span class="sxs-lookup"><span data-stu-id="13b54-133">Click the arrow to the left of MixedRealityPlayspace and move the child game object MainCamera down into the SharedPlayground prefab.</span></span> <span data-ttu-id="13b54-134">接下来，选择 MixedRealityPlayspace 预制件，然后按 Delete 键将其删除。</span><span class="sxs-lookup"><span data-stu-id="13b54-134">Next, delete the prefab, MixedRealityPlayspace by selecting the prefab and tap "delete" on your keyboard).</span></span>
+* <span data-ttu-id="7c747-130">向“无(对象)”  字段中分配“TableAnchor”  对象</span><span class="sxs-lookup"><span data-stu-id="7c747-130">To **None (Object)** field, assign the **TableAnchor** object</span></span>
+* <span data-ttu-id="7c747-131">从“无函数”  下拉列表中，选择“SharingModuleScript”   > “ShareAzureAnchor ()”  函数</span><span class="sxs-lookup"><span data-stu-id="7c747-131">From **No Function** dropdown, select the **SharingModuleScript** > **ShareAzureAnchor ()** function</span></span>
 
-    ![Module3hapter4step5im](images/module3chapter4step5im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-4.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="13b54-136">确保主相机和 SharedPlayground 位置均设置为 0,0,0。</span><span class="sxs-lookup"><span data-stu-id="13b54-136">Make sure that both the Main Camera and SharedPlayground positions are set to 0,0,0.</span></span>
+<span data-ttu-id="7c747-133">在“层次结构”窗口中，选择名为“GetAzureAnchor”  的第四个子按钮对象，然后在“检查器”窗口中，找到“可交互(脚本)”  组件，并按如下所示配置 OnClick ()  事件：</span><span class="sxs-lookup"><span data-stu-id="7c747-133">In the Hierarchy window, select the forth child button object named **GetAzureAnchor**, then in the Inspector window, locate the **Interactable (Script)** component and configure the **OnClick ()** event as follows:</span></span>
 
-9. <span data-ttu-id="13b54-137">选择“SharedPlayground”对象，然后单击鼠标右键并选择“创建空对象”选项，以创建一个空游戏对象作为“SharedPlayground”游戏对象的子级。</span><span class="sxs-lookup"><span data-stu-id="13b54-137">Select "SharedPlayground" object and right click the mouse to choose "create empty" option to create an empty game object as a child of "SharedPlayground" game object.</span></span>
+* <span data-ttu-id="7c747-134">向“无(对象)”  字段中分配“TableAnchor”  对象</span><span class="sxs-lookup"><span data-stu-id="7c747-134">To **None (Object)** field, assign the **TableAnchor** object</span></span>
+* <span data-ttu-id="7c747-135">从“无函数”  下拉列表中，选择“SharingModuleScript”   > “GetAzureAnchor ()”  函数</span><span class="sxs-lookup"><span data-stu-id="7c747-135">From **No Function** dropdown, select the **SharingModuleScript** > **GetAzureAnchor ()** function</span></span>
 
-   ![Module3chapter4step6im](images/module3chapter4step6im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-5.png)
 
-10. <span data-ttu-id="13b54-139">在层次结构中选择该新对象后，在“检查器”面板中将该对象的名称更改为 TableAnchor。</span><span class="sxs-lookup"><span data-stu-id="13b54-139">With the new object selected in your hierarchy, change the name of the object to TableAnchor in the Inspector panel.</span></span> <span data-ttu-id="13b54-140">另外，单击“添加组件”并搜索 TableAnchor 组件。</span><span class="sxs-lookup"><span data-stu-id="13b54-140">Also, click Add Component and search for the TableAnchor component.</span></span> <span data-ttu-id="13b54-141">选择该组件并将其添加到对象。</span><span class="sxs-lookup"><span data-stu-id="13b54-141">Select it and add it to the object.</span></span>
+## <a name="connecting-the-scene-to-the-azure-resource"></a><span data-ttu-id="7c747-137">将场景连接到 Azure 资源</span><span class="sxs-lookup"><span data-stu-id="7c747-137">Connecting the scene to the Azure resource</span></span>
 
-    ![Module3Chapter4step7im](images/module3chapter4step7im.PNG)
+<span data-ttu-id="7c747-138">在“层次结构”窗口中，展开“SharedPlayground”  对象，然后选择“TableAnchor”  对象。</span><span class="sxs-lookup"><span data-stu-id="7c747-138">In the Hierarchy window, expand the **SharedPlayground** object and select the **TableAnchor** object.</span></span> <span data-ttu-id="7c747-139">然后，在“检查器”窗口中，找到“空间定位点管理器(脚本)”  组件，并使用来自 Azure 空间定位点帐户（该帐户作为本教程系列[必备条件](mrlearning-sharing(photon)-ch1.md#prerequisites)的一部分创建）的凭据配置“凭据”  部分：</span><span class="sxs-lookup"><span data-stu-id="7c747-139">Then in the Inspector window, locate the **Spatial Anchor Manager (Script)** component and configure the **Credentials** section with the credentials from the Azure Spatial Anchors account created as part of the [Prerequisites](mrlearning-sharing(photon)-ch1.md#prerequisites) for this tutorial series:</span></span>
 
-11. <span data-ttu-id="13b54-143">在“项目”面板中的“预制件”文件夹内，将 Table 预制件拖放到刚刚创建的“TableAnchor”子对象中。</span><span class="sxs-lookup"><span data-stu-id="13b54-143">From the Project panel in the Prefabs folder, drag the Table prefab into the "TableAnchor" child object that you just created.</span></span>
+* <span data-ttu-id="7c747-140">在“空间定位点帐户 ID”  字段中，粘贴来自你的 Azure 空间定位点帐户的“帐户 ID” </span><span class="sxs-lookup"><span data-stu-id="7c747-140">In the **Spatial Anchors Account ID** field, paste the **Account ID** from your Azure Spatial Anchors account</span></span>
+* <span data-ttu-id="7c747-141">在“空间定位点帐户密钥”  字段中，  粘贴来自你的 Azure 空间定位点帐户的主“访问密钥”或辅助“访问密钥”</span><span class="sxs-lookup"><span data-stu-id="7c747-141">In the **Spatial Anchors Account Key** field, paste the primary or secondary **Access Key** from your Azure Spatial Anchors account</span></span>
 
-    ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section3-step1-1.png)
 
-## <a name="congratulations"></a><span data-ttu-id="13b54-145">祝贺</span><span class="sxs-lookup"><span data-stu-id="13b54-145">Congratulations</span></span>
+<span data-ttu-id="7c747-143">在仍选中“TableAnchor”  对象的情况下，在“检查器”窗口中，确保已启用所有脚本组件：</span><span class="sxs-lookup"><span data-stu-id="7c747-143">With the **TableAnchor** object still selected, in the Inspector window, make sure all the script components are enabled:</span></span>
 
-<span data-ttu-id="13b54-146">完成此过程后，找到登月舱。</span><span class="sxs-lookup"><span data-stu-id="13b54-146">Once this is complete, look around to find the lunar module.</span></span> <span data-ttu-id="13b54-147">此时，参与 Unity 项目的所有用户都可以四处移动月球探测器发射器。</span><span class="sxs-lookup"><span data-stu-id="13b54-147">After this, all users that join your Unity project can move the lunar launcher around.</span></span>  <span data-ttu-id="13b54-148">所有运动都是同步的，因此每个用户都可以看到彼此的交互。</span><span class="sxs-lookup"><span data-stu-id="13b54-148">All movements are synchronized so that each user can see each others' interactions.</span></span> <span data-ttu-id="13b54-149">这些概念是全功能共享协作体验的构建基块。</span><span class="sxs-lookup"><span data-stu-id="13b54-149">These concepts serve as the fundamental building blocks for full-featured, shared collaboration experiences.</span></span>
+* <span data-ttu-id="7c747-144">选中“空间定位点管理器(脚本)”组件旁边的复选框以启用该组件 </span><span class="sxs-lookup"><span data-stu-id="7c747-144">Check the checkbox next to the **Spatial Anchor Manager (Script)** components to enable it</span></span>
+* <span data-ttu-id="7c747-145">选中“空间模块脚本(脚本)”组件旁边的复选框以启用该组件 </span><span class="sxs-lookup"><span data-stu-id="7c747-145">Check the checkbox next to the **Anchor Module Script (Script)** components to enable it</span></span>
+* <span data-ttu-id="7c747-146">选中“共享模块脚本(脚本)”组件旁边的复选框以启用该组件 </span><span class="sxs-lookup"><span data-stu-id="7c747-146">Check the checkbox next to the **Sharing Module Script (Script)** components to enable it</span></span>
 
-<span data-ttu-id="13b54-150">尽管所有用户已作为共享体验的一部分进行连接，并且可以看到对象的相对运动，但应用程序仍然无法准确对齐头像和对象，因此本地用户无法在现实世界中的同一位置看到彼此和对象。</span><span class="sxs-lookup"><span data-stu-id="13b54-150">Although all users are connected as part of a shared experience and can see the relative movements of objects, the application is still unable to accurately align avatars and objects so that local users were not able see each other and objects in the same place within the physical world.</span></span> <span data-ttu-id="13b54-151">若要定位点定本地共享体验，每个设备都需要对物理环境有一个共识。</span><span class="sxs-lookup"><span data-stu-id="13b54-151">In order to anchor a local shared experiences, every device requires a common understanding of the physical environment.</span></span> <span data-ttu-id="13b54-152">在本模块中，我们将使用下一课程中要实现的 [Azure 空间定位点](<https://azure.microsoft.com//services/spatial-anchors/>) (ASA) 来达到这种共识。</span><span class="sxs-lookup"><span data-stu-id="13b54-152">In this module, we'll achieve this by using [Azure Spatial Anchors](<https://azure.microsoft.com//services/spatial-anchors/>) (ASA) which will be implemented in the next lesson.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section3-step1-2.png)
 
-<span data-ttu-id="13b54-153">在继续学习下一课程之前，需要先完成 ASA 学习模块，其中介绍了 ASA 基础知识、Azure 帐户和资源的创建，以及在可将此模块集成到共享体验之前所需的其他构建基块。</span><span class="sxs-lookup"><span data-stu-id="13b54-153">Before proceeding to the next lesson, we'll need to complete the ASA Learning Module that covers ASA basics, Azure account and resource creation, as well as other fundamental buildings blocks required before we can integrate this into our shared experience.</span></span>
+## <a name="trying-the-experience-with-spatial-alignment"></a><span data-ttu-id="7c747-148">尝试带有空间配准的体验</span><span class="sxs-lookup"><span data-stu-id="7c747-148">Trying the experience with spatial alignment</span></span>
 
-<span data-ttu-id="13b54-154">[下一课：5.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch5.md)</span><span class="sxs-lookup"><span data-stu-id="13b54-154">[Next Lesson: 5. Integration Azure Spatial Anchors into a shared experience](mrlearning-sharing(photon)-ch5.md)</span></span>
+> [!NOTE]
+> <span data-ttu-id="7c747-149">Azure 空间定位点不能在 Unity 中运行。</span><span class="sxs-lookup"><span data-stu-id="7c747-149">Azure Spatial Anchors can not run in Unity.</span></span> <span data-ttu-id="7c747-150">因此，若要测试 Azure 空间定位点功能，需将项目部署到至少两个 HoloLens 设备。</span><span class="sxs-lookup"><span data-stu-id="7c747-150">Consequently, to test the Azure Spatial Anchors functionality, you need to deploy the project to a minimum of two HoloLens devices.</span></span>
+
+<span data-ttu-id="7c747-151">如果现在生成 Unity 项目并将其部署到两个 HoloLens 设备，则可以通过共享 Azure 定位点 ID 在设备之间实现空间配准。</span><span class="sxs-lookup"><span data-stu-id="7c747-151">If you now build and deploy the Unity project to two HoloLens devices, you can achieve spatial alignment between the devices by sharing the Azure Anchor ID.</span></span> <span data-ttu-id="7c747-152">若要进行测试，可执行以下步骤：</span><span class="sxs-lookup"><span data-stu-id="7c747-152">To test it out, you can follow these steps:</span></span>
+
+1. <span data-ttu-id="7c747-153">在 HoloLens 设备 1 上：**启动应用程序**（火箭发射器已实例化并置于台子上）</span><span class="sxs-lookup"><span data-stu-id="7c747-153">On HoloLens device 1: **Start the application** (the Rocket Launcher is instantiated and placed on the table)</span></span>
+2. <span data-ttu-id="7c747-154">在 HoloLens 设备 2 上：**启动应用程序**（这两个用户都看到带有火箭启动器的台子，但是，该台子未出现在同一位置，用户头像未出现在用户所在的位置）</span><span class="sxs-lookup"><span data-stu-id="7c747-154">On HoloLens device 2: **Start the application** (both users see the table with the Rocket Launcher, however, the table does not appear in the same place and the user avatars do not appear where the users are)</span></span>
+3. <span data-ttu-id="7c747-155">在 HoloLens 设备 1 上：按“启动 Azure 会话”  按钮</span><span class="sxs-lookup"><span data-stu-id="7c747-155">On HoloLens device 1: Press the **Start Azure Session** button</span></span>
+4. <span data-ttu-id="7c747-156">在 HoloLens 设备 1 上：按“创建 Azure 定位点”  按钮（在 TableAnchor 对象的位置创建定位点，并将定位点信息存储在 Azure 资源中）。</span><span class="sxs-lookup"><span data-stu-id="7c747-156">On HoloLens device 1: Press the **Create Azure Anchor** button (creates anchor at the location of the TableAnchor object and stores the anchor information in the Azure resource).</span></span>
+5. <span data-ttu-id="7c747-157">在 HoloLens 设备 1 上：按“共享 Azure 定位点”  按钮（与其他用户实时共享定位点 ID）</span><span class="sxs-lookup"><span data-stu-id="7c747-157">On HoloLens device 1: Press the **Share Azure Anchor** button (shares the anchor ID with other users in real-time)</span></span>
+6. <span data-ttu-id="7c747-158">在 HoloLens 设备 2 上：按“启动 Azure 会话”  按钮</span><span class="sxs-lookup"><span data-stu-id="7c747-158">On HoloLens device 2: Press the **Start Azure Session** button</span></span>
+7. <span data-ttu-id="7c747-159">在 HoloLens 设备 2 上：按“获取 Azure 定位点”  按钮（连接到 Azure 资源以检索共享定位点 ID 的定位点信息，然后将 TableAnchor 对象移到通过 HoloLens 设备 1 创建定位点的位置）</span><span class="sxs-lookup"><span data-stu-id="7c747-159">On HoloLens device 2: Press the **Get Azure Anchor** button (connects to the Azure resource to retrieve the anchor information for the shared anchor ID, then moves the TableAnchor object to the location where the anchor was created with the HoloLens device 1)</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="7c747-160">祝贺</span><span class="sxs-lookup"><span data-stu-id="7c747-160">Congratulations</span></span>
+
+<span data-ttu-id="7c747-161">在本教程中，你已了解如何集成 Azure 中强大的空间定位点功能，以在共享体验中为设备实现空间配准。</span><span class="sxs-lookup"><span data-stu-id="7c747-161">In this tutorial, you learned how to integrate Azure's powerful Spatial Anchors to align devices in a shared experience.</span></span> <span data-ttu-id="7c747-162">这也是此教程系列的总结。在此教程系列中，你已学会了如何设置 Photon 帐户、将 Photon 和 PUN 集成到 Unity 应用程序中、配置用户头像和共享的对象，并最终使用 ASA 来为多个参与者实现空间配准。</span><span class="sxs-lookup"><span data-stu-id="7c747-162">This also concludes this tutorial series where you have learned how to set up a Photon account and application, integrate Photon and PUN into a Unity application, configure user avatars and shared objects, and finally align multiple participants using ASA.</span></span>
