@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: 3d56f375c38b1dee6ab9eb97219a5e37fe698c63
-ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
+ms.openlocfilehash: 615da20df95f4a435216457e8b9f16bb7d7d069b
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81003333"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604958"
 ---
 # <a name="scene-understanding"></a>场景理解
 
@@ -29,13 +29,13 @@ ms.locfileid: "81003333"
 
 可以从示例 GitHub 站点下载场景理解示例应用：
 
-[场景理解示例](https://github.com/sceneunderstanding-microsoft/unitysample)
+[场景理解示例](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples)
 
 如果你没有设备，并且想要访问示例场景来尝试场景了解，示例资产文件夹中有一些场景：
 
 [场景了解示例场景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
 
-### <a name="sdk"></a>SDK 中 IsInRole 中的声明
+### <a name="sdk"></a>SDK
 
 如果你正在寻找有关如何针对场景理解进行开发的特定详细信息，或有关场景理解如何工作的详细信息以及如何针对其进行开发的详细信息，请参阅[场景了解 SDK 概述](scene-understanding-SDK.md)文档。
 
@@ -53,8 +53,8 @@ ms.locfileid: "81003333"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>具有</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
+        <td><strong>功能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens （第一代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
     </tr>
@@ -83,11 +83,11 @@ ms.locfileid: "81003333"
 
 :::row:::
     :::column:::
-       已禁用推理 ![SceneQuads，并捕获扫描区域的放置区。](images/SUQuads.png)<br>
+       ![已禁用推理，并捕获扫描区域的放置区域 SceneQuads。](images/SUQuads.png)<br>
        已禁用 SceneQuads 的**图像 #1** ，并捕获扫描区域的放置区。
     :::column-end:::
         :::column:::
-       启用了推理的 ![四边形，放置不再局限于扫描区域。](images/SUWatertight.png)<br>
+       ![四边形启用了推理后，放置不再局限于扫描区域。](images/SUWatertight.png)<br>
         **图像 #2** -启用了推理的四边形，放置不再局限于扫描区域。
     :::column-end:::
 :::row-end:::
@@ -99,7 +99,7 @@ ms.locfileid: "81003333"
 
 **注意**对于依赖于空间映射网格的传统放置代码，可以通过设置 EnableWorldMesh 设置与 SceneQuads 一起计算空间映射网格。 如果场景理解 API 不满足应用程序的延迟要求，我们建议继续使用[空间映射 API](spatial-mapping.md#placement)。
 
-### <a name="occlusion"></a>封闭
+### <a name="occlusion"></a>遮蔽
 
 [空间映射封闭](spatial-mapping.md#occlusion)仍是捕获环境的实时状态的最小延迟方式。 虽然这对于在高度动态的场景中提供封闭可能很有用，但出于多种原因，你可能希望考虑到封闭的场景理解。 如果使用通过场景理解生成的空间映射网格，则可以从空间映射请求数据，这些数据不会存储在本地缓存中，因此不能从感知 Api 中获取。 使用封闭和 watertight 网格的空间映射将提供额外的价值，特别是完成未扫描的房间结构。
 

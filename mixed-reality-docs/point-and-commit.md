@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 交互, 设计, HoloLens, 手, 远, 指向和提交
 ms.openlocfilehash: d3f886fd8e892fe34116c3a1d601ae3a87d87a9b
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75901531"
 ---
 # <a name="point-and-commit-with-hands"></a>使用手指向和提交
@@ -95,7 +95,7 @@ ms.locfileid: "75901531"
 
 ---
 
-## <a name="2d-slate-interaction"></a>2D 盖板交互
+## <a name="2d-slate-interaction"></a>2D 平板电脑交互
 
 2D 盖板是装有 Web 浏览器等 2D 应用内容的全息容器。 与 2D 平板电脑进行远距离交互的设计理念是使用手部射线进行瞄准，并隔空敲击以进行选择。 在用手部射线瞄准目标后，用户可以通过隔空敲击来触发超链接或按钮。 他们可以用一只手“隔空敲击并拖动”来上下滚动盖板内容。 使用两只手进行隔空敲击和拖动的相对运动可以放大和缩小平板电脑内容。
 

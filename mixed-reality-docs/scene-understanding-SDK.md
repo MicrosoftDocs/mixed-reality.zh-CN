@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: f293e779b041cdf4aa636cf317b7eaca70e16410
-ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
+ms.openlocfilehash: 3eb54f84e30b2354907204895e62accdb9ad54f9
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81003323"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604948"
 ---
 # <a name="scene-understanding-sdk-overview"></a>场景理解 SDK 概述
 
@@ -25,13 +25,13 @@ SceneUnderstanding SDK 可通过 NuGet 下载。
 
 **注意：** 最新版本依赖于预览包，你将需要启用预发布包才能查看。
 
-从版本 0.5.2022-rc，场景理解支持的C#语言投影，并C++允许应用程序开发 Win32 或 UWP 平台的应用程序。 在此版本中，SceneUnderstanding 支持 unity 内编辑器支持，禁止使用专用于与 HoloLens2 通信的 SceneObserver。 
+从版本 0.5.2022-rc，场景理解支持 c # 和 c + + 的语言投影，使应用程序可以开发适用于 Win32 或 UWP 平台的应用程序。 在此版本中，SceneUnderstanding 支持 unity 内编辑器支持，禁止使用专用于与 HoloLens2 通信的 SceneObserver。 
 
 SceneUnderstanding 需要 Windows SDK 版本18362或更高版本。 
 
 如果你使用的是 Unity 项目中的 SDK，请使用[NuGet For Unity](https://github.com/GlitchEnzo/NuGetForUnity)将包安装到你的项目中。
 
-## <a name="conceptual-overview"></a>概念性概述
+## <a name="conceptual-overview"></a>概念概述
 
 ### <a name="the-scene"></a>场景
 
@@ -101,7 +101,7 @@ SceneUnderstanding 需要 Windows SDK 版本18362或更高版本。
 
 以下部分提供对场景理解中的构造的高级概述。 阅读本部分后，你将了解如何表达场景以及各种组件的用途/用途。 下一节将提供具体的代码示例以及在本概述中 glossed 的其他详细信息。
 
-下面描述的所有类型都位于 `Microsoft.MixedReality.SceneUnderstanding` 命名空间中。
+下面所述的所有类型都驻留在`Microsoft.MixedReality.SceneUnderstanding`命名空间中。
 
 ### <a name="scenecomponents"></a>SceneComponents
 
@@ -121,10 +121,10 @@ SceneObjects 可以包含以下任一项：
 </tr>
 <tr><td>背景</td><td>已知 SceneObject<b>不</b>是其他已识别的场景对象类型之一。 此类不应与 Unknown 混淆，其中背景已知不是墙壁/楼层/天花板，等等 .。。虽然未知还未分类。</b></td></tr>
 <tr><td>壁</td><td>物理墙。 墙壁被认为是可移动的环境结构。</td></tr>
-<tr><td>突破</td><td>楼层是可以进行审核的任何表面。 注意：楼梯不是楼层。 另请注意，该楼层假设有任何不可的表面，因此没有显式假设。 多层结构，斜坡等 .。。应将所有分类为楼层。</td></tr>
+<tr><td>层</td><td>楼层是可以进行审核的任何表面。 注意：楼梯不是楼层。 另请注意，该楼层假设有任何不可的表面，因此没有显式假设。 多层结构，斜坡等 .。。应将所有分类为楼层。</td></tr>
 <tr><td>Ceiling</td><td>房间的上部面。</td></tr>
 <tr><td>平台</td><td>一个大平面，可以在其上放置全息影像。 它们倾向于表示表、countertops 和其他大型水平曲面。</td></tr>
-<tr><td>世界</td><td>标记不可知的几何数据的保留标签。 通过设置 EnableWorldMesh 更新标志生成的网格将归为 "世界"。</td></tr>
+<tr><td>World</td><td>标记不可知的几何数据的保留标签。 通过设置 EnableWorldMesh 更新标志生成的网格将归为 "世界"。</td></tr>
 <tr><td>未知</td><td>尚未对此场景对象进行分类并为其分配一种类型。 这不应与背景混淆，因为此对象可能是任何内容，而系统刚刚没有提供足够强大的分类。</td></tr>
 </tr>
 </table>
@@ -265,7 +265,7 @@ foreach (var mesh in firstFloor.Meshes)
 
 在处理转换时，场景理解已精心尝试与传统的三维场景表示。 因此，每个场景都局限于一个坐标系统，这与大多数常见的3D 环境表示形式非常类似。 每个 SceneObjects 都提供它们在该坐标系中的位置和方向。 如果你的应用程序正在处理的场景会延伸到单个源所提供的限制，则可以将 SceneObjects 定位到 SpatialAnchors，或生成多个场景并将它们合并在一起，但为了简单起见，我们假定 watertight 场景位于其自身的源中，而该已由由场景 OriginSpatialGraphNodeId 定义的一个本地化。
 
-例如，以下 Unity 代码演示了如何使用 Windows 感知和 Unity Api 来协调坐标系。 若要[详细了解如何](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)获取与 unity 世界原点相对应的 SpatialCoordinateSystem，以及在 `System.Numerics.Matrix4x4` 和 `UnityEngine.Matrix4x4`之间进行转换的 `.ToUnity()` 扩展方法，请参阅[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 。
+例如，以下 Unity 代码演示了如何使用 Windows 感知和 Unity Api 来协调坐标系。 若要[详细了解如何](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)获取与 unity 世界原点对应的 SpatialCoordinateSystem，以及用于在和`.ToUnity()` `System.Numerics.Matrix4x4` `UnityEngine.Matrix4x4`之间进行转换的扩展方法的详细信息，请参阅[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -295,7 +295,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-每个 `SceneObject` 都有一个 `Position` 和 `Orientation` 属性，该属性可用于相对于包含 `Scene`的原点定位相应的内容。 例如，下面的示例假定游戏是场景根的子元素，并分配其本地位置和旋转，使其与给定 `SceneObject`对齐：
+每`SceneObject`个都`Position`有`Orientation`一个和属性，该属性可用于相对于包含`Scene`的源定位相应的内容。 例如，下面的示例假定游戏是场景根的子元素，并分配其本地位置和旋转，使其与给定`SceneObject`的对齐：
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -343,9 +343,9 @@ foreach (var sceneObject in myScene.SceneObjects)
 
 步骤1-4 依赖于特定的框架/实现，但主题应类似。 请注意，四个部分只表示在空间中进行了本地化的界限2D 平面。 通过让引擎/框架知道四个部分，并相对于四个部分定位对象，您的全息影像会正确地定位到现实世界。 有关更多详细信息，请参阅四边形上的示例，这些示例显示特定实现。
 
-### <a name="mesh"></a>交错
+### <a name="mesh"></a>网格
 
-网格表示对象或环境的几何表示形式。 与每个空间 surface 网格一起提供的[空间映射](spatial-mapping.md)、网格索引和顶点数据非常类似于在所有新式渲染 api 中用于呈现三角形网格的顶点和索引缓冲区。 顶点位置在 `Scene`的坐标系统中提供。 用于引用此数据的特定 Api 如下所示：
+网格表示对象或环境的几何表示形式。 与每个空间 surface 网格一起提供的[空间映射](spatial-mapping.md)、网格索引和顶点数据非常类似于在所有新式渲染 api 中用于呈现三角形网格的顶点和索引缓冲区。 顶点位置在的坐标系统中提供`Scene`。 用于引用此数据的特定 Api 如下所示：
 
 ```cs
 void GetTriangleIndices(int[] indices);
@@ -362,7 +362,7 @@ mesh.GetTriangleIndices(indices);
 mesh.GetVertexPositions(positions);
 ```
 
-索引/顶点缓冲区必须是 > = 索引/顶点计数，但也可以任意调整大小以允许有效的内存重复使用。
+索引/顶点缓冲区必须是 >= 索引/顶点计数，但也可以任意调整大小以允许有效的内存重复使用。
 
 ## <a name="developing-with-scene-understandings"></a>用场景理解进行开发
 
@@ -378,10 +378,10 @@ mesh.GetVertexPositions(positions);
 
 如果你没有 HoloLens2 设备，但想要在场景理解的情况上播放，则需要下载预捕获的场景。 场景理解示例当前附带了序列化场景，可以在方便的时候下载和使用。 可在此处找到它们：
 
-[场景了解示例场景](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+[场景了解示例场景](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples/tree/master/Assets/Resources/SerializedScenesForPCPath)
 
 ## <a name="see-also"></a>另请参阅
 
 * [空间映射](spatial-mapping.md)
 * [场景理解](scene-understanding.md)
-* [Unity 示例](https://github.com/sceneunderstanding-microsoft/unitysample)
+* [Unity 示例](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples)

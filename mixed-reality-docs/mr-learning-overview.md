@@ -8,10 +8,10 @@ ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
 ms.openlocfilehash: 01429d3952eb97d4f8aaab2d2ce442eb1e1fcdac
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79031715"
 ---
 # <a name="mr-learning-modules"></a>MR 学习模块
