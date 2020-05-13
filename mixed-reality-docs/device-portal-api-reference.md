@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、Windows 设备门户、API
-ms.openlocfilehash: 236de35c2c736fc5a0289b7be1f1548f0a08fa26
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 8c9d60f458cddd3ba258aed0ee82f7aa16c10ba6
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278235"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227946"
 ---
 # <a name="device-portal-api-reference"></a>设备门户 API 参考
 
@@ -33,7 +33,7 @@ ms.locfileid: "81278235"
 参数
 * package：要安装的包的文件名。
 
-负载
+Payload
 * 多部分相容的 http 正文
 
 **/api/app/packagemanager/packages （GET）**
@@ -135,7 +135,7 @@ ms.locfileid: "81278235"
 
 **/api/holographic/os/webmanagement/settings/https （GET）**
 
-获取 Device Portal 的 HTTPS 要求
+获取设备门户的 HTTPS 要求
 
 **/api/holographic/os/webmanagement/settings/https （POST）**
 
@@ -183,6 +183,10 @@ ms.locfileid: "81278235"
 **/api/holographic/simulation/control/stream （POST）**
 
 创建控制流（需要优先级），或将数据发送到创建的流（需要 streamId）。 已发布的数据的类型应为 "application/八进制流"。
+
+**/api/holographic/simulation/display/stream （GET/WebSocket）**
+
+请求模拟视频流，其中包含在处于 "模拟" 模式时呈现给系统的内容。  首先发送一个简单的格式说明符标头，然后再发送一个-264 编码的纹理，每个纹理前面都有一个标头，指示眼睛索引和纹理大小。
 
 ## <a name="perception-simulation-playback"></a>感知播放
 
@@ -376,7 +380,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 428x240p 15fps 0.6 Mbit stream。
 
-## <a name="networking"></a>联网
+## <a name="networking"></a>网络
 
 **/api/networking/ipconfig （GET）**
 
@@ -497,7 +501,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 上传 "配置文件，并使用上传的配置文件开始跟踪。
 
-负载
+Payload
 * 多部分相容的 http 正文
 
 返回数据

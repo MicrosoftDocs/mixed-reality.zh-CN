@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 2/28/2020
 ms.topic: article
 keywords: OpenXR，Khronos，BasicXRApp，DirectX，本机，本机应用，自定义引擎，中间件，故障排除
-ms.openlocfilehash: 08ca671ded7230a4ba3cfcdc640233082af51040
-ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
+ms.openlocfilehash: 269982596ed6162d9c2f1ec999a446bcecd6ba2a
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80163361"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228002"
 ---
 # <a name="openxr-troubleshooting"></a>OpenXR 故障排除
 
@@ -24,7 +24,7 @@ ms.locfileid: "80163361"
 
 如果 OpenXR 应用在运行时未启动 Windows Mixed Reality，则 Windows Mixed Reality OpenXR 运行时可能不会设置为活动运行时。  请务必遵循上述说明，了解如何[开始 OpenXR For Windows Mixed Reality 耳机](openxr-getting-started.md#getting-started-with-openxr-for-windows-mixed-reality-headsets)，使运行时处于活动状态。
 
-还可以运行[Windows Mixed Reality OpenXR 开发人员门户](openxr-getting-started.md#getting-the-windows-mixed-reality-openxr-developer-portal)，以获取有关系统上 Windows Mixed Reality OpenXR 运行时状态的其他故障排除帮助。
+你还可以运行[Windows Mixed Reality OpenXR 开发人员工具](openxr-getting-started.md#getting-the-windows-mixed-reality-openxr-developer-tools)以获取有关系统上 Windows Mixed Reality OpenXR 运行时状态的其他故障排除帮助。
 
 ### <a name="mixed-reality-portal-not-showing-set-up-openxr-menu-item"></a>混合现实门户未显示 "设置 OpenXR" 菜单项
 
@@ -32,4 +32,4 @@ ms.locfileid: "80163361"
 
 如果你的混合现实门户应用的版本较旧，"设置 OpenXR" 菜单项可能不可用。  检查[混合现实门户应用更新](https://www.microsoft.com/p/mixed-reality-portal/9ng1h8b3zc7m)以确保具有最新版本。
 
-请注意，如果已安装并激活 Windows Mixed Reality OpenXR 运行时，则不会显示 "设置 OpenXR" 菜单项。  可以安装[Windows Mixed Reality OpenXR 开发人员门户](openxr-getting-started.md#getting-the-windows-mixed-reality-openxr-developer-portal)来确定系统上 OpenXR 运行时的当前状态。
+请注意，如果已安装并激活 Windows Mixed Reality OpenXR 运行时，则不会显示 "设置 OpenXR" 菜单项。  可以安装[Windows Mixed Reality OpenXR 开发人员工具](openxr-getting-started.md#getting-the-windows-mixed-reality-openxr-developer-tools)来确定系统上 OpenXR 运行时的当前状态。

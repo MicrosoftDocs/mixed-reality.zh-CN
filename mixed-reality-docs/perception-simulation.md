@@ -3,15 +3,15 @@ title: 感知模拟
 description: 使用感知模拟库自动完成沉浸式应用程序模拟输入的指南
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 04/26/2019
+ms.date: 05/12/2020
 ms.topic: article
 keywords: HoloLens，模拟，测试
-ms.openlocfilehash: 503533bc5a2e9307b7c5217632d42670285aac0a
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 701fd39490d87b70df9bd68cc99da6482d41b676
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437544"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228022"
 ---
 # <a name="perception-simulation"></a>感知模拟
 
@@ -23,22 +23,22 @@ ms.locfileid: "73437544"
 
 ## <a name="setting-up-a-visual-studio-project-for-perception-simulation"></a>设置用于感知模拟的 Visual Studio 项目
 1. 在开发电脑上[安装 HoloLens 模拟器](install-the-tools.md)。 模拟器包含用于感知模拟的库。
-2. 创建新的 Visual Studio C#桌面项目（控制台项目非常适合入门）。
-3. 将以下二进制文件作为引用添加到你的项目中（项目 > 添加 > 引用 ...）。可在% ProgramFiles （x86）% \ Microsoft XDE\\（版本）中找到这些文件，例如，用于 HoloLens 2 模拟器的% **ProgramFiles （x86）% \ MICROSOFT XDE\\10.0.18362.0** 。  （注意：尽管二进制文件是 HoloLens 2 模拟器的一部分，但它们也适用于桌面上的 Windows Mixed Reality。）的. PerceptionSimulationManager 用于感知模拟的托管C#包装。
+2. 创建新的 Visual Studio c # 桌面项目（控制台项目非常适合入门）。
+3. 将以下二进制文件作为引用添加到你的项目中（项目 >添加 >引用 ...）。可在% ProgramFiles （x86）% \ Microsoft XDE （版本）中找到这些文件 \\ ，如用于 HoloLens 2 模拟器的% **ProgramFiles （x86）% \ microsoft XDE \\ 10.0.18362.0** 。  （注意：尽管二进制文件是 HoloLens 2 模拟器的一部分，但它们也适用于桌面上的 Windows Mixed Reality。）的. PerceptionSimulationManager 用于感知模拟的 c # 托管封装。
     b. PerceptionSimulationRest-用于设置到 HoloLens 或仿真程序的 web 套接字通信通道的库。
     c. SimulationStream-模拟的共享类型。
-4. 将实现二进制 PerceptionSimulationManager 添加到项目 a。 首先，将其作为二进制文件添加到项目（项目-> 添加 > 现有项 ...）。将其保存为链接，使其不会将其复制到项目源文件夹。 ![将 PerceptionSimulationManager 添加到项目作为](images/saveaslink.png) b 的链接。 然后，确保它在生成时复制到输出文件夹。 这位于二进制文件的属性表中。 ![将 PerceptionSimulationManager 标记为要复制到输出目录](images/copyalways.png)
+4. 将实现二进制 PerceptionSimulationManager 添加到项目 a。 首先，将其作为二进制文件添加到项目（项目->添加 >现有项 ...）。将其保存为链接，使其不会将其复制到项目源文件夹。 ![将 PerceptionSimulationManager 作为链接 b 添加到项目 ](images/saveaslink.png) 。 然后，确保它在生成时复制到输出文件夹。 这位于二进制文件的属性表中。 ![将 PerceptionSimulationManager 标记为复制到输出目录](images/copyalways.png)
 5. 将活动解决方案平台设置为 x64。  （如果尚不存在，请使用 Configuration Manager 为 x64 创建平台条目。）
 
 ## <a name="creating-an-iperceptionsimulation-manager-object"></a>创建 IPerceptionSimulation Manager 对象
 
 若要控制模拟，你将对从 IPerceptionSimulationManager 对象检索到的对象进行更新。 第一步是获取该对象，并将其连接到目标设备或仿真程序。 可以通过单击[工具栏](using-the-hololens-emulator.md)中的 "设备门户" 按钮来获取仿真程序的 IP 地址。
 
-![打开设备门户图标](images/emulator-deviceportal.png)**打开设备门户**：在模拟器中打开用于 HoloLens OS 的 Windows 设备门户。  对于 Windows Mixed Reality，可以在 "设置" 应用程序中的 "更新 & 安全性" 下检索此项，然后在 "启用设备门户" 下的 "连接使用：" 部分中的 "开发人员"。  请务必记下 IP 地址和端口。
+![打开设备门户图标 ](images/emulator-deviceportal.png) **打开设备门户**：在模拟器中打开用于 HoloLens OS 的 Windows 设备门户。  对于 Windows Mixed Reality，可以在 "设置" 应用程序中的 "更新 & 安全性" 下检索此项，然后在 "启用设备门户" 下的 "连接使用：" 部分中的 "开发人员"。  请务必记下 IP 地址和端口。
 
 首先，调用 RestSimulationStreamSink 来获取 RestSimulationStreamSink 对象。 这是你将通过 http 连接控制的目标设备或仿真程序。 命令将传递到设备或模拟器上运行的[Windows 设备门户](using-the-windows-device-portal.md)并进行处理。 创建对象需要四个参数：
-* Uri uri-目标设备的 IP 地址（例如，"https://123.123.123.123" 或 "https://123.123.123.123:50080"）
-* 系统 NetworkCredential 凭据-用于在目标设备或模拟器上连接到[Windows 设备门户](using-the-windows-device-portal.md)的用户名/密码。 如果要通过其本地地址（例如，*168 ...* *）在同一台计算机上，将接受任何凭据。
+* Uri uri-目标设备的 IP 地址（例如，" https://123.123.123.123 " 或 " https://123.123.123.123:50080 "）
+* 系统 NetworkCredential 凭据-用于在目标设备或模拟器上连接到[Windows 设备门户](using-the-windows-device-portal.md)的用户名/密码。 如果要通过其本地地址（例如，*168 ...**）在同一台计算机上，将接受任何凭据。
 * 布尔标准-对于普通优先级为 True，低优先级为 false。 通常，你需要将此值设置为*true* ，以便测试方案允许你的测试进行控制。  仿真程序和 Windows Mixed Reality 模拟使用低优先级连接。  如果你的测试也使用低优先级连接，则最近建立的连接将处于控制中。
 * CancellationToken 标记-用于取消异步操作的标记。
 
@@ -52,7 +52,7 @@ IPerceptionSimulationManager 具有返回 ISimulatedHuman 对象的人属性。 
 manager.Human.Move(new Vector3(0.1f, 0.0f, 0.0f))
 ```
 
-## <a name="basic-sample-c-console-application"></a>基本示例C#控制台应用程序
+## <a name="basic-sample-c-console-application"></a>基本示例 c # 控制台应用程序
 
 ```
 using System;
@@ -108,7 +108,7 @@ namespace ConsoleApplication1
 }
 ```
 
-## <a name="extended-sample-c-console-application"></a>扩展示例C#控制台应用程序
+## <a name="extended-sample-c-console-application"></a>扩展的示例 c # 控制台应用程序
 
 ```
 using System;
@@ -655,6 +655,52 @@ public struct Frustum
 
 视图的水平字段与视图的垂直字段的比率。
 
+### <a name="microsoftperceptionsimulationsimulateddisplayconfiguration"></a>PerceptionSimulation. SimulatedDisplayConfiguration
+
+描述模拟耳机显示的配置。
+
+```
+public struct SimulatedDisplayConfiguration
+{
+    public Vector3 LeftEyePosition;
+    public Rotation3 LeftEyeRotation;
+    public Vector3 RightEyePosition;
+    public Rotation3 RightEyeRotation;
+    public float Ipd;
+    public bool ApplyEyeTransforms;
+    public bool ApplyIpd;
+}
+```
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. LeftEyePosition**
+
+从头部中心到左边的转换是为了实现立体声渲染。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. LeftEyeRotation**
+
+用于立体声呈现的左侧方式的旋转。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. RightEyePosition**
+
+从头部中心到正确眼睛的转换是为了实现立体声渲染。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. RightEyeRotation**
+
+为了实现立体声渲染，正确的眼睛旋转。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration**
+
+系统报告的 Ipd 值用于立体声渲染。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. ApplyEyeTransforms**
+
+是否应将为左和右眼转换提供的值视为有效并应用于正在运行的系统。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. ApplyIpd**
+
+是否应将为 Ipd 提供的值视为有效，并将其应用于正在运行的系统。
+
+
 ### <a name="microsoftperceptionsimulationiperceptionsimulationmanager"></a>PerceptionSimulation. IPerceptionSimulationManager
 
 用于生成用于控制设备的数据包的根。
@@ -707,6 +753,27 @@ public interface ISimulatedDevice
 
 参数
 * 类型-新类型的模拟设备
+
+### <a name="microsoftperceptionsimulationisimulateddevice2"></a>PerceptionSimulation. ISimulatedDevice2
+
+可以通过将 ISimulatedDevice 转换为 ISimulatedDevice2 提供其他属性
+
+```
+public interface ISimulatedDevice2
+{
+    bool IsUserPresent { [return: MarshalAs(UnmanagedType.Bool)] get; [param: MarshalAs(UnmanagedType.Bool)] set; }
+    SimulatedDisplayConfiguration DisplayConfiguration { get; set; }
+
+};
+```
+
+**PerceptionSimulation. ISimulatedDevice2. IsUserPresent**
+
+检索或设置模拟人力是否正在积极地戴上耳机。
+
+**PerceptionSimulation. ISimulatedDevice2. DisplayConfiguration**
+
+检索或设置模拟的显示的属性。
 
 ### <a name="microsoftperceptionsimulationisimulatedheadtracker"></a>PerceptionSimulation. ISimulatedHeadTracker
 
@@ -1226,7 +1293,7 @@ public static class PerceptionSimulationManager
 
 加载的记录。
 
-**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording （PerceptionSimulation，ISimulationStreamSinkFactory，PerceptionSimulation. ISimulationRecordingCallback）**
+**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording （PerceptionSimulation，ISimulationStreamSinkFactory，PerceptionSimulation，ISimulationRecordingCallback，）**
 
 从指定的文件加载记录。
 
@@ -1252,7 +1319,10 @@ public enum StreamDataTypes
     SpatialMapping = 0x08,
     Calibration = 0x10,
     Environment = 0x20,
-    All = None | Head | Hands | SpatialMapping | Calibration | Environment
+    SixDofControllers = 0x40,
+    Eyes = 0x80,
+    DisplayConfiguration = 0x100
+    All = None | Head | Hands | SpatialMapping | Calibration | Environment | SixDofControllers | Eyes | DisplayConfiguration
 }
 ```
 
@@ -1279,6 +1349,18 @@ public enum StreamDataTypes
 **PerceptionSimulation. StreamDataTypes**
 
 有关设备环境的数据流。
+
+**PerceptionSimulation. StreamDataTypes. SixDofControllers**
+
+有关运动控制器的数据流。
+
+**PerceptionSimulation. StreamDataTypes**
+
+与模拟人类的眼睛相关的数据流。
+
+**PerceptionSimulation. StreamDataTypes. DisplayConfiguration**
+
+有关设备显示配置的数据流。
 
 **PerceptionSimulation. StreamDataTypes。**
 

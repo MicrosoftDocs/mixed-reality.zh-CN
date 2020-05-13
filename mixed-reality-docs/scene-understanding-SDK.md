@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: 3eb54f84e30b2354907204895e62accdb9ad54f9
-ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
+ms.openlocfilehash: 2f958d45f72d6c39d4222840615c5b177db7c76f
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82604948"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228012"
 ---
 # <a name="scene-understanding-sdk-overview"></a>场景理解 SDK 概述
 
@@ -101,7 +101,7 @@ SceneUnderstanding 需要 Windows SDK 版本18362或更高版本。
 
 以下部分提供对场景理解中的构造的高级概述。 阅读本部分后，你将了解如何表达场景以及各种组件的用途/用途。 下一节将提供具体的代码示例以及在本概述中 glossed 的其他详细信息。
 
-下面所述的所有类型都驻留在`Microsoft.MixedReality.SceneUnderstanding`命名空间中。
+下面所述的所有类型都驻留在 `Microsoft.MixedReality.SceneUnderstanding` 命名空间中。
 
 ### <a name="scenecomponents"></a>SceneComponents
 
@@ -158,7 +158,7 @@ SceneQuads 在2d 中定义边界矩形图面。 但是，SceneQuads 表示具有
 使用 SceneObserver 计算场景。 在创建场景之前，应用程序应查询你的设备以确保它支持 SceneUnderstanding，并请求用户访问以获取 SceneUnderstanding 所需的信息。
 
 ```cs
-if (SceneObserver.IsSupported())
+if (!SceneObserver.IsSupported())
 {
     // Handle the error
 }
@@ -265,7 +265,7 @@ foreach (var mesh in firstFloor.Meshes)
 
 在处理转换时，场景理解已精心尝试与传统的三维场景表示。 因此，每个场景都局限于一个坐标系统，这与大多数常见的3D 环境表示形式非常类似。 每个 SceneObjects 都提供它们在该坐标系中的位置和方向。 如果你的应用程序正在处理的场景会延伸到单个源所提供的限制，则可以将 SceneObjects 定位到 SpatialAnchors，或生成多个场景并将它们合并在一起，但为了简单起见，我们假定 watertight 场景位于其自身的源中，而该已由由场景 OriginSpatialGraphNodeId 定义的一个本地化。
 
-例如，以下 Unity 代码演示了如何使用 Windows 感知和 Unity Api 来协调坐标系。 若要[详细了解如何](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)获取与 unity 世界原点对应的 SpatialCoordinateSystem，以及用于在和`.ToUnity()` `System.Numerics.Matrix4x4` `UnityEngine.Matrix4x4`之间进行转换的扩展方法的详细信息，请参阅[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 。
+例如，以下 Unity 代码演示了如何使用 Windows 感知和 Unity Api 来协调坐标系。 若要[详细了解如何](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)获取与 unity 世界原点对应的 SpatialCoordinateSystem，以及用于在和之间进行转换的扩展方法的详细信息，请参阅[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)和[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 。 `.ToUnity()` `System.Numerics.Matrix4x4` `UnityEngine.Matrix4x4`
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -295,7 +295,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-每`SceneObject`个都`Position`有`Orientation`一个和属性，该属性可用于相对于包含`Scene`的源定位相应的内容。 例如，下面的示例假定游戏是场景根的子元素，并分配其本地位置和旋转，使其与给定`SceneObject`的对齐：
+每个 `SceneObject` 都有一个 `Position` 和 `Orientation` 属性，该属性可用于相对于包含的源定位相应的内容 `Scene` 。 例如，下面的示例假定游戏是场景根的子元素，并分配其本地位置和旋转，使其与给定的对齐 `SceneObject` ：
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -345,7 +345,7 @@ foreach (var sceneObject in myScene.SceneObjects)
 
 ### <a name="mesh"></a>网格
 
-网格表示对象或环境的几何表示形式。 与每个空间 surface 网格一起提供的[空间映射](spatial-mapping.md)、网格索引和顶点数据非常类似于在所有新式渲染 api 中用于呈现三角形网格的顶点和索引缓冲区。 顶点位置在的坐标系统中提供`Scene`。 用于引用此数据的特定 Api 如下所示：
+网格表示对象或环境的几何表示形式。 与每个空间 surface 网格一起提供的[空间映射](spatial-mapping.md)、网格索引和顶点数据非常类似于在所有新式渲染 api 中用于呈现三角形网格的顶点和索引缓冲区。 顶点位置在的坐标系统中提供 `Scene` 。 用于引用此数据的特定 Api 如下所示：
 
 ```cs
 void GetTriangleIndices(int[] indices);
