@@ -100,6 +100,7 @@
 ## [了解工具和体系结构](development.md)
 ## [安装工具](install-the-tools.md)
 ## 混合现实云服务
+### [Azure 远程渲染](https://docs.microsoft.com/azure/remote-rendering)
 ### [Azure 空间定位点](https://docs.microsoft.com/azure/spatial-anchors)
 ## [教程和示例应用](tutorials.md)
 ### Unity
