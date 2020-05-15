@@ -4,16 +4,16 @@ title: 了解工具和体系结构
 description: 适用于 HoloLens 和沉浸式头戴显示设备的混合现实开发人员文档。
 author: grbury
 ms.author: grbury
-ms.date: 08/27/2019
+ms.date: 04/27/2020
 ms.topic: overview
 ms.localizationpriority: high
-keywords: 混合现实、开发、HoloLens、unity、directx
-ms.openlocfilehash: 3bd5fea55a8dad2982a1a14680169eb51764c1df
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+keywords: 混合现实, 开发, HoloLens, unity, unreal, directx
+ms.openlocfilehash: 97a6e130af45a9444ead5e6ed40168351c4dbbf6
+ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81277716"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82835286"
 ---
 # <a name="learn-the-tools-and-architecture"></a>了解工具和体系结构
 
@@ -36,12 +36,12 @@ ms.locfileid: "81277716"
     :::column:::    
        [![Unity](images/unity_logo.png)](development.md#unity)<br>
         **[Unity](development.md#unity)**<br>   
-        构建混合现实应用的最快途径是使用 Unity。 
+        使用 Unity 构建跨平台、功能齐全的混合现实应用。
     :::column-end:::    
     :::column:::    
         [![Unreal](images/Unreal_logo.png)](development.md#unreal)<br>
-         **[Unreal](development.md#unreal)**<br>    
-        针对 HoloLens 2 的生产就绪型支持也会包含在 Unreal Engine 4.23 中。    
+        **[Unreal](development.md#unreal)**<br> 
+        通过 Unreal Engine 中的生产就绪支持创造出色的混合现实体验。 
     :::column-end:::
     :::column:::    
         [![JavaScript](images/web-logo.png)](development.md#javascript)<br>
@@ -95,6 +95,16 @@ HandInteractionExamples.unity 示例场景包含各种类型的交互和 UI 控�
 
 ### <a name="unreal-development-overview"></a>[Unreal 开发概述](unreal-development-overview.md)
 了解如何使用 Unreal 构建混合现实应用。
+
+<br>
+
+### <a name="microsofts-mixed-reality-toolkit-mrtk-for-unreal"></a>[适用于 Unreal 的 Microsoft 混合现实工具包 (MRTK)](https://github.com/microsoft/MixedRealityToolkit-Unreal)
+适用于 Unreal 的混合现实工具包 (MRTK-Unreal) 是一组组件，包含插件、示例和文档，旨在加快使用 Unreal Engine 开发混合现实应用程序的速度。
+
+<br>
+
+### <a name="open-source-sample-apps-and-a-step-by-step-tutorial"></a>[开源示例应用和分步教程](unreal-uxt-ch1.md)
+这个有关 Unreal 中混合现实开发的入门教程可指导开发人员端到端地完成使用[适用于 Unreal v0.8 的 UX Tools](https://github.com/microsoft/MixedReality-UXTools-Unreal) 创建 HoloLens 2 应用的过程。
 
 <br>
 
