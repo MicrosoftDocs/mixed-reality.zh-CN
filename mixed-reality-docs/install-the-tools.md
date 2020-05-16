@@ -7,12 +7,12 @@ ms.date: 3/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新, 工具, 入门, 基础, Unity, Visual Studio, 工具包
-ms.openlocfilehash: 131d2a91c882fbcd31c4deb76a5ab5c3f97d7d42
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 763843b08946623861004154125669d84fe878ab
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82137872"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228072"
 ---
 # <a name="install-the-tools"></a>安装工具
 
@@ -37,7 +37,7 @@ ms.locfileid: "82137872"
 | ![Windows 徽标](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windows10" target="_blank">**Windows 10**（手动安装链接）</a> | 安装最新版本的 Windows 10，以便电脑的操作系统与正在为其生成混合现实应用程序的平台匹配。 | **安装 Windows 10** <br> <ul><li>可以通过“设置”中的“Windows 更新”，或者使用左栏中的链接创建安装媒体，来安装最新版本的 Windows 10。<li>有关每个 Windows 10 版本提供的最新混合现实功能的信息，请参阅[当前发行说明](release-notes-october-2018.md)。</ul> 通过“设置”>“更新和安全”>“对于开发人员”在电脑上启用开发人员模式  。 <br><br> 针对企业和企业托管电脑的注意事项：如果电脑由组织的 IT 部门管理，可能需要与他们联系才能进行更新  。 <br><br> Windows 的“N”版本  ：Windows 的“N”版本不支持 Windows Mixed Reality 沉浸式 (VR) 头戴显示设备。 |
 | ![Visual Studio 徽标](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2019（16.2 或更高版本）** （安装链接）</a> | 适用于 Windows 等的功能齐全的集成开发环境 (IDE)。 将使用 Visual Studio 来编写代码、调试、测试和部署。 | 请确保安装以下工作负载： <ul><li>**使用 C++ 的桌面开发**</li><li>**通用 Windows 平台 (UWP) 开发**</li></ul>在 UWP 工作负载内，如果要针对 HoloLens 进行开发，请务必选中以下可选组件：<ul><li>**USB 设备连接**</li></ul>**有关 Unity 的说明：** 除非你出于特定目的有意尝试安装较新（非 LTS）版本的 Unity，否则我们建议不要将 Unity 工作负载作为 Visual Studio 安装的一部分进行安装，而是安装下文所述的 Unity 2018.4 LTS  流  。<br> <br>**注意：** 在 Visual Studio 2019 版本16.0 中调试混合现实应用时存在一些已知问题。  请确保更新到 Visual Studio 2019 版本 16.2 或更高版本  。 |
 | ![Windows 徽标](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com//windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)** （手动安装链接）</a> | 提供用于在 HoloLens 2 上生成 Windows 10 应用的最新标头、库、元数据和工具。 | 若要生成 HoloLens 2 应用，必须安装 Windows SDK、内部版本 18362 或更高版本。<br> <br> 如果仅针对桌面 Windows Mixed Reality 头戴显示设备或 HoloLens（第 1 代）开发应用程序，则可以使用 Visual Studio 2017 安装的 Windows SDK。 |
-| ![Visual Studio 徽标](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2126826" target="_blank">**HoloLens 2 仿真器（2020 年 4 月更新）** （安装链接：10.0.18362.1059）</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens（第一代）仿真器**（安装链接：10.0.17763.134）</a> | 使用仿真器可在没有 HoloLens 的情况下在 HoloLens 虚拟机映像上运行应用程序。<br> <br> | 有关如何开始使用仿真器的详细信息，请参阅[使用 HoloLens 仿真器](using-the-hololens-emulator.md)。<br> <br> 系统必须支持 Hyper-V 才能成功安装仿真器  。 有关详细信息，请参阅下面的“系统要求”部分。 <br>|
+| ![Visual Studio 徽标](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2129088" target="_blank">**HoloLens 2 仿真器（Windows 全息版 2004）** （安装链接：10.0.19041.1103）</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens（第一代）仿真器**（安装链接：10.0.17763.134）</a> | 使用仿真器可在没有 HoloLens 的情况下在 HoloLens 虚拟机映像上运行应用程序。<br> <br> | 有关如何开始使用仿真器的详细信息，请参阅[使用 HoloLens 仿真器](using-the-hololens-emulator.md)。<br> <br> 系统必须支持 Hyper-V 才能成功安装仿真器  。 有关详细信息，请参阅下面的“系统要求”部分。 <br>|
 
 ## <a name="choose-your-engine"></a>选择你的引擎
 
@@ -61,7 +61,7 @@ ms.locfileid: "82137872"
         <a href="https://docs.unrealengine.com//GettingStarted/Installation/index.html" target="_blank">![Unreal](images/Unreal_logo.png)<br>**Unreal**</a><br>
         Unreal Engine 4 是一种强大的开源创建引擎，全面支持采用 C++ 和 Azure 蓝图编写的混合现实。<br>
         <br>
-        对 Unreal Engine 4.24 的 HoloLens 支持目前以 Beta 版提供。<br>
+        从 Unreal Engine 4.25 开始，HoloLens 提供完备的支持，且已准备好投入生产。<br>
         <br>
         请参阅 [Unreal 开发概述](unreal-development-overview.md)以开始针对 HoloLens 2 进行 Unreal 开发。
     :::column-end:::
@@ -84,6 +84,7 @@ ms.locfileid: "82137872"
 混合现实工具包提供的组件和功能旨在加快面向 Microsoft HoloLens、Windows Mixed Reality 头戴显示设备和 OpenVR 平台的应用程序的开发。 该项目旨在降低创建混合现实应用程序的门槛，并在我们成长的过程中回馈社区。
 * <a href="https://github.com/Microsoft/MixedRealityToolkit" target="_blank">混合现实工具包</a> - 一系列脚本和组件，用于加速混合现实应用程序的开发。
 * <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" target="_blank">混合现实工具包-Unity</a> - 使用基本工具包中的代码，使其更易于在 Unity 中使用。
+* <a href="https://github.com/Microsoft/MixedRealityToolkit-Unreal" target="_blank">混合现实工具包 - Unreal</a> - 一组组件，包含插件、示例和文档，旨在加快使用 Unreal Engine 开发混合现实应用程序的速度。
 * <a href="https://github.com/Microsoft/MixedRealityCompanionKit" target="_blank">混合现实组件工具包</a> - 代码位和组件可能无法直接在 HoloLens 或沉浸式 (VR) 头戴显示设备上运行，但可通过与它们配对生成面向 Windows Mixed Reality 的体验。
 
 ## <a name="setting-up-your-pc-for-mixed-reality-development"></a>设置电脑以进行混合现实

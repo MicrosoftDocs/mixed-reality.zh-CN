@@ -3,16 +3,16 @@ title: 使用 HoloLens 仿真器
 description: 使用 HoloLens 仿真器在未配备物理 HoloLens 的电脑上测试混合现实应用。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 4/13/2020
+ms.date: 5/12/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 仿真器
-ms.openlocfilehash: bbdf389a1b7bf42e3dfb1fffb09cf6d3b1a65b6a
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: f525276d127bc0bbb682d7cea6821028258c6177
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81278015"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227982"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 仿真器
 
@@ -28,7 +28,7 @@ ms.locfileid: "81278015"
 下载 HoloLens 仿真器。
 
 版本： 
-* [HoloLens 2 仿真器（2020 年 4 月更新）](https://go.microsoft.com/fwlink/?linkid=2126826)。
+* [HoloLens 2 仿真器（Windows 全息版 2004）](https://go.microsoft.com/fwlink/?linkid=2129088)。
 * [HoloLens 仿真器（第 1 代）和全息项目模板](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 可以在 [HoloLens 仿真器存档](hololens-emulator-archive.md)页上找到 HoloLens 仿真器的发行说明和旧版本。
@@ -78,6 +78,8 @@ HoloLens（第 1 代）上的光标可跟踪头部运动和旋转。 在 HoloLen
 * **开花手势/系统手势** - 按键盘上的 Windows 键或 F2 键，或按 Xbox 控制器上的 B 按钮。
 * **滚动时的手部运动** - 按住 Alt 键和鼠标右键的同时向上或向下拖动鼠标，或者在 Xbox 控制器中按住右扳机键和 A 按钮的同时向上和向下移动右摇杆。
 * **手部运动和方向**（仅适用于 HoloLens 2 仿真器）- 按住 Alt 键的同时向上、向下、向左或向右拖动鼠标以移动手部，或使用箭头键和 Q 或 E 来旋转和倾斜手部。 在 Xbox 控制器中，请在按住左缓冲键或右缓冲键的同时，使用左拇指操纵杆向左、向右、向前和向后移动手部，使用右拇指操纵杆旋转手部，使用 Dpad 上的向上或向下键来抬高或降低手部。
+
+有 Windows Mixed Reality 沉浸式头戴显示设备？  从 HoloLens 2 仿真器（Windows 全息版 2004）开始，可以使用 Windows Mixed Reality 沉浸式头戴显示设备和运动控制器来控制 HoloLens 2 仿真器，并以立体方式观看它。  请参阅[将 Windows Mixed Reality 沉浸式头戴显示设备和运动控制器与 HoloLens 2 仿真器配合使用](#using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator)
 
 ## <a name="anatomy-of-the-hololens-2-emulator"></a>HoloLens 2 仿真器剖析 
 
@@ -164,6 +166,34 @@ HoloLens（第 1 代）上的光标可跟踪头部运动和旋转。 在 HoloLen
 
 ![HoloLens 仿真器的“更新”选项卡](images/emulator-updates-500px.png)
 
+### <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>将 Windows Mixed Reality 沉浸式头戴显示设备和运动控制器与 HoloLens 2 仿真器配合使用
+
+从 HoloLens 2 仿真器（Windows 全息版 2004）开始，可以使用 Windows Mixed Reality 沉浸式头戴显示设备和运动控制器，以立体方式观看 HoloLens 2 仿真器并与之交互。  这样，你便可以在没有 HoloLens 2 设备的情况下利用头部和手部进行更快、更自然的运动。  请注意，这并非用于完全替代 HoloLens 2 设备，而是旨在提供改善的体验，使用户不仅仅能够在 2D 桌面窗口中使用键盘、鼠标和手柄与仿真器进行交互。  若要启用此功能：
+
+1. 请确保在电脑上配置了 Windows Mixed Reality，并且连接了 Windows Mixed Reality 沉浸式头戴显示设备。
+2. 启动 HoloLens 2 仿真器
+3. 单击工具栏按钮或按 F7 打开“仿真”面板。
+4. 向下滚动到面板底部。
+5. 选中标记了“使用 HMD 进行仿真”的框
+6. Windows Mixed Reality 将启动，并且仿真器显示内容将略有变化。  如果未使用头戴显示设备，仿真器会将两只眼睛置于头部中心，并且只显示一只眼睛。  如果使用了头戴显示设备，仿真器会生成真正的立体输出，但只会在其桌面窗口中呈现一只眼睛，而会在头戴显示设备中呈现两只眼睛。
+7. 可以选择启用一个或两个运动控制器。  控制器输入映射到仿真器中的手动输入。  例如，若要点击，请在运动控制器上按下扳机键。  若要四处移动，请使用控制杆。  有关控制的完整列表，请参阅[高级 HoloLens 仿真器和混合现实仿真器输入](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
+
+在头戴显示设备中查看内容时遇到问题？
+
+- 如果显示内容在头戴显示设备和混合现实门户中均为空白，但你在桌面上的“HoloLens 2 仿真器”窗口中看到了内容，请验证是否在仿真器中启用了硬件图形加速。  Windows Mixed Reality 沉浸式头戴显示设备支持要求在仿真器中启用硬件图形加速。
+- 如果在头戴显示设备中看到内容，但全息影像比较模糊，或者你看到双像，请使用以下步骤为你的眼睛调整立体视图：
+
+1. 暂时禁用“使用 HMD 进行仿真”。
+2. 启动注册表编辑器 (regedit.exe)
+3. 导航到 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PerceptionSimulation
+4. 创建一个名为“EnableEyePoseControl”的新 DWORD 值，并将其值设置为 1。
+5. 在仿真器中启用“使用 HMD 进行仿真”。
+6. 当内容显示在头戴显示设备中时，使用箭头键调整眼睛转动。  按住左 Alt 键可调整左眼，按住右 Alt 键可调整右眼。  使用“Q”和“E”为每个眼睛调整转动，同时再次按住适用于该眼睛的 Alt 键。  使用“+”和“-”键调整眼睛之间的距离。  （请注意，数字键盘上的 +/- 不会起作用。  请使用主键盘上的按键。）
+7. 当立体视图看起来正常时，请按“S”保存更改。  新配置将保存起来，以用于以后启动仿真器。
+8. 如果要放弃所做的更改并恢复到以前的配置，请按“L”加载默认配置或以前的配置。
+9. 在注册表中将“EnableEyePoseControl”值更改为 0，然后禁用“使用 HMD 进行仿真”选项并再次启用该选项。
+
+请注意，如果已保存配置，并想要删除它，则可以在 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PerceptionSimulation 下删除名为“DisplayConfiguration”的值。  如果当前正在将头戴显示设备与仿真器配合使用，则需要禁用“使用 HMD 进行仿真”并将其重新启用，才能看到此更改生效。
 
 ## <a name="anatomy-of-the-hololens-1st-gen-emulator"></a>HoloLens（第 1 代）仿真器剖析
 
@@ -218,6 +248,11 @@ HoloLens（第 1 代）上的光标可跟踪头部运动和旋转。 在 HoloLen
 也可以在 HoloLens（第 1 代）上使用 [Windows 设备门户](using-the-windows-device-portal.md)的“模拟”页录制你自己的房间，以便在仿真器中使用它们。
 
 在仿真器中，你只会看到自己渲染的全息影像。 但你看不到全息影像后面的模拟房间。 而在实际的 HoloLens 中，你会同时看到两者的混合形式。 若要在 HoloLens 仿真器中查看模拟的房间，需要更新应用程序，以便在场景中渲染空间映射网格。
+
+## <a name="known-issues"></a>已知问题
+
+* 卸载 HoloLens 2 仿真器时，硬盘映像 (Flash.vhdx) 可能会留在硬盘驱动器上的 Windows Kits\10\Emulation\HoloLens\<build number> 文件夹中。  删除此文件是安全的。
+* 硬件图形加速可能导致全息应用在一些带有 AMD 或 Intel 显卡的系统上崩溃。  在仿真器的“工具”窗口中禁用硬件图形加速可以解决此问题。
 
 ## <a name="troubleshooting"></a>疑难解答
 
