@@ -7,12 +7,12 @@ ms.author: jemccull
 ms.date: 02/21/2020
 ms.topic: article
 keywords: 混合现实, 会议, 峰会, 开发人员, HoloLens, HoloLens 2, Kinect
-ms.openlocfilehash: 9cef259e831a351039f49eaada49bc919623f69c
-ms.sourcegitcommit: a0c01ce3554dab4c0664417b9a4e7de3e6dfd9c0
+ms.openlocfilehash: 1267da7531d73614d910e6f7327a1d4c21353cc9
+ms.sourcegitcommit: c061de419d1bc4a9d585a5ece524e6a147434dd1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555099"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708651"
 ---
 ![混合现实开发人员日](images/MRDD/MRDevDaysBanner.png)
 
@@ -42,19 +42,28 @@ ms.locfileid: "83555099"
 
 [AltspaceVR](https://altvr.com/) 是与世界各地的友好人士一起参加直播展示、交流会和精选课程等活动的主要场所。 这一切都要归功于虚拟现实的炫酷功能。  Altspace 于 2017 年加入 Microsoft 家庭，我们非常高兴能向大家展示如何在虚拟空间中举办活动。
 
-Altspace 支持以下平台：HTC Vive；Oculus Rift、Go 和 Quest；Samsung GearVR；Windows Mixed Reality；以及电脑上的 2D 模式。
+Altspace 支持以下平台：HTC Vive；Oculus Rift、Go 和 Quest；Samsung GearVR；Windows Mixed Reality；以及电脑上的 2D 模式。  Mac 用户需要使用 Parallels 或 Bootcamp 才能通过 Windows 访问 AltspaceVR。
 
 ### <a name="creating-an-account"></a>创建帐户
 
 可以通过两种方法创建帐户：
 
-最高效的方法是选择适用于设置的 AltspaceVR 客户端进行下载、完成安装，然后启动客户端。 进入程序后，将出现创建帐户的选项。  可在[此处](https://help.altvr.com/hc/en-us/articles/115003538414-Minimum-System-Specifications)找到最低系统规格。
+- 最高效的方法是选择适用于设置的 AltspaceVR 客户端进行下载、完成安装，然后启动客户端。 进入程序后，将出现创建帐户的选项。  可在[此处](https://help.altvr.com/hc/en-us/articles/115003538414-Minimum-System-Specifications)找到最低系统规格。
 
-另一种方法是访问[在线帐户注册](https://account.altvr.com/users/sign_up)。
+- 另一种方法是访问[在线帐户注册](https://account.altvr.com/users/sign_up)。
 
 ### <a name="troubleshooting"></a>疑难解答
 
 如果遇到与 Altspace 有关的任何问题，请查看[故障排除页面](https://help.altvr.com/hc/en-us/sections/115000792634-Troubleshooting)。 如果这不能解决遇到的问题，请提交[支持请求](https://help.altvr.com/hc/en-us/requests/new)。
+
+### <a name="additional-tips"></a>其他提示
+
+- 如果这是你第一次使用 AltspaceVR，请在参加第一个活动前，花一些时间浏览教程。
+- （可选）建议参加其中一个 AltspaceVR 101 活动，获取更多提示和技巧。
+- 请在活动开始前，收藏/记录你关注的主题，以便以后在客户端中查找。
+- 与其他虚拟会议不同，AltspaceVR 是沉浸式环境，因此你可能会挡住其他与会者的视野。 请尊重其他与会者的空间和视野，确保每个人都有良好的体验。
+- 与你希望在活动中交流的人成为朋友，这样你可以在需要时邀请朋友到你的 AltspaceVR 主页私下聊天。
+- 如果你在麦克风附近，你的声音将通过广播传到活动的每个与会者那里！ 因此请谨慎发言。
 
 ---
 
@@ -62,25 +71,29 @@ Altspace 支持以下平台：HTC Vive；Oculus Rift、Go 和 Quest；Samsung Ge
 
 **所有时间均为太平洋夏季时间** 
 
+### <a name="networking-space"></a>社交空间
+
+我们设有一个社交空间，开放时间是第一天的主题演讲后，以及第二天的非正式聊天后，直到每天的下午 4 点（太平洋时间）。 如果希望此空间具有“请回复”设置，可以在[此处](https://account.altvr.com/events/1472955760198550135)设置。 社交空间这一概念类似于现实会议中的“走廊聊天”。  在这里，你可以接触到同行开发者、设计师、爱好者，甚至 Microsoft 员工。
+
 ### <a name="may-21st"></a>5 月 21 日
 ||||||
 |---------|---------|---------|---------|---------|
 |__***时间***__|__***会议标题***__|__***主讲人***__|__***描述***__|__***活动页面链接***__|
-|上午 9:30 - 10:30|开幕式主题演讲|Alex Kipman||[RSVP 页面](https://account.altvr.com/events/1475172303389065242)|
+|上午 9:30 - 10:30|开幕式主题演讲|Alex Kipman|Alex Kipman 将开启我们的第一次“混合现实开发日”虚拟活动，快来参加吧。 如果你使用的是 VR 头戴显示设备，建议你通过 AltspaceVR 参加活动，如果你希望通过计算机参加活动，请在 [https://aka.ms/MRDDKeynote](https://aka.ms/MRDDKeynote) 观看我们的 livestream|[RSVP 页面](https://account.altvr.com/events/1475172303389065242)|
 |上午 10:30 - 11:00|**休息**||||
 |上午 11:00 - 中午 12:00|Azure 混合现实服务简介：Azure 远程渲染|Jonathan Lyons、Christopher Manthei 和 Marc Appelsmeier|Azure 远程渲染刚刚进入公共预览阶段。  了解如何使用 ARR 呈现具有数百万个多边形的交互式 3D 模型，并将其实时流式传输到 HoloLens 2 等设备。|[RSVP 页面](https://account.altvr.com/events/1475002657985790153)|
 |上午 11:00 - 中午 12:00|面向 HoloLens 2 的 Unreal + MRTK 简介|Summer Wu 和 Luis Valverde|随着 5 月的 UE 4.25 的发布，针对 HoloLens 2 的 Unreal Engine 支持已达到生产就绪状态！ 在发布 UE 4.25 的同时，为了回应自首次在预览版中提供 Unreal 的 HoloLens 支持以来我们收到的最常见问题，我们的团队发布了用于 Unreal 的混合现实工具包的第一个组件：UX Tools 0.8。 在本会议阶段，我们将概述 Unreal Engine 4 和 MRTK for Unreal 中提供的功能，以及如何使用它们为 HoloLens 2 构建长篇故事体验。|[RSVP 页面](https://account.altvr.com/events/1475006046102618860)|
 |上午 11:00 - 中午 12:00|HoloLens 2 和 Unity 入门|Dan Miller - Unity|了解设置 Unity 和为 HoloLens 2 进行构建的基础知识。 此演示文稿将涵盖最佳做法、HoloLens 2 的基本功能，以及如何快速添加手部跟踪支持和与本机 Unity API 的交互|[RSVP 页面](https://account.altvr.com/events/1472992231919977379)|
 |中午 12:00 - 下午 1:00|**午餐**||||
-|下午 1:00 - 2:00|Azure 混合现实服务简介：Azure 空间定位点|Archana Iyer|概述 Azure 空间定位点 (ASA) 和相关方案。 本会议阶段将介绍去年开发的新功能，并提供有关如何使用这些功能的代码示例。 我们将介绍使用 ASA 进行构建的最佳做法，以及如何开始将其集成到产品中。|[RSVP 页面](https://account.altvr.com/events/1475008244597392161)|
+|下午 1:00 - 2:00|Azure 混合现实服务简介：Azure 空间定位点|Archana Iyer和 Vicente Rivera|概述 Azure 空间定位点 (ASA) 和相关方案。 本会议阶段将介绍去年开发的新功能，并提供有关如何使用这些功能的代码示例。 我们将介绍使用 ASA 进行构建的最佳做法，以及如何开始将其集成到产品中。|[RSVP 页面](https://account.altvr.com/events/1475008244597392161)|
 |下午 1:00 - 2:00|MRTK 简介 - Unity|Catherine Diaz|MRTK 简介会议阶段将提供创建简单的 MRTK 应用的完整教程。  本会议阶段将介绍交互概念并展示 MRTK 的多平台功能。|[RSVP 页面](https://account.altvr.com/events/1475010228134085240)|
 |下午 1:00 - 2:00|MR Surfaces 应用的知识介绍|Lars Simkins|倾听适用于 HoloLens 2 的 MRDL Surfaces 应用背后的工程师的演讲，他们将讲述应用的设计故事和技术要点。|[RSVP 页面](https://account.altvr.com/events/1475013412952998418)|
 |下午 2:00 - 2:30|**休息**||||
 |下午 2:30 - 3:30|Azure Kinect 人体跟踪 Unity 集成|Angus Antley| 了解如何使用 Azure Kinect 人体跟踪 SDK 驱动 Unity 中的角色。|[RSVP 页面](https://account.altvr.com/events/1475015668867793376)|
 |下午 2:30 - 3:30|MRTK 的 UX 构建基块|Yoon Park|深入了解 MRTK 的 UX 组件，这些组件可帮助你构建优质的混合现实体验。|[RSVP 页面](https://account.altvr.com/events/1475017558024257973)|
-|下午 2:30 - 3:30|MRTK 性能工具|Kurtis Eveleigh|介绍 MRTK 内部和外部的性能工具以及概述 MRTK 标准着色器。|[RSVP 页面](https://account.altvr.com/events/1475019477857861856)|
+|下午 2:30 - 3:30|MRTK 性能工具|Kurtis Eveleigh 和 David Kline|介绍 MRTK 内部和外部的性能工具以及概述 MRTK 标准着色器。|[RSVP 页面](https://account.altvr.com/events/1475019477857861856)|
 |下午 3:30 - 4:00|**休息**||||
-|下午 4:00 - 5:00|结束会议|Ori Amiga 和 Matt Fleckenstein|||
+|下午 4:00 - 5:00|混合现实的现状 - 公司迈向成功的机遇|Ori Amiga 和 Matt Fleckenstein|超低延迟边缘计算与 AI 和混合现实相结合是新一代体验的基础。 混合现实将数字世界和现实世界融入无处不在的计算体验，从而提供我们以前可望而不可及的可能性。 在这个会议中，Ori 和 Matt 将和我们分享他们对当前和未来混合现实市场机遇的独到见解。 他们将重点介绍 Microsoft 如何帮助制造业、医疗保健业和零售业领先企业利用混合现实的强大功能来提高业务效率并转变客户和员工体验。|[RSVP 页面](https://account.altvr.com/events/1475759753555608230)|
 ||||||
 
 ### <a name="may-22nd"></a>5 月 22 日
@@ -89,12 +102,12 @@ Altspace 支持以下平台：HTC Vive；Oculus Rift、Go 和 Quest；Samsung Ge
 |__***时间***__|__***会议标题***__|__***主讲人***__|__***描述***__|__***活动页面链接***__|
 |上午 9:30 - 10:30|炉边谈话|Alex Kipman 和 René Schulte|在第二天的第一个会议阶段中，我们邀请了 Microsoft MVP、区域主管和社区杰出成员 René Schulte，他将站在炉火旁谈论社区成员感兴趣的话题。 René 已从社区收集了约一周的提问，这将是一次非常精彩的对话。|[RSVP 页面](https://account.altvr.com/events/1472969601032651685)|
 |上午 10:30 - 11:00|**休息**||||
-|上午 11:00 - 中午 12:00|使用 Microsoft Maquette 设计 AR/VR 体验|Ricardo Acosta 和 Jia Wang|设计手机应用或网站具有定义完善的工作流。 遗憾的是，如果使用相同的 2D 工作流或工具集，设计空间现实体验可能由于其新颖性而较为棘手。 幸运的是，新的 Microsoft Maquette 应用专注于帮助 UX 设计人员进行设计。|[RSVP 页面](https://account.altvr.com/events/1475022385332618137)|
+|上午 11:00 - 中午 12:00|使用 Microsoft Maquette 设计 AR/VR 体验|Ricardo Acosta|设计手机应用或网站具有定义完善的工作流。 遗憾的是，如果使用相同的 2D 工作流或工具集，设计空间现实体验可能由于其新颖性而较为棘手。 幸运的是，新的 Microsoft Maquette 应用专注于帮助 UX 设计人员进行设计。|[RSVP 页面](https://account.altvr.com/events/1475022385332618137)|
 |上午 11:00 - 中午 12:00|MRTK Unity v2 及更多版本 - 社区反馈如何帮助我们改进 MRTK|Bernadette Thalhammer|本会议阶段介绍我们在过去一年中如何通过倾听社区反馈来改进开发人员体验，以及开发人员如何对其中的一些改进加以利用。 我们将使用迁移窗口深入探讨文档和单元测试 - 新的对象操控程序组成部分，并浏览一些与开发人员社区中最常见问题相关的代码片段。|[RSVP 页面](https://account.altvr.com/events/1475021020329935837)|
 |上午 11:00 - 中午 12:00|Dark Slope 面向 Azure Kinect DK 的 Unreal Engine 插件|Ben Unsworth - Dark Slope|了解 Dark Slope 如何利用 Azure Kinect DK 及其 SDK 在 Unreal Engine 中构建实时交互活动。|[RSVP 页面](https://account.altvr.com/events/1475023906698953482)|
 |中午 12:00 - 下午 1:00|**午餐**||||
 |下午 1:00 - 2:00|StereoKit 简介 - 使 MR 更简单！|Nick Klingensmith|StereoKit 是一种易于使用的开源混合现实库，用于通过 C# 和 OpenXR 构建 HoloLens 和 VR 应用程序！ StereoKit 将混合现实应用程序开发作为首要任务，支持如下功能：一流的混合现实输入系统、默认情况下的快速性能（即使是在移动设备上）、设备上的快速迭代，以及允许用户和开发人员从文件系统加载真实资产的运行时资产管道等。 所有这些功能及更多功能均包含在一个记录详细、易于学习和易于编写的简要 API 中！|[RSVP 页面](https://account.altvr.com/events/1475033325386072983)|
-|下午 1:00 - 2:00|通过 Babylon 和 WebXR 构建沉浸式 MR 体验|Jason Carter|了解直接在 Web 上开发 MR 体验是多么简单和可提供多么强大的功能。 Babylon.js 致力于成为世界上最强大、最精美、最简单和最开放的 Web 呈现平台之一，使用户能够轻松地跨平台、设备和生态系统解锁全部 MR 功能。 请查看 Babylon.js 的最新开发成果及其对 WebXR 的支持。|[RSVP 页面](https://account.altvr.com/events/1475027067660665006)|
+|下午 1:00 - 2:00|通过 Babylon 和 WebXR 构建沉浸式 MR 体验|Jason Carter 和 Raanan Weber|了解直接在 Web 上开发 MR 体验是多么简单和可提供多么强大的功能。 Babylon.js 致力于成为世界上最强大、最精美、最简单和最开放的 Web 呈现平台之一，使用户能够轻松地跨平台、设备和生态系统解锁全部 MR 功能。 请查看 Babylon.js 的最新开发成果及其对 WebXR 的支持。|[RSVP 页面](https://account.altvr.com/events/1475027067660665006)|
 |下午 1:00 - 2:00|将项目音响效果应用于 HoloLens 2|Mike Chemistruck|了解如何将项目音响效果（以前仅适用于 VR 和控制台标题）应用于混合现实！ 了解系统如何在 HoloLens 2 的计算预算内再现真实效果，如衍射阻塞和重定向实体门廊和拐角周围的声音，以及在具有多个连接空间的复杂几何图形中产生反响。|[RSVP 页面](https://account.altvr.com/events/1475028307488539424)|
 |下午 2:00 - 2:30|**休息**||||
 |下午 2:30 - 3:30|全息远程处理 - HoloLens 上的快速迭代和强大图形|Brent Jackson|HoloLens 提供了一个不同于任何平台的革命性的移动计算平台，但它仅限于移动设备的处理能力方面。 全息远程处理可将支持 VR 的计算机的原始功能引入 HoloLens，并且通过 Unity 编辑器内远程处理，将不再需要构建并部署应用以在设备上对其进行测试。 了解全息远程处理如何提高应用程序的性能和开发人员的能力。|[RSVP 页面](https://account.altvr.com/events/1475030022195512129)|
@@ -114,19 +127,27 @@ Altspace 支持以下平台：HTC Vive；Oculus Rift、Go 和 Quest；Samsung Ge
 
 ***禁止在社交渠道中以任何格式共享会议内容或演示文稿的照片、视频或录制资料。我们希望每个人都能协助创造友好和安全的环境。请向商业行为热线（1-877-320-MSFT 或 [buscond@microsoft.com](mailto:buscond@microsoft.com)）报告任何困扰、骚扰行为以及可疑活动或破坏性活动。Microsoft 保留随时自行决定拒绝任何人参加混合现实开发人员日或从中将任何人移除的权利。***  
 
+***我们建议每个人都像参加现场活动那样，对自己在 AltspaceVR 沉浸式环境中的行为采取负责任的态度。请尊重其他用户的空间，不要在参加活动时挡住其他与会者的舞台视野。请注意，就像参加现场活动一样，活动中的其他用户可能会听到你所说的话，如果你需要进行私下对话，我们建议你在 AltspaceVR 的其他空间（例如你的 AltspaceVR 主页）进行私下对话***
+
 ---
 
 ## <a name="frequently-asked-questions"></a>常见问题
 随着我们收到更多问题，此部分也将频繁更新！
 
 **问** - 是否可以在不使用 VR 头戴显示设备的情况下参加？  
-**答** - 完全可以。 尽管我们认为使用 VR 头戴显示设备可在活动中获得最佳体验，但我们希望不能使用该设备的人员也能参加。  Altspace 提供可用于参加此活动的电脑客户端。 ***Altspace 目前没有适用于 Mac 平台的客户端***。  
+**答** - 完全可以。 尽管我们认为使用 VR 头戴显示设备可在活动中获得最佳体验，但我们希望不能使用该设备的人员也能参加。  Altspace 提供可用于参加此活动的电脑客户端。 ***Altspace 当前没有适用于 Mac 平台的客户端（建议通过 Parallels 或 Bootcamp 创建 Windows 安装以在 Mac 上使用 AltspaceVR*** 。  
   
 **问** - 如何参与 2D 体验？  
 **答** - 在电脑中，可以通过 Microsoft Store 或 Steam 选择[下载 Altspace 客户端](https://altvr.com/get-altspacevr/)。 下载客户端后，将需要创建帐户并登录。 有关如何畅享 2D 体验的信息，请参阅[此处](https://help.altvr.com/hc/en-us/articles/115003528373-How-do-I-control-my-avatar-with-Mouse-Keyboard-)。
   
 **问** - 谁应参加混合现实开发人员日？  
 **答** - 此活动面向混合现实领域的所有工作人员或玩家。 尽管大部分内容都主要面向开发人员，但也有一些面向开发人员以外的各种人员角色的有趣内容。 请记得查看日程安排的更新，了解我们将提供的内容类型。  
+
+问 - 我在 AltspaceVR 中找不到该活动  
+答 - 建议你使用电脑浏览器中的链接，登录 AltspaceVR 网站，然后在此活动上单击“关注的内容”。  这样 AltspaceVR 客户端的“活动”视图中的“关注的内容”选项卡会显示该活动。  此外，还可以在“特别推荐”列表中找到此活动。  
+
+问 - 我已参加此活动，但有许多教程消息挡住了我的视野  
+答 - 如果你在参加活动时没有事前浏览首次教程，则需要先浏览完此教程，这些消息才会消失。  因此，我们建议在参加此活动前先登录 AltspaceVR 完成教程，了解使用这个沉浸式环境的基础知识。
 
 <!--  
 **Q** -  
