@@ -20,6 +20,7 @@
 ### [导航 Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)
 ### [爱好者指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [基于位置的娱乐](location-based-experiences.md)
+## [硬件配件](hardware-accessories.md)
 ## [社区资源](community.md)
 # 设计
 ## [开始设计和原型制作](design.md)
@@ -117,6 +118,7 @@
 ###### [1.开始使用 Azure 空间定位点](mrlearning-asa-ch1.md)
 ###### [2.保存、检索和共享 Azure 空间定位点](mrlearning-asa-ch2.md)
 ###### [3.显示 Azure 空间定位点反馈](mrlearning-asa-ch3.md)
+###### [4.适用于 Android 和 iOS 的 Azure 空间定位点](mrlearning-asa-ch4.md)
 ##### Azure 语音服务教程
 ###### [1.集成并使用语音识别和听录](mrlearning-speechSDK-ch1.md)
 ###### [2.为本地语音到文本翻译添加脱机模式](mrlearning-speechSDK-ch2.md)
