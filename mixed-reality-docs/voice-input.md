@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、语音、cortana、语音、输入
-ms.openlocfilehash: 6cf94e6bc828c6f07ee81cb121cb64601df41c4e
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: a5411c338a854660652cfc89aa2d48d85ee89778
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81277975"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866917"
 ---
 # <a name="voice-input"></a>语音输入
 
@@ -25,7 +25,7 @@ ms.locfileid: "81277975"
 
 ## <a name="voice-and-gaze"></a>语音和注视
 
-使用语音命令时（head 或眼睛）看起来通常用作目标机制，无论使用的是光标（"select"），还是将命令隐式通道到你要查看的应用程序。 为此，可能甚至不需要显示任何看起来像的光标 _（"请参阅它）_ "。 当然，一些语音命令根本不需要目标，如 "开始" 或 "你好 Cortana"。
+使用语音命令时（head 或眼睛）看起来通常用作目标机制，无论使用的是光标（"select"），还是将命令隐式通道到你要查看的应用程序。 为此，可能甚至不需要显示任何看起来像的光标 _（"请参阅它）_"。 当然，一些语音命令根本不需要目标，如 "开始" 或 "你好 Cortana"。
 
 <br>
 
@@ -42,7 +42,7 @@ ms.locfileid: "81277975"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>具有</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -57,9 +57,9 @@ ms.locfileid: "81277975"
 
 ## <a name="the-select-command"></a>"Select" 命令
 
-**HoloLens（第一代）**
+**HoloLens（第 1 代）**
 
-即使不将语音支持专门添加到应用，用户也可以通过口述系统语音命令 "select" 来激活全息影像。 此行为与在 HoloLens 上的[点击](gaze-and-commit.md#composite-gestures)，按下[hololens clicker](hardware-accessories.md#hololens-clicker)上的 "选择" 按钮或在[Windows Mixed Reality 运动控制器](motion-controllers.md)上按下触发器的行为相同。 你将听到声音，并看到带有 "select" 的工具提示显示为确认。 "Select" 是通过低功耗关键字检测算法来实现的，因此，在任何时候，你始终都可以使用它，而不管你在哪一边，你都可以随时使用。
+即使不将语音支持专门添加到应用，用户也可以通过口述系统语音命令 "select" 来激活全息影像。 此行为与在 HoloLens 上的[点击](gaze-and-commit.md#composite-gestures)，按下[hololens clicker](https://docs.microsoft.com/hololens/hololens1-clicker)上的 "选择" 按钮或在[Windows Mixed Reality 运动控制器](motion-controllers.md)上按下触发器的行为相同。 你将听到声音，并看到带有 "select" 的工具提示显示为确认。 "Select" 是通过低功耗关键字检测算法来实现的，因此，在任何时候，你始终都可以使用它，而不管你在哪一边，你都可以随时使用。
 
 <br>
 
@@ -84,15 +84,15 @@ ms.locfileid: "81277975"
 ---
 
 
-## <a name="hey-cortana"></a>Hey Cortana
+## <a name="hey-cortana"></a>你好小娜
 
 你还可以说 "你好 Cortana" 来随时显示 Cortana。 您无需等待她继续询问她的问题或给她发出说明，例如，尝试说 "你好 Cortana，天气是什么？"。 作为单个句子。 有关 Cortana 和你可以执行的操作的详细信息，只需咨询她！ 说 "你好 Cortana，我该怎么办？" 然后，她将获取工作和建议命令的列表。 如果已进入 Cortana 应用，还可以单击 " **？** " 图标，提取此相同的菜单。
 
 **HoloLens 特定的命令**
 * “我可以说什么？”
 * "转到开始"-而不是[布隆](system-gesture.md#bloom)转到 "[开始" 菜单](navigating-the-windows-mixed-reality-home.md#start-menu)
-* "启动 <app>"
-* "移动 <app>
+* "启动 <app> "
+* "移动到 <app> 此处"
 * "拍摄照片"
 * "开始录制"
 * "停止录制"
@@ -121,8 +121,8 @@ ms.locfileid: "81277975"
         *图像：用户可以说 "调整" 命令，该命令显示在应用程序栏中以调整应用的位置*
     :::column-end:::
         :::column:::
-        ![空间](images/spacer-20x582.png)<br>
-        ![查看应用程序窗口或全息图时，用户可以在应用程序栏中显示 "调整" 命令，以调整应用程序在世界中的位置](images/microphone-600px.png)<br>
+        ![space](images/spacer-20x582.png)<br>
+        ![查看应用程序窗口或全息图时，用户可以说 "调整" 命令，该命令显示在应用程序栏中，用于调整应用在世界中的位置。](images/microphone-600px.png)<br>
     :::column-end:::
 :::row-end:::
 
@@ -173,7 +173,7 @@ ms.locfileid: "81277975"
 
 语音听写可以更高效地向应用程序中输入文本，而不是使用[空中点击](gaze-and-commit.md#composite-gestures)。 这可以极大地加快用户的输入。
 
-通过选择麦克风按钮开始 ![语音听写](images/micbuttonfordictation.png)<br>
+![语音听写开始，选择 "麦克风" 按钮](images/micbuttonfordictation.png)<br>
 *语音听写开始于选择键盘上的麦克风按钮*
 
 任何时候在全息键盘处于活动状态时，都可以切换到听写模式，而无需键入。 选择文本输入框一侧的麦克风即可开始。
@@ -183,7 +183,7 @@ ms.locfileid: "81277975"
 
 考虑为生成的任何体验添加语音命令。 语音是一种功能强大、方便的控制系统和应用的方式。 由于用户使用各种方言和口音说话，恰当选择语音关键字将确保用户的命令得到清晰的解释。
 
-### <a name="best-practices"></a>最佳实践
+### <a name="best-practices"></a>最佳做法
 
 以下是一些有助于流畅语音识别的做法。
 * **使用简明命令** - 如果可能的话，选择两个或更多音节的关键词。 不同口音的人说单音节词时倾向于使用不同的元音。 示例： "播放视频" 优于 "播放当前选定的视频"
@@ -200,7 +200,7 @@ ms.locfileid: "81277975"
 
 ### <a name="advantages-of-voice-input"></a>语音输入的优点
 
-语音输入是传达我们意图的自然方式。 语音在接口**遍历**上特别不错，因为它可以帮助用户遍历界面的多个步骤（用户在查看网页时可能会说 "返回"，而不是在应用中使用 "后退" 按钮）。 这一小段节省时间对用户的体验感到**非常强大，** 并为他们提供少量实现超级。 当我们忙得不可开交或同时处理多项任务时，使用语音也是一种方便的输入方法。 对于在键盘上键入很困难的设备，**语音听写**可能是输入文本的一种有效的替代方法。 最后，在某些情况下，看看注视和手势的**准确性范围**会受到限制，语音有助于消除用户的意图。 
+语音输入是传达我们意图的自然方式。 语音在接口**遍历**上特别不错，因为它可以帮助用户遍历界面的多个步骤（用户在查看网页时可能会说 "返回"，而不是在应用中使用 "后退" 按钮）。 这一小段节省时间对用户的体验感到**非常强大，** 并为他们提供少量实现超级。 当我们忙得不可开交或同时处理多项任务时，使用语音也是一种方便的输入方法****。 对于在键盘上键入很困难的设备，**语音听写**可能是输入文本的一种有效的替代方法。 最后，在某些情况下，看看注视和手势的**准确性范围**会受到限制，语音有助于消除用户的意图。 
 
 **语音的使用如何让用户受益**
 * 省时 - 它应该使最终目标更高效。
@@ -219,7 +219,7 @@ ms.locfileid: "81277975"
 关键是通过在系统正在侦听时向用户提供反馈，并为系统理解哪些内容来明确理解用户的潜在问题，以解决应用程序中的这一难题。  
 
 **共享空间中的语音输入**在与他人共享的空格中，语音可能无法社交。
-以下是一些示例：
+以下是几个示例：
 * 用户可能不想干扰其他人（例如，在安静库或共享办公室中）
 * 用户可能会很难被视为公开的，
 * 用户可能会在其他人正在侦听时感觉不舒服
@@ -235,20 +235,20 @@ ms.locfileid: "81277975"
 
 ### <a name="voice-feedback-states"></a>语音反馈状态
 
-当语音应用正确时，用户了解他们能说什么，并得到清晰的反馈 - 系统正确地听到了用户说的话。 这两个信号使用户在使用语音作为主要输入方法时充满自信。 下面的图表显示了识别语音输入时光标发生的情况以及它是如何将信息传达给用户的。
+当语音应用正确时，用户了解他们能说什么，并得到清晰的反馈 - 系统正确地听到了用户说的话********。 这两个信号使用户在使用语音作为主要输入方法时充满自信。 下面的图表显示了识别语音输入时光标发生的情况以及它是如何将信息传达给用户的。
 
 
 :::row:::
     :::column:::
-       ![1。常规游标状态](images/voicefeedbackstates-regular.jpg)<br>
+       ![1. 常规游标状态](images/voicefeedbackstates-regular.jpg)<br>
        **1. 常规游标状态**<br>
     :::column-end:::
     :::column:::
-       ![2。传达语音反馈，然后消失](images/voicefeedbackstates-voice.jpg)<br>
+       ![2. 传达语音反馈，然后消失](images/voicefeedbackstates-voice.jpg)<br>
         **2. 传达语音反馈，然后消失**<br>
     :::column-end:::
     :::column:::
-       ![* 3。 常规游标状态](images/voicefeedbackstates-regular.jpg)<br>
+       ![三维空间. 常规游标状态](images/voicefeedbackstates-regular.jpg)<br>
        **3. 返回到常规游标状态**<br>
     :::column-end:::
 :::row-end:::
@@ -260,9 +260,9 @@ ms.locfileid: "81277975"
 <br>
 
 ## <a name="top-things-users-should-know-about-speech-in-mixed-reality"></a>在混合现实中，用户应该知道的关于“语音”的重要事项
-* 在将一个按钮设置为目标时，说“选择”（可以在任何位置使用这种方法来单击按钮）。
-* 可以在某些应用中通过说出应用栏按钮的标签名称来执行操作。 例如，在查看应用时，用户可以说“移除”命令以从现实中移除应用（这样可以节省用手单击按钮的时间）。
-* 说“你好小娜”可以启动 Cortana 侦听。 你可以向她提问（“你好小娜，埃菲尔铁塔有多高”），告诉她打开应用（“你好小娜，打开 Netflix”），或告诉她调出“开始”菜单（“你好小娜，带我回家”）等等。
+* 在将一个按钮设置为目标时，说“选择”（可以在任何位置使用这种方法来单击按钮）****。
+* 可以在某些应用中通过说出应用栏按钮的标签名称来执行操作****。 例如，在查看应用时，用户可以说“移除”命令以从现实中移除应用（这样可以节省用手单击按钮的时间）。
+* 说“你好小娜”可以启动 Cortana 侦听****。 你可以向她提问（“你好小娜，埃菲尔铁塔有多高”），告诉她打开应用（“你好小娜，打开 Netflix”），或告诉她调出“开始”菜单（“你好小娜，带我回家”）等等。
 
 ## <a name="common-questions-and-concerns-users-have-about-voice"></a>用户对语音的常见问题和关注点
 * 我可以说什么？
@@ -286,7 +286,7 @@ ms.locfileid: "81277975"
 
 HoloLens 2 还支持其他语言。 请记住，即使安装了多个键盘或应用尝试使用其他语言创建语音识别器，语音命令也始终会在系统的显示语言中运行。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 如果使用 "选择" 和 "你好 Cortana" 时遇到任何问题，请尝试移动到可取消选择的空间、远离噪音源或说出更大的声音。 目前，HoloLens 上的所有语音识别都专门针对美国英语的本机扬声器进行优化和优化。
 
@@ -297,7 +297,7 @@ HoloLens 2 还支持其他语言。 请记住，即使安装了多个键盘或�
 ---
 
 ## <a name="voice-input-in-mrtk-mixed-reality-toolkit-for-unity"></a>适用于 Unity 的 MRTK （混合现实工具包）中的语音输入
-借助 **[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** ，你可以轻松地为任何对象分配语音命令。 使用 MRTK 的**语音输入配置文件**定义关键字。 通过分配**SpeechInputHandler**脚本，你可以使任何对象响应语音输入配置文件中定义的关键字。 SpeechInputHandler 还提供了语音确认标签以提高用户信心。
+借助**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)**，你可以轻松地为任何对象分配语音命令。 使用 MRTK 的**语音输入配置文件**定义关键字。 通过分配**SpeechInputHandler**脚本，你可以使任何对象响应语音输入配置文件中定义的关键字。 SpeechInputHandler 还提供了语音确认标签以提高用户信心。
 
 * [MRTK-语音命令](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html)
 
@@ -307,6 +307,6 @@ HoloLens 2 还支持其他语言。 请记住，即使安装了多个键盘或�
 ## <a name="see-also"></a>另请参阅
 * [凝视和提交](gaze-and-commit.md)
 * [本能交互](interaction-fundamentals.md)
-* [MR 输入212：语音](holograms-212.md)
+* [MR 输入 212：语音](holograms-212.md)
 * [DirectX 中的语音输入](voice-input-in-directx.md)
 * [Unity 中的语音输入](voice-input-in-unity.md)

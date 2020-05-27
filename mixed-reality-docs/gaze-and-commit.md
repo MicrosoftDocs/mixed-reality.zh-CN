@@ -1,19 +1,19 @@
 ---
-title: 注视并提交
+title: 凝视和提交
 description: "\"注视并提交\" 输入模型的一般概述-使用目视或头输入。"
 author: sostel
 ms.author: sostel
 ms.date: 10/31/2019
 ms.topic: article
 keywords: 混合现实，注视，注视目标，交互，设计，眼睛跟踪，头跟踪
-ms.openlocfilehash: df152f6a3a6e4ae2d6c32a0c56fbb615bcfa7aa8
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: c44c1a75e831869a3ed4d12bb6c9e87c478daf56
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375844"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866887"
 ---
-# <a name="gaze-and-commit"></a>注视并提交
+# <a name="gaze-and-commit"></a>凝视和提交
 
 "_注视" 和 "提交_" 是一种基本的输入模型，它与使用鼠标的计算机进行交互的方式密切相关：_点 & 单击_。
 在此页上，我们将介绍两种类型的目视输入（打印头和眼睛眼睛）以及不同类型的提交操作。 
@@ -56,9 +56,9 @@ _注视和提交_被视为具有间接操作的最大输入模型。
     </tr>
          <tr>
         <td>眼睛凝视和提交</td>
-        <td>❌ 不可用</td>
+        <td>❌不可用</td>
         <td>✔️推荐（第三个选择 - <a href="interaction-fundamentals.md">查看其他选项</a>）</td>
-        <td>❌ 不可用</td>
+        <td>❌不可用</td>
     </tr>
 </table>
 
@@ -80,7 +80,7 @@ _注视和提交_被视为具有间接操作的最大输入模型。
     </colgroup>
    <tr>
         <td><strong>目视瞄准目标</strong></td>
-        <td><strong>头-注视目标</strong></td>
+        <td><strong>头部凝视目标设定</strong></td>
     </tr>
     <tr>
         <td>Fast!</td>
@@ -114,7 +114,7 @@ _注视和提交_被视为具有间接操作的最大输入模型。
 
 ---
 
-### <a name="cursor"></a>Cursor
+### <a name="cursor"></a>游标
 
 :::row:::
     :::column:::
@@ -123,7 +123,7 @@ _注视和提交_被视为具有间接操作的最大输入模型。
         对于眼睛，我们通常建议*不要*显示游标，因为这可能会使用户迅速变得杂乱。 相反，突出强调视觉对象目标或使用非常模糊的光标，以使用户与之交互的对象更有把握。 有关详细信息，请查看有关 HoloLens 2 上[基于目视的输入的设计指南](eye-tracking.md)。
     :::column-end:::
         :::column:::
-       ![直观光标的示例以显示注视](images/cursor.jpg)<br>
+       ![用于显示注视的视觉对象示例](images/cursor.jpg)<br>
        *图像：显示注视的视觉对象光标示例*
     :::column-end:::
 :::row-end:::
@@ -139,7 +139,7 @@ _在谈论看一看目标_的不同方法之后，让我们更深入地谈谈 "�
 支持以下提交方法：
 - 空中攻攻形手势（即，在您自己的前方抬起，并将您的食指和拇指结合在一起）
 - 说 _"选择"_ 或一个目标语音命令
-- 在[HoloLens Clicker](hardware-accessories.md#hololens-clicker)上按单个按钮
+- 在[HoloLens Clicker](https://docs.microsoft.com/hololens/hololens1-clicker)上按单个按钮
 - 按下 Xbox 游戏板上的 "A" 按钮
 - 按 Xbox 自适应控制器上的 "A" 按钮
 
@@ -149,11 +149,11 @@ _在谈论看一看目标_的不同方法之后，让我们更深入地谈谈 "�
 
 :::row:::
     :::column:::
-       在就绪位置 ![手指](images/readyandpress-ready.jpg)<br>
+       ![手指处于就绪位置](images/readyandpress-ready.jpg)<br>
        **手指处于就绪位置**<br>
     :::column-end:::
     :::column:::
-       ![按下手指以点击或单击](images/readyandpress-press.jpg)<br>
+       ![按下手指点击或单击](images/readyandpress-press.jpg)<br>
         **按下手指点击或单击**<br>
     :::column-end:::
 :::row-end:::
@@ -192,7 +192,7 @@ HoloLens 2 上也提供了空中点击。 它已从原始版本中宽松。 几�
         *映像： HoloLens Clicker*
     :::column-end:::
         :::column:::
-       ![HoloLens Clicker](images/hololens-clicker-500px.jpg)<br>
+       ![HoloLens 遥控器](images/hololens-clicker-500px.jpg)<br>
     :::column-end:::
 :::row-end:::
 
@@ -263,7 +263,7 @@ Air 攻攻敲击手势（以及下面的其他手势）仅对特定攻丝做出�
 
 使用 rails 导航，是指在该轴上达到特定阈值之前识别特定轴中的运动的能力。 当开发人员在应用程序中启用多个轴的移动时，这种方法非常有用，例如，如果将应用程序配置为识别 X、Y 轴上的导航笔势，同时还指定了具有 rails 的 X 轴。 在这种情况下，系统将识别 x 轴上的手动运动，只要它们保留在 X 轴上的假想导轨（引导）内，也会在 Y 轴上进行手动移动。
 
-在 2D 应用中，用户可以使用垂直导航手势在应用内进行滚动、缩放或拖动。 这会向应用注入虚拟手指触摸，以模拟相同类型的触摸手势。 用户可以通过选择按钮或口述 "< 滚动/拖动/缩放 > 工具"，来选择要执行的操作，方法是在应用程序上方的工具间切换。
+在 2D 应用中，用户可以使用垂直导航手势在应用内进行滚动、缩放或拖动。 这会向应用注入虚拟手指触摸，以模拟相同类型的触摸手势。 用户可以通过选择按钮或口述 "<滚动/拖动/缩放> 工具"，来选择要执行的操作，方法是在应用程序上方的工具间切换。
 
 [有关复合手势的详细信息](gaze-and-commit.md#composite-gestures)
 
