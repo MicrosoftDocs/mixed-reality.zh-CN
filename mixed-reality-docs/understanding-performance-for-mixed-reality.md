@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality，混合现实，虚拟现实，VR，先生，性能，优化，CPU，GPU
-ms.openlocfilehash: 54e1eec5445fe655a0b498be5c18f08efe2270f0
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 4a0f4cd9caea5dd601ad663801e760261980c429
+ms.sourcegitcommit: b0d15083ec1095e08c9d776e5bae66b4449383bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81277475"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84111028"
 ---
 # <a name="understanding-performance-for-mixed-reality"></a>了解混合现实的性能
 
@@ -58,7 +58,7 @@ ms.locfileid: "81277475"
 1) 应用程序的帧速率**未更改**，则可能会**绑定 CPU**
 
 >[!NOTE]
->Unity 提供了在运行时通过 *[XRSettings. renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 属性轻松修改应用程序的呈现目标解析的能力。 设备上提供的最终映像具有固定的分辨率。 平台将采样低分辨率输出，以生成更高分辨率的图像，以便在显示时呈现。 
+>Unity 提供了在运行时通过*[XRSettings. renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 属性轻松修改应用程序的呈现目标解析的能力。 设备上提供的最终映像具有固定的分辨率。 平台将采样低分辨率输出，以生成更高分辨率的图像，以便在显示时呈现。 
 >
 >```CS
 >UnityEngine.XR.XRSettings.renderScale = 0.7f;
@@ -82,10 +82,10 @@ ms.locfileid: "81277475"
 
 - **内存带宽**是 GPU 可以从内存执行的读取和写入速率
     - 若要确定带宽限制，请降低纹理质量并检查帧速率是否已提高。
-    - 在 Unity 中，这可以通过在 "**编辑** > **项目" 设置**中更改**纹理质量**来实现 >  **[质量设置](https://docs.unity3d.com/Manual/class-QualitySettings.html)** 。
+    - 在 Unity 中，这可以通过在 "**编辑** **Texture Quality**  >  **项目设置**  >  **[质量" 设置](https://docs.unity3d.com/Manual/class-QualitySettings.html)** 中更改纹理质量来实现。
 - **填充速率**是指每秒可以通过 GPU 绘制的像素。
     - 若要确定填充速率限制，请减小显示分辨率，并检查是否已提高速度。 
-    - 在 Unity 中，可以通过 *[XRSettings. renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 属性完成此操作
+    - 在 Unity 中，可以通过*[XRSettings. renderViewportScale](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)* 属性完成此操作
 
 内存带宽一般涉及优化到以下任一操作：
 1) 降低纹理分辨率
@@ -133,7 +133,7 @@ ms.locfileid: "81277475"
 
 #### <a name="object-pooling"></a>对象池
 
-对象池是一种常用技术，可降低对象的连续分配和释放的成本。 此技术是通过以下方式实现的：分配一个由相同对象构成的较大池并重复使用此池中非活动的可用实例，而不是在各个时间内不断生成和销毁对象。 对象池非常适合应用中生存期可变的可重用组件。
+对象池是一种常用技术，可降低对象的连续分配和释放的成本。 这是通过以下方式实现的：分配一个较大的相同对象池，并重新使用此池中的非活动可用实例，而不是随着时间推移不断地生成和销毁对象。 对象池非常适合在应用过程中具有可变生存期的重复使用的组件。
 
 ## <a name="see-also"></a>另请参阅
 - [针对 Unity 的性能建议](performance-recommendations-for-unity.md)

@@ -1,17 +1,17 @@
 ---
-title: 目视的交互
+title: 基于眼睛凝视的交互
 description: HoloLens 2 为开发人员提供了使用用户所注视对象的相关信息的功能，将全息体验中的环境和人类理解能力提高到了一个新境界。 本页介绍适用于想要使用红眼作为输入的开发人员的设计建议。
 author: sostel
 ms.author: sostel
 ms.date: 10/29/2019
 ms.topic: article
 keywords: 眼睛跟踪，混合现实，输入，眼睛
-ms.openlocfilehash: 93d2cfd82b5aa2a410268c5594b5772bcc0b21c7
-ms.sourcegitcommit: a5dc182da237f63f0487d40a2e11894027208b6c
+ms.openlocfilehash: 2ae7723f116771986edc757f1c9d4f454b0a256f
+ms.sourcegitcommit: b0d15083ec1095e08c9d776e5bae66b4449383bb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441102"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84111031"
 ---
 # <a name="eye-gaze-based-interaction-on-hololens-2"></a>HoloLens 2 上基于目视的目视交互
 
@@ -19,7 +19,7 @@ ms.locfileid: "73441102"
 
 HoloLens 2 上令人兴奋的新功能之一是目视跟踪。
 在我们[在 HoloLens 2](eye-tracking.md)页面上的眼睛跟踪中，我们提到了需要每个用户完成[校准](https://docs.microsoft.com/hololens/hololens-calibration)，同时提供了一些开发人员指南和突出跟踪的突出显示用例。
-眼睛良好的输入仍是一种全新的用户输入类型，有很多东西需要学习。 虽然眼睛输入仅在我们的全息 Shell 体验（启动 HoloLens 2 时看到的用户界面）中非常简单，但有多个应用（如["尊敬的板块"](https://www.microsoft.com/p/mr-playground/9nb31lh723s2)）展示了目视输入如何添加到全息体验。
+眼睛良好的输入仍是一种全新的用户输入类型，有很多东西需要学习。 虽然眼睛输入仅在我们的全息 Shell 体验（启动 HoloLens 2 时看到的用户界面）中非常简单，但有多个应用（如["Hololens 板块"](https://www.microsoft.com/p/mr-playground/9nb31lh723s2)）展示了有关目视输入如何将眼睛添加到全息体验的极佳示例。
 在此页上，我们将讨论集成眼睛输入以与全息版应用程序进行交互的设计注意事项。
 你将了解一些主要的优点，还介绍了眼睛眼输入的独特挑战。  
 根据这些建议，我们提供了若干设计建议，以帮助你创建满足目视支持的用户界面。 
@@ -34,7 +34,7 @@ HoloLens 2 上令人兴奋的新功能之一是目视跟踪。
     <col width="25%" />
 </colgroup>
 <tr>
-     <td><strong>具有</strong></td>
+     <td><strong>功能</strong></td>
      <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
      <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
      <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -105,7 +105,7 @@ HoloLens 2 上令人兴奋的新功能之一是目视跟踪。
 
     - **同步各模输入需要：** 将快速目视运动与更复杂的附加输入（例如长时间的语音命令或手势）相结合，可以满足用户在完成和识别其他输入命令之前的持续时间。 因此，如果您创建自己的输入控件（例如，自定义笔势），请确保记录此输入或大致持续时间的开始，以将其与用户过去查看的内容相关联。
     
-3. **目视跟踪输入的细微反馈：** 当查看目标以指示系统正在按预期工作但应保持微妙时，提供反馈很有用。 这可能包括缓慢混合、放大和缩小、视觉对象突出显示或执行其他微妙目标行为（如缓慢增加目标大小），以指示系统正确检测到用户正在查看目标而不不必要地中断用户的当前工作流。 
+3. **目视跟踪输入的细微反馈：** 当查看目标以指示系统正在按预期工作但应保持微妙时，提供反馈很有用。 这可能包括缓慢混合、放大和缩小、视觉对象突出显示或执行其他微妙目标行为（如缓慢增加目标大小），以指示系统正确检测到用户正在查看目标，而不会中断用户的当前工作流。 
 
 4. **避免将非自然目视运动作为输入进行：** 不要强制用户执行特定的目视运动（注视手势）来触发应用程序中的操作。
 
@@ -121,7 +121,7 @@ HoloLens 2 上令人兴奋的新功能之一是目视跟踪。
 * [舒适](comfort.md)
 * [目视观察 DirectX](gaze-in-directx.md)
 * [目视看 Unity （混合现实工具包）](https://aka.ms/mrtk-eyes)
-* [HoloLens 2 上的目视跟踪](eye-tracking.md)
-* [注视并提交](gaze-and-commit.md)
+* [HoloLens 2 中的眼动跟踪](eye-tracking.md)
+* [凝视和提交](gaze-and-commit.md)
 * [凝视和停留](gaze-and-dwell.md)
 * [语音输入](voice-design.md)
