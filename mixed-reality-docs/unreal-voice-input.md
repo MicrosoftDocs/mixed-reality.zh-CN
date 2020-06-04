@@ -1,36 +1,73 @@
 ---
 title: 语音输入
-description: 介绍如何使用语音输入
-author: AndreyChistyakov
-ms.author: anchisty
+description: 在 HoloLens 2 和 Unreal 引擎中设置和使用语音输入的教程
+author: hferrone
+ms.author: v-haferr
 ms.date: 04/08/2020
 ms.topic: article
-keywords: Windows Mixed Reality，HoloLens
-ms.openlocfilehash: d61a9f9d40c76c8872ff0a1b39d65f95ae88d2b7
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+keywords: Windows Mixed Reality，Unreal，Unreal 引擎4，UE4，HoloLens 2，语音，语音输入，语音识别，混合现实，开发，功能，文档，指南，全息影像，游戏开发
+ms.openlocfilehash: c5de0cd912674ccd681fd398fb6fe5fd345ab6f2
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835299"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330629"
 ---
-# <a name="voice-input"></a>语音输入
+# <a name="voice-input-in-unreal"></a>Unreal 中的语音输入
 
-若要在 HoloLens 上启用语音识别，开发人员需要在 "项目设置" 下的 Unreal 编辑器中启用 "麦克风" > 平台 > HoloLens > 功能。 设备还必须在设置中启用语音识别 > 隐私 > 语音并使用英语。
+## <a name="overview"></a>概述
+语音输入使你可以与全息图交互，而无需使用手型，并支持在 HoloLens （第一代）和 HoloLens 2 上。 它通过支持所有其他通用 Windows 应用程序中的语音的同一个引擎提供支持，并可以为在混合现实中交互的方式添加自然感觉。 
+
+支持的语音功能包括：
+- [选择命令](https://docs.microsoft.com/windows/mixed-reality/voice-input#the-select-command)
+- [你好，Cortana](https://docs.microsoft.com/windows/mixed-reality/voice-input#hey-cortana)
+- "查看" 按钮和标签交互
+- 听写
+
+有关详细信息，请参阅主要的[语音输入](voice-input.md)文档。
+
+## <a name="enabling-speech-recognition"></a>启用语音识别
+
+在 HoloLens 上启用语音识别：
+1. 选择 "**项目设置" > 平台 > HoloLens > 功能**并启用**麦克风**。 
+2. 在设置中启用了语音 recogniztion **> 隐私 > 语音**和选择**英语**。
+
+> [!NOTE]
+> 语音识别始终在 "**设置**" 应用程序中配置的 Windows 显示语言中工作。 建议你同时启用**在线语音识别**，以获得最佳的服务质量。
 
 ![Windows 语音识别设置](images/unreal/speech-recognition-settings.png)
 
-建议同时启用在线语音识别，以获得最佳的服务质量。 可在[此处](voice-input.md)找到针对 HoloLens 的语音识别的技术详细信息
+3. 当应用程序首次启动时，将显示一个对话框，询问你是否要启用麦克风。 选择 **"是"** 将在应用中启动语音输入。
 
-然后，用户将看到一个对话框，其中显示了在应用程序首次启动时启用麦克风。 如果用户选择 "是"，应用程序将开始获取语音输入。
+语音输入不需要任何特殊的 Windows Mixed Reality Api;它基于现有的 Unreal Engine 4[输入](https://docs.unrealengine.com/Gameplay/Input/index.html)映射 API 构建。 
 
-语音输入不需要特殊的 Windows Mixed Reality API，而是基于现有的 Unreal Engine 4 输入映射 API 构建的。 [此处](https://docs.unrealengine.com/en-US/Gameplay/Input/index.html)提供了有关如何使用输入 API 的详细信息
+## <a name="adding-speech-mappings"></a>添加语音映射
+使用语音输入时，将语音连接到操作非常重要。 这些映射会监视用户可能会说出的语音关键字应用，然后发出链接的操作。 可以通过以下方式找到语音映射：
+1. 选择 "**编辑 > 项目设置**"，滚动到 "**引擎**" 部分，然后单击 "**输入**"。
 
-已将语音映射添加到引擎的绑定部分–输入以下操作和轴映射。 
+添加跳转命令的新语音映射：
+1. 单击 " **+** **数组元素**" 旁边的图标，然后填写以下值：
+    * **操作名称**的**jumpWord**
+    * **跳转****语音关键字**
+
+> [!NOTE]
+> 任何英语单词或短句子都可以用作关键字。 
 
 ![UE4 引擎输入的输入](images/unreal/engine-input.png)
- 
-下面是添加了针对全球 "跳转" 的监视的示例。 可以使用任何英语单词或短句子。 
 
-通过项目设置添加语音映射后，开发人员可以使用标准 Unreal 逻辑来处理输入，如以下示例中所示： 
+语音映射可用作操作或轴映射等输入组件或事件图中的蓝图节点。 例如，可以链接 "跳转" 命令，根据字词的讲述时间打印出两个不同的日志：
+
+1. 双击蓝图以在**事件图**中打开它。
+2. **右键单击**并搜索语音映射的**操作名称**（在本例中为**JumpWord**），然后按**Enter**。 这会将 "**输入操作**" 节点添加到关系图中。
+3. 将**按下**的 pin 拖放到 "**打印字符串**" 节点，如下图所示。 你可以保留已**释放**的 pin，而不会对语音映射执行任何操作。
  
-![简单的语音操作](images/unreal/input-action-bp.png)
+![简单的语音操作](images/unreal/voice-input-img-03.png)
+
+4. 播放应用，口述 "**跳转**" 并观看控制台打印日志！
+
+这就是在 Unreal 中开始向 HoloLens 应用添加语音输入所需的全部设置。 可以在下面的链接中找到有关语音和交互性的详细信息，并确保考虑要为用户创建的体验。
+
+## <a name="see-also"></a>另请参阅
+* [凝视和提交](gaze-and-commit.md)
+* [本能交互](interaction-fundamentals.md)
+* [MR 输入 212：语音](holograms-212.md)

@@ -6,12 +6,12 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: b128f91947fa8700502f7541cba23c726238a067
-ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
+ms.openlocfilehash: 319e76efbbe1085fc9d60251a6f0f38133de6505
+ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83866847"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327897"
 ---
 # <a name="holographic-remoting-version-history"></a>全息远程处理版本历史记录
 
@@ -22,7 +22,7 @@ ms.locfileid: "83866847"
 * 已更改[HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)事件的行为。 在以前的版本中，**不**能保证添加的[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera?view=winrt-18362)在通过[HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createnextframe?view=winrt-18362#Windows_Graphics_Holographic_HolographicSpace_CreateNextFrame)创建下一帧时还具有有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362) 。 从版本 2.1.3 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)中开始，将与来自全息远程处理程序的姿势数据同步，用户可能希望在添加照相机时，还会在下一帧上为该相机提供有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362) 。
 * 已将**禁用**添加到 DepthBufferStreamResolution，可用于通过 RemoteContext 禁用深度缓冲区流式处理。 请注意，如果使用的[HolographicCameraRenderingParameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)将失败，并*E_ILLEGAL_METHOD_CALL*。
 * 全息远程处理播放机的启动屏幕已重新设计，现在不会阻止用户视图。
-* 稳定性和 buf 修复。
+* 稳定性改进和 bug 修复。
 
 ## <a name="version-212-april-5-2020"></a>版本2.1.2 （2020年4月5日）<a name="v2.1.2"></a>
 * 修复了最新的全息远程处理播放器与使用小于2.1.0 的版本的远程应用之间的音频向后兼容性问题。
