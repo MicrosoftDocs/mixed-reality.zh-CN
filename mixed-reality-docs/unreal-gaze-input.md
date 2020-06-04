@@ -1,34 +1,51 @@
 ---
 title: 在 Unreal 中注视输入
-description: 说明如何在 Unreal 中使用注视输入
-author: AndreyChistyakov
-ms.author: anchisty
+description: 针对 HoloLens 和 Unreal 引擎设置注视输入的教程
+author: hferrone
+ms.author: v-haferr
 ms.date: 04/08/2020
 ms.topic: article
-keywords: Windows Mixed Reality，全息影像，HoloLens，目视跟踪
-ms.openlocfilehash: 7387bb3f25cdbdfac32f508c173fbd098f844e84
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+keywords: Windows Mixed Reality，全息影像，HoloLens 2，眼睛跟踪，注视输入，head 装入显示，Unreal 引擎
+ms.openlocfilehash: c77e33df2a1dfffdb5ea55e685d30af3fc2a22da
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835617"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330619"
 ---
-# <a name="gaze-input"></a><span data-ttu-id="c2bd2-104">注视输入</span><span class="sxs-lookup"><span data-stu-id="c2bd2-104">Gaze Input</span></span>
+# <a name="gaze-input"></a><span data-ttu-id="34eb0-104">注视输入</span><span class="sxs-lookup"><span data-stu-id="34eb0-104">Gaze Input</span></span>
 
-<span data-ttu-id="c2bd2-105">Windows Mixed Reality 插件不为注视输入提供任何特殊功能。</span><span class="sxs-lookup"><span data-stu-id="c2bd2-105">The Windows Mixed Reality plugin doesn’t provide any special functions for the gaze input.</span></span> <span data-ttu-id="c2bd2-106">一切都可通过标准 Unreal API 使用。</span><span class="sxs-lookup"><span data-stu-id="c2bd2-106">Everything works though the standard Unreal API.</span></span>
+## <a name="overview"></a><span data-ttu-id="34eb0-105">概述</span><span class="sxs-lookup"><span data-stu-id="34eb0-105">Overview</span></span>
 
-[<span data-ttu-id="c2bd2-107">打印头注视 API</span><span class="sxs-lookup"><span data-stu-id="c2bd2-107">Head gaze API</span></span>](https://docs.unrealengine.com/en-US/BlueprintAPI/Input/HeadMountedDisplay/index.html)
+<span data-ttu-id="34eb0-106">[Windows Mixed Reality 插件](https://docs.unrealengine.com/Platforms/VR/WMR/index.html)不提供任何用于目视输入的内置函数，但 HoloLens 2 支持目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="34eb0-106">The [Windows Mixed Reality plugin](https://docs.unrealengine.com/Platforms/VR/WMR/index.html) doesn’t provide any built-in functions for gaze input, but HoloLens 2 does support eye tracking.</span></span> <span data-ttu-id="34eb0-107">实际的跟踪功能由 Unreal 的**Head 挂载显示**和**目视跟踪**api 提供，包括：</span><span class="sxs-lookup"><span data-stu-id="34eb0-107">The actual tracking features are provided by Unreal's **Head Mounted Display** and **Eye Tracking** APIs and include:</span></span>
 
-## <a name="eye-tracking"></a><span data-ttu-id="c2bd2-108">眼动跟踪</span><span class="sxs-lookup"><span data-stu-id="c2bd2-108">Eye tracking</span></span>
+- <span data-ttu-id="34eb0-108">设备信息</span><span class="sxs-lookup"><span data-stu-id="34eb0-108">Device information</span></span>
+- <span data-ttu-id="34eb0-109">跟踪传感器</span><span class="sxs-lookup"><span data-stu-id="34eb0-109">Tracking sensors</span></span>
+- <span data-ttu-id="34eb0-110">方向和位置</span><span class="sxs-lookup"><span data-stu-id="34eb0-110">Orientation and position</span></span>
+- <span data-ttu-id="34eb0-111">剪辑窗格</span><span class="sxs-lookup"><span data-stu-id="34eb0-111">Clipping panes</span></span>
+- <span data-ttu-id="34eb0-112">注视数据和跟踪信息</span><span class="sxs-lookup"><span data-stu-id="34eb0-112">Gaze data and tracking information</span></span>
 
-<span data-ttu-id="c2bd2-109">若要使用目视跟踪 API，开发人员应在其 HoloLens 项目设置中启用 "注视输入" 功能。</span><span class="sxs-lookup"><span data-stu-id="c2bd2-109">To use the eye tracking API, developers should enable the “Gaze Input” capability in their HoloLens project settings.</span></span> <span data-ttu-id="c2bd2-110">当应用程序启动时，用户将看到以下同意提示</span><span class="sxs-lookup"><span data-stu-id="c2bd2-110">When the application starts, user will see the following consent prompt</span></span>
+<span data-ttu-id="34eb0-113">可以在 Unreal 的[安装的显示](https://docs.unrealengine.com/BlueprintAPI/Input/HeadMountedDisplay/index.html)和[目视跟踪](https://docs.unrealengine.com/BlueprintAPI/EyeTracking/index.html)文档中找到功能的完整列表。</span><span class="sxs-lookup"><span data-stu-id="34eb0-113">You can find the full list of features in Unreal's [Head Mounted Display](https://docs.unrealengine.com/BlueprintAPI/Input/HeadMountedDisplay/index.html) and [Eye Tracking](https://docs.unrealengine.com/BlueprintAPI/EyeTracking/index.html) documentation.</span></span> 
+
+<span data-ttu-id="34eb0-114">除了 Unreal Api 外，还可以查看有关 HoloLens 2 的[基于目视](eye-gaze-interaction.md)观看的交互的文档，并了解如何[在 hololens 2 上运行目视跟踪](https://docs.microsoft.com/windows/mixed-reality/eye-tracking)。</span><span class="sxs-lookup"><span data-stu-id="34eb0-114">In addition to the Unreal APIs, check out the documentation on [eye-gaze-based interaction](eye-gaze-interaction.md) for HoloLens 2 and read up on how [eye tracking on HoloLens 2](https://docs.microsoft.com/windows/mixed-reality/eye-tracking) works.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="34eb0-115">仅在 HoloLens 2 上支持目视跟踪。</span><span class="sxs-lookup"><span data-stu-id="34eb0-115">Eye tracking is only supported on HoloLens 2.</span></span> 
+
+## <a name="enabling-eye-tracking"></a><span data-ttu-id="34eb0-116">启用目视跟踪</span><span class="sxs-lookup"><span data-stu-id="34eb0-116">Enabling eye tracking</span></span>
+<span data-ttu-id="34eb0-117">需要在 HoloLens 项目设置中启用 "注视输入"，然后才能使用任何 Unreal Api。</span><span class="sxs-lookup"><span data-stu-id="34eb0-117">Gaze input needs to be enabled in the HoloLens project settings before you can use any of Unreal's APIs.</span></span> <span data-ttu-id="34eb0-118">当应用程序启动时，你将看到下面的屏幕截图中显示的同意提示。</span><span class="sxs-lookup"><span data-stu-id="34eb0-118">When the application starts you'll see a consent prompt shown in the screenshot below.</span></span>
+
+- <span data-ttu-id="34eb0-119">选择 **"是"** 以设置权限并获取对注视输入的访问权限。</span><span class="sxs-lookup"><span data-stu-id="34eb0-119">Select **Yes** to set the permission and get access to gaze input.</span></span> <span data-ttu-id="34eb0-120">如果需要随时更改此设置，可在 "**设置**" 应用中找到它。</span><span class="sxs-lookup"><span data-stu-id="34eb0-120">If you need to change this setting at any time, it can be found in the **Settings** app.</span></span>
 
 ![目视输入权限](images/unreal/eye-input-permissions.png)
- 
-<span data-ttu-id="c2bd2-112">如果用户提供了其权限，则该应用程序将会获得目视的输入。</span><span class="sxs-lookup"><span data-stu-id="c2bd2-112">If the user gives their permission, the application will get eye gaze input.</span></span> 
 
-<span data-ttu-id="c2bd2-113">[此处](https://docs.unrealengine.com/en-US/BlueprintAPI/EyeTracking/index.html)介绍了 Unreal 的目视跟踪 API</span><span class="sxs-lookup"><span data-stu-id="c2bd2-113">Unreal’s eye tracking API is documented is [here](https://docs.unrealengine.com/en-US/BlueprintAPI/EyeTracking/index.html)</span></span>
+> [!NOTE] 
+> <span data-ttu-id="34eb0-122">Unreal 中的 HoloLens 眼睛跟踪只对这两种眼睛都有一个注视，而不是 stereoscopic 跟踪所需的两个射线，这不受支持。</span><span class="sxs-lookup"><span data-stu-id="34eb0-122">HoloLens eye tracking in Unreal only has a single gaze ray for both eyes instead of the two rays needed for stereoscopic tracking, which is not supported.</span></span>
 
-<span data-ttu-id="c2bd2-114">[此处](eye-tracking.md)提供目视跟踪的技术详细信息</span><span class="sxs-lookup"><span data-stu-id="c2bd2-114">The technical details of eye tracking are [here](eye-tracking.md)</span></span>
+<span data-ttu-id="34eb0-123">这就是在 Unreal 中开始向 HoloLens 2 应用添加注视输入所需的全部设置。</span><span class="sxs-lookup"><span data-stu-id="34eb0-123">That's all the setup you'll need to start adding gaze input to your HoloLens 2 apps in Unreal.</span></span> <span data-ttu-id="34eb0-124">有关 "注视输入" 以及它如何影响混合现实中的用户的详细信息，请参阅以下链接。</span><span class="sxs-lookup"><span data-stu-id="34eb0-124">More information on gaze input and how it affects users in mixed reality can be found at the links below.</span></span> <span data-ttu-id="34eb0-125">在构建交互式体验时，请务必考虑这种情况。</span><span class="sxs-lookup"><span data-stu-id="34eb0-125">Be sure to think about these when building your interactive experiences.</span></span> 
 
-<span data-ttu-id="c2bd2-115">请注意，对于 Unreal，HoloLens 眼睛跟踪对于这两种眼睛都有一个注视。</span><span class="sxs-lookup"><span data-stu-id="c2bd2-115">Note that specifically for Unreal, HoloLens eye tracking has a single gaze ray for both eyes.</span></span> <span data-ttu-id="c2bd2-116">HoloLens 不提供 stereoscopic 眼跟踪。</span><span class="sxs-lookup"><span data-stu-id="c2bd2-116">HoloLens doesn’t provide stereoscopic eye tracking.</span></span>
+## <a name="see-also"></a><span data-ttu-id="34eb0-126">另请参阅</span><span class="sxs-lookup"><span data-stu-id="34eb0-126">See also</span></span>
+* [<span data-ttu-id="34eb0-127">校准</span><span class="sxs-lookup"><span data-stu-id="34eb0-127">Calibration</span></span>](calibration.md)
+* [<span data-ttu-id="34eb0-128">舒适</span><span class="sxs-lookup"><span data-stu-id="34eb0-128">Comfort</span></span>](comfort.md)
+* [<span data-ttu-id="34eb0-129">凝视和提交</span><span class="sxs-lookup"><span data-stu-id="34eb0-129">Gaze and commit</span></span>](gaze-and-commit.md)
+* [<span data-ttu-id="34eb0-130">语音输入</span><span class="sxs-lookup"><span data-stu-id="34eb0-130">Voice input</span></span>](voice-design.md)
