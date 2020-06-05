@@ -7,24 +7,26 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: d0fd22ad6fbefc6889373b00847721cfc0655ce3
-ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
+ms.openlocfilehash: 2a171d601d094375a56734e8d7890c9d3e17c887
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82604998"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866907"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.Azure 空间定位点入门
 
 ## <a name="overview"></a>概述
 
-欢迎学习 HoloLens 2 教程的第二个系列。 本教学系列由三篇教程构成，本教程介绍 Azure 空间定位点的基础知识。
+欢迎学习 HoloLens 2 教程的第二个系列。 本教学系列由四篇教程构成，本教程介绍 Azure 空间定位点的基础知识。
 
 本第一篇教程 [Azure 空间定位点入门](mrlearning-asa-ch1.md)介绍启动和停止 Azure 会话，以及在单个设备上创建、上传和下载 Azure 定位点所要的各个步骤。
 
 第二篇教程[保存、检索和共享 Azure 空间定位点](mrlearning-asa-ch2.md)将介绍如何通过将定位点信息保存到 HoloLens 2 存储来保存多个应用会话中的 Azure 空间定位点，以及如何与其他设备共享此定位点信息，以对齐多个设备的定位点。
 
 第三篇教程[显示 Azure 空间定位点反馈](mrlearning-asa-ch3.md)将介绍如何在使用 Azure 空间定位点时，向用户提供有关定位点事件和状态的反馈。
+
+在第四篇教程[适用于 Android 和 iOS 的 Azure 空间定位点](mrlearning-asa-ch4.md)介绍了如何生成项目并将其部署到 Android 和 iOS 设备。
 
 ## <a name="objectives"></a>目标
 
@@ -42,6 +44,13 @@ ms.locfileid: "82604998"
 * 一个[针对开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
 * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并添加了通用 Windows 平台生成支持模块
 * 完成以下教程的[创建空间定位点资源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)部分：[快速入门：创建使用 Azure 空间定位点的 Unity HoloLens 应用](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)。
+* 如果打算部署到 Android
+    * <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">开发人员实现</a>且<a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">支持 ARCore</a>的 Android 设备，该设备通过 USB 与 Windows 或 macOS 计算机相连接
+    * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并已添加 Android 生成支持模块
+* 如果打算部署到 iOS
+    * 已安装最新版 <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> 和 <a href="https://cocoapods.org" target="_blank">CocoaPods</a> 的 macOS 计算机
+    * <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">与 ARKit 兼容</a>且通过 USB 连接到 macOS 计算机的 iOS 设备
+    * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并已添加 iOS 生成支持模块
 
 > [!IMPORTANT]
 > 建议用于本系列教程的 Unity 版本是 Unity 2019.2.X。 这将取代上述链接的先决条件中所述的任何 Unity 版本要求或建议。
@@ -65,7 +74,7 @@ ms.locfileid: "82604998"
 
 6. [将混合现实工具包添加到 Unity 场景](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)，并为该场景指定适当的名称，例如 *AzureSpatialAnchors*
 
-然后，根据[如何配置混合现实工具包配置文件（更改空间感知显示选项）](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)中的说明将场景的 MRTK 配置配置文件更改为“DefaultHoloLens2ConfigurationProfile”，并将空间感知网格的显示选项更改为“遮挡”。  
+然后，根据[如何配置混合现实工具包配置文件（更改空间感知显示选项）](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)中的说明将场景的 MRTK 配置配置文件更改为“DefaultHoloLens2ConfigurationProfile”，并将空间感知网格的显示选项更改为“遮挡”。 
 
 > [!CAUTION]
 > 根据上面链接的[配置用于混合现实工具包的 Unity 项目](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)说明中所述，强烈建议不要为 Unity 启用 MSBuild。
@@ -75,14 +84,14 @@ ms.locfileid: "82604998"
 
 在本部分，你将安装 Unity 的内置 AR Foundation 包，因为在下一部分要导入的 Azure 空间定位点 SDK 需要此包。
 
-在 Unity 菜单中，选择“窗口” > “包管理器”：  
+在 Unity 菜单中，选择“窗口” > “包管理器”： 
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section2-step1-1.png)
 
 > [!NOTE]
 > AR Foundation 包可能需要在几秒钟后才显示在列表中。
 
-在“包管理器”窗口中选择“AR Foundation”，然后单击“安装”按钮安装该包：  
+在“包管理器”窗口中选择“AR Foundation”，然后单击“安装”按钮安装该包： 
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section2-step1-2.png)
 
@@ -106,7 +115,7 @@ ms.locfileid: "82604998"
 
 在本部分，你将通过添加一些教程预制件来准备场景。
 
-在“项目”窗口中，导航到“资产” > “MRTK.Tutorials.AzureSpatialAnchors” > “预制件”文件夹。    在按住 CTRL 键的同时单击“ButtonParent”、“DebugWindow”、“Instructions”和“ParentAnchor”，以选择这四个预制件：    
+在“项目”窗口中，导航到“资产” > “MRTK.Tutorials.AzureSpatialAnchors” > “预制件”文件夹。   在按住 CTRL 键的同时单击“ButtonParent”、“DebugWindow”、“Instructions”和“ParentAnchor”，以选择这四个预制件：   
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section4-step1-1.png)
 
@@ -127,45 +136,45 @@ ms.locfileid: "82604998"
 
 ### <a name="1-configure-the-pressable-button-holo-lens-2-script-component"></a>1.配置“可按按钮 Holo Lens 2 (脚本)”组件
 
-在“层次结构”窗口中展开“ButtonParent”对象，然后选择名为“StartAzureSession”的第一个子对象：  
+在“层次结构”窗口中展开“ButtonParent”对象，然后选择名为“StartAzureSession”的第一个子对象： 
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step1-1.png)
 
-在“检查器”窗口中找到“可按按钮 Holo Lens 2 (脚本)”组件，然后单击 **+** 图标将新的事件侦听器添加到“Button Pressed ()”事件：  
+在“检查器”窗口中找到“可按按钮 Holo Lens 2 (脚本)”组件，然后单击 **+** 图标将新的事件侦听器添加到“Button Pressed ()”事件： 
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step1-2.png)
 
-仍在“层次结构”窗口中选中了“StartAzureSession”对象的情况下，单击“层次结构”窗口中的“ParentAnchor”对象并将其拖放到刚刚添加的事件侦听器的空“无(对象)”字段中，使 ParentAnchor 对象侦听此按钮的 button pressed 事件：  
+仍在“层次结构”窗口中选中了“StartAzureSession”对象的情况下，单击“层次结构”窗口中的“ParentAnchor”对象并将其拖放到刚刚添加的事件侦听器的空“无(对象)”字段中，使 ParentAnchor 对象侦听此按钮的 button pressed 事件： 
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step1-3.png)
 
-单击同一事件侦听器的“无函数”下拉列表，然后选择“AnchorModuleScript” > “StartAzureSession ()”，将 StartAzureSession () 函数设置为在从此按钮激发 button pressed 事件时要触发的操作：   
+单击同一事件侦听器的“无函数”下拉列表，然后选择“AnchorModuleScript” > “StartAzureSession ()”，将 StartAzureSession () 函数设置为在从此按钮激发 button pressed 事件时要触发的操作：  
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step1-4.png)
 
 ### <a name="2-configure-the-interactable-script-component"></a>2.配置“可交互(脚本)”组件
 
-仍在“层次结构”窗口中选中了“StartAzureSession”对象的情况下，在“检查器”窗口中找到“可交互(脚本)”组件，然后针对“OnClick ()”事件重复上述步骤 1 中所述的相同过程：  
+仍在“层次结构”窗口中选中了“StartAzureSession”对象的情况下，在“检查器”窗口中找到“可交互(脚本)”组件，然后针对“OnClick ()”事件重复上述步骤 1 中所述的相同过程： 
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step2-1.png)
 
 ### <a name="3-configure-the-remaining-buttons"></a>3.配置剩余的按钮
 
-对于剩余的每个按钮，请完成上述步骤 1 和 2 中所述的过程，将函数分配到“Button Pressed ()”和“OnClick ()”事件：  
+对于剩余的每个按钮，请完成上述步骤 1 和 2 中所述的过程，将函数分配到“Button Pressed ()”和“OnClick ()”事件： 
 
-* 对于“StopAzureSession”对象，请分配“AnchorModuleScript”>“StopAzureSession ()”函数。  
-* 对于“CreateAzureAnchor”对象，请分配“AnchorModuleScript”>“CreateAzureAnchor ()”函数。  
-  * 然后，再次将“ParentAnchor”拖放到空的“无(游戏对象)”字段中。  
-* 对于“RemoveLocalAnchor”对象，请分配“AnchorModuleScript”>“RemoveLocalAnchor ()”函数。  
-  * 然后，再次将“ParentAnchor”拖放到空的“无(游戏对象)”字段中。  
-* 对于“FindAzureAnchor”对象，请分配“AnchorModuleScript”>“FindAzureAnchor ()”函数。  
-* 对于“DeleteAzureAnchor”对象，请分配“AnchorModuleScript”>“DeleteAzureAnchor ()”函数。  
+* 对于“StopAzureSession”对象，请分配“AnchorModuleScript”>“StopAzureSession ()”函数。 
+* 对于“CreateAzureAnchor”对象，请分配“AnchorModuleScript”>“CreateAzureAnchor ()”函数。 
+  * 然后，再次将“ParentAnchor”拖放到空的“无(游戏对象)”字段中。 
+* 对于“RemoveLocalAnchor”对象，请分配“AnchorModuleScript”>“RemoveLocalAnchor ()”函数。 
+  * 然后，再次将“ParentAnchor”拖放到空的“无(游戏对象)”字段中。 
+* 对于“FindAzureAnchor”对象，请分配“AnchorModuleScript”>“FindAzureAnchor ()”函数。 
+* 对于“DeleteAzureAnchor”对象，请分配“AnchorModuleScript”>“DeleteAzureAnchor ()”函数。 
 
 ### <a name="4-connect-the-scene-to-the-azure-resource"></a>4.将场景连接到 Azure 资源
 
-在“层次结构”窗口中选择“ParentAnchor”对象，然后在“检查器”窗口中，向下滚动到“空间定位点管理器(脚本)”组件。  
+在“层次结构”窗口中选择“ParentAnchor”对象，然后在“检查器”窗口中，向下滚动到“空间定位点管理器(脚本)”组件。 
 
-然后在“凭据”部分，将在本教程的[先决条件](mrlearning-asa-ch1.md#prerequisites)部分创建的空间定位点帐户 ID 和密钥粘贴到相应的“空间定位点帐户 ID”和“空间定位点帐户密钥”字段中：   
+然后在“凭据”部分，将在本教程的[先决条件](mrlearning-asa-ch1.md#prerequisites)部分创建的空间定位点帐户 ID 和密钥粘贴到相应的“空间定位点帐户 ID”和“空间定位点帐户密钥”字段中：  
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section5-step4-1.png)
 
@@ -175,15 +184,15 @@ ms.locfileid: "82604998"
 
 ### <a name="1-add-additional-required-capabilities"></a>1.添加其他所需功能
 
-在 Unity 菜单中选择“编辑” > “项目设置...”，打开“播放器设置”窗口：  
+在 Unity 菜单中选择“编辑” > “项目设置...”，打开“播放器设置”窗口： 
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section6-step1-1.png)
 
-在“播放器设置”窗口中，依次选择“播放器”、“发布设置”：  
+在“播放器设置”窗口中，依次选择“播放器”、“发布设置”： 
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section6-step1-2.png)
 
-在“发布设置”中，向下滚动到“功能”部分，仔细检查在教程中最初创建项目时启用的“InternetClient”、“Microphone”和“SpatialPerception”功能是否确实已启用。      然后，启用“InternetClientServer”、“PrivateNetworkClientServer”、“RemovableStorage”和“Webcam”功能：    
+在“发布设置”中，向下滚动到“功能”部分，仔细检查在教程中最初创建项目时启用的“InternetClient”、“Microphone”和“SpatialPerception”功能是否确实已启用。     然后，启用“InternetClientServer”、“PrivateNetworkClientServer”、“RemovableStorage”和“Webcam”功能：   
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section6-step1-3.png)
 
@@ -209,17 +218,17 @@ Azure 空间定位点不能在 Unity 中运行，因此，若要测试 Azure 空
 
 ### <a name="1-add-the-rocket-launcher-experience"></a>1.添加火箭发射器体验
 
-在“项目”窗口中导航到“资产” > “MRTK.Tutorials.GettingStarted” > “预制件” > “RocketLauncher”文件夹，选择“RocketLauncher_Complete”预制件：     
+在“项目”窗口中导航到“资产” > “MRTK.Tutorials.GettingStarted” > “预制件” > “RocketLauncher”文件夹，选择“RocketLauncher_Complete”预制件：    
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section7-step1-1.png)
 
-在仍选中了 RocketLauncher_Complete 预制件的情况下，将其拖放到“层次结构”窗口中“ParentAnchor”对象的顶部，使其成为 ParentAnchor 对象的子级： 
+在仍选中了 RocketLauncher_Complete 预制件的情况下，将其拖放到“层次结构”窗口中“ParentAnchor”对象的顶部，使其成为 ParentAnchor 对象的子级：
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial1-section7-step1-2.png)
 
 ### <a name="2-reposition-the-rocket-launcher-experience"></a>2.重新定位火箭发射器体验
 
-根据适当的标度和方向定位、旋转和缩放“RocketLauncher_Complete”对象，同时确保“ParentAnchor”对象仍处于显示状态，例如：  
+根据适当的标度和方向定位、旋转和缩放“RocketLauncher_Complete”对象，同时确保“ParentAnchor”对象仍处于显示状态，例如： 
 
 * 变换**位置** X = 0，Y = 0，Z = 3.75
 * 变换**位置** X = 0，Y = 90，Z = 0
