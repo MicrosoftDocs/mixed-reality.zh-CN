@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、Windows 设备门户、API
-ms.openlocfilehash: 8c9d60f458cddd3ba258aed0ee82f7aa16c10ba6
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 17268c9a20d3da0ee90e5d6cead4342d3badf800
+ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227946"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84451322"
 ---
 # <a name="device-portal-api-reference"></a>设备门户 API 参考
 
@@ -320,7 +320,15 @@ Payload
 
 **/api/holographic/mrc/status （GET）**
 
-获取记录的混合现实的状态（正在运行、已停止）
+获取 Windows 设备门户内混合现实捕获的状态。
+
+***响应***
+
+响应包含一个 JSON 属性，用于指示 Windows 设备门户是否正在录制视频。
+
+``` javascript
+{"IsRecording" : boolean}
+```
 
 **/api/holographic/mrc/thumbnail （GET）**
 
@@ -419,7 +427,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 返回数据
 * 包含系统信息的 JSON： CPU、GPU、内存、网络、IO
 
-## <a name="power"></a>电源
+## <a name="power"></a>强力
 
 **/api/power/battery （GET）**
 

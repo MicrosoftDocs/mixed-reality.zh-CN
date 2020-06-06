@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、照片、视频、捕获、照相机
-ms.openlocfilehash: 72600f889997c96a629faebc35aba4b4841d4d8b
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 0d51945444a411563b67af8569fee7ffe3449957
+ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375964"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84451342"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>面向开发人员的混合现实捕获
 
@@ -59,9 +59,9 @@ PV 相机中的呈现功能与默认的 MRC 体验相比具有以下改进：
 2. 处理附加的 HolographicCamera 呈现
 3. 通过此附加 HolographicCamera 正确验证着色器和代码呈现
 
-##### <a name="enable-the-photovideocamera-holographicviewconfiguration"></a>启用 PhotoVideoCamera HolographicViewConfiguration
+##### <a name="enable-the-photovideocamera-holographicviewconfiguration-in-directx"></a>在 DirectX 中启用 PhotoVideoCamera HolographicViewConfiguration
 
-若要选择加入，应用只需启用 PhotoVideoCamera 的[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration)：
+若要选择从 PV 相机进行呈现，应用只需启用 PhotoVideoCamera 的[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration)：
 ```csharp
 var display = Windows.Graphics.Holographic.HolographicDisplay.GetDefault();
 var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfiguration.PhotoVideoCamera);
@@ -77,14 +77,38 @@ if (view != null)
 1. HolographicSpace 的 CameraAdded 事件将激发。 如果此时应用无法处理照相机，此事件可能会延迟。
 2. 事件完成后（没有未完成的延迟），HolographicCamera 将在下一个 HolographicFrame 的 AddedCameras 列表中显示。
 
-当混合现实捕获停止时（或应用在混合现实捕获正在运行时禁用视图配置）： HolographicCamera 将显示在下一个 HolographicFrame 的 RemovedCameras 列表中，HolographicSpace 的 CameraRemoved 事件将火灾.
+当混合现实捕获停止时（或者，如果应用在混合现实捕获正在运行时禁用视图配置）： HolographicCamera 将显示在下一个 HolographicFrame 的 RemovedCameras 列表中，并激发 HolographicSpace 的 CameraRemoved 事件。
 
 已将[ViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.viewconfiguration)属性添加到 HolographicCamera，以帮助标识相机所属的配置。
 
+##### <a name="enable-the-photovideocamera-holographicviewconfiguration-in-unity"></a>在 Unity 中启用 PhotoVideoCamera HolographicViewConfiguration
+
+> [!NOTE]
+> 这需要**unity 2018.4.13 f1**、 **unity 2019.3.0 f1**或更高版本。
+
+若要选择从 PV 相机进行呈现，请在使用[混合现实工具包](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)时，启用[Windows Mixed reality 相机设置](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/CameraSystem/WindowsMixedRealityCameraSettings.html)提供程序并**从 PV 相机设置中检查渲染**。
+
+如果使用的不是混合现实工具包，则可以使用组件[手动选择启用](#enable-the-photovideocamera-holographicviewconfiguration-in-directx)DirectX。
+
 ##### <a name="handle-the-additional-holographiccamera-render-in-unity"></a>处理 Unity 中的其他 HolographicCamera 呈现
 
->[!NOTE]
-> 通过 PV 相机呈现的 Unity 支持正在开发中，但尚不能使用。 当提供支持从 PV 相机呈现的 Unity 时，将更新此文档。
+这是由 Unity 自动完成的。
+
+##### <a name="enable-the-photovideocamera-holographicviewconfiguration-in-unreal"></a>启用 Unreal 中的 PhotoVideoCamera HolographicViewConfiguration
+
+> [!NOTE]
+> 这需要**Unreal 引擎 4.25**或更高版本。
+
+若要选择从 PV 摄像机进行呈现：
+
+1. 调用**SetEnabledMixedRealityCamera**和**ResizeMixedRealityCamera**
+    * 使用**Size X**和**size Y**值设置视频尺寸。
+
+![第三人称摄像头](images/unreal-camera-3rd.PNG)
+
+##### <a name="handle-the-additional-holographiccamera-render-in-unreal"></a>在 Unreal 中处理附加的 HolographicCamera 呈现
+
+这是由 Unreal 自动完成的。
 
 ##### <a name="verify-shaders-and-code-support-additional-cameras"></a>验证着色器和代码支持其他相机
 
@@ -172,7 +196,7 @@ if (view != null)
 
 ### <a name="mrc-with-built-in-camera-ui"></a>带有内置照相机 UI 的 MRC
 
-开发人员只需编写几行代码，即可使用 *[相机捕获 UI API](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)* 获取用户捕获的混合现实照片或视频。
+开发人员只需编写几行代码，即可使用*[相机捕获 UI API](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)* 获取用户捕获的混合现实照片或视频。
 
 此 API 启动内置的 MRC 相机 UI，用户可以从中拍摄照片或视频，并将生成的捕获返回到应用。  如果你想要创建自己的照相机 UI，或者需要对捕获流进行较低级别的访问，则可以创建自定义混合现实记录。
 
@@ -190,48 +214,33 @@ Unity 应用程序应看到属性[Locatable_camera_in_Unity](locatable-camera-in
 
 应用程序有两个选项可添加效果：
 * 旧的 API： [MediaCapture. AddEffectAsync （）](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addeffectasync)
-* 新的 Microsoft 推荐 API （返回对象，使其可以操作动态属性）： [MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync) . [MediaCapture. AddAudioEffectAsync （） / （）](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addaudioeffectasync) ，这要求应用创建自己的[IVideoEffectDefinition](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IVideoEffectDefinition)和[IAudioEffectDefinition](https://docs.microsoft.com/uwp/api/windows.media.effects.iaudioeffectdefinition)实现。 有关示例用法，请参阅 MRC 效果示例。
+* 新的 Microsoft 推荐 API （返回对象，使其可以操作动态属性）： [AddVideoEffectAsync （）](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync)  /  [MediaCapture. AddAudioEffectAsync （）](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addaudioeffectasync) ，该应用程序需要应用程序创建自己的[IVideoEffectDefinition](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IVideoEffectDefinition)和[IAudioEffectDefinition](https://docs.microsoft.com/uwp/api/windows.media.effects.iaudioeffectdefinition)实现。 MediaCapture 有关示例用法，请参阅 MRC 效果示例。
 
 >[!NOTE]
 > Visual Studio 将无法识别 MixedRealityCapture 命名空间，但字符串仍然有效。
 
 MRC 视频效果（**MixedRealityCapture. MixedRealityCaptureVideoEffect**）
 
-|  属性名称  |  类型  |  默认值  |  说明 | 
+|  属性名称  |  类型  |  默认值  |  说明 |
 |----------|----------|----------|----------|
-|  StreamType  |  UINT32 （[mediastreamtype.video](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType)）  |  1（VideoRecord）  |  描述此影响所使用的捕获流。 音频不可用。 | 
-|  HologramCompositionEnabled  |  布尔值  |  TRUE  |  用于在视频捕获中启用或禁用全息影像的标志。 | 
-|  RecordingIndicatorEnabled  |  布尔值  |  TRUE  |  用于在全息影像捕获期间启用或禁用录制指示器的标志。 | 
-|  VideoStabilizationEnabled  |  布尔值  |  FALSE  |  用于启用或禁用由 HoloLens 跟踪器支持的视频稳定的标志。 | 
-|  VideoStabilizationBufferLength  |  UINT32  |  0  |  设置视频抖动使用的历史帧数。 从电源和性能的角度来看，0从0到延迟，几乎是 "免费"。 对于最高质量，建议使用15个（成本为延迟和内存15帧）。 | 
-|  GlobalOpacityCoefficient  |  float  |  0.9 （HoloLens）1.0 （沉浸式耳机）  |  将范围从0.0 （完全透明）到1.0 的全局不透明度系数设置为 "完全不透明"。 | 
-|  BlankOnProtectedContent  |  布尔值  |  FALSE  |  用于启用或禁用在有显示受保护内容的 2d UWP 应用时返回空帧的标志。 如果此标志为 false，并且二维 UWP 应用显示受保护的内容，则在耳机和混合现实捕获中，二维 UWP 应用将替换为受保护的内容纹理。 |
-|  ShowHiddenMesh  |  布尔值  |  FALSE  |  用于启用或禁用显示全息相机隐藏区域网格和相邻内容的标志。 |
+|  StreamType  |  UINT32 （[mediastreamtype.video](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType)）  |  1（VideoRecord）  |  描述此影响所使用的捕获流。 音频不可用。 |
+|  HologramCompositionEnabled  |  boolean  |  TRUE  |  用于在视频捕获中启用或禁用全息影像的标志。 |
+|  RecordingIndicatorEnabled  |  boolean  |  TRUE  |  用于在全息影像捕获期间启用或禁用录制指示器的标志。 |
+|  VideoStabilizationEnabled  |  boolean  |  FALSE  |  用于启用或禁用由 HoloLens 跟踪器支持的视频稳定的标志。 |
+|  VideoStabilizationBufferLength  |  UINT32  |  0  |  设置视频抖动使用的历史帧数。 从电源和性能的角度来看，0从0到延迟，几乎是 "免费"。 对于最高质量，建议使用15个（成本为延迟和内存15帧）。 |
+|  GlobalOpacityCoefficient  |  FLOAT  |  0.9 （HoloLens）1.0 （沉浸式耳机）  |  将范围从0.0 （完全透明）到1.0 的全局不透明度系数设置为 "完全不透明"。 |
+|  BlankOnProtectedContent  |  boolean  |  FALSE  |  用于启用或禁用在有显示受保护内容的 2d UWP 应用时返回空帧的标志。 如果此标志为 false，并且二维 UWP 应用显示受保护的内容，则在耳机和混合现实捕获中，二维 UWP 应用将替换为受保护的内容纹理。 |
+|  ShowHiddenMesh  |  boolean  |  FALSE  |  用于启用或禁用显示全息相机隐藏区域网格和相邻内容的标志。 |
 | OutputSize | 大小 | 0, 0 | 在裁剪视频稳定性后设置所需的输出大小。 如果指定了0或指定了无效的输出大小，则选择默认裁剪大小。 |
-| PreferredHologramPerspective | UINT32 | 1（PhotoVideoCamera） | 枚举，用于指示应捕获的全息相机视图配置。 设置0（显示）表示不要求应用从照片/视频相机进行呈现 |
+| PreferredHologramPerspective | UINT32 | 0（显示） | 用于指示应捕获的全息相机视图配置的枚举：0（显示）表示不要求应用从照片/视频相机进行渲染，1（PhotoVideoCamera）将要求应用从照片/视频摄像机（如果应用支持它）呈现 |
 
 MRC 音频效果（**MixedRealityCapture. MixedRealityCaptureAudioEffect**）
 
-<table>
-<tr>
-<th>属性名称</th>
-<th>类型</th>
-<th>默认值</th>
-<th>说明</th>
-</tr>
-<tr>
-<td>MixerMode</td>
-<td>UINT32</td>
-<td>2</td>
-<td>
-<ul>
-<li>0：仅 Mic 音频</li>
-<li>1：仅系统音频</li>
-<li>2：麦克风和系统音频</li>
-</ul>
-</td>
-</tr>
-</table>
+| 属性名称 | 类型 | 默认值 | 说明 |
+|----------|----------|----------|----------|
+| MixerMode | UINT32 | 2（Mic 和系统音频） | 用于指示应使用的音频源的枚举：0（仅限 Mic 音频）、1（仅限系统音频）、2（麦克风和系统音频） |
+| LoopbackGain | FLOAT | 1.0 | 适用于系统音频音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
+| MicrophoneGain | FLOAT | 1.0 | 适用于麦克风音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
 
 ### <a name="simultaneous-mrc-limitations"></a>同时 MRC 限制
 
@@ -268,5 +277,8 @@ MRC 音频效果（**MixedRealityCapture. MixedRealityCaptureAudioEffect**）
 在 Windows 10 4 2018 月版更新之前，应用的自定义 MRC 记录器与系统 MRC （捕获照片、捕获视频或从 Windows 设备门户进行流式处理）互斥。
 
 ## <a name="see-also"></a>另请参阅
+
 * [混合现实捕获](mixed-reality-capture.md)
 * [旁观视图](spectator-view.md)
+* [Unity 开发概述](unity-development-overview.md)
+* [Unreal 开发概述](unreal-development-overview.md)
