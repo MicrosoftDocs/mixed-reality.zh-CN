@@ -6,31 +6,23 @@ ms.author: v-haferr
 ms.date: 04/08/2020
 ms.topic: article
 keywords: Windows Mixed Reality，Unreal，Unreal 引擎4，UE4，HoloLens 2，语音，语音输入，语音识别，混合现实，开发，功能，文档，指南，全息影像，游戏开发
-ms.openlocfilehash: c5de0cd912674ccd681fd398fb6fe5fd345ab6f2
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 134a8c5bbeb700a973d3732d24fa9078feb568ef
+ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330629"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84551783"
 ---
 # <a name="voice-input-in-unreal"></a>Unreal 中的语音输入
 
 ## <a name="overview"></a>概述
-语音输入使你可以与全息图交互，而无需使用手型，并支持在 HoloLens （第一代）和 HoloLens 2 上。 它通过支持所有其他通用 Windows 应用程序中的语音的同一个引擎提供支持，并可以为在混合现实中交互的方式添加自然感觉。 
-
-支持的语音功能包括：
-- [选择命令](https://docs.microsoft.com/windows/mixed-reality/voice-input#the-select-command)
-- [你好，Cortana](https://docs.microsoft.com/windows/mixed-reality/voice-input#hey-cortana)
-- "查看" 按钮和标签交互
-- 听写
-
-有关详细信息，请参阅主要的[语音输入](voice-input.md)文档。
+使用 Unreal 中的语音输入，无需使用手手势即可与全息图进行交互，并且仅支持 HoloLens 2。 即使 HoloLens 2 上的语音输入由支持其他所有通用 Windows 应用程序中的语音的同一引擎提供支持，Unreal 也使用一个更有限的引擎来处理语音输入。 这会将 Unreal 中的语音输入功能限制为预定义的语音映射，如以下部分所述。 
 
 ## <a name="enabling-speech-recognition"></a>启用语音识别
 
 在 HoloLens 上启用语音识别：
 1. 选择 "**项目设置" > 平台 > HoloLens > 功能**并启用**麦克风**。 
-2. 在设置中启用了语音 recogniztion **> 隐私 > 语音**和选择**英语**。
+2. 已在 "**设置" > 隐私 > 语音**"中启用语音识别，然后选择"**英语**"。
 
 > [!NOTE]
 > 语音识别始终在 "**设置**" 应用程序中配置的 Windows 显示语言中工作。 建议你同时启用**在线语音识别**，以获得最佳的服务质量。
@@ -53,7 +45,7 @@ ms.locfileid: "84330629"
 > [!NOTE]
 > 任何英语单词或短句子都可以用作关键字。 
 
-![UE4 引擎输入的输入](images/unreal/engine-input.png)
+![UE4 引擎输入设置](images/unreal/engine-input.png)
 
 语音映射可用作操作或轴映射等输入组件或事件图中的蓝图节点。 例如，可以链接 "跳转" 命令，根据字词的讲述时间打印出两个不同的日志：
 
@@ -68,6 +60,8 @@ ms.locfileid: "84330629"
 这就是在 Unreal 中开始向 HoloLens 应用添加语音输入所需的全部设置。 可以在下面的链接中找到有关语音和交互性的详细信息，并确保考虑要为用户创建的体验。
 
 ## <a name="see-also"></a>另请参阅
+* [语音输入](voice-input.md)
 * [凝视和提交](gaze-and-commit.md)
 * [本能交互](interaction-fundamentals.md)
 * [MR 输入 212：语音](holograms-212.md)
+
