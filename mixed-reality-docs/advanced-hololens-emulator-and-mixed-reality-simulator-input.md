@@ -3,15 +3,15 @@ title: 高级 HoloLens 仿真器和混合现实模拟器输入
 description: 有关使用键盘、鼠标和 Xbox 控制器模拟 HoloLens 模拟器和 Windows Mixed Reality 模拟器输入的详细说明。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 05/12/2020
+ms.date: 06/8/2020
 ms.topic: article
 keywords: HoloLens，模拟器，模拟，Windows Mixed Reality
-ms.openlocfilehash: e9051ae9e7853924f583b6c38f6177f2f967d9f0
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 0812b1d498ea557e84eecc44142b38d86099f832
+ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227944"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631478"
 ---
 # <a name="advanced-hololens-emulator-and-mixed-reality-simulator-input"></a>高级 HoloLens 仿真器和混合现实模拟器输入
 
@@ -51,17 +51,17 @@ ms.locfileid: "83227944"
 
 下表显示了每种类型的输入如何映射到键盘、鼠标和 Xbox 控制器。 每种类型都有不同的映射，具体取决于输入控件模式;本文档后面提供了有关输入控制模式的详细信息。
 
-|  |  Keyboard |  鼠标 |  Xbox 控制器 | 
+|  |  键盘 |  鼠标 |  Xbox 控制器 | 
 |----------|----------|----------|----------|
 |  Yaw |  左/右箭头 |  向左/向右拖动 |  向右控制杆左/右 | 
 |  音调 |  向上/向下箭头 |  向上/向下拖动 |  右操纵杆向上/向下 | 
 |  Roll |  Q/E |  |  DPad 左/右 | 
 |  X |  A/D |  |  左操纵杆向左/向右 | 
-|  Y |  Page up/page down |  |  DPad | 
+|  是 |  Page up/page down |  |  DPad | 
 |  Z |  W/S |  |  向左/向下移动操纵杆 | 
 |  操作 |  Enter 或 space |  向右按钮 |  按钮或触发器 | 
 |  布隆/系统 |  F2 或 Windows 键 |  |  B 按钮 | 
-|  控制器手柄按钮 |  G  |  |  | 
+|  控制器手柄按钮/手型抓住 |  G  |  |  | 
 |  控制器菜单按钮 |  M  |  |  | 
 |  控制器触摸板触控 |  U  |  |  | 
 |  控制器触摸板按压 |  P  |  |  | 
@@ -100,7 +100,7 @@ ms.locfileid: "83227944"
 |  音调 |  开启/关闭头 |  上移/下移 |  开启/关闭头 | 眼睛查看/关闭 | 
 |  Roll |  向左/右滚动 |  |  向左/右滚动 | （无操作） |
 |  X |  向左/向右滑动 |  向左/向右移动右手/控制器 |  向左/右旋转 | （无操作） |
-|  Y |  上移/下移正文 |  向上/向下移动手动/控制器 |  开启/关闭头 | （无操作） |
+|  是 |  上移/下移正文 |  向上/向下移动手动/控制器 |  开启/关闭头 | （无操作） |
 |  Z |  向后移动正文 |  向前/向后移动手动/控制器 |  开启/关闭头 | （无操作） |
  
  
@@ -108,7 +108,7 @@ ms.locfileid: "83227944"
 
 建议为日常使用以下一组控件：
 
-|  操作 |  键盘和鼠标 |  控制器 | 
+|  Operation |  键盘和鼠标 |  控制器 | 
 |----------|----------|----------|
 |  正文 X |  A/D |  左操纵杆向左/向右 | 
 |  正文 Y |  Page up/page down |  DPad | 
@@ -131,13 +131,13 @@ ms.locfileid: "83227944"
 |  更快移动/旋转 | 向左或向右 Shift 键 | 按住右操纵杆 |
 |  移动/旋转慢 | 左或右 Ctrl 键 | 按住左操纵杆 |
 
-## <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>在 HoloLens 2 模拟器上使用 Windows Mixed Reality 沉浸式耳机和运动控制器
+## <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>将 Windows Mixed Reality 沉浸式头戴显示设备和运动控制器与 HoloLens 2 仿真器配合使用
 
 使用带有 HoloLens 2 模拟器的 Windows Mixed Reality 沉浸式耳机时，移动和旋转会自动映射到耳机移动和旋转。  运动控制器的位置和方向会自动映射到模拟器中的位置和方向。  下表列出了使用运动控制器时可用的其他操作。
 
 请注意，使用耳机时，会自动忽略标准键盘、鼠标和游戏板控件。
 
-|  操作 |  操作 |  注释 | 
+|  Operation |  操作 |  说明 | 
 |----------|----------|----------|
 |  正文 X |  向左/向右操纵杆 |   | 
 |  正文 Z |  操纵杆前进/后退 |   | 
@@ -153,7 +153,7 @@ ms.locfileid: "83227944"
 
 以下键盘快捷方式可用于访问 "感知模拟" 控制面板，并启用或禁用用于模拟的 PC 输入设备。
 
-| 操作 | 快捷方式 | 说明/注释 |
+| Operation | 快捷键 | 说明/注释 |
 |-----------|----------|-------------|
 | 切换 "使用键盘进行模拟" | F4 | 关闭时，键盘输入将进入 HoloLens 或 Windows Mixed Reality 应用程序。 |
 | 切换 "使用鼠标进行模拟" | F5 | 关闭时，鼠标输入会转到混合现实环境（仅限 Windows Mixed Reality） |

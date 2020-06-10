@@ -3,24 +3,26 @@ title: HoloLens 模拟器存档
 description: Microsoft HoloLens 模拟器的已发布版本的列表。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 5/12/2020
+ms.date: 6/8/2020
 ms.topic: article
 keywords: HoloLens、模拟器、版本、版本
-ms.openlocfilehash: e01f58783645bccd473418639d5fa495bbc7817f
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 7fe48203a3670490a2ac78040ea9f0ac8e811bd5
+ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227932"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631485"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模拟器存档
 
 HoloLens 模拟器（第一代）和 HoloLens 2 模拟器会并行安装。 我们通常建议使用最新的可用版本，但在某些情况下，你可能希望或需要针对旧的模拟器来测试应用程序。 此页面包含已发布版本的链接。
 
-|  生成 |  发布日期 |  注释 | 
+|  生成 |  发布日期 |  说明 | 
 |----------|----------|----------|
-|  [HoloLens 2 模拟器生成10.0.19041.1103](https://go.microsoft.com/fwlink/?linkid=2129088) | 5月12日，2020 | Windows 全息，版本2004。  可以使用 Windows Mixed Reality 耳机和运动控制器来控制和查看立体声2模拟器。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
-|  [HoloLens 2 模拟器生成10.0.18362.1061](https://go.microsoft.com/fwlink/?linkid=2129833) | 5月12日，2020 | Windows 全息，版本1903可能会2020更新。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模拟器生成10.0.19041.1106](https://go.microsoft.com/fwlink/?linkid=2132415) | 2020年6月9日 | Windows 全息，版本2004，年 6 2020 月更新。  解决了未呈现的 DirectX 12 应用程序的问题，未显示屏幕键盘，正在使用没有按预期方式工作的对象，并且在基于 AMD 的系统上进行嵌套虚拟化时，模拟器未能开始。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模拟器生成10.0.18362.1064](https://go.microsoft.com/fwlink/?linkid=2132601) | 2020年6月9日 | Windows 全息，版本1903，年 6 2020 月更新。  解决了未呈现 DirectX 12 应用程序的问题，未显示屏幕键盘，并且不按预期方式工作的对象。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模拟器生成10.0.19041.1103](https://go.microsoft.com/fwlink/?linkid=2129088) | 2020 年 5 月 12 日 | Windows 全息，版本2004。  可以使用 Windows Mixed Reality 耳机和运动控制器来控制和查看立体声2模拟器。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模拟器生成10.0.18362.1061](https://go.microsoft.com/fwlink/?linkid=2129833) | 2020 年 5 月 12 日 | Windows 全息，版本1903可能会2020更新。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1059](https://go.microsoft.com/fwlink/?linkid=2126826) | 2020年4月13日 | Windows 全息版，1903年 4 2020 月更新。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1056](https://go.microsoft.com/fwlink/?linkid=2121323) | 2020 年 3 月 10 日 | Windows 全息版1903年 3 2020 月更新。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1053](https://go.microsoft.com/fwlink/?linkid=2118321) | 2020 年 2 月 11 日 | Windows 全息版，1903 2020 年2月更新版。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
@@ -35,7 +37,7 @@ HoloLens 模拟器（第一代）和 HoloLens 2 模拟器会并行安装。 我�
 
 ## <a name="hololens-emulator-1st-gen-archive"></a>HoloLens 模拟器（第一代）存档
 
-|  生成 |  发布日期 |  注释 | 
+|  生成 |  发布日期 |  说明 | 
 |----------|----------|----------|
 |  [HoloLens 模拟器生成10.0.17763.134](https://go.microsoft.com/fwlink/?linkid=2065980) | 2018 年 11 月 19 日 | 最新的 HoloLens （第一代）版本。 Windows 10 10 月2018更新。 |
 |  [HoloLens 模拟器生成10.0.17134.80](https://go.microsoft.com/fwlink/?linkid=874531) | 2018 年 5 月 21 日 | 
