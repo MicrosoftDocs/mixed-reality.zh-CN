@@ -3,15 +3,15 @@ title: HoloLens 研究模式
 description: 使用 HoloLens 上的研究模式，应用程序可以访问关键设备传感器流（深度、环境跟踪和反射率）。
 author: hferrone
 ms.author: v-haferr
-ms.date: 05/03/2018
+ms.date: 06/10/2020
 ms.topic: article
 keywords: 研究模式，cv，rs4，计算机视觉，研究，HoloLens，HoloLens 2
-ms.openlocfilehash: ec6f7b73a1f25932f10c10a7f0daaf78e536c0c4
-ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
+ms.openlocfilehash: 62b82e3a36452d4b104bf04999e556ec19d2a5e3
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84533099"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720393"
 ---
 # <a name="hololens-research-mode"></a>HoloLens 研究模式
 
@@ -129,7 +129,7 @@ ms.locfileid: "84533099"
 
 你可以使用 HoloLensForCV 存储库中的[问题跟踪](https://github.com/Microsoft/HololensForCV/issues)程序来遵循已知问题。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Microsoft 媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 * [HoloLensForCV GitHub 存储库](https://github.com/Microsoft/HoloLensForCV)

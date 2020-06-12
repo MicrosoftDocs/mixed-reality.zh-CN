@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、照片、视频、捕获、照相机
-ms.openlocfilehash: 0d51945444a411563b67af8569fee7ffe3449957
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: 1116e9a0923129aa2b18d838917eebf12adae694
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451342"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720413"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>面向开发人员的混合现实捕获
 
@@ -221,7 +221,7 @@ Unity 应用程序应看到属性[Locatable_camera_in_Unity](locatable-camera-in
 
 MRC 视频效果（**MixedRealityCapture. MixedRealityCaptureVideoEffect**）
 
-|  属性名称  |  类型  |  默认值  |  说明 |
+|  属性名称  |  类型  |  默认值  |  描述 |
 |----------|----------|----------|----------|
 |  StreamType  |  UINT32 （[mediastreamtype.video](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType)）  |  1（VideoRecord）  |  描述此影响所使用的捕获流。 音频不可用。 |
 |  HologramCompositionEnabled  |  boolean  |  TRUE  |  用于在视频捕获中启用或禁用全息影像的标志。 |
@@ -232,15 +232,25 @@ MRC 视频效果（**MixedRealityCapture. MixedRealityCaptureVideoEffect**）
 |  BlankOnProtectedContent  |  boolean  |  FALSE  |  用于启用或禁用在有显示受保护内容的 2d UWP 应用时返回空帧的标志。 如果此标志为 false，并且二维 UWP 应用显示受保护的内容，则在耳机和混合现实捕获中，二维 UWP 应用将替换为受保护的内容纹理。 |
 |  ShowHiddenMesh  |  boolean  |  FALSE  |  用于启用或禁用显示全息相机隐藏区域网格和相邻内容的标志。 |
 | OutputSize | 大小 | 0, 0 | 在裁剪视频稳定性后设置所需的输出大小。 如果指定了0或指定了无效的输出大小，则选择默认裁剪大小。 |
-| PreferredHologramPerspective | UINT32 | 0（显示） | 用于指示应捕获的全息相机视图配置的枚举：0（显示）表示不要求应用从照片/视频相机进行渲染，1（PhotoVideoCamera）将要求应用从照片/视频摄像机（如果应用支持它）呈现 |
+| PreferredHologramPerspective | UINT32 | Windows 设备门户中的 "**从相机呈现**" 设置 | 用于指示应捕获的全息相机视图配置的枚举：0（显示）表示不要求应用从照片/视频相机进行渲染，1（PhotoVideoCamera）将要求应用从 photo/视频摄像机（如果应用支持它）呈现。 仅在 HoloLens 2 上受支持 |
+
+>[!NOTE]
+> 可以通过转到[混合现实捕获页面](using-the-windows-device-portal.md#mixed-reality-capture)并取消选中 "**从相机**中进行渲染"，在 Windows 设备门户中更改**PreferredHologramPerspective**的默认值。 设置默认为**1 （PhotoVideoCamera）**，但可以取消选中以将其设置为**0 （显示）**。
+>
+> 2020年6月更新之前， **PreferredHologramPerspective**的默认值为**0 （显示）** （Windows 全息，版本2004生成19041.1106 和 windows 全息，版本1903生成18362.1064）。
 
 MRC 音频效果（**MixedRealityCapture. MixedRealityCaptureAudioEffect**）
 
-| 属性名称 | 类型 | 默认值 | 说明 |
+| 属性名称 | 类型 | 默认值 | 描述 |
 |----------|----------|----------|----------|
 | MixerMode | UINT32 | 2（Mic 和系统音频） | 用于指示应使用的音频源的枚举：0（仅限 Mic 音频）、1（仅限系统音频）、2（麦克风和系统音频） |
-| LoopbackGain | FLOAT | 1.0 | 适用于系统音频音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
-| MicrophoneGain | FLOAT | 1.0 | 适用于麦克风音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
+| LoopbackGain | FLOAT | Windows 设备门户中的**应用音频增益**设置 | 适用于系统音频音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
+| MicrophoneGain | FLOAT | Windows 设备门户中的**Mic 音频增益**设置 | 适用于麦克风音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
+
+>[!NOTE]
+> 可以通过转到[混合现实捕获页面](using-the-windows-device-portal.md#mixed-reality-capture)并调整其各自设置旁的滑块来更改 Windows 设备门户中**LoopbackGain**或**MicrophoneGain**的默认值。 这两个设置默认为**1.0**，但可以设置为**0.0**和**5.0**之间的任何值。
+>
+> 使用 Windows 设备门户配置默认增益值是使用2020年6月更新（Windows 全息版、版本2004内部版本19041.1106 和 Windows 全息版，版本1903生成18362.1064）添加的。
 
 ### <a name="simultaneous-mrc-limitations"></a>同时 MRC 限制
 
@@ -276,7 +286,7 @@ MRC 音频效果（**MixedRealityCapture. MixedRealityCaptureAudioEffect**）
 
 在 Windows 10 4 2018 月版更新之前，应用的自定义 MRC 记录器与系统 MRC （捕获照片、捕获视频或从 Windows 设备门户进行流式处理）互斥。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [混合现实捕获](mixed-reality-capture.md)
 * [旁观视图](spectator-view.md)
