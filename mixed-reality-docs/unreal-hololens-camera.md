@@ -1,48 +1,67 @@
 ---
-title: Unreal 中的 HoloLens 摄像头
-description: Unreal 中 HoloLens 摄像头使用指南
-author: sw5813
-ms.author: jacksonf
+title: Unreal 中的 HoloLens 照片/视频摄像头
+description: Unreal 中 HoloLens 照片/视频摄像头使用指南
+author: hferrone
+ms.author: v-haferr
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
-keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 开发, 功能, 文档, 指南, 全息影像, 摄像头, 第三人称摄像头, MRC
-ms.openlocfilehash: 9ef9ce27d161130c6b9f3aa6bb1dbc47d7608ad9
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 开发, 功能, 文档, 指南, 全息影像, 摄像头, PV 摄像头, MRC
+ms.openlocfilehash: 06ceb26d58fe60848e5e90360aa2e05984a901c5
+ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82840116"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84451332"
 ---
-# <a name="hololens-camera-in-unreal"></a>Unreal 中的 HoloLens 摄像头
+# <a name="hololens-photovideo-camera-in-unreal"></a>Unreal 中的 HoloLens 照片/视频摄像头
 
-## <a name="third-camera-mixed-reality-capture"></a>第三人称摄像头混合现实捕获
+HoloLens 具有照片/视频 (PV) 摄像头，可用于混合现实捕获 (MRC)，应用还可以使用它来访问真实的视觉对象。
 
-可以使用第三人称摄像头混合现实捕获 (MRC) 在 HoloLens 面板上从摄像头角度渲染混合现实捕获，而不是从目视纹理的角度。  这改进了真实世界与 MRC 视频中全息影像之间的映射。 
+## <a name="render-from-the-pv-camera-for-mrc"></a>从 MRC 的 PV 摄像头渲染
 
-若要选择使用第三人称摄像头 MRC，请使用所需的视频尺寸调用 SetEnabledMixedRealityCamera 和 ResizeMixedRealityCamera。 
+> [!NOTE]
+> 这需要 Unreal Engine 4.25 或更高版本。
+
+系统和自定义 MRC 记录器通过将 PV 摄像头与沉浸式应用渲染的全息影像结合在一起，创建混合现实捕获。
+
+默认情况下，混合现实捕获使用右眼的全息影像输出。 如果沉浸式应用选择[从 PV 摄像头进行渲染](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)，则会改用它。 这改进了真实世界与 MRC 视频中全息影像之间的映射。
+
+若要选择从 PV 摄像机进行渲染：
+
+1. 调用 SetEnabledMixedRealityCamera 和 ResizeMixedRealityCamera 
+    * 使用“尺寸 X”和“尺寸 Y”值设置视频尺寸。 
 
 ![第三人称摄像头](images/unreal-camera-3rd.PNG)
 
-然后，在 HoloLens 设备门户中录制一段 MRC 视频。 
+然后，Unreal 将处理 MRC 要从 PV 摄像头的角度进行渲染的请求。
 
-## <a name="pv-camera"></a>PV 摄像头
+> [!NOTE]
+> 仅当触发[混合现实捕获](mixed-reality-capture.md)时，才会要求应用从照片/视频摄像头的角度进行渲染。
 
-还可以在运行时在游戏中获取网络摄像头纹理。  若要在 HoloLens 上获取网络摄像头纹理，首先确保在 Unreal 编辑器中的“项目设置”>“平台”>“HoloLens”>“功能”下选中“网络摄像头”功能。 
+## <a name="using-the-pv-camera"></a>使用 PV 摄像头
 
-在运行时使用 StartCameraCapture 函数选择使用网络摄像头。  使用 StopCameraCapture 函数停止捕获。 
+在游戏中，可以在运行时检索网络摄像头纹理，但需要在编辑器的“编辑 > 项目设置”中启用它：
+1. 转到“平台 > HoloLens > 功能”，然后选中“网络摄像头”。 
+    * 在运行时通过 StartCameraCapture 函数使用网络摄像头，通过 StopCameraCapture 函数停止录像。 
 
 ![摄像头开始/停止](images/unreal-camera-startstop.PNG)
 
-若要渲染摄像头图像，首先要基于项目中的一个材质创建一个动态材质实例。  在此示例中，基于一种名为“PVCamMat”的材质。  将它设置为类型为“材质实例动态对象引用”的变量。  然后在场景中设置对象的材质，将摄像头素材渲染到这个新的动态材质实例，并启动一个计时器，用于将摄像头图像绑定到材质。 
+## <a name="rendering-an-image"></a>渲染图像
+渲染摄像头图像：
+1. 基于项目中的材料创建动态材料实例，下方的屏幕截图将其命名为“PVCamMat”。  
+2. 将动态材料实例设置为“材料实例动态对象引用”变量。  
+3. 设置场景中的对象的材料，它会将摄像头源渲染到这个新的动态材料实例。
+    * 启动计时器，用于将摄像头图像与材料绑定。 
 
 ![摄像头渲染](images/unreal-camera-render.PNG)
 
-为此计时器创建新函数（在本例中为 MaterialTimer），并调用 GetARCameraImage 从网络摄像头获取纹理。  如果此纹理有效，请将着色器中的纹理参数设置为此图像。  否则，请重新启动材质计时器。 
+4. 为此计时器创建新函数（在本例中为 MaterialTimer），并调用 GetARCameraImage 从网络摄像头获取纹理。   
+5. 如果此纹理有效，则将着色器中的纹理参数设置为此图像。  否则，请重新启动材质计时器。 
 
 ![摄像头纹理](images/unreal-camera-texture.PNG)
 
-材质应具有一个与 SetTextureParameterValue 中的名称相匹配的参数，该参数绑定到颜色项以便正确显示摄像头图像。 
+5. 请确保材料的参数与绑定到颜色条目的 SetTextureParameterValue 中的名称匹配， 否则将无法正确显示摄像头图像。
 
 ![摄像头纹理](images/unreal-camera-material.PNG)
 
