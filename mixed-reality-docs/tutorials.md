@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程
-ms.openlocfilehash: db60ff35156ea20aadd1ba04f9304aa27a2488cb
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+ms.openlocfilehash: e5961a178d571d2f71e98ff4c3c729d6feb0fd40
+ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835646"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327957"
 ---
 # <a name="tutorials-and-sample-apps"></a>教程和示例应用
 
@@ -28,7 +28,7 @@ HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程
 * 入门教程
     * Unity - [概述和目标第 1 部分（共 7 部分）](mrlearning-base.md)
     * Unreal - [入门第 1 部分（共 6 部分）](unreal-uxt-ch1.md)
-* Azure 空间定位点教程 - [Azure 空间定位点入门第 1 部分（共 3 部分）](mrlearning-asa-ch1.md)
+* Azure 空间定位点教程 - [Azure 空间定位点入门第 1 部分（共 4 部分）](mrlearning-asa-ch1.md)
 * Azure 语音服务教程 - [集成和使用语音识别与听录第 1 部分（共 4 部分）](mrlearning-speechSDK-ch1.md)
 * 多用户功能教程 - [设置 Photon Unity Networking 第 1 部分（共 5 部分）](mrlearning-sharing(photon)-ch1.md)
 
@@ -50,7 +50,7 @@ HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程
 * 完成每篇教程往往需要先准备好一台装有适当[工具](install-the-tools.md)的 Windows 10 电脑。
 
 >[!NOTE]
->混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。 因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。 我们**不会**在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。  我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
+>混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。 因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。 我们**不会**在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。 我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">

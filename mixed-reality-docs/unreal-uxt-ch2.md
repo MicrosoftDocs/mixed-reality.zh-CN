@@ -1,138 +1,229 @@
 ---
 title: 2. 初始化你的项目和第一个应用程序
-description: 教程（介绍如何使用 Unreal Engine 4 和混合现实工具包 UX Tools 插件构建一款简单的象棋应用）第 2 部分
-author: sw5813
-ms.author: suwu
+description: 教程系列第 2 部分（共 6 部分）- 使用 Unreal Engine 4 和混合现实工具包 UX Tools 插件构建一款简单的象棋应用
+author: hferrone
+ms.author: v-haferr
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: fc85f011ff3b186f3b4b5449b4f8ec49f0b6418f
-ms.sourcegitcommit: 189a47b8712dd5b620e19815f5cf6d1ac0f29880
+ms.openlocfilehash: e8f03a87ec6b92e4c62cf3f88f519146254e7387
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82851571"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330321"
 ---
-# <a name="2-initializing-your-project-and-first-application"></a><span data-ttu-id="4ddef-104">2.初始化你的项目和第一个应用程序</span><span class="sxs-lookup"><span data-stu-id="4ddef-104">2. Initializing your project and first application</span></span>
+# <a name="2-initializing-your-project-and-first-application"></a><span data-ttu-id="06c8d-104">2.初始化你的项目和第一个应用程序</span><span class="sxs-lookup"><span data-stu-id="06c8d-104">2. Initializing your project and first application</span></span>
 
-<span data-ttu-id="4ddef-105">本部分介绍如何针对 HoloLens 2 创建新的 Unreal 应用程序。</span><span class="sxs-lookup"><span data-stu-id="4ddef-105">This section gets you started with creating a new Unreal application for HoloLens 2.</span></span> 
+## <a name="overview"></a><span data-ttu-id="06c8d-105">概述</span><span class="sxs-lookup"><span data-stu-id="06c8d-105">Overview</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="4ddef-106">目标</span><span class="sxs-lookup"><span data-stu-id="4ddef-106">Objectives</span></span>
+<span data-ttu-id="06c8d-106">在第一个教程中，你将开始使用适用于 HoloLens 2 的新 Unreal 应用程序。</span><span class="sxs-lookup"><span data-stu-id="06c8d-106">In this first tutorial, you'll get started with a new Unreal application for HoloLens 2.</span></span> <span data-ttu-id="06c8d-107">这包括添加 HoloLens 插件、创建和点亮关卡，并使用游戏板和棋子来填充它。</span><span class="sxs-lookup"><span data-stu-id="06c8d-107">This is going to include adding the HoloLens plugin, creating and lighting a level, and populating it with a game board and chess piece.</span></span> <span data-ttu-id="06c8d-108">你会将预制的资产用于 3D 棋子和对象材质，因此不必担心要从头开始建模。</span><span class="sxs-lookup"><span data-stu-id="06c8d-108">You'll be using pre-made assets for the 3D chess piece and object materials, so don't worry about modeling anything from scratch.</span></span> <span data-ttu-id="06c8d-109">本教程结束时，有一个可用于混合现实的空白画布。</span><span class="sxs-lookup"><span data-stu-id="06c8d-109">By the end of this tutorial you'll have a blank canvas that's ready for mixed reality.</span></span>
 
-* <span data-ttu-id="4ddef-107">为 Hololens 开发配置 Unreal</span><span class="sxs-lookup"><span data-stu-id="4ddef-107">Configure Unreal for HoloLens development</span></span>
-* <span data-ttu-id="4ddef-108">导入资产并设置场景</span><span class="sxs-lookup"><span data-stu-id="4ddef-108">Import assets and set up the scene</span></span>
+<span data-ttu-id="06c8d-110">在继续之前，请确保满足[入门](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1)页中的所有先决条件。</span><span class="sxs-lookup"><span data-stu-id="06c8d-110">Before continuing, make sure you have all the prerequisite from the [Getting Started](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1) page.</span></span>
 
-## <a name="create-a-new-unreal-project"></a><span data-ttu-id="4ddef-109">创建新的 Unreal 项目</span><span class="sxs-lookup"><span data-stu-id="4ddef-109">Create a new Unreal project</span></span>
+## <a name="objectives"></a><span data-ttu-id="06c8d-111">目标</span><span class="sxs-lookup"><span data-stu-id="06c8d-111">Objectives</span></span>
+* <span data-ttu-id="06c8d-112">为 HoloLens 开发配置 Unreal 项目</span><span class="sxs-lookup"><span data-stu-id="06c8d-112">Configuring an Unreal projet for HoloLens development</span></span>
+* <span data-ttu-id="06c8d-113">导入资产和设置场景</span><span class="sxs-lookup"><span data-stu-id="06c8d-113">Importing assets and setting up a scene</span></span>
+* <span data-ttu-id="06c8d-114">使用蓝图创建 Actor 和脚本级别事件</span><span class="sxs-lookup"><span data-stu-id="06c8d-114">Creating Actors and script-level events with blueprints</span></span>
 
-1. <span data-ttu-id="4ddef-110">启动 Unreal Engine</span><span class="sxs-lookup"><span data-stu-id="4ddef-110">Launch Unreal Engine</span></span>
+## <a name="creating-a-new-unreal-project"></a><span data-ttu-id="06c8d-115">创建新的 Unreal 项目</span><span class="sxs-lookup"><span data-stu-id="06c8d-115">Creating a new Unreal project</span></span>
+<span data-ttu-id="06c8d-116">首先需要一个待处理的项目。</span><span class="sxs-lookup"><span data-stu-id="06c8d-116">The first thing you need is a project to work with.</span></span>
 
-2. <span data-ttu-id="4ddef-111">在“新项目类别”  下，选择“游戏”  ，然后单击“下一步”。</span><span class="sxs-lookup"><span data-stu-id="4ddef-111">Under **New Project Categories**, select **Games** and click Next.</span></span> <span data-ttu-id="4ddef-112">选择“空白”  模板，然后单击“下一步”。</span><span class="sxs-lookup"><span data-stu-id="4ddef-112">Select a **Blank** Template and click Next.</span></span> 
+1. <span data-ttu-id="06c8d-117">启动 Unreal Engine</span><span class="sxs-lookup"><span data-stu-id="06c8d-117">Launch Unreal Engine</span></span>
+
+2. <span data-ttu-id="06c8d-118">在“新项目类别”中选择“游戏”，然后单击“下一步”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-118">Select **Games** in **New Project Categories** and click **Next**.</span></span> 
+
+![选择游戏项目模板](images/unreal-uxt/2-gamestemplate.png)
+
+3. <span data-ttu-id="06c8d-120">选择“空白”模板，然后单击“下一步” 。</span><span class="sxs-lookup"><span data-stu-id="06c8d-120">Select the **Blank** Template and click **Next**.</span></span> 
 
 ![选择“空白”模板](images/unreal-uxt/2-template.PNG)
 
-3. <span data-ttu-id="4ddef-114">在“项目设置”中，选择“C++、可缩放的 3D 或 2D、移动/平板电脑”  ，并选择“非初学者内容”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-114">In Project Settings, choose **C++, Scalable 3D or 2D, Mobile / Tablet**, and **No Starter Content**.</span></span> <span data-ttu-id="4ddef-115">选择项目的保存位置，然后单击“创建项目”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-115">Select a location for your project to be saved and click **Create Project**.</span></span> <span data-ttu-id="4ddef-116">这会在 Visual Studio 项目和 Unreal 编辑器中打开 C++ 文件。</span><span class="sxs-lookup"><span data-stu-id="4ddef-116">This will open up your C++ files in a Visual Studio project and the Unreal editor.</span></span> 
+4. <span data-ttu-id="06c8d-122">选择“C++”、“可缩放的 3D 或 2D”、“移动/平板电脑”和“非初学者内容”作为“项目设置”   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-122">Set **C++**, **Scalable 3D or 2D, Mobile/Tablet**, and **No Starter Content** as your **Project Settings**.</span></span> 
+    * <span data-ttu-id="06c8d-123">选择一个保存位置，然后单击“创建项目”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-123">Choose a save location and click **Create Project**.</span></span> 
 
 ![初始项目设置](images/unreal-uxt/2-project-settings.PNG)
 
-4. <span data-ttu-id="4ddef-118">在左上角，转到“编辑”>“插件”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-118">In the top left-hand corner, go to **Edit > Plugins**.</span></span> <span data-ttu-id="4ddef-119">在“增强现实”下，选中相应的复选框以启用“HoloLens”  插件。</span><span class="sxs-lookup"><span data-stu-id="4ddef-119">Under Augmented Reality, check the box to enable the **HoloLens** plugin.</span></span> <span data-ttu-id="4ddef-120">向下滚动到“虚拟现实”部分，并选中复选框以启用“Microsoft Windows 混合现实”  插件。</span><span class="sxs-lookup"><span data-stu-id="4ddef-120">Scroll down to the Virtual Reality section and check the box to enable the **Microsoft Windows Mixed Reality** plugin.</span></span> <span data-ttu-id="4ddef-121">这两个插件都是 HoloLens 2 开发所必需的。</span><span class="sxs-lookup"><span data-stu-id="4ddef-121">Both plugins are required for HoloLens 2 development.</span></span> <span data-ttu-id="4ddef-122">重新启动编辑器。</span><span class="sxs-lookup"><span data-stu-id="4ddef-122">Restart your editor.</span></span> 
+<span data-ttu-id="06c8d-125">项目应在 Unreal 编辑器中自动打开，这意味着你已准备好进入下一部分。</span><span class="sxs-lookup"><span data-stu-id="06c8d-125">The project should open up automatically in the Unreal editor, which means you're ready for the next section.</span></span>
 
-![插件](images/unreal-uxt/2-plugins.PNG)
+## <a name="enabling-required-plugins"></a><span data-ttu-id="06c8d-126">启用所需插件</span><span class="sxs-lookup"><span data-stu-id="06c8d-126">Enabling required plugins</span></span>
+<span data-ttu-id="06c8d-127">在开始向场景添加对象之前，你需要启用两个插件。</span><span class="sxs-lookup"><span data-stu-id="06c8d-127">Before you start adding objects to the scene you'll need to enable two plugins.</span></span>
 
-5. <span data-ttu-id="4ddef-124">在左上角，转到“文件”>“新关卡”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-124">In the top left-hand corner, go to **File > New Level**.</span></span> <span data-ttu-id="4ddef-125">选择“空关卡”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-125">Select **Empty Level**.</span></span> <span data-ttu-id="4ddef-126">视口中的默认场景现在应为空。</span><span class="sxs-lookup"><span data-stu-id="4ddef-126">The default scene in the viewport should now be empty.</span></span>
+1. <span data-ttu-id="06c8d-128">打开“编辑”>“插件”，并从内置选项列表中选择“增强现实”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-128">Open **Edit > Plugins** and select **Augmented Reality** from the built-in options list.</span></span> 
+    * <span data-ttu-id="06c8d-129">向下滚动到“HoloLens”并选中“已启用”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-129">Scroll down to **HoloLens** and check **Enabled**.</span></span> 
 
-6. <span data-ttu-id="4ddef-127">从左侧的“模式”面板（位于“基本”选项卡中）拖放 PlayerStart。在右侧的“详细信息”面板中，将位置设置为 X = 0、Y = 0、Z = 0，以使用户在应用启动时从原点开始。</span><span class="sxs-lookup"><span data-stu-id="4ddef-127">Drag PlayerStart and drop PlayerStart from the Modes panel on the left, located in the Basic tab. In the Details panel on the right, set the location to X = 0, Y = 0, Z = 0 in order to have the user start at the origin when the app stars.</span></span>
+![启用 HoloLens 插件](images/unreal-uxt/2-plugins.PNG)
+
+2. <span data-ttu-id="06c8d-131">从内置选项列表中选择“虚拟现实”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-131">Select **Virtual Reality** from the built-in options list.</span></span> 
+    * <span data-ttu-id="06c8d-132">向下滚动到“Microsoft Windows Mixed Reality”，选中“已启用”，然后重新启动编辑器。</span><span class="sxs-lookup"><span data-stu-id="06c8d-132">Scroll down to **Microsoft Windows Mixed Reality**., check **Enabled**, and restart your editor.</span></span> 
+
+![启用 Windows Mixed Reality 插件](images/unreal-uxt/2-virtual-reality-plugin.PNG)
+
+> [!NOTE]
+> <span data-ttu-id="06c8d-134">这两个插件都是 HoloLens 2 开发所必需的。</span><span class="sxs-lookup"><span data-stu-id="06c8d-134">Both plugins are required for HoloLens 2 development.</span></span>
+
+<span data-ttu-id="06c8d-135">完成此操作后，公司即可使用空关卡。</span><span class="sxs-lookup"><span data-stu-id="06c8d-135">With that done you're empty level is ready for company.</span></span>
+
+## <a name="creating-a-level"></a><span data-ttu-id="06c8d-136">创建关卡</span><span class="sxs-lookup"><span data-stu-id="06c8d-136">Creating a level</span></span>
+<span data-ttu-id="06c8d-137">下一个任务是创建具有可供参考和缩放的起点和立方体的简单玩家设置。</span><span class="sxs-lookup"><span data-stu-id="06c8d-137">Your next task is to create a simple player setup with a starting point and a cube for reference and scale.</span></span>
+
+1. <span data-ttu-id="06c8d-138">选择“文件”>“新关卡”>“空关卡”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-138">Select **File > New Level** and choose **Empty Level**.</span></span> <span data-ttu-id="06c8d-139">视口中的默认场景现在应为空。</span><span class="sxs-lookup"><span data-stu-id="06c8d-139">The default scene in the viewport should now be empty.</span></span>
+
+2. <span data-ttu-id="06c8d-140">从“模式”选项卡中选择“基本”，并将“PlayerStart”拖到场景中  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-140">Select **Basic** from the **Modes** tab and drag **PlayerStart** into the scene.</span></span> 
+    * <span data-ttu-id="06c8d-141">在“详细信息”选项卡中，将“位置”设置为“X = 0”、“Y = 0”和“Z = 0”    。这会在应用启动时将用户设置到场景的中心。</span><span class="sxs-lookup"><span data-stu-id="06c8d-141">Set **Location** to **X = 0**, **Y = 0**, and **Z = 0** in the **Details** tab. This sets the user at the center of the scene when the app starts up.</span></span>
 
 ![具有 PlayerStart 的视口](images/unreal-uxt/2-playerstart.PNG)
 
-7. <span data-ttu-id="4ddef-129">将一个“立方体”  从“模式”面板的“基本”选项卡拖到视口中。</span><span class="sxs-lookup"><span data-stu-id="4ddef-129">Drag a **Cube** from the Basic tab of the Modes panel into the viewport.</span></span> <span data-ttu-id="4ddef-130">在“详细信息”面板中，将位置设置为 X = 50，Y = 0，Z = 0，以在开始时将立方体设置为距离玩家 50 cm。</span><span class="sxs-lookup"><span data-stu-id="4ddef-130">In the Details panel, set the location to X = 50, Y = 0, Z = 0 to set the cube to 50 cm away from the player at start time.</span></span> <span data-ttu-id="4ddef-131">由于默认立方体相当大，因此请将立方体的“比例”更改为 (0.2, 0.2, 0.2)。</span><span class="sxs-lookup"><span data-stu-id="4ddef-131">Since the default cube is quite large, change the Scale of the cube to (0.2, 0.2, 0.2).</span></span> 
+3. <span data-ttu-id="06c8d-143">将“立方体”从“基本”选项卡拖到场景中 。</span><span class="sxs-lookup"><span data-stu-id="06c8d-143">Drag a **Cube** from the **Basic** tab into the scene.</span></span> 
+    * <span data-ttu-id="06c8d-144">将“位置”设置为“X = 50”、“Y = 0”和“Z = 0”   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-144">Set **Location** to **X = 50**, **Y = 0**, and **Z = 0**.</span></span> <span data-ttu-id="06c8d-145">这会在启动时将立方体放在距离玩家 50 厘米的位置。</span><span class="sxs-lookup"><span data-stu-id="06c8d-145">This positions the cube 50 cm away from the player at start time.</span></span> 
+    * <span data-ttu-id="06c8d-146">将“比例”更改为“X = 0.2”、“Y = 0.2”和“Z = 0.2”以缩小立方体   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-146">Change **Scale** to **X = 0.2**, **Y = 0.2**, and **Z = 0.2** to shrink the cube down.</span></span> 
 
-8. <span data-ttu-id="4ddef-132">除非向场景添加光源，否则看不到立方体。</span><span class="sxs-lookup"><span data-stu-id="4ddef-132">You won’t be able to see the cube unless you add a light to your scene.</span></span> <span data-ttu-id="4ddef-133">切换到“模式”面板上的“光源”  选项卡，然后将“定向光源”  拖到场景的 PlayerStart 上方。</span><span class="sxs-lookup"><span data-stu-id="4ddef-133">Switch to the **Lights** tab on the Modes panel and drag a **Directional Light** into the scene, above the PlayerStart.</span></span>
+<span data-ttu-id="06c8d-147">除非向场景添加光源（这是测试场景前的最后一个任务），否则看不到立方体。</span><span class="sxs-lookup"><span data-stu-id="06c8d-147">You won’t be able to see the cube unless you add a light to your scene, which is your last task before testing the scene.</span></span>
+
+4. <span data-ttu-id="06c8d-148">切换到“模式”面板上的“光源”选项卡，然后将“定向光源”拖到场景中  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-148">Switch to the **Lights** tab in the **Modes** panel and drag a **Directional Light** into the scene.</span></span> <span data-ttu-id="06c8d-149">将光源置于“PlayerStart”上方，以便可以看到该光源。</span><span class="sxs-lookup"><span data-stu-id="06c8d-149">Position the light above **PlayerStart** so you can see it.</span></span>
 
 ![添加了光源的视口](images/unreal-uxt/2-light.PNG)
 
-9.  <span data-ttu-id="4ddef-135">按工具栏上的“开始”  按钮，在视口中查看立方体！</span><span class="sxs-lookup"><span data-stu-id="4ddef-135">Press the **Play** button on the toolbar to see your cube in the viewport!</span></span> <span data-ttu-id="4ddef-136">按 Esc  停止关卡。</span><span class="sxs-lookup"><span data-stu-id="4ddef-136">Press **Esc** to stop the level.</span></span> 
+5. <span data-ttu-id="06c8d-151">转到“文件”>“保存当前”，将关卡命名为“主”，然后单击“保存”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-151">Go to **File > Save Current**, name your level **Main**, and click **Save**.</span></span> 
+
+<span data-ttu-id="06c8d-152">设置场景后，按工具栏中的“开始”，以查看正在运行的立方体！</span><span class="sxs-lookup"><span data-stu-id="06c8d-152">With the scene set, press **Play** in the toolbar to see your cube in action!</span></span> <span data-ttu-id="06c8d-153">完成工作后，按 Esc 停止应用程序。</span><span class="sxs-lookup"><span data-stu-id="06c8d-153">When you're finished admiring your work, press **Esc** to stop the application.</span></span>
 
 ![视口中的立方体](images/unreal-uxt/2-cube.PNG)
 
-10. <span data-ttu-id="4ddef-138">保存关卡。</span><span class="sxs-lookup"><span data-stu-id="4ddef-138">Let’s save your level.</span></span> <span data-ttu-id="4ddef-139">在左上角，单击“文件”>“保存当前关卡”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-139">In the top left corner, click on **File > Save Current**.</span></span> <span data-ttu-id="4ddef-140">将关卡命名为“主关卡”，然后单击“保存”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-140">Name your level "Main" and click **Save**.</span></span> 
+<span data-ttu-id="06c8d-155">设置场景后，便可以开始在棋盘和棋子中进行添加以构成应用程序环境。</span><span class="sxs-lookup"><span data-stu-id="06c8d-155">Now that the scene is setup, you can start adding in the chess board and piece to round out the application environment.</span></span>
 
-## <a name="set-up-a-chess-scene"></a><span data-ttu-id="4ddef-141">设置象棋场景</span><span class="sxs-lookup"><span data-stu-id="4ddef-141">Set up a chess scene</span></span>
+## <a name="importing-assets"></a><span data-ttu-id="06c8d-156">导入资产</span><span class="sxs-lookup"><span data-stu-id="06c8d-156">Importing assets</span></span>
+<span data-ttu-id="06c8d-157">场景目前看起来非常空，但通过将现成的资产导入到项目中，将解决此问题。</span><span class="sxs-lookup"><span data-stu-id="06c8d-157">The scene is looking a bit empty at the moment, but you'll fix that by importing the ready-made assets into the project.</span></span>
 
-1. <span data-ttu-id="4ddef-142">在“内容浏览器”中，单击“新增”下的图标以显示源面板。</span><span class="sxs-lookup"><span data-stu-id="4ddef-142">In your Content Browser, click icon under Add New to show the sources panel.</span></span> <span data-ttu-id="4ddef-143">然后单击“新增”>“新文件夹”  并将文件夹命名为“ChessAssets”。</span><span class="sxs-lookup"><span data-stu-id="4ddef-143">Then click on **Add New > New Folder** and name the folder “ChessAssets”.</span></span> <span data-ttu-id="4ddef-144">双击此文件夹以在其中导航。</span><span class="sxs-lookup"><span data-stu-id="4ddef-144">Double-click this folder to navigate in.</span></span> <span data-ttu-id="4ddef-145">我们将在此处导入棋具的 3D 资产。</span><span class="sxs-lookup"><span data-stu-id="4ddef-145">This is where we’ll import the 3D assets for our chess set.</span></span>
+1. <span data-ttu-id="06c8d-158">下载并解压缩 [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/blob/master/ChessApp/ChessAssets.7z) 资产文件夹。</span><span class="sxs-lookup"><span data-stu-id="06c8d-158">Download and unzip the [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/blob/master/ChessApp/ChessAssets.7z) assets folder.</span></span>
+
+2. <span data-ttu-id="06c8d-159">从“内容浏览器”中单击“新增”>“新建文件夹”，然后将其命名为“ChessAssets”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-159">Click **Add New > New Folder** from the **Content Browser** and name it **ChessAssets**.</span></span> 
+    * <span data-ttu-id="06c8d-160">双击新文件夹 - 这是导入 3D 资产的位置。</span><span class="sxs-lookup"><span data-stu-id="06c8d-160">Double-click the new folder - this is where you'll import the 3D assets.</span></span>
 
 ![显示或隐藏源面板](images/unreal-uxt/2-showhidesources.PNG)
 
-2. <span data-ttu-id="4ddef-147">从 [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/blob/master/ChessApp/ChessAssets.7z) 下载资产的 zip 文件。</span><span class="sxs-lookup"><span data-stu-id="4ddef-147">Download the zip file of assets from [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/blob/master/ChessApp/ChessAssets.7z).</span></span> <span data-ttu-id="4ddef-148">此文件包含棋盘和棋具的 3D 模型。</span><span class="sxs-lookup"><span data-stu-id="4ddef-148">This file contains the 3D models for a chess board and chess set.</span></span> <span data-ttu-id="4ddef-149">解压缩此文件。</span><span class="sxs-lookup"><span data-stu-id="4ddef-149">Unzip this file.</span></span>
+3. <span data-ttu-id="06c8d-162">从“内容浏览器”中单击“导入”，选择解压缩的资产文件夹中的所有项目，然后单击“打开”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-162">Click **Import** from the **Content Browser**, select all the items in the unzipped assets folder and click **Open**.</span></span> 
+    * <span data-ttu-id="06c8d-163">此文件夹包含棋盘和棋子的 3D 对象网格（采用 FBX 格式）和用于材质的纹理映射（采用 TGA 格式）。</span><span class="sxs-lookup"><span data-stu-id="06c8d-163">This folder contains the 3D object meshes for the chess board and pieces in FBX format and texture maps in TGA format that you'll use to for materials.</span></span>  
 
-3. <span data-ttu-id="4ddef-150">在“内容浏览器”的顶部，单击“导入”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-150">At the top of the Content Browser, click on **Import**.</span></span> <span data-ttu-id="4ddef-151">导航到刚解压缩的文件夹，并选择其中的所有项。</span><span class="sxs-lookup"><span data-stu-id="4ddef-151">Navigate to the folder that you just unzipped and select all the items within.</span></span> <span data-ttu-id="4ddef-152">此文件夹包含 FBX 文件，这些文件是棋盘和棋子的 3D 对象网格，还包含 TGA 文件，我们将使用这些纹理映射来创建棋盘和棋子的材质。</span><span class="sxs-lookup"><span data-stu-id="4ddef-152">This folder contains FBX files which are the 3D object meshes for our chess board and pieces, as well as TGA files which are the texture maps we’ll use to create materials for our board and pieces.</span></span> <span data-ttu-id="4ddef-153">单击“打开”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-153">Click **Open**.</span></span> 
-
-4. <span data-ttu-id="4ddef-154">将弹出一个“FBX 导入选项”窗口。</span><span class="sxs-lookup"><span data-stu-id="4ddef-154">An FBX Import Options window will pop up.</span></span> <span data-ttu-id="4ddef-155">在“材质”  部分，将“材质导入方法”  更改为“不创建材质”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-155">In the **Material** section, change the **Material Import Method** to **Do Not Create Material**.</span></span> <span data-ttu-id="4ddef-156">然后，单击“全部导入”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-156">Then, click **Import All**.</span></span>
+4. <span data-ttu-id="06c8d-164">弹出“FBX 导入选项”窗口后，展开“材质”部分，并将“材质导入方法”更改为“不创建材质”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-164">When the FBX Import Options window pops up, expand the **Material** section and change **Material Import Method** to **Do Not Create Material**.</span></span>
+    * <span data-ttu-id="06c8d-165">单击“全部导入”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-165">Click **Import All**.</span></span>
 
 ![导入 FBX 选项](images/unreal-uxt/2-nocreatemat.PNG)
 
-5. <span data-ttu-id="4ddef-158">返回“内容”文件夹，创建名为“蓝图”  的新文件夹。</span><span class="sxs-lookup"><span data-stu-id="4ddef-158">Back in your Content folder, create a new folder called **Blueprints**.</span></span> <span data-ttu-id="4ddef-159">我们将在这里存储所有蓝图，这些蓝图为特殊资产，它们提供基于节点的接口来创建新类型的 Actor 和脚本级别事件。</span><span class="sxs-lookup"><span data-stu-id="4ddef-159">This is where we will store all our blueprints, which are special assets that provide a node-based interface to create new types of Actors and script level events.</span></span> 
+<span data-ttu-id="06c8d-167">资产只需执行这些操作。</span><span class="sxs-lookup"><span data-stu-id="06c8d-167">That's all you need to do for the assets.</span></span> <span data-ttu-id="06c8d-168">接下来的一组任务是使用蓝图创建应用程序的构建基块。</span><span class="sxs-lookup"><span data-stu-id="06c8d-168">Your next set of tasks is to create the building blocks of the application with blueprints.</span></span>
 
-6. <span data-ttu-id="4ddef-160">双击“蓝图”  文件夹以导航到内部，然后右键单击“内容浏览器”，并选择“蓝图类”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-160">Double click the **Blueprints** folder to navigate inside, then right click in your Content Browser and select **Blueprint Class**.</span></span> <span data-ttu-id="4ddef-161">单击“Actor”  并将新蓝图命名为“棋盘”。</span><span class="sxs-lookup"><span data-stu-id="4ddef-161">Click on **Actor** and name the new blueprint “Board”.</span></span> <span data-ttu-id="4ddef-162">双击“棋盘”将其打开。</span><span class="sxs-lookup"><span data-stu-id="4ddef-162">Double click Board to open it.</span></span> 
+## <a name="adding-blueprints"></a><span data-ttu-id="06c8d-169">添加蓝图</span><span class="sxs-lookup"><span data-stu-id="06c8d-169">Adding blueprints</span></span>
+
+1. <span data-ttu-id="06c8d-170">在“内容浏览器”中单击“新增”>“新建文件夹”，然后将其命名为“内容浏览器”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-170">Click **Add New > New Folder** in the **Content Browser** and name it **Content Browser**.</span></span> 
+
+> [!NOTE]
+> <span data-ttu-id="06c8d-171">如果你不熟悉[蓝图](https://docs.unrealengine.com/en-US/Engine/Blueprints/index.html)，这些蓝图为特殊资产，它们提供基于节点的接口来创建新类型的 Actor 和脚本级别事件。</span><span class="sxs-lookup"><span data-stu-id="06c8d-171">If you're new to [blueprints](https://docs.unrealengine.com/en-US/Engine/Blueprints/index.html), they're special assets that provide a node-based interface for creating new types of Actors and script level events.</span></span> 
+
+2. <span data-ttu-id="06c8d-172">双击“蓝图”文件夹，然后右键单击并选择“蓝图类”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-172">Double-click into the **Blueprints** folder, then right-click and select **Blueprint Class**.</span></span>         
+    * <span data-ttu-id="06c8d-173">选择“Actor”并将蓝图命名为“棋盘”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-173">Select **Actor** and name the blueprint **Board**.</span></span> 
 
 ![选择蓝图的父类](images/unreal-uxt/2-bpparent.PNG)
 
+<span data-ttu-id="06c8d-175">新的棋盘蓝图现在显示在“蓝图”文件夹中，如以下屏幕截图中所示 。</span><span class="sxs-lookup"><span data-stu-id="06c8d-175">The new **Board** blueprint now shows up in the **Blueprints** folder as seen in the following screenshot.</span></span> 
+
 ![新棋盘蓝图](images/unreal-uxt/2-bpboard.PNG)
 
-7. <span data-ttu-id="4ddef-165">在蓝图编辑器中，导航到“组件”面板，然后单击“添加组件”>“场景”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-165">In the Blueprint editor, navigate to the Components panel and click **Add Component > Scene**.</span></span> <span data-ttu-id="4ddef-166">将新创建的场景命名为“Root”，然后在 DefaultSceneRoot 上单击并拖动 Root。</span><span class="sxs-lookup"><span data-stu-id="4ddef-166">Name the newly created scene “Root”, and then click and drag Root over the DefaultSceneRoot.</span></span> <span data-ttu-id="4ddef-167">这将替换默认的场景 Root，并在视口中消除球面。</span><span class="sxs-lookup"><span data-stu-id="4ddef-167">This will replace the default scene root and get rid of the sphere in the viewport.</span></span> 
+<span data-ttu-id="06c8d-177">你已经准备好开始向创建的对象添加材质。</span><span class="sxs-lookup"><span data-stu-id="06c8d-177">You're all set to start adding materials to the created objects.</span></span>
+
+## <a name="working-with-materials"></a><span data-ttu-id="06c8d-178">使用材质</span><span class="sxs-lookup"><span data-stu-id="06c8d-178">Working with materials</span></span>
+<span data-ttu-id="06c8d-179">你创建的对象默认为灰色，这看上去太过普通。</span><span class="sxs-lookup"><span data-stu-id="06c8d-179">The objects you've created are default grey, which isn't much fun to look at.</span></span> <span data-ttu-id="06c8d-180">向对象添加材质和网格是本教程中的最后一组任务。</span><span class="sxs-lookup"><span data-stu-id="06c8d-180">Adding materials and meshes to your objects is the last set of tasks in this tutorial.</span></span>
+
+1. <span data-ttu-id="06c8d-181">双击“棋盘”以打开蓝图编辑器。</span><span class="sxs-lookup"><span data-stu-id="06c8d-181">Double-click **Board** to open the blueprint editor.</span></span> 
+
+2. <span data-ttu-id="06c8d-182">从“组件”面板中单击“添加组件”>“场景”，并将其命名为“Root”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-182">Click **Add Component > Scene** from the **Components** panel and name it **Root**.</span></span> <span data-ttu-id="06c8d-183">请注意，“Root”在下面的屏幕截图中显示为 DefaultSceneRoot 的子项 ：</span><span class="sxs-lookup"><span data-stu-id="06c8d-183">Notice that **Root** shows up as a child of **DefaultSceneRoot** in the screenshot below:</span></span>
+
+![替换 Root](images/unreal-uxt/2-root-blueprint.PNG)
+
+
+3. <span data-ttu-id="06c8d-185">单击“Root”并将其拖到 DefaultSceneRoot 中，以替换它并在视口中消除球面 。</span><span class="sxs-lookup"><span data-stu-id="06c8d-185">Click-and-drag **Root** onto **DefaultSceneRoot** to replace it and get rid of the sphere in the viewport.</span></span> 
 
 ![替换 Root](images/unreal-uxt/2-root.PNG)
 
-8. <span data-ttu-id="4ddef-169">再次单击“添加组件”  ，这一次请选择“静态网格”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-169">Click **Add Component** again, and this time choose **Static Mesh**.</span></span> <span data-ttu-id="4ddef-170">将新的静态网格命名为“SM_Board”。</span><span class="sxs-lookup"><span data-stu-id="4ddef-170">Name the new static mesh “SM_Board”.</span></span> 
+
+4. <span data-ttu-id="06c8d-187">从“组件”面板中单击“添加组件”>“静态网格”，并将其命名为“SM_Board”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-187">Click **Add Component > Static Mesh** from the **Components** panel and name it **SM_Board**.</span></span> <span data-ttu-id="06c8d-188">它将在“Root”下显示为子对象。</span><span class="sxs-lookup"><span data-stu-id="06c8d-188">It will appear as a child object under **Root**.</span></span>
 
 ![添加静态网格](images/unreal-uxt/2-sm-board.PNG)
 
-9. <span data-ttu-id="4ddef-172">在“详细信息”  面板中，找到“静态网格”  部分，然后单击下拉列表。</span><span class="sxs-lookup"><span data-stu-id="4ddef-172">In the **Details** panel, locate the **Static Mesh** section and click the dropdown.</span></span> <span data-ttu-id="4ddef-173">选择“棋盘”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-173">Select **ChessBoard**.</span></span> 
+4. <span data-ttu-id="06c8d-190">单击“SM_Board”，向下滚动到“详细信息”面板的“静态网格”部分，并从下拉列表中选择“棋盘”   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-190">Click **SM_Board**, scroll down to the **Static Mesh** section of the **Details** panel, and select **ChessBoard** from the dropdown.</span></span> 
 
 ![视口中的棋盘网格](images/unreal-uxt/2-sm-board-view.PNG)
 
-10. <span data-ttu-id="4ddef-175">同样在“详细信息”  面板中，找到“材质”  部分，然后单击下拉列表。</span><span class="sxs-lookup"><span data-stu-id="4ddef-175">Still in the **Details** panel, locate the **Materials** section and click the dropdown.</span></span> <span data-ttu-id="4ddef-176">在“创建新资产”  下，选择“材质”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-176">Under **Create New Asset**, select **Material**.</span></span> <span data-ttu-id="4ddef-177">将此资产命名“M_ChessBoard”  ，并将其保存在“ChessAssets”  文件夹中。</span><span class="sxs-lookup"><span data-stu-id="4ddef-177">Name this asset **M_ChessBoard** and save it in the **ChessAssets** folder.</span></span> 
+5.  <span data-ttu-id="06c8d-192">继续在“详细信息”面板中，展开“材质”部分，然后从下拉列表中单击“新建资产”>“材质”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-192">Still in the **Details** panel, expand the **Materials** section and click **Create New Asset > Material** from the dropdown.</span></span> 
+    * <span data-ttu-id="06c8d-193">将材质命名为“M_ChessBoard”，并将其保存到“ChessAssets”文件夹中。</span><span class="sxs-lookup"><span data-stu-id="06c8d-193">Name the material **M_ChessBoard** and save it to the **ChessAssets** folder.</span></span> 
 
 ![创建新材质](images/unreal-uxt/2-newmat.PNG)
 
-11. <span data-ttu-id="4ddef-179">双击“M_ChessBoard”下拉列表旁的方块，打开新创建的 M_ChessBoard 材质。</span><span class="sxs-lookup"><span data-stu-id="4ddef-179">Double click the square next to M_ChessBoard dropdown to open your newly created M_ChessBoard material.</span></span> <span data-ttu-id="4ddef-180">在“材质编辑器”中，单击右键并搜索“纹理示例”  节点。</span><span class="sxs-lookup"><span data-stu-id="4ddef-180">In the Material Editor, right click and search for the **Texture Sample** node.</span></span> <span data-ttu-id="4ddef-181">在“详细信息”  面板中的“材质表现纹理库”  部分下，单击下拉列表并选择“ChessBoard_Albedo”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-181">In the **Details** panel under the **Material Expression Texture Base** section, click the dropdown and select **ChessBoard_Albedo**.</span></span> <span data-ttu-id="4ddef-182">最后，将“RGB”  输出引脚拖至“M_ChessBoard”  的“基准颜色”引脚上。</span><span class="sxs-lookup"><span data-stu-id="4ddef-182">Finally, drag the **RGB** output pin to the Base Color pin of **M_ChessBoard**.</span></span> 
+6.  <span data-ttu-id="06c8d-195">双击“M_ChessBoard”材质映像以打开材质编辑器。</span><span class="sxs-lookup"><span data-stu-id="06c8d-195">Double-click the **M_ChessBoard** material imaged to open the Material Editor.</span></span> 
+
+![打开材质编辑器](images/unreal-uxt/2-material-editor.PNG)
+
+7. <span data-ttu-id="06c8d-197">在材质编辑器中，单击右键并搜索“纹理示例”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-197">In the Material Editor, right-click and search for **Texture Sample**.</span></span> 
+    * <span data-ttu-id="06c8d-198">在“详细信息”面板中展开“材质表现纹理库”部分，然后将“纹理”设置为“ChessBoard_Albedo”   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-198">Expand the **Material Expression Texture Base** section in the **Details** panel and set **Texture** to **ChessBoard_Albedo**.</span></span> 
+    * <span data-ttu-id="06c8d-199">将“RGB”输出引脚拖至“M_ChessBoard”的“基准颜色”引脚上。</span><span class="sxs-lookup"><span data-stu-id="06c8d-199">Drag the **RGB** output pin to the Base Color pin of **M_ChessBoard**.</span></span> 
 
 ![设置基准颜色](images/unreal-uxt/2-boardalbedomat.PNG)
 
-12. <span data-ttu-id="4ddef-184">重复同样的操作四次，将“ChessBoard_AO”  纹理示例链接到“环境遮蔽”  引脚，将“ChessBoard_Metal”  纹理示例链接到“金属”  引脚，将“ChessBoard_Normal”  纹理示例链接到“正常”  引脚，并将“ChessBoard_Rough”  纹理示例链接到“粗糙度”  引脚。</span><span class="sxs-lookup"><span data-stu-id="4ddef-184">Do the same four more times, linking the **ChessBoard_AO** Texture Sample to the **Ambient Occlusion** pin, the **ChessBoard_Metal** Texture Sample to the **Metallic** pin, the **ChessBoard_Normal** Texture Sample to the **Normal** pin, and the **ChessBoard_Rough** Texture Sample to the **Roughness** pin.</span></span> <span data-ttu-id="4ddef-185">单击 **“保存”** 。</span><span class="sxs-lookup"><span data-stu-id="4ddef-185">Click **Save**.</span></span> 
+8.  <span data-ttu-id="06c8d-201">重复上述步骤四次以再创建四个具有以下设置的“纹理示例”节点：</span><span class="sxs-lookup"><span data-stu-id="06c8d-201">Repeat the previous step four more times to create four more **Texture Sample** nodes with the following settings:</span></span>
+    * <span data-ttu-id="06c8d-202">将“纹理”设置为“ChessBoard_AO”，将“RGB”链接到“环境遮蔽”引脚   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-202">Set **Texture** to **ChessBoard_AO** and link the **RGB** to the **Ambient Occlusion** pin.</span></span>
+    * <span data-ttu-id="06c8d-203">将“纹理”设置为“ChessBoard_Metal”，将“RGB”链接到“金属”引脚   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-203">Set **Texture** to **ChessBoard_Metal** and link the **RGB** to the **Metallic** pin.</span></span> 
+    * <span data-ttu-id="06c8d-204">将“纹理”设置为“ChessBoard_Normal”，将“RGB”链接到“正常”引脚   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-204">Set **Texture** to **ChessBoard_Normal** and link the **RGB** to the **Normal** pin.</span></span>
+    * <span data-ttu-id="06c8d-205">将“纹理”设置为“ChessBoard_Rough”，将“RGB”链接到“粗糙度”引脚   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-205">Set **Texture** to **ChessBoard_Rough** and link the **RGB** to the **Roughness** pin.</span></span> 
+    * <span data-ttu-id="06c8d-206">单击 **“保存”** 。</span><span class="sxs-lookup"><span data-stu-id="06c8d-206">Click **Save**.</span></span> 
 
 ![连接剩余纹理](images/unreal-uxt/2-boardmat.PNG)
 
-13. <span data-ttu-id="4ddef-187">返回到“棋盘”  蓝图。</span><span class="sxs-lookup"><span data-stu-id="4ddef-187">Return to your **Board** Blueprint.</span></span> <span data-ttu-id="4ddef-188">应会看到刚创建的材质已应用于蓝图。</span><span class="sxs-lookup"><span data-stu-id="4ddef-188">You should see that the material you just created has been applied to your Blueprint.</span></span> <span data-ttu-id="4ddef-189">将棋盘置于场景后，若要确保棋盘的大小和位置，请将棋盘的“比例”  更改为 (0.05, 0.05, 0.05)，将“旋转”  更改为 Z = 90。</span><span class="sxs-lookup"><span data-stu-id="4ddef-189">To ensure the board is at a reasonable size and position once we place it in our scene, change the **Scale** of the board to (0.05, 0.05, 0.05) and the **Rotation** to Z = 90.</span></span> <span data-ttu-id="4ddef-190">在顶部工具栏中，单击“编译”  ，然后单击“保存”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-190">In the toolbar at the top, click **Compile**, then **Save**.</span></span> <span data-ttu-id="4ddef-191">返回到主窗口。</span><span class="sxs-lookup"><span data-stu-id="4ddef-191">Return to your Main window.</span></span> 
+<span data-ttu-id="06c8d-208">在继续之前，请确保材质设置看起来类似于以上屏幕截图。</span><span class="sxs-lookup"><span data-stu-id="06c8d-208">Make sure the your material setup looks like the above screenshot before continuing.</span></span>
+
+## <a name="populating-the-scene"></a><span data-ttu-id="06c8d-209">填充场景</span><span class="sxs-lookup"><span data-stu-id="06c8d-209">Populating the scene</span></span>
+<span data-ttu-id="06c8d-210">如果返回到“棋盘”蓝图，将会看到已应用刚创建的材质。</span><span class="sxs-lookup"><span data-stu-id="06c8d-210">If you go back to the **Board** blueprint, you'll see that the material you just created has been applied.</span></span> <span data-ttu-id="06c8d-211">只需设置场景即可！</span><span class="sxs-lookup"><span data-stu-id="06c8d-211">All that's left is setting up the scene!</span></span> <span data-ttu-id="06c8d-212">首先，更改以下属性，以确保在场景中放置棋盘时，它的大小和角度正确：</span><span class="sxs-lookup"><span data-stu-id="06c8d-212">First, change the following properties to make sure the board is a reasonable size and angled correctly when it's placed in the scene:</span></span>
+1.  <span data-ttu-id="06c8d-213">将“比例”设置为“(0.05, 0.05, 0.05)”并将“Z 旋转”设置为“90”   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-213">Set **Scale** to **(0.05, 0.05, 0.05)** and **Z Rotation** to **90**.</span></span> 
+    * <span data-ttu-id="06c8d-214">单击顶部工具栏中的“编译”，然后单击“保存”并返回到主窗口。</span><span class="sxs-lookup"><span data-stu-id="06c8d-214">Click **Compile** in the top toolbar, then **Save** and return to the Main window.</span></span> 
 
 ![已应用材质的棋盘](images/unreal-uxt/2-chessboard.PNG)
 
-14. <span data-ttu-id="4ddef-193">现在删除立方体，并将其替换为新创建的棋盘 Actor。</span><span class="sxs-lookup"><span data-stu-id="4ddef-193">Let’s now delete the cube and replace it with your newly created Board actor.</span></span> <span data-ttu-id="4ddef-194">在“世界大纲视图”  中，右键单击“立方体”>“编辑”>“删除”  。</span><span class="sxs-lookup"><span data-stu-id="4ddef-194">In the **World Outliner**, right click your **Cube > Edit > Delete**.</span></span> <span data-ttu-id="4ddef-195">将棋盘从“内容浏览器”拖到视口。</span><span class="sxs-lookup"><span data-stu-id="4ddef-195">Drag Board from your Content Browser into the viewport.</span></span> <span data-ttu-id="4ddef-196">将棋盘位置设置为 X = 80，Y = 0，Z =-20。</span><span class="sxs-lookup"><span data-stu-id="4ddef-196">Set the location of the board to X = 80, Y = 0, Z = -20.</span></span> 
+2.  <span data-ttu-id="06c8d-216">右键单击“立方体”>“编辑”>“删除”并将“棋盘”从“内容浏览器”拖至视口中  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-216">Right-click **Cube > Edit > Delete** and drag **Board** from the **Content Browser** into the viewport.</span></span> 
+    * <span data-ttu-id="06c8d-217">将“位置”设置为“X = 80”、“Y = 0”和“Z = -20”   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-217">Set **Location** to **X = 80**, **Y = 0**, and **Z = -20**.</span></span> 
 
-15. <span data-ttu-id="4ddef-197">单击“开始”  按钮，查看你所处关卡中的新棋盘。</span><span class="sxs-lookup"><span data-stu-id="4ddef-197">Click the **Play** button to view your new board in your level.</span></span> <span data-ttu-id="4ddef-198">按 Esc  返回到编辑器。</span><span class="sxs-lookup"><span data-stu-id="4ddef-198">Press **Esc** to return to the editor.</span></span> 
+3.  <span data-ttu-id="06c8d-218">单击“开始”按钮，查看你所处关卡中的新棋盘。</span><span class="sxs-lookup"><span data-stu-id="06c8d-218">Click the **Play** button to view your new board in the level.</span></span> <span data-ttu-id="06c8d-219">按 Esc 返回到编辑器。</span><span class="sxs-lookup"><span data-stu-id="06c8d-219">Press **Esc** to return to the editor.</span></span> 
 
-16. <span data-ttu-id="4ddef-199">接下来，我们将按照与对棋盘所执行的相同步骤创建棋子，这次选择棋子的网格和材质：</span><span class="sxs-lookup"><span data-stu-id="4ddef-199">Now we’ll follow the same steps to create a chess piece as we did with the board, this time selecting the mesh and material for the chess piece:</span></span>
+<span data-ttu-id="06c8d-220">现在，你将按照与棋盘相同的步骤创建棋子：</span><span class="sxs-lookup"><span data-stu-id="06c8d-220">Now you'll follow the same steps to create a chess piece as you did with the board:</span></span>
 
-    <span data-ttu-id="4ddef-200">a) 在“内容浏览器”中导航到“蓝图”文件夹，然后创建一个 Actor 类型的新蓝图类。</span><span class="sxs-lookup"><span data-stu-id="4ddef-200">a) Navigate to the Blueprints folder in the Content Browser and create a new Blueprint class of type Actor.</span></span> <span data-ttu-id="4ddef-201">将此 Actor 命名为“WhiteKing”。</span><span class="sxs-lookup"><span data-stu-id="4ddef-201">Name this actor “WhiteKing”.</span></span>
+1. <span data-ttu-id="06c8d-221">转到“蓝图”文件夹，右键单击并选择“蓝图类”，然后选择“Actor”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-221">Go to the **Blueprints** folder, right-click and select **Blueprint Class** and choose **Actor**.</span></span> <span data-ttu-id="06c8d-222">将 Actor 命名为“WhiteKing”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-222">Name the actor **WhiteKing**.</span></span>
 
-    <span data-ttu-id="4ddef-202">b) 双击“WhiteKing”将其打开。</span><span class="sxs-lookup"><span data-stu-id="4ddef-202">b) Double click WhiteKing to open it.</span></span> <span data-ttu-id="4ddef-203">添加一个名为“Root”的新场景组件，并使用它来替换 DefaultSceneRoot。</span><span class="sxs-lookup"><span data-stu-id="4ddef-203">Add a new Scene component named “Root” and use it to replace DefaultSceneRoot.</span></span> 
+2. <span data-ttu-id="06c8d-223">双击“WhiteKing”以在蓝图编辑器中将其打开，单击“添加组件”>“场景”，并将其命名为“Root”  。</span><span class="sxs-lookup"><span data-stu-id="06c8d-223">Double click **WhiteKing** to open it in the Blueprint Editor, click **Add Component > Scene** and name it **Root**.</span></span> 
+    * <span data-ttu-id="06c8d-224">将“Root”拖放到 DefaultSceneRoot 中来替换它 。</span><span class="sxs-lookup"><span data-stu-id="06c8d-224">Drag-and-drop **Root** onto **DefaultSceneRoot** to replace it.</span></span> 
 
-    <span data-ttu-id="4ddef-204">c) 添加一个名为“SM_King”的新静态网格组件。</span><span class="sxs-lookup"><span data-stu-id="4ddef-204">c) Add a new Static Mesh component named “SM_King”.</span></span> <span data-ttu-id="4ddef-205">在“详细信息”面板中，将“静态网格”  设置为“Chess_King”  ，并将“材质”  设置为名为“M_ChessWhite”  的新材质。</span><span class="sxs-lookup"><span data-stu-id="4ddef-205">In the Details panel, set the **Static Mesh** to **Chess_King** and the **Material** to a new Material called **M_ChessWhite**.</span></span> 
+3. <span data-ttu-id="06c8d-225">单击“添加组件”>“静态网格”，并将其命名为“SM_King” 。</span><span class="sxs-lookup"><span data-stu-id="06c8d-225">Click **Add Component > Static Mesh** and name it **SM_King**.</span></span> 
+    * <span data-ttu-id="06c8d-226">在“详细信息”面板中，将“静态网格”设置为“Chess_King”，并将“材质”设置为名为“M_ChessWhite”的新材质。</span><span class="sxs-lookup"><span data-stu-id="06c8d-226">Set **Static Mesh** to **Chess_King** and **Material** to a new Material called **M_ChessWhite** in the Details panel.</span></span> 
 
-    <span data-ttu-id="4ddef-206">d) 打开新“M_ChessWhite”  材质，并将相关纹理连接到相应的材质输入。</span><span class="sxs-lookup"><span data-stu-id="4ddef-206">d) Open the new **M_ChessWhite** Material and hook up the relevant textures to their corresponding material inputs.</span></span> 
+4. <span data-ttu-id="06c8d-227">在材质编辑器中打开“M_ChessWhite”，并将以下“纹理示例”节点连接到以下各项：</span><span class="sxs-lookup"><span data-stu-id="06c8d-227">Open **M_ChessWhite** in the Material editor and hook up the following **Texture Sample** nodes to the following:</span></span>
+    * <span data-ttu-id="06c8d-228">将“纹理”设置为“ChessWhite_AO”，将“RGB”链接到“环境遮蔽”引脚   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-228">Set **Texture** to **ChessWhite_AO** and link the **RGB** to the **Ambient Occlusion** pin.</span></span>
+    * <span data-ttu-id="06c8d-229">将“纹理”设置为“ChessWhite_Metal”，将“RGB”链接到“金属”引脚   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-229">Set **Texture** to **ChessWhite_Metal** and link the **RGB** to the **Metallic** pin.</span></span> 
+    * <span data-ttu-id="06c8d-230">将“纹理”设置为“ChessWhite_Normal”，将“RGB”链接到“正常”引脚   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-230">Set **Texture** to **ChessWhite_Normal** and link the **RGB** to the **Normal** pin.</span></span>
+    * <span data-ttu-id="06c8d-231">将“纹理”设置为“ChessWhite_Rough”，将“RGB”链接到“粗糙度”引脚   。</span><span class="sxs-lookup"><span data-stu-id="06c8d-231">Set **Texture** to **ChessWhite_Rough** and link the **RGB** to the **Roughness** pin.</span></span> 
+    * <span data-ttu-id="06c8d-232">单击 **“保存”** 。</span><span class="sxs-lookup"><span data-stu-id="06c8d-232">Click **Save**.</span></span> 
 
-    ![为国王（棋子）创建材质](images/unreal-uxt/2-chesskingmat.PNG)
+<span data-ttu-id="06c8d-233">在继续之前，“M_ChessKing”材质应与下图类似。</span><span class="sxs-lookup"><span data-stu-id="06c8d-233">Your **M_ChessKing** material should look like the following image before continuing.</span></span>
 
-    <span data-ttu-id="4ddef-208">e) 返回到“WhiteKing”  蓝图，将“比例”  更改为 (0.05, 0.05, 0.05)，将“旋转”  更改为 Z = 90。</span><span class="sxs-lookup"><span data-stu-id="4ddef-208">e) Back in your **WhiteKing** Blueprint, change the **Scale** to (0.05, 0.05, 0.05) and **Rotation** to Z = 90.</span></span>
+![为国王（棋子）创建材质](images/unreal-uxt/2-chesskingmat.PNG)
 
-    <span data-ttu-id="4ddef-209">f) 编译并保存蓝图，然后导航回主窗口。</span><span class="sxs-lookup"><span data-stu-id="4ddef-209">f) Compile and save your blueprint, then navigate back to your main window.</span></span> 
+<span data-ttu-id="06c8d-235">即将完成，只需将新棋子添加到场景中即可：</span><span class="sxs-lookup"><span data-stu-id="06c8d-235">You're almost there, just need to add the new chess piece into the scene:</span></span> 
 
-17. <span data-ttu-id="4ddef-210">将“WhiteKing”拖动到视口中。</span><span class="sxs-lookup"><span data-stu-id="4ddef-210">Drag WhiteKing into your viewport.</span></span> <span data-ttu-id="4ddef-211">在“世界大纲视图”  中，将“WhiteKing”拖到棋盘，以便 WhiteKing 成为棋盘的子元素。</span><span class="sxs-lookup"><span data-stu-id="4ddef-211">In the **World Outliner**, drag WhiteKing onto Board so that WhiteKing is now a child of Board.</span></span> 
+1. <span data-ttu-id="06c8d-236">打开“WhiteKing”蓝图，并将“比例”更改为“(0.05, 0.05, 0.05)”，将“Z 旋转”更改为“90”。</span><span class="sxs-lookup"><span data-stu-id="06c8d-236">Open the **WhiteKing** blueprint and change the **Scale** to **(0.05, 0.05, 0.05)** and **Z Rotation** to **90**.</span></span>
+    * <span data-ttu-id="06c8d-237">编译并保存蓝图，然后返回到主窗口。</span><span class="sxs-lookup"><span data-stu-id="06c8d-237">Compile and save your blueprint, then head back to the main window.</span></span> 
+
+2.  <span data-ttu-id="06c8d-238">将“WhiteKing”拖到视口中，切换到“世界大纲视图”面板，将“WhiteKing”拖到“棋盘”上，使其成为子对象。</span><span class="sxs-lookup"><span data-stu-id="06c8d-238">Drag **WhiteKing** into the viewport, switch to the **World Outliner** panel drag **WhiteKing** onto **Board** to make it a child object.</span></span>
 
 ![世界大纲视图](images/unreal-uxt/2-child.PNG)
 
-18. <span data-ttu-id="4ddef-213">在“详细信息”  面板下的“变形”  部分，将 WhiteKing 的“位置”  设置为 X =-26，Y = 4，Z = 0</span><span class="sxs-lookup"><span data-stu-id="4ddef-213">In the **Details** panel under **Transform**, set the **Location** of WhiteKing to X = -26, Y = 4, Z = 0</span></span>
+3.  <span data-ttu-id="06c8d-240">在“详细信息”面板中的“变形”下，将 WhiteKing 的“位置”设置为“X = -26”、“Y = 4”、“Z = 0”      。</span><span class="sxs-lookup"><span data-stu-id="06c8d-240">In the **Details** panel under **Transform**, set **WhiteKing**'s **Location** to **X = -26**, **Y = 4**, and **Z = 0**.</span></span>
 
-19. <span data-ttu-id="4ddef-214">单击“开始”  查看关卡。</span><span class="sxs-lookup"><span data-stu-id="4ddef-214">Click **Play** to see your level.</span></span> <span data-ttu-id="4ddef-215">按 Esc  退出。</span><span class="sxs-lookup"><span data-stu-id="4ddef-215">Press **Esc** to exit.</span></span> 
+<span data-ttu-id="06c8d-241">完成！</span><span class="sxs-lookup"><span data-stu-id="06c8d-241">That's a wrap!</span></span> <span data-ttu-id="06c8d-242">单击“开始”以查看正在运行中的已填充关卡，并在准备好退出时按 Esc。</span><span class="sxs-lookup"><span data-stu-id="06c8d-242">Click **Play** to see your populated level in action, and press **Esc** when you're ready to exit.</span></span> <span data-ttu-id="06c8d-243">本教程介绍了很多创建简单项目的背景，但你的项目已准备好继续进行本系列的下一部分：设置混合现实。</span><span class="sxs-lookup"><span data-stu-id="06c8d-243">This tutorial covered a lot of ground creating a simple project, but your project is ready to move on to the next part of the series: setting up for mixed reality.</span></span> 
 
-[<span data-ttu-id="4ddef-216">下一节：3.设置混合现实项目</span><span class="sxs-lookup"><span data-stu-id="4ddef-216">Next Section: 3. Set up your project for mixed reality</span></span>](unreal-uxt-ch3.md)
+[<span data-ttu-id="06c8d-244">下一节：3.设置混合现实项目</span><span class="sxs-lookup"><span data-stu-id="06c8d-244">Next Section: 3. Set up your project for mixed reality</span></span>](unreal-uxt-ch3.md)
