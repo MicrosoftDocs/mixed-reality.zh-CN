@@ -94,7 +94,7 @@
 ## 资源
 ### [了解 Unity](https://learn.unity.com/)
 ### [混合现实工具包](https://github.com/Microsoft/MixedRealityToolkit-Unity)
-### [混合现实设计实验室](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)
+### [混合现实设计实验室](https://github.com/microsoft/MixedRealityDesignLabs_Unity)
 ### [Microsoft Maquette](https://www.maquette.ms)
 ### [资产创建过程](asset-creation-process.md)
 ### [设计自己的沉浸式环境](add-custom-home-environments.md)
@@ -136,10 +136,14 @@
 ###### [3.将视频中的音频空间化](unity-spatial-audio-ch3.md)
 ###### [4.在运行时启用和禁用空间音频](unity-spatial-audio-ch4.md)
 ###### [5.使用混响为空间音频添加距离感](unity-spatial-audio-ch5.md)
+#### HoloLens 2 开源示例应用
+##### [表面](sampleapp-surfaces.md)
+##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
+##### [星系探索者 2.0](galaxy-explorer-update.md)
 #### HoloLens（第 1 代）开源示例应用
-##### [元素周期表](periodic-table-of-the-elements.md)
+##### [元素周期表 1.0](periodic-table-of-the-elements.md)
+##### [星系探索者 1.0](galaxy-explorer.md)
 ##### [月亮模块](lunar-module.md)
-##### [星系探索者](galaxy-explorer.md)
 #### HoloLens（第 1 代）和沉浸式头戴显示设备教程
 ##### [MR 基础知识 100：Unity 入门](holograms-100.md)
 ##### [MR 基础知识 101：使用设备完成项目](holograms-101.md)
