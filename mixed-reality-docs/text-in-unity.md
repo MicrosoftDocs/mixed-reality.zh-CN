@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality，设计，控件，字体，版式，ui，ux
-ms.openlocfilehash: 69b8a4bca42f3b6177a276d7773e5f1cd599d629
-ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
+ms.openlocfilehash: 8662ff8a8e1e99455354392d7dc852feb1fe1589
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/01/2020
-ms.locfileid: "75597660"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345707"
 ---
 # <a name="text-in-unity"></a>Unity 中的文本
 
@@ -41,7 +41,7 @@ Unity 假设添加到场景中的所有新元素都是大小为1个 Unity 单位
 <br>
 将基于 UI 或画布的文本元素添加到场景时，大小差异仍为大于。 这两种大小的差异大约为1000%，这会使基于 UI 的文本组件的缩放因子为0.00046 （0.0004586111116 为精确）或0.0005 作为舍入值。
 
-每个单位值 ![具有不同动态像素的 Unity UI 文本](images/hug-text-04-1000px.png)<br>
+![每个单位值具有不同动态像素的 Unity UI 文本](images/hug-text-04-1000px.png)<br>
 *包含优化值的 Unity UI 文本*
 
 <br>
@@ -61,8 +61,8 @@ Unity 假设添加到场景中的所有新元素都是大小为1个 Unity 单位
 
 对于 0.45 m （45cm）的接近交互，最小清晰字体的查看角度和高度为0.4 °-0.5 °/3.14 –3.9 毫米。 它大约为 9-12pt，其中包含上述缩放系数。
 
-*在近和远交互范围](images/typography-distance-1000px.jpg)
-内容*![近和远交互范围
+![近和远交互范围内的近和远交互范围 ](images/typography-distance-1000px.jpg)
+ *内容*
 
 ### <a name="the-minimum-legible-font-size"></a>最小清晰字体大小
 | 距离 | 查看角度 | 文本高度 | 字体大小 |
@@ -80,21 +80,21 @@ Unity 假设添加到场景中的所有新元素都是大小为1个 Unity 单位
 Segoe UI （Windows 的默认字体）在大多数情况下都适用。 不过，请避免使用较小尺寸的轻型或半字形系列，因为精简垂直笔划将振动，并将降低清晰度。 具有足够笔划粗细的新式字体很好地运行。 例如，Arial 和 Arial 外观丰富多彩，在 HoloLens 中以常规或粗体权重非常清晰。
 
 
-![查看角度](images/Text_In_Unity_ViewingAngle.jpg)
-*查看距离、角度和文本高度*
+![查看角度 ](images/Text_In_Unity_ViewingAngle.jpg)
+ *查看距离、角度和文本高度*
 
 ## <a name="sharp-text-rendering-quality-with-proper-dimension"></a>用适当的尺寸锐化文本呈现质量
 
-根据这些缩放因素，我们已[使用 UI 文本和3D 文本网格创建了文本 prototyping](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text)。 开发人员可以使用这些 prototyping 来获得清晰的文本和一致的字体大小。
+根据这些缩放因素，我们已[使用 UI 文本和3D 文本网格创建了文本 prototyping](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)。 开发人员可以使用这些 prototyping 来获得清晰的文本和一致的字体大小。
 
-用适当的尺寸 ![清晰的文本渲染质量](images/hug-text-06-1000px.png)<br>
+![用适当的尺寸锐化文本呈现质量](images/hug-text-06-1000px.png)<br>
 *用适当的尺寸锐化文本呈现质量*
 
 ## <a name="shader-with-occlusion-support"></a>具有封闭支持的着色器
 
 Unity 的默认字体材料不支持封闭。 因此，默认情况下，你会看到对象后面的文本。 我们包含了一个[支持封闭的简单着色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit/StandardAssets/Shaders/Text3DShader.shader)。 下图显示了文本，其中包含默认字体材料（左侧）和具有适当封闭（右）的文本。
 
-具有封闭支持的 ![着色器](images/hug-text-07-1000px.png)<br>
+![具有封闭支持的着色器](images/hug-text-07-1000px.png)<br>
 *具有封闭支持的着色器*
 
 

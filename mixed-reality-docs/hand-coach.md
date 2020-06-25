@@ -6,20 +6,17 @@ ms.author: glee
 ms.date: 09/25/2019
 ms.topic: article
 keywords: Windows Mixed Reality，设计，手型指导，沉浸式耳机，MRTK，双手，帮助
-ms.openlocfilehash: c5f0a0c241ff71dc93f370a5a8caa627128bfb1a
-ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
+ms.openlocfilehash: 38da046256dce3242b464a0741f2afa7fb19ff3c
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78202729"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345658"
 ---
 # <a name="hand-coach"></a>手动指导
+![示例：手型指导](images/HandCoach/MRTK_handCoach.jpg)<br>
 
 手动指导是指在系统未检测到用户的手时触发的三维建模手。 这是作为 "教学" 组件实现的，该组件可帮助引导用户在未教授手势时进行引导。 如果用户未在某个时间段内完成指定的手势，则会循环一段时间。 手型指导可用于表示按下按钮或选取全息图标。  
-
-
-![示例：手型指导](images/HandCoach/MRTK_handCoach.jpg)<br>
-*MRTK 中的 HandCoach 示例*
 
 ## <a name="hand-coach-provided"></a>手写指导
 
@@ -27,38 +24,38 @@ ms.locfileid: "78202729"
 
 :::row:::
     :::column:::
-       接近 Select](images/HandCoach/NearSelect.gif) ![示例<br>
+       ![接近选择的示例](images/HandCoach/NearSelect.gif)<br>
        **接近选择使用的示例显示如何选择按钮或关闭种不可交互对象**<br>
     :::column-end:::
     :::column:::
-       ](images/HandCoach/AirTap.gif) ![示例<br>
+       ![空中点击的示例](images/HandCoach/AirTap.gif)<br>
         **空中点击的示例-用于显示如何选择远距离的对象**<br>
     :::column-end:::
     :::column:::
-       Move](images/HandCoach/Move.gif) ![示例<br>
+       ![移动示例](images/HandCoach/Move.gif)<br>
        **将对象移动到空间的示例-用于显示如何在空间中移动全息图**<br>
     :::column-end:::
     :::column:::
-       旋转的 ![示例](images/HandCoach/Rotate.gif)<br>
+       ![旋转示例](images/HandCoach/Rotate.gif)<br>
        **旋转示例-用于演示如何旋转全息影像或对象**<br>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       Scale](images/HandCoach/Scale.gif) ![示例<br>
+       ![缩放示例](images/HandCoach/Scale.gif)<br>
        **缩放示例-用于显示如何操作更大或更小的全息影像**<br>
     :::column-end:::
     :::column:::
-       手掌](images/HandCoach/PalmUp.gif) 的 ![示例<br>
+       ![手掌的示例](images/HandCoach/PalmUp.gif)<br>
         **掌上-建议使用的示例，用于引入手菜单**<br>
     :::column-end:::
     :::column:::
-       HandFlip](images/HandCoach/HandFlip.gif) ![示例<br>
+       ![HandFlip 的示例](images/HandCoach/HandFlip.gif)<br>
        **示例-用于打开手形菜单的另一种方式**<br>
     :::column-end:::
     :::column:::
-       滚动](images/HandCoach/Scoll.gif) 的 ![示例<br>
+       ![滚动示例](images/HandCoach/Scoll.gif)<br>
        **滚动示例–用于滚动列表或长文档**<br>
     :::column-end:::
 :::row-end:::
@@ -87,20 +84,20 @@ ms.locfileid: "78202729"
 
 ## <a name="can-i-create-my-own"></a>我能创建自己的吗？
 
-可以！ 我们鼓励你为游戏创建自己的独特手势，并向社区提供反馈！
-我们提供了可用于你的应用的 Maya 文件 Rigged，可在此处下载：<a href="files/HandCoach_MRTK.zip">下载 HandCoach_MRTK .zip</a>
+能！ 我们鼓励你为游戏创建自己的独特手势，并向社区提供反馈！
+我们提供了可用于你的应用的 Maya 文件 Rigged，可在此处下载<a href="files/HandCoach_MRTK.zip">HandCoach_MRTK.zip</a>
 
-![Maya 中的动画的示例](images/HandCoach/MayaSelect_Gif.gif)<br>
+![在 Maya 中进行动画处理的示例](images/HandCoach/MayaSelect_Gif.gif)<br>
 *Maya 中闲逛的动画手形的示例*
 
 
 **推荐的创作工具**
 
-在三维音乐家之间，很多选择使用[Autodesk 的 Maya，它本身能够使用 HoloLens](https://www.youtube.com/watch?v=q0K3n0Gf8mA)来转换资产的创建方式。 提供的免提文件是一个 Maya 二进制文件，因此建议使用 Maya 来动画和导出手。 如果希望使用其他三维程序，请单击此处<b>。FBX</b>：<a href="files/HandCoachMRTK_FBX.zip">下载 HandCoachMRTK_FBX .zip</a> ，创建自己的控制器设置。 
+在三维音乐家之间，很多选择使用[Autodesk 的 Maya，它本身能够使用 HoloLens](https://www.youtube.com/watch?v=q0K3n0Gf8mA)来转换资产的创建方式。 提供的免提文件是一个 Maya 二进制文件，因此建议使用 Maya 来动画和导出手。 如果希望使用其他三维程序，请单击此处<b>。FBX</b>：<a href="files/HandCoachMRTK_FBX.zip">下载 HandCoachMRTK_FBX.zip</a>来创建自己的控制器设置。 
 
 如果使用提供的可下载 maya 手型文件，则建议将 unity 向下扩展到0.6。
 
-![示例： Maya 中的](images/HandCoach/MayaExample.png) 手型测试机组<br>
+![示例： Maya 中的手型指导远程测试机组](images/HandCoach/MayaExample.png)<br>
 *Rigged*
 
 ### <a name="technical-specs"></a>技术规格
@@ -116,7 +113,7 @@ ms.locfileid: "78202729"
 *   如果你对动画感到满意：
     *   选择所有接头和制作关键帧
     *   删除控制器，选择接头和网格，并将其导出为 FBX
-    *  如果有多个动画，可以使用 Maya 的内置游戏导出程序： https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2015/ENU/Maya/files/Game-Exporter-htm.html
+    *  如果有多个动画，可以使用 Maya 的内置游戏导出程序：https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2015/ENU/Maya/files/Game-Exporter-htm.html
 
 ## <a name="exporting-from-maya"></a>从 Maya 导出
 
@@ -166,20 +163,20 @@ ms.locfileid: "78202729"
 
 
 
-### <a name="what-to-avoid"></a>要避免的情况
+### <a name="what-to-avoid"></a>要避免的内容
 * 将指针放大太大
 * 将指针放在靠近用户的附近
 * 只需教授一次。 优于教授会导致混淆和麻烦
-*   将它引入 Unity，请在此处下载最新的 MRTK： https://github.com/microsoft/MixedRealityToolkit-Unity
+*   将它引入 Unity，请在此处下载最新的 MRTK：https://github.com/microsoft/MixedRealityToolkit-Unity
     *   材料： Teaching_Hand2
     *   脚本：请参阅<a href= "https://github.com/MixedRealityToolkit-Unity/blob/'HandCoachUX'/Documentation/README_HandCoach.md">MRTK 手型指导</a>的 MRTK 准则
     *   每项目设置
         *   场景设置为 UWP：可在[配置 Unity 项目](Configure-Unity-Project.md)中找到 Windows Mixed Reality 的说明
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 * [交互-基础](interaction-fundamentals.md)
 * [资产创建过程](asset-creation-process.md)
-* [手势](gestures.md)
+* [笔势](gestures.md)
 * [安装工具](install-the-tools.md)
 * [配置 Unity 项目](Configure-Unity-Project.md)
 * [Unity 开发概述](unity-development-overview.md)

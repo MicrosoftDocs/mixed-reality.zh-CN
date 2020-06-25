@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、语音、cortana、语音、输入
-ms.openlocfilehash: a5411c338a854660652cfc89aa2d48d85ee89778
-ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
+ms.openlocfilehash: 78ff63f2f794bb2b3a4868e38ccaff0582ccca8c
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83866917"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345697"
 ---
 # <a name="voice-input"></a>语音输入
 
@@ -57,7 +57,7 @@ ms.locfileid: "83866917"
 
 ## <a name="the-select-command"></a>"Select" 命令
 
-**HoloLens（第 1 代）**
+**HoloLens（第一代）**
 
 即使不将语音支持专门添加到应用，用户也可以通过口述系统语音命令 "select" 来激活全息影像。 此行为与在 HoloLens 上的[点击](gaze-and-commit.md#composite-gestures)，按下[hololens clicker](https://docs.microsoft.com/hololens/hololens1-clicker)上的 "选择" 按钮或在[Windows Mixed Reality 运动控制器](motion-controllers.md)上按下触发器的行为相同。 你将听到声音，并看到带有 "select" 的工具提示显示为确认。 "Select" 是通过低功耗关键字检测算法来实现的，因此，在任何时候，你始终都可以使用它，而不管你在哪一边，你都可以随时使用。
 
@@ -183,7 +183,7 @@ ms.locfileid: "83866917"
 
 考虑为生成的任何体验添加语音命令。 语音是一种功能强大、方便的控制系统和应用的方式。 由于用户使用各种方言和口音说话，恰当选择语音关键字将确保用户的命令得到清晰的解释。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 以下是一些有助于流畅语音识别的做法。
 * **使用简明命令** - 如果可能的话，选择两个或更多音节的关键词。 不同口音的人说单音节词时倾向于使用不同的元音。 示例： "播放视频" 优于 "播放当前选定的视频"
@@ -219,7 +219,7 @@ ms.locfileid: "83866917"
 关键是通过在系统正在侦听时向用户提供反馈，并为系统理解哪些内容来明确理解用户的潜在问题，以解决应用程序中的这一难题。  
 
 **共享空间中的语音输入**在与他人共享的空格中，语音可能无法社交。
-以下是几个示例：
+以下是一些示例：
 * 用户可能不想干扰其他人（例如，在安静库或共享办公室中）
 * 用户可能会很难被视为公开的，
 * 用户可能会在其他人正在侦听时感觉不舒服
@@ -284,9 +284,9 @@ ms.locfileid: "83866917"
 
 ## <a name="languages"></a>语言
 
-HoloLens 2 还支持其他语言。 请记住，即使安装了多个键盘或应用尝试使用其他语言创建语音识别器，语音命令也始终会在系统的显示语言中运行。
+HoloLens 2[支持多种语言](https://docs.microsoft.com/hololens/hololens2-language-support)。 请记住，即使安装了多个键盘或应用尝试使用其他语言创建语音识别器，语音命令也始终会在系统的显示语言中运行。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 如果使用 "选择" 和 "你好 Cortana" 时遇到任何问题，请尝试移动到可取消选择的空间、远离噪音源或说出更大的声音。 目前，HoloLens 上的所有语音识别都专门针对美国英语的本机扬声器进行优化和优化。
 
