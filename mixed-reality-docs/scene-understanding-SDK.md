@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: 场景了解，空间映射，Windows Mixed Reality，Unity
-ms.openlocfilehash: eb2c6d88ce5a5ba637976a7d67abfdc2763c1674
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 71b5509065ecf6fc700b7f448083754d330e9371
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345677"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441804"
 ---
 # <a name="scene-understanding-sdk-overview"></a>场景理解 SDK 概述
 
@@ -47,7 +47,7 @@ SceneUnderstanding 需要 Windows SDK 版本18362或更高版本。
 
 由于每个场景会将其数据存储在应用程序的内存空间中，因此，你可以假定场景对象的所有功能或它的内部数据始终在应用程序的进程中执行。
 
-### <a name="layout"></a>Layout
+### <a name="layout"></a>布局
 
 若要使用场景理解，了解并了解运行时如何以逻辑方式和物理方式表示组件可能会很有价值。 场景表示具有特定布局的数据，其中选择了简单的布局，同时保持基础结构 pliable，而无需进行重大修改。 场景通过将所有组件（所有场景对象的构建基块）存储在简单列表中，并通过引用（其中特定组件引用其他组件）来定义层次结构和组合来实现此功能。
 
@@ -123,7 +123,7 @@ SceneObjects 可以包含以下任一项：
 <tr><td>壁</td><td>物理墙。 墙壁被认为是可移动的环境结构。</td></tr>
 <tr><td>层</td><td>楼层是可以进行审核的任何表面。 注意：楼梯不是楼层。 另请注意，该楼层假设有任何不可的表面，因此没有显式假设。 多层结构，斜坡等 .。。应将所有分类为楼层。</td></tr>
 <tr><td>Ceiling</td><td>房间的上部面。</td></tr>
-<tr><td>Platform</td><td>一个大平面，可以在其上放置全息影像。 它们倾向于表示表、countertops 和其他大型水平曲面。</td></tr>
+<tr><td>平台</td><td>一个大平面，可以在其上放置全息影像。 它们倾向于表示表、countertops 和其他大型水平曲面。</td></tr>
 <tr><td>World</td><td>标记不可知的几何数据的保留标签。 通过设置 EnableWorldMesh 更新标志生成的网格将归为 "世界"。</td></tr>
 <tr><td>未知</td><td>尚未对此场景对象进行分类并为其分配一种类型。 这不应与背景混淆，因为此对象可能是任何内容，而系统刚刚没有提供足够强大的分类。</td></tr>
 </tr>
@@ -311,6 +311,9 @@ void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneOb
 
 四边形具有矩形区，但它们表示任意形状的2D 图面。 若要在与3D 环境四边形的图面上实现放置，使此交互成为可能。 当前场景理解提供了两个此类函数： **FindCentermostPlacement**和**GetOcclusionMask**。 FindCentermostPlacement 是一种高级的 API，用于定位四个位置上的一个对象，并尝试查找您的对象的最佳位置，以确保您提供的边界框位于底层图面上。
 
+> [!NOTE]
+> 输出的坐标是相对于 "四个空间" 中的四个部分的，其左上角为（x = 0，y = 0），就像在其他 windows Rect 类型中一样。 在使用自己的对象的源时，请务必考虑这一点。 
+
 下面的示例演示如何查找 centermost 可放置位置并将全息图定位到四个部分。
 
 ```cs
@@ -341,7 +344,12 @@ foreach (var sceneObject in myScene.SceneObjects)
 }
 ```
 
-步骤1-4 依赖于特定的框架/实现，但主题应类似。 请注意，四个部分只表示在空间中进行了本地化的界限2D 平面。 通过让引擎/框架知道四个部分，并相对于四个部分定位对象，您的全息影像会正确地定位到现实世界。 有关更多详细信息，请参阅四边形上的示例，这些示例显示特定实现。
+步骤1-4 依赖于特定的框架/实现，但主题应类似。 请注意，四个部分只表示在空间中进行了本地化的界限2D 平面。 通过让引擎/框架知道四个部分，并相对于四个部分定位对象，您的全息影像会正确地定位到现实世界。 
+
+<!-- 
+// TODO: Add sample link when released
+For more detailed information please see our samples on quads which show specific implementations.
+-->
 
 ### <a name="mesh"></a>网格
 

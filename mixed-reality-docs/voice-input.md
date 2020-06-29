@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、语音、cortana、语音、输入
-ms.openlocfilehash: 78ff63f2f794bb2b3a4868e38ccaff0582ccca8c
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 37364e90aa1d8a7b607a99f4c9b830972f7f80b3
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345697"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441824"
 ---
 # <a name="voice-input"></a>语音输入
 
@@ -96,6 +96,8 @@ ms.locfileid: "85345697"
 * "拍摄照片"
 * "开始录制"
 * "停止录制"
+* "显示现有的光线"
+* "隐藏现有的光线"
 * "增加亮度"
 * "降低亮度"
 * "增加音量"
@@ -183,7 +185,7 @@ ms.locfileid: "85345697"
 
 考虑为生成的任何体验添加语音命令。 语音是一种功能强大、方便的控制系统和应用的方式。 由于用户使用各种方言和口音说话，恰当选择语音关键字将确保用户的命令得到清晰的解释。
 
-### <a name="best-practices"></a>最佳实践
+### <a name="best-practices"></a>最佳做法
 
 以下是一些有助于流畅语音识别的做法。
 * **使用简明命令** - 如果可能的话，选择两个或更多音节的关键词。 不同口音的人说单音节词时倾向于使用不同的元音。 示例： "播放视频" 优于 "播放当前选定的视频"
@@ -286,7 +288,7 @@ ms.locfileid: "85345697"
 
 HoloLens 2[支持多种语言](https://docs.microsoft.com/hololens/hololens2-language-support)。 请记住，即使安装了多个键盘或应用尝试使用其他语言创建语音识别器，语音命令也始终会在系统的显示语言中运行。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 如果使用 "选择" 和 "你好 Cortana" 时遇到任何问题，请尝试移动到可取消选择的空间、远离噪音源或说出更大的声音。 目前，HoloLens 上的所有语音识别都专门针对美国英语的本机扬声器进行优化和优化。
 
@@ -304,7 +306,7 @@ HoloLens 2[支持多种语言](https://docs.microsoft.com/hololens/hololens2-lan
 
 ---
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 * [凝视和提交](gaze-and-commit.md)
 * [本能交互](interaction-fundamentals.md)
 * [MR 输入 212：语音](holograms-212.md)

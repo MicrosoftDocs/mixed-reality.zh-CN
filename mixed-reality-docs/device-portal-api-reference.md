@@ -1,17 +1,17 @@
 ---
 title: 设备门户 API 参考
 description: HoloLens 上 Windows 设备门户的 API 参考
-author: jonmlyons
-ms.author: jlyons
+author: hamalawi
+ms.author: moelhama
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、Windows 设备门户、API
-ms.openlocfilehash: 17268c9a20d3da0ee90e5d6cead4342d3badf800
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: b9b9ada49b4f9810dc97c9da2873d4ccb60df424
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451322"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441794"
 ---
 # <a name="device-portal-api-reference"></a>设备门户 API 参考
 
@@ -23,17 +23,17 @@ ms.locfileid: "84451322"
 
 卸载应用
 
-参数
+parameters
 * package：要卸载的包的文件名。
 
 **/api/app/packagemanager/package （POST）**
 
 安装应用程序
 
-参数
+parameters
 * package：要安装的包的文件名。
 
-Payload
+有效负载
 * 多部分相容的 http 正文
 
 **/api/app/packagemanager/packages （GET）**
@@ -53,28 +53,28 @@ Payload
 
 为旁加载应用禁用故障转储收集
 
-参数
+parameters
 * packageFullname：包名称
 
 **/api/debug/dump/usermode/crashcontrol （GET）**
 
 获取旁加载应用故障转储收集的设置
 
-参数
+parameters
 * packageFullname：包名称
 
 **/api/debug/dump/usermode/crashcontrol （POST）**
 
 启用和设置旁加载应用的转储控件设置
 
-参数
+parameters
 * packageFullname：包名称
 
 **/api/debug/dump/usermode/crashdump （删除）**
 
 删除旁加载应用程序的故障转储
 
-参数
+parameters
 * packageFullname：包名称
 * 文件名：转储文件名
 
@@ -82,7 +82,7 @@ Payload
 
 检索旁加载应用的故障转储
 
-参数
+parameters
 * packageFullname：包名称
 * 文件名：转储文件名
 
@@ -130,7 +130,7 @@ Payload
 
 设置 IPD
 
-参数
+parameters
 * ipd：要设置的新 IPD 值（以毫米为单位）
 
 **/api/holographic/os/webmanagement/settings/https （GET）**
@@ -141,7 +141,7 @@ Payload
 
 为设备门户设置 HTTPS 要求
 
-参数
+parameters
 * 必需：是、否或默认值
 
 ## <a name="holographic-perception"></a>全息认知
@@ -150,7 +150,7 @@ Payload
 
 接受 websocket 升级，并运行以 30 fps 发送更新的感知客户端。
 
-参数
+parameters
 * clientmode： "active" 强制在无法被动建立时强制视觉跟踪模式
 
 ## <a name="holographic-thermal"></a>全息热量
@@ -169,7 +169,7 @@ Payload
 
 设置模拟模式
 
-参数
+parameters
 * 模式：模拟模式：默认、模拟、远程、旧
 
 **/api/holographic/simulation/control/stream （删除）**
@@ -194,7 +194,7 @@ Payload
 
 删除记录。
 
-参数
+parameters
 * 录制：要删除的记录的名称。
 
 **/api/holographic/simulation/playback/file （POST）**
@@ -209,21 +209,21 @@ Payload
 
 获取记录的当前播放状态。
 
-参数
+parameters
 * 记录：记录的名称。
 
 **/api/holographic/simulation/playback/session/file （删除）**
 
 卸载记录。
 
-参数
+parameters
 * 录制：要卸载的记录的名称。
 
 **/api/holographic/simulation/playback/session/file （POST）**
 
 加载记录。
 
-参数
+parameters
 * 录制：要加载的记录的名称。
 
 **/api/holographic/simulation/playback/session/files （GET）**
@@ -234,28 +234,28 @@ Payload
 
 暂停录制。
 
-参数
+parameters
 * 记录：记录的名称。
 
 **/api/holographic/simulation/playback/session/play （POST）**
 
 播放录制。
 
-参数
+parameters
 * 记录：记录的名称。
 
 **/api/holographic/simulation/playback/session/stop （POST）**
 
 停止录制。
 
-参数
+parameters
 * 记录：记录的名称。
 
 **/api/holographic/simulation/playback/session/types （GET）**
 
 获取已加载记录中数据的类型。
 
-参数
+parameters
 * 记录：记录的名称。
 
 ## <a name="perception-simulation-recording"></a>感知模拟记录
@@ -264,7 +264,7 @@ Payload
 
 开始记录。 一次只能有一个记录处于活动状态。 必须设置 head、双手、spatialMapping 或环境之一。
 
-参数
+parameters
 * head：设置为1以记录头数据。
 * 动手：设置为1以记录手型数据。
 * spatialMapping：设置为1以记录空间映射。
@@ -286,7 +286,7 @@ Payload
 
 从设备下载混合现实文件。 使用 op = stream query 参数进行流式处理。
 
-参数
+parameters
 * filename：要获取的视频文件的名称、hex64 编码
 * op： stream
 
@@ -294,7 +294,7 @@ Payload
 
 从设备中删除混合现实记录。
 
-参数
+parameters
 * filename：要删除的文件的名称，hex64 已编码
 
 **/api/holographic/mrc/files （GET）**
@@ -305,7 +305,7 @@ Payload
 
 采用混合现实照片，并在设备上创建文件
 
-参数
+parameters
 * holo：捕获全息影像： true 或 false （默认为 false）
 * pv：捕获 PV 摄像机： true 或 false （默认为 false）
 * RenderFromCamera：（仅限 HoloLens 2）从照片/视频相机的角度呈现： true 或 false （默认为 true）
@@ -334,14 +334,14 @@ Payload
 
 获取指定文件的缩略图图像。
 
-参数
+parameters
 * 文件名：要为其请求缩略图的文件的名称，hex64 已编码
 
 **/api/holographic/mrc/video/control/start （POST）**
 
 启动混合现实记录
 
-参数
+parameters
 * holo：捕获全息影像： true 或 false （默认为 false）
 * pv：捕获 PV 摄像机： true 或 false （默认为 false）
 * mic：捕获麦克风： true 或 false （默认为 false）
@@ -376,15 +376,15 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 1280x720p 30fps 5Mbit 流。
 
-**/api/holographic/stream/live_high （GET）**
+**/api/holographic/stream/live_high.mp4 （GET）**
 
 1280x720p 30fps 5Mbit 流。
 
-**/api/holographic/stream/live_med （GET）**
+**/api/holographic/stream/live_med.mp4 （GET）**
 
 854x480p 30fps 2.5 Mbit stream。
 
-**/api/holographic/stream/live_low （GET）**
+**/api/holographic/stream/live_low.mp4 （GET）**
 
 428x240p 15fps 0.6 Mbit stream。
 
@@ -408,7 +408,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 设置计算机名称
 
-参数
+parameters
 * 名称：要设置为的新计算机名称，hex64 编码为
 
 ## <a name="performance-data"></a>性能数据
@@ -453,7 +453,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 停止现代应用
 
-参数
+parameters
 * 包：应用包的完整名称，hex64 编码
 * forcestop：强制停止所有进程（= 是）
 
@@ -461,7 +461,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 启动新式应用
 
-参数
+parameters
 * appid：要启动的应用的 PRAID，hex64 编码
 * 包：应用包的完整名称，hex64 编码
 
@@ -478,7 +478,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 删除与指定接口上的网络相关联的配置文件
 
-参数
+parameters
 * 接口：网络接口 guid
 * 配置文件：配置文件名称
 
@@ -486,7 +486,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 枚举指定网络接口上的无线网络
 
-参数
+parameters
 * 接口：网络接口 guid
 
 返回数据
@@ -496,7 +496,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 连接或断开指定接口上的网络连接
 
-参数
+parameters
 * 接口：网络接口 guid
 * ssid： ssid，hex64 编码，用于连接到
 * op：连接或断开连接
@@ -509,7 +509,7 @@ HoloLens 支持混合现实的实时预览，通过块区下载零碎的工作�
 
 上传 "配置文件，并使用上传的配置文件开始跟踪。
 
-Payload
+有效负载
 * 多部分相容的 http 正文
 
 返回数据
@@ -533,12 +533,12 @@ Payload
 
 启动 "（性能）跟踪会话
 
-参数
-* 配置文件：配置文件名称。 可用的配置文件存储在 perfprofiles/配置文件中。 json
+parameters
+* 配置文件：配置文件名称。 可用的配置文件存储在 perfprofiles/profiles.js
 
 返回数据
 * 在 "开始" 中，返回 "会话状态。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 * [使用 Windows 设备门户](using-the-windows-device-portal.md)
 * [设备门户核心 API 参考（UWP）](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

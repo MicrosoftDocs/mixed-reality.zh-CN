@@ -3,15 +3,15 @@ title: 全息帧
 description: 用户通过全息帧查看混合现实的世界。
 author: cre8ivepark
 ms.author: dongpark
-ms.date: 03/21/2018
+ms.date: 06/25/2020
 ms.topic: article
 keywords: HoloLens，Windows Mixed Reality，全息帧，视图字段
-ms.openlocfilehash: 2145ba3b13bbd903299ad342292dfa8f5c05c023
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 0eae511d6dcbe5b379c8368d8878df6114d805aa
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434628"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441764"
 ---
 # <a name="holographic-frame"></a>全息帧
 
@@ -37,22 +37,7 @@ ms.locfileid: "73434628"
 
 实现此目的的一种方法是在将内容定位到现实世界的体验中提供持久性点（也称为特征点）。 例如，路标可以是实际的物理对象（例如显示数字内容的表），也可以是数字对象，例如内容经常出现在其中的数字屏幕集。 还可以将对象放置在全息帧的绕中，以鼓励用户查看关键内容，而绕之外的内容发现可以通过 "[注意" 导演进行维护](holographic-frame.md#attention-directors)。
 
-将对象放置在绕中可鼓励用户寻找一侧，这可由 "注意" 导演进行干预，如下所述。
-
-<br>
-
----
-
-## <a name="user-comfort"></a>用户舒适
-
-对于包含大型对象或多个对象的混合现实体验，请务必考虑与内容进行交互所需的头和颈部运动。 经验可以分为三个类别：**水平**（侧到端）、**垂直**（向上和向下）或**沉浸式**（水平和垂直）。 如果可能，请将大多数交互限制为水平或垂直类别，理想情况下，当用户的头处于非特定位置时，在全息帧中间发生大多数体验。 避免使用户不断将其视图移到非自然头位置的交互（例如，始终查找访问密钥菜单交互）。
-
-内容 ![最优区域低于范围的0到35度](images/optimal-field-of-view-2.png)<br>
-*内容的最佳区域为低于范围的0到35度*
-
-水平头移动更适合频繁交互，而垂直移动[应为不](comfort.md)常见事件保留。 例如，涉及长水平时间线的经验应限制交互（如在菜单中向下查看）的垂直头运动。
-
-请考虑在用户的空间周围放置对象，而不只是通过头运动来鼓励完全的变动。 移动对象或大型对象的经验应特别注意打印头运动，尤其是在水平轴和垂直轴上经常移动对象的情况下。
+将对象放置在绕中可鼓励用户寻找一侧，这可由 "注意" 导演进行干预，如下所述。 有关全息帧注意事项的详细信息，请参阅[舒适](comfort.md#holographic-frame-considerations)。
 
 <br>
 
@@ -76,7 +61,7 @@ ms.locfileid: "73434628"
 
 ### <a name="gaze-and-gaze-targeting"></a>注视并注视目标
 
-全息帧提供了一个工具，使开发人员能够触发交互，并评估用户对 dwells 的关注。 "[注视](gaze-and-commit.md)" 是[HoloLens 上的关键交互](interaction-fundamentals.md)，其中看，注视可以与[手势](gaze-and-commit.md#composite-gestures)（如通过攻丝）或[语音](voice-input.md)配对（允许更短、更自然地进行基于语音的交互）。 因此，这使得全息帧可以使用空间来观察数字内容并与之进行交互。 如果体验在用户的空间周围与多个对象进行交互（例如，通过 "注视 + 手势" 在用户的空间周围多选对象），请考虑将这些对象引入用户的视图中，或限制必需标头的数量提高[用户舒适](comfort.md)的迁移。
+全息帧提供了一个工具，使开发人员能够触发交互，并评估用户对 dwells 的关注。 "[注视](gaze-and-commit.md)" 是[HoloLens 上的关键交互](interaction-fundamentals.md)，其中看，注视可以与[手势](gaze-and-commit.md#composite-gestures)（如通过攻丝）或[语音](voice-input.md)配对（允许更短、更自然地进行基于语音的交互）。 因此，这使得全息帧可以使用空间来观察数字内容并与之进行交互。 如果体验在用户的空间周围与多个对象进行交互（例如，用注视 + 手势围绕用户的空间选择多个对象），请考虑将这些对象引入用户的视图中，或限制必要的头运动量，以使[用户舒适](comfort.md)。
 
 注视还可用于跟踪用户体验，并查看用户对哪些对象或部分用户最关注的部分。 这会特别用于调试体验，允许使用分析工具（如热图）查看用户花费最多时间或缺少特定对象或交互的位置。 注视跟踪还可以为体验提供强大的 facilitators 工具（请参阅[Lowe 的厨房](holographic-frame.md#lowes-kitchen)示例）。
 
@@ -125,11 +110,11 @@ Volvo 的经验还利用了视觉对象总监，创建从表的小规模汽车�
 
 ---
 
-### <a name="fragments"></a>片段
+### <a name="fragments"></a>Fragments
 
 在 HoloLens 游戏片段中，生活空间被转换为虚拟犯罪场景，其中显示了线索和证据以及虚拟会议室，其中，你可以与位于椅子上并在墙壁上精益的字符进行交谈。
 
-![片段被设计为在用户的家里发生，其中的字符与实际对象和图面交互。](images/fragments-750px.jpg)<br>
+![片段的设计目的是在用户的家里发生，其中的字符与现实世界的对象和图面交互。](images/fragments-750px.jpg)<br>
 *片段的设计目的是在用户的家里发生，其中的字符与现实世界的对象和图面交互。*
 
 用户最初开始体验时，需要一小段时间进行调整，在这种情况下，需要进行很少的交互，而不需要进行深入探讨。 这还有助于确保为游戏的交互式内容正确映射聊天室。
@@ -144,17 +129,17 @@ Volvo 的经验还利用了视觉对象总监，创建从表的小规模汽车�
 
 在目标：在[NASA 的肯尼迪太空中心](https://blogs.windows.com/devices/2016/09/19/hololens-experience-destination-mars-now-open-at-kennedy-space-center-visitor-complex/)使用的 Mars 体验中，访问者可以通过传奇 Astronaut 商业 Aldrin 的虚拟表示形式，通过的。
 
-![一个虚拟 Aldrin 将成为目标中的用户的焦点： Mars。](images/destinationmars-750px.png)<br>
+![对于目标中的用户来说，虚拟的商业 Aldrin 成为了重点： Mars。](images/destinationmars-750px.png)<br>
 *对于目标中的用户来说，虚拟的商业 Aldrin 成为了重点： Mars。*
 
 作为沉浸式体验，我们鼓励这些用户浏览，在所有方向上移动其标题以查看虚拟 Martian。 尽管为了确保用户舒适，Aldrin 的旁白和虚拟状态在整个体验中都提供了一个要点。 此虚拟录像（由[Microsoft 的混合现实拍摄工作室](https://www.microsoft.com/mixed-reality/capture-studios)创建）考验真实、人类规模，使用户能够在近乎完整的视图中看到他。 有针对性的旁白用户要将精力集中在环境中的不同点（例如，地面上的一组 Martian rocks 或距离内的山地范围内），并在其上引入特定场景更改或对象。
 
-![虚拟 narrators 将会使用户移动，并在整个体验中创建强大的焦点。](images/gazereset-750px.png)<br>
+![虚拟 narrators 将转变用户的移动，并在整个体验中创建强大的焦点。](images/gazereset-750px.png)<br>
 *虚拟 narrators 将转变用户的移动，并在整个体验中创建强大的焦点。*
 
 演讲的现实表现形式提供了一个功能强大的焦点，提供了一种很好的技巧，使用户能够像他一样，通过这种方式向用户表达自己的观点。 当用户移动了经验时，如果用户移动到了太远的绕，就会在返回到非特定状态之前向您返回阈值。 如果用户完全从 "反馈" 中看起来（例如，要查看场景中其他地方的内容），请返回到 "反馈"，讲述人的方向位置将再次专注于用户。 这样的方法可提供强大的浸入式功能，并在全息帧内创建一个焦点，减少过多的头运动并提升[用户舒适](comfort.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 * [本能交互](interaction-fundamentals.md)
 * [舒适](comfort.md)
 * [缩放](scale.md)

@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 坐标系、空间坐标系、世界规模、世界、规模、位置、方向、定位点、空间定位点、世界锁定、持久性、共享
-ms.openlocfilehash: f65cf582db43399814737d581ece4694646a144c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 8d270f96add795fdb54e0a91ebc9d38a34640da1
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438027"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441784"
 ---
 # <a name="spatial-anchors"></a>空间定位点
 
@@ -22,7 +22,7 @@ ms.locfileid: "73438027"
 * 使用<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空间锚</a>点创建云锚点，你的应用程序可以跨多个 HoloLens、IOS 和 Android 设备共享空间锚。 通过让每个设备使用相同的空间定位点呈现一个全息影像，用户将看到全息图显示在现实世界中的同一位置。 这可实现实时共享体验。
 * 还可以使用 <a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空间定位点</a>在 HoloLens、iOS 和 Android 设备上实现异步全息影像持久性。 通过共享持久的云空间定位点，多个设备可以随着时间推移观察相同的持久全息影像，即使这些设备没有同时出现，也是如此。
 
-对于受限桌面耳机的大规模或房间规模体验，这些体验将停留在5米的直径下，你通常可以使用参考的[阶段框架](coordinate-systems.md#stage-frame-of-reference)，而不是空间锚，为你提供要在其中呈现所有内容。 但是，如果应用程序希望让用户游离在一座办公楼的整个楼层内超过5米，则需要使用空间锚，使内容保持稳定。
+对于受限台式机耳机的大规模或房间规模体验，这些体验将停留在5米内，你通常可以使用[参考的阶段框架](coordinate-systems.md#stage-frame-of-reference)，而不是空间锚，为你提供一个用于呈现所有内容的单一坐标系统。 但是，如果应用程序希望让用户游离在一座办公楼的整个楼层内超过5米，则需要使用空间锚，使内容保持稳定。
 
 虽然空间定位点非常适合应该在世界中保持固定的全息影像，但是放置定位点后，它便无法移动。 对于与用户一起标记的动态全息影像，更适合定位锚。 最好使用固定的参照系（Unity 世界坐标的基础）或附加的参照系来定位动态全息影像。
 
@@ -52,7 +52,7 @@ ms.locfileid: "73438027"
 
 ### <a name="render-highly-dynamic-holograms-using-the-stationary-frame-of-reference-instead-of-a-local-spatial-anchor"></a>使用固定参照系（而不是局部空间定位点）呈现高度动态全息影像
 
-如果你有一个高度动态的全息图（例如，人物围绕用户附近的墙壁或浮动 UI），最好跳过本地空间锚，并直接在由以下各[项提供的固定的引用框架](coordinate-systems.md#stationary-frame-of-reference)。 我的 Unity 是，通过在不使用 WorldAnchor 的情况下直接在世界坐标中放置全息影像即可实现此目的。 当用户离全息影像时，固定框架中的全息影像可能会出现偏移。 但对于动态全息影像而言，这不太可能是显而易见的：这可能是因为全息影像经常发生移动，或者它的运动不断地使其靠近用户，而偏移量会降至最低。
+如果你有一个高度动态的全息图（例如，人物围绕用户附近的墙壁或浮动 UI），最好跳过本地空间锚，并直接在[固定的参考框架](coordinate-systems.md#stationary-frame-of-reference)提供的坐标系统中渲染这些全息影像。 在 Unity 中，可以通过在不使用 WorldAnchor 的情况下直接将全息影像置于世界坐标中来实现此目的。 当用户离全息影像时，固定框架中的全息影像可能会出现偏移。 但对于动态全息影像而言，这不太可能是显而易见的：这可能是因为全息影像经常发生移动，或者它的运动不断地使其靠近用户，而偏移量会降至最低。
 
 动态全息影像的一个有趣的例子是创建从一个锚定坐标系到另一个锚定坐标系的动画的对象。 例如，你可能有两个 castles 的10米，每个都在其自己的空间锚，其中有一个城堡触发 cannonball。 在触发 cannonball 时，可以将其呈现在固定引用框架中的适当位置，使其与第一个城堡的定位坐标系统中的 cannon 一致。 然后，它可以循着它在固定参照系中的轨迹，在空中飞行 10 米。 当 cannonball 到达另一个城堡时，您可以选择将它移动到第二个城堡的定位坐标系，以允许与该城堡的严格主体进行物理学计算。
 
@@ -71,7 +71,7 @@ ms.locfileid: "73438027"
 
 对于云空间定位点，存储可以根据场景需要进行扩展。 你可以根据需要存储任意数量的云定位点，仅当你知道用户不需要在该定位点上再次查找全息影像时才会将其释放。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 * [坐标系统](coordinate-systems.md)
 * [混合现实中的共享体验](shared-experiences-in-mixed-reality.md)
 * <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空间定位点</a>
