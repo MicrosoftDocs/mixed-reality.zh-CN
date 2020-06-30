@@ -3,16 +3,16 @@ title: 4. 使场景具有交互性
 description: 教程系列第 4 部分（共 6 部分）- 使用 Unreal Engine 4 和混合现实工具包 UX Tools 插件构建一款简单的象棋应用
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: a9de5755ab86c96322a8d50fecd7ba2cdea866d3
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 62c0ff839718f7fda34bdc7560eae634fa37d44f
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330214"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720333"
 ---
 # <a name="4-making-your-scene-interactive"></a>4.使场景具有交互性
 
