@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程
-ms.openlocfilehash: e5961a178d571d2f71e98ff4c3c729d6feb0fd40
-ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
+ms.openlocfilehash: 57ddf1569ff87a278134eff0204942094b1cd014
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327957"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216248"
 ---
 # <a name="tutorials-and-sample-apps"></a>教程和示例应用
 
@@ -36,9 +36,15 @@ HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程
 
 开源示例应用是我们团队创建的应用程序，我们提供了源代码，供开发人员参考并从我们的项目中学习经验。
 
-* [元素周期表](periodic-table-of-the-elements.md)
+### <a name="hololens-2-open-source-sample-apps"></a>HoloLens 2 开源示例应用
+* [表面](sampleapp-surfaces.md)
+* [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
+* [星系探索者 2.0](galaxy-explorer-update.md)
+
+### <a name="hololens-1st-gen-open-source-sample-apps"></a>HoloLens（第 1 代）开源示例应用
+* [元素周期表 1.0](periodic-table-of-the-elements.md)
+* [星系探索者 1.0](galaxy-explorer.md)
 * [月亮模块](lunar-module.md)
-* [星系探索者](galaxy-explorer.md)
 
 ## <a name="mixed-reality-academy-tutorials"></a>混合现实学院教程
 
