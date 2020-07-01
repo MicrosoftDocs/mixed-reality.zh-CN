@@ -6,19 +6,17 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合现实，Windows Mixed Reality，HoloLens，沉浸，，vr，先生，入门，全息影像，学院，教程
-ms.openlocfilehash: fe0fb256e5aed7aa83f8bb9b1e8ba7bb873a0613
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 58a1785ef74872c633cf65d6a32e24d517367359
+ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082064"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85570307"
 ---
->[!NOTE]
->混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。  因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。  我们**不会_在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。_**  我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
+# <a name="mr-basics-100-getting-started-with-unity"></a>MR 基础知识 100：Unity 入门
 
-<br>
-
-# <a name="mr-basics-100-getting-started-with-unity"></a>MR 要点100： Unity 入门
+>[!IMPORTANT]
+>混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。  因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。  我们**不会**在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。  我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
 
 本教程将指导你创建使用 Unity 构建的基本混合现实应用。
 
@@ -28,7 +26,7 @@ ms.locfileid: "80082064"
 <tr>
 <th>课程</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
-<td>MR 要点100： Unity 入门</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td>MR 基础知识 100：Unity 入门</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
@@ -40,7 +38,7 @@ ms.locfileid: "80082064"
 
 >[!VIDEO https://www.youtube.com/embed/2L5IFO0hnYA]
 
-若要使用 Unity 构建应用，首先需要创建一个项目。 此项目组织为多个文件夹，其中最重要的文件夹是 "资产" 文件夹。 此文件夹包含从数字内容创建工具（如 Maya、最大电影院4D 或 Photoshop）中导入的所有资产、你用 Visual Studio 创建的所有代码或你最喜欢的代码编辑器，以及当你编写场景时 Unity 创建的任意数量的内容文件、动画和其他 Unity 资产类型。
+若要使用 Unity 构建应用，首先需要创建一个项目。 此项目组织为多个文件夹，其中最重要的文件夹是 "资产" 文件夹。 此文件夹包含从数字内容创建工具（如 Maya、最大电影院4D 或 Photoshop）中导入的所有资产、你用 Visual Studio 创建的所有代码或你最喜欢的代码编辑器，以及 Unity 在编辑器中编写场景、动画和其他 Unity 资产类型时创建的任意数量的内容文件。
 
 若要生成和部署 UWP 应用，Unity 可将项目导出为 Visual Studio 解决方案，该解决方案将包含所有必需的资产和代码文件。
 
@@ -93,7 +91,7 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 
 >[!VIDEO https://www.youtube.com/embed/ItRoiXccC0g]
 
-在本章中，我们将设置一些 Unity 项目设置，这些设置可帮助我们面向 Windows 全息 SDK 进行开发。 我们还将设置应用程序的质量设置。 最后，我们将确保生成目标设置为 Windows 应用商店。
+在本章中，我们将设置一些 Unity 项目设置，这些设置可帮助我们面向 Windows 全息 SDK 进行开发。 我们还将设置应用程序的质量设置。 最后，我们将确保生成目标设置为通用 Windows 平台。
 
 ### <a name="unity-performance-and-quality-settings"></a>Unity 性能和质量设置
 
@@ -104,7 +102,7 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 由于在 HoloLens 上维护高的帧率非常重要，因此我们希望优化质量设置以实现最高性能。 有关性能的详细信息，请查看[Unity 的性能建议](performance-recommendations-for-unity.md)。
 
 1. 选择 "**编辑 > 项目设置 > 质量**"
-2. 选择**Windows 应用商店**徽标下的**下拉列表**，并选择 "**非常低**"。 如果 Windows 应用商店列和**极低**的行中的框为绿色，则会知道设置正确应用。
+2. 选择**通用 Windows 平台**徽标下的**下拉列表**，并选择 "**非常低**"。 当 "通用 Windows 平台" 列中的框为绿色**时，将**知道设置正确应用。
 
 **对于目标为封闭像素的混合现实应用程序**，你可以将质量设置保留为其默认值。
 
@@ -117,21 +115,13 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 我们需要让 Unity 知道我们要导出的应用程序应创建[沉浸式视图](app-views.md)而不是2d 视图。 为此，我们将在针对 Windows 10 SDK 的 Unity 上启用虚拟现实支持。
 
 1. 请参阅 "**编辑 > 项目设置" > Player**"。
-2. 在 "播放器设置" 的**检查器面板**中，选择 " **Windows 应用商店**" 图标。
-3. 展开 " **XR 设置**" 组。
+2. 在 "播放器设置" 的**检查器面板**中，选择 "**通用 Windows 平台**" 图标。
+3. 展开“XR 设置”组。
 4. 在 "**呈现**" 部分中，选中 "**支持虚拟现实**" 复选框，以添加新的**虚拟现实 sdk**列表。
-5. 验证 " **Windows Mixed Reality** " 是否显示在列表中。 如果没有，请选择列表底部的 " **+** " 按钮，然后选择 " **Windows Mixed Reality**"。
+5. 验证列表中是否显示“Windows 混合现实”。 如果没有，请选择列表底部的“+”按钮，然后选择“Windows 混合现实” 。
 
 >[!NOTE]
->如果看不到**Windows 应用商店**图标，请仔细检查以确保在安装之前选择了 Windows 应用商店 .Net 脚本后端。 否则，可能需要重新安装具有正确 Windows 安装的 Unity。
-
-**验证 .NET 配置**
-
-![验证 .NET 配置](images/configoptions-375px.png)
-
-1. 请参阅 "**编辑 > 项目设置" > Player** "（你可能仍然从上一步开始）。
-2. 在 "播放器设置" 的**检查器面板**中，选择 " **Windows 应用商店**" 图标。
-3. 在 "**其他设置**" "配置" 部分中，确保 "**脚本后端**" 设置为 " **.net** "
+>如果看不到 "**通用 Windows 平台**" 图标，请仔细检查以确保在安装过程中选择通用 Windows 平台生成支持。 如果没有，可能需要使用正确的 Windows 安装重新安装 Unity。
 
 获取应用了所有项目设置的出色作业。 接下来，让我们添加全息影像！
 
@@ -186,20 +176,19 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 
 ### <a name="export-to-the-visual-studio-solution"></a>导出到 Visual Studio 解决方案
 
-1.  打开**文件 > 生成设置**"窗口。
-2.  单击 "**添加打开的场景**" 添加场景。
-3.  将**平台**更改为 "**通用 Windows 平台**"，然后单击 "**切换平台**"。
-4.  在**Windows 应用商店**设置中，请确保**SDK**为**通用 10**。
-5.  对于 "目标设备"，请将封闭像素的**任何设备**保留为 "显示" 或 "切换到**HoloLens**"。
-6.  **UWP 生成类型**应为**D3D**。
-7.  **UWP SDK**可以保持**最新安装的版本**。
-8.  检查正在调试的**Unity C#项目**。
-9.  单击“生成”。
-10. 在文件资源管理器中，单击 "**新建文件夹**"，然后将文件夹命名为 **"App"** 。
-11. 选择**应用**文件夹后，单击 "**选择文件夹**" 按钮。
-12. 当 Unity 完成生成后，将显示一个 Windows 文件资源管理器窗口。
-13. 在文件资源管理器中打开**应用程序**文件夹。
-14. 打开生成的 Visual Studio 解决方案（在本示例中为 MixedRealityIntroduction）
+1. 打开**文件 > 生成设置**"窗口。
+1. 单击 "**添加打开的场景**" 添加场景。
+1. 将**平台**更改为 "**通用 Windows 平台**"，然后单击 "**切换平台**"。
+1. 在**通用 Windows 平台**设置 "中，确保**SDK**为**通用 10**。
+1. 对于 "目标设备"，请将封闭像素的**任何设备**保留为 "显示" 或 "切换到**HoloLens**"。
+1. **UWP 生成类型**应为**D3D**。
+1. **UWP SDK**可以保持**最新安装的版本**。
+1. 单击“生成”****。
+1. 在文件资源管理器中，单击 "**新建文件夹**"，然后将文件夹命名为 **"App"**。
+1. 选择**应用**文件夹后，单击 "**选择文件夹**" 按钮。
+1. 当 Unity 完成生成后，将显示一个 Windows 文件资源管理器窗口。
+1. 在文件资源管理器中打开**应用程序**文件夹。
+1. 打开生成的 Visual Studio 解决方案（在本示例中为 MixedRealityIntroduction）
 
 ### <a name="compile-the-visual-studio-solution"></a>编译 Visual Studio 解决方案
 
@@ -234,9 +223,9 @@ Unity 摄像机处理头跟踪和 stereoscopic 呈现。 需要对主摄像机�
 
 部署你的应用后，请尝试四处移动该多维数据集，并观察它是否在世界各地。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Unity 开发概述](unity-development-overview.md)
 * [使用 Unity 和 Visual Studio 的最佳做法](best-practices-for-working-with-unity-and-visual-studio.md)
-* [MR 101](holograms-101.md)
-* [先生101E](holograms-101e.md)
+* [MR 基础知识 101](holograms-101.md)
+* [MR 基础知识 101E](holograms-101e.md)

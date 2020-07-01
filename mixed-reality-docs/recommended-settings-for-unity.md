@@ -1,19 +1,19 @@
 ---
-title: 适用于 Unity 的推荐设置
+title: 建议用于 Unity 的设置
 description: Unity 提供一些特定于混合现实的行为，这些行为可通过项目设置进行切换。
 author: troy-ferrell
 ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity，设置，混合现实
-ms.openlocfilehash: 9b4e04e10e95f6c4f12a25a6f34236d9d2bf99a2
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: e7628a8653fffbab9c792161ac8ff1666b47fa62
+ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278005"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85570323"
 ---
-# <a name="recommended-settings-for-unity"></a>适用于 Unity 的推荐设置
+# <a name="recommended-settings-for-unity"></a>建议用于 Unity 的设置
 
 Unity 提供了一组默认选项，这些选项通常是所有平台的平均事例。 但是，Unity 提供一些特定于混合现实的行为，这些行为可通过项目设置进行切换。
 
@@ -25,11 +25,11 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 在 Unity 2018 LTS + 中，可以通过以下方式设置项目的质量级别：
 
-在 "**编辑** > **项目设置**" > **质量**> 设置**默认值**，方法是单击向下箭头到**非常低**质量级别
+在 "**编辑**  >  **项目设置**  >  **质量**>" 下，通过单击向下箭头到**非常低**质量级别来设置**默认值**
 
 ### <a name="lighting-settings"></a>照明设置
 
-与质量场景设置相似，必须为混合现实应用程序设置最佳照明设置。 在 Unity 中，通常会对场景产生最大性能影响的照明设置是**实时全局照明**。 这可以通过以下方式关闭：在**窗口** > **呈现** > **照明设置** > **实时全局照明**。
+与质量场景设置相似，必须为混合现实应用程序设置最佳照明设置。 在 Unity 中，通常会对场景产生最大性能影响的照明设置是**实时全局照明**。 这可以通过以下方式关闭：在 "**窗口**  >  **渲染**  >  **照明**" "  >  **实时全局照明**" 下。
 
 还有另一个照明设置，**融入全局照明**。 此设置可以提供沉浸式耳机上的高性能和直观的结果，但通常不适用于 HoloLens 开发。 **融入 Global Illumniation**仅针对静态 gameobject 进行计算，这通常是由于未知和不断变化的环境的性质，而在 HoloLens 场景中找不到。
 
@@ -44,18 +44,18 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 在 Unity 项目中启用此功能
 
-1)  打开“播放器 XR 设置”（转到“编辑” **“项目设置”** “播放器” **“XR 设置”）**  >  >  > 
-2) 从“立体渲染方法”下拉菜单中选择“单通道实例化”（必须选中“支持虚拟现实”复选框）
+1)  打开**播放机 XR 设置**（请参阅**编辑**  >  **项目设置**  >  **播放器**  >  **XR 设置**）
+2) 从 "**立体声呈现方法**" 下拉菜单中选择 "**单一传递实例**" （必须选中 "**支持虚拟现实**" 复选框）
 
 有关此呈现方法的更多详细信息，请参阅 Unity 中的以下文章。
 
-- [如何使用高级立体渲染最大化 AR 和 VR 的性能](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
-- [单通道实例化](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
+- [如何通过高级立体声呈现最大化 AR 和 VR 性能](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
+- [单步实例](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
 
 >[!NOTE]
-> 如果开发人员的现有自定义着色器不是针对实例化编写的，则单通道实例化渲染会发生一个常见问题。 启用此功能后，开发人员可能会注意到，某些 GameObject 只在一只眼睛中呈现。 这是因为，关联的自定义着色器没有与实例化相关的适当属性。
+> 如果开发人员已有未为实例化编写的现有自定义着色器，则会出现单一传递实例呈现的一个常见问题。 启用此功能后，开发人员可能会注意到某些 Gameobject 只会在一眼中呈现。 这是因为关联的自定义着色器没有用于实例化的适当属性。
 >
-> 请参阅 Unity 文章 [HoloLens 的 单通道立体渲染](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)来了解如何解决此问题
+> 有关如何解决此问题的详细说明，请参阅针对基于 Unity 的[HoloLens 的单一传递立体声呈现](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)
 
 ### <a name="enable-depth-buffer-sharing"></a>启用深度缓冲共享
 
@@ -63,8 +63,8 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 在 Unity 项目中启用此功能
 
-1) 打开“播放器 XR 设置”（转到“编辑” **“项目设置”** “播放器” **“XR 设置”）**  >  >  > 
-2) 选中 "在**虚拟现实 sdk**下**启用深度缓冲区共享**" 复选框 > **Windows Mixed Reality**扩展（必须选中 "**支持虚拟现实**" 复选框）
+1) 打开**播放机 XR 设置**（请参阅**编辑**  >  **项目设置**  >  **播放器**  >  **XR 设置**）
+2) 选中 "在**虚拟现实 sdk**Windows Mixed reality 扩展下**启用深度缓冲区共享**" 复选框  >  **Windows Mixed Reality** （必须选中 "**支持虚拟现实**" 复选框）
 
 此外，建议在此面板中的 "**深度格式**" 设置下选择 " **16 位深度**"，尤其是对于 HoloLens 开发。 与24位相比，选择16位可显著减少带宽需求，因为需要移动/处理的数据量较少。
 
@@ -85,7 +85,7 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 ### <a name="building-for-il2cpp"></a>为 IL2CPP 生成
 
-Unity 已弃用 .NET 脚本编写后端的支持，因此建议开发人员使用**IL2CPP**来实现 UWP visual studio build。 虽然这带来了不同的优点，但从 Unity for **Il2CPP**构建 visual studio 解决方案比旧的 .net 方法要慢得多。 因此，强烈建议遵循用于生成**IL2CPP**的最佳做法，以便在开发迭代时节省时间。
+Unity 已弃用 .NET 脚本编写后端的支持，因此建议开发人员使用**IL2CPP**来实现 UWP visual studio build。 虽然这带来了不同的优点，但从 Unity for **IL2CPP**构建 visual studio 解决方案比旧的 .net 方法要慢得多。 因此，强烈建议遵循用于生成**IL2CPP**的最佳做法，以便在开发迭代时节省时间。
 
 1) 每次将项目生成到同一个目录，以便在其中重复使用预先生成的文件，从而利用增量生成
 2) 禁用项目 & 生成文件夹的反恶意软件扫描
@@ -108,7 +108,7 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 
 若要切换全息初始屏幕：
 
-1) 请参阅 "**编辑** > **项目设置**" > **播放器**"页
+1) 中转到 "**编辑**  >  **项目设置**  >  **播放器**" 页面
 2) 单击 " **Windows 应用商店**" 选项卡并打开 "**初始图像**" 部分
 3) 在 " **Windows 全息 > 全息闪屏" 映像**属性下应用所需的映像。
     - 切换 "**显示 Unity 初始屏幕**" 选项将启用或禁用 Unity 品牌初始屏幕。 如果没有 Unity Pro 许可证，则将始终显示 Unity 品牌初始屏幕。
@@ -116,14 +116,14 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 
 |  显示 Unity 初始屏幕  |  全息闪屏映像  |  行为 |
 |----------|----------|----------|
-|  开  |  无  |  显示5秒的默认 Unity 初始屏幕或在加载应用之前，以较长者为准。 |
+|  开  |  None  |  显示5秒的默认 Unity 初始屏幕或在加载应用之前，以较长者为准。 |
 |  开  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
-|  关闭  |  无  |  在加载应用之前显示透明的黑色（无）。 |
+|  关闭  |  None  |  在加载应用之前显示透明的黑色（无）。 |
 |  关闭  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
 
 有关详细信息，请阅读[Unity 初始屏幕文档](https://docs.unity3d.com/Manual/class-PlayerSettingsSplashScreen.html)。
 
-### <a name="tracking-loss"></a>跟踪丢失
+### <a name="tracking-loss"></a>失跟
 
 混合现实耳机依赖于查看它周围的环境，以构建[全球锁定的坐标系](coordinate-systems-in-unity.md)，使全息影像保持在位置。 当耳机无法在世界各地定位时，耳机被称为*丢失跟踪*。 在这些情况下，依赖于全球锁定坐标系的功能（如空间阶段、空间锚和空间映射）不起作用。
 
@@ -131,7 +131,7 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 
 自定义跟踪丢失映像：
 
-1) 请参阅 "**编辑** > **项目设置**" > **播放器**"页
+1) 中转到 "**编辑**  >  **项目设置**  >  **播放器**" 页面
 2) 单击 " **Windows 应用商店**" 选项卡，并打开 "**初始图像**" 部分
 3) 在 " **Windows 全息 > 跟踪丢失映像**" 属性下应用所需的映像。
 
@@ -141,7 +141,7 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 
 选择退出自动暂停行为：
 
-1) 切换到 "**编辑** > **项目设置** > **播放器**" 页
+1) 请参阅**编辑**  >  **项目设置**  >  **播放器**页面
 2) 单击 " **Windows 应用商店**" 选项卡并打开 "**初始图像**" 部分
 3) 修改 "**跟踪丢失时暂停" 和 "显示图像**" 复选框中的 Windows 全息 >。
 
@@ -155,13 +155,13 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 
 可以通过以下方式为混合现实应用程序启用功能：
 
-1) 请参阅 "**编辑** > **项目设置**" > **播放器**"页
+1) 中转到 "**编辑**  >  **项目设置**  >  **播放器**" 页面
 2) 单击 " **Windows 应用商店**" 选项卡，打开 "**发布设置**" 部分，并查找**功能**列表
 
 为全息应用启用常用 Api 的适用功能包括：
 <br>
 
-|  Capability  |  需要功能的 Api |
+|  功能  |  需要功能的 Api |
 |----------|----------|
 |  SpatialPerception  |  SurfaceObserver |
 |  网络摄像头  |  PhotoCapture 和 VideoCapture |
@@ -169,7 +169,7 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 |  麦克风  |  VideoCapture （捕获音频时）、DictationRecognizer、GrammarRecognizer 和 KeywordRecognizer |
 |  InternetClient  |  DictationRecognizer （和使用 Unity 探查器） |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Unity 开发概述](unity-development-overview.md)
 * [了解混合现实的性能](understanding-performance-for-mixed-reality.md)

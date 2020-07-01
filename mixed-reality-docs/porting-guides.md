@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 10/02/2018
 ms.topic: article
 keywords: 端口，移植，unity，中间件，引擎，UWP
-ms.openlocfilehash: 06501742d4b5c30036982deef2ec2a88171912bf
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 73126ae90ed12988177cc9192b7db41bae30fcc2
+ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278035"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85570316"
 ---
 # <a name="porting-guides"></a>移植指南
 
@@ -70,9 +70,10 @@ Windows Mixed Reality 平台仍处于积极开发阶段，若要最有效地进�
 ### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 步骤4：将应用程序设定为在通用 Windows 平台（UWP）上运行
 
 安装这些工具后，需要将应用作为通用 Windows 应用运行。
+
 * 按照 Unity 提供的[详细分步指导](https://unity3d.com/partners/microsoft/porting-guides)进行操作。 请注意，你应该保留适用于 Windows 的最新 LTS 版本（任何20xx 版本）。
 * 有关 UWP 开发资源的详细信息，请参阅[Windows 10 游戏开发指南](https://docs.microsoft.com/windows/uwp/gaming/e2e)。
-* 请注意，Unity 将继续改进 IL2CPP 支持;IL2CPP 使某些 UWP 端口变得更加简单。 如果你当前面向的是 .Net 脚本编写后端，则应考虑将转换为使用 IL2CPP 后端。
+* 请注意，Unity 将继续改进 IL2CPP 支持;IL2CPP 使某些 UWP 端口变得更加简单。 如果你当前面向的是 .NET 脚本编写后端，则应考虑将转换为使用 IL2CPP 后端。
 
 注意：如果你的应用程序对设备特定服务具有任何依赖关系（例如，从流中进行匹配），则需要在此步骤中禁用它们。 稍后，你可以与 Windows 提供的等效服务挂钩。
 
@@ -104,7 +105,7 @@ XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 
 这将设置 Unity 的世界坐标系统以跟踪[固定的引用框架](coordinate-systems.md#spatial-coordinate-systems)。 在静止跟踪模式下，当应用程序启动时，位于面板默认位置（正向-Z）前面的编辑器中的内容将显示在用户的前面。 若要 recenter 用户的固定来源，可以调用 Unity 的[XR。InputTracking. Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)方法。
 
-如果迁移的是**大规模体验**或**房间规模体验**，将会相对于地面放置内容。 使用 **[空间阶段](coordinate-systems.md#spatial-coordinate-systems)** （表示用户在首次运行期间设置的已定义的层级来源和可选房间边界）的原因。 对于这些体验，必须确保将 Unity 设置为**RoomScale**跟踪空间类型。 尽管 RoomScale 是默认值，但你需要对其进行显式设置，并确保返回 true，以便捕获用户将其计算机从其校准的房间离开的情况：
+如果迁移的是**大规模体验**或**房间规模体验**，将会相对于地面放置内容。 使用**[空间阶段](coordinate-systems.md#spatial-coordinate-systems)**（表示用户在首次运行期间设置的已定义的层级来源和可选房间边界）的原因。 对于这些体验，必须确保将 Unity 设置为**RoomScale**跟踪空间类型。 尽管 RoomScale 是默认值，但你需要对其进行显式设置，并确保返回 true，以便捕获用户将其计算机从其校准的房间离开的情况：
 
 ```cs
 if (XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale))
@@ -141,9 +142,9 @@ else
 ### <a name="unity-step-9-work-through-your-input-model"></a>Unity 步骤9：处理输入模型
 
 每个面向现有 HMD 的游戏或应用程序都将具有一组可处理的输入，其所需的输入类型和体验所需的特定 Api 以及用于获取这些输入的特定 Api。 我们投入了大量努力，尽可能简单直接地利用 Windows Mixed Reality 中提供的输入。
-1. 通读有关 Windows Mixed Reality 如何公开输入的详细信息，以及如何映射到你的应用程序可以执行的 **[操作的详细](input-porting-guide-for-unity.md)** 信息。
+1. 通读有关 Windows Mixed Reality 如何公开输入的详细信息，以及如何映射到你的应用程序可以执行的**[操作的详细](input-porting-guide-for-unity.md)** 信息。
 2. 选择是要使用 Unity 的跨 VR-SDK 输入 API 还是 MR 专用输入 API。 当前，Unity VR 应用使用一般输入. GetButton/GetAxis Api 进行[Oculus 输入](https://docs.unity3d.com/Manual/OculusControllers.html)和[OpenVR 输入](https://docs.unity3d.com/Manual/OpenVRControllers.html)。 如果你的应用程序已使用这些用于运动控制器的 Api，这是最简单的路径，你只需在输入管理器中重新映射按钮和轴即可。
-    * 您可以使用一般的 GetButton/GetAxis Api 或 MR 专用 UnityEngine. XR Api 来访问 Unity 中的运动控制器数据. Api。 （以前在 Unity 5.6 的 UnityEngine 命名空间中）
+    * 您可以使用一般的 GetButton/GetAxis Api 或 MR 专用 UnityEngine. XR Api 来访问 Unity 中的运动控制器数据。. Api。 （以前在 Unity 5.6 的 UnityEngine 命名空间中）
     * 请参阅组合游戏板和运动控制器的[工具包中的示例](https://github.com/Microsoft/HoloToolkit-Unity/pull/572)。
 
 ### <a name="unity-step-10-performance-testing-and-tuning"></a>Unity 步骤10：性能测试和优化
@@ -152,7 +153,7 @@ Windows Mixed Reality 将在各种设备上可用，范围从高端游戏电脑�
 
 [Unity](https://docs.unity3d.com/Manual/Profiler.html)和[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)都包含性能探查器， [Microsoft](understanding-performance-for-mixed-reality.md)和[Intel](https://software.intel.com/articles/vr-content-developer-guide)发布有关性能分析和优化的指导原则。 在[了解混合现实的性能](understanding-performance-for-mixed-reality.md)方面提供了更全面的性能讨论。 此外，针对[unity 的性能建议](performance-recommendations-for-unity.md)下的 unity 有特定的详细信息。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 * [Unity 的输入移植指南](input-porting-guide-for-unity.md)
 * [Windows Mixed Reality 最小电脑硬件兼容性指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [了解混合现实的性能](understanding-performance-for-mixed-reality.md)
