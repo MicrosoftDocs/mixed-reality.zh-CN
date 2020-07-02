@@ -3,16 +3,16 @@ title: 2. 初始化你的项目和第一个应用程序
 description: 教程系列第 2 部分（共 6 部分）- 使用 Unreal Engine 4 和混合现实工具包 UX Tools 插件构建一款简单的象棋应用
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: e8f03a87ec6b92e4c62cf3f88f519146254e7387
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 150fee721bb9cd72d287737aca4262bd87dccba8
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330321"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345727"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化你的项目和第一个应用程序
 
@@ -20,7 +20,7 @@ ms.locfileid: "84330321"
 
 在第一个教程中，你将开始使用适用于 HoloLens 2 的新 Unreal 应用程序。 这包括添加 HoloLens 插件、创建和点亮关卡，并使用游戏板和棋子来填充它。 你会将预制的资产用于 3D 棋子和对象材质，因此不必担心要从头开始建模。 本教程结束时，有一个可用于混合现实的空白画布。
 
-在继续之前，请确保满足[入门](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1)页中的所有先决条件。
+在继续之前，请确保满足[入门](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1)页面中的所有先决条件。
 
 ## <a name="objectives"></a>目标
 * 为 HoloLens 开发配置 Unreal 项目
@@ -28,7 +28,7 @@ ms.locfileid: "84330321"
 * 使用蓝图创建 Actor 和脚本级别事件
 
 ## <a name="creating-a-new-unreal-project"></a>创建新的 Unreal 项目
-首先需要一个待处理的项目。
+首先需要一个待处理的项目。 如果这是你第一次为 HoloLens 创建 Unreal 应用，则需要从 Epic Launcher [下载支持文件](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch6#packaging-and-deploying-the-app)。
 
 1. 启动 Unreal Engine
 
@@ -43,6 +43,9 @@ ms.locfileid: "84330321"
 4. 选择“C++”、“可缩放的 3D 或 2D”、“移动/平板电脑”和“非初学者内容”作为“项目设置”   。 
     * 选择一个保存位置，然后单击“创建项目”。 
 
+> [!NOTE]
+> 为了生成 UX Tools 插件，必须选择 C++ 项目而不是 Blueprint 项目，你稍后将在第 4 节中对此进行设置。
+
 ![初始项目设置](images/unreal-uxt/2-project-settings.PNG)
 
 项目应在 Unreal 编辑器中自动打开，这意味着你已准备好进入下一部分。
@@ -56,7 +59,7 @@ ms.locfileid: "84330321"
 ![启用 HoloLens 插件](images/unreal-uxt/2-plugins.PNG)
 
 2. 从内置选项列表中选择“虚拟现实”。 
-    * 向下滚动到“Microsoft Windows Mixed Reality”，选中“已启用”，然后重新启动编辑器。 
+    * 向下滚动到“Microsoft Windows Mixed Reality”，选择“已启用”，然后重启编辑器 。 
 
 ![启用 Windows Mixed Reality 插件](images/unreal-uxt/2-virtual-reality-plugin.PNG)
 

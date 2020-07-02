@@ -3,16 +3,16 @@ title: 3. 设置混合现实项目
 description: 教程系列第 3 部分（共 6 部分）- 使用 Unreal Engine 4 和混合现实工具包 UX Tools 插件构建一款简单的象棋应用
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: d22c3d8c9048f53171298642768877d7bcdcb972
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: f79985b2ce9e26971c23acf36a3538bf7f3c166e
+ms.sourcegitcommit: ff0e89b07d0b4a945967d64c5b8845a21dc5f476
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330277"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879561"
 ---
 # <a name="3-setting-up-your-project-for-mixed-reality"></a>3.设置混合现实项目
 
@@ -37,17 +37,21 @@ Unreal 中的 AR 会话无法自行发生。 要使用会话，需要借助 ARSe
 
 ![AR 会话配置](images/unreal-uxt/3-arsessionconfig.PNG)
 
-完成此操作后，下一步是确保在关卡加载时 AR 会话会启动。 幸运的是，Unreal 具有一种叫做“关卡蓝图”的特殊蓝图，它用作关卡范围的全局事件图。 在关卡蓝图中连接 ARSessionConfig 资产，可确保游戏开始时 AR 会话将立即触发。
+完成此操作后，下一步是确保在关卡加载时 AR 会话会启动，而在关卡结束时 AR 会话会停止。 幸运的是，Unreal 具有一种叫做“关卡蓝图”的特殊蓝图，它用作关卡范围的全局事件图。 在关卡蓝图中连接 ARSessionConfig 资产，可确保游戏开始时 AR 会话将立即触发。
 
 1. 从编辑器工具栏中单击“蓝图 > 打开关卡蓝图”： 
 
 ![打开关卡蓝图](images/unreal-uxt/3-level-blueprint.PNG)
 
-5. 将执行节点（左指箭头图标）拖离 Event BeginPlay 并释放。 搜索“启动 AR 会话”并按 Enter。  
+5. 将执行节点（左指箭头图标）拖离 Event BeginPlay 并释放。 搜索“启动 AR 会话”节点，然后按 Enter 键。  
     * 单击“会话配置”下的“选择资产”下拉列表，然后选择“ARSessionConfig”资产。   
-    * 点击“编译”和保存”，然后返回到主窗口。
 
 ![启动 AR 会话](images/unreal-uxt/3-start-ar-session.PNG)
+
+6. 右键单击 EventGraph 中的任意位置，然后创建一个新的 Event EndPlay 节点。 拖动执行 pin 并释放。 搜索“停止 AR 会话”节点，然后按 Enter 键。 如果在关卡结束时 AR 会话未停止，那么在流式传输到头戴显示设备时，如果你重启应用，某些功能可能会停止工作。 
+    * 点击“编译”和保存”，然后返回到主窗口。
+
+![停止 AR 会话](images/unreal-uxt/3-stoparsession.PNG)
 
 ## <a name="create-a-pawn"></a>创建 Pawn
 此时，项目仍需要一个玩家对象。 在 Unreal 中，Pawn 表示游戏中的用户，但在本例中它将代表 HoloLens 2 体验。

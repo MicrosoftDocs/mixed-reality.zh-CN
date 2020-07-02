@@ -8,12 +8,12 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目, 核心概念, 交互
-ms.openlocfilehash: 9ef408e1551e9f6c52a6c5fcf7df3123cc099c8c
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: d011a00b55a6b78332233b21535a129774f99c9f
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75334143"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345647"
 ---
 # <a name="start-designing-and-prototyping"></a>开始设计和原型制作
 
@@ -60,7 +60,7 @@ ms.locfileid: "75334143"
 
 <br>
 
-![交互设计因素](images/MRTK_BoundingBox_Main.png)
+![交互设计因素](images/UX/UX_Hero_Manipulation.jpg)
 
 ## <a name="interaction-design-factors-to-consider"></a>要考虑的交互设计因素
 
@@ -85,6 +85,17 @@ HoloLens 2 为开发人员提供了使用用户所注视对象的相关信息的
 
 <br>
 
+
+---
+
+<br>
+
+
+![UX 元素](images/UX/UX_Hero_BoundingBox.jpg)
+
+## <a name="user-experience-elements-for-mixed-reality"></a>适用于混合现实的用户体验元素
+
+
 ### <a name="color-light-and-materials"></a>[颜色、光线和材料](color,-light-and-materials.md)
 为混合现实设计内容需要认真考虑在你的体验中使用的每个视觉资产的颜色、照明和材料。
 
@@ -100,8 +111,11 @@ HoloLens 2 为开发人员提供了使用用户所注视对象的相关信息的
 
 <br>
 
-### <a name="ux-elements-for-the-mixed-reality"></a>[用于混合现实的 UX 元素](app-patterns-landingpage.md)
-了解混合现实中空间交互和 UI 的构建基块。
+### <a name="common-controls-and-behaviors"></a>[常用控件和行为](app-patterns-landingpage.md)
+了解适用于混合现实体验的频繁使用的常用空间交互和 UI 构建基块。
+
+
+
 <br>
 
 

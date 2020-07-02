@@ -3,16 +3,16 @@ title: 使用 HoloLens 仿真器
 description: 使用 HoloLens 仿真器在未配备物理 HoloLens 的电脑上测试混合现实应用。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 5/12/2020
+ms.date: 6/8/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 仿真器
-ms.openlocfilehash: f525276d127bc0bbb682d7cea6821028258c6177
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: dba0b1a1260c62ac7f26bc80678439d12183d77f
+ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227982"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631505"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 仿真器
 
@@ -28,7 +28,7 @@ ms.locfileid: "83227982"
 下载 HoloLens 仿真器。
 
 版本： 
-* [HoloLens 2 仿真器（Windows 全息版 2004）](https://go.microsoft.com/fwlink/?linkid=2129088)。
+* [HoloLens 2 仿真器（Windows 全息版 2004，2020 年 6 月更新）](https://go.microsoft.com/fwlink/?linkid=2132415)。
 * [HoloLens 仿真器（第 1 代）和全息项目模板](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 可以在 [HoloLens 仿真器存档](hololens-emulator-archive.md)页上找到 HoloLens 仿真器的发行说明和旧版本。
@@ -60,9 +60,9 @@ HoloLens 仿真器结合使用 Hyper-V 和 RemoteFx（第 1 代仿真器）或 G
 1. 在 Visual Studio 中加载应用程序解决方案。
     >[!NOTE]
     >使用 Unity 时，请从 Unity 生成项目，然后像往常一样将生成的解决方案载入 Visual Studio。
-2. 对于 HoloLens 仿真器（第 1 代），请确保将“平台”设置为“x86”。  对于 HoloLens 2 仿真器，请确保将“平台”设置为“x86”或“x64”。  
+2. 对于 HoloLens 仿真器（第 1 代），请确保将“平台”设置为“x86”。 对于 HoloLens 2 仿真器，请确保将“平台”设置为“x86”或“x64”。 
 3. 选择所需的 **HoloLens 仿真器**版本作为目标调试设备。
-4. 转到“调试”>“开始调试”或按 **F5** 启动仿真器，然后部署要调试的应用程序。 
+4. 转到“调试”>“开始调试”或按 **F5** 启动仿真器，然后部署要调试的应用程序。
 
 仿真器在首次启动时，可能需要花费一分钟或更长的时间来完成引导。 建议在调试会话期间让仿真器保持打开状态，以便将应用程序快速部署到仿真器。
 
@@ -97,7 +97,7 @@ HoloLens（第 1 代）上的光标可跟踪头部运动和旋转。 在 HoloLen
 * ![“缩放”图标](images/emulator-zoom.png) **缩放**：放大和缩小仿真器。
 * ![“帮助”图标](images/emulator-help.png) **帮助**：打开仿真器帮助。
 * ![“打开设备门户”图标](images/emulator-deviceportal.png) **打开设备门户**：在仿真器中打开 HoloLens OS 的 Windows 设备门户。
-* ![“工具”图标](images/emulator-tools.png) **工具**：打开“其他工具”窗格。 
+* ![“工具”图标](images/emulator-tools.png) **工具**：打开“其他工具”窗格。
 
 ### <a name="simulation-control-panel"></a>模拟控制面板
 
@@ -214,11 +214,11 @@ HoloLens（第 1 代）上的光标可跟踪头部运动和旋转。 在 HoloLen
 * ![“缩放”图标](images/emulator-zoom.png) **缩放**：放大和缩小仿真器。
 * ![“帮助”图标](images/emulator-help.png) **帮助**：打开仿真器帮助。
 * ![“打开设备门户”图标](images/emulator-deviceportal.png) **打开设备门户**：在仿真器中打开 HoloLens OS 的 Windows 设备门户。
-* ![“工具”图标](images/emulator-tools.png) **工具**：打开“其他工具”窗格。 
+* ![“工具”图标](images/emulator-tools.png) **工具**：打开“其他工具”窗格。
 
 ### <a name="simulation-tab"></a>“模拟”选项卡
 
-“其他工具”窗格中的默认选项卡是“模拟”选项卡。  
+“其他工具”窗格中的默认选项卡是“模拟”选项卡。 
 
 ![HoloLens 仿真器的“其他工具”窗格](images/emulator-simulation-500px.png)
 
@@ -256,7 +256,7 @@ HoloLens（第 1 代）上的光标可跟踪头部运动和旋转。 在 HoloLen
 
 ## <a name="troubleshooting"></a>疑难解答
 
-安装仿真器时，可能会出现错误消息，指出需要“Visual Studio 2015 Update 1 和 UWP 工具版本 1.2”。  出现此错误的三个可能原因如下：
+安装仿真器时，可能会出现错误消息，指出需要“Visual Studio 2015 Update 1 和 UWP 工具版本 1.2”。 出现此错误的三个可能原因如下：
 * Visual Studio 的版本不够新（需要 Visual Studio 2019、Visual Studio 2017 或 Visual Studio 2015 Update 1 或更高版本）。 若要纠正此问题，请安装最新版本的 Visual Studio。
 * 已安装最新版本的 Visual Studio，但未安装通用 Windows 平台 (UWP) 工具。 这是 Visual Studio 的一项可选功能。 对于 HoloLens（第一代），你需要适用于 Visual Studio 2015 或 Visual Studio 2017 的 UWP 工具。
 

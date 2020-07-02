@@ -3,16 +3,16 @@ title: Unreal 开发概述
 description: 使用 Unreal Engine 4 进行混合现实开发概述
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 流式传输, 远程处理, 混合现实, 开发, 入门, 功能, 新项目, 仿真器, 文档, 指南, 功能, 全息影像, 游戏开发
-ms.openlocfilehash: 3e3862bd701d6e873f623abc9f9cda0b3085e753
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 0e3f40c7aa05a9c5f93d7eb9dc9793b6daeb8b90
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330154"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720363"
 ---
 # <a name="unreal-development-overview"></a>Unreal 开发概述
 
@@ -38,6 +38,9 @@ ms.locfileid: "84330154"
 * 跟踪行为组件
 
 有关功能的详细信息和设置项目的信息，可以深入了解[适用于 Unreal 的 UX Tools](https://github.com/microsoft/MixedReality-UXTools-Unreal) GitHub 存储库。
+
+## <a name="additional-files"></a>其他文件
+如果这是你第一次为 HoloLens 创建或部署 Unreal 应用，则需要从 Epic Launcher [下载支持文件](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch6#packaging-and-deploying-the-app)。
 
 ## <a name="tutorial"></a>教程
 

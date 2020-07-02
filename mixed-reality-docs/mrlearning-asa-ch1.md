@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 2a171d601d094375a56734e8d7890c9d3e17c887
-ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
+ms.openlocfilehash: 385b302f3a2b9ad80527387353746947d91e3aa3
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83866907"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216298"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.Azure 空间定位点入门
 
@@ -41,16 +41,18 @@ ms.locfileid: "83866907"
 * 一台 Windows 10 电脑，其中已[安装](install-the-tools.md)并配置正确的工具
 * Windows 10 SDK 10.0.18362.0 或更高版本
 * 一些基本的 C# 编程功能
-* 一个[针对开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
+* [针对开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens（第 1 代）或 HoloLens 2 设备
 * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并添加了通用 Windows 平台生成支持模块
-* 完成以下教程的[创建空间定位点资源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)部分：[快速入门：创建使用 Azure 空间定位点的 Unity HoloLens 应用](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)。
-* 如果打算部署到 Android
-    * <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">开发人员实现</a>且<a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">支持 ARCore</a>的 Android 设备，该设备通过 USB 与 Windows 或 macOS 计算机相连接
-    * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并已添加 Android 生成支持模块
-* 如果打算部署到 iOS
-    * 已安装最新版 <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> 和 <a href="https://cocoapods.org" target="_blank">CocoaPods</a> 的 macOS 计算机
-    * <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">与 ARKit 兼容</a>且通过 USB 连接到 macOS 计算机的 iOS 设备
-    * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并已添加 iOS 生成支持模块
+* 完成 [HoloLens 快速入门](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)教程的[创建空间定位点资源](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)部分。
+
+如果打算部署到 Android
+* <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">开发人员实现</a>且<a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">支持 ARCore</a>的 Android 设备，该设备通过 USB 与 Windows 或 macOS 计算机相连接
+* <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并已添加 Android 生成支持模块
+
+如果打算部署到 iOS
+* 已安装最新版 <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> 和 <a href="https://cocoapods.org" target="_blank">CocoaPods</a> 的 macOS 计算机
+* <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">与 ARKit 兼容</a>且通过 USB 连接到 macOS 计算机的 iOS 设备
+* <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity 中心</a>，其中已安装 Unity 2019.2.X 并已添加 iOS 生成支持模块
 
 > [!IMPORTANT]
 > 建议用于本系列教程的 Unity 版本是 Unity 2019.2.X。 这将取代上述链接的先决条件中所述的任何 Unity 版本要求或建议。

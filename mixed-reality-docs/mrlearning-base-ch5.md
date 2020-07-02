@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: ec078015304e1cddc9b042fb5e94cf1904a302cb
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 9a19ad59e520a2743aafd954910f43c6f51d6c8a
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79376084"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441854"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6.探索高级输入选项
 
@@ -38,23 +38,28 @@ ms.locfileid: "79376084"
 5. 实现语音命令的响应事件
 
 ### <a name="1-clone-the-default-input-system-profile"></a>1.克隆默认的输入系统配置文件
-
-在“层次结构”窗口中选择“MixedRealityToolkit”对象，然后在“检查器”窗口中选择“输入”选项卡，并克隆“DefaultHoloLens2InputSystemProfile”，以将其替换为你自己的可自定义**输入系统配置文件**：   
+在“层次结构”窗口中选择“MixedRealityToolkit”对象，然后在“检查器”窗口中选择“输入”选项卡，并克隆“DefaultHoloLens2InputSystemProfile”，以将其替换为你自己的可自定义**输入系统配置文件**：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step1-1.png)
+
+> [!NOTE]
+> 如果使用的是 MRTK 2.4.0 或更高版本：
+> * 从“层次结构”选项卡中选择“MixedRealityToolkit”对象，在“检查器”窗口中单击“输入”选项卡，然后展开“指针”部分  。 
+> * 克隆“DefaultMixedRealityInputPointerProfile”，并将它替换为你自己的可自定义输入指针配置文件 。
+> * 在“凝视设置”部分中检查“是否已启用眼动跟踪”是否为 true 。 
 
 > [!TIP]
 > 有关如何克隆 MRTK 配置文件的提示，可参阅[如何配置混合现实工具包配置文件](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)中的说明。
 
 ### <a name="2-clone-the-default-speech-commands-profile"></a>2.克隆默认的语音命令配置文件
 
-展开“语音”部分，克隆“DefaultMixedRealitySpeechCommandsProfile”以将其替换为你自己的可自定义**语音命令配置文件**：  
+展开“语音”部分，克隆“DefaultMixedRealitySpeechCommandsProfile”以将其替换为你自己的可自定义**语音命令配置文件**： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step2-1.png)
 
 ### <a name="3-create-a-new-speech-command"></a>3.创建新的语音命令
 
-在“语音命令”部分，单击“+ 添加新的语音命令”按钮以在现有语音命令列表的底部添加一个新的语音命令，然后在“关键字”字段中输入适当的单词或短语，例如“播放音乐”：    
+在“语音命令”部分，单击“+ 添加新的语音命令”按钮以在现有语音命令列表的底部添加一个新的语音命令，然后在“关键字”字段中输入适当的单词或短语，例如“播放音乐”：   
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step3-1.png)
 
@@ -63,7 +68,7 @@ ms.locfileid: "79376084"
 
 ### <a name="4-add-and-configure-the-speech-input-handler-script-component"></a>4.添加并配置“语音输入处理程序(脚本)”组件
 
-在“层次结构”窗口中选择“Octa”对象，并将“语音输入处理程序(脚本)”组件添加到该 Octa 对象。   然后取消选中“需要焦点”复选框，使用户无需查看 Octa 对象即可触发语音命令： 
+在“层次结构”窗口中选择“Octa”对象，并将“语音输入处理程序(脚本)”组件添加到该 Octa 对象。  然后取消选中“需要焦点”复选框，使用户无需查看 Octa 对象即可触发语音命令：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step4-1.png)
 
@@ -73,14 +78,14 @@ ms.locfileid: "79376084"
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-1.png)
 
-单击新建的“元素 0”将其展开，然后从“关键字”下拉列表中，选择前面创建的“播放音乐”关键字：   
+单击新建的“元素 0”将其展开，然后从“关键字”下拉列表中，选择前面创建的“播放音乐”关键字：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-2.png)
 
 > [!NOTE]
 > 关键字下拉列表中的关键字是根据语音命令配置文件中“语音命令”列表内定义的关键字填充的。
 
-创建新的 **Response ()** 事件，配置 **Octa** 对象用于接收该事件，将 **AudioSource.PlayOneShot** 定义为要触发的操作，然后将适当的音频剪辑（例如 MRTK_Gem 音频剪辑）分配到“音频剪辑”字段： 
+创建新的 **Response ()** 事件，配置 **Octa** 对象用于接收该事件，将 **AudioSource.PlayOneShot** 定义为要触发的操作，然后将适当的音频剪辑（例如 MRTK_Gem 音频剪辑）分配到“音频剪辑”字段：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-3.png)
 
@@ -105,7 +110,7 @@ ms.locfileid: "79376084"
 
 ### <a name="1-create-a-quad-object-that-can-be-used-for-panning"></a>1.创建可用于平移的 Quad 对象
 
-在“层次结构”窗口中右键单击某个空白区域，然后选择“3D 对象” > “Quad”，将一个四面体添加到场景中。   为此对象指定适当的名称（例如 **PanGesture**），并将其定位在合适的位置，例如 X = 0，Y = -0.2，Z = 2。
+在“层次结构”窗口中右键单击某个空白区域，然后选择“3D 对象” > “Quad”，将一个四面体添加到场景中。  为此对象指定适当的名称（例如 **PanGesture**），并将其定位在合适的位置，例如 X = 0，Y = -0.2，Z = 2。
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-1.png)
 
@@ -114,33 +119,33 @@ ms.locfileid: "79376084"
 
 与任何其他交互方式一样，平移手势也需要一个碰撞体。 默认情况下，四面体具有网格碰撞体。 但是，该网格碰撞体并不理想，因为它非常小。 为使用户能够更轻松地与碰撞体交互，我们将使用一个盒碰撞体替换网格碰撞体。
 
-在仍选中了 PanGesture 对象的情况下，单击“网格碰撞体”组件的“设置”图标，然后选择“删除组件”以删除网格碰撞体：   
+在仍选中了 PanGesture 对象的情况下，单击“网格碰撞体”组件的“设置”图标，然后选择“删除组件”以删除网格碰撞体：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-2.png)
 
-在“检查器”窗口中，使用“添加组件”按钮添加一个**盒碰撞体**，然后将盒碰撞体的 Z 轴“大小”更改为 0.15，以增大盒碰撞体的厚度：  
+在“检查器”窗口中，使用“添加组件”按钮添加一个**盒碰撞体**，然后将盒碰撞体的 Z 轴“大小”更改为 0.15，以增大盒碰撞体的厚度： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-3.png)
 
 ### <a name="2-add-the-near-interaction-touchable-script-component"></a>2.添加“近距交互可触摸对象(脚本)”组件
 
-在仍选中了“PanGesture”对象的情况下，将“近距交互可触摸(脚本)”组件添加到 PanGesture 对象，然后单击“拟合边界”和“拟合中点”按钮，以更新“近距交互可触摸(脚本)”组件的“局部中点”和“边界”属性，使之与 BoxCollider 匹配：    
+在仍选中了“PanGesture”对象的情况下，将“近距交互可触摸(脚本)”组件添加到 PanGesture 对象，然后单击“拟合边界”和“拟合中点”按钮，以更新“近距交互可触摸(脚本)”组件的“局部中点”和“边界”属性，使之与 BoxCollider 匹配：   
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step2-1.png)
 
 ### <a name="3-add-the-hand-interaction-pan-zoom-script-component"></a>3.添加“手动交互平移缩放(脚本)”组件
 
-在仍选中了“PanGesture”对象的情况下，将“手动交互平移缩放(脚本)”组件添加到 PanGesture 对象，然后选中“水平锁定”复选框，以便仅允许垂直滚动：   
+在仍选中了“PanGesture”对象的情况下，将“手动交互平移缩放(脚本)”组件添加到 PanGesture 对象，然后选中“水平锁定”复选框，以便仅允许垂直滚动：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step3-1.png)
 
 ### <a name="4-add-2d-content-to-be-scrolled"></a>4.添加要滚动的 2D 内容
 
-在“项目”面板中搜索 **PanContent** 材料，然后单击并将其拖放到“PanGesture”对象的网格渲染器“材料”元素 0 属性：  
+在“项目”面板中搜索 **PanContent** 材料，然后单击并将其拖放到“PanGesture”对象的网格渲染器“材料”元素 0 属性： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step4-1.png)
 
-在“检查器”窗口中，展开新添加的“PanContent”材料组件，然后将其“图块”Y 轴值更改为 0.5，使之与 X 轴值匹配，并使图块显示为正方形：  
+在“检查器”窗口中，展开新添加的“PanContent”材料组件，然后将其“图块”Y 轴值更改为 0.5，使之与 X 轴值匹配，并使图块显示为正方形： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step4-2.png)
 
@@ -154,32 +159,32 @@ ms.locfileid: "79376084"
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step5-1.png)
 
-若要均匀隔开立方体并节省时间，请将“网格对象集合(脚本)”组件添加到立方体的父对象（即 **PanGesture** 对象），并按如下所述配置“网格对象集合(脚本)”： 
+若要均匀隔开立方体并节省时间，请将“网格对象集合(脚本)”组件添加到立方体的父对象（即 **PanGesture** 对象），并按如下所述配置“网格对象集合(脚本)”：
 
-* 将“行数”更改为 1，使所有立方体在一行中对齐 
-* 将“单元格宽度”更改为 0.25，以隔开行中的立方体 
+* 将“行数”更改为 1，使所有立方体在一行中对齐
+* 将“单元格宽度”更改为 0.25，以隔开行中的立方体
 
-然后单击“更新集合”按钮以应用新配置： 
+然后单击“更新集合”按钮以应用新配置：
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step5-2.png)
 
 ### <a name="6-add-the-move-with-pan-script-component"></a>6.添加“平移移动(脚本)”组件
 
-在“层次结构”窗口中选择所有**立方体子对象**，然后在“检查器”窗口中，使用“添加组件”按钮将“平移移动(脚本)”组件添加到所有立方体：  
+在“层次结构”窗口中选择所有**立方体子对象**，然后在“检查器”窗口中，使用“添加组件”按钮将“平移移动(脚本)”组件添加到所有立方体： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-1.png)
 
 > [!TIP]
 > 有关如何在“层次结构”窗口中选择多个对象的提示，可参阅[将“操作处理程序(脚本)”组件添加到所有对象](mrlearning-base-ch4.md#1-add-the-manipulation-handler-script-component-to-all-the-objects)中的说明。
 
-在仍选中了所有立方体的情况下，单击“PanGesture”对象并将其拖放到“平移输入源”字段中：  
+在仍选中了所有立方体的情况下，单击“PanGesture”对象并将其拖放到“平移输入源”字段中： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-2.png)
 
 > [!TIP]
 > 每个立方体上的“平移移动(脚本)”组件将会侦听 PanGesture 对象（在上一步骤中已将其分配为“平移输入源”）上的“HandInteractionPanZoom (脚本)”组件发送的 Pan Updated 事件，并相应地更新每个立方体的位置。
 
-在“层次结构”窗口中选择“PanGesture”对象，然后在“检查器”中**取消选中**“网格渲染器”复选框，以禁用“网格渲染器”组件：  
+在“层次结构”窗口中选择“PanGesture”对象，然后在“检查器”中**取消选中**“网格渲染器”复选框，以禁用“网格渲染器”组件： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-3.png)
 
@@ -202,20 +207,20 @@ ms.locfileid: "79376084"
 
 ### <a name="1-add-the-eye-tracking-target-script-component-to-all-target-objects"></a>1.将“眼动跟踪目标(脚本)”组件添加到所有目标对象
 
-在“层次结构”窗口中展开“3DObjectCollection”对象并选择所有**子对象**，然后在“检查器”窗口中，使用“添加组件”按钮将“眼动跟踪目标(脚本)”组件添加到所有子对象：   
+在“层次结构”窗口中展开“3DObjectCollection”对象并选择所有**子对象**，然后在“检查器”窗口中，使用“添加组件”按钮将“眼动跟踪目标(脚本)”组件添加到所有子对象：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step1-1.png)
 
-在仍选中了所有**子对象**的情况下，按如下所述配置“眼动跟踪目标(脚本)”组件： 
+在仍选中了所有**子对象**的情况下，按如下所述配置“眼动跟踪目标(脚本)”组件：
 
-* 将“选择操作”更改为“选择”，以将此对象的隔空敲击操作定义为“选择”  
-* 展开“语音选择”并将语音命令列表的“大小”设置为 1，然后在显示的新元素列表中，将“元素 0”更改为“选择”，以将此对象的语音命令操作定义为“选择”    
+* 将“选择操作”更改为“选择”，以将此对象的隔空敲击操作定义为“选择” 
+* 展开“语音选择”并将语音命令列表的“大小”设置为 1，然后在显示的新元素列表中，将“元素 0”更改为“选择”，以将此对象的语音命令操作定义为“选择”   
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step1-2.png)
 
 ### <a name="2-add-the-eye-tracking-tutorial-demo-script-component--to-all-target-objects"></a>2.将“眼动跟踪教程演示(脚本)”组件添加到所有目标对象
 
-在仍选中了所有**子对象**的情况下，使用“添加组件”按钮将“眼动跟踪教程演示(脚本)”组件添加到所有子对象：  
+在仍选中了所有**子对象**的情况下，使用“添加组件”按钮将“眼动跟踪教程演示(脚本)”组件添加到所有子对象： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step2-1.png)
 
@@ -224,7 +229,7 @@ ms.locfileid: "79376084"
 
 ### <a name="3-implement-the-while-looking-at-target-event"></a>3.实现 While Looking At Target 事件
 
-在“层次结构”窗口中选择“Cheese”对象，创建一个新的 **While Looking At Target ()** 事件，将“Cheese”对象配置为接收该事件，然后将“EyeTrackingTutorialDemo.RotateTarget”定义为要触发的操作：   
+在“层次结构”窗口中选择“Cheese”对象，创建一个新的 **While Looking At Target ()** 事件，将“Cheese”对象配置为接收该事件，然后将“EyeTrackingTutorialDemo.RotateTarget”定义为要触发的操作：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step3-1.png)
 
@@ -235,7 +240,7 @@ ms.locfileid: "79376084"
 
 ### <a name="4-implement-the-on-selected-event"></a>4.实现 On Selected 事件
 
-在“层次结构”窗口中选择“Cheese”对象，创建一个新的 **On Selected ()** 事件，将“Cheese”对象配置为接收该事件，然后将“EyeTrackingTutorialDemo.BlipTarget”定义为要触发的操作：   
+在“层次结构”窗口中选择“Cheese”对象，创建一个新的 **On Selected ()** 事件，将“Cheese”对象配置为接收该事件，然后将“EyeTrackingTutorialDemo.BlipTarget”定义为要触发的操作：  
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step4-1.png)
 
@@ -243,14 +248,14 @@ ms.locfileid: "79376084"
 
 ### <a name="5-enable-simulated-eye-tracking-for-in-editor-simulations"></a>5.为编辑器中的模拟启用模拟眼动跟踪
 
-在“层次结构”窗口中选择“MixedRealityToolkit”对象，在“检查器”窗口中选择“输入”选项卡，展开“输入数据提供程序”部分，展开“输入模拟服务”部分，然后克隆“DefaultMixedRealityInputSimulationProfile”，以将其替换为你自己的可自定义**输入模拟配置文件**：     
+在“层次结构”窗口中选择“MixedRealityToolkit”对象，在“检查器”窗口中选择“输入”选项卡，展开“输入数据提供程序”部分，展开“输入模拟服务”部分，然后克隆“DefaultMixedRealityInputSimulationProfile”，以将其替换为你自己的可自定义**输入模拟配置文件**：    
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step5-1.png)
 
 > [!TIP]
 > 有关如何克隆 MRTK 配置文件的提示，可参阅[如何配置混合现实工具包配置文件](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)中的说明。
 
-在“眼动模拟”部分，选中“模拟眼睛位置”复选框以启用眼动跟踪模拟：  
+在“眼动模拟”部分，选中“模拟眼睛位置”复选框以启用眼动跟踪模拟： 
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step5-2.png)
 

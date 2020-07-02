@@ -3,16 +3,16 @@ title: Unreal 中的 QR 码
 description: Unreal 中 QR 码使用指南
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 开发, 功能, 文档, 指南, 全息影像, qr 码
-ms.openlocfilehash: 90a51227ae455389168fb3262e83f34b64a7bfb5
-ms.sourcegitcommit: ee7f04148d3608b0284c59e33b394a67f0934255
+ms.openlocfilehash: cf6c113f6bf4a13a96f46d6420a3093966455c3b
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428750"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720383"
 ---
 # <a name="qr-codes-in-unreal"></a>Unreal 中的 QR 码
 
@@ -54,7 +54,7 @@ QR 码通过 Unreal 的 AR 跟踪几何系统显示为跟踪图像。 若要实�
 
 ![QR 呈现示例](images/unreal-qr-render.PNG)
 
-下面是具体过程：
+以下是具体过程：
 1. 首先，将跟踪图像转换为 ARTrackedQRCode，以检查当前更新的图像是否为 QR 码。  
 2. 编码数据是从 QRCode 变量中检索的。 可以从 GetLocalToWorldTransform 位置获取左上方的 QR 码，并在 GetEstimateSize 中获取维度。 
 

@@ -3,16 +3,16 @@ title: 5. 添加按钮并重置棋子位置
 description: 教程系列第 5 部分（共 6 部分）- 使用 Unreal Engine 4 和混合现实工具包 UX Tools 插件构建一款简单的象棋应用
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: 49cab5c5a8c6736b800b5ba05de2c88edf008008
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 473f47884bbc492451007436f80e8d9762cf1ab7
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330264"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720253"
 ---
 # <a name="5-adding-a-button--resetting-piece-locations"></a>5.添加按钮并重置棋子位置
 
@@ -54,7 +54,7 @@ ms.locfileid: "84330264"
 
 ![从 SimpleButton 为新蓝图建立子类](images/unreal-uxt/5-subclass.PNG)
 
-2. 从“组件”面板单击“PressableButton (继承)”，将“详细信息”面板向下滚动到“事件”部分。    
+2. 从“组件”面板单击“可按按钮(继承)”，向下滚动“详细信息”面板至“事件”部分   。 
     * 单击“按钮按下时”旁的绿色 + 按钮，向事件图表添加事件，按下按钮时将调用该事件。 
     
 此时，需要调用“WhiteKing”的“重置位置”函数，这需要在关卡中引用“WhiteKing”Actor。   

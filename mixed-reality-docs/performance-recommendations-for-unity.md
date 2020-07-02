@@ -7,12 +7,12 @@ ms.date: 03/26/2019
 ms.topic: article
 keywords: 图形, cpu, gpu, 渲染, 垃圾回收, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 28f09986cdb8c562aedfc9deae7b0369214ebc05
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: c6c68a6dd6e8ba59bee983e158e210aed27d2b17
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81277565"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216238"
 ---
 # <a name="performance-recommendations-for-unity"></a>针对 Unity 的性能建议
 
@@ -31,7 +31,7 @@ Unity 提供了以下方面的详尽文档：
 2) 如何有效[使用 Unity Profiler 诊断性能问题](https://unity3d.com/learn/tutorials/temas/performance-optimization/diagnosing-performance-problems-using-profiler-window)
 
 >[!NOTE]
-> 在连接 Unity Profiler 并添加 GPU 探查器后（查看右上角的“添加探查器”），可以在探查器的中间分别查看花费在 CPU 和 GPU 上的时间。  这样，开发人员很快就能大致了解其应用程序是受 CPU 还是 GPU 的约束。
+> 在连接 Unity Profiler 并添加 GPU 探查器后（查看右上角的“添加探查器”），可以在探查器的中间分别查看花费在 CPU 和 GPU 上的时间。 这样，开发人员很快就能大致了解其应用程序是受 CPU 还是 GPU 的约束。
 >
 > ![Unity CPU 与 GPU](images/unity-profiler-cpu-gpu.png)
 
@@ -41,7 +41,7 @@ Unity 提供了以下方面的详尽文档：
 
 #### <a name="cache-references"></a>缓存引用
 
-最佳做法是在初始化时缓存对所有相关组件和 GameObject 的引用。 这是因为，与存储指针所产生的内存开销相比，重复 *[GetComponent\<T>()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* 之类的函数调用所造成的开销要高得多。 这同样适用于极度频繁使用的 [Camera.main](https://docs.unity3d.com/ScriptReference/Camera-main.html)。 *Camera.main* 实际上在幕后只是使用 *[FindGameObjectsWithTag()](https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html)* ，但却以很高的开销在场景图中搜索具有 *“MainCamera”* 标记的相机对象。
+最佳做法是在初始化时缓存对所有相关组件和 GameObject 的引用。 这是因为与存储指针所产生的内存开销相比，重复调用 [GetComponent\<T>()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html) 之类的函数所造成的开销要高得多。 这同样适用于极度频繁使用的 [Camera.main](https://docs.unity3d.com/ScriptReference/Camera-main.html)。 *Camera.main* 实际上在幕后只是使用 *[FindGameObjectsWithTag()](https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html)* ，但却以很高的开销在场景图中搜索具有 *“MainCamera”* 标记的相机对象。
 
 ```CS
 using UnityEngine;
@@ -221,8 +221,8 @@ Unity 通过一篇详尽的文章概述并深入探讨了如何根据其平台�
 Unity 中的单通道实例化渲染使针对每只眼睛的绘制调用缩减为一个实例化绘制调用。 由于两个绘制调用之间的缓存内聚性，GPU 的性能也能得到一定的改善。
 
 在 Unity 项目中启用此功能
-1)  打开“播放器 XR 设置”（转到“编辑” > “项目设置” > “播放器” > “XR 设置”）     
-2) 从“立体渲染方法”下拉菜单中选择“单通道实例化”（必须选中“支持虚拟现实”复选框）   
+1)  打开“播放器 XR 设置”（转到“编辑” > “项目设置” > “播放器” > “XR 设置”）    
+2) 从“立体渲染方法”下拉菜单中选择“单通道实例化”（必须选中“支持虚拟现实”复选框）  
 
 有关此渲染方法的详细信息，请阅读 Unity 的以下文章。
 - [如何使用高级立体渲染最大化 AR 和 VR 的性能](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
@@ -235,15 +235,15 @@ Unity 中的单通道实例化渲染使针对每只眼睛的绘制调用缩减�
 
 #### <a name="static-batching"></a>静态批处理
 
-Unity 能够批处理许多静态对象，以减少对 GPU 的绘制调用。 静态批处理适用于 Unity 中具有以下特征的大多数[渲染器](https://docs.unity3d.com/ScriptReference/Renderer.html)：**1) 共享相同的材料**；**2) 全部标记为 *Static*** （在 Unity 中选择一个对象，然后单击检查器右上角的复选框）。 标记为 *Static* 的 GameObject 无法在应用程序的整个运行时中移动。 因此，在几乎每个对象都需要进行定位、移动、缩放等操作的 HoloLens 上，可能很难利用静态批处理。对于沉浸式头戴显示设备，静态批处理可以大幅减少绘制调用，从而改善性能。
+Unity 能够批处理许多静态对象，以减少对 GPU 的绘制调用。 静态批处理适用于 Unity 中具有以下特征的大多数[渲染器](https://docs.unity3d.com/ScriptReference/Renderer.html)：**1) 共享相同的材料**；**2) 全部标记为 *Static***（在 Unity 中选择一个对象，然后单击检查器右上角的复选框）。 标记为 *Static* 的 GameObject 无法在应用程序的整个运行时中移动。 因此，在几乎每个对象都需要进行定位、移动、缩放等操作的 HoloLens 上，可能很难利用静态批处理。对于沉浸式头戴显示设备，静态批处理可以大幅减少绘制调用，从而改善性能。
 
-有关更多详细信息，请阅读 [Unity 中的绘制调用批处理](https://docs.unity3d.com/Manual/DrawCallBatching.html)下的“静态批处理”。 
+有关更多详细信息，请阅读 [Unity 中的绘制调用批处理](https://docs.unity3d.com/Manual/DrawCallBatching.html)下的“静态批处理”。
 
 #### <a name="dynamic-batching"></a>动态批处理
 
 由于在 HoloLens 开发中将对象标记为 *Static* 会造成问题，动态批处理可能是弥补这项短缺功能的极佳手段。 当然，它也可用于沉浸式头戴显示设备。 不过，Unity 中的动态批处理可能很难启用，原因是 GameObject 必须 **a) 共享相同的材料**；**b) 符合其他很多条件**。
 
-有关条件的完整列表，请阅读[Unity 中的绘制调用批处理](https://docs.unity3d.com/Manual/DrawCallBatching.html)下的“动态批处理”。  最常见的情况是，由于关联的网格数据不能超过 300 个顶点，因此 GameObject 无效，无法对其进行动态批处理。
+有关条件的完整列表，请阅读[Unity 中的绘制调用批处理](https://docs.unity3d.com/Manual/DrawCallBatching.html)下的“动态批处理”。 最常见的情况是，由于关联的网格数据不能超过 300 个顶点，因此 GameObject 无效，无法对其进行动态批处理。
 
 #### <a name="other-techniques"></a>其他技术
 
@@ -260,7 +260,7 @@ Unity 能够批处理许多静态对象，以减少对 GPU 的绘制调用。 �
 
 ### <a name="optimize-depth-buffer-sharing"></a>优化深度缓冲区共享
 
-通常建议在“播放器 XR 设置”下启用“深度缓冲区共享”，以优化[全息影像稳定性](Hologram-stability.md)。   但是，在使用此设置的情况下启用基于深度的后期阶段重新投影时，建议选择 **16 位深度格式**而不是 **24 位深度格式**。 16 位深度缓冲区可以大幅减少与深度缓冲区流量相关的带宽（以及电量消耗）。 这可能会给节能和性能提升带来很大的好处。 但是，使用 *16 位深度格式*可能会造成两种负面影响。
+通常建议在“播放器 XR 设置”下启用“深度缓冲区共享”，以优化[全息影像稳定性](Hologram-stability.md)。  但是，在使用此设置的情况下启用基于深度的后期阶段重新投影时，建议选择 **16 位深度格式**而不是 **24 位深度格式**。 16 位深度缓冲区可以大幅减少与深度缓冲区流量相关的带宽（以及电量消耗）。 这可能会给节能和性能提升带来很大的好处。 但是，使用 *16 位深度格式*可能会造成两种负面影响。
 
 **Z 冲突**
 
@@ -276,11 +276,13 @@ Unity 能够批处理许多静态对象，以减少对 GPU 的绘制调用。 �
 
 ### <a name="optimal-lighting-settings"></a>最佳照明设置
 
-Unity 中的[实时全局照明](https://docs.unity3d.com/Manual/GIIntro.html)可以提供杰出的视觉效果，但涉及到开销很高的照明计算。 建议通过“窗口” > “渲染” > “照明设置”> 取消选中“实时全局照明”，为每个 Unity 场景文件禁用“实时全局照明”。    
+Unity 中的[实时全局照明](https://docs.unity3d.com/Manual/GIIntro.html)可以提供杰出的视觉效果，但涉及到开销很高的照明计算。 建议通过“窗口” > “渲染” > “照明设置”> 取消选中“实时全局照明”，为每个 Unity 场景文件禁用“实时全局照明”。   
 
 此外，建议禁用所有阴影投射，因为这也会将高开销的 GPU 通道添加到 Unity 场景中。 可以按光源禁用阴影，但也可以通过“质量”设置对其进行整体控制。
 
-转到“编辑” > “项目设置”，然后选择“质量”类别 > 为“UWP 平台”选择“低质量”。     还可以直接将“阴影”属性设置为“禁用阴影”。  
+转到“编辑” > “项目设置”，然后选择“质量”类别 > 为“UWP 平台”选择“低质量”。    还可以直接将“阴影”属性设置为“禁用阴影”。 
+
+建议在 Unity 中将烘焙光照用于你的模型。
 
 ### <a name="reduce-poly-count"></a>减少多边形计数
 
@@ -293,10 +295,10 @@ Unity 中的[实时全局照明](https://docs.unity3d.com/Manual/GIIntro.html)�
 
 若要大致比较着色器的性能，一种简单方法是识别每个着色器在运行时执行的平均操作数目。 可在 Unity 中轻松实现此目的。
 
-1) 选择着色器资产或选择材料，然后在检查器窗口的右上角选择齿轮图标，然后选择“选择着色器” 
+1) 选择着色器资产或选择材料，然后在检查器窗口的右上角选择齿轮图标，然后选择“选择着色器”
 
     ![在 Unity 中选择着色器](images/Select-shader-unity.png)
-2) 选择着色器资产后，单击检查器窗口下的“编译并显示代码”按钮 
+2) 选择着色器资产后，单击检查器窗口下的“编译并显示代码”按钮
 
     ![在 Unity 中编译着色器代码](images/compile-shader-code-unity.PNG)
 
@@ -320,11 +322,11 @@ Unity 中的[实时全局照明](https://docs.unity3d.com/Manual/GIIntro.html)�
 
 #### <a name="shader-preloading"></a>着色器预加载
 
-使用着色器预加载和其他技巧优化[着色器加载时间](https://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html)。  具体而言，着色器预加载意味着不会看到运行时着色器编译造成的任何帧聚结情况。
+使用着色器预加载和其他技巧优化[着色器加载时间](https://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html)。 具体而言，着色器预加载意味着不会看到运行时着色器编译造成的任何帧聚结情况。
 
 ### <a name="limit-overdraw"></a>限制过度绘制
 
-在 Unity 中，可以通过在“场景”视图的左上角切换[**绘制模式菜单**](https://docs.unity3d.com/Manual/ViewModes.html)并选择“过度绘制”，来显示其场景的过度绘制。  
+在 Unity 中，可以通过在“场景”视图的左上角切换[**绘制模式菜单**](https://docs.unity3d.com/Manual/ViewModes.html)并选择“过度绘制”，来显示其场景的过度绘制。 
 
 一般情况下，在将对象发送到 GPU 之前提前剔除对象可以缓解过度绘制。 Unity 提供了有关为其引擎实现[遮挡剔除](https://docs.unity3d.com/Manual/OcclusionCulling.html)的详细信息。
 
@@ -344,7 +346,7 @@ Unity 在一个很好的网页中详细说明了垃圾回收器的工作原理�
 其他快速提示：
 - 在运行时使用 [StringBuilder](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder?view=netframework-4.7.2) C# 类动态生成复杂字符串
 - 删除不再需要的 Debug.Log() 调用，因为它们仍会在应用的所有生成版本中执行
-- 如果全息应用通常需要大量的内存，请考虑在加载阶段（例如，在演示加载或过渡屏幕时）调用 [ _**System.GC.Collect()**_ ](https://docs.microsoft.com/dotnet/api/system.gc.collect?view=netframework-4.7.2)
+- 如果全息应用通常需要大量的内存，请考虑在加载阶段（例如，在演示加载或过渡屏幕时）调用 [_**System.GC.Collect()**_](https://docs.microsoft.com/dotnet/api/system.gc.collect?view=netframework-4.7.2)
 
 #### <a name="object-pooling"></a>对象池
 
