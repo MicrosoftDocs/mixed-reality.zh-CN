@@ -6,12 +6,12 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: Windows Mixed Reality，全息影像，全息远程处理，远程渲染，网络渲染，HoloLens，远程影像，故障排除，帮助
-ms.openlocfilehash: fc379eb4ad849fb5b236b82719711b37fead8a68
-ms.sourcegitcommit: 48456c607a2d0dcf035a77e8ba67615396b0a211
+ms.openlocfilehash: 79650ceab5d0125a8a06c776a59a45a78d0aa20c
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81484307"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061110"
 ---
 # <a name="holographic-remoting-troubleshooting"></a>全息远程处理疑难解答
 
@@ -22,7 +22,11 @@ ms.locfileid: "81484307"
 
 全息远程处理示例应用在发布配置中启用了 Spectre 缓解（/Qspectre）。
 
-如果收到一条错误链接器错误，指出无法打开 "vccorlib.h"，请确保你的 Visual Studio 工作负荷包括 Spectre 缓解库。 有关详细信息，请参阅 https://aka.ms/Ofhn4c。
+如果收到一条错误链接器错误，指出无法打开 "vccorlib.h"，请确保你的 Visual Studio 工作负荷包括 Spectre 缓解库。 有关详细信息，请参阅 https://aka.ms/Ofhn4c 。
+
+## <a name="speech"></a>语音
+
+全息远程处理播放器支持诊断覆盖，可以通过口述和禁用来启用此覆盖 ```Enable Diagnostics``` ```Disable Diagnostics``` 。 如果使用这些语音命令时遇到问题，也可以通过 web 浏览器使用作为 URL 来启动全息远程处理播放器 ```ms-holographic-remoting:?stats``` 。
 
 ## <a name="limitations"></a>限制
 
@@ -43,7 +47,7 @@ ms.locfileid: "81484307"
   - 不会失败，但深度缓冲区将不会进行远程处理。
   - 支持从版本[2.1.0](holographic-remoting-version-history.md#v2.1.0)开始
 * [HolographicDisplay.TryGetViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicdisplay.trygetviewconfiguration)
-  - 查询 HolographicViewConfigurationKind PhotoVideoCamera 将始终返回 ```nullptr```。
+  - 查询 HolographicViewConfigurationKind PhotoVideoCamera 将始终返回 ```nullptr``` 。
   - 支持从版本[2.0.18](holographic-remoting-version-history.md#v2.0.18)开始
   - 在以前的版本中，始终会引发错误。
 * [HolographicSpace.CreateFramePresentationMonitor](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createframepresentationmonitor)
@@ -54,36 +58,39 @@ ms.locfileid: "81484307"
 [Windows.Perception.Spatial](https://docs.microsoft.com/uwp/api/windows.perception.spatial)
 
 * [SpatialLocation. AbsoluteAngularAcceleration](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absoluteangularacceleration)
-* [SpatialLocation. AbsoluteAngularAccelerationAxisAngle](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absoluteangularaccelerationaxisangle)
+* [SpatialLocation.AbsoluteAngularAccelerationAxisAngle](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absoluteangularaccelerationaxisangle)
 * [SpatialLocation. AbsoluteAngularVelocity](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absoluteangularvelocity)
-* [SpatialLocation. AbsoluteAngularVelocityAxisAngle](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absoluteangularvelocityaxisangle)
+* [SpatialLocation.AbsoluteAngularVelocityAxisAngle](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absoluteangularvelocityaxisangle)
 * [SpatialLocation. AbsoluteLinearAcceleration](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absolutelinearacceleration)
 * [SpatialLocation. AbsoluteLinearVelocity](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation.absolutelinearvelocity)
 * [SpatialStageFrameOfReference](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.current)
-  - 始终返回 ```nullptr```。
+  - 支持从版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)开始
+  - 在以前的版本中 ```nullptr``` ，始终返回。
 * [SpatialStageFrameOfReference.RequestNewStageAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.requestnewstageasync)
+  - 支持从版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)开始
 * [SpatialAnchor.RemovedByUser](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchor.removedbyuser)
-* [SpatialAnchorExporter. Adaptivesourcemanager.getdefault](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexporter.getdefault
+* [SpatialAnchorExporter.GetDefault](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexporter.getdefault
 )
   - 从版本[2.0.9](holographic-remoting-version-history.md#v2.0.9)开始支持。 
-  - 在以前的版本中，始终返回 ```nullptr```。 
+  - 在以前的版本中 ```nullptr``` ，始终返回。 
 * [SpatialAnchorExporter.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexporter.requestaccessasync
 )
   - 从版本[2.0.9](holographic-remoting-version-history.md#v2.0.9)开始支持。 
-  - 在以前的版本中，异步操作始终以 ```SpatialPerceptionAccessStatus.DeniedBySystem```完成。
+  - 在以前的版本中，异步操作始终以完成 ```SpatialPerceptionAccessStatus.DeniedBySystem``` 。
 * [SpatialAnchorTransferManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchortransfermanager.requestaccessasync#Windows_Perception_Spatial_SpatialAnchorTransferManager_RequestAccessAsync)
-  - 异步操作始终以 ```SpatialPerceptionAccessStatus.DeniedBySystem```完成。
+  - 异步操作始终以结束 ```SpatialPerceptionAccessStatus.DeniedBySystem``` 。
 * [SpatialAnchorTransferManager.TryExportAnchorsAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchortransfermanager.tryexportanchorsasync#Windows_Perception_Spatial_SpatialAnchorTransferManager_TryExportAnchorsAsync_Windows_Foundation_Collections_IIterable_Windows_Foundation_Collections_IKeyValuePair_System_String_Windows_Perception_Spatial_SpatialAnchor___Windows_Storage_Streams_IOutputStream_)
-  - 异步操作始终以 ```false```完成。
+  - 异步操作始终以结束 ```false``` 。
 * [SpatialAnchorTransferManager.TryImportAnchorsAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchortransfermanager.tryimportanchorsasync
 )
-  - 异步操作始终以 ```nullptr```完成。
+  - 异步操作始终以结束 ```nullptr``` 。
 
 [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial)
 
 * [SpatialInteractionSource.TryCreateHandMeshObserver](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource.trycreatehandmeshobserver#Windows_UI_Input_Spatial_SpatialInteractionSource_TryCreateHandMeshObserver)
 * [SpatialInteractionSource.TryCreateHandMeshObserverAsync](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource.trycreatehandmeshobserverasync)
 * [SpatialInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource.controller#Windows_UI_Input_Spatial_SpatialInteractionSource_Controller)
+  - 支持从版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)开始
 
 [Windows.Perception.Spatial.Preview](https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview)
 
@@ -93,6 +100,6 @@ ms.locfileid: "81484307"
 ## <a name="see-also"></a>另请参阅
 * [全息远程处理版本历史记录](holographic-remoting-version-history.md)
 * [编写全息远程处理远程应用](holographic-remoting-create-host.md)
-* [编写自定义全息远程处理播放器应用程序](holographic-remoting-create-player.md)
+* [编写自定义全息远程处理播放器应用](holographic-remoting-create-player.md)
 * [全息远程处理软件许可条款](https://docs.microsoft.com/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft 隐私声明](https://go.microsoft.com/fwlink/?LinkId=521839)

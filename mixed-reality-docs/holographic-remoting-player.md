@@ -1,22 +1,22 @@
 ---
-title: 全息远程处理播放器
+title: 全息远程播放器
 description: 全息远程处理播放器是一种附属应用，用于连接到支持全息远程处理的 PC 应用和游戏。 使用 Wi-fi 连接，全息远程处理会实时地将 PC 中的全息内容流式处理到你的 Microsoft HoloLens。
 author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: e5255fb5537201058c491f5e4c682bb1c22d0edb
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 8b1d58b2c2ce8f379a87059bb5add0f85f507259
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278205"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061130"
 ---
-# <a name="holographic-remoting-player"></a>全息远程处理播放器
+# <a name="holographic-remoting-player"></a>全息远程播放器
 
 >[!IMPORTANT]
->HoloLens 2 的全息远程处理是一种主要版本更改。 [适用于 hololens 的远程应用程序 **（第一代）** ](add-holographic-remoting.md) **必须使用 NuGet** **包版本 1.x**和[ **hololens 2**的远程应用程序](holographic-remoting-create-host.md)必须使用1.x。 这意味着，为 HoloLens 2 编写的远程应用程序与 HoloLens （第一代）不兼容，反之亦然。
+>HoloLens 2 的全息远程处理是一种主要版本更改。 [适用于 hololens 的远程应用程序 **（第一代）** ](add-holographic-remoting.md) **必须使用 NuGet****包版本 1.x**和[ **hololens 2**的远程应用程序](holographic-remoting-create-host.md)必须使用1.x。 这意味着，为 HoloLens 2 编写的远程应用程序与 HoloLens （第一代）不兼容，反之亦然。
 
 [全息远程处理播放器](https://www.microsoft.com/p/holographic-remoting-player/9nblggh4sv40)是一种附属应用，用于连接到支持全息远程处理的 PC 应用和游戏。 使用 Wi-fi 连接，全息远程处理会实时地将 PC 中的全息内容流式处理到你的 Microsoft HoloLens。
 
@@ -24,11 +24,14 @@ ms.locfileid: "81278205"
 
 全息远程处理播放器适用于 HoloLens （第一代）和 HoloLens 2。  支持通过 HoloLens 进行全息远程处理的 PC 应用需要更新，以支持与 HoloLens 2 的全息远程处理。 如果你对支持哪些版本有任何疑问，请与你的应用程序提供商联系。
 
+>[!TIP]
+>从版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)开始，还可在运行[windows Mixed Reality](navigating-the-windows-mixed-reality-home.md)的 Windows 电脑上使用全息远程处理播放器。
+
 ## <a name="connecting-to-the-holographic-remoting-player"></a>连接到全息远程处理播放器
 
 按照应用的说明连接到全息远程处理播放器。 你需要输入你的 HoloLens 设备的 IP 地址，你可以在远程处理播放机的主屏幕上看到该设备，如下所示：
 
-![全息远程处理播放器](images/holographicremotingplayer.png)
+![全息远程播放器](images/holographicremotingplayer.png)
 
 看到主屏幕时，您将知道您没有连接到应用程序。
 
@@ -55,9 +58,9 @@ ms.locfileid: "81278205"
 * **Render** -远程处理播放机在上一秒内呈现的帧数。 请注意，这与通过网络到达的帧数量无关（请参阅**视频帧**）。 此外，将显示呈现的帧间最后一秒的平均/最大呈现增量时间（以毫秒为单位）。
 
 * **视频帧**-将跳过显示的第一个数字视频帧，第二个显示的是视频帧，第三个是接收视频帧。 所有数字表示上一秒的计数。
-    * ```Received frames``` 是在上一秒钟到达的视频帧的数目。 正常情况下，这应为60，但如果不是，则指示由于网络问题而导致的帧被丢弃，或者远程/远程端不生成具有预期速率的帧。
-    * ```Reused frames``` 是在上一秒钟内多次使用的视频帧的计数。 例如，如果视频帧晚到达，播放机的呈现循环仍将呈现一个帧，但需要*重复*使用它已用于前一帧的视频帧。
-    * ```Skipped frames``` 是播放机的呈现循环尚未使用的视频帧的计数。 例如，网络抖动可能会造成视频帧无法均匀地分布。 例如，如果有一些延迟，而另一些时间到达时，则在以60Hz 运行时，它们不会再出现16.66 毫秒的增量。 在播放机的呈现循环的两个刻度之间，可能会有多个帧到达。 在这种情况下，播放机将*跳过*一个或多个帧，因为应该始终显示最近收到的视频帧。
+    * ```Received frames```在最后一秒到达的视频帧的数目。 正常情况下，这应为60，但如果不是，则指示由于网络问题而导致的帧被丢弃，或者远程/远程端不生成具有预期速率的帧。
+    * ```Reused frames```是在上一秒钟内多次使用的视频帧的计数。 例如，如果视频帧晚到达，播放机的呈现循环仍将呈现一个帧，但需要*重复*使用它已用于前一帧的视频帧。
+    * ```Skipped frames```播放机的呈现循环未使用的视频帧的计数。 例如，网络抖动可能会造成视频帧无法均匀地分布。 例如，如果有一些延迟，而另一些时间到达时，则在以60Hz 运行时，它们不会再出现16.66 毫秒的增量。 在播放机的呈现循环的两个刻度之间，可能会有多个帧到达。 在这种情况下，播放机将*跳过*一个或多个帧，因为应该始终显示最近收到的视频帧。
 
     >[!NOTE]
     >当网络抖动时，跳过和重复使用的帧通常是相同的。 相反，如果您只看到跳过的帧，则表明播放机不会达到其目标帧速率。 在这种情况下，应注意诊断问题时的最大渲染增量时间。

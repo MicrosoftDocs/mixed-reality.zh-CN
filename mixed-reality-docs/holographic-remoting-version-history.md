@@ -6,21 +6,32 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、远程处理、全息远程处理
-ms.openlocfilehash: 319e76efbbe1085fc9d60251a6f0f38133de6505
-ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
+ms.openlocfilehash: 131c5237801c381a371b197a5b7d8e0ec64fa2d6
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327897"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061120"
 ---
 # <a name="holographic-remoting-version-history"></a>全息远程处理版本历史记录
 
 > [!IMPORTANT]
 > 本指南特定于 HoloLens 2 上的全息远程处理。
 
+## <a name="version-221-july-6-2020"></a>版本2.2.1 （2020年7月6日）<a name="v2.2.1"></a>
+> [!IMPORTANT]
+> 版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)的[Windows 应用程序认证包](https://developer.microsoft.com/windows/downloads/app-certification-kit/)验证将失败。 如果你在版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)上，并且想要将应用程序提交到 Microsoft store，请至少更新为版本2.2.1。
+* 修复了[Windows 应用程序认证包](https://developer.microsoft.com/windows/downloads/app-certification-kit/)的相容性问题。
+
+## <a name="version-220-july-1-2020"></a>版本2.2.0 （2020年7月1日）<a name="v2.2.0"></a>
+* 全息远程处理播放器现在可以安装在运行[Windows Mixed Reality](navigating-the-windows-mixed-reality-home.md)的 pc 上，使其可以流式传输到沉浸式耳机。
+* [动画控制器](motion-controllers.md)现在由全息远程处理和控制器特定数据支持，可通过[SpatialInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource.controller#Windows_UI_Input_Spatial_SpatialInteractionSource_Controller)进行检索。
+* 现在支持[SpatialStageFrameOfReference](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference) ，并且可以通过[SpatialStageFrameOfReference](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.current)检索当前阶段。 此外，还可以通过 SpatialStageFrameOfReference 请求新阶段[。 RequestNewStageAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.requestnewstageasync)。
+* 在以前的版本中，通过全息远程处理播放机在播放机上完全处理 "提出预测"。 从版本2.2.0 开始，全息远程处理具有时间同步，并由远程应用程序完全完成预测。 在出现困难的网络情况下，用户还应预计提高的全息影像稳定性。
+
 ## <a name="version-213-may-25-2020"></a>版本2.1.3 （5月25日，2020）<a name="v2.1.3"></a>
 * 已更改[HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)事件的行为。 在以前的版本中，**不**能保证添加的[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera?view=winrt-18362)在通过[HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createnextframe?view=winrt-18362#Windows_Graphics_Holographic_HolographicSpace_CreateNextFrame)创建下一帧时还具有有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362) 。 从版本 2.1.3 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)中开始，将与来自全息远程处理程序的姿势数据同步，用户可能希望在添加照相机时，还会在下一帧上为该相机提供有效的[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362) 。
-* 已将**禁用**添加到 DepthBufferStreamResolution，可用于通过 RemoteContext 禁用深度缓冲区流式处理。 请注意，如果使用的[HolographicCameraRenderingParameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)将失败，并*E_ILLEGAL_METHOD_CALL*。
+* 已将**禁用**添加到 DepthBufferStreamResolution，它可用于通过 RemoteContext.ConfigureDepthVideoStream 禁用深度缓冲区流式处理。 请注意，如果使用的[HolographicCameraRenderingParameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)将失败，并*E_ILLEGAL_METHOD_CALL*。
 * 全息远程处理播放机的启动屏幕已重新设计，现在不会阻止用户视图。
 * 稳定性改进和 bug 修复。
 
@@ -76,7 +87,7 @@ ms.locfileid: "84327897"
 * 适用于 HoloLens 2 的全息远程处理的第一个公共版本。
 
 ## <a name="see-also"></a>另请参阅
-* [编写自定义全息远程处理播放器应用程序](holographic-remoting-create-player.md)
+* [编写自定义全息远程处理播放器应用](holographic-remoting-create-player.md)
 * [编写全息远程处理主机应用](holographic-remoting-create-host.md)
 * [全息远程处理故障排除和限制](holographic-remoting-troubleshooting.md)
 * [全息远程处理软件许可条款](https://docs.microsoft.com/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)

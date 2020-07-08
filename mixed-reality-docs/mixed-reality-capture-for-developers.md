@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、照片、视频、捕获、照相机
-ms.openlocfilehash: 1116e9a0923129aa2b18d838917eebf12adae694
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: 44b853e96ab956e5ea6c03d8c23a61e91ac733d4
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720413"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061140"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>面向开发人员的混合现实捕获
 
@@ -64,10 +64,10 @@ PV 相机中的呈现功能与默认的 MRC 体验相比具有以下改进：
 若要选择从 PV 相机进行呈现，应用只需启用 PhotoVideoCamera 的[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration)：
 ```csharp
 var display = Windows.Graphics.Holographic.HolographicDisplay.GetDefault();
-var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfiguration.PhotoVideoCamera);
+var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfigurationKind.PhotoVideoCamera);
 if (view != null)
 {
-   view.IsEnabled = true;
+    view.IsEnabled = true;
 }
 ```
 
@@ -97,12 +97,12 @@ if (view != null)
 ##### <a name="enable-the-photovideocamera-holographicviewconfiguration-in-unreal"></a>启用 Unreal 中的 PhotoVideoCamera HolographicViewConfiguration
 
 > [!NOTE]
-> 这需要**Unreal 引擎 4.25**或更高版本。
+> 这需要 Unreal Engine 4.25 或更高版本。
 
-若要选择从 PV 摄像机进行呈现：
+若要选择从 PV 摄像机进行渲染：
 
-1. 调用**SetEnabledMixedRealityCamera**和**ResizeMixedRealityCamera**
-    * 使用**Size X**和**size Y**值设置视频尺寸。
+1. 调用 SetEnabledMixedRealityCamera 和 ResizeMixedRealityCamera 
+    * 使用“尺寸 X”和“尺寸 Y”值设置视频尺寸。 
 
 ![第三人称摄像头](images/unreal-camera-3rd.PNG)
 
@@ -173,7 +173,7 @@ if (view != null)
 
 ![清除为透明黑色时的预期结果](images/cleartransparentblack-300px.png)
 
-**解决方案**：
+**解决方案**；
 * 将显示为不透明黑色的任何内容更改为 alpha 值0。
 * 确保应用清除为透明黑色。
 * Unity 默认为明文以使用 MixedRealityToolkit 自动清除，但如果它是非 Unity 应用，应修改与 ID3D11DeiceContext：： ClearRenderTargetView （）一起使用的颜色。 你需要确保清除透明黑色（0，0，0，0），而不是透明的黑色（0，0，0，1）。
@@ -228,7 +228,7 @@ MRC 视频效果（**MixedRealityCapture. MixedRealityCaptureVideoEffect**）
 |  RecordingIndicatorEnabled  |  boolean  |  TRUE  |  用于在全息影像捕获期间启用或禁用录制指示器的标志。 |
 |  VideoStabilizationEnabled  |  boolean  |  FALSE  |  用于启用或禁用由 HoloLens 跟踪器支持的视频稳定的标志。 |
 |  VideoStabilizationBufferLength  |  UINT32  |  0  |  设置视频抖动使用的历史帧数。 从电源和性能的角度来看，0从0到延迟，几乎是 "免费"。 对于最高质量，建议使用15个（成本为延迟和内存15帧）。 |
-|  GlobalOpacityCoefficient  |  FLOAT  |  0.9 （HoloLens）1.0 （沉浸式耳机）  |  将范围从0.0 （完全透明）到1.0 的全局不透明度系数设置为 "完全不透明"。 |
+|  GlobalOpacityCoefficient  |  float  |  0.9 （HoloLens）1.0 （沉浸式耳机）  |  将范围从0.0 （完全透明）到1.0 的全局不透明度系数设置为 "完全不透明"。 |
 |  BlankOnProtectedContent  |  boolean  |  FALSE  |  用于启用或禁用在有显示受保护内容的 2d UWP 应用时返回空帧的标志。 如果此标志为 false，并且二维 UWP 应用显示受保护的内容，则在耳机和混合现实捕获中，二维 UWP 应用将替换为受保护的内容纹理。 |
 |  ShowHiddenMesh  |  boolean  |  FALSE  |  用于启用或禁用显示全息相机隐藏区域网格和相邻内容的标志。 |
 | OutputSize | 大小 | 0, 0 | 在裁剪视频稳定性后设置所需的输出大小。 如果指定了0或指定了无效的输出大小，则选择默认裁剪大小。 |
@@ -244,8 +244,8 @@ MRC 音频效果（**MixedRealityCapture. MixedRealityCaptureAudioEffect**）
 | 属性名称 | 类型 | 默认值 | 描述 |
 |----------|----------|----------|----------|
 | MixerMode | UINT32 | 2（Mic 和系统音频） | 用于指示应使用的音频源的枚举：0（仅限 Mic 音频）、1（仅限系统音频）、2（麦克风和系统音频） |
-| LoopbackGain | FLOAT | Windows 设备门户中的**应用音频增益**设置 | 适用于系统音频音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
-| MicrophoneGain | FLOAT | Windows 设备门户中的**Mic 音频增益**设置 | 适用于麦克风音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
+| LoopbackGain | float | Windows 设备门户中的**应用音频增益**设置 | 适用于系统音频音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
+| MicrophoneGain | float | Windows 设备门户中的**Mic 音频增益**设置 | 适用于麦克风音量的增益。 范围为0.0 到5.0。 仅在 HoloLens 2 上受支持 |
 
 >[!NOTE]
 > 可以通过转到[混合现实捕获页面](using-the-windows-device-portal.md#mixed-reality-capture)并调整其各自设置旁的滑块来更改 Windows 设备门户中**LoopbackGain**或**MicrophoneGain**的默认值。 这两个设置默认为**1.0**，但可以设置为**0.0**和**5.0**之间的任何值。
