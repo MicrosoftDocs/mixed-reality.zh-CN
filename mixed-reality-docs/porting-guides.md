@@ -5,19 +5,19 @@ author: JBrentJ
 ms.author: alexturn
 ms.date: 07/07/2020
 ms.topic: article
-keywords: 端口，移植，unity，中间件，引擎，UWP
-ms.openlocfilehash: 5cf66ce857806ab6fcf8c94b94c7a9a540339b97
-ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
+keywords: 端口，移植，unity，中间件，引擎，UWP，Win32
+ms.openlocfilehash: a1e3cd47096d728091d62d6c038bf6b2eb6bab16
+ms.sourcegitcommit: 0eb99fae933d4374af2c032af4e9ceda1807e532
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86061150"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86156768"
 ---
 # <a name="porting-guides"></a>移植指南
 
 ## <a name="overview"></a>概述
 
-Windows 10 包括对沉浸式和全息耳机的直接支持。 如果已为其他设备（如 Oculus Rift 或 HTC Naopak）生成内容，这些内容将依赖于操作系统的平台 API 之上的库。 将现有内容引入 Windows Mixed Reality 涉及到重定目标将这些其他 Sdk 用于 Windows Api。 [适用于混合现实的 windows 平台 api](https://docs.microsoft.com/uwp/api/Windows.Perception)适用于 windows x86 和通用 WINDOWS 平台（UWP）应用模型。 如果你的应用尚未构建给 UWP，则将其更改为 UWP 会成为移植体验的一部分。
+Windows 10 包括对沉浸式和全息耳机的直接支持。 如果已为其他设备（如 Oculus Rift 或 HTC Naopak）生成内容，这些内容将依赖于操作系统的平台 API 之上的库。 将现有内容引入 Windows Mixed Reality 涉及到重定目标将这些其他 Sdk 用于 Windows Api。 [用于混合现实的 Windows 平台 api](https://docs.microsoft.com/uwp/api/Windows.Perception)适用于 Win32 和通用 WINDOWS 平台（UWP）应用模型。 如果你的应用尚未构建给 UWP，则将其更改为 UWP 会成为移植体验的一部分。
 
 ## <a name="porting-overview"></a>移植概述
 
@@ -74,7 +74,7 @@ Windows Mixed Reality 平台仍处于积极开发阶段。 建议[加入 Windows
 
 ### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 步骤4：将应用程序设定为在通用 Windows 平台（UWP）上运行
 
-如果你面向的是 Windows x86，则可以跳过此步骤，并继续执行步骤5。
+如果要以 Win32 为目标，则可以跳过此步骤，并继续执行步骤5。
 
 安装这些工具后，需要将应用作为通用 Windows 应用运行。
 
@@ -84,12 +84,12 @@ Windows Mixed Reality 平台仍处于积极开发阶段。 建议[加入 Windows
 > [!NOTE]
 > Unity 继续改进 IL2CPP 支持;IL2CPP 使某些 UWP 端口变得更简单。 如果你当前面向的是 .NET 脚本编写后端，则应考虑将转换为使用 IL2CPP 后端。
 
-* 可以跳过 "Unity 步骤 5"，因为目标是 UWP 而不是 x86。
+* 可以跳过 "Unity 步骤 5"，因为目标是 UWP 而不是 Win32。
 
 > [!NOTE] 
 > 如果你的应用程序在特定于设备的服务上有任何依赖关系，例如，从流中进行匹配，则需要在此步骤中禁用它们。 你可以挂钩到 Windows 稍后提供的等效服务。
 
-### <a name="unity-step-5-target-your-application-to-run-on-windows-x86"></a>Unity 步骤5：将应用程序设定为在 Windows x86 上运行
+### <a name="unity-step-5-target-your-application-to-run-on-win32"></a>Unity 步骤5：将应用程序定位到在 Win32 上运行
 
 从 Unity 应用程序内部：
 
@@ -171,7 +171,7 @@ Windows Mixed Reality 将在各种设备上可用，范围从高端游戏电脑�
 
 [Unity](https://docs.unity3d.com/Manual/Profiler.html)和[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)都包含性能探查器， [Microsoft](understanding-performance-for-mixed-reality.md)和[Intel](https://software.intel.com/articles/vr-content-developer-guide)发布有关性能分析和优化的指导原则。 在[了解混合现实的性能](understanding-performance-for-mixed-reality.md)方面，提供了有关性能的广泛讨论。 此外，针对[unity 的性能建议](performance-recommendations-for-unity.md)下的 unity 有特定的详细信息。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 * [Unity 的输入移植指南](input-porting-guide-for-unity.md)
 * [Windows Mixed Reality 最小电脑硬件兼容性指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [了解混合现实的性能](understanding-performance-for-mixed-reality.md)
