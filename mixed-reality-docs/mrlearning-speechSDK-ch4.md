@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: b2342e7d0d502af2787ca311d18a44f8726acf2d
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 8cebe1fb203aeed9a262a2e9f482993b4775e0a6
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79028458"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303658"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.设置意向和自然语言理解
 
@@ -63,7 +63,7 @@ ms.locfileid: "79028458"
 > 截至编写本文时，无需创建创作资源，因为在下一部分创建语言理解智能服务 (LUIS) 时，系统会在 LUIS 中自动生成一个创作试用密钥。
 
 > [!TIP]
-> 如果 Azure 帐户中已有另一个适当的资源组（例如，如果已完成 [Azure 空间定位点](mrlearning-asa-ch1.md)教程），则可以使用此资源组，而无需创建新资源组。
+> 如果 Azure 帐户中已有另一个适当的资源组（例如，如果已完成 [Azure 空间定位点](mr-learning-asa-01.md)教程），则可以使用此资源组，而无需创建新资源组。
 
 仍在“创建”页上，输入以下值：
 
