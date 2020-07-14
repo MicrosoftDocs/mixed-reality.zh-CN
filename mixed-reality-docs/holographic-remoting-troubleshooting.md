@@ -6,12 +6,12 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: Windows Mixed Reality，全息影像，全息远程处理，远程渲染，网络渲染，HoloLens，远程影像，故障排除，帮助
-ms.openlocfilehash: 79650ceab5d0125a8a06c776a59a45a78d0aa20c
-ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
+ms.openlocfilehash: 593b242326b83d4596d22a7e1a39ef18c26bc67a
+ms.sourcegitcommit: b392847529961ac36bbff154ce0830f8b2dbd766
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86061110"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86300499"
 ---
 # <a name="holographic-remoting-troubleshooting"></a>全息远程处理疑难解答
 
@@ -20,13 +20,17 @@ ms.locfileid: "86061110"
 
 ## <a name="spectre-mitigated-libraries-not-found"></a>找不到 Spectre 缓解的库。
 
-全息远程处理示例应用在发布配置中启用了 Spectre 缓解（/Qspectre）。
+全息远程处理示例应用在发布配置中启用了 Spectre 缓解 (/Qspectre) 。
 
 如果收到一条错误链接器错误，指出无法打开 "vccorlib.h"，请确保你的 Visual Studio 工作负荷包括 Spectre 缓解库。 有关详细信息，请参阅 https://aka.ms/Ofhn4c 。
 
 ## <a name="speech"></a>语音
 
 全息远程处理播放器支持诊断覆盖，可以通过口述和禁用来启用此覆盖 ```Enable Diagnostics``` ```Disable Diagnostics``` 。 如果使用这些语音命令时遇到问题，也可以通过 web 浏览器使用作为 URL 来启动全息远程处理播放器 ```ms-holographic-remoting:?stats``` 。
+
+## <a name="h265-video-codec-not-available"></a>H265 视频编解码器不可用
+
+在远程应用中使用 H265 视频编解码器时，需要安装[HEVC 视频扩展](https://www.microsoft.com/p/hevc-video-extensions/9nmzlz57r3t7)。 如果遇到安装了编解码器但无法使用的问题，请查看[故障排除](https://docs.microsoft.com/azure/remote-rendering/resources/troubleshoot#h265-codec-not-available)指南。
 
 ## <a name="limitations"></a>限制
 
@@ -39,10 +43,12 @@ ms.locfileid: "86061110"
   - 在以前的版本中，始终会引发错误。
 * [HolographicCamera.IsHardwareContentProtectionEnabled](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.ishardwarecontentprotectionenabled#Windows_Graphics_Holographic_HolographicCamera_IsHardwareContentProtectionEnabled)
 * [HolographicViewConfiguration.RequestRenderTargetSize](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration.requestrendertargetsize#Windows_Graphics_Holographic_HolographicViewConfiguration_RequestRenderTargetSize_Windows_Foundation_Size_)
-  - 不会失败，但不会更改呈现目标大小。
+  - 支持从版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)开始
+  - 在以前的版本中不会失败，但不会更改呈现目标大小。
 * [HolographicCameraPose.OverrideProjectionTransform](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideprojectiontransform)
 * [HolographicCameraPose.OverrideViewport](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideviewport)
 * [HolographicCameraPose.OverrideViewTransform](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideviewtransform)
+  - 支持从版本[2.2.0](holographic-remoting-version-history.md#v2.2.0)开始
 * [HolographicCameraRenderingParameters.CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)
   - 不会失败，但深度缓冲区将不会进行远程处理。
   - 支持从版本[2.1.0](holographic-remoting-version-history.md#v2.1.0)开始
