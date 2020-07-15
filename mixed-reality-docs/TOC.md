@@ -112,34 +112,47 @@
 ### Unity
 #### HoloLens 2 教程
 ##### 入门教程
-###### [1.概述和目标](mrlearning-base.md)
-###### [2.初始化你的项目和第一个应用程序](mrlearning-base-ch1.md)
-###### [3.创建用户界面并配置混合现实工具包](mrlearning-base-ch2.md)
-###### [4.放置动态内容并使用求解器](mrlearning-base-ch3.md)
-###### [5.与 3D 对象交互](mrlearning-base-ch4.md)
-###### [6.探索高级输入选项](mrlearning-base-ch5.md)
-###### [7.创建农历模块示例应用程序](mrlearning-base-ch6.md)
+###### [1.简介](mr-learning-base-01.md)
+###### [2.初始化你的项目和第一个应用程序](mr-learning-base-02.md)
+###### [3.配置混合现实工具包配置文件](mr-learning-base-03.md)
+###### [4.定位场景中的对象](mr-learning-base-04.md)
+###### [5.使用求解器创建动态内容](mr-learning-base-05.md)
+###### [6.创建用户界面](mr-learning-base-06.md)
+###### [7.与 3D 对象交互](mr-learning-base-07.md)
+###### [8.眼动跟踪](mr-learning-base-08.md)
+###### [9.使用语音命令](mr-learning-base-09.md)
 ##### Azure 空间定位点教程
-###### [1.开始使用 Azure 空间定位点](mrlearning-asa-ch1.md)
-###### [2.保存、检索和共享 Azure 空间定位点](mrlearning-asa-ch2.md)
-###### [3.显示 Azure 空间定位点反馈](mrlearning-asa-ch3.md)
-###### [4.适用于 Android 和 iOS 的 Azure 空间定位点](mrlearning-asa-ch4.md)
+###### [1.简介](mr-learning-asa-01.md)
+###### [2.开始使用 Azure 空间定位点](mr-learning-asa-02.md)
+###### [3.保存、检索和共享 Azure 空间定位点](mr-learning-asa-03.md)
+###### [4.显示 Azure 空间定位点反馈](mr-learning-asa-04.md)
+###### [5.适用于 Android 和 iOS 的 Azure 空间定位点](mr-learning-asa-05.md)
+##### 多用户功能教程
+###### [1.简介](mr-learning-sharing-01.md)
+###### [2.设置 Photon Unity Networking](mr-learning-sharing-02.md)
+###### [3.连接多个用户](mr-learning-sharing-03.md)
+###### [4.与多个用户共享对象移动](mr-learning-sharing-04.md)
+###### [5.将 Azure 空间定位点集成到共享体验中](mr-learning-sharing-05.md)
 ##### Azure 语音服务教程
 ###### [1.集成并使用语音识别和听录](mrlearning-speechSDK-ch1.md)
 ###### [2.为本地语音到文本翻译添加脱机模式](mrlearning-speechSDK-ch2.md)
 ###### [3.添加 Azure 认知服务语音翻译组件](mrlearning-speechSDK-ch3.md)
 ###### [4.设置意向和自然语言理解](mrlearning-speechSDK-ch4.md)
-##### 多用户功能教程
-###### [1.设置 Photon Unity Networking](mrlearning-sharing(photon)-ch1.md)
-###### [2.连接多个用户](mrlearning-sharing(photon)-ch2.md)
-###### [3.与多个用户共享对象移动](mrlearning-sharing(photon)-ch3.md)
-###### [4.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch4.md)
 ##### 空间音频教程
 ###### [1.在项目中添加空间音频](unity-spatial-audio-ch1.md)
 ###### [2.将按钮交互声音空间化](unity-spatial-audio-ch2.md)
 ###### [3.将视频中的音频空间化](unity-spatial-audio-ch3.md)
 ###### [4.在运行时启用和禁用空间音频](unity-spatial-audio-ch4.md)
 ###### [5.使用混响为空间音频添加距离感](unity-spatial-audio-ch5.md)
+#### Azure 云服务教程
+##### [1.适用于 HoloLens 2 的 Azure 云服务](mr-learning-azure-01.md)
+##### [2.集成 Azure 存储](mr-learning-azure-02.md)
+##### [3.集成 Azure 自定义视觉](mr-learning-azure-03.md)
+##### [4.集成 Azure 空间定位点](mr-learning-azure-04.md)
+##### [5.集成 Azure 机器人服务](mr-learning-azure-05.md)
+#### 电脑全息远程处理教程
+##### [1.开始使用电脑全息远程处理](mr-learning-pc-holographic-remoting-01.md)
+##### [2.创建全息远程处理电脑应用程序](mr-learning-pc-holographic-remoting-02.md)
 #### HoloLens 2 开源示例应用
 ##### [表面](sampleapp-surfaces.md)
 ##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
@@ -217,15 +230,17 @@
 
 ## Unreal
 ### [Unreal 开发概述](unreal-development-overview.md)
-### [Unreal 中的手部跟踪](unreal-hand-tracking.md)
 ### [Unreal 中的凝视输入](unreal-gaze-input.md)
+### [Unreal 中的手部跟踪](unreal-hand-tracking.md)
+### [Unreal 中的 HoloLens 摄像头](unreal-hololens-camera.md)
+### [Unreal 中的 QR 码](unreal-qr-codes.md)
 ### [Unreal 中的空间映射](unreal-spatial-mapping.md)
 ### [Unreal 中的空间音频](unreal-spatial-audio.md)
 ### [Unreal 中的空间定位点](unreal-spatial-anchors.md)
-### [Unity 中的语音输入](unreal-voice-input.md)
-### [Unreal 中的 HoloLens 摄像头](unreal-hololens-camera.md)
-### [Unreal 中的 QR 码](unreal-qr-codes.md)
 ### [Unreal 中的流式处理](unreal-streaming.md)
+### [在 Unreal 中部署到设备](unreal-deploying.md)
+### [Unity 中的语音输入](unreal-voice-input.md)
+### [Unreal 中的 WinRT](unreal-winrt.md)
 ### [针对 Unreal 的性能建议](performance-recommendations-for-unreal.md)
 
 ## JavaScript
