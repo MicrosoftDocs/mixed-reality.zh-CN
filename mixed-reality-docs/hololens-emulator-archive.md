@@ -1,17 +1,17 @@
 ---
 title: HoloLens 模拟器存档
 description: Microsoft HoloLens 模拟器的已发布版本的列表。
-author: pbarnettms
-ms.author: pbarnett
+author: hamalawi
+ms.author: moelhama
 ms.date: 6/8/2020
 ms.topic: article
 keywords: HoloLens、模拟器、版本、版本
-ms.openlocfilehash: 7fe48203a3670490a2ac78040ea9f0ac8e811bd5
-ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
+ms.openlocfilehash: 9471cefde26b59ef1f140e102f8da923d8e67da1
+ms.sourcegitcommit: 3c867622e99c07f95db92e88551d2b904ceb8def
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631485"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86383039"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 模拟器存档
 
@@ -19,8 +19,10 @@ HoloLens 模拟器（第一代）和 HoloLens 2 模拟器会并行安装。 我�
 
 |  生成 |  发布日期 |  说明 | 
 |----------|----------|----------|
-|  [HoloLens 2 模拟器生成10.0.19041.1106](https://go.microsoft.com/fwlink/?linkid=2132415) | 2020年6月9日 | Windows 全息，版本2004，年 6 2020 月更新。  解决了未呈现的 DirectX 12 应用程序的问题，未显示屏幕键盘，正在使用没有按预期方式工作的对象，并且在基于 AMD 的系统上进行嵌套虚拟化时，模拟器未能开始。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
-|  [HoloLens 2 模拟器生成10.0.18362.1064](https://go.microsoft.com/fwlink/?linkid=2132601) | 2020年6月9日 | Windows 全息，版本1903，年 6 2020 月更新。  解决了未呈现 DirectX 12 应用程序的问题，未显示屏幕键盘，并且不按预期方式工作的对象。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模拟器生成10.0.19041.1109](https://go.microsoft.com/fwlink/?linkid=2135188) | 2020年7月14日 | Windows 全息，版本2004，年 7 2020 月更新。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模拟器生成10.0.18362.1071](https://go.microsoft.com/fwlink/?linkid=2135245) | 2020年7月14日 | Windows 全息，版本1903，年 7 2020 月更新。  解决了在某些设备上启用硬件图形加速时，导致沉浸式应用程序在启动时崩溃的问题。 有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模拟器生成10.0.19041.1106](https://go.microsoft.com/fwlink/?linkid=2132415) | 2020 年 6 月 9 日 | Windows 全息，版本2004，年 6 2020 月更新。  解决了未呈现的 DirectX 12 应用程序的问题，未显示屏幕键盘，正在使用没有按预期方式工作的对象，并且在基于 AMD 的系统上进行嵌套虚拟化时，模拟器未能开始。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
+|  [HoloLens 2 模拟器生成10.0.18362.1064](https://go.microsoft.com/fwlink/?linkid=2132601) | 2020 年 6 月 9 日 | Windows 全息，版本1903，年 6 2020 月更新。  解决了未呈现 DirectX 12 应用程序的问题，未显示屏幕键盘，并且不按预期方式工作的对象。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.19041.1103](https://go.microsoft.com/fwlink/?linkid=2129088) | 2020 年 5 月 12 日 | Windows 全息，版本2004。  可以使用 Windows Mixed Reality 耳机和运动控制器来控制和查看立体声2模拟器。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1061](https://go.microsoft.com/fwlink/?linkid=2129833) | 2020 年 5 月 12 日 | Windows 全息，版本1903可能会2020更新。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 模拟器生成10.0.18362.1059](https://go.microsoft.com/fwlink/?linkid=2126826) | 2020年4月13日 | Windows 全息版，1903年 4 2020 月更新。  有关常规 HoloLens 2 发行说明，请参阅https://docs.microsoft.com/hololens/hololens-release-notes |
@@ -31,7 +33,7 @@ HoloLens 模拟器（第一代）和 HoloLens 2 模拟器会并行安装。 我�
 |  [HoloLens 2 模拟器生成10.0.18362.1034](https://go.microsoft.com/fwlink/?linkid=2106649) | 2019 年 10 月 8 日 | Windows 全息版1903年 10 2019 月更新。  当运行的版本低于最新的可用版本时，模拟器将提示更新为新版本。  在 Windows 10 上使用模拟器2019更新或更高版本时，新的 NAT 配置选项卡允许开发人员打开单独设备上运行的应用程序的端口以连接到模拟器，并且 "更新" 选项卡将显示可用的仿真程序版本。  有关更多详细信息，请参阅[HoloLens 模拟器文档](using-the-hololens-emulator.md)。 |
 |  [HoloLens 2 模拟器生成10.0.18362.1031](https://go.microsoft.com/fwlink/?linkid=2103724) | 2019 年 9 月 11 日 | Windows 全息版，1903年 9 2019 月更新。  在 Windows 10 上运行模拟器2019更新或更高版本时，"网络" 选项卡将显示在 "模拟器工具" 窗口中。 |
 |  [HoloLens 2 模拟器生成10.0.18362.1028](https://go.microsoft.com/fwlink/?linkid=2101019) | 2019年8月14日 | Windows 全息版，1903年 8 2019 月更新。  不再包括全息应用程序模板，但 Visual Studio Marketplace 中提供了这些模板。  在将 Sdk 安装到自定义位置时，模拟器将起作用。 |
-|  [HoloLens 2 模拟器生成10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019 年 7 月 8 日 | Windows 全息，版本1903，年 7 2019 月更新。  使用 DiskStream 解决签名问题 |
+|  [HoloLens 2 模拟器生成10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019 年 7 月 8 日 | Windows 全息，版本1903，年 7 2019 月更新。  解决 DiskStream.dll 的签名问题 |
 |  [HoloLens 2 模拟器生成10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11 日 | Windows 全息，版本1903，年 6 2019 月更新。  不再需要以管理员身份运行。  添加了开始菜单快捷方式。 |
 |  [HoloLens 2 模拟器生成10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16 日 |  Windows 全息，版本1903。 |
 
