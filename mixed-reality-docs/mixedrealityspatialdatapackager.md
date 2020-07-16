@@ -5,20 +5,20 @@ author: alfred-msft
 ms.author: yuripek
 ms.date: 05/16/2019
 ms.topic: article
-keywords: lbe、MixedRealitySpatialDataPackager、MixedRealitySpatialDataPackager
-ms.openlocfilehash: 3beb8f9168bfb6fd921d6d5c1eb6d250c70a714d
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+keywords: lbe、MixedRealitySpatialDataPackager.exe、MixedRealitySpatialDataPackager
+ms.openlocfilehash: 4a285cbd7423d7cacaf52370e6e19acf42672289
+ms.sourcegitcommit: cfca6cb016d8683fa2c611a97d493a4947935dbb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539679"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86402736"
 ---
 # <a name="mixed-reality-spatial-data-packager-documentation"></a>混合现实空间数据包装程序文档
 
 >[!NOTE]
 > 此工具及其操作按原样提供。 如果没有任何通知，它可能会更改，并且可能不会与未来的 Windows 或 Windows Mixed Reality HMD 版本兼容。
 
-## <a name="download"></a>“下载”
+## <a name="download"></a>下载
  [在此处下载 MixedRealitySpatialDataPackager](https://download.microsoft.com/download/A/1/2/A12B8A90-B3F7-4ED9-A4BB-D59DDCDAA125/MixedRealitySpatialDataPackager.zip)
 
 ## <a name="device-support"></a>设备支持
@@ -31,7 +31,7 @@ ms.locfileid: "74539679"
     <col width="25%" />
     </colgroup>
     <tr>
-        <td><strong>具有</strong></td>
+        <td><strong>功能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens（第 1 代）</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>沉浸式头戴显示设备</strong></a></td>
@@ -44,7 +44,7 @@ ms.locfileid: "74539679"
     </tr>
 </table>
 
-## <a name="quickstart"></a>起步
+## <a name="quickstart"></a>快速入门
 
 混合现实空间数据包装器工具通过两步导出和导入过程将目标应用的空间数据从一台 PC 复制到另一台 PC。 此工具必须以管理员权限运行，并在导入时删除现有空间数据。 导出会使现有的空间数据保持不变。
 
@@ -63,7 +63,7 @@ ms.locfileid: "74539679"
 1. 清除控制面板中的现有映射（设置-> 混合现实-> 环境-> 明文环境数据）
 2. 确保光线足以进行良好跟踪，如果正在运行锁定的映射模式，则尝试维持相同的照明
 3. 如果可能，请避免深色、阴影区域旁的高照明区域，使光照动态范围较低
-4. 最大程度地减少空白、textureless 的图面，例如，将一系列不同海报置于允许列表上
+4. 最大程度地减少空白、textureless 的图面，例如，将一系列不同海报置于白名单上
 5. 在场景中映射不包含动态对象的空间，例如移动人员
 6. 导入时锁定地图（可通过预览体验预览）
 7. 当跟踪质量下降并且/或环境发生变化时（对象布局中的照明或变化），解锁地图并重新扫描环境
@@ -71,7 +71,7 @@ ms.locfileid: "74539679"
 
 ## <a name="running-mixed-reality-spatial-data-packager-with-companion-script"></a>运行带辅助脚本的混合现实空间数据包装器
 
-我们提供了 MRSpatialPackagerHelperScript，它运行地图包装器工具。 
+我们提供了 MRSpatialPackagerHelperScript.ps1，它运行映射包装器工具。 
 
 
 脚本参数定义如下：
@@ -102,7 +102,7 @@ ms.locfileid: "74539679"
 
 ### <a name="powershell-script-example-usage-and-output"></a>Powershell 脚本示例用法和输出
 
-.\MRSpatialPackagerHelperScript.ps1-AppName holoshell-UserName MapxPath D:\temp\-LockMap 0
+.\MRSpatialPackagerHelperScript.ps1 AppName holoshell-UserName Administrator-Mode MapxPath D:\temp\-LockMap 0
 ```
 Package Family Name for holoshell: HoloShell_cw5n1h2txyewy
 User SID for Administrator: S-1-5-21-1279937937-3984375698-1043392598-499
@@ -135,14 +135,14 @@ Started SPECTRUM
 IMPORT SUCCESS
 ```
 
-### <a name="how-to-export-using-mixedrealitypackagerexe"></a>如何使用 MixedRealityPackager 导出
+### <a name="how-to-export-using-mixedrealityspatialdatapackagerexe"></a>如何使用 MixedRealitySpatialDataPackager.exe 导出
 ```
 MixedRealitySpatialDataPackager.exe export <folderpath to mapx files> <source package family name>    
 ```
 
 从设备导出映射会生成两个 mapx 文件：获取 mapx 和 mapx。 在导出过程中，除了指定的应用和用户创建的边界（如果存在）之外，还将删除所有空间锚。 源包系列名称必须与现有的已安装应用匹配，否则 exe 将会失败。
 
-### <a name="how-to-import-using-mixedrealitypackagerexe"></a>如何使用 MixedRealityPackager 导入
+### <a name="how-to-import-using-mixedrealityspatialdatapackagerexe"></a>如何使用 MixedRealitySpatialDataPackager.exe 导入
 ```
 MixedRealitySpatialDataPackager.exe import <folderpath to mapx files> <target package family name> <user SID>
 ```
