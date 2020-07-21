@@ -7,12 +7,12 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 混合现实, 全息, ar, vr, mr, xr, 增强现实, 虚拟现实, 说明
 ms.localizationpriority: high
-ms.openlocfilehash: 7b0dcbdb88f880d4c1632fae874ba6a610f023fb
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 541752ef32149f64f9b85616883c284b33bb8fed
+ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81278045"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447903"
 ---
 # <a name="what-is-mixed-reality"></a>什么是混合现实？
 
@@ -117,7 +117,7 @@ ms.locfileid: "81278045"
 ## <a name="see-also"></a>另请参阅
 
 * [什么是全息图？](hologram.md)
-* [了解混合现实的基础知识](index.md#understand-the-basics)
+* [了解混合现实的基础知识](get-started-with-mr.md#understand-the-basics)
 * [开始创建和制作原型](design.md)
 * [了解工具和体系结构](development.md)
 
