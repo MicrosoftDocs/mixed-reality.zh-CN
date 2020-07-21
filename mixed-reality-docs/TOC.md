@@ -1,28 +1,26 @@
-# 新增功能 
-## [让应用做好用于 HL2 的准备](mrtk-porting-guide.md)
-## [了解 Azure 服务](azure-services.md)
-## [为全新的 Microsoft Edge 做好准备](new-microsoft-edge.md)
-## 计划和活动
-### [San Francisco Reactor Academy 活动日历](sf-academy-events.md)
-### [混合现实开发人员日](mr-dev-days.md)
-#### [会话录制](mr-dev-days-sessions.md)
-## [当前的混合现实发行说明](release-notes-may-2020.md)
-## [社区资源](community.md)
-## [参与撰写本文档](CONTRIBUTING.md)
+<!-- Hub landing page -->
+# [欢迎使用混合现实](index.yml)
+
+<!-- Discover top level folder -->
 # 发现
-## [混合现实入门](index.md)
+## [混合现实入门](get-started-with-mr.md)
 ## [扩展设计过程](case-study-expanding-the-design-process-for-mixed-reality.md)
-## [案例研究库](case-studies-overview.md)
+
 ## HoloLens 硬件
 ### [HoloLens 2 硬件详细信息](https://docs.microsoft.com/hololens/hololens2-hardware)
 ### [HoloLens（第 1 代）硬件详细信息](https://docs.microsoft.com/hololens/hololens1-hardware)
+
 ## 沉浸式头戴显示设备
 ### [沉浸式头戴显示设备硬件详细信息](immersive-headset-hardware-details.md)
 ### [导航 Windows Mixed Reality 主页](navigating-the-windows-mixed-reality-home.md)
 ### [爱好者指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [基于位置的娱乐](location-based-experiences.md)
-## [硬件配件](hardware-accessories.md)
+
 ## [社区资源](community.md)
+## [案例研究库](case-studies-overview.md)
+## [硬件配件](hardware-accessories.md)
+
+<!-- Design top level folder -->
 # 设计
 ## [开始设计和原型制作](design.md)
 ## [关于此设计指南](about-this-design-guidance.md)
@@ -60,6 +58,7 @@
 #### [眼睛凝视和提交](gaze-and-commit-eyes.md)
 #### [头部凝视并提交](gaze-and-commit-head.md)
 ### [基于眼睛凝视的交互](eye-gaze-interaction.md)
+
 ## UX 元素
 ### [概述](app-patterns-landingpage.md)
 ### 基础元素
@@ -92,6 +91,7 @@
 #### [公告和尾随](billboarding-and-tag-along.md)
 #### [显示进度](progress.md)
 #### [表面磁吸](surface-magnetism.md)
+
 ## 资源
 ### [了解 Unity](https://learn.unity.com/)
 ### [混合现实工具包](https://github.com/Microsoft/MixedRealityToolkit-Unity)
@@ -100,16 +100,28 @@
 ### [资产创建过程](asset-creation-process.md)
 ### [设计自己的沉浸式环境](add-custom-home-environments.md)
 
+<!-- Develop top level folder -->
 # 开发
 ## [了解工具和体系结构](development.md)
 ## [安装工具](install-the-tools.md)
+## [云服务概述](mixed-reality-cloud-services.md)
 
-## 混合现实云服务
-### [Azure 远程渲染](https://docs.microsoft.com/azure/remote-rendering)
-### [Azure 空间定位点](https://docs.microsoft.com/azure/spatial-anchors)
+<!-- Deprecated
+## Mixed reality cloud services
+### [Azure Remote Rendering](https://docs.microsoft.com/azure/remote-rendering)
+### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
+-->
 
-## [教程和示例应用](tutorials.md)
-### Unity
+<!-- Unity section -->
+## Unity
+### [Unity 开发概述](unity-development-overview.md)
+### 入门
+#### [混合现实工具包 v2 入门](mrtk-getting-started.md)
+#### [配置用于 Windows Mixed Reality 的 Unity 项目](Configure-Unity-Project.md)
+#### [让应用做好用于 HL2 的准备](mrtk-porting-guide.md)
+
+### 教程
+#### [概述](tutorials.md)
 #### HoloLens 2 教程
 ##### 入门教程
 ###### [1.简介](mr-learning-base-01.md)
@@ -119,60 +131,46 @@
 ###### [5.使用求解器创建动态内容](mr-learning-base-05.md)
 ###### [6.创建用户界面](mr-learning-base-06.md)
 ###### [7.与 3D 对象交互](mr-learning-base-07.md)
-###### [8.眼动跟踪](mr-learning-base-08.md)
+###### [8.使用眼动跟踪](mr-learning-base-08.md)
 ###### [9.使用语音命令](mr-learning-base-09.md)
 ##### Azure 空间定位点教程
-###### [1.简介](mr-learning-asa-01.md)
-###### [2.开始使用 Azure 空间定位点](mr-learning-asa-02.md)
-###### [3.保存、检索和共享 Azure 空间定位点](mr-learning-asa-03.md)
-###### [4.显示 Azure 空间定位点反馈](mr-learning-asa-04.md)
-###### [5.适用于 Android 和 iOS 的 Azure 空间定位点](mr-learning-asa-05.md)
-##### 多用户功能教程
-###### [1.简介](mr-learning-sharing-01.md)
-###### [2.设置 Photon Unity Networking](mr-learning-sharing-02.md)
-###### [3.连接多个用户](mr-learning-sharing-03.md)
-###### [4.与多个用户共享对象移动](mr-learning-sharing-04.md)
-###### [5.将 Azure 空间定位点集成到共享体验中](mr-learning-sharing-05.md)
+###### [1.开始使用 Azure 空间定位点](mrlearning-asa-ch1.md)
+###### [2.保存、检索和共享 Azure 空间定位点](mrlearning-asa-ch2.md)
+###### [3.显示 Azure 空间定位点反馈](mrlearning-asa-ch3.md)
+###### [4.适用于 Android 和 iOS 的 Azure 空间定位点](mrlearning-asa-ch4.md)
 ##### Azure 语音服务教程
 ###### [1.集成并使用语音识别和听录](mrlearning-speechSDK-ch1.md)
 ###### [2.为本地语音到文本翻译添加脱机模式](mrlearning-speechSDK-ch2.md)
 ###### [3.添加 Azure 认知服务语音翻译组件](mrlearning-speechSDK-ch3.md)
 ###### [4.设置意向和自然语言理解](mrlearning-speechSDK-ch4.md)
+##### 多用户功能教程
+###### [1.设置 Photon Unity Networking](mrlearning-sharing(photon)-ch1.md)
+###### [2.连接多个用户](mrlearning-sharing(photon)-ch2.md)
+###### [3.与多个用户共享对象移动](mrlearning-sharing(photon)-ch3.md)
+###### [4.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch4.md)
 ##### 空间音频教程
 ###### [1.在项目中添加空间音频](unity-spatial-audio-ch1.md)
 ###### [2.将按钮交互声音空间化](unity-spatial-audio-ch2.md)
 ###### [3.将视频中的音频空间化](unity-spatial-audio-ch3.md)
 ###### [4.在运行时启用和禁用空间音频](unity-spatial-audio-ch4.md)
 ###### [5.使用混响为空间音频添加距离感](unity-spatial-audio-ch5.md)
+
 #### Azure 云服务教程
 ##### [1.适用于 HoloLens 2 的 Azure 云服务](mr-learning-azure-01.md)
 ##### [2.集成 Azure 存储](mr-learning-azure-02.md)
 ##### [3.集成 Azure 自定义视觉](mr-learning-azure-03.md)
 ##### [4.集成 Azure 空间定位点](mr-learning-azure-04.md)
 ##### [5.集成 Azure 机器人服务](mr-learning-azure-05.md)
+
 #### 电脑全息远程处理教程
 ##### [1.开始使用电脑全息远程处理](mr-learning-pc-holographic-remoting-01.md)
 ##### [2.创建全息远程处理电脑应用程序](mr-learning-pc-holographic-remoting-02.md)
-#### HoloLens 2 开源示例应用
-##### [表面](sampleapp-surfaces.md)
-##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
-##### [星系探索者 2.0](galaxy-explorer-update.md)
-#### HoloLens（第 1 代）开源示例应用
-##### [元素周期表 1.0](periodic-table-of-the-elements.md)
-##### [星系探索者 1.0](galaxy-explorer.md)
-##### [月亮模块](lunar-module.md)
+
 #### HoloLens（第 1 代）和沉浸式头戴显示设备教程
 ##### [MR 基础知识 100：Unity 入门](holograms-100.md)
 ##### [MR 基础知识 101：使用设备完成项目](holograms-101.md)
 ##### [MR 基础知识 101E：使用仿真器完成项目](holograms-101e.md)
-##### [MR 输入 210：凝视](holograms-210.md)
-##### [MR 输入 211：手势](holograms-211.md)
-##### [MR 输入 212：语音](holograms-212.md)
-##### [MR 输入 213：运动控制器](mixed-reality-213.md)
-##### [MR 空间 220：空间音效](holograms-220.md)
-##### [MR 空间 230：空间映射](holograms-230.md)
-##### [MR 共享 240：多个 HoloLens 设备](holograms-240.md)
-##### [MR 共享 250：HoloLens（第 1 代）和沉浸式头戴显示设备](mixed-reality-250.md)
+
 #### 混合现实和 Azure 服务教程
 ##### [MR 和 Azure 301：语言翻译](mr-azure-301.md)
 ##### [MR 和 Azure 302：计算机视觉](mr-azure-302.md)
@@ -188,24 +186,18 @@
 ##### [MR 和 Azure 311：Microsoft Graph](mr-azure-311.md)
 ##### [MR 和 Azure 312：机器人集成](mr-azure-312.md)
 ##### [MR 和 Azure 313：IoT 中心服务](mr-azure-313.md)
-### Unreal
-#### [1.入门](unreal-uxt-ch1.md)
-#### [2.初始化你的项目和第一个应用程序](unreal-uxt-ch2.md)
-#### [3.设置混合现实项目](unreal-uxt-ch3.md)
-#### [4.使场景具有交互性](unreal-uxt-ch4.md)
-#### [5.添加按钮并重置棋子位置](unreal-uxt-ch5.md)
-#### [6.打包并部署到设备或仿真器](unreal-uxt-ch6.md)
 
-## Unity
-### [Unity 开发概述](unity-development-overview.md)
-### 入门
-#### [混合现实工具包 v2 入门](mrtk-getting-started.md)
-#### [配置用于 Windows Mixed Reality 的 Unity 项目](Configure-Unity-Project.md)
-#### [建议用于 Unity 的设置](recommended-settings-for-unity.md)
-#### [Unity 播放模式](unity-play-mode.md)
-#### [导出和构建 Unity Visual Studio 解决方案](exporting-and-building-a-unity-visual-studio-solution.md)
-#### [使用 Unity 和 Visual Studio 的最佳做法](best-practices-for-working-with-unity-and-visual-studio.md)
-#### [使用 Unity IL2CPP 进行托管调试](managed-debugging-with-unity-il2cpp.md)
+<!-- Deprecated HTK tutorials
+##### [MR Input 210: Gaze](holograms-210.md)
+##### [MR Input 211: Gesture](holograms-211.md)
+##### [MR Input 212: Voice](holograms-212.md)
+##### [MR Input 213: Motion controllers](mixed-reality-213.md)
+##### [MR Spatial 220: Spatial sound](holograms-220.md)
+##### [MR Spatial 230: Spatial mapping](holograms-230.md)
+##### [MR Sharing 240: Multiple HoloLens devices](holograms-240.md)
+##### [MR Sharing 250: HoloLens (1st gen) and immersive headsets](mixed-reality-250.md)
+-->
+
 ### 核心构建基块
 #### [MRTK 101：如何使用混合现实工具包 Unity 进行基本的交互](mrtk-101.md)
 #### [Unity 中的相机](camera-in-unity.md)
@@ -218,6 +210,7 @@
 #### [Unity 中的语音输入](voice-input-in-unity.md)
 #### [Unity 中的空间映射](spatial-mapping-in-unity.md)
 #### [Unity 中的空间音效](spatial-sound-in-unity.md)
+
 ### 平台功能和 API
 #### [Unity 中的共享体验](shared-experiences-in-unity.md)
 #### [Unity 中的可定位相机](locatable-camera-in-unity.md)
@@ -228,8 +221,35 @@
 #### [Unity 中的混合现实原生对象](unity-xrdevice-advanced.md)
 #### [将 Vuforia 与 Unity 配合使用](vuforia-development-overview.md)
 
+### 示例应用
+#### HoloLens 2 
+##### [表面](sampleapp-surfaces.md)
+##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
+##### [星系探索者 2.0](galaxy-explorer-update.md)
+#### HoloLens（第 1 代）
+##### [元素周期表 1.0](periodic-table-of-the-elements.md)
+##### [星系探索者 1.0](galaxy-explorer.md)
+##### [月亮模块](lunar-module.md)
+
+### 设置和调试
+#### [使用 Unity IL2CPP 进行托管调试](managed-debugging-with-unity-il2cpp.md)
+#### [建议用于 Unity 的设置](recommended-settings-for-unity.md)
+#### [Unity 播放模式](unity-play-mode.md)
+### Visual Studio 解决方案
+#### [导出和构建 Unity Visual Studio 解决方案](exporting-and-building-a-unity-visual-studio-solution.md)
+#### [使用 Unity 和 Visual Studio 的最佳做法](best-practices-for-working-with-unity-and-visual-studio.md)
+
+<!-- Unreal section -->
 ## Unreal
 ### [Unreal 开发概述](unreal-development-overview.md)
+### 教程
+#### 使用 MRTK UX 工具构建国际象棋应用
+##### [1.入门](unreal-uxt-ch1.md)
+##### [2.初始化你的项目](unreal-uxt-ch2.md)
+##### [3.混合现实设置](unreal-uxt-ch3.md)
+##### [4.添加交互性](unreal-uxt-ch4.md)
+##### [5.UI 和函数](unreal-uxt-ch5.md)
+##### [6.打包和部署](unreal-uxt-ch6.md)
 ### 核心构建基块
 #### [Unreal 中的凝视输入](unreal-gaze-input.md)
 #### [Unreal 中的手部跟踪](unreal-hand-tracking.md)
@@ -246,6 +266,7 @@
 #### [针对 Unreal 的性能建议](performance-recommendations-for-unreal.md)
 #### [Unreal 中的流式处理](unreal-streaming.md)
 
+<!-- Javascript section -->
 ## JavaScript
 ### [JavaScript 开发概述](javascript-development-overview.md)
 ### [WebXR](webxr-overview.md)
@@ -322,11 +343,27 @@
 ### [更新适用于 Windows Mixed Reality 的 SteamVR 应用程序](updating-your-steamvr-application-for-windows-mixed-reality.md)
 ### [更新混合现实的 2D UWP 应用](building-2d-apps.md)
 
+<!-- Distribute top level folder -->
 # 分发
-## [3D 应用启动器设计指南](3d-app-launcher-design-guidance.md)
-## [创建在主页中使用的 3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
-## [实现 3D 应用启动器（UWP 应用）](implementing-3d-app-launchers.md)
-## [实现 3D 应用启动器（Win32 应用）](implementing-3d-app-launchers-win32.md)
-## [允许在主页中放置 3D 模型](enable-placement-of-3d-models-in-the-home.md)
+## 3D 应用启动器
+### [设计指南](3d-app-launcher-design-guidance.md)
+### [创建在主页中使用的 3D 模型](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
+### 实现 3D 应用启动器
+#### [UWP 应用](implementing-3d-app-launchers.md)
+#### [Win32 应用](implementing-3d-app-launchers-win32.md)
+### [允许在主页中放置 3D 模型](enable-placement-of-3d-models-in-the-home.md)
 ## [应用内购买](in-app-purchases.md)
 ## [将应用提交到 Microsoft Store](submitting-an-app-to-the-microsoft-store.md)
+
+<!-- What's new? top level folder -->
+# 新增功能
+## [了解 Azure 服务](azure-services.md)
+## [为全新的 Microsoft Edge 做好准备](new-microsoft-edge.md)
+## 计划和活动
+### [San Francisco Reactor Academy 活动日历](sf-academy-events.md)
+### [混合现实开发人员日](mr-dev-days.md)
+#### [会话录制](mr-dev-days-sessions.md)
+## [当前的混合现实发行说明](release-notes-may-2020.md)
+## [社区资源](community.md)
+## [参与撰写本文档](CONTRIBUTING.md)
+## [大规模部署 HoloLens](https://docs.microsoft.com/hololens/)
