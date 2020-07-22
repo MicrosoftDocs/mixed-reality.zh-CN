@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: 99407a4069f914bf077e6323dde3e12978f6b765
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: c49e2a69cb97a996da4bf601a105c2176ccf267f
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345687"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303538"
 ---
 # <a name="6-packaging--deploying-to-device-or-emulator"></a>6.打包并部署到设备或仿真器
 
@@ -30,15 +30,15 @@ ms.locfileid: "85345687"
 
 如果要将此方法用于该象棋应用，需要完成以下事项：
 
-1.  在 HoloLens 2 上从 Microsoft Store 安装并运行“全息远程处理播放器”。
+1.  在 HoloLens 2 上从 Microsoft Store 安装并运行“全息远程处理播放器”。 请注意应用中显示的 IP 地址。
 
-2.  转到“编辑 > 项目设置”，然后选中“全息远程处理”部分中的“启用远程处理”。  
+2.  返回到 Unreal 编辑器，转到“编辑”>“项目设置”，然后选中“全息远程处理”部分中的“启用远程处理”  。
 
-3.  重新启动编辑器，[找到设备的 IP 地址](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens#connect-over-wi-fi)，并输入该地址，然后单击“连接”。
+3.  重启编辑器，然后输入设备的 IP 地址（如全息远程处理播放器应用中所示），然后单击“连接”。
 
 连接后，单击“开始”按钮右侧的下拉箭头，然后选择“VR 预览”。  此操作将在“VR 预览”窗口中运行应用，该窗口将流式传输到 HoloLens 头戴显示设备。 
 
-## <a name="packaging-and-deploying-the-app"></a>打包和部署应用 
+## <a name="packaging-and-deploying-the-app-via-device-portal"></a>通过设备门户打包和部署应用
 
 >[!NOTE]
 >如果这是你第一次为 HoloLens 打包 Unreal 应用，则需要从 Epic Launcher 下载支持文件。 

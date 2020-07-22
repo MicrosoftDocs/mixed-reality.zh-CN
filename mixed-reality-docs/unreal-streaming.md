@@ -1,21 +1,21 @@
 ---
 title: Unreal 中的流式传输
 description: 从 Unreal 中流式传输到 HoloLens 2 的指南
-author: suwu
+author: sw5813
 ms.author: suwu
-ms.date: 6/8/2020
+ms.date: 7/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 流式传输, 电脑, 全息应用远程处理, 全息远程处理播放器, 文档
 appliesto:
 - HoloLens
 - HoloLens 2
-ms.openlocfilehash: 78a019f5b74b254c1f32ec85dc639df47648555f
-ms.sourcegitcommit: ff0e89b07d0b4a945967d64c5b8845a21dc5f476
+ms.openlocfilehash: d25efbcf83e45749cc4eb8b99581b71105c59c9d
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84888908"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303528"
 ---
 # <a name="streaming-in-unreal"></a>Unreal 中的流式传输
 
@@ -32,7 +32,8 @@ ms.locfileid: "84888908"
 进行流式传输时，你可以访问几乎所有相同的 HoloLens 功能，就像你在设备上运行应用程序时一样。 这包括[手关节跟踪](unreal-hand-tracking.md)（如果使用的是 HoloLens 2）、[空间映射](unreal-spatial-mapping.md)和[空间定位点](unreal-spatial-anchors.md)，但此[限制列表](holographic-remoting-troubleshooting.md)上的功能除外。 
 
 > [!NOTE]
-> 流式传输的质量严重依赖于 wifi 网络的强度。
+> * 流式传输的质量严重依赖于 wifi 网络的强度。
+> * 自动为全息远程处理播放器启用所有功能。 如果你发现有一项功能需要用户授权（例如眼动跟踪）才能用于流媒体，但在设备上运行时确不需要它，请检查确保已在项目设置下启用适当的功能。
 
 ## <a name="device-support"></a>设备支持
 
@@ -50,7 +51,7 @@ ms.locfileid: "84888908"
     </tr>
      <tr>
         <td>Unreal 编辑器</td>
-        <td>✔</td>
+        <td>✔️</td>
         <td>✔️</td>
         <td>❌</td>
     </tr>

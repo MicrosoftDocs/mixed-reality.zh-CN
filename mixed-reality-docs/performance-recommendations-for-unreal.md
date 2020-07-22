@@ -7,12 +7,12 @@ ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 性能, 优化, 设置, 文档
-ms.openlocfilehash: 9f128a3ef09f29fc745c21b09b7ec97f5db33605
-ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
+ms.openlocfilehash: a7972962eeb2b1480a7da38210b5ee77104f508b
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84533119"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303629"
 ---
 # <a name="performance-recommendations-for-unreal"></a>针对 Unreal 的性能建议
 
@@ -32,10 +32,11 @@ ms.locfileid: "84533119"
     * 滚动到“引擎”部分，选择“呈现”，展开“剔除”部分，取消选中“遮挡剔除”。
         + 如果需要对呈现的详细场景进行遮挡剔除，建议在“引擎”>“呈现”中启用“支持软件遮挡剔除” 。 这使得 Unreal 可以在 CPU 上执行此操作，并避免 GPU 遮挡查询，后者在 HoloLens 2 上的执行效果不佳。
 
-![移动目标设置](images/unreal/performance-recommendations-img-02.png)
+![禁用遮挡剔除](images/unreal/performance-recommendations-img-02.png)
 
-3. 更新 VR 呈现：
-    * 滚动到“引擎”部分，选择“呈现”，展开“VR”部分，同时启用“实例立体声”和“移动多视图”。
-        + 可能需要取消选中“移动后处理”才能选中“移动多视图”
+3. 使用移动多视图：
+    * 滚动到“引擎”部分，选择“呈现”，展开“VR”部分，同时启用“实例立体声”和“移动多视图”。 应取消选中移动端 HDR。
 
-![移动目标设置](images/unreal/performance-recommendations-img-03.png)
+![VR 渲染设置](images/unreal/performance-recommendations-img-03.png)
+
+4. 将“要渲染的最大 CSM 级联数”设置为 1，将“最大可移动聚光/点光”设置为 0   。 

@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程
-ms.openlocfilehash: 57ddf1569ff87a278134eff0204942094b1cd014
-ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
+ms.openlocfilehash: b1c448e7a5289c6d099d73c3bcf18d0f552dbc51
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216248"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303648"
 ---
 # <a name="tutorials-and-sample-apps"></a>教程和示例应用
 
@@ -26,11 +26,11 @@ ms.locfileid: "85216248"
 HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程序的技术和最佳实践。 Unity 教程基于 [Mixed Reality Toolkit 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)，Unreal 教程基于[适用于 Unreal Engine 0.8 的 UX Tools](https://github.com/microsoft/MixedReality-UXTools-Unreal)。
 
 * 入门教程
-    * Unity - [概述和目标第 1 部分（共 7 部分）](mrlearning-base.md)
+    * Unity - [简介第 1 部分（共 9 部分）](mr-learning-base-01.md)
     * Unreal - [入门第 1 部分（共 6 部分）](unreal-uxt-ch1.md)
-* Azure 空间定位点教程 - [Azure 空间定位点入门第 1 部分（共 4 部分）](mrlearning-asa-ch1.md)
+* Azure 空间定位点教程 - [简介第 1 部分（共 5 部分）](mr-learning-asa-01.md)
+* 多用户功能教程 - [简介第 1 部分（共 5 部分）](mr-learning-sharing-01.md)
 * Azure 语音服务教程 - [集成和使用语音识别与听录第 1 部分（共 4 部分）](mrlearning-speechSDK-ch1.md)
-* 多用户功能教程 - [设置 Photon Unity Networking 第 1 部分（共 5 部分）](mrlearning-sharing(photon)-ch1.md)
 
 ## <a name="open-source-sample-apps"></a>开源示例应用
 
@@ -56,7 +56,7 @@ HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程
 * 完成每篇教程往往需要先准备好一台装有适当[工具](install-the-tools.md)的 Windows 10 电脑。
 
 >[!NOTE]
->混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。 因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。 我们**不会**在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。 我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mrlearning-base.md)。
+>混合现实学院教程在制作时考虑到了 HoloLens（第一代）和混合现实沉浸式头戴显示设备。 因此，对于仍在寻求这些设备的开发指导的开发人员而言，我们觉得很有必要保留这些教程。 我们**不会**在这些教程中更新 HoloLens 2 所用的最新工具集或集成相关的内容。 我们将维护这些教程，使之持续适用于支持的设备。 已经为 HoloLens 2 发布了[一系列新教程](mr-learning-base-01.md)。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
