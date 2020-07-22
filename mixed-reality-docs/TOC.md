@@ -134,20 +134,22 @@
 ###### [8.使用眼动跟踪](mr-learning-base-08.md)
 ###### [9.使用语音命令](mr-learning-base-09.md)
 ##### Azure 空间定位点教程
-###### [1.开始使用 Azure 空间定位点](mrlearning-asa-ch1.md)
-###### [2.保存、检索和共享 Azure 空间定位点](mrlearning-asa-ch2.md)
-###### [3.显示 Azure 空间定位点反馈](mrlearning-asa-ch3.md)
-###### [4.适用于 Android 和 iOS 的 Azure 空间定位点](mrlearning-asa-ch4.md)
+###### [1.简介](mr-learning-asa-01.md)
+###### [2.开始使用 Azure 空间定位点](mr-learning-asa-02.md)
+###### [3.保存、检索和共享 Azure 空间定位点](mr-learning-asa-03.md)
+###### [4.显示 Azure 空间定位点反馈](mr-learning-asa-04.md)
+###### [5.适用于 Android 和 iOS 的 Azure 空间定位点](mr-learning-asa-05.md)
+##### 多用户功能教程
+###### [1.简介](mr-learning-sharing-01.md)
+###### [2.设置 Photon Unity Networking](mr-learning-sharing-02.md)
+###### [3.连接多个用户](mr-learning-sharing-03.md)
+###### [4.与多个用户共享对象移动](mr-learning-sharing-04.md)
+###### [5.将 Azure 空间定位点集成到共享体验中](mr-learning-sharing-05.md)
 ##### Azure 语音服务教程
 ###### [1.集成并使用语音识别和听录](mrlearning-speechSDK-ch1.md)
 ###### [2.为本地语音到文本翻译添加脱机模式](mrlearning-speechSDK-ch2.md)
 ###### [3.添加 Azure 认知服务语音翻译组件](mrlearning-speechSDK-ch3.md)
 ###### [4.设置意向和自然语言理解](mrlearning-speechSDK-ch4.md)
-##### 多用户功能教程
-###### [1.设置 Photon Unity Networking](mrlearning-sharing(photon)-ch1.md)
-###### [2.连接多个用户](mrlearning-sharing(photon)-ch2.md)
-###### [3.与多个用户共享对象移动](mrlearning-sharing(photon)-ch3.md)
-###### [4.将 Azure 空间定位点集成到共享体验中](mrlearning-sharing(photon)-ch4.md)
 ##### 空间音频教程
 ###### [1.在项目中添加空间音频](unity-spatial-audio-ch1.md)
 ###### [2.将按钮交互声音空间化](unity-spatial-audio-ch2.md)
