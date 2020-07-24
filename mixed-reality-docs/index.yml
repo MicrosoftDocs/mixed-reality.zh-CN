@@ -8,12 +8,12 @@ metadata:
   author: hferrone
   ms.author: v-haferr
   ms.date: 07/03/2020
-  ms.openlocfilehash: afb6d40c969d90af5bf1b5f6844ab357eb255f15
-  ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+  ms.openlocfilehash: 01623c90dccfbc94f8645daedf60b56b8c7a6b82
+  ms.sourcegitcommit: 3c32f45fd941767d408cccc5a76f1ff1cec763da
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/17/2020
-  ms.locfileid: "86451329"
+  ms.lasthandoff: 07/22/2020
+  ms.locfileid: "86879272"
 landingContent:
 - title: 发现新的沉浸式世界
   linkLists:
@@ -51,7 +51,7 @@ landingContent:
       url: unity-development-overview.md
     - text: 开始你的 Unreal 之旅
       url: unreal-development-overview.md
-    - text: 开始你的 Javascript 之旅
+    - text: 开始你的 JavaScript 之旅
       url: javascript-development-overview.md
     - text: 开始你的本机 (OpenXR/WinRT) 之旅
       url: directx-development-overview.md
