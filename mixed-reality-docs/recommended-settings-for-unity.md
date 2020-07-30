@@ -3,15 +3,15 @@ title: 建议用于 Unity 的设置
 description: Unity 提供一些特定于混合现实的行为，这些行为可通过项目设置进行切换。
 author: troy-ferrell
 ms.author: trferrel
-ms.date: 03/26/2019
+ms.date: 07/07/2020
 ms.topic: article
 keywords: unity，设置，混合现实
-ms.openlocfilehash: e7628a8653fffbab9c792161ac8ff1666b47fa62
-ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
+ms.openlocfilehash: d2cc79ba0818985795c49f8812d33eba77b92b74
+ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85570323"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87390114"
 ---
 # <a name="recommended-settings-for-unity"></a>建议用于 Unity 的设置
 
@@ -23,9 +23,7 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 将环境的**Unity 质量设置**修改为**非常低**很重要。 这将有助于确保应用程序在适当的帧速率下运行之前。 这对于 HoloLens 开发极其重要。 若要在沉浸式耳机上进行开发，根据桌面的规格来支持 VR 体验，仍可在没有最低质量参数的情况下实现帧速率。
 
-在 Unity 2018 LTS + 中，可以通过以下方式设置项目的质量级别：
-
-在 "**编辑**  >  **项目设置**  >  **质量**>" 下，通过单击向下箭头到**非常低**质量级别来设置**默认值**
+在 Unity 2019 LTS + 中，可以通过转到 "**编辑**  >  **项目设置**  >  **质量**" 并通过单击向下箭头到**非常低**质量级别来设置**默认值**，来设置项目的质量级别。
 
 ### <a name="lighting-settings"></a>照明设置
 
@@ -44,18 +42,18 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 在 Unity 项目中启用此功能
 
-1)  打开**播放机 XR 设置**（请参阅**编辑**  >  **项目设置**  >  **播放器**  >  **XR 设置**）
-2) 从 "**立体声呈现方法**" 下拉菜单中选择 "**单一传递实例**" （必须选中 "**支持虚拟现实**" 复选框）
+1)  打开“播放器 XR 设置”（转到“编辑” > “项目设置” > “播放器” > “XR 设置”）    
+2) 从“立体渲染方法”下拉菜单中选择“单通道实例化”（必须选中“支持虚拟现实”复选框）  
 
 有关此呈现方法的更多详细信息，请参阅 Unity 中的以下文章。
 
-- [如何通过高级立体声呈现最大化 AR 和 VR 性能](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
-- [单步实例](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
+- [如何使用高级立体渲染最大化 AR 和 VR 的性能](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
+- [单通道实例化](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
 
 >[!NOTE]
-> 如果开发人员已有未为实例化编写的现有自定义着色器，则会出现单一传递实例呈现的一个常见问题。 启用此功能后，开发人员可能会注意到某些 Gameobject 只会在一眼中呈现。 这是因为关联的自定义着色器没有用于实例化的适当属性。
+> 如果开发人员的现有自定义着色器不是针对实例化编写的，则单通道实例化渲染会发生一个常见问题。 启用此功能后，开发人员可能会注意到，某些 GameObject 只在一只眼睛中呈现。 这是因为，关联的自定义着色器没有与实例化相关的适当属性。
 >
-> 有关如何解决此问题的详细说明，请参阅针对基于 Unity 的[HoloLens 的单一传递立体声呈现](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)
+> 请参阅 Unity 文章 [HoloLens 的 单通道立体渲染](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)来了解如何解决此问题
 
 ### <a name="enable-depth-buffer-sharing"></a>启用深度缓冲共享
 
@@ -63,7 +61,7 @@ Unity 提供了一组默认选项，这些选项通常是所有平台的平均�
 
 在 Unity 项目中启用此功能
 
-1) 打开**播放机 XR 设置**（请参阅**编辑**  >  **项目设置**  >  **播放器**  >  **XR 设置**）
+1) 打开“播放器 XR 设置”（转到“编辑” > “项目设置” > “播放器” > “XR 设置”）    
 2) 选中 "在**虚拟现实 sdk**Windows Mixed reality 扩展下**启用深度缓冲区共享**" 复选框  >  **Windows Mixed Reality** （必须选中 "**支持虚拟现实**" 复选框）
 
 此外，建议在此面板中的 "**深度格式**" 设置下选择 " **16 位深度**"，尤其是对于 HoloLens 开发。 与24位相比，选择16位可显著减少带宽需求，因为需要移动/处理的数据量较少。
@@ -116,9 +114,9 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 
 |  显示 Unity 初始屏幕  |  全息闪屏映像  |  行为 |
 |----------|----------|----------|
-|  开  |  None  |  显示5秒的默认 Unity 初始屏幕或在加载应用之前，以较长者为准。 |
-|  开  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
-|  关闭  |  None  |  在加载应用之前显示透明的黑色（无）。 |
+|  启用  |  无  |  显示5秒的默认 Unity 初始屏幕或在加载应用之前，以较长者为准。 |
+|  启用  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
+|  关闭  |  无  |  在加载应用之前显示透明的黑色（无）。 |
 |  关闭  |  自定义  |  显示自定义初始屏幕5秒或在加载应用之前，以较长者为准。 |
 
 有关详细信息，请阅读[Unity 初始屏幕文档](https://docs.unity3d.com/Manual/class-PlayerSettingsSplashScreen.html)。
@@ -169,7 +167,7 @@ HoloLens 具有移动类 CPU 和 GPU，这意味着可能需要更长的时间�
 |  麦克风  |  VideoCapture （捕获音频时）、DictationRecognizer、GrammarRecognizer 和 KeywordRecognizer |
 |  InternetClient  |  DictationRecognizer （和使用 Unity 探查器） |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [Unity 开发概述](unity-development-overview.md)
 * [了解混合现实的性能](understanding-performance-for-mixed-reality.md)
