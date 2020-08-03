@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 07/07/2020
 ms.topic: article
 keywords: 端口，移植，unity，中间件，引擎，UWP，Win32
-ms.openlocfilehash: ff97f843d6af62a5d49d7920abdf78fa4d1e46c9
-ms.sourcegitcommit: 2813f5b3027d47f7c6e9772338935eeccfa2aaec
+ms.openlocfilehash: ed6c613c8aa3649cffb42d08dbb18661f06b9a53
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86408195"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476929"
 ---
 # <a name="porting-guides"></a>移植指南
 
@@ -33,7 +33,7 @@ Windows 10 包括对沉浸式和全息耳机的直接支持。 如果已为其�
 
 ### <a name="common-step-1-make-sure-you-have-the-right-development-hardware"></a>常见步骤1：确保拥有正确的开发硬件
 
-"[安装工具](install-the-tools.md#for-immersive-vr-headset-development)" 页将列出推荐的开发硬件。
+"[安装工具](install-the-tools.md#immersive-vr-headset-requirements)" 页将列出推荐的开发硬件。
 
 ### <a name="common-step-2-upgrade-to-the-latest-flight-of-windows-10"></a>常见步骤2：升级到 Windows 10 的最新航班
 

@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality，设计，控件，字体，版式，ui，ux
-ms.openlocfilehash: 6aa03eedf717fb73877db8660526e13444c43fe9
-ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
+ms.openlocfilehash: 63f0992a4623cf91c1b9c62c4ebf30de12529515
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87376569"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476939"
 ---
 # <a name="text-in-unity"></a>Unity 中的文本
 
@@ -83,22 +83,24 @@ Segoe UI （Windows 的默认字体）在大多数情况下都适用。 不过�
 ![查看角度 ](images/Text_In_Unity_ViewingAngle.jpg)
  *查看距离、角度和文本高度*
 
-## <a name="sharp-text-rendering-quality-with-proper-dimension"></a>用适当的尺寸锐化文本呈现质量
+## <a name="text-with-mixed-reality-toolkit-v2"></a>带有混合现实工具包 v2 的文本
+
+### <a name="sharp-text-rendering-quality-with-proper-dimension"></a>用适当的尺寸锐化文本呈现质量
 
 根据这些缩放因素，我们已[使用 UI 文本和3D 文本网格创建了文本 prototyping](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)。 开发人员可以使用这些 prototyping 来获得清晰的文本和一致的字体大小。
 
 ![用适当的尺寸锐化文本呈现质量](images/hug-text-06-1000px.png)<br>
 *用适当的尺寸锐化文本呈现质量*
 
-## <a name="shader-with-occlusion-support"></a>具有封闭支持的着色器
+### <a name="shader-with-occlusion-support"></a>具有封闭支持的着色器
 
-Unity 的默认字体材料不支持封闭。 因此，默认情况下，你会看到对象后面的文本。 我们包含了一个[支持封闭的简单着色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit/StandardAssets/Shaders/Text3DShader.shader)。 下图显示了文本，其中包含默认字体材料（左侧）和具有适当封闭（右）的文本。
+Unity 的默认字体材料不支持封闭。 因此，默认情况下，你会看到对象后面的文本。 我们包含了一个[支持封闭的简单着色器](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MRTK/Core/StandardAssets/Shaders/Text3DShader.shader)。 下图显示了文本，其中包含默认字体材料（左侧）和具有适当封闭（右）的文本。
 
 ![具有封闭支持的着色器](images/hug-text-07-1000px.png)<br>
 *具有封闭支持的着色器*
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 * [MRTK 中的文本 Prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)
 * [版式](typography.md)
 

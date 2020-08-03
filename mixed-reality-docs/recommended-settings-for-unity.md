@@ -3,15 +3,15 @@ title: 建议用于 Unity 的设置
 description: Unity 提供一些特定于混合现实的行为，这些行为可通过项目设置进行切换。
 author: troy-ferrell
 ms.author: trferrel
-ms.date: 07/07/2020
+ms.date: 07/29/2020
 ms.topic: article
 keywords: unity，设置，混合现实
-ms.openlocfilehash: d2cc79ba0818985795c49f8812d33eba77b92b74
-ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
+ms.openlocfilehash: 414e18686926fd8105726fb3811f3eef1d365bd9
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87390114"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476719"
 ---
 # <a name="recommended-settings-for-unity"></a>建议用于 Unity 的设置
 
