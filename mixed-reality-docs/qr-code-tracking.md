@@ -1,19 +1,19 @@
 ---
-title: QR 代码跟踪
+title: QR 码跟踪
 description: 了解如何在 HoloLens 2 上检测 QR 码。
 author: dorreneb
 ms.author: dobrown
 ms.date: 05/15/2019
 ms.topic: article
 keywords: vr，lbe，基于位置的娱乐，vr 拱廊类，拱廊类，沉浸，qr，qr 码，hololens2
-ms.openlocfilehash: e14fe14fd76bceaf506dd7b85a57825c3f18d223
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 6d3dc442c28e498cc00e14325398de2026261a17
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438121"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476759"
 ---
-# <a name="qr-code-tracking"></a>QR 代码跟踪
+# <a name="qr-code-tracking"></a>QR 码跟踪
 
 HoloLens 2 可以检测头戴显示在环境中的 QR 码，在每个代码的实际位置建立一个坐标系统。
 
@@ -23,12 +23,12 @@ HoloLens 2 可以检测头戴显示在环境中的 QR 码，在每个代码的�
 <tr>
 <th>功能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens（第一代）</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">沉浸式头戴显示设备</a></th>
 </tr><tr>
-<td> QR 码检测</td><td style="text-align: center;">‎</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;">请参阅说明</td>
+<td> QR 码检测</td><td style="text-align: center;">️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;">✔️</td>
 </tr>
 </table>
 
 >[!NOTE]
->以下 NuGet 包目前不支持在台式计算机上支持沉浸式 Windows Mixed Reality 耳机。  请继续关注桌面支持的更多更新。
+>Windows 10 版本2004及更高版本支持在台式计算机上通过沉浸式 Windows Mixed Reality 耳机进行 QR 代码跟踪。 使用 IsSupported （） API 确定当前设备上是否支持此功能。 MixedReality
 
 ## <a name="getting-the-qr-package"></a>获取 QR 包
 可在[此处](https://nuget.org/Packages/Microsoft.MixedReality.QR)下载用于 QR 码检测的 NuGet 包。
@@ -36,16 +36,16 @@ HoloLens 2 可以检测头戴显示在环境中的 QR 码，在每个代码的�
 ## <a name="detecting-qr-codes"></a>检测 QR 码
 
 ### <a name="adding-the-webcam-capability"></a>添加网络摄像机功能
-需要将功能 `webcam` 添加到清单中，以检测 QR 码。 此功能是必需的，因为用户环境中检测到的代码中的数据可能包含敏感信息。
+需要将功能添加 `webcam` 到清单以检测 QR 码。 此功能是必需的，因为用户环境中检测到的代码中的数据可能包含敏感信息。
 
-可以通过调用 `QRCodeWatcher.RequestAccessAsync()`来请求权限：
+可以通过调用来请求权限 `QRCodeWatcher.RequestAccessAsync()` ：
 
-_C#:_
+_导向_
 ```cs
 await QRCodeWatcher.RequestAccessAsync();
 ```
 
-_C++:_
+_C_
 ```cpp
 co_await QRCodeWatcher.RequestAccessAsync();
 ```
@@ -60,7 +60,7 @@ co_await QRCodeWatcher.RequestAccessAsync();
 
 这里有一个示例 Unity 应用，其中显示了一个全息的 "QR 码" 代码，以及关联的数据，如 GUID、物理大小、时间戳和解码的数据。 此应用可以位于 https://github.com/chgatla-microsoft/QRTracking/tree/master/SampleQRCodes 。
 
-### <a name="detecting-qr-codes-in-c"></a>检测 QR 码C++
+### <a name="detecting-qr-codes-in-c"></a>在 c + + 中检测 QR 码
 
 ```cpp
 using namespace winrt::Windows::Foundation;
@@ -128,7 +128,7 @@ QR 码的 SpatialCoordinateSystem 对齐方式如下所示。 可以通过调用
 
 ![QR 码坐标系统](images/Qr-coordinatesystem.png) 
 
-对于 QRCode 对象，以下C++代码演示了如何创建一个矩形，并使用 QR 码的坐标系统来放置它：
+对于 QRCode 对象，以下 c + + 代码演示了如何创建矩形并使用 QR 码的坐标系统来放置它：
 
 ```cpp
 // Creates a 2D rectangle in the x-y plane, with the specified properties.
