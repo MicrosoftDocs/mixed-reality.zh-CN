@@ -156,17 +156,15 @@
 ###### [3.将视频中的音频空间化](unity-spatial-audio-ch3.md)
 ###### [4.在运行时启用和禁用空间音频](unity-spatial-audio-ch4.md)
 ###### [5.使用混响为空间音频添加距离感](unity-spatial-audio-ch5.md)
-
-#### Azure 云服务教程
-##### [1.适用于 HoloLens 2 的 Azure 云服务](mr-learning-azure-01.md)
-##### [2.集成 Azure 存储](mr-learning-azure-02.md)
-##### [3.集成 Azure 自定义视觉](mr-learning-azure-03.md)
-##### [4.集成 Azure 空间定位点](mr-learning-azure-04.md)
-##### [5.集成 Azure 机器人服务](mr-learning-azure-05.md)
-
-#### 电脑全息远程处理教程
-##### [1.开始使用电脑全息远程处理](mr-learning-pc-holographic-remoting-01.md)
-##### [2.创建全息远程处理电脑应用程序](mr-learning-pc-holographic-remoting-02.md)
+##### Azure 云服务教程
+###### [1.适用于 HoloLens 2 的 Azure 云服务](mr-learning-azure-01.md)
+###### [2.集成 Azure 存储](mr-learning-azure-02.md)
+###### [3.集成 Azure 自定义视觉](mr-learning-azure-03.md)
+###### [4.集成 Azure 空间定位点](mr-learning-azure-04.md)
+###### [5.集成 Azure 机器人服务](mr-learning-azure-05.md)
+##### 电脑全息远程处理教程
+###### [1.开始使用电脑全息远程处理](mr-learning-pc-holographic-remoting-01.md)
+###### [2.创建全息远程处理电脑应用程序](mr-learning-pc-holographic-remoting-02.md)
 
 #### HoloLens（第 1 代）和沉浸式头戴显示设备教程
 ##### [MR 基础知识 100：Unity 入门](holograms-100.md)
@@ -224,7 +222,7 @@
 #### [将 Vuforia 与 Unity 配合使用](vuforia-development-overview.md)
 
 ### 示例应用
-#### HoloLens 2 
+#### HoloLens 2
 ##### [表面](sampleapp-surfaces.md)
 ##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
 ##### [星系探索者 2.0](galaxy-explorer-update.md)
@@ -257,7 +255,8 @@
 #### [Unreal 中的手部跟踪](unreal-hand-tracking.md)
 #### [Unreal 中的空间映射](unreal-spatial-mapping.md)
 #### [Unreal 中的空间音频](unreal-spatial-audio.md)
-#### [Unreal 中的空间定位点](unreal-spatial-anchors.md)
+#### [Unreal 中的本地空间定位点](unreal-spatial-anchors.md)
+#### [Unreal 中的 Azure 空间定位点](unreal-azure-spatial-anchors.md)
 #### [Unity 中的语音输入](unreal-voice-input.md)
 ### 平台功能和 API
 #### [Unreal 中的 HoloLens 摄像头](unreal-hololens-camera.md)
