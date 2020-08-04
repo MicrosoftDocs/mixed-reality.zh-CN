@@ -3,16 +3,16 @@ title: 入门教程 - 2. 初始化项目并部署第一个应用程序
 description: 本课程介绍如何使用混合现实工具包 (MRTK) 创建混合现实应用程序。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 11/01/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 4f72f70b9eaac159f7d9231e61f23d18d708d0c7
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 5cac7d6f776619cbc2a0e0891b7915b656708726
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304270"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376649"
 ---
 # <a name="2-initializing-your-project-and-deploying-your-first-application"></a>2.初始化项目并部署第一个应用程序
 

@@ -3,16 +3,16 @@ title: Azure 云教程 - 3. 集成 Azure 自定义视觉
 description: 完成本课程可以了解如何在 HoloLens 2 应用程序中实现 Azure 自定义视觉。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, 实用工具, 教程, hololens, hololens 2, azure 自定义视觉, azure 认知服务
 ms.localizationpriority: high
-ms.openlocfilehash: c3ba5a715b0e77d7869d598a472341cd390c2d23
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 0fc3793315dd05f91a6193b68343205f53a3092a
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304219"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376459"
 ---
 # <a name="3-integrating-azure-custom-vision"></a>3.集成 Azure 自定义视觉
 

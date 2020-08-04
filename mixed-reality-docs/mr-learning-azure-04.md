@@ -3,16 +3,16 @@ title: Azure 云教程 - 4. 集成 Azure 空间定位点
 description: 完成本课程可以了解如何在 HoloLens 2 应用程序中实现 Azure 空间定位点。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens, hololens 2, Azure 空间定位点
 ms.localizationpriority: high
-ms.openlocfilehash: 4eac2b96519abeebc277a53ad83d1b6dec8d61fd
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 468ba0d8e9fca85dc266b662f402f5c956dc94bb
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304163"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376439"
 ---
 # <a name="4-integrating-azure-spatial-anchors"></a>4.集成 Azure 空间定位点
 
@@ -60,7 +60,7 @@ ms.locfileid: "86304163"
 Azure 空间定位点不能在 Unity 中运行，因此，若要测试 Azure 空间定位点功能，需将项目部署到设备。
 
 > [!TIP]
-> 有关如何生成 Unity 项目并将其部署到 HoloLens 2 的提示，可参阅[在设备上生成应用程序](mr-learning-base-ch1.md#build-your-application-to-your-device)中的说明。
+> 有关如何生成 Unity 项目并将其部署到 HoloLens 2 的提示，可参阅[在 HoloLens 2 上生成应用程序](mr-learning-base-02.md#building-your-application-to-your-hololens-2)中的说明。
 
 ## <a name="run-the-app-on-your-hololens-2-and-follow-the-in-app-instructions"></a>在 HoloLens 2 上运行该应用，并按照应用中的说明进行操作
 

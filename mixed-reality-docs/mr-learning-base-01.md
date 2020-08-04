@@ -3,16 +3,16 @@ title: 入门教程 - 1. 简介
 description: 本课程介绍如何使用混合现实工具包 (MRTK) 创建混合现实应用程序。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 1ba98abe5de14c3e1aaf6164c19d3ca87da341d2
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 330863d36abe051e8fe17b87ce913b1b110e2d3d
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304857"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376429"
 ---
 # <a name="1-introduction"></a>1.简介
 

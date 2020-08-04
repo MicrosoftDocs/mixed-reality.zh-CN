@@ -3,16 +3,16 @@ title: 入门教程 - 5. 使用求解器创建动态内容
 description: 本课程介绍如何使用混合现实工具包 (MRTK) 创建混合现实应用程序。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: cbeaa8b65b7aecc0600294b3739fedfb903e568e
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 1a5017d8bc18ef239db88ee62cb2b65c77b2ab6f
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304773"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376609"
 ---
 # <a name="5-creating-dynamic-content-using-solvers"></a>5.使用求解器创建动态内容
 

@@ -8,12 +8,12 @@ ms.date: 06/5/2020
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合现实, 开发, 开发, HoloLens, 云服务
-ms.openlocfilehash: 80b0b802222684c1219987b197e4219eca8bfc56
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: 26c5f91eab2b39fbd809010ab0ac738d81dff854
+ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451357"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87390214"
 ---
 # <a name="cloud-services"></a>云服务
 
@@ -31,7 +31,7 @@ ms.locfileid: "86451357"
 ![Unity 展示应用中的 Azure 远程渲染示例](images/showcase-app.png)
 
 ### <a name="azure-spatial-anchors"></a>Azure 空间定位点
-[Azure 空间定位点](https://docs.microsoft.com/azure/spatial-anchors) (ASA) 是一项跨平台服务，可用于构建空间感知的混合现实应用程序。 借助 Azure 空间定位点，你可按真实世界的规模跨多台设备映射、保存和共享全息内容。 
+[Azure 空间定位点](https://docs.microsoft.com/azure/spatial-anchors) (ASA) 是一项跨平台服务，可用于构建空间感知的混合现实应用程序。 借助 Azure 空间定位点，你可按真实世界的规模跨多台设备映射、保存和共享全息内容。
 
 ![Azure 空间定位点示例](images/persistence.gif)
 

@@ -8,17 +8,17 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目, 核心概念, 交互
-ms.openlocfilehash: 708a6f83c2de149be9c221130b83f5d787f8f56a
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: a95de2020e4020db86e7e226a81fcad8a12e7427
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86447913"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476860"
 ---
 # <a name="start-designing-and-prototyping"></a>开始设计和原型制作
 
 
-![混合现实设计摘要](images/03_Design.png)
+![混合现实设计摘要](images/design-hero-image.png)
 
 ## <a name="expand-your-design-process"></a>[扩展设计过程](case-study-expanding-the-design-process-for-mixed-reality.md)
 

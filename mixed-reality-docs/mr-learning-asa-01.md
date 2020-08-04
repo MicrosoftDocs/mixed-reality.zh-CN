@@ -3,16 +3,16 @@ title: Azure 空间定位点教程 - 1. 简介
 description: 完成本课程可以了解如何在混合现实应用程序中实现 Azure 空间定位点。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 6a015b4c9f6a5c1a92697ef9909443234a98ab09
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: f273c573d40b1e65e325bd31b5dd9e14c1ee66ec
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304185"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376549"
 ---
 # <a name="1-introduction"></a>1.简介
 

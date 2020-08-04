@@ -3,16 +3,16 @@ title: Azure 云教程 - 1. 适用于 HoloLens 2 的 Azure 云服务
 description: 完成本课程可以了解如何在 HoloLens 2 应用程序中实现各种 Azure 服务。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: azure, 混合现实, unity, 教程, hololens, hololens 2, azure blob 存储, azure 表存储, azure 空间定位点, azure bot framework
 ms.localizationpriority: high
-ms.openlocfilehash: 649046f9416c880d6e69b544866fba60d3e43f4c
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: d69ce965718e31bb5a261631f3f40217e8f7c7d6
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304179"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376479"
 ---
 # <a name="1-azure-cloud-services-for-hololens-2"></a>1.适用于 HoloLens 2 的 Azure 云服务
 

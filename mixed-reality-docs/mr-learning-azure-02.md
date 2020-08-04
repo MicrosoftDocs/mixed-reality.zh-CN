@@ -3,16 +3,16 @@ title: Azure 云教程 - 2. 集成 Azure 存储
 description: 完成本课程可以了解如何在 HoloLens 2 应用程序中实现 Azure 表存储和 Azure Blob 存储。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens, hololens 2, azure 存储
 ms.localizationpriority: high
-ms.openlocfilehash: 847e7a93717951af48157f0af32397d686cbbb84
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: a8d91bc55b3ce73d6e1fb46e5d696d853adcf871
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304165"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376469"
 ---
 # <a name="2-integrating-azure-storage"></a>2.集成 Azure 存储
 

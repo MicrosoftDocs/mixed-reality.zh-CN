@@ -3,16 +3,16 @@ title: 多用户功能教程 - 2. 设置 Photon Unity Networking
 description: 完成本课程可以了解如何在 HoloLens 2 应用程序中实现多用户共享体验。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: e5817338dbed944232664a86f8b0625bc9d3e1e7
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: ed55d1f84db7ee8dc33f0f738de2b6b98a305fd3
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304768"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376399"
 ---
 # <a name="2-setting-up-photon-unity-networking"></a>2.设置 Photon Unity Networking
 

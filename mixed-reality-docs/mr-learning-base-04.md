@@ -3,16 +3,16 @@ title: 入门教程 - 4. 定位场景中的对象
 description: 本课程介绍如何使用混合现实工具包 (MRTK) 创建混合现实应用程序。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 356bfa788cd28e8c763a45a2d44c3a1241b8467e
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 71990db23b5154de916f0eda86a978885ab53547
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304334"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376629"
 ---
 # <a name="4-positioning-objects-in-the-scene"></a>4.定位场景中的对象
 

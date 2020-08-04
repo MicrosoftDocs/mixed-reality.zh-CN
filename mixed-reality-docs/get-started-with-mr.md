@@ -3,16 +3,16 @@ title: 混合现实入门
 description: 让不熟悉混合现实的用户知道它是什么并了解它的功能。
 author: grbury
 ms.author: grbury
-ms.date: 08/24/2019
+ms.date: 07/29/2020
 ms.topic: overview
 ms.localizationpriority: high
 keywords: 混合现实, 发现, 分发, 索引, 登陆页, 设计, 开发, 教程, 示例应用, 基础知识, 案例研究, 资源, HoloLens 操作指南, 开源项目
-ms.openlocfilehash: 720261164a4b2eedc47c1054f19edfb109ed3f83
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: 010e0b9d73b5537d480a28ee510fe2ae1bde3b10
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451353"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476919"
 ---
 # <a name="get-started-with-mixed-reality"></a>混合现实入门
 
@@ -184,7 +184,7 @@ HoloLens 2 提供最舒适的沉浸式混合现实体验，其行业领先的解
     :::column:::
        [![试用](images/icon-hololensuser.jpg)](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)<br>
         **[试用混合现实](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)**<br>
-        在本地 Microsoft Store 中获取混合现实和 HoloLens 的演示版。 
+        在本地 Microsoft Store 中获取混合现实和 HoloLens 的演示版。
     :::column-end:::
     :::column:::
         [![成为创建者](images/icon-design.jpg)](design.md)<br>
@@ -211,4 +211,4 @@ HoloLens 2 提供最舒适的沉浸式混合现实体验，其行业领先的解
 
 
 >[!IMPORTANT]
->本站点提供的所有混合现实开发材料仅供参考。 你作为应用程序开发人员，必须全权负责你的应用程序、应用程序使用情况以及应用程序对最终用户的影响，包括确保应用不会为最终用户带来不适、伤害或任何其他方式的损害，并提供适当的警告和免责声明。 在开发和发布应用程序的过程中，你需要时刻采取适当的措施，确保应用程序安全并履行 [Microsoft 应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中规定的所有义务。 
+>本站点提供的所有混合现实开发材料仅供参考。 你作为应用程序开发人员，必须全权负责你的应用程序、应用程序使用情况以及应用程序对最终用户的影响，包括确保应用不会为最终用户带来不适、伤害或任何其他方式的损害，并提供适当的警告和免责声明。 在开发和发布应用程序的过程中，你需要时刻采取适当的措施，确保应用程序安全并履行 [Microsoft 应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中规定的所有义务。
