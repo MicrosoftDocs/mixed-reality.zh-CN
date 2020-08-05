@@ -102,7 +102,7 @@
 
 <!-- Develop top level folder -->
 # 开发
-## [了解工具和体系结构](development.md)
+## [混合现实开发简介](development.md)
 ## [安装工具](install-the-tools.md)
 ## [云服务概述](mixed-reality-cloud-services.md)
 
@@ -222,6 +222,7 @@
 #### [将 Vuforia 与 Unity 配合使用](vuforia-development-overview.md)
 
 ### 示例应用
+#### [概述](samples.md)
 #### HoloLens 2
 ##### [表面](sampleapp-surfaces.md)
 ##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
