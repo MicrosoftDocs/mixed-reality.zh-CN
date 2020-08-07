@@ -3,28 +3,26 @@ title: Unity 开发概述
 description: 在 Unity 中构建混合现实应用入门。
 author: thetuvix
 ms.author: kurtie
-ms.date: 10/25/2018
+ms.date: 07/29/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unity, 混合现实, 开发, 入门, 新项目, 移植, 功能, 相机, 模拟, 仿真, 文档
-ms.openlocfilehash: e0fe775f5fe891416145d91e52a5a801e049c568
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 4679e1a2b58a7e0d77e6b295803624a4de1fac19
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81433413"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476709"
 ---
 # <a name="unity-development-overview"></a>Unity 开发概述
 
 构建[混合现实应用](app-views.md)的最快途径是使用 [Unity](https://unity.com)。 建议你花一些时间浏览 [Unity 教程](https://unity3d.com/learn/tutorials)。 如果你需要资产，Unity 有一个包罗万象的[资产商店](https://www.assetstore.unity3d.com/)。 有了对 Unity 的基本了解以后，即可访问[教程](tutorials.md)，了解使用 Unity 进行混合现实开发的具体细节。 若要与社区的其他人员交流在 Unity 中构建混合现实应用的心得，以及查找可能遇到的问题的解决方案，请务必访问 [Unity 混合现实论坛](https://forum.unity3d.com/forums/hololens.102/)。
 
-若要开始使用 Unity 构建混合现实应用，请先[安装工具](install-the-tools.md)。 
-
->[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Setting-up-your-HoloLens-2-development-environment/player?format=ny]
+若要开始使用 Unity 构建混合现实应用，请先[安装工具](install-the-tools.md)。
 
 ## <a name="new-unity-project-with-mixed-reality-toolkit"></a>使用混合现实工具包新建 Unity 项目 
 
-若要在 Unity 中进行开发，最简单的方法是使用混合现实工具包。 这样你就可以在项目中自动进行设置，并利用提供的一组混合现实功能来加快开发速度。 请查看[混合现实工具包 v2](mrtk-getting-started.md) 以了解详情并开始操作。 
+要在 Unity 中进行开发，最简单的方式是使用混合现实工具包，它将帮助你在项目中自动进行设置，并提供一组混合现实功能来助你加快开发速度。 若要了解详细信息并开始操作，请查看[混合现实工具包 v2](mrtk-getting-started.md)。 
 
 ## <a name="porting-an-existing-unity-app-to-windows-mixed-reality"></a>将现有的 Unity 应用移植到 Windows Mixed Reality
 
@@ -32,13 +30,13 @@ ms.locfileid: "81433413"
 
 ## <a name="configuring-new-unity-project-for-windows-mixed-reality"></a>配置用于 Windows Mixed Reality 的全新 Unity 项目
 
-若要在不导入混合现实工具包的情况下创建新的 Unity 项目，需针对 Windows Mixed Reality 手动更改一小组 Unity 设置。 这些设置分为两个类别：按项目设置和按场景设置。 请查看此文档，获取[为 Windows Mixed Reality 配置全新 Unity 项目](Configure-Unity-Project.md)的分步指南
+若要在不导入混合现实工具包的情况下创建新的 Unity 项目，需针对 Windows Mixed Reality 更改少量的 Unity 设置。 这些设置分为两个类别：按项目设置和按场景设置。 请查看此文档，获取[为 Windows Mixed Reality 配置全新 Unity 项目](Configure-Unity-Project.md)的分步指南
 
 ## <a name="adding-mixed-reality-capabilities-and-inputs"></a>添加混合现实功能和输入
 
-在项目中设置 MRTK V2 或按上述说明配置项目以后，标准的 Unity 游戏对象（例如相机）就会立即启动，为你带来**坐定式体验**。当用户在空间中移动其头部时，相机的位置会自动进行更新。
+在项目中设置 MRTK V2 或按上述说明配置项目后，标准的 Unity 游戏对象（例如相机）会立即启动，为你带来坐定式体验。当用户在空间中移动头部时，相机的位置会自动更新。
 
-可以使用直接内置到 Unity 中的 API，添加对 Windows Mixed Reality 功能（例如[空间舞台](coordinate-systems.md#spatial-coordinate-systems)、[手势、运动控制器](gestures-and-motion-controllers-in-unity.md)或[语音输入](voice-input-in-unity.md)）的支持。 
+可借助直接内置到 Unity 中的 API，添加对 Windows Mixed Reality 功能（例如[空间舞台](coordinate-systems.md#spatial-coordinate-systems)、[手势、动作控制器](gestures-and-motion-controllers-in-unity.md)或[语音输入](voice-input-in-unity.md)）的支持。 
 
 首先，请查看应用程序可能面对的[体验规模](coordinate-systems.md)：
 * 若要构建**仅限方向的体验**或**坐定式体验**，需将 Unity 的跟踪空间类型设置为 [Stationary](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)。
@@ -76,10 +74,10 @@ ms.locfileid: "81433413"
 除了 docs.microsoft.com 上提供的此文档，Unity 还配置了适用于 Windows Mixed Reality 功能和 Unity 编辑器的文档。 Unity 提供的文档包括两个单独的部分：
 1. **Unity 脚本参考**
     * 此部分文档包含 Unity 提供的脚本 API 的详细信息。
-    * 可以在 Unity 编辑器中通过“帮助”>“脚本参考”进行访问 
+    * 可以在 Unity 编辑器中通过“帮助”>“脚本参考”进行访问
 2. **Unity 手册**
     * 此手册旨在介绍如何使用 Unity，既有基本技术，又有高级技术。
-    * 可以在 Unity 编辑器中通过“帮助”>“手册”进行访问 
+    * 可以在 Unity 编辑器中通过“帮助”>“手册”进行访问
 
 ## <a name="see-also"></a>另请参阅
 * [混合现实工具包 v2](mrtk-getting-started.md)

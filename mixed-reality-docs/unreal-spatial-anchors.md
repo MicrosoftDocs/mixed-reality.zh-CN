@@ -1,5 +1,5 @@
 ---
-title: Unreal 中的空间定位点
+title: Unreal 中的本地空间定位点
 description: Unreal 中空间定位点使用指南
 author: hferrone
 ms.author: v-haferr
@@ -7,18 +7,21 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 开发, 功能, 文档, 指南, 全息影像, 空间定位点
-ms.openlocfilehash: 58394f4e27aff5070d55ed5f0d62cd81ff579d1f
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: b102d506b1d670291c3b97ca34d277e2597af043
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720313"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376041"
 ---
-# <a name="spatial-anchors-in-unreal"></a>Unreal 中的空间定位点
+# <a name="local-spatial-anchors-in-unreal"></a>Unreal 中的本地空间定位点
 
 ## <a name="overview"></a>概述
 
-空间定位点用于在应用程序会话之间保存真实世界空间中的全息影像。  这些是通过 Unreal 以 ARPin 的形式出现的，并保存在 HoloLens 定位点存储中以便在未来会话中加载。 
+空间定位点用于在应用程序会话之间保存真实世界空间中的全息影像。 这些是通过 Unreal 以 ARPin 的形式出现的，并保存在 HoloLens 定位点存储中以便在未来会话中加载。 当没有 Internet 连接时，本地定位点是理想的备用方案。
+
+> [!IMPORTANT]
+> 本地定位点存储在设备上，而 Azure 空间定位点存储在云中。 如果你想要使用 Azure 云服务来存储定位点，我们有一个文档可指导你如何集成 [Azure 空间定位点](unreal-azure-spatial-anchors.md)。 请注意，你可在同一项目中使用本地定位点和 Azure 定位点，不会发生冲突。
 
 ## <a name="checking-the-anchor-store"></a>检查定位点存储
 
@@ -65,5 +68,6 @@ ms.locfileid: "84720313"
 > 请记住，空间定位点仍处于测试阶段，因此，请务必查看是否有更新的信息和功能。
 
 ## <a name="see-also"></a>另请参阅
+* [Azure 空间定位点](unreal-azure-spatial-anchors.md)
 * [空间定位点](spatial-anchors.md)
 * [坐标系统](coordinate-systems.md)

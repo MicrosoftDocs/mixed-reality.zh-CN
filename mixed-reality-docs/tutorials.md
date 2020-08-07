@@ -1,27 +1,27 @@
 ---
 layout: LandingPage
-title: 教程和示例应用
-description: 提供有关混合现实开发的代码示例和教程。
+title: 教程
+description: 提供有关混合现实开发的教程。
 author: keveleigh
 ms.author: kurtie
-ms.date: 10/22/2019
+ms.date: 07/30/2020
 ms.topic: article
 ms.localizationpriority: high
-keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程
-ms.openlocfilehash: b1c448e7a5289c6d099d73c3bcf18d0f552dbc51
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+keywords: mixedrealitytoolkit, mixedrealitytoolkit-unity, 学院, 教程
+ms.openlocfilehash: dc446be531e2a2fa1b27cdaefbf3adfeb7814740
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86303648"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476999"
 ---
-# <a name="tutorials-and-sample-apps"></a>教程和示例应用
+# <a name="tutorials"></a>教程 
 
 ![HoloLens 2 用户](images/08_Tutorials.png)
 
 目前，我们所有的教程和示例应用均基于 Unity 或 Unreal。 在我们制作适用于其他引擎和平台的内容的过程中，“目录”中会列出相关的标题。
 
-## <a name="hololens-2-tutorials"></a>HoloLens 2 教程
+## <a name="hololens-2"></a>HoloLens 2 
 
 HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程序的技术和最佳实践。 Unity 教程基于 [Mixed Reality Toolkit 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)，Unreal 教程基于[适用于 Unreal Engine 0.8 的 UX Tools](https://github.com/microsoft/MixedReality-UXTools-Unreal)。
 
@@ -32,21 +32,7 @@ HoloLens 2 教程旨在帮助开发人员了解用于开发混合现实应用程
 * 多用户功能教程 - [简介第 1 部分（共 5 部分）](mr-learning-sharing-01.md)
 * Azure 语音服务教程 - [集成和使用语音识别与听录第 1 部分（共 4 部分）](mrlearning-speechSDK-ch1.md)
 
-## <a name="open-source-sample-apps"></a>开源示例应用
-
-开源示例应用是我们团队创建的应用程序，我们提供了源代码，供开发人员参考并从我们的项目中学习经验。
-
-### <a name="hololens-2-open-source-sample-apps"></a>HoloLens 2 开源示例应用
-* [表面](sampleapp-surfaces.md)
-* [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
-* [星系探索者 2.0](galaxy-explorer-update.md)
-
-### <a name="hololens-1st-gen-open-source-sample-apps"></a>HoloLens（第 1 代）开源示例应用
-* [元素周期表 1.0](periodic-table-of-the-elements.md)
-* [星系探索者 1.0](galaxy-explorer.md)
-* [月亮模块](lunar-module.md)
-
-## <a name="mixed-reality-academy-tutorials"></a>混合现实学院教程
+## <a name="mixed-reality-academy"></a>混合现实学院 
 
 混合现实学院是一系列在线分步教程，其中包含相应的项目文件：
 

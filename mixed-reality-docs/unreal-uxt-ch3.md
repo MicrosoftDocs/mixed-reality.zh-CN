@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: f79985b2ce9e26971c23acf36a3538bf7f3c166e
-ms.sourcegitcommit: ff0e89b07d0b4a945967d64c5b8845a21dc5f476
+ms.openlocfilehash: 105e817e54f7de12afdcab9fde1dfce0c38ff4a7
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84879561"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376379"
 ---
 # <a name="3-setting-up-your-project-for-mixed-reality"></a>3.设置混合现实项目
 
@@ -57,7 +57,7 @@ Unreal 中的 AR 会话无法自行发生。 要使用会话，需要借助 ARSe
 此时，项目仍需要一个玩家对象。 在 Unreal 中，Pawn 表示游戏中的用户，但在本例中它将代表 HoloLens 2 体验。
 
 1. 在 Content 文件夹中单击“添加新项 > 蓝图类”，展开底部的“所有类”部分。   
-    * 搜索“DefaultPawn”，单击“选择”，然后双击此资产以打开它。  
+    * 搜索“DefaultPawn”，单击“选择”，将其命名为“MRPawn”，然后双击资产打开它  。 
 
 ![创建从 DefaultPawn 继承的新 Pawn](images/unreal-uxt/3-defaultpawn.PNG)
 
@@ -66,9 +66,13 @@ Unreal 中的 AR 会话无法自行发生。 要使用会话，需要借助 ARSe
 
 2. 从“组件”面板中选择“CollisionComponent”，向下滚动到“详细信息”面板的“碰撞”部分。    
     * 单击“碰撞预设”下拉列表，将值更改为“NoCollision”。  
-    * 对“MeshComponent”执行相同的操作，然后“编译”并“保存”蓝图。   
+    * 对“MeshComponent”执行同样的操作
 
 ![调整 Pawn 的碰撞预设](images/unreal-uxt/3-nocollision.PNG)
+
+3. 从“组件”面板中单击“添加组件”>“相机”，然后将其命名为“相机”  。 这样，玩家相机就能随 HoloLens 2 设备一起移动。
+
+4. 编译并保存蓝图 。
 
 从此处完成操作后，返回到主窗口。
 

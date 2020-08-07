@@ -1,20 +1,22 @@
 ---
 title: 让现有应用准备好使用 HoloLens 2
-description: 本文适用于在 HoloLens（第 1 代）和/或早期 MRTK 上已有现有的应用，并寻求移植到 MRTK 版本 2 和 HoloLens 2 的开发人员。
+description: 本文面向目前已在 HoloLens（第 1 代）和/或早期 MRTK 上拥有应用，且希望移植到 MRTK 版本 2 和 HoloLens 2 的开发人员。
 author: grbury
 ms.author: grbury
-ms.date: 10/14/2019
+ms.date: 07/29/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, 测试, MRTK, MRTK 版本 2, HoloLens 2
-ms.openlocfilehash: 409959b3c73eff684585706dfde87afc5f8a5495
-ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
+ms.openlocfilehash: a6d6c4ad2b9ec0de2663536f2299f31f7d79571a
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85570335"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476989"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>让现有应用准备好使用 HoloLens 2
+
+## <a name="overview"></a>概述
 
 本指南帮助开发人员移植其适用于 HoloLens（第 1 代）的现有 Unity 应用程序，使其可在 HoloLens 2 设备上运行。 将 HoloLens（第 1 代）Unity 应用程序移植到 HoloLens 2 需要完成四个关键步骤。 
 
@@ -27,31 +29,33 @@ ms.locfileid: "85570335"
 
 先决条件：
 
-在开始迁移过程之前，**强烈建议**开发人员使用源代码管理保存其原始应用程序状态的快照。 此外，建议在移植过程中，保存不同时间点的检查点状态。 保留原始应用程序的另一个 Unity 实例也可能很有帮助，这样可以在移植过程中进行并列的比较。 
+强烈建议在开始迁移过程之前，使用源代码管理保存应用程序原始状态的快照。 此外，建议在迁移过程中的不同时间保存检查点状态。 再保留一个原始应用程序的 Unity 实例也很有帮助，这便于在移植过程中进行并列比较。 
 
 > [!NOTE]
-> 在移植之前，请确保已安装用于 Windows Mixed Reality 开发的最新工具。 对于大多数现有 HoloLens 开发人员而言，这主要涉及到更新到最新版 Visual Studio 2019 并安装相应的 Windows SDK。 以下内容会深入到不同的 Unity 版本和混合现实工具包 (MRTK) 版本 2。
+> 在移植之前，请确保已安装用于 Windows Mixed Reality 开发的最新工具。 对于当前大部分 HoloLens 开发人员而言，这涉及到更新到最新版的 Visual Studio 2019 并安装相应的 Windows SDK。 以下内容会深入到不同的 Unity 版本和混合现实工具包 (MRTK) 版本 2。
 >
 > 有关详细信息，请参阅[安装工具](install-the-tools.md)。
 
 ## <a name="migrate-project-to-the-latest-version-of-unity"></a>将项目迁移到最新版本的 Unity
 
-如果使用 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity)，则 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 是最佳的长期支持路径，它不会在 Unity 或 MRTK 中造成重大更改。 此外，MRTK v2 始终保证支持 Unity 2018 LTS，但不一定保证支持 Unity 2019.x 的每次迭代。
+如果使用 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity)，则 [Unity 2019 LTS](https://unity3d.com/unity/qa/lts-releases) 是最佳的长期支持路径，它不会在 Unity 或 MRTK 中造成中断性变更。 应评估项目中当前存在的所有[插件依赖项](https://docs.unity3d.com/Manual/Plugins.html)，并确定是否可为 ARM64 生成这些 DLL。 如果无法为 ARM64 生成必需的依赖项插件，则需继续为 ARM 生成应用。
 
-为了阐明 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 与 Unity 2019.x 之间的其他差异，下面概述了这两个版本之间的利弊。 两者的主要差异在于能否在 Unity 2019 中进行 ARM64 编译。
+<!-- MRTK v2 always guarantees support for Unity 2018 LTS, but does not necessarily guarantee support for every iteration of Unity 2019.x.
 
-开发人员应该评估其项目中当前存在的任何[插件依赖项](https://docs.unity3d.com/Manual/Plugins.html)，并确定是否可为 ARM64 生成这些 DLL。 如果无法为 ARM64 生成必需的依赖项插件，则需继续为 ARM 生成应用。
+To help clarify additional differences between [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) and Unity 2019.x, the following table outlines the trade-offs between the two versions. The primary difference between the two is the ability to compile for ARM64 in Unity 2019.
 
 | Unity 2018 LTS | Unity 2019.x |
 |----------|-------------------|
-| ARM32 生成支持 | ARM32 和 ARM64 生成支持 |
-| 稳定的 LTS 生成版本 | Beta 稳定性 |
-| [.NET 脚本后端](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *已弃用* | [.NET 脚本后端](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *已删除* |
-| UNET 网络已弃用 | UNET 网络已弃用 |
+| ARM32 build support | ARM32 and ARM64 build support |
+| Stable LTS build release | Beta stability |
+| [.NET Scripting back-end](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *deprecated* | [.NET Scripting back-end](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-dotnet.html) *removed* |
+| UNET Networking *deprecated* | UNET Networking *deprecated* |
+
+-->
 
 ## <a name="update-sceneproject-settings-in-unity"></a>在 Unity 中更新场景/项目设置
 
-更新到 [Unity 2018 LTS](https://unity3d.com/unity/qa/lts-releases) 或 Unity 2019+ 之后，建议在 Unity 中更新特定的设置，以便在设备上获得最佳结果。 **[Unity 的建议设置](Recommended-settings-for-Unity.md)** 中详细描述了这些设置。
+更新到 [Unity 2019 LTS](https://unity3d.com/unity/qa/lts-releases) 之后，建议在 Unity 中更新特定设置，以便在设备上获得最佳结果。 [Unity 的建议设置](Recommended-settings-for-Unity.md)中详细描述了这些设置。
 
 再次重申，[.NET 脚本后端](https://docs.unity3d.com/Manual/windowsstore-dotnet.html)即将在 Unity 2018 中弃用，并将在 Unity 2019 中删除。 强烈建议开发人员将其项目切换到 [IL2CPP](https://docs.unity3d.com/Manual/IL2CPP.html)。
 
@@ -59,21 +63,24 @@ ms.locfileid: "85570335"
 > IL2CPP 脚本后端可能导致增大从 Unity 到 Visual Studio 的生成时间，因此，开发人员应设置好其计算机，以[优化 IL2CPP 生成时间](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)。
 > 此外，设置[缓存服务器](https://docs.unity3d.com/Manual/CacheServer.html)可能会有所帮助，尤其是对于包含大量资产（不包括脚本文件）或不断变化的场景和资产的 Unity 项目而言。 打开项目时，Unity 会在开发人员计算机上将符合条件的资产存储为内部缓存格式。 必须重新导入项，项在修改后会重新经过处理。 此过程可以执行一次，结果可保存在缓存服务器，因此可与其他开发人员共享以节省时间，无需让每个开发人员在本地重新导入新的更改。
 
-过渡到更新的 Unity 版本并解决所有重大更改后，开发人员应在 HoloLens（第 1 代）上生成并测试其当前应用程序。 在此阶段很适合在源代码管理中创建并保存提交内容。
+在处理完因移至 Unity 更新版而导致的所有中断性变更后，应在 HoloLens（第 1 代）上构建和测试你目前的应用程序。 在此阶段很适合在源代码管理中创建并保存提交内容。
 
 ## <a name="compile-dependenciesplugins-for-arm-processor"></a>编译 ARM 处理器的依赖项/插件
 
-HoloLens（第 1 代）在 x86 处理器上执行应用程序，而 HoloLens 2 则使用 ARM 处理器。 因此，需要移植现有的 HoloLens 应用程序才能支持 ARM。 如前所述，Unity 2018 LTS 支持 ARM32 应用的编译，而 Unity 2019.x 支持 ARM32 和 ARM64 应用的编译。 一般而言，针对 ARM64 应用程序进行开发会更有利，因为性能方面存在本质的差异。 但是，这也需要对 ARM64 生成所有[插件依赖项](https://docs.unity3d.com/Manual/Plugins.html)。
+HoloLens（第 1 代）在 x86 处理器上执行应用程序，而 HoloLens 2 则使用 ARM 处理器。 因此，需要移植现有的 HoloLens 应用程序才能支持 ARM。 如前所述，Unity 2018 LTS 支持 ARM32 应用的编译，而 Unity 2019.x 支持 ARM32 和 ARM64 应用的编译。 最好是针对 ARM64 应用程序进行开发，因为性能方面存在本质的差异。 但是，这也需要对 ARM64 生成所有[插件依赖项](https://docs.unity3d.com/Manual/Plugins.html)。
 
 请检查应用程序中的所有 DLL 依赖项。 建议从项目中删除不再需要的任何依赖项。 对于所需的剩余插件，请将相应的 ARM32 或 ARM64 二进制文件引入 Unity 项目中。
 
 引入相关的 DLL 后，从 Unity 生成一个 Visual Studio 解决方案，然后在 Visual Studio 中编译一个适用于 ARM 的 AppX，以测试应用程序是否可以针对 ARM 处理器生成。 建议在源代码管理解决方案中保存应用程序作为提交内容。
 
+> [!IMPORTANT]
+> 在将生成目标更改为 ARM 后，应用程序使用 MRTK v1 可在 HoloLens 2 上运行，前提是满足其他所有要求。 这包括确保你具有所有插件的 ARM 版本。 但是，你的应用将无权使用手动跟踪和眼动跟踪等 HoloLens 2 特定功能。 MRTK v1 和 MRTK v2 具有不同的命名空间，使这两种版本可位于同一项目中，这对于将一种版本转换为另一版本来说非常有用。
+
 ## <a name="update-to-mrtk-version-2"></a>更新到 MRTK 版本 2
 
 [MRTK 版本 2](https://github.com/microsoft/MixedRealityToolkit-Unity) 是基于 Unity 的新工具包，支持 HoloLens（第 1 代）和 HoloLens 2， 其中还添加了所有新的 HoloLens 2 功能，例如手动交互和眼动跟踪。
 
-有关使用 MRTK 版本 2 的详细信息，请参阅以下文章：
+有关使用 MRTK 版本 2 的详细信息，，请查看下列资源：
 
 - [MRTK 登陆页面](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
 - [MRTK 入门](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
@@ -88,7 +95,7 @@ HoloLens（第 1 代）在 x86 处理器上执行应用程序，而 HoloLens 2 �
 
 ### <a name="perform-the-migration"></a>执行迁移
 
-导入 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity) 后，Unity 项目很有可能会出现多种与编译器相关的错误。 这些错误通常是新的命名空间结构和新的组件名称造成的。 请将脚本修改为新的命名空间和组件，以解决这些错误。
+导入 [MRTK v2](https://github.com/microsoft/MixedRealityToolkit-Unity) 后，Unity 项目很可能会出现多种与编译器相关的错误。 这些错误通常是新的命名空间结构和新的组件名称造成的。 请将脚本修改为新的命名空间和组件，以解决这些错误。
 
 若要了解 HTK/MRTK 与 MRTK v2 之间的具体 API 差异，请参阅 [MRTK 版本 2 Wiki](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html) 中的移植指南。
 
@@ -129,17 +136,17 @@ HoloLens（第 1 代）在 x86 处理器上执行应用程序，而 HoloLens 2 �
 
 - 规整的 Unity 应用程序非常简单，因为你可以生成一个 ARM 应用程序捆绑包，或直接部署到设备，然后该捆绑包即可运行。 某些 Unity 本机插件可能会给开发带来一定的挑战。 因此，必须将所有 Unity 本机插件升级到 Visual Studio 2019，然后针对 ARM 重新生成。
 
-- 某个应用程序使用 Unity AudioKinetic Wwise 插件，而该 Unity 版本没有 UWP ARM 插件，这导致需要花费大量的精力重新处理该应用程序中的声音功能，才能使相关的应用程序可在 ARM 中运行。 确保开发计划所需的所有插件都已在 Unity 中安装并可用。
+- 某个应用程序使用 Unity AudioKinetic Wwise 插件，但该版本的 Unity 没有 UWP ARM 插件，这导致需要花费大量精力将声音功能重新加入到该应用程序中，才能使该应用在 ARM 上运行。 确保开发计划所需的所有插件都已在 Unity 中安装并可用。
 
 - 在某些情况下，应用所需的插件可能不存在 UWP/ARM 插件，因此无法在 HoloLens 2 上移植和运行应用程序。 请联系插件供应商来解决该问题并提供 ARM 方面的支持。
 
-- 在 HoloLens 2 上，着色器中的 minfloat（以及 min16float、minint 等变量）的行为可能与 HoloLens（第 1 代）上的不同。 具体而言，这些行为保证至少使用指定的位数。 在 Intel/Nvidia GPU 上，这些位基本上被视为 32 位。 在 ARM 上，实际上会遵循指定的位数。 这意味着，在实践中，这些数字在 HoloLens 2 上的精度或范围可能低于 HoloLens（第 1 代）。
+- 在 HoloLens 2 上，着色器中的 minfloat（和 min16float、minint 等变量）的行为可能与 HoloLens（第 1 代）上的不同。 具体而言，这些行为保证至少使用指定的位数。 在 Intel/Nvidia GPU 上，这些位基本上被视为 32 位。 在 ARM 上，实际上会遵循指定的位数。 这意味着，在实践中，这些数字在 HoloLens 2 上的精度或范围可能低于 HoloLens（第 1 代）。
 
 - _asm 指令似乎在 ARM 上无法正常运行，这意味着，必须重写使用 _asm 指令的所有代码。
 
 - ARM 不支持 SIMD 指令集，因为 xmmintrin.h、emmintrin.h、tmmintrin.h 和 immintrin.h 等各种标头在 ARM 上不可用。
 
-- ARM 上的着色器编译器将在加载着色器，或者在着色器所依赖的设置发生更改后，在首次发出绘制调用期间运行，而不是在加载着色器时运行。 对帧速率的影响可能十分明显，具体取决于需要编译多少个着色器。 这会对应当如何在 HoloLens 2 与 HoloLens（第 1 代）上以不同方式处理、打包、更新着色器有各种影响。
+- ARM 上的着色器编译器将在加载着色器，或者在着色器所依赖的设置发生更改后，在首次发出绘制调用期间运行，而不是在加载着色器时运行。 对帧速率的影响可能比较明显，具体取决于需要编译的着色器数量。 这会对应当如何在 HoloLens 2 与 HoloLens（第 1 代）上以不同方式处理、打包、更新着色器有各种影响。
 
 ## <a name="see-also"></a>另请参阅
 * [安装工具](install-the-tools.md)

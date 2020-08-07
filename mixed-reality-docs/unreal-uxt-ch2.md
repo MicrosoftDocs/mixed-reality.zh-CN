@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: 150fee721bb9cd72d287737aca4262bd87dccba8
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 1fce9c34b1d31c56eb628979089399926f3cbf51
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345727"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376500"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.初始化你的项目和第一个应用程序
 
@@ -40,8 +40,7 @@ ms.locfileid: "85345727"
 
 ![选择“空白”模板](images/unreal-uxt/2-template.PNG)
 
-4. 选择“C++”、“可缩放的 3D 或 2D”、“移动/平板电脑”和“非初学者内容”作为“项目设置”   。 
-    * 选择一个保存位置，然后单击“创建项目”。 
+4. 在项目设置中选择“C++”、“可缩放的 3D 或 2D”、“移动/平板电脑”和“非初学者内容”，然后选择保存位置并单击“创建项目”    。 
 
 > [!NOTE]
 > 为了生成 UX Tools 插件，必须选择 C++ 项目而不是 Blueprint 项目，你稍后将在第 4 节中对此进行设置。

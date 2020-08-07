@@ -3,16 +3,16 @@ title: 安装工具
 description: 从此处开始为混合现实开发做准备。 本文始终反映最新版本的 Unity、Visual Studio 以及为进行 HoloLens 和 Windows Mixed Reality 沉浸式头戴显示设备开发推荐的其他工具。
 author: thetuvix
 ms.author: alexturn
-ms.date: 3/10/2020
+ms.date: 07/31/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新, 工具, 入门, 基础, Unity, Visual Studio, 工具包
-ms.openlocfilehash: ac3e4967ce687f7cb3009de64748841f88562a92
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: f5c779aa0bb89fe66b53419b03ec1b4d3e6b562b
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86447925"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476882"
 ---
 # <a name="install-the-tools"></a>安装工具
 
@@ -39,115 +39,6 @@ ms.locfileid: "86447925"
 
 ## <a name="choose-your-engine"></a>选择你的引擎
 
-:::row:::
-    :::column:::
-        <a href="https://unity3d.com/unity/qa/lts-releases" target="_blank">![Unity](images/unity_logo.png)<br>**Unity**</a><br>
-        通常建议使用 Unity LTS（长期支持）流，它是启动新项目的最佳版本，更新到其最新版本可获取最新的稳定修补程序。<br>
-        <br>
-        目前的建议是使用“Unity 2019”，这是下文的 MRTK v2 所需的 LTS 版本。<br>
-        <br>
-        出于具体的原因，一些开发人员可能需要使用不同版本的 Unity。 对于这些情况，Unity 支持并行安装不同版本。<br>
-        <br>
-        请参阅 [Unity 开发概述](unity-development-overview.md)，以便开始针对 HoloLens 2 或 Windows Mixed Reality 沉浸式耳机进行 Unity 开发。<br>
-        <br>
-    :::column-end:::
-    :::column:::
-        <a href="https://docs.unrealengine.com//GettingStarted/Installation/index.html" target="_blank">![Unreal](images/Unreal_logo.png)<br>**Unreal**</a><br>
-        Unreal Engine 4 是一种强大的开源创建引擎，全面支持采用 C++ 和 Azure 蓝图编写的混合现实。<br>
-        <br>
-        从 Unreal Engine 4.25 开始，HoloLens 提供完备的支持，且已准备好投入生产。<br>
-        <br>
-        请参阅 [Unreal 开发概述](unreal-development-overview.md)以开始针对 HoloLens 2 进行 Unreal 开发。
-    :::column-end:::
-    :::column:::
-        ![本机应用开发](images/visualstudio-small_logo.png)<br>
-        [**本机 (OpenXR)** ](openxr-getting-started.md)<br>
-        OpenXR 是来自 Khronos 的开放式免版税 API 标准。对于来自多个供应商的跨混合现实范围的各种设备，该标准为引擎提供了对这些设备的本机访问。  <a href="https://github.com/microsoft/OpenXR-MixedReality/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a> 项目演示了一个简单的 OpenXR 示例，其中包含两个 Visual Studio 项目文件，一个用于 Win32 桌面应用，另一个用于 UWP HoloLens 2 应用。<br>
-        <br>
-        <a href="https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX" target="_blank">**本机 (WinRT)** </a><br>
-        <a href="https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX" target="_blank">Windows Mixed Reality 本机应用模板</a>提供了开始将 DirectX 与本机 API 配合使用来编写混合现实应用所需的所有基本要素。 包括一个渲染循环（或“游戏循环”）、一个 DeviceResources 帮助程序类（用于管理 Direct3D 设备和上下文），以及一个简单的示例全息渲染器。 适用于 Direct3D11 和 Direct3D 12。<br>
-        <br>
-        请参阅[本机开发概述](directx-development-overview.md)，以便开始针对 HoloLens 2 或 Windows Mixed Reality 沉浸式耳机使用 WinRT 或 OpenXR 进行本地应用开发。
-    :::column-end:::
-:::row-end:::
+你现在已将 Windows 10、Visual Studio 和 Windows 10 SDK 准备好了，接下来选择一个引擎用于构建。 
 
-<br>
-
-## <a name="mixed-reality-toolkit-mrtk"></a>混合现实工具包 (MRTK)
-![MRTK](images/UX/MRTK_UX_Hero.png)
-
-混合现实工具包 (MRTK) 是一个用于混合现实应用程序的开放源代码跨平台开发工具包。 MRTK 提供跨平台的输入系统、基础组件以及用于空间交互的通用构建基块。 该工具包旨在加快面向 Microsoft HoloLens、Windows Mixed Reality 沉浸式 (VR) 头戴显示设备和 OpenVR 平台的应用程序的开发。
-
-:::row:::
-    :::column:::
-        <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" target="_blank">![Unity](images/MRTK_Badge_Unity.png)<br>**混合现实工具包 - Unity (GitHub)** </a><br>
-    :::column-end:::
-    :::column:::
-        <a href="https://github.com/Microsoft/MixedRealityToolkit-Unreal" target="_blank">![Unity](images/MRTK_Badge_Unreal.png)<br>**混合现实工具包 - Unreal (GitHub)** </a><br>
-    :::column-end:::
-:::row-end:::
-
-### <a name="other-tools"></a>其他工具
-* <a href="https://github.com/Microsoft/MixedRealityCompanionKit" target="_blank">混合现实伴侣工具包 (GitHub)</a> - 代码位和组件可能无法直接在 HoloLens 或沉浸式 (VR) 头戴显示设备上运行，但可通过与它们配对生成面向 Windows Mixed Reality 的体验。
-* <a href="https://github.com/Microsoft/MixedRealityToolkit" target="_blank">混合现实工具包 - 通用 (GitHub)</a> - 共享脚本和组件的集合。
-
-
-## <a name="setting-up-your-pc-for-mixed-reality-development"></a>设置电脑以进行混合现实
-
-Windows 10 SDK 在 Windows 10 操作系统上效果最佳。 Windows 8.1、Windows 8、Windows 7、Windows Server 2012、Windows Server 2008 R2 也支持此 SDK。 请注意，并非所有工具都在较早的操作系统上受支持。 
-
-### <a name="for-hololens-development"></a>对于 HoloLens 开发
-
-在为进行 HoloLens 开发设置开发电脑时，请确保该电脑满足 <a href="https://unity3d.com/unity/system-requirements" target="_blank">Unity</a> 和 <a href="https://docs.microsoft.com//visualstudio/releases/2019/system-requirements" target="_blank">Visual Studio</a> 的系统要求。 如果打算使用 HoloLens 仿真器，还需要确保电脑满足 [HoloLens 仿真器系统要求](using-the-hololens-emulator.md#hololens-emulator-system-requirements)。
-
-若要开始使用 HoloLens 仿真器，请参阅[使用 HoloLens 仿真器](using-the-hololens-emulator.md)。
-
-如果你打算针对 HoloLens 和 Windows Mixed Reality 沉浸式 (VR) 头戴显示设备进行开发，请使用以下部分中的系统建议和要求。
-
-### <a name="for-immersive-vr-headset-development"></a>对于沉浸式 (VR) 头戴显示设备开发
-
->[!NOTE]
->以下指南是针对沉浸式 (VR) 头戴显示设备开发电脑的当前最低规范和建议规范，可能会定期更新。
-
->[!WARNING]
->不要将此与[最低电脑硬件兼容性指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)混淆，后者概述了面向沉浸式 (VR) 头戴显示设备应用或游戏时的使用者电脑规范。
-
-如果沉浸式头戴显示设备开发电脑没有全尺寸 HDMI 和/或 USB 3.0 端口，则需要[适配器](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/recommended-adapters-for-windows-mixed-reality-capable-pcs)才能连接头戴显示设备。
-
-某些硬件配置当前具有[已知问题](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality)，尤其是具有混合图形的笔记本。
-
-<table>
-<tr>
-<th></th><th> 最低配置</th><th> 建议</th>
-</tr><tr>
-<td> 处理器</td><td> <b>笔记本：</b>Intel 移动 Core i5 第 7 代 CPU，双核超线程 <b>桌面：</b>Intel 桌面 i5 第 6 代 CPU，双核超线程或<b></b> AMD FX4350 4.2Ghz 四核等效 CPU</td><td> <b>桌面：</b>Intel 桌面 i7 第 6 代（6 核）或<b></b> AMD Ryzen 5 1600（6 核，12 线程）</td>
-</tr><tr>
-<td> GPU</td><td> <b>笔记本：</b>NVIDIA GTX 965M、AMD RX 460M (2GB) 等效或更高版本支持 DX12 的 GPU <b>桌面：</b>NVIDIA GTX 960/1050, AMD Radeon RX 460 (2GB) 等效或更高版本支持 DX12 的 GPU</td><td><b>桌面：</b>NVIDIA GTX 980/1060, AMD Radeon RX 480 (2GB) 等效或更高版本支持 DX12 的 GPU</td>
-</tr><tr>
-<td> GPU 驱动程序 WDDM 版本</td><td colspan="2"> WDDM 2.2 驱动程序</td>
-</tr><tr>
-<td> 散热设计功耗</td><td colspan="2"> 15W 或更高</td>
-</tr><tr>
-<td> 图形显示端口</td><td colspan="2"> 1 个可用于头戴显示设备的图形显示端口（适用于 60Hz 头戴显示设备的 HDMI 1.4 或 DisplayPort 1.2、适用于 90Hz 头戴显示设备的 HDMI 2.0 或 DisplayPort 1.2）</td>
-</tr><tr>
-<td> 显示器分辨率</td><td colspan="2"> 分辨率：SVGA (800x600) 或更高位深度：每个像素的 32 位颜色</td>
-</tr><tr>
-<td> 内存</td><td> 8 GB 或更高的 RAM</td><td> 16 GB 或更高的 RAM</td>
-</tr><tr>
-<td> 存储</td><td colspan="2"> &gt;10 GB 的额外可用空间</td>
-</tr><tr>
-<td> USB 端口</td><td colspan="2"> 1 个可用于头戴显示设备的 USB 端口 (USB 3.0 Type-A) <b>注意：USB 必须提供至少 900mA</b></td>
-</tr><tr>
-<td> Bluetooth</td><td colspan="2"> 蓝牙 4.0（用于连接配件）</td>
-</tr>
-</table>
-
-## <a name="see-also"></a>另请参阅
-
-* [开发概述](development.md)
-* [使用 HoloLens 仿真器](using-the-hololens-emulator.md)
-* [使用 Windows Mixed Reality 模拟器](using-the-windows-mixed-reality-simulator.md)
-* [Unity 开发概述](unity-development-overview.md)
-* [Unreal 开发概述](unreal-development-overview.md)
-* [DirectX 开发概述](directx-development-overview.md)
-* [HoloLens 仿真器存档](hololens-emulator-archive.md)
+[!INCLUDE[](~/includes/tools-overview.md)]

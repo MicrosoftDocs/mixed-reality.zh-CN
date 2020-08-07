@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, 混合现实, 教程, 入门, mrtk, uxt, UX Tools, 文档
-ms.openlocfilehash: 473f47884bbc492451007436f80e8d9762cf1ab7
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: e81da5a4550f258b629443df9b2b655d81108c21
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720253"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376359"
 ---
 # <a name="5-adding-a-button--resetting-piece-locations"></a>5.添加按钮并重置棋子位置
 
@@ -59,8 +59,8 @@ ms.locfileid: "84720253"
     
 此时，需要调用“WhiteKing”的“重置位置”函数，这需要在关卡中引用“WhiteKing”Actor。   
 
-1.  滚动到“详细信息”面板中的“变量”部分，单击 + 按钮，将变量命名为“WhiteKing”。    
-    * 选择“变量类型”旁的下拉列表，搜索“WhiteKing”，然后选择“对象引用”。 
+1.  在“我的蓝图”面板中，导航到“变量”部分，然后单击 + 按钮，将变量命名为“WhiteKing”   。 
+    * 在“详细信息”面板中，选择“变量类型”旁的下拉列表，搜索“WhiteKing”，然后选择“对象引用”   。 
     * 选中“实例可编辑”旁的复选框。 这将允许从主关卡设置变量。 
 
 ![创建变量](images/unreal-uxt/5-var.PNG)

@@ -7,12 +7,12 @@ ms.date: 7/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, 仿真器
-ms.openlocfilehash: e7c89cc2d839edc46a73a765acad603341b52716
-ms.sourcegitcommit: 3c867622e99c07f95db92e88551d2b904ceb8def
+ms.openlocfilehash: 597a0a9103f8313d26449b996c1e7af6f5619b2c
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86383069"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376659"
 ---
 # <a name="using-the-hololens-emulator"></a>使用 HoloLens 仿真器
 
@@ -253,6 +253,8 @@ HoloLens（第 1 代）上的光标可跟踪头部运动和旋转。 在 HoloLen
 
 * 卸载 HoloLens 2 仿真器时，硬盘映像 (Flash.vhdx) 可能会留在硬盘驱动器上的 Windows Kits\10\Emulation\HoloLens\<build number> 文件夹中。  删除此文件是安全的。
 * 硬件图形加速可能导致全息应用在一些带有 AMD 或 Intel 显卡的系统上崩溃。  在仿真器的“工具”窗口中禁用硬件图形加速可以解决此问题。
+* 自 2020 年 7 月起安装最新的 Windows 更新后，HoloLens 仿真器（第 1 代）中的硬件图形加速功能可能不再可用。
+硬件图形加速所需的 RemoteFX 组件已被弃用，将在将来的 Windows 版本中删除。  若要重新启用硬件图形加速，请使用 [Enable-VMRemoteFXPhysicalVideoAdapter PowerShell cmdlet](https://docs.microsoft.com/powershell/module/hyper-v/enable-vmremotefxphysicalvideoadapter?view=win10-ps)。  有关其他信息，请参阅[有关在 Windows 中弃用和删除 RemoteFX 支持的文档](https://support.microsoft.com/help/4570006/update-to-disable-and-remove-the-remotefx-vgpu-component)。 
 
 ## <a name="troubleshooting"></a>疑难解答
 

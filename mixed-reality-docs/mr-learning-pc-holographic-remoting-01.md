@@ -3,16 +3,16 @@ title: 电脑全息远程处理教程 - 1. 电脑全息远程处理入门
 description: 完成本课程可以了解如何远程处理从电脑到 HoloLens 2 的混合现实体验。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 05/19/2020
+ms.date: 07/29/2020
 ms.topic: article
 keywords: 混合现实, unity, 教程, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: cbbad9548abeb1b8392b99d187b5b051d5b4ddd4
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 4929634d70a082e835eb7bd6b5680719338a5e92
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86304813"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476969"
 ---
 # <a name="1-getting-started-with-pc-holographic-remoting"></a>1.电脑全息远程处理入门
 
@@ -38,10 +38,11 @@ ms.locfileid: "86304813"
 * 一个[针对开发配置](using-visual-studio.md#enabling-developer-mode)的 HoloLens 2 设备
 * <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>，其中已装载 Unity 2019.3.X 且已添加通用 Windows 平台生成支持模块
 
->[!强烈推荐] 已完成入门教程系列，或者之前有一些使用 Unity 和 MRTK 的基本经验
+继续学习之前，强烈建议完成[入门](mr-learning-base-01.md)教程系列，或者具备一些使用 Unity 和 MRTK 的基本经验。
 
 > [!IMPORTANT]
-> 建议对本系列教程使用 Unity 2019.3.X。 这将取代上述链接的先决条件中所述的所有 Unity 版本要求或建议。
+> * 建议对本系列教程使用 Unity 2019.3.X。 这将取代上述链接的先决条件中所述的所有 Unity 版本要求或建议。
+> * 只能在旧版 XR 中将全息远程用于 MRTK 项目。 目前不支持 XR SDK。
 
 ## <a name="creating-and-preparing-the-unity-project"></a>创建和准备 Unity 项目
 
@@ -168,11 +169,11 @@ ms.locfileid: "86304813"
 
 本部分探讨如何在项目中启用眼动跟踪。 例如，你将实现这样的功能，即在查看 MarsCuriosityRover 各部分时突出显示附加到它们的工具提示，在不看这些部分时隐藏这些提示。
 
-### <a name="1-identify-target-objects-and-associated-tooltips"></a>1.确定目标对象及关联的工具提示。
+### <a name="1-identify-target-objects-and-associated-tooltips"></a>1.确定目标对象及关联的工具提示
 
 在“层次结构”窗口中，选择 ModelParent 对象。 展开“MarsCuriosity”->“Rover”，查找 MarsCuriosityRover 的 5 个主要部分：POI-Camera、POI-Wheels、POI-Antena、POI-Spectrometer、POI-RUHF Antenna    。
 
-* 在“层次结构”窗口中观察与 MarsCuriosityRover 各部分关联的 5 个对应的工具提示对象。 
+* 在“层次结构”窗口中观察与 MarsCuriosityRover 各部分关联的 5 个对应的工具提示对象。
 * 你将配置这些对象，以便在查看 MarsCuriosityRover 各部分时突出显示体验。
 
 ![mrlearning-pc-holographic-remoting](images/mrlearning-pc-holographic-remoting/Tutorial1-Section6-Step1-1.png)
